@@ -1,0 +1,112 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <style>
+                /* Reset
+        -------------------------------------------------------------- */
+                html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, code, del, dfn, em, img, q, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+                    border: 0;
+                    font-weight: inherit;
+                    font-style: inherit;
+                    font-size: 100%;
+                    font-family: inherit;
+                    vertical-align: baseline;
+                    margin: 0;
+                    padding: 0;
+                }
+
+                /* Page
+        -------------------------------------------------------------- */
+
+                body {
+                    font-size: 98%;
+                    line-height: 1.6;
+                    color: #666666;
+                    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+                    text-align: center;
+                }
+
+                p {
+                    margin: 0 0;
+                }
+
+                strong {
+                    font-weight: bold;
+                }
+
+                em {
+                    font-style: italic;
+                }
+
+                a {
+                    color: #0f83a2;
+                    text-decoration: none;
+                    font-weight: bold;
+                }
+
+                    a:hover {
+                        color: #efd903;
+                    }
+
+                a {
+                    -webkit-transition: color .6s linear;
+                }
+
+                    a:hover {
+                        -webkit-transition: color .1s linear;
+                    }
+
+                @font-face {
+                    font-family: 'LeagueGothicRegular';
+                    src: url('League_Gothic.eot');
+                    src: url('League_Gothic.woff') format('woff'), url('League_Gothic.otf') format('opentype'), url('League_Gothic.svg#LeagueGothic') format('svg');
+                }
+
+                h1 {
+                    font-family: "LeagueGothicRegular",Lucida, sans-serif;
+                    font-size: 215px;
+                    line-height: 1;
+                    text-transform: uppercase;
+                    letter-spacing: -6px;
+                    margin-bottom: 10px;
+                }
+
+                .masked {
+                    color: #fff;
+                }
+
+                /*<!-- text Effect-->*/
+                .masked {
+                    background: url(paint.png) repeat, white;
+                    -webkit-text-fill-color: transparent;
+                    -webkit-background-clip: text;
+                    -webkit-animation-name: masked-animation;
+                    -webkit-animation-duration: 40s;
+                    -webkit-animation-iteration-count: infinite;
+                    -webkit-animation-timing-function: linear;
+                }
+
+                @-webkit-keyframes masked-animation {
+                    0% {
+                        background-position: left bottom;
+                    }
+
+                    100% {
+                        background-position: right bottom;
+                    }
+                }
+                /*<!-- /text Effect-->*/
+    </style>
+</head>
+<body>
+
+    <div class="masked">
+        <h1>Selectable Text</h1>
+
+
+
+    </div>
+</body>
+</html>
