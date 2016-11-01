@@ -24,10 +24,13 @@
 
     <!-- CSS -->
     <link href="~/Modules/startbootstrap-business-frontpage-gh-pages/startbootstrap-business-frontpage-gh-pages/css/bootstrap.css" rel="stylesheet" />
+
     @*
     <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">*@
+
     @*
     <link rel="stylesheet" type="text/css" href="/css/fanoe.css">*@
+
     @*
     <link rel="stylesheet" type="text/css" href="/css/style.css">*@
 
@@ -37,112 +40,11 @@
       <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    @*
+    <link href="/Modules/startbootstrap-business-frontpage-gh-pages/startbootstrap-business-frontpage-gh-pages/css/business-frontpage.css" rel="stylesheet" />*@
 
-    <link href="/Modules/startbootstrap-business-frontpage-gh-pages/startbootstrap-business-frontpage-gh-pages/css/business-frontpage.css" rel="stylesheet" />
-
-    <style>
-        .snip1554 {
-            /*background-color: #045e78;*/
-            color: #ffffff;
-            display: inline-block;
-            font-family: 'Poppins', sans-serif;
-            font-size: 16px;
-            margin: 8px;
-            /*max-width: 315px;
-            min-width: 230px;*/
-
-
-
-
-           
-            overflow: hidden;
-            position: relative;
-            text-align: left;
-            width: 100%;
-        }
-
-            .snip1554 * {
-                -webkit-box-sizing: border-box;
-                box-sizing: border-box;
-                -webkit-transition: all 0.45s ease;
-                transition: all 0.45s ease;
-            }
-
-            .snip1554:after {
-                background-color: white;
-                opacity: 0.6;
-                top: 0;
-                bottom: 0;
-                content: '';
-                left: -100%;
-                position: absolute;
-                width: 200px;
-                box-shadow: 0 0 100px white;
-                -webkit-transform: skew(-20deg);
-                transform: skew(-20deg);
-                -webkit-transition: all 0.6s ease;
-                transition: all 0.6s ease;
-            }
-
-            .snip1554 img {
-                vertical-align: top;
-                max-width: 100%;
-                backface-visibility: hidden;
-            }
-
-            .snip1554 figcaption {
-                position: absolute;
-                top: 0;
-                bottom: 0;
-                left: 0;
-                right: 0;
-                z-index: 1;
-                line-height: 1em;
-                opacity: 0;
-            }
-
-            .snip1554 h3 {
-                position: absolute;
-                left: 10px;
-                bottom: 10px;
-                font-size: 1.4em;
-                font-weight: 400;
-                line-height: 1.1em;
-                margin: 0;
-                text-transform: uppercase;
-            }
-
-                .snip1554 h3 span {
-                    font-weight: 700;
-                }
-
-            .snip1554 a {
-                position: absolute;
-                top: 0;
-                bottom: 0;
-                left: 0;
-                right: 0;
-                z-index: 1;
-            }
-
-            .snip1554:hover > img,
-            .snip1554.hover > img {
-                opacity: 0.6;
-                -webkit-filter: grayscale(100%);
-                filter: grayscale(100%);
-            }
-
-            .snip1554:hover:after,
-            .snip1554.hover:after {
-                left: 200%;
-            }
-
-            .snip1554:hover figcaption,
-            .snip1554.hover figcaption {
-                opacity: 1;
-            }
-    </style>
-
+    <!--Hover-->
+    <link href="~/Modules/PwsCSS/PwsBaseCss.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -160,15 +62,19 @@
                     <span class="icon-bar"></span>
                 </button>
 
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="@home.Url">
                     <div>
+
+                        @*<div class="brand" style="background-image:url('@(home.SiteLogo)?height=65&width=205&bgcolor=000')"></div>*@
                         <img src="~/Modules/images/queengallery-logo.png" style="margin-top:-13px;" />
                     </div>
                 </a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
+
+                <!--  Demo Menu Design -->
+                @*<ul class="nav navbar-nav">
                     <li>
                         <a href="#">What's On</a>
                     </li>
@@ -187,7 +93,10 @@
                     <li>
                         <a href="#">  Contact Us</a>
                     </li>
-                </ul>
+                </ul>*@
+                <!--  /Demo Menu Design -->
+                @{ Html.RenderPartial("PwsMenuLevel1"); }
+
                 <!-- Flag -->
                 <div class="clearfix text-right">
                     <a href="#">
@@ -202,7 +111,7 @@
         <!-- /.container -->
     </nav>
     <!-- Image Background Page Header -->
-    <!-- Note: The background image is set within the business-casual.css file. -->
+    <!-- Note: The background image is set within the PwsBaseCss.css file. -->
     <header class="business-header">
         @*<div class="container">
             <div class="row">
@@ -320,42 +229,55 @@
             </a>
         </div>
     </header>
+
     <!-- Page Content -->
-    <div class="container">
-        <hr>
-        <div class="row">
-            <div class="col-sm-8">
-                <h2>Past Exhibitions</h2>
-                @*<p>Introduce the visitor to the business using clear, informative text. Use well-targeted keywords within your sentences to make sure search engines can find the business.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et molestiae similique eligendi reiciendis sunt distinctio odit? Quia, neque, ipsa, adipisci quisquam ullam deserunt accusantium illo iste exercitationem nemo voluptates asperiores.</p>*@
+    @RenderBody()
 
-                <p>
-                    Bualuang Foundation cordially invites you to the 38th Bualuang Paintings Exhibition, displaying the total of 71 art pieces including 9 award winning works of art and 62 additional art pieces selected by the judging committee,
-                </p>
-                <p> for viewers to grasp artist’s concept of creating masterpieces in 3 categories covering Traditional Thai, Semi-Traditional Thai and Contemporary Paintings, from 17th October – 25th November 2016 at The Queen’s Gallery.  </p>
-                <p>
-                    <a class="btn btn-default btn-lg" href="#">More &raquo;</a>
-                </p>
-            </div>
-            <div class="col-sm-4">
-                @*<h2>Contact Us</h2>
-                <address>
-                    <strong>Start Bootstrap</strong>
-                    <br>3481 Melrose Place
-                    <br>Beverly Hills, CA 90210
-                    <br>
-                </address>
-                <address>
-                    <abbr title="Phone">P:</abbr>(123) 456-7890
-                    <br>
-                    <abbr title="Email">E:</abbr> <a href="mailto:#">name@example.com</a>
-                </address>*@
+    @*
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>*@
+    <!-- Bootstrap Core JavaScript -->
+    @*
+    <script src="js/bootstrap.min.js"></script>*@
+    @*<div style="display:block">  @RenderBody()</div>*@
 
-                <!--FaceBook-->
-                @*<iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fqueengallerybkk&tabs&width=360&height=214&small_header=false&adapt_container_width=false&hide_cover=false&show_facepile=true&appId" width="360" height="214" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>*@
+    <div style="display:none;">
+        <div class="container">
+            <hr>
+            <div class="row">
+                <div class="col-sm-8">
+                    <h2>Past Exhibitions</h2>
+                    @*<p>Introduce the visitor to the business using clear, informative text. Use well-targeted keywords within your sentences to make sure search engines can find the business.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et molestiae similique eligendi reiciendis sunt distinctio odit? Quia, neque, ipsa, adipisci quisquam ullam deserunt accusantium illo iste exercitationem nemo voluptates asperiores.</p>*@
 
-                <div id="fb-root"></div>
-                <script>
+                    <p>
+                        Bualuang Foundation cordially invites you to the 38th Bualuang Paintings Exhibition, displaying the total of 71 art pieces including 9 award winning works of art and 62 additional art pieces selected by the judging committee,
+                    </p>
+                    <p> for viewers to grasp artist’s concept of creating masterpieces in 3 categories covering Traditional Thai, Semi-Traditional Thai and Contemporary Paintings, from 17th October – 25th November 2016 at The Queen’s Gallery.  </p>
+                    <p>
+                        @*<a class="btn btn-default btn-lg snip1564" href="#">More &raquo;</a>*@
+                        <a class=" snip1564" href="#">More &raquo;</a>
+                    </p>
+                </div>
+                <div class="col-sm-4">
+                    @*<h2>Contact Us</h2>
+                    <address>
+                        <strong>Start Bootstrap</strong>
+                        <br>3481 Melrose Place
+                        <br>Beverly Hills, CA 90210
+                        <br>
+                    </address>
+                    <address>
+                        <abbr title="Phone">P:</abbr>(123) 456-7890
+                        <br>
+                        <abbr title="Email">E:</abbr> <a href="mailto:#">name@example.com</a>
+                    </address>*@
+
+                    <!--FaceBook-->
+                    @*<iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fqueengallerybkk&tabs&width=360&height=214&small_header=false&adapt_container_width=false&hide_cover=false&show_facepile=true&appId" width="360" height="214" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>*@
+
+                    <div id="fb-root"></div>
+                    <script>
                     (function (d, s, id) {
                         var js, fjs = d.getElementsByTagName(s)[0];
                         if (d.getElementById(id)) return;
@@ -363,60 +285,91 @@
                         js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.8";
                         fjs.parentNode.insertBefore(js, fjs);
                     }(document, 'script', 'facebook-jssdk'));</script>
-                <div class="fb-page  " data-href="https://www.facebook.com/queengallerybkk/" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/queengallerybkk/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/queengallerybkk/">หอศิลป์สมเด็จพระนางเจ้าสิริกิติ์ พระบรมราชินีนาถ The Queen&#039;s Gallery</a></blockquote></div>
-                <!-- /FaceBook-->
-            </div> <!-- /.col-sm-4 -->
+                    <div class="fb-page  " data-href="https://www.facebook.com/queengallerybkk/" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/queengallerybkk/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/queengallerybkk/">หอศิลป์สมเด็จพระนางเจ้าสิริกิติ์ พระบรมราชินีนาถ The Queen&#039;s Gallery</a></blockquote></div>
+                    <!-- /FaceBook-->
+                </div> <!-- /.col-sm-4 -->
+            </div>
+            <!-- /.row -->
+            <hr>
+            <div class="row">
+                <div class="col-sm-4 ">
+
+                    <figure class="snip1554">
+                        <img class="img-circle img-responsive img-center" src="/media/1059/wiranya300.png">
+                        @*<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample104.jpg" alt="sample104" />*@
+                        <figcaption>
+                            <h3> </h3>
+                        </figcaption>
+                        <a href="#"></a>
+                    </figure>
+
+                    <h2>Marketing Box #1</h2>
+                    <p>These marketing boxes are a great place to put some information. These can contain summaries of what the company does, promotional information, or anything else that is relevant to the company. These will usually be below-the-fold.</p>
+                </div>
+                <div class="col-sm-4">
+
+                    <figure class="snip1554">
+                        <img class="img-circle img-responsive img-center" src="/media/1057/yanawit300.png" alt="">
+                        @*<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample104.jpg" alt="sample104" />*@
+                        <figcaption>
+                            <h3> </h3>
+                        </figcaption>
+                        <a href="#"></a>
+                    </figure>
+
+                    <h2>Marketing Box #2</h2>
+                    <p>The images are set to be circular and responsive. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p>
+                </div>
+                <div class="col-sm-4">
+
+                    <figure class="snip1554">
+                        <img class="img-circle img-responsive img-center" src="/media/1058/vichoke300.png" alt="">
+                        @*<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample104.jpg" alt="sample104" />*@
+                        <figcaption>
+                            <h3> </h3>
+                        </figcaption>
+                        <a href="#"></a>
+                    </figure>
+
+                    <h2>Marketing Box #3</h2>
+                    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p>
+                </div>
+            </div>
+            <!-- /.row -->
+            <hr>
+            <!-- Footer -->
+            <footer>
+                <div class="row">
+                    <div class="col-lg-7">
+
+                        <strong>
+                            <span>The Queen's Gallery</span>
+                        </strong>
+                        <p>
+                            <span>101 Ratchadamnoen Klang Road, Borwonniwet, Phra Nakhon, Bangkok 10200 THAILAND</span><br>
+                            <span>Contact us via</span>
+                            <a href="mailto:info@queengallery.org">info@queengallery.org</a>
+                        </p>
+                    </div>
+
+                    <div class="col-lg-5">
+                        <div class="logoHover right">
+                            <img src="/media/1065/logo-bangkokbank.png">
+                            <img src="/media/1064/logo-microsoft.png">
+
+                            <img src="/media/1063/logo-ricoh.png">
+                        </div>
+                        @*<img src="/Images/logo_microsoft.png" width="90px"><img src="/Images/logo_ricoh.png" width="80px"><img src="/Images/logo_eight.png">*@
+                    </div>
+                </div>
+                <!-- /.row -->
+            </footer>
         </div>
-        <!-- /.row -->
-        <hr>
-        <div class="row">
-            <div class="col-sm-4 ">
+    </div>
+    <!-- /.container -->
+    <!-- Footer-->
+    <div class="container">
 
-                <figure class="snip1554">
-                    <img class="img-circle img-responsive img-center" src="/media/1059/wiranya300.png"  >
-                    @*<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample104.jpg" alt="sample104" />*@
-                    <figcaption>
-                        <h3> </h3>
-                    </figcaption>
-                    <a href="#"></a>
-                </figure>
-
-               
-                <h2>Marketing Box #1</h2>
-                <p>These marketing boxes are a great place to put some information. These can contain summaries of what the company does, promotional information, or anything else that is relevant to the company. These will usually be below-the-fold.</p>
-            </div>
-            <div class="col-sm-4">
-
-                <figure class="snip1554">
-                    <img class="img-circle img-responsive img-center" src="/media/1057/yanawit300.png" alt="">
-                    @*<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample104.jpg" alt="sample104" />*@
-                    <figcaption>
-                        <h3> </h3>
-                    </figcaption>
-                    <a href="#"></a>
-                </figure>
-
-
-               
-                <h2>Marketing Box #2</h2>
-                <p>The images are set to be circular and responsive. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p>
-            </div>
-            <div class="col-sm-4">
-
-                <figure class="snip1554">
-                    <img class="img-circle img-responsive img-center" src="/media/1058/vichoke300.png" alt="">
-                    @*<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample104.jpg" alt="sample104" />*@
-                    <figcaption>
-                        <h3> </h3>
-                    </figcaption>
-                    <a href="#"></a>
-                </figure>
-
-             
-                <h2>Marketing Box #3</h2>
-                <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p>
-            </div>
-        </div>
         <!-- /.row -->
         <hr>
         <!-- Footer -->
@@ -447,13 +400,5 @@
             <!-- /.row -->
         </footer>
     </div>
-    <!-- /.container -->
-    <!-- jQuery -->
-    @*
-    <script src="js/jquery.js"></script>*@
-    <!-- Bootstrap Core JavaScript -->
-    @*
-    <script src="js/bootstrap.min.js"></script>*@
-    <div style="display:none">  @RenderBody()</div>
 </body>
 </html>
