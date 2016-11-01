@@ -8,7 +8,7 @@ using  Umbraco.Web;
 using  Umbraco.ModelsBuilder;
 using  Umbraco.ModelsBuilder.Umbraco;
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "fe5c60519c28ef9b")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "d185df4029cb33e8")]
 [assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
 
 
@@ -154,15 +154,6 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// Hide in navigation?
-		///</summary>
-		[ImplementPropertyType("hideInNavigation")]
-		public bool HideInNavigation
-		{
-			get { return this.GetPropertyValue<bool>("hideInNavigation"); }
-		}
-
-		///<summary>
 		/// Site Description
 		///</summary>
 		[ImplementPropertyType("siteDescription")]
@@ -266,50 +257,6 @@ namespace Umbraco.Web.PublishedContentModels
 		public Newtonsoft.Json.Linq.JToken Content
 		{
 			get { return this.GetPropertyValue<Newtonsoft.Json.Linq.JToken>("content"); }
-		}
-	}
-
-	/// <summary>Site</summary>
-	[PublishedContentModel("site")]
-	public partial class Site : PublishedContentModel
-	{
-#pragma warning disable 0109 // new is redundant
-		public new const string ModelTypeAlias = "site";
-		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
-#pragma warning restore 0109
-
-		public Site(IPublishedContent content)
-			: base(content)
-		{ }
-
-#pragma warning disable 0109 // new is redundant
-		public new static PublishedContentType GetModelContentType()
-		{
-			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
-		}
-#pragma warning restore 0109
-
-		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Site, TValue>> selector)
-		{
-			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
-		}
-
-		///<summary>
-		/// Site Logo
-		///</summary>
-		[ImplementPropertyType("siteLogo")]
-		public object SiteLogo
-		{
-			get { return this.GetPropertyValue("siteLogo"); }
-		}
-
-		///<summary>
-		/// Site Name
-		///</summary>
-		[ImplementPropertyType("siteName")]
-		public string SiteName
-		{
-			get { return this.GetPropertyValue<string>("siteName"); }
 		}
 	}
 
