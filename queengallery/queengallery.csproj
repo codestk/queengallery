@@ -301,6 +301,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="HtmlPage1.html" />
+    <Content Include="Modules\PwsCSS\PwsBaseCss.css" />
     <Content Include="packages.config" />
     <Content Include="App_Plugins\ModelsBuilder\package.manifest" />
     <Content Include="Sample\TextHiglight\TextEffect.html" />

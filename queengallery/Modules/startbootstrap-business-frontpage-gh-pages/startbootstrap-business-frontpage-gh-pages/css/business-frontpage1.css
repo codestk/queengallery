@@ -41,7 +41,6 @@ body {
 }
 
 /* Customize the text color and shadow color and to optimize text legibility. */
-
 .tagline {
     text-shadow: 0 0 10px #000;
     color: #fff;
@@ -69,40 +68,10 @@ footer {
     .logoHover img:hover {
         opacity: 1;
     }
-/* --For Footer Comanay Supports*/
+ /* /For Footer Comanay Supports*/
 
-/* Menu Custom Opacity*/
-.navbar-inverse {
-    background-color: #222;
-    border-color: #080808;
-    opacity: 0.9;
-    fill-opacity: 0.9;
-}
-/* --Menu Custom Opacity*/
+ 
 
 
 
-/*Hover Effect Image */
-.hi-icon-effect-6 .hi-icon {
-	box-shadow: 0 0 0 4px rgba(255,255,255,1);
-	transition: background 0.2s, color 0.2s;	
-}
-
-.no-touch .hi-icon-effect-6 .hi-icon:hover {
-	background: rgba(255,255,255,1);
-	color: #64bb5d;
-}
-
-.no-touch .hi-icon-effect-6 .hi-icon:hover:before {
-	animation: spinAround 2s linear infinite;
-}
-
-@keyframes spinAround {
-	from {
-		transform: rotate(0deg)
-	}
-	to {
-		transform: rotate(360deg);
-	}
-}
-/**/
+ 
