@@ -1,0 +1,14 @@
+//var contentType = ApplicationContext.Services.ContentTypeService.GetContentType("BlogPost");
+
+//var blogPostList = ApplicationContext.Services.ContentService.GetContentOfContentType(contentType.Id);
+//Now I am accessing custom data type properties by using
+
+//foreach (var blog in blogPostList)
+//    {
+
+     //   foreach ( var property in blog.Properties)
+    //    {
+
+    //    }
+
+  //  }
