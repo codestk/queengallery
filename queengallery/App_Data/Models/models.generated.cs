@@ -19,8 +19,8 @@ using Umbraco.ModelsBuilder;
 using Umbraco.ModelsBuilder.Umbraco;
 
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "d185df4029cb33e8")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "fe55ad02ed095d0d")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.3")]
 
 namespace Umbraco.Web.PublishedContentModels
 {
@@ -50,6 +50,24 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// ArtisIamge
+		///</summary>
+		[ImplementPropertyType("artisIamge")]
+		public string ArtisIamge
+		{
+			get { return this.GetPropertyValue<string>("artisIamge"); }
+		}
+
+		///<summary>
+		/// Art Pieces
+		///</summary>
+		[ImplementPropertyType("artPieces")]
+		public Newtonsoft.Json.Linq.JToken ArtPieces
+		{
+			get { return this.GetPropertyValue<Newtonsoft.Json.Linq.JToken>("artPieces"); }
+		}
+
+		///<summary>
 		/// Content
 		///</summary>
 		[ImplementPropertyType("content")]
@@ -59,12 +77,57 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// Content Picker
+		///</summary>
+		[ImplementPropertyType("contentPicker")]
+		public object ContentPicker
+		{
+			get { return this.GetPropertyValue("contentPicker"); }
+		}
+
+		///<summary>
+		/// dede
+		///</summary>
+		[ImplementPropertyType("dede")]
+		public IHtmlString Dede
+		{
+			get { return this.GetPropertyValue<IHtmlString>("dede"); }
+		}
+
+		///<summary>
 		/// Introduction
 		///</summary>
 		[ImplementPropertyType("introduction")]
 		public string Introduction
 		{
 			get { return this.GetPropertyValue<string>("introduction"); }
+		}
+
+		///<summary>
+		/// MutilNode
+		///</summary>
+		[ImplementPropertyType("mutilNode")]
+		public string MutilNode
+		{
+			get { return this.GetPropertyValue<string>("mutilNode"); }
+		}
+
+		///<summary>
+		/// RelateLink
+		///</summary>
+		[ImplementPropertyType("relateLink")]
+		public Newtonsoft.Json.Linq.JArray RelateLink
+		{
+			get { return this.GetPropertyValue<Newtonsoft.Json.Linq.JArray>("relateLink"); }
+		}
+
+		///<summary>
+		/// Test
+		///</summary>
+		[ImplementPropertyType("test")]
+		public object Test
+		{
+			get { return this.GetPropertyValue("test"); }
 		}
 	}
 
@@ -135,6 +198,15 @@ namespace Umbraco.Web.PublishedContentModels
 		public Newtonsoft.Json.Linq.JToken Content
 		{
 			get { return this.GetPropertyValue<Newtonsoft.Json.Linq.JToken>("content"); }
+		}
+
+		///<summary>
+		/// Hide in navigation?
+		///</summary>
+		[ImplementPropertyType("hideInNavigation")]
+		public bool HideInNavigation
+		{
+			get { return this.GetPropertyValue<bool>("hideInNavigation"); }
 		}
 
 		///<summary>
@@ -230,6 +302,85 @@ namespace Umbraco.Web.PublishedContentModels
 #pragma warning restore 0109
 
 		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<TextPage, TValue>> selector)
+		{
+			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Content
+		///</summary>
+		[ImplementPropertyType("content")]
+		public Newtonsoft.Json.Linq.JToken Content
+		{
+			get { return this.GetPropertyValue<Newtonsoft.Json.Linq.JToken>("content"); }
+		}
+	}
+
+	/// <summary>Site</summary>
+	[PublishedContentModel("site")]
+	public partial class Site : PublishedContentModel
+	{
+#pragma warning disable 0109 // new is redundant
+		public new const string ModelTypeAlias = "site";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+#pragma warning restore 0109
+
+		public Site(IPublishedContent content)
+			: base(content)
+		{ }
+
+#pragma warning disable 0109 // new is redundant
+		public new static PublishedContentType GetModelContentType()
+		{
+			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
+		}
+#pragma warning restore 0109
+
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Site, TValue>> selector)
+		{
+			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Site Logo
+		///</summary>
+		[ImplementPropertyType("siteLogo")]
+		public object SiteLogo
+		{
+			get { return this.GetPropertyValue("siteLogo"); }
+		}
+
+		///<summary>
+		/// Site Name
+		///</summary>
+		[ImplementPropertyType("siteName")]
+		public string SiteName
+		{
+			get { return this.GetPropertyValue<string>("siteName"); }
+		}
+	}
+
+	/// <summary>EXHIBITIONS</summary>
+	[PublishedContentModel("eXHIBITIONS")]
+	public partial class EXhibitions : PublishedContentModel
+	{
+#pragma warning disable 0109 // new is redundant
+		public new const string ModelTypeAlias = "eXHIBITIONS";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+#pragma warning restore 0109
+
+		public EXhibitions(IPublishedContent content)
+			: base(content)
+		{ }
+
+#pragma warning disable 0109 // new is redundant
+		public new static PublishedContentType GetModelContentType()
+		{
+			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
+		}
+#pragma warning restore 0109
+
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<EXhibitions, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 		}
