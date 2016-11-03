@@ -1,0 +1,40 @@
+﻿@inherits Umbraco.Web.Macros.PartialViewMacroPage
+
+  @{ var blogNode = Umbraco.Content(1122);  }
+
+<div role="content">
+    <section class="light blogarchive equalizer">
+        <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="list-group">
+                    <a href="#" class="list-group-item active">On View</a>
+                    <a href="#" class="list-group-item">Upcoming</a>
+                    <a href="#" class="list-group-item">Past</a>
+                </div>
+
+            </div>
+            <div class="  col-md-9">
+                @foreach(var post in blogNode.Children)
+                {
+                <hr>
+                <div class="row">
+                    <div class="col-lg-3"><img src='@post.Logo' class="img-thumbnail img-responsive img-center"> </div>
+                    <div class=" col-lg-9">
+
+                        <a href="@post.Url"><h3>@post.Name</h3>		</a>
+                        <div class="date">@post.CreateDate.ToLongDateString()</div>
+                        <p>@Umbraco.Truncate(post.IntroductionEn, 240, true)</p>
+                    </div>
+
+                </div>
+
+
+                }
+            </div>
+
+        </div>
+        
+        </div>
+    </section>
+</div>
