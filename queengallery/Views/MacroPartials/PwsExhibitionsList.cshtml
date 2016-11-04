@@ -1,7 +1,13 @@
 ﻿@inherits Umbraco.Web.Macros.PartialViewMacroPage
 
   @{ var blogNode = Umbraco.Content(1122);  }
-
+<script>
+    $(document).ready(function () {
+        $('#aPast').on('click', function () {
+            alert('frr');
+        });
+    });
+    </script>
 <div role="content">
     <section class="light blogarchive equalizer">
         <div class="container">
@@ -10,17 +16,17 @@
                 <div class="list-group">
                     <a href="#" class="list-group-item active">On View</a>
                     <a href="#" class="list-group-item">Upcoming</a>
-                    <a href="#" class="list-group-item">Past</a>
+                    <a href="#" id="aPast" class="list-group-item">Past</a>
                 </div>
 
             </div>
-            <div class="  col-md-9">
+            <div class="col-md-9">
                 @foreach(var post in blogNode.Children)
                 {
                 <hr>
                 <div class="row">
                     <div class="col-lg-3"><img src='@post.Logo' class="img-thumbnail img-responsive img-center"> </div>
-                    <div class=" col-lg-9">
+                    <div class="col-lg-9">
 
                         <a href="@post.Url"><h3>@post.Name</h3>		</a>
                         <div class="date">@post.CreateDate.ToLongDateString()</div>
