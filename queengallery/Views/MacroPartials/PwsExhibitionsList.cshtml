@@ -1,46 +1,81 @@
 ﻿@inherits Umbraco.Web.Macros.PartialViewMacroPage
 
+
+<script src="/Modules/Simple-Boostrap-Pagination-Plugin/simple-bootstrap-paginator.js"></script>
+
   @{ var blogNode = Umbraco.Content(1122);  }
 <script>
     $(document).ready(function () {
         $('#aPast').on('click', function () {
             alert('frr');
         });
+
+
+
+        SetPagger();
     });
-    </script>
+
+    function SetPagger()
+    {
+        var pag = $('#pagination').simplePaginator({
+            totalPages: 6,
+            pageChange: function (page) {
+                $('#content').empty().text('Page is ' + page);
+            }
+        });
+
+        $('#changeTotalPages').click(function () {
+            pag.simplePaginator('setTotalPages', 10);
+        })
+
+        $('#changePage').click(function () {
+            pag.simplePaginator('changePage', 3);
+        })
+
+        $('#hide').click(function () {
+            pag.simplePaginator('hide');
+        })
+    }
+
+</script>
 <div role="content">
     <section class="light blogarchive equalizer">
         <div class="container">
-        <div class="row">
-            <div class="col-md-3">
-                <div class="list-group">
-                    <a href="#" class="list-group-item active">On View</a>
-                    <a href="#" class="list-group-item">Upcoming</a>
-                    <a href="#" id="aPast" class="list-group-item">Past</a>
-                </div>
-
-            </div>
-            <div class="col-md-9">
-                @foreach(var post in blogNode.Children)
-                {
-                <hr>
-                <div class="row">
-                    <div class="col-lg-3"><img src='@post.Logo' class="img-thumbnail img-responsive img-center"> </div>
-                    <div class="col-lg-9">
-
-                        <a href="@post.Url"><h3>@post.Name</h3>		</a>
-                        <div class="date">@post.CreateDate.ToLongDateString()</div>
-                        <p>@Umbraco.Truncate(post.IntroductionEn, 240, true)</p>
+            <div class="row">
+                <div class="col-md-3">
+                    <hr style="visibility:hidden" />
+                    <div class="list-group">
+                        <a href="#" class="list-group-item active">On View</a>
+                        <a href="#" class="list-group-item">Upcoming</a>
+                        <a href="#" id="aPast" class="list-group-item">Past</a>
                     </div>
+                </div>
+                <div class="col-md-9">
+                    <hr style="visibility:hidden" />
+                    @foreach(var post in blogNode.Children)
+                    {
+                   
+                    <div class="row">
+                        <div class="col-lg-3"><img src='@post.Logo' class="img-thumbnail img-responsive img-center"> </div>
+                        <div class="col-lg-9">
 
+                            <a href="@post.Url"><h3>@post.Name</h3>		</a>
+                            <div class="date">@post.CreateDate.ToLongDateString()</div>
+                            <p>@Umbraco.Truncate(post.IntroductionEn, 240, true)</p>
+                        </div>
+                    </div>
+                    <hr>
+
+                    }
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div id="pagination" class="text-center"></div>
+                        </div>
+                    </div>
                 </div>
 
-
-                }
+             
             </div>
-
-        </div>
-        
         </div>
     </section>
 </div>
