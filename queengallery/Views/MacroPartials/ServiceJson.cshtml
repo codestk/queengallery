@@ -1,0 +1,9 @@
+﻿@inherits Umbraco.Web.Macros.PartialViewMacroPage
+
+	
+@{
+var node = new umbraco.NodeFactory.Node(1080);
+var serializer = new System.Web.Script.Serialization.JavaScriptSerializer();
+}
+
+@Html.Raw(serializer.Serialize(node.Properties))

@@ -1,0 +1,24 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+	Layout = null;
+}
+
+
+
+@{
+var blogNode = Umbraco.Content(1122);  
+var node = new umbraco.NodeFactory.Node(1122);
+var serializer = new System.Web.Script.Serialization.JavaScriptSerializer();
+var media = Umbraco.Media(1080).Children();	 
+	
+ 
+}
+ 
+ 
+
+ 
+@Html.Raw(serializer.Serialize(@JsonFn.ConvertToJsonObject(media)));
+@Html.Raw(serializer.Serialize(node.Properties));
+
+ 
+ 
