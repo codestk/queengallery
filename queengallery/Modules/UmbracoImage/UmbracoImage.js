@@ -5,7 +5,8 @@ function UmbracoImageUrl(ImageObjectString, imageType)
 {
     var UmbracoImageObject = ConvertStringImageToJson(ImageObjectString);
     var url = '';
-    if (imageType == '')
+     
+    if (imageType == undefined)
     {
         url = UmbracoImageObject.src;
         return url;

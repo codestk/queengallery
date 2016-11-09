@@ -1,18 +1,15 @@
 ﻿@inherits Umbraco.Web.Macros.PartialViewMacroPage
 
-@*
-<script src="/Modules/Simple-Boostrap-Pagination-Plugin/simple-bootstrap-paginator.js"></script>*@
-@*
-<script src="/Modules/paginate/jquery.paginate.js"></script>*@
 <script src="/Modules/paginate/jquery.simplePagination.js"></script>
 <link href="/Modules/paginate/simplePagination.css" rel="stylesheet" />
 <script src="/Modules/Pws/PWSCallService.js"></script>
 <script src="/Modules/mustache/mustache.js"></script>
+<script src="/Modules/UmbracoImage/UmbracoImage.js"></script>
 
 <script id="ListTemplate" type="x-tmpl-mustache">
     {{#Data}}
     <div class="row">
-        <div class="col-lg-3"><img src='post.Logo' class="img-thumbnail img-responsive img-center"> </div>
+        <div class="col-lg-3"><img src='{{logoUrl}}' class="img-thumbnail img-responsive img-center"> </div>
         <div class="col-lg-9">
 
             <a href="post.Url"><h3>{{name}}</h3>		</a>
@@ -23,15 +20,14 @@
     <hr>
 
     {{/Data}}
-
 </script>
 
-  @{ var blogNode = Umbraco.Content(1122);  }
 <script>
     $(document).ready(function () {
 
         initEvent();
-        SetPagger(30);
+
+        RenderList();
         //SetPagger2();
     });
 
@@ -39,22 +35,7 @@
         $('#aPast').on('click', function (event) {
             event.preventDefault();
 
-            var url = 'RazorJson?page=5';
-            CallServices(url, '', true, function (msg) {
-
-                //Reder Data ListTemplate
-                console.log(msg);
-                var template = $('#ListTemplate').html();
-                Mustache.parse(template);   // optional, speeds up future uses
-
-                
-                msg = ConvertDataByLanguage(msg);
-                var rendered = Mustache.render(template, { Data: msg });
-                $('#divList').html('');
-                $('#divList').html(rendered);
-
-
-            });
+            RenderList();
 
         });
         $('#aUpcoming').on('click', function (event) {
@@ -67,6 +48,35 @@
     var PageIndex = '1';
     var PageSize = '10';
 
+    function RenderList() {
+
+        //Render List
+        var url = 'RazorJson?page=' + PageIndex;
+        CallServices(url, '', true, function (msg) {
+            debugger
+            //Reder Data ListTemplate
+            console.log(msg);
+            SetList(msg);
+            SetPagger(30);
+        });
+
+    }
+
+    function SetList(msg) {
+        var template = $('#ListTemplate').html();
+        Mustache.parse(template);   // optional, speeds up future uses
+
+        msg = ConvertDataByLanguage(msg);
+
+        var rendered = Mustache.render(template, { Data: msg });
+        $('#divList').html('');
+        $('#divList').html(rendered);
+
+        //Set Pagger
+        SetPagger(30);
+
+    }
+
     function SetPagger(RecordCount) {
         $('#ulpage').pagination({
             items: RecordCount,
@@ -78,90 +88,59 @@
             currentPage: PageIndex,//cssStyle: 'light-theme',
             onPageClick: function (event) {
 
+                //Set Global Page
                 if (event < 10) {
                     PageIndex = '0' + event;
                 }
                 else {
-                    PageIndex = event;
+                    PageIndex = event; 
                 }
-                SetTable();
+                //-Set Global Page
+                RenderList();
             }
 
         });
 
     }
 
-    function ConvertDataByLanguage(data)
-    {
+    function ConvertDataByLanguage(data) {
         for (var key in data) {
-            //var jsonStringImage = PaintItem[key]["artistImage"];
 
-            //var ImageObject = ConvertToJson(jsonStringImage)
-
-            //PaintItem[key].src = PaintItem[key]["src"];
-
-            //PaintItem[key].Thumbnail = PaintItem[key]["Thumbnail"];
-
-            //PaintItem[key].fileName = UmbracoFileName(ImageObject);
-
-            //PaintItem[key]["artist"] = PaintItem[key]["artist" + preFixLang];
-
-            //PaintItem[key]["award"] = PaintItem[key]["award" + preFixLang];
-
-            //PaintItem[key]["faculty"] = PaintItem[key]["faculty" + preFixLang];
-
-            //PaintItem[key]["history"] = PaintItem[key]["history" + preFixLang];
             var preFixLang = 'En';
             data[key]["name"] = data[key]["name" + preFixLang];
             data[key]["title"] = data[key]["title" + preFixLang];
             data[key]["introduction"] = data[key]["introduction" + preFixLang];
 
-
             var ImageUmbracoString = data[key]["logo"];
-            data[key]["iconUrl"] = UmbracoImageUrl(ImageUmbracoString);
-      
+            data[key]["logoUrl"] = UmbracoImageUrl(ImageUmbracoString);
+
         }
 
         return data;
     }
-
 </script>
-
-
 
 <div role="content">
     <section class="light blogarchive equalizer">
         <div class="container">
             <div class="row">
                 <div class="col-md-3">
-                    <hr style="visibility:hidden" />
+
                     <div class="list-group">
                         <a href="#" class="list-group-item active">On View</a>
                         <a href="#" id="aUpcoming" class="list-group-item">Upcoming</a>
                         <a href="#" id="aPast" class="list-group-item">Past</a>
                     </div>
                 </div>
-                <div id="divList" class="col-md-9">
-                    <hr style="visibility:hidden" />
-                    @foreach(var post in blogNode.Children)
-                    {
-
-                    <div class="row">
-                        <div class="col-lg-3"><img src='@post.Logo' class="img-thumbnail img-responsive img-center"> </div>
-                        <div class="col-lg-9">
-
-                            <a href="@post.Url"><h3>@post.Name</h3>		</a>
-                            <div class="date">@post.CreateDate.ToLongDateString()</div>
-                            <p>@Umbraco.Truncate(post.IntroductionEn, 240, true)</p>
-                        </div>
+                <div class="col-md-9">
+                    <div id="divList">
+                        
                     </div>
-                    <hr>
-
-                    }
                     <div class="row">
                         <div class="col-xs-12">
-                            <div id="pagination" class="text-center"></div>
-                            <ul id="ulpage" class="pagination"></ul>
+                            <div id="pagination" class="text-center">  </div>
+
+                            <ul id="ulpage" class="pagination text-center"></ul>
                         </div>
                     </div>
                 </div>

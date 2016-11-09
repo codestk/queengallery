@@ -43,7 +43,11 @@ var serializer = new System.Web.Script.Serialization.JavaScriptSerializer();
 
 }
 
-@*@Html.Raw(items.Count())*@
+@* @Html.Raw(serializer.Serialize(items.Count())) *@
 
-@Html.Raw(serializer.Serialize(@JsonFn.ConvertToJsonObject(items.Skip((page -1)* pageSize).Take(pageSize))))
+@Html.Raw(serializer.Serialize(@JsonFn.ConvertToJsonObject(items.Skip((page -1)* pageSize).Take(pageSize)).Add(new Dictionary<string, object>
+                                                {            {"fdsfds","HHH"}
+
+                                                })));
+	
 @*@Html.Raw(serializer.Serialize(node.Properties));*@
