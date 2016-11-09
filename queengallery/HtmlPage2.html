@@ -1,0 +1,80 @@
+﻿<!doctype html>
+<html>
+<head>
+    <title>How to create blur effect with jQuery and CSS</title>
+
+    <style>
+        body {
+            text-align: center;
+        }
+
+        input {
+            margin-top: 20px;
+            font-size: 16px;
+            font-weight: bold;
+            padding: 5px 10px;
+        }
+
+        #box {
+            margin: 50px auto;
+            width: 500px;
+            height: 100px;
+            color: #fff;
+            padding: 10px;
+            background: #333;
+        }
+    </style>
+</head>
+<!--
+      We use Google's CDN to serve the jQuery js libs.
+      To speed up the page load we put these scripts at the bottom of the page
+  -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script>
+
+        //DOM loaded
+        $(document).ready(function() {
+
+            //attach click event to button
+            $('.button').click(function(){
+
+                //when button is clicked we call blurElement function
+                blurElement("#body", 2);
+
+            });
+
+            //attach click event to button
+            $('.button2').click(function(){
+
+                //set box blur to 0
+                blurElement("#body", 0);
+
+            });
+
+
+        });
+
+        //set the css3 blur to an element
+        function blurElement(element, size){
+            var filterVal = 'blur('+size+'px)';
+            $(element)
+              .css('filter',filterVal)
+              .css('webkitFilter',filterVal)
+              .css('mozFilter',filterVal)
+              .css('oFilter',filterVal)
+              .css('msFilter',filterVal);
+        }
+
+
+
+</script>
+
+<body id="body">
+
+    <input type="button" value="Blur Box" class="button" />
+    <input type="button" value="Reset Box" class="button2" />
+
+    <div id="box">Box</div>
+  
+</body>
+</html>

@@ -1,4 +1,5 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+
 @{
 	Layout = null;
 }
@@ -40,14 +41,18 @@ var serializer = new System.Web.Script.Serialization.JavaScriptSerializer();
 @*ถ้าเรียกมาน้อยกว่า*@
                 page =1;
         }
+var jsonDataList= JsonFn.ConvertToJsonObject(items.Skip((page -1)* pageSize).Take(pageSize));
 
-}
+jsonDataList.Add(new Dictionary<string, object>
+    {            {"RecordCount",items.Count()}
 
-@* @Html.Raw(serializer.Serialize(items.Count())) *@
+    });
 
-@Html.Raw(serializer.Serialize(@JsonFn.ConvertToJsonObject(items.Skip((page -1)* pageSize).Take(pageSize)).Add(new Dictionary<string, object>
-                                                {            {"fdsfds","HHH"}
+    }
 
-                                                })));
-	
-@*@Html.Raw(serializer.Serialize(node.Properties));*@
+    @* @Html.Raw(serializer.Serialize(items.Count())) *@
+
+    @*Html.Raw(serializer.Serialize(@JsonFn.ConvertToJsonObject(items.Skip((page -1)* pageSize).Take(pageSize))))*@
+    @Html.Raw(serializer.Serialize(jsonDataList))
+
+    @*@Html.Raw(serializer.Serialize(node.Properties));*@
