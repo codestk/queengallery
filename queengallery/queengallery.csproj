@@ -301,6 +301,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="HtmlPage1.html" />
+    <Content Include="HtmlPage2.html" />
+    <Content Include="Modules\PreLoad\PwsPreLoad.js" />
     <Content Include="Modules\PwsCSS\PwsBaseCss.css" />
     <Content Include="Modules\PwsCSS\PwsMenu.css" />
     <Content Include="Modules\Pws\PWSCallService.js" />

@@ -5,6 +5,20 @@
 <script src="/Modules/Pws/PWSCallService.js"></script>
 <script src="/Modules/mustache/mustache.js"></script>
 <script src="/Modules/UmbracoImage/UmbracoImage.js"></script>
+<style>
+    /* This only works with JavaScript,
+           if it's not present, don't show loader */
+    .no-js #loader {
+        display: none;
+    }
+
+    .js #loader {
+        display: block;
+        position: absolute;
+        left: 100px;
+        top: 0;
+    }
+</style>
 
 <script id="ListTemplate" type="x-tmpl-mustache">
     {{#Data}}
@@ -23,18 +37,27 @@
 </script>
 
 <script>
+
     $(document).ready(function () {
 
         initEvent();
+        //  Preload();
+        //Render List
+
+        //SetPagger2();
 
         RenderList();
-        //SetPagger2();
     });
+
+    //$(window).load(function () {
+    //    // Animate loader off screen
+    //    blurElement("body", 0)
+    //});
 
     function initEvent() {
         $('#aPast').on('click', function (event) {
             event.preventDefault();
-
+        
             RenderList();
 
         });
@@ -52,16 +75,21 @@
 
         //Render List
         var url = 'RazorJson?page=' + PageIndex;
+        Preload();
         CallServices(url, '', true, function (msg) {
-            debugger
+
             //Reder Data ListTemplate
+
             console.log(msg);
-            SetList(msg);
-            SetPagger(30);
+            SetList(msg[0]);
+
+            SetPagger(msg[1].RecordCount);
+            LoadCompelete();
         });
 
     }
 
+    /*Render Data*/
     function SetList(msg) {
         var template = $('#ListTemplate').html();
         Mustache.parse(template);   // optional, speeds up future uses
@@ -93,7 +121,7 @@
                     PageIndex = '0' + event;
                 }
                 else {
-                    PageIndex = event; 
+                    PageIndex = event;
                 }
                 //-Set Global Page
                 RenderList();
@@ -103,7 +131,9 @@
 
     }
 
+    /*Data*/
     function ConvertDataByLanguage(data) {
+
         for (var key in data) {
 
             var preFixLang = 'En';
@@ -134,7 +164,6 @@
                 </div>
                 <div class="col-md-9">
                     <div id="divList">
-                        
                     </div>
                     <div class="row">
                         <div class="col-xs-12">

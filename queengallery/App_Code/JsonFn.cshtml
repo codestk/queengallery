@@ -3,34 +3,37 @@
 	public static  List<object>
     ConvertToJsonObject(dynamic media)
     {
+
+                        System.Threading.Thread.Sleep (10000);
+
+    /*Maind Object*/
     List<object>
-        jsonDataList = new List<object>
+        Msg = new List<object>
             ();
-            foreach (var mediaItem in media)
-            {
-            var columns = new Dictionary<string, object>
-                ();
 
-                foreach (Umbraco.Core.Models.IPublishedProperty item in mediaItem.Properties)
-                {
-                string name = item.PropertyTypeAlias;
+            List<object>
+                jsonDataList = new List<object>
+                    ();
+                    foreach (var mediaItem in media)
+                    {
+                    var columns = new Dictionary<string, object>
+                        ();
 
-                object val = null;
+                        foreach (Umbraco.Core.Models.IPublishedProperty item in mediaItem.Properties)
+                        {
+                        string name = item.PropertyTypeAlias;
 
-                val = item.DataValue.ToString().Replace("\r\n", "");
+                        object val = null;
 
-                columns.Add(name, val);
-                }
+                        val = item.DataValue.ToString().Replace("\r\n", "");
 
-                jsonDataList.Add(columns);
-                }
+                        columns.Add(name, val);
+                        }
 
-                return jsonDataList;
-                }
+                        jsonDataList.Add(columns);
+                        }
+                        Msg.Add(jsonDataList);
+                        return Msg;
+                        }
 
-                }
-
-                @*jsonDataList.Add(new Dictionary<string, object>
-                    {            {"fdsfds",99}
-
-                    });*@
+                        }
