@@ -14,45 +14,73 @@ var media = Umbraco.Media(1080).Children();
 
 var serializer = new System.Web.Script.Serialization.JavaScriptSerializer();
 
-	   var pageSize =10;
+	    var pageSize =10;
         var page =1;int.TryParse(Request.QueryString["page"],out page);
-        //var items =Umbraco.Media(1080).Where(x => x.IsDocumentType("BlogPost")).OrderByDescending(x => x.CreateDate);
-        // var items =Model.Content.Children().Where(x => x.IsDocumentType("BlogPost")).OrderByDescending(x => x.CreateDate);
 
-        //var  items =  Umbraco.Media(1080).Children();
-        //var  items =  Umbraco.Media(1080).Children();
-        // string nameLower=imageName.ToLower();
-        // string filter =$"imageName.ToLower() = \"{nameLower}.jpg\"";
-        // var items = Umbraco.Media(mediaID).Children().Where(filter);
+         var Type =Request.QueryString["Type"];
+
+        //var items =Umbraco.Media(1080).Where(x => x.IsDocumentType("BlogPost")).OrderByDescending(x => x.CreateDate);
+        //var items =Model.Content.Children().Where(x => x.IsDocumentType("BlogPost")).OrderByDescending(x => x.CreateDate);
+
+        //var items =  Umbraco.Media(1080).Children();
+        //var items =  Umbraco.Media(1080).Children();
+        //string nameLower=imageName.ToLower();
+        //string filter =$"imageName.ToLower() = \"{nameLower}.jpg\"";
+        //var items = Umbraco.Media(mediaID).Children().Where(filter);
 
         @*var items =  Umbraco.Media(1122).Children().OrderBy("CreateDate descending");*@
 
-         var items = Umbraco.Content(1122).Children().OrderBy("CreateDate descending");
-       @*var items =  Umbraco.Media(1122).Children();*@
-        var totalPages =(int)Math.Ceiling((double)items.Count()/(double)pageSize);
+ var values = new Dictionary<string,object>
+    ();
+    @*values.Add("queryStartDate", DateTime.Parse(Request["queryStartDate"])) ;
+    values.Add("queryEndDate", DateTime.Parse(Request["queryEndDate"])) ;*@
+    values.Add("queryStartDate", DateTime.Parse("11/11/2000")) ;
+    values.Add("queryEndDate",DateTime.Parse("11/11/2018")) ;
 
-        if(page > totalPages)
-        {
-@*ถ้าเรียกมามากกว่า*@
-                page = totalPages;
-        }
-        else if(page < 1)
-        {
-@*ถ้าเรียกมาน้อยกว่า*@
-                page =1;
-        }
-var jsonDataList= JsonFn.ConvertToJsonObject(items.Skip((page -1)* pageSize).Take(pageSize));
+    string condition="from > queryStartDate && from < queryEndDate";
 
-jsonDataList.Add(new Dictionary<string, object>
-    {            {"RecordCount",items.Count()}
+    dynamic items=null;
 
-    });
-
+    if (Type=="OnView")
+    {
+    items = Umbraco.Content(1122).Children().OrderBy("CreateDate descending");
+    }else if (Type=="Upcoming")
+    {
+    items =  Umbraco.Content(1122).Children().Where(condition,values).OrderBy("CreateDate descending");
+    }
+    else if (Type=="Past")
+    {
+    items = Umbraco.Content(1122).Children().OrderBy("CreateDate descending");
     }
 
-    @* @Html.Raw(serializer.Serialize(items.Count())) *@
+    @*var items =  Umbraco.Media(1122).Children();*@
+    var totalPages =(int)Math.Ceiling((double)items.Count()/(double)pageSize);
 
-    @*Html.Raw(serializer.Serialize(@JsonFn.ConvertToJsonObject(items.Skip((page -1)* pageSize).Take(pageSize))))*@
-    @Html.Raw(serializer.Serialize(jsonDataList))
+    if(page > totalPages)
+    {
+    @*ถ้าเรียกมามากกว่า*@
+    page = totalPages;
+    }
+    else if(page < 1)
+    {
+    @*ถ้าเรียกมาน้อยกว่า*@
+    page =1;
+    }
 
-    @*@Html.Raw(serializer.Serialize(node.Properties));*@
+    var jsonDataList= JsonFn.ConvertToJsonObject(items.Skip((page -1)* pageSize).Take(pageSize));
+
+    jsonDataList.Add(new Dictionary<string, object>
+        {            {"RecordCount",items.Count()}
+
+        });
+
+        }
+
+        @* @Html.Raw(serializer.Serialize(items.Count())) *@
+
+        @*Html.Raw(serializer.Serialize(@JsonFn.ConvertToJsonObject(items.Skip((page -1)* pageSize).Take(pageSize))))*@
+
+        @*@Html.Raw(serializer.Serialize(node.Properties));*@
+
+        @*Json*@
+        @Html.Raw(serializer.Serialize(jsonDataList))

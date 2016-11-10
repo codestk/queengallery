@@ -1,49 +1,55 @@
 ﻿.PwsMenu {
-  font-family: 'Raleway', Arial, sans-serif;
-  text-align: center;
-  text-transform: uppercase;
-  font-weight: 500;
-  letter-spacing: 1px;
+    font-family: 'Raleway', Arial, sans-serif;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 1px;
 }
-.PwsMenu * {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  -webkit-transition: all 0.35s ease;
-  transition: all 0.35s ease;
-}
-.PwsMenu li {
-  display: inline-block;
-  list-style: outside none none;
-  margin: 0.5em 1.5em;
-  padding: 0;
-}
-.PwsMenu a {
-  padding: 0.4em 0;
-  color: rgba(255, 255, 255, 0.5);
-  position: relative;
-  text-decoration: none;
-  display: inline-block;
-}
-.PwsMenu a:before {
-  position: absolute;
-  content: '';
-  -webkit-transition: all 0.35s ease;
-  transition: all 0.35s ease;
-  opacity: 0;
-  top: 25%;
-  bottom: 25%;
-  left: 0;
-  right: 0;
-  border-top: 3px solid #34495e;
-  border-bottom: 3px solid #34495e;
-}
-.PwsMenu a:hover,
-.PwsMenu .MenuSelected a {
-  color: #ffffff;
-}
-.PwsMenu a:hover:before,
-.PwsMenu .MenuSelected a:before {
-  opacity: 1;
-  top: 0;
-  bottom: 0;
-}
+
+    .PwsMenu * {
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        -webkit-transition: all 0.35s ease;
+        transition: all 0.35s ease;
+    }
+
+    .PwsMenu li {
+        display: inline-block;
+        list-style: outside none none;
+        margin: 0.5em 1.5em;
+        padding: 0;
+    }
+
+    .PwsMenu a {
+        padding: 0.4em 0;
+        color: rgba(255, 255, 255, 0.5);
+        position: relative;
+        text-decoration: none;
+        display: inline-block;
+    }
+
+        .PwsMenu a:before {
+            position: absolute;
+            content: '';
+            -webkit-transition: all 0.35s ease;
+            transition: all 0.35s ease;
+            opacity: 0;
+            top: 25%;
+            bottom: 25%;
+            left: 0;
+            right: 0;
+            border-top: 3px solid #34495e;
+            border-bottom: 3px solid #34495e;
+        }
+
+        .PwsMenu a:hover,
+        .PwsMenu .MenuSelected a {
+            color: #ffffff;
+        }
+
+            .PwsMenu a:hover:before,
+            .PwsMenu .MenuSelected a:before {
+                opacity: 1;
+                top: 0;
+                bottom: 0;
+            }

@@ -5,8 +5,6 @@
 <script src="/Modules/Pws/PWSCallService.js"></script>
 <script src="/Modules/mustache/mustache.js"></script>
 <script src="/Modules/UmbracoImage/UmbracoImage.js"></script>
- 
- 
 
 <script id="ListTemplate" type="x-tmpl-mustache">
     {{#Data}}
@@ -42,16 +40,38 @@
     //    blurElement("body", 0)
     //});
 
+    function SetActiveLeftMenu(aTag) {
+
+        $('.list-group a').removeClass('active');
+        $(aTag).addClass('active');
+    }
+
     function initEvent() {
-        $('#aPast').on('click', function (event) {
+
+        $('#aOnView').on('click', function (event) {
+            SetActiveLeftMenu(this);
+
             event.preventDefault();
-        
+
+            PageIndex = '1';
+
+            RenderList();
+
+        });
+
+        $('#aPast').on('click', function (event) {
+            SetActiveLeftMenu(this);
+
+            event.preventDefault();
+
+            PageIndex = '1';
+
             RenderList();
 
         });
         $('#aUpcoming').on('click', function (event) {
-            //alert('frr');
-
+            SetActiveLeftMenu(this);
+            event.preventDefault();
         });
 
     };
@@ -93,6 +113,7 @@
 
     }
 
+    //Set Pagger
     function SetPagger(RecordCount) {
         $('#ulpage').pagination({
             items: RecordCount,
@@ -101,6 +122,8 @@
             //prevText: '<img class="iconDirection" src="Images/1457020750_arrow-left-01.svg" />',
             //nextText: '<img class="iconDirection" src="Images/1457020740_arrow-right-01.svg" />',
 
+            prevText: lblPrev,
+            nextText: lblNext,
             currentPage: PageIndex,//cssStyle: 'light-theme',
             onPageClick: function (event) {
 
@@ -119,12 +142,12 @@
 
     }
 
-    /*Data*/
+    /*Convert Data*/
     function ConvertDataByLanguage(data) {
 
         for (var key in data) {
-
-            var preFixLang = 'En';
+            //preFixLang
+            //var preFixLang = 'En';
             data[key]["name"] = data[key]["name" + preFixLang];
             data[key]["title"] = data[key]["title" + preFixLang];
             data[key]["introduction"] = data[key]["introduction" + preFixLang];
@@ -145,7 +168,7 @@
                 <div class="col-md-3">
 
                     <div class="list-group">
-                        <a href="#" class="list-group-item active">On View</a>
+                        <a href="#" id="aOnView" class="list-group-item active">On View</a>
                         <a href="#" id="aUpcoming" class="list-group-item">Upcoming</a>
                         <a href="#" id="aPast" class="list-group-item">Past</a>
                     </div>
