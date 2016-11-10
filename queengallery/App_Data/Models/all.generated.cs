@@ -8,7 +8,7 @@ using  Umbraco.Web;
 using  Umbraco.ModelsBuilder;
 using  Umbraco.ModelsBuilder.Umbraco;
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "c01e0cf485e6438d")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "76dc994e1f90b132")]
 [assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
 
 
@@ -93,6 +93,15 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// From
+		///</summary>
+		[ImplementPropertyType("from")]
+		public DateTime From
+		{
+			get { return this.GetPropertyValue<DateTime>("from"); }
+		}
+
+		///<summary>
 		/// Introduction
 		///</summary>
 		[ImplementPropertyType("introduction")]
@@ -147,21 +156,12 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// TitleEn
+		/// To
 		///</summary>
-		[ImplementPropertyType("titleEn")]
-		public string TitleEn
+		[ImplementPropertyType("to")]
+		public DateTime To
 		{
-			get { return this.GetPropertyValue<string>("titleEn"); }
-		}
-
-		///<summary>
-		/// TitleTh
-		///</summary>
-		[ImplementPropertyType("titleTh")]
-		public string TitleTh
-		{
-			get { return this.GetPropertyValue<string>("titleTh"); }
+			get { return this.GetPropertyValue<DateTime>("to"); }
 		}
 	}
 
@@ -391,41 +391,6 @@ namespace Umbraco.Web.PublishedContentModels
 		public string SiteName
 		{
 			get { return this.GetPropertyValue<string>("siteName"); }
-		}
-	}
-
-	/// <summary>EXHIBITIONS</summary>
-	[PublishedContentModel("eXHIBITIONS")]
-	public partial class EXhibitions : PublishedContentModel
-	{
-#pragma warning disable 0109 // new is redundant
-		public new const string ModelTypeAlias = "eXHIBITIONS";
-		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
-#pragma warning restore 0109
-
-		public EXhibitions(IPublishedContent content)
-			: base(content)
-		{ }
-
-#pragma warning disable 0109 // new is redundant
-		public new static PublishedContentType GetModelContentType()
-		{
-			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
-		}
-#pragma warning restore 0109
-
-		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<EXhibitions, TValue>> selector)
-		{
-			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
-		}
-
-		///<summary>
-		/// Content
-		///</summary>
-		[ImplementPropertyType("content")]
-		public Newtonsoft.Json.Linq.JToken Content
-		{
-			get { return this.GetPropertyValue<Newtonsoft.Json.Linq.JToken>("content"); }
 		}
 	}
 

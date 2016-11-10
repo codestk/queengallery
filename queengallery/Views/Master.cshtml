@@ -47,235 +47,244 @@
     <link href="~/Modules/PwsCSS/PwsMenu.css" rel="stylesheet" />
     <!--PwsHover-->
     <link href="~/Modules/PwsCSS/PwsBaseCss.css" rel="stylesheet" />
-    
 
     <link href="~/Modules/PreLoad/fakeLoader.js-master/fakeLoader.css" rel="stylesheet" />
     <script src="~/Modules/PreLoad/fakeLoader.js-master/fakeLoader.js"></script>
 
     <script src="/Modules/PreLoad/PwsPreLoad.js"></script>
 
+    <!--innit Lang -->
+    @{
+    var curNode = Umbraco.TypedContent(Model.Content.Id);
+    string nodeLang = curNode.GetCulture().ToString().ToLower();
+    if (nodeLang == "th-th")
+    {
+    <script src="/js/queengalleryEn.js"></script>
+    //url = "/th";*@
+    } else {
+    <script src="/js/queengalleryTh.js"></script>
+    //url = "/en";
+    }
+    }
+
     <script>
-
-       
-
     </script>
 </head>
 
 <body>
     <!-- Navigation -->
- 
 
-        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-            <div class="container">
-                <!-- Brand and toggle get grouped for better mobile display -->
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="@home.Url">
-                        <div>
-                            @*<div class="brand" style="background-image:url('@(home.SiteLogo)?height=65&width=205&bgcolor=000')"></div>*@
-                            <img src="~/Modules/images/queengallery-logo.png" style="margin-top:-13px;" />
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="@home.Url">
+                    <div>
+                        @*<div class="brand" style="background-image:url('@(home.SiteLogo)?height=65&width=205&bgcolor=000')"></div>*@
+                        <img src="~/Modules/images/queengallery-logo.png" style="margin-top:-13px;" />
+                    </div>
+                </a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <!--  Demo Menu Design -->
+                @*<ul class="nav navbar-nav">
+                    <li>
+                        <a href="#">What's On</a>
+                    </li>
+                    <li>
+                        <a href="#">About Us</a>
+                    </li>
+                    <li>
+                        <a href="#">Visit Us</a>
+                    </li>
+                    <li>
+                        <a href="#">News And Press Released</a>
+                    </li>
+                    <li>
+                        <a href="#">Sponsors</a>
+                    </li>
+                    <li>
+                        <a href="#">  Contact Us</a>
+                    </li>
+                </ul>*@
+                <!--  /Demo Menu Design -->
+                @{ Html.RenderPartial("PwsMenuLevel1"); }
+
+                <!-- Flag -->
+                <div class="clearfix text-right">
+                    <a href="#">
+                        <img src="~/Modules/images/us_flag.png" />
+                    </a>
+                    <a href="#"><img src="~/Modules/images/th_flag.png" /></a>
+                </div>
+                <!-- /Flag -->
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+    <!-- Image Background Page Header -->
+    <!-- Note: The background image is set within the PwsBaseCss.css file. -->
+
+    <header class="business-header" style="display:none">
+        @*<div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="tagline">38th Bualuang Paintings Exhibition</h1>
+                </div>
+                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                    <!-- Indicators -->
+                    <ol class="carousel-indicators">
+                        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                    </ol>
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner" role="listbox">
+                        <div class="item active">
+                            <img src="/media/1051/banner1.jpg" alt="...">
+                            <div class="carousel-caption">
+                                ...
+                            </div>
                         </div>
+                        <div class="item">
+                            <img src="/media/1052/banner2.jpg" alt="...">
+                            <div class="carousel-caption">
+                                ...
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="/media/1053/banner3.jpg" alt="...">
+                            <div class="carousel-caption">
+                                ...
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Controls -->
+                    <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
                     </a>
                 </div>
-                <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <!--  Demo Menu Design -->
-                    @*<ul class="nav navbar-nav">
-                        <li>
-                            <a href="#">What's On</a>
-                        </li>
-                        <li>
-                            <a href="#">About Us</a>
-                        </li>
-                        <li>
-                            <a href="#">Visit Us</a>
-                        </li>
-                        <li>
-                            <a href="#">News And Press Released</a>
-                        </li>
-                        <li>
-                            <a href="#">Sponsors</a>
-                        </li>
-                        <li>
-                            <a href="#">  Contact Us</a>
-                        </li>
-                    </ul>*@
-                    <!--  /Demo Menu Design -->
-                    @{ Html.RenderPartial("PwsMenuLevel1"); }
-
-                    <!-- Flag -->
-                    <div class="clearfix text-right">
-                        <a href="#">
-                            <img src="~/Modules/images/us_flag.png" />
-                        </a>
-                        <a href="#"><img src="~/Modules/images/th_flag.png" /></a>
-                    </div>
-                    <!-- /Flag -->
-                </div>
-                <!-- /.navbar-collapse -->
             </div>
-            <!-- /.container -->
-        </nav>
-        <!-- Image Background Page Header -->
-        <!-- Note: The background image is set within the PwsBaseCss.css file. -->
+        </div>*@
 
-        <header class="business-header" style="display:none">
-            @*<div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <h1 class="tagline">38th Bualuang Paintings Exhibition</h1>
-                    </div>
-                    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-                        <!-- Indicators -->
-                        <ol class="carousel-indicators">
-                            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-                            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-                        </ol>
-                        <!-- Wrapper for slides -->
-                        <div class="carousel-inner" role="listbox">
-                            <div class="item active">
-                                <img src="/media/1051/banner1.jpg" alt="...">
-                                <div class="carousel-caption">
-                                    ...
-                                </div>
+        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+            </ol>
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox">
+                <div class="item active business-header1">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <h1 class="tagline">38th Bualuang Paintings Exhibition</h1>
                             </div>
-                            <div class="item">
-                                <img src="/media/1052/banner2.jpg" alt="...">
-                                <div class="carousel-caption">
-                                    ...
-                                </div>
-                            </div>
-                            <div class="item">
-                                <img src="/media/1053/banner3.jpg" alt="...">
-                                <div class="carousel-caption">
-                                    ...
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Controls -->
-                        <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-                            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-                            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                            <span class="sr-only">Next</span>
-                        </a>
-                    </div>
-                </div>
-            </div>*@
-
-            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-                <!-- Indicators -->
-                <ol class="carousel-indicators">
-                    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-                    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-                </ol>
-                <!-- Wrapper for slides -->
-                <div class="carousel-inner" role="listbox">
-                    <div class="item active business-header1">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-lg-12">
-                                    <h1 class="tagline">38th Bualuang Paintings Exhibition</h1>
-                                </div>
-                                <div class="carousel-caption">
-                                    ...
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item  business-header2">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-lg-12">
-                                    <h1 class="tagline">Crafts from the Hands of the Hills.... To the Hands of the Queen</h1>
-                                </div>
-                                <div class="carousel-caption">
-                                    ...
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item  business-header3">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-lg-12">
-                                    <h1 class="tagline">The 6th Asia Plus Art Contest</h1>
-                                </div>
-                                <div class="carousel-caption">
-                                    ...
-                                </div>
+                            <div class="carousel-caption">
+                                ...
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- Controls -->
-                <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                </a>
+                <div class="item  business-header2">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <h1 class="tagline">Crafts from the Hands of the Hills.... To the Hands of the Queen</h1>
+                            </div>
+                            <div class="carousel-caption">
+                                ...
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item  business-header3">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <h1 class="tagline">The 6th Asia Plus Art Contest</h1>
+                            </div>
+                            <div class="carousel-caption">
+                                ...
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </header>
-        <!-- Page Content -->
-        @RenderBody()
+            <!-- Controls -->
+            <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </header>
+    <!-- Page Content -->
+    @RenderBody()
 
-        @*
-        <!-- jQuery -->
-        <script src="js/jquery.js"></script>*@
-        <!-- Bootstrap Core JavaScript -->
-        @*
-        <script src="js/bootstrap.min.js"></script>*@
-        @*<div style="display:block">  @RenderBody()</div>*@
+    @*
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>*@
+    <!-- Bootstrap Core JavaScript -->
+    @*
+    <script src="js/bootstrap.min.js"></script>*@
+    @*<div style="display:block">  @RenderBody()</div>*@
 
-        <div style="display:none;">
-            <div class="container">
-                <hr>
-                <div class="row">
-                    <div class="col-sm-8">
-                        <h2>Past Exhibitions</h2>
-                        @*<p>Introduce the visitor to the business using clear, informative text. Use well-targeted keywords within your sentences to make sure search engines can find the business.</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et molestiae similique eligendi reiciendis sunt distinctio odit? Quia, neque, ipsa, adipisci quisquam ullam deserunt accusantium illo iste exercitationem nemo voluptates asperiores.</p>*@
+    <div style="display:none;">
+        <div class="container">
+            <hr>
+            <div class="row">
+                <div class="col-sm-8">
+                    <h2>Past Exhibitions</h2>
+                    @*<p>Introduce the visitor to the business using clear, informative text. Use well-targeted keywords within your sentences to make sure search engines can find the business.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et molestiae similique eligendi reiciendis sunt distinctio odit? Quia, neque, ipsa, adipisci quisquam ullam deserunt accusantium illo iste exercitationem nemo voluptates asperiores.</p>*@
 
-                        <p>
-                            Bualuang Foundation cordially invites you to the 38th Bualuang Paintings Exhibition, displaying the total of 71 art pieces including 9 award winning works of art and 62 additional art pieces selected by the judging committee,
-                        </p>
-                        <p> for viewers to grasp artist’s concept of creating masterpieces in 3 categories covering Traditional Thai, Semi-Traditional Thai and Contemporary Paintings, from 17th October – 25th November 2016 at The Queen’s Gallery.  </p>
-                        <p>
-                            @*<a class="btn btn-default btn-lg snip1564" href="#">More &raquo;</a>*@
-                            <a class=" snip1564" href="#">More &raquo;</a>
-                        </p>
-                    </div>
-                    <div class="col-sm-4">
-                        @*<h2>Contact Us</h2>
-                        <address>
-                            <strong>Start Bootstrap</strong>
-                            <br>3481 Melrose Place
-                            <br>Beverly Hills, CA 90210
-                            <br>
-                        </address>
-                        <address>
-                            <abbr title="Phone">P:</abbr>(123) 456-7890
-                            <br>
-                            <abbr title="Email">E:</abbr> <a href="mailto:#">name@example.com</a>
-                        </address>*@
+                    <p>
+                        Bualuang Foundation cordially invites you to the 38th Bualuang Paintings Exhibition, displaying the total of 71 art pieces including 9 award winning works of art and 62 additional art pieces selected by the judging committee,
+                    </p>
+                    <p> for viewers to grasp artist’s concept of creating masterpieces in 3 categories covering Traditional Thai, Semi-Traditional Thai and Contemporary Paintings, from 17th October – 25th November 2016 at The Queen’s Gallery.  </p>
+                    <p>
+                        @*<a class="btn btn-default btn-lg snip1564" href="#">More &raquo;</a>*@
+                        <a class=" snip1564" href="#">More &raquo;</a>
+                    </p>
+                </div>
+                <div class="col-sm-4">
+                    @*<h2>Contact Us</h2>
+                    <address>
+                        <strong>Start Bootstrap</strong>
+                        <br>3481 Melrose Place
+                        <br>Beverly Hills, CA 90210
+                        <br>
+                    </address>
+                    <address>
+                        <abbr title="Phone">P:</abbr>(123) 456-7890
+                        <br>
+                        <abbr title="Email">E:</abbr> <a href="mailto:#">name@example.com</a>
+                    </address>*@
 
-                        <!--FaceBook-->
-                        @*<iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fqueengallerybkk&tabs&width=360&height=214&small_header=false&adapt_container_width=false&hide_cover=false&show_facepile=true&appId" width="360" height="214" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>*@
+                    <!--FaceBook-->
+                    @*<iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fqueengallerybkk&tabs&width=360&height=214&small_header=false&adapt_container_width=false&hide_cover=false&show_facepile=true&appId" width="360" height="214" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>*@
 
-                        <div id="fb-root"></div>
-                        <script>
+                    <div id="fb-root"></div>
+                    <script>
                         (function (d, s, id) {
                             var js, fjs = d.getElementsByTagName(s)[0];
                             if (d.getElementById(id)) return;
@@ -283,81 +292,50 @@
                             js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.8";
                             fjs.parentNode.insertBefore(js, fjs);
                         }(document, 'script', 'facebook-jssdk'));</script>
-                        <div class="fb-page  " data-href="https://www.facebook.com/queengallerybkk/" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/queengallerybkk/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/queengallerybkk/">หอศิลป์สมเด็จพระนางเจ้าสิริกิติ์ พระบรมราชินีนาถ The Queen&#039;s Gallery</a></blockquote></div>
-                        <!-- /FaceBook-->
-                    </div> <!-- /.col-sm-4 -->
-                </div>
-                <!-- /.row -->
-                <hr>
-                <div class="row">
-                    <div class="col-sm-4 ">
-                        <figure class="snip1554">
-                            <img class="img-circle img-responsive img-center" src="/media/1059/wiranya300.png">
-                            @*<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample104.jpg" alt="sample104" />*@
-                            <figcaption>
-                                <h3> </h3>
-                            </figcaption>
-                            <a href="#"></a>
-                        </figure>
-                        <h2>Marketing Box #1</h2>
-                        <p>These marketing boxes are a great place to put some information. These can contain summaries of what the company does, promotional information, or anything else that is relevant to the company. These will usually be below-the-fold.</p>
-                    </div>
-                    <div class="col-sm-4">
-                        <figure class="snip1554">
-                            <img class="img-circle img-responsive img-center" src="/media/1057/yanawit300.png" alt="">
-                            @*<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample104.jpg" alt="sample104" />*@
-                            <figcaption>
-                                <h3> </h3>
-                            </figcaption>
-                            <a href="#"></a>
-                        </figure>
-                        <h2>Marketing Box #2</h2>
-                        <p>The images are set to be circular and responsive. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p>
-                    </div>
-                    <div class="col-sm-4">
-                        <figure class="snip1554">
-                            <img class="img-circle img-responsive img-center" src="/media/1058/vichoke300.png" alt="">
-                            @*<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample104.jpg" alt="sample104" />*@
-                            <figcaption>
-                                <h3> </h3>
-                            </figcaption>
-                            <a href="#"></a>
-                        </figure>
-                        <h2>Marketing Box #3</h2>
-                        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p>
-                    </div>
-                </div>
-                <!-- /.row -->
-                <hr>
-                <!-- Footer -->
-                <footer>
-                    <div class="row">
-                        <div class="col-lg-7">
-                            <strong>
-                                <span>The Queen's Gallery</span>
-                            </strong>
-                            <p>
-                                <span>101 Ratchadamnoen Klang Road, Borwonniwet, Phra Nakhon, Bangkok 10200 THAILAND</span><br>
-                                <span>Contact us via</span>
-                                <a href="mailto:info@queengallery.org">info@queengallery.org</a>
-                            </p>
-                        </div>
-                        <div class="col-lg-5">
-                            <div class="logoHover right">
-                                <img src="/media/1065/logo-bangkokbank.png">
-                                <img src="/media/1064/logo-microsoft.png">
-                                <img src="/media/1063/logo-ricoh.png">
-                            </div>
-                            @*<img src="/Images/logo_microsoft.png" width="90px"><img src="/Images/logo_ricoh.png" width="80px"><img src="/Images/logo_eight.png">*@
-                        </div>
-                    </div>
-                    <!-- /.row -->
-                </footer>
+                    <div class="fb-page  " data-href="https://www.facebook.com/queengallerybkk/" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/queengallerybkk/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/queengallerybkk/">หอศิลป์สมเด็จพระนางเจ้าสิริกิติ์ พระบรมราชินีนาถ The Queen&#039;s Gallery</a></blockquote></div>
+                    <!-- /FaceBook-->
+                </div> <!-- /.col-sm-4 -->
             </div>
-        </div>
-        <!-- /.container -->
-        <!-- Footer-->
-        <div class="container">
+            <!-- /.row -->
+            <hr>
+            <div class="row">
+                <div class="col-sm-4 ">
+                    <figure class="snip1554">
+                        <img class="img-circle img-responsive img-center" src="/media/1059/wiranya300.png">
+                        @*<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample104.jpg" alt="sample104" />*@
+                        <figcaption>
+                            <h3> </h3>
+                        </figcaption>
+                        <a href="#"></a>
+                    </figure>
+                    <h2>Marketing Box #1</h2>
+                    <p>These marketing boxes are a great place to put some information. These can contain summaries of what the company does, promotional information, or anything else that is relevant to the company. These will usually be below-the-fold.</p>
+                </div>
+                <div class="col-sm-4">
+                    <figure class="snip1554">
+                        <img class="img-circle img-responsive img-center" src="/media/1057/yanawit300.png" alt="">
+                        @*<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample104.jpg" alt="sample104" />*@
+                        <figcaption>
+                            <h3> </h3>
+                        </figcaption>
+                        <a href="#"></a>
+                    </figure>
+                    <h2>Marketing Box #2</h2>
+                    <p>The images are set to be circular and responsive. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p>
+                </div>
+                <div class="col-sm-4">
+                    <figure class="snip1554">
+                        <img class="img-circle img-responsive img-center" src="/media/1058/vichoke300.png" alt="">
+                        @*<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample104.jpg" alt="sample104" />*@
+                        <figcaption>
+                            <h3> </h3>
+                        </figcaption>
+                        <a href="#"></a>
+                    </figure>
+                    <h2>Marketing Box #3</h2>
+                    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p>
+                </div>
+            </div>
             <!-- /.row -->
             <hr>
             <!-- Footer -->
@@ -385,10 +363,39 @@
                 <!-- /.row -->
             </footer>
         </div>
-    
+    </div>
+    <!-- /.container -->
+    <!-- Footer-->
+    <div class="container">
+        <!-- /.row -->
+        <hr>
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-7">
+                    <strong>
+                        <span>The Queen's Gallery</span>
+                    </strong>
+                    <p>
+                        <span>101 Ratchadamnoen Klang Road, Borwonniwet, Phra Nakhon, Bangkok 10200 THAILAND</span><br>
+                        <span>Contact us via</span>
+                        <a href="mailto:info@queengallery.org">info@queengallery.org</a>
+                    </p>
+                </div>
+                <div class="col-lg-5">
+                    <div class="logoHover right">
+                        <img src="/media/1065/logo-bangkokbank.png">
+                        <img src="/media/1064/logo-microsoft.png">
+                        <img src="/media/1063/logo-ricoh.png">
+                    </div>
+                    @*<img src="/Images/logo_microsoft.png" width="90px"><img src="/Images/logo_ricoh.png" width="80px"><img src="/Images/logo_eight.png">*@
+                </div>
+            </div>
+            <!-- /.row -->
+        </footer>
+    </div>
+
     <!-- /.Preload -->
     <div id="fakeLoader" class="fakeloader" style="z-index:10"></div>
 </body>
-  
-
 </html>

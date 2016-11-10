@@ -33,6 +33,7 @@
 
     function initEvent() {
         $('#aPast').on('click', function (event) {
+
             event.preventDefault();
 
             RenderList();
@@ -93,7 +94,7 @@
                     PageIndex = '0' + event;
                 }
                 else {
-                    PageIndex = event; 
+                    PageIndex = event;
                 }
                 //-Set Global Page
                 RenderList();
