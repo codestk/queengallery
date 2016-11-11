@@ -10,6 +10,7 @@ var node = new umbraco.NodeFactory.Node(1122);
 var serializer = new System.Web.Script.Serialization.JavaScriptSerializer();
 var media = Umbraco.Media(1080).Children();
 *@
+
 @{
 
 var serializer = new System.Web.Script.Serialization.JavaScriptSerializer();
@@ -28,32 +29,48 @@ var serializer = new System.Web.Script.Serialization.JavaScriptSerializer();
         //string filter =$"imageName.ToLower() = \"{nameLower}.jpg\"";
         //var items = Umbraco.Media(mediaID).Children().Where(filter);
 
-        @*var items =  Umbraco.Media(1122).Children().OrderBy("CreateDate descending");*@
+        @*var items = Umbraco.Media(1122).Children().OrderBy("CreateDate descending");*@
 
- var values = new Dictionary<string,object>
+ var valuesFilter = new Dictionary<string,object>
     ();
     @*values.Add("queryStartDate", DateTime.Parse(Request["queryStartDate"])) ;
     values.Add("queryEndDate", DateTime.Parse(Request["queryEndDate"])) ;*@
-    values.Add("queryStartDate", DateTime.Parse("11/11/2000")) ;
-    values.Add("queryEndDate",DateTime.Parse("11/11/2018")) ;
+    @*valuesFilter.Add("queryStartDate", DateTime.Parse("11/11/2000")) ;
+    valuesFilter.Add("queryEndDate",DateTime.Parse("11/11/2018")) ;*@
 
     string condition="from > queryStartDate && from < queryEndDate";
+    string sort="to descending";
+    int blogId=1122;
+    @*var items = (dynamic) null;*@
 
-    dynamic items=null;
+    var items = (dynamic)null;
+    @*var items = Umbraco.Content(1122).Children().OrderBy("CreateDate descending");*@
+    @*var items = Umbraco.Content(1122).Children();*@
+    @*items = Umbraco.Content(1122).Children().OrderBy("CreateDate descending");*@
 
+    @*items = Umbraco.Content(blogId).Children().OrderBy(sort); All *@
     if (Type=="OnView")
     {
-    items = Umbraco.Content(1122).Children().OrderBy("CreateDate descending");
+    condition ="(from <= Todate) || (to >= Todate)";
+    valuesFilter.Add("Todate", DateTime.Now) ;
+    items =  Umbraco.Content(blogId).Children().Where(condition,valuesFilter).OrderBy(sort);
     }else if (Type=="Upcoming")
     {
-    items =  Umbraco.Content(1122).Children().Where(condition,values).OrderBy("CreateDate descending");
+    @*All*@
+    condition ="from > Todate";
+    valuesFilter.Add("Todate", DateTime.Now) ;
+    items =  Umbraco.Content(blogId).Children().Where(condition,valuesFilter).OrderBy(sort);
     }
     else if (Type=="Past")
     {
-    items = Umbraco.Content(1122).Children().OrderBy("CreateDate descending");
+    condition ="from < Todate";
+    valuesFilter.Add("Todate", DateTime.Now) ;
+    items =  Umbraco.Content(blogId).Children().Where(condition,valuesFilter).OrderBy(sort);
     }
 
-    @*var items =  Umbraco.Media(1122).Children();*@
+    @*var items = Umbraco.Media(1122).Children().OrderBy("CreateDate descending");*@
+    @*var items = Umbraco.Content(1122).Children().OrderBy("CreateDate descending"); Work*@
+
     var totalPages =(int)Math.Ceiling((double)items.Count()/(double)pageSize);
 
     if(page > totalPages)
@@ -83,4 +100,5 @@ var serializer = new System.Web.Script.Serialization.JavaScriptSerializer();
         @*@Html.Raw(serializer.Serialize(node.Properties));*@
 
         @*Json*@
+
         @Html.Raw(serializer.Serialize(jsonDataList))
