@@ -25,70 +25,58 @@
 <script>
 
     $(document).ready(function () {
-
+        menuType = 'OnView';
         initEvent();
         //  Preload();
         //Render List
-
         //SetPagger2();
-
         RenderList();
     });
 
     //$(window).load(function () {
-    //    // Animate loader off screen
+    //    //Animate loader off screen
     //    blurElement("body", 0)
     //});
 
     function SetActiveLeftMenu(aTag) {
-
         $('.list-group a').removeClass('active');
         $(aTag).addClass('active');
     }
 
     function initEvent() {
 
-        $('#aOnView').on('click', function (event) {
+        //Left Menu Event
+        $('#aOnView,#aPast,#aUpcoming').on('click', function (event) {
+
+            //Get Attibute A data-type
+            menuType = $(this).attr('data-type');
+            aEvent(this);
+        });
+
+        function aEvent(aTagObject) {
             SetActiveLeftMenu(this);
-
             event.preventDefault();
-
             PageIndex = '1';
-
             RenderList();
-
-        });
-
-        $('#aPast').on('click', function (event) {
-            SetActiveLeftMenu(this);
-
-            event.preventDefault();
-
-            PageIndex = '1';
-
-            RenderList();
-
-        });
-        $('#aUpcoming').on('click', function (event) {
-            SetActiveLeftMenu(this);
-            event.preventDefault();
-        });
+            SetActiveLeftMenu(aTagObject);
+        }
 
     };
 
     var PageIndex = '1';
     var PageSize = '10';
+    var menuType = '';
 
     function RenderList() {
 
         //Render List
-        var url = 'RazorJson?page=' + PageIndex;
+        var url = 'RazorJson?page=' + PageIndex + '&Type=' + menuType;
         Preload();
         CallServices(url, '', true, function (msg) {
 
             //Reder Data ListTemplate
+            //console.log(msg);
 
-            console.log(msg);
             SetList(msg[0]);
 
             SetPagger(msg[1].RecordCount);
@@ -166,11 +154,10 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-3">
-
                     <div class="list-group">
-                        <a href="#" id="aOnView" class="list-group-item active">On View</a>
-                        <a href="#" id="aUpcoming" class="list-group-item">Upcoming</a>
-                        <a href="#" id="aPast" class="list-group-item">Past</a>
+                        <a href="#" id="aOnView" data-type="OnView" class="list-group-item active">On View</a>
+                        <a href="#" id="aUpcoming" data-type="Upcoming" class="list-group-item">Upcoming</a>
+                        <a href="#" id="aPast" data-type="Past" class="list-group-item">Past</a>
                     </div>
                 </div>
                 <div class="col-md-9">
