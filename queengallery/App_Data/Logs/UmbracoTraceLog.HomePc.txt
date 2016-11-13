@@ -1,631 +1,270 @@
-﻿ 2016-11-10 20:30:43,842 [P13108/D2/T1] INFO  Umbraco.Core.CoreBootManager - Umbraco 7.5.4 application starting on HOMEPC
- 2016-11-10 20:30:43,894 [P13108/D2/T1] INFO  Umbraco.Core.PluginManager - Determining hash of code files on disk
- 2016-11-10 20:30:43,926 [P13108/D2/T1] INFO  Umbraco.Core.PluginManager - Hash determined (took 32ms)
- 2016-11-10 20:30:44,103 [P13108/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of umbraco.interfaces.IApplicationStartupHandler
- 2016-11-10 20:30:45,136 [P13108/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 0 (took 1032ms)
- 2016-11-10 20:30:45,183 [P13108/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter
- 2016-11-10 20:30:45,199 [P13108/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 15ms)
- 2016-11-10 20:30:45,200 [P13108/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyValueConverter
- 2016-11-10 20:30:45,220 [P13108/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyValueConverter, found 0 (took 19ms)
- 2016-11-10 20:30:45,268 [P13108/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Web.Mvc.SurfaceController
- 2016-11-10 20:30:45,289 [P13108/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 0 (took 20ms)
- 2016-11-10 20:30:45,291 [P13108/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Web.WebApi.UmbracoApiController
- 2016-11-10 20:30:45,312 [P13108/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Web.WebApi.UmbracoApiController, found 0 (took 21ms)
- 2016-11-10 20:30:45,451 [P13108/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.Media.IThumbnailProvider
- 2016-11-10 20:30:45,467 [P13108/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 0 (took 16ms)
- 2016-11-10 20:30:45,469 [P13108/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.Media.IImageUrlProvider
- 2016-11-10 20:30:45,485 [P13108/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 0 (took 15ms)
- 2016-11-10 20:30:49,272 [P13108/D2/T1] INFO  Umbraco.Core.DatabaseContext - CanConnect = True
- 2016-11-10 20:30:50,260 [P13108/D2/T1] INFO  Umbraco.Core.DatabaseContext - CanConnect = True
- 2016-11-10 20:30:50,375 [P13108/D2/T1] INFO  Umbraco.Core.DatabaseContext - CanConnect = True
- 2016-11-10 20:30:50,667 [P13108/D2/T1] INFO  Umbraco.Web.Cache.CacheRefresherEventHandler - Initializing Umbraco internal event handlers for cache refreshing
- 2016-11-10 20:30:51,005 [P13108/D2/T1] INFO  Umbraco.Web.Search.ExamineEvents - Initializing Examine and binding to business logic events
- 2016-11-10 20:30:51,006 [P13108/D2/T1] INFO  Umbraco.Web.Search.ExamineEvents - Adding examine event handlers for index providers: 3
- 2016-11-10 20:30:51,041 [P13108/D2/T1] INFO  Umbraco.Core.CoreBootManager - Umbraco application startup complete (took 7408ms)
- 2016-11-10 20:30:51,419 [P13108/D2/T7] INFO  Umbraco.Core.Sync.ApplicationUrlHelper - ApplicationUrl: http://localhost:17606/umbraco (UmbracoModule request)
- 2016-11-10 20:30:51,939 [P13108/D2/T7] INFO  umbraco.content - Load Xml from file...
- 2016-11-10 20:30:51,954 [P13108/D2/T7] INFO  umbraco.content - Loaded Xml from file.
- 2016-11-10 20:30:52,635 [P13108/D2/T7] INFO  Umbraco.Core.PluginManager - Starting resolution types of umbraco.interfaces.ICacheRefresher
- 2016-11-10 20:30:52,680 [P13108/D2/T7] INFO  Umbraco.Core.PluginManager - Completed resolution of types of umbraco.interfaces.ICacheRefresher, found 0 (took 45ms)
- 2016-11-10 20:30:55,055 [P13108/D2/T7] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.PropertyEditors.IParameterEditor
- 2016-11-10 20:30:55,083 [P13108/D2/T7] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.PropertyEditors.IParameterEditor, found 0 (took 27ms)
- 2016-11-10 20:30:58,066 [P13108/D2/T7] INFO  umbraco.content - Loading content from database...
- 2016-11-10 20:31:04,853 [P13108/D2/T17] INFO  umbraco.content - Save Xml to file...
- 2016-11-10 20:31:04,872 [P13108/D2/T17] INFO  umbraco.content - Saved Xml to file.
- 2016-11-10 20:31:07,154 [P13108/D2/T7] ERROR umbraco.DataLayer.SqlHelper`1[[System.Data.SqlServerCe.SqlCeParameter, System.Data.SqlServerCe, Version=4.0.0.1, Culture=neutral, PublicKeyToken=89845dcd8080cc91]] - Error executing query select xml from cmsContentXml where nodeID = 1122
-System.ArgumentException: The query didn't return a value.
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, P[] parameters)
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, IParameter[] parameters)
- 2016-11-10 20:31:07,168 [P13108/D2/T7] ERROR Umbraco.Core.Sync.DatabaseServerMessenger - DISTRIBUTED CACHE IS NOT UPDATED. Failed to execute instructions (645: "[{"RefreshType":3,"RefresherId":"27ab3022-3dfa-47b6-9119-5945bc88fd66","GuidId":"00000000-0000-0000-0000-000000000000","IntId":0,"JsonIds":"[1122,1167,1177,1164,1183,1182,1130,1181,1176,1186,1180,1179,1178,1192,1191,1190,1189,1188,1187,1185,1184,1198,1197,1196,1195,1194,1193]","JsonPayload":null}]"). Instruction is being skipped/ignored
-umbraco.DataLayer.SqlHelperException: Umbraco Exception (DataLayer): SQL helper exception in ExecuteXmlReader ---> System.ArgumentException: The query didn't return a value.
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, P[] parameters)
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, IParameter[] parameters)
-   --- End of inner exception stack trace ---
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, IParameter[] parameters)
-   at umbraco.cms.businesslogic.web.Document.importXml()
-   at umbraco.cms.businesslogic.web.Document.ToXml(XmlDocument xd, Boolean Deep)
-   at umbraco.content.PublishNodeDo(Document d, XmlDocument xmlContentCopy, Boolean updateSitemapProvider)
-   at umbraco.content.UpdateDocumentCache(Document d)
-   at umbraco.content.UpdateDocumentCache(Int32 pageId)
-   at Umbraco.Web.Cache.PageCacheRefresher.Refresh(Int32 id)
-   at Umbraco.Core.Sync.DatabaseServerMessenger.RefreshByIds(Guid uniqueIdentifier, String jsonIds)
-   at Umbraco.Core.Sync.DatabaseServerMessenger.NotifyRefreshers(IEnumerable`1 jsonArray)
-   at Umbraco.Core.Sync.DatabaseServerMessenger.ProcessDatabaseInstructions()
- 2016-11-10 20:31:07,292 [P13108/D2/T7] ERROR umbraco.DataLayer.SqlHelper`1[[System.Data.SqlServerCe.SqlCeParameter, System.Data.SqlServerCe, Version=4.0.0.1, Culture=neutral, PublicKeyToken=89845dcd8080cc91]] - Error executing query select xml from cmsContentXml where nodeID = 1122
-System.ArgumentException: The query didn't return a value.
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, P[] parameters)
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, IParameter[] parameters)
- 2016-11-10 20:31:07,293 [P13108/D2/T7] ERROR Umbraco.Core.Sync.DatabaseServerMessenger - DISTRIBUTED CACHE IS NOT UPDATED. Failed to execute instructions (646: "[{"RefreshType":3,"RefresherId":"55698352-dfc5-4dbe-96bd-a4a0f6f77145","GuidId":"00000000-0000-0000-0000-000000000000","IntId":0,"JsonIds":"[1122]","JsonPayload":null},{"RefreshType":3,"RefresherId":"27ab3022-3dfa-47b6-9119-5945bc88fd66","GuidId":"00000000-0000-0000-0000-000000000000","IntId":0,"JsonIds":"[1122]","JsonPayload":null},{"RefreshType":3,"RefresherId":"55698352-dfc5-4dbe-96bd-a4a0f6f77145","GuidId":"00000000-0000-0000-0000-000000000000","IntId":0,"JsonIds":"[1167]","JsonPayload":null},{"RefreshType":3,"RefresherId":"27ab3022-3dfa-47b6-9119-5945bc88fd66","GuidId":"00000000-0000-0000-0000-000000000000","IntId":0,"JsonIds":"[1167]","JsonPayload":null},{"RefreshType":3,"RefresherId":"55698352-dfc5-4dbe-96bd-a4a0f6f77145","GuidId":"00000000-0000-0000-0000-000000000000","IntId":0,"JsonIds":"[1177]","JsonPayload":null},{"RefreshType":3,"RefresherId":"27ab3022-3dfa-47b6-9119-5945bc88fd66","GuidId":"00000000-0000-0000-0000-000000000000","IntId":0,"JsonIds":"[1177]","JsonPayload":null},{"RefreshType":3,"RefresherId":"55698352-dfc5-4dbe-96bd-a4a0f6f77145","GuidId":"00000000-0000-0000-0000-000000000000","IntId":0,"JsonIds":"[1164]","JsonPayload":null},{"RefreshType":3,"RefresherId":"27ab3022-3dfa-47b6-9119-5945bc88fd66","GuidId":"00000000-0000-0000-0000-000000000000","IntId":0,"JsonIds":"[1164]","JsonPayload":null},{"RefreshType":3,"RefresherId":"55698352-dfc5-4dbe-96bd-a4a0f6f77145","GuidId":"00000000-0000-0000-0000-000000000000","IntId":0,"JsonIds":"[1183]","JsonPayload":null},{"RefreshType":3,"RefresherId":"27ab3022-3dfa-47b6-9119-5945bc88fd66","GuidId":"00000000-0000-0000-0000-000000000000","IntId":0,"JsonIds":"[1183]","JsonPayload":null},{"RefreshType":3,"RefresherId":"55698352-dfc5-4dbe-96bd-a4a0f6f77145","GuidId":"00000000-0000-0000-0000-000000000000","IntId":0,"JsonIds":"[1182]","JsonPayload":null},{"RefreshType":3,"RefresherId":"27ab3022-3dfa-47b6-9119-5945bc88fd66","GuidId":"00000000-0000-0000-0000-000000000000","IntId":0,"JsonIds":"[1182]","JsonPayload":null},{"RefreshType":3,"RefresherId":"55698352-dfc5-4dbe-96bd-a4a0f6f77145","GuidId":"00000000-0000-0000-0000-000000000000","IntId":0,"JsonIds":"[1130]","JsonPayload":null},{"RefreshType":3,"RefresherId":"27ab3022-3dfa-47b6-9119-5945bc88fd66","GuidId":"00000000-0000-0000-0000-000000000000","IntId":0,"JsonIds":"[1130]","JsonPayload":null},{"RefreshType":3,"RefresherId":"55698352-dfc5-4dbe-96bd-a4a0f6f77145","GuidId":"00000000-0000-0000-0000-000000000000","IntId":0,"JsonIds":"[1181]","JsonPayload":null},{"RefreshType":3,"RefresherId":"27ab3022-3dfa-47b6-9119-5945bc88fd66","GuidId":"00000000-0000-0000-0000-000000000000","IntId":0,"JsonIds":"[1181]","JsonPayload":null},{"RefreshType":3,"RefresherId":"55698352-dfc5-4dbe-96bd-a4a0f6f77145","GuidId":"00000000-0000-0000-0000-000000000000","IntId":0,"JsonIds":"[1176]","JsonPayload":null},{"RefreshType":3,"RefresherId":"27ab3022-3dfa-47b6-9119-5945bc88fd66","GuidId":"00000000-0000-0000-0000-000000000000","IntId":0,"JsonIds":"[1176]","JsonPayload":null},{"RefreshType":3,"RefresherId":"55698352-dfc5-4dbe-96bd-a4a0f6f77145","GuidId":"00000000-0000-0000-0000-000000000000","IntId":0,"JsonIds":"[1186]","JsonPayload":null},{"RefreshType":3,"RefresherId":"27ab3022-3dfa-47b6-9119-5945bc88fd66","GuidId":"00000000-0000-0000-0000-000000000000","IntId":0,"JsonIds":"[1186]","JsonPayload":null},{"RefreshType":3,"RefresherId":"55698352-dfc5-4dbe-96bd-a4a0f6f77145","GuidId":"00000000-0000-0000-0000-000000000000","IntId":0,"JsonIds":"[1180]","JsonPayload":null},{"RefreshType":3,"RefresherId":"27ab3022-3dfa-47b6-9119-5945bc88fd66","GuidId":"00000000-0000-0000-0000-000000000000","IntId":0,"JsonIds":"[1180]","JsonPayload":null},{"RefreshType":3,"RefresherId":"55698352-dfc5-4dbe-96bd-a4a0f6f77145","GuidId":"00000000-0000-0000-0000-000000000000","IntId":0,"JsonIds":"[1179]","JsonPayload":null},{"RefreshType":3,"RefresherId":"27ab3022-3dfa-47b6-9119-5945bc88fd66","GuidId":"00000000-0000-0000-0000-000000000000","IntId":0,"JsonIds":"[1179]","JsonPayload":null},{"RefreshType":3,"RefresherId":"55698352-dfc5-4dbe-96bd-a4a0f6f77145","GuidId":"00000000-0000-0000-0000-000000000000","IntId":0,"JsonIds":"[1178]","JsonPayload":null},{"RefreshType":3,"RefresherId":"27ab3022-3dfa-47b6-9119-5945bc88fd66","GuidId":"00000000-0000-0000-0000-000000000000","IntId":0,"JsonIds":"[1178]","JsonPayload":null},{"RefreshType":3,"RefresherId":"55698352-dfc5-4dbe-96bd-a4a0f6f77145","GuidId":"00000000-0000-0000-0000-000000000000","IntId":0,"JsonIds":"[1192]","JsonPayload":null},{"RefreshType":3,"RefresherId":"27ab3022-3dfa-47b6-9119-5945bc88fd66","GuidId":"00000000-0000-0000-0000-000000000000","IntId":0,"JsonIds":"[1192]","JsonPayload":null},{"RefreshType":3,"RefresherId":"55698352-dfc5-4dbe-96bd-a4a0f6f77145","GuidId":"00000000-0000-0000-0000-000000000000","IntId":0,"JsonIds":"[1191]","JsonPayload":null},{"RefreshType":3,"RefresherId":"27ab3022-3dfa-47b6-9119-5945bc88fd66","GuidId":"00000000-0000-0000-0000-000000000000","IntId":0,"JsonIds":"[1191]","JsonPayload":null},{"RefreshType":3,"RefresherId":"55698352-dfc5-4dbe-96bd-a4a0f6f77145","GuidId":"00000000-0000-0000-0000-000000000000","IntId":0,"JsonIds":"[1190]","JsonPayload":null},{"RefreshType":3,"RefresherId":"27ab3022-3dfa-47b6-9119-5945bc88fd66","GuidId":"00000000-0000-0000-0000-000000000000","IntId":0,"JsonIds":"[1190]","JsonPayload":null},{"RefreshType":3,"RefresherId":"55698352-dfc5-4dbe-96bd-a4a0f6f77145","GuidId":"00000000-0000-0000-0000-000000000000","IntId":0,"JsonIds":"[1189]","JsonPayload":null},{"RefreshType":3,"RefresherId":"27ab3022-3dfa-47b6-9119-5945bc88fd66","GuidId":"00000000-0000-0000-0000-000000000000","IntId":0,"JsonIds":"[1189]","JsonPayload":null},{"RefreshType":3,"RefresherId":"55698352-dfc5-4dbe-96bd-a4a0f6f77145","GuidId":"00000000-0000-0000-0000-000000000000","IntId":0,"JsonIds":"[1188]","JsonPayload":null},{"RefreshType":3,"RefresherId":"27ab3022-3dfa-47b6-9119-5945bc88fd66","GuidId":"00000000-0000-0000-0000-000000000000","IntId":0,"JsonIds":"[1188]","JsonPayload":null},{"RefreshType":3,"RefresherId":"55698352-dfc5-4dbe-96bd-a4a0f6f77145","GuidId":"00000000-0000-0000-0000-000000000000","IntId":0,"JsonIds":"[1187]","JsonPayload":null},{"RefreshType":3,"RefresherId":"27ab3022-3dfa-47b6-9119-5945bc88fd66","GuidId":"00000000-0000-0000-0000-000000000000","IntId":0,"JsonIds":"[1187]","JsonPayload":null},{"RefreshType":3,"RefresherId":"55698352-dfc5-4dbe-96bd-a4a0f6f77145","GuidId":"00000000-0000-0000-0000-000000000000","IntId":0,"JsonIds":"[1185]","JsonPayload":null},{"RefreshType":3,"RefresherId":"27ab3022-3dfa-47b6-9119-5945bc88fd66","GuidId":"00000000-0000-0000-0000-000000000000","IntId":0,"JsonIds":"[1185]","JsonPayload":null},{"RefreshType":3,"RefresherId":"55698352-dfc5-4dbe-96bd-a4a0f6f77145","GuidId":"00000000-0000-0000-0000-000000000000","IntId":0,"JsonIds":"[1184]","JsonPayload":null},{"RefreshType":3,"RefresherId":"27ab3022-3dfa-47b6-9119-5945bc88fd66","GuidId":"00000000-0000-0000-0000-000000000000","IntId":0,"JsonIds":"[1184]","JsonPayload":null},{"RefreshType":3,"RefresherId":"55698352-dfc5-4dbe-96bd-a4a0f6f77145","GuidId":"00000000-0000-0000-0000-000000000000","IntId":0,"JsonIds":"[1198]","JsonPayload":null},{"RefreshType":3,"RefresherId":"27ab3022-3dfa-47b6-9119-5945bc88fd66","GuidId":"00000000-0000-0000-0000-000000000000","IntId":0,"JsonIds":"[1198]","JsonPayload":null},{"RefreshType":3,"RefresherId":"55698352-dfc5-4dbe-96bd-a4a0f6f77145","GuidId":"00000000-0000-0000-0000-000000000000","IntId":0,"JsonIds":"[1197]","JsonPayload":null},{"RefreshType":3,"RefresherId":"27ab3022-3dfa-47b6-9119-5945bc88fd66","GuidId":"00000000-0000-0000-0000-000000000000","IntId":0,"JsonIds":"[1197]","JsonPayload":null},{"RefreshType":3,"RefresherId":"55698352-dfc5-4dbe-96bd-a4a0f6f77145","GuidId":"00000000-0000-0000-0000-000000000000","IntId":0,"JsonIds":"[1196]","JsonPayload":null},{"RefreshType":3,"RefresherId":"27ab3022-3dfa-47b6-9119-5945bc88fd66","GuidId":"00000000-0000-0000-0000-000000000000","IntId":0,"JsonIds":"[1196]","JsonPayload":null},{"RefreshType":3,"RefresherId":"55698352-dfc5-4dbe-96bd-a4a0f6f77145","GuidId":"00000000-0000-0000-0000-000000000000","IntId":0,"JsonIds":"[1195]","JsonPayload":null},{"RefreshType":3,"RefresherId":"27ab3022-3dfa-47b6-9119-5945bc88fd66","GuidId":"00000000-0000-0000-0000-000000000000","IntId":0,"JsonIds":"[1195]","JsonPayload":null},{"RefreshType":3,"RefresherId":"55698352-dfc5-4dbe-96bd-a4a0f6f77145","GuidId":"00000000-0000-0000-0000-000000000000","IntId":0,"JsonIds":"[1194]","JsonPayload":null},{"RefreshType":3,"RefresherId":"27ab3022-3dfa-47b6-9119-5945bc88fd66","GuidId":"00000000-0000-0000-0000-000000000000","IntId":0,"JsonIds":"[1194]","JsonPayload":null},{"RefreshType":3,"RefresherId":"55698352-dfc5-4dbe-96bd-a4a0f6f77145","GuidId":"00000000-0000-0000-0000-000000000000","IntId":0,"JsonIds":"[1193]","JsonPayload":null},{"RefreshType":3,"RefresherId":"27ab3022-3dfa-47b6-9119-5945bc88fd66","GuidId":"00000000-0000-0000-0000-000000000000","IntId":0,"JsonIds":"[1193]","JsonPayload":null}]"). Instruction is being skipped/ignored
-umbraco.DataLayer.SqlHelperException: Umbraco Exception (DataLayer): SQL helper exception in ExecuteXmlReader ---> System.ArgumentException: The query didn't return a value.
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, P[] parameters)
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, IParameter[] parameters)
-   --- End of inner exception stack trace ---
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, IParameter[] parameters)
-   at umbraco.cms.businesslogic.web.Document.importXml()
-   at umbraco.cms.businesslogic.web.Document.ToXml(XmlDocument xd, Boolean Deep)
-   at umbraco.content.PublishNodeDo(Document d, XmlDocument xmlContentCopy, Boolean updateSitemapProvider)
-   at umbraco.content.UpdateDocumentCache(Document d)
-   at umbraco.content.UpdateDocumentCache(Int32 pageId)
-   at Umbraco.Web.Cache.PageCacheRefresher.Refresh(Int32 id)
-   at Umbraco.Core.Sync.DatabaseServerMessenger.RefreshByIds(Guid uniqueIdentifier, String jsonIds)
-   at Umbraco.Core.Sync.DatabaseServerMessenger.NotifyRefreshers(IEnumerable`1 jsonArray)
-   at Umbraco.Core.Sync.DatabaseServerMessenger.ProcessDatabaseInstructions()
- 2016-11-10 20:31:07,559 [P13108/D2/T7] ERROR umbraco.DataLayer.SqlHelper`1[[System.Data.SqlServerCe.SqlCeParameter, System.Data.SqlServerCe, Version=4.0.0.1, Culture=neutral, PublicKeyToken=89845dcd8080cc91]] - Error executing query select xml from cmsContentXml where nodeID = 1167
-System.ArgumentException: The query didn't return a value.
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, P[] parameters)
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, IParameter[] parameters)
- 2016-11-10 20:31:07,559 [P13108/D2/T7] ERROR Umbraco.Core.Sync.DatabaseServerMessenger - DISTRIBUTED CACHE IS NOT UPDATED. Failed to execute instructions (648: "[{"RefreshType":3,"RefresherId":"55698352-dfc5-4dbe-96bd-a4a0f6f77145","GuidId":"00000000-0000-0000-0000-000000000000","IntId":0,"JsonIds":"[1167]","JsonPayload":null},{"RefreshType":3,"RefresherId":"27ab3022-3dfa-47b6-9119-5945bc88fd66","GuidId":"00000000-0000-0000-0000-000000000000","IntId":0,"JsonIds":"[1167]","JsonPayload":null}]"). Instruction is being skipped/ignored
-umbraco.DataLayer.SqlHelperException: Umbraco Exception (DataLayer): SQL helper exception in ExecuteXmlReader ---> System.ArgumentException: The query didn't return a value.
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, P[] parameters)
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, IParameter[] parameters)
-   --- End of inner exception stack trace ---
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, IParameter[] parameters)
-   at umbraco.cms.businesslogic.web.Document.importXml()
-   at umbraco.cms.businesslogic.web.Document.ToXml(XmlDocument xd, Boolean Deep)
-   at umbraco.content.PublishNodeDo(Document d, XmlDocument xmlContentCopy, Boolean updateSitemapProvider)
-   at umbraco.content.UpdateDocumentCache(Document d)
-   at umbraco.content.UpdateDocumentCache(Int32 pageId)
-   at Umbraco.Web.Cache.PageCacheRefresher.Refresh(Int32 id)
-   at Umbraco.Core.Sync.DatabaseServerMessenger.RefreshByIds(Guid uniqueIdentifier, String jsonIds)
-   at Umbraco.Core.Sync.DatabaseServerMessenger.NotifyRefreshers(IEnumerable`1 jsonArray)
-   at Umbraco.Core.Sync.DatabaseServerMessenger.ProcessDatabaseInstructions()
- 2016-11-10 20:31:07,696 [P13108/D2/T7] ERROR umbraco.DataLayer.SqlHelper`1[[System.Data.SqlServerCe.SqlCeParameter, System.Data.SqlServerCe, Version=4.0.0.1, Culture=neutral, PublicKeyToken=89845dcd8080cc91]] - Error executing query select xml from cmsContentXml where nodeID = 1177
-System.ArgumentException: The query didn't return a value.
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, P[] parameters)
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, IParameter[] parameters)
- 2016-11-10 20:31:07,697 [P13108/D2/T7] ERROR Umbraco.Core.Sync.DatabaseServerMessenger - DISTRIBUTED CACHE IS NOT UPDATED. Failed to execute instructions (649: "[{"RefreshType":3,"RefresherId":"55698352-dfc5-4dbe-96bd-a4a0f6f77145","GuidId":"00000000-0000-0000-0000-000000000000","IntId":0,"JsonIds":"[1177]","JsonPayload":null},{"RefreshType":3,"RefresherId":"27ab3022-3dfa-47b6-9119-5945bc88fd66","GuidId":"00000000-0000-0000-0000-000000000000","IntId":0,"JsonIds":"[1177]","JsonPayload":null}]"). Instruction is being skipped/ignored
-umbraco.DataLayer.SqlHelperException: Umbraco Exception (DataLayer): SQL helper exception in ExecuteXmlReader ---> System.ArgumentException: The query didn't return a value.
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, P[] parameters)
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, IParameter[] parameters)
-   --- End of inner exception stack trace ---
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, IParameter[] parameters)
-   at umbraco.cms.businesslogic.web.Document.importXml()
-   at umbraco.cms.businesslogic.web.Document.ToXml(XmlDocument xd, Boolean Deep)
-   at umbraco.content.PublishNodeDo(Document d, XmlDocument xmlContentCopy, Boolean updateSitemapProvider)
-   at umbraco.content.UpdateDocumentCache(Document d)
-   at umbraco.content.UpdateDocumentCache(Int32 pageId)
-   at Umbraco.Web.Cache.PageCacheRefresher.Refresh(Int32 id)
-   at Umbraco.Core.Sync.DatabaseServerMessenger.RefreshByIds(Guid uniqueIdentifier, String jsonIds)
-   at Umbraco.Core.Sync.DatabaseServerMessenger.NotifyRefreshers(IEnumerable`1 jsonArray)
-   at Umbraco.Core.Sync.DatabaseServerMessenger.ProcessDatabaseInstructions()
- 2016-11-10 20:31:07,848 [P13108/D2/T7] ERROR umbraco.DataLayer.SqlHelper`1[[System.Data.SqlServerCe.SqlCeParameter, System.Data.SqlServerCe, Version=4.0.0.1, Culture=neutral, PublicKeyToken=89845dcd8080cc91]] - Error executing query select xml from cmsContentXml where nodeID = 1164
-System.ArgumentException: The query didn't return a value.
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, P[] parameters)
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, IParameter[] parameters)
- 2016-11-10 20:31:07,850 [P13108/D2/T7] ERROR Umbraco.Core.Sync.DatabaseServerMessenger - DISTRIBUTED CACHE IS NOT UPDATED. Failed to execute instructions (650: "[{"RefreshType":3,"RefresherId":"55698352-dfc5-4dbe-96bd-a4a0f6f77145","GuidId":"00000000-0000-0000-0000-000000000000","IntId":0,"JsonIds":"[1164]","JsonPayload":null},{"RefreshType":3,"RefresherId":"27ab3022-3dfa-47b6-9119-5945bc88fd66","GuidId":"00000000-0000-0000-0000-000000000000","IntId":0,"JsonIds":"[1164]","JsonPayload":null}]"). Instruction is being skipped/ignored
-umbraco.DataLayer.SqlHelperException: Umbraco Exception (DataLayer): SQL helper exception in ExecuteXmlReader ---> System.ArgumentException: The query didn't return a value.
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, P[] parameters)
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, IParameter[] parameters)
-   --- End of inner exception stack trace ---
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, IParameter[] parameters)
-   at umbraco.cms.businesslogic.web.Document.importXml()
-   at umbraco.cms.businesslogic.web.Document.ToXml(XmlDocument xd, Boolean Deep)
-   at umbraco.content.PublishNodeDo(Document d, XmlDocument xmlContentCopy, Boolean updateSitemapProvider)
-   at umbraco.content.UpdateDocumentCache(Document d)
-   at umbraco.content.UpdateDocumentCache(Int32 pageId)
-   at Umbraco.Web.Cache.PageCacheRefresher.Refresh(Int32 id)
-   at Umbraco.Core.Sync.DatabaseServerMessenger.RefreshByIds(Guid uniqueIdentifier, String jsonIds)
-   at Umbraco.Core.Sync.DatabaseServerMessenger.NotifyRefreshers(IEnumerable`1 jsonArray)
-   at Umbraco.Core.Sync.DatabaseServerMessenger.ProcessDatabaseInstructions()
- 2016-11-10 20:31:07,966 [P13108/D2/T7] ERROR umbraco.DataLayer.SqlHelper`1[[System.Data.SqlServerCe.SqlCeParameter, System.Data.SqlServerCe, Version=4.0.0.1, Culture=neutral, PublicKeyToken=89845dcd8080cc91]] - Error executing query select xml from cmsContentXml where nodeID = 1183
-System.ArgumentException: The query didn't return a value.
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, P[] parameters)
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, IParameter[] parameters)
- 2016-11-10 20:31:07,967 [P13108/D2/T7] ERROR Umbraco.Core.Sync.DatabaseServerMessenger - DISTRIBUTED CACHE IS NOT UPDATED. Failed to execute instructions (651: "[{"RefreshType":3,"RefresherId":"55698352-dfc5-4dbe-96bd-a4a0f6f77145","GuidId":"00000000-0000-0000-0000-000000000000","IntId":0,"JsonIds":"[1183]","JsonPayload":null},{"RefreshType":3,"RefresherId":"27ab3022-3dfa-47b6-9119-5945bc88fd66","GuidId":"00000000-0000-0000-0000-000000000000","IntId":0,"JsonIds":"[1183]","JsonPayload":null}]"). Instruction is being skipped/ignored
-umbraco.DataLayer.SqlHelperException: Umbraco Exception (DataLayer): SQL helper exception in ExecuteXmlReader ---> System.ArgumentException: The query didn't return a value.
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, P[] parameters)
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, IParameter[] parameters)
-   --- End of inner exception stack trace ---
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, IParameter[] parameters)
-   at umbraco.cms.businesslogic.web.Document.importXml()
-   at umbraco.cms.businesslogic.web.Document.ToXml(XmlDocument xd, Boolean Deep)
-   at umbraco.content.PublishNodeDo(Document d, XmlDocument xmlContentCopy, Boolean updateSitemapProvider)
-   at umbraco.content.UpdateDocumentCache(Document d)
-   at umbraco.content.UpdateDocumentCache(Int32 pageId)
-   at Umbraco.Web.Cache.PageCacheRefresher.Refresh(Int32 id)
-   at Umbraco.Core.Sync.DatabaseServerMessenger.RefreshByIds(Guid uniqueIdentifier, String jsonIds)
-   at Umbraco.Core.Sync.DatabaseServerMessenger.NotifyRefreshers(IEnumerable`1 jsonArray)
-   at Umbraco.Core.Sync.DatabaseServerMessenger.ProcessDatabaseInstructions()
- 2016-11-10 20:31:08,068 [P13108/D2/T7] ERROR umbraco.DataLayer.SqlHelper`1[[System.Data.SqlServerCe.SqlCeParameter, System.Data.SqlServerCe, Version=4.0.0.1, Culture=neutral, PublicKeyToken=89845dcd8080cc91]] - Error executing query select xml from cmsContentXml where nodeID = 1182
-System.ArgumentException: The query didn't return a value.
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, P[] parameters)
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, IParameter[] parameters)
- 2016-11-10 20:31:08,069 [P13108/D2/T7] ERROR Umbraco.Core.Sync.DatabaseServerMessenger - DISTRIBUTED CACHE IS NOT UPDATED. Failed to execute instructions (652: "[{"RefreshType":3,"RefresherId":"55698352-dfc5-4dbe-96bd-a4a0f6f77145","GuidId":"00000000-0000-0000-0000-000000000000","IntId":0,"JsonIds":"[1182]","JsonPayload":null},{"RefreshType":3,"RefresherId":"27ab3022-3dfa-47b6-9119-5945bc88fd66","GuidId":"00000000-0000-0000-0000-000000000000","IntId":0,"JsonIds":"[1182]","JsonPayload":null}]"). Instruction is being skipped/ignored
-umbraco.DataLayer.SqlHelperException: Umbraco Exception (DataLayer): SQL helper exception in ExecuteXmlReader ---> System.ArgumentException: The query didn't return a value.
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, P[] parameters)
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, IParameter[] parameters)
-   --- End of inner exception stack trace ---
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, IParameter[] parameters)
-   at umbraco.cms.businesslogic.web.Document.importXml()
-   at umbraco.cms.businesslogic.web.Document.ToXml(XmlDocument xd, Boolean Deep)
-   at umbraco.content.PublishNodeDo(Document d, XmlDocument xmlContentCopy, Boolean updateSitemapProvider)
-   at umbraco.content.UpdateDocumentCache(Document d)
-   at umbraco.content.UpdateDocumentCache(Int32 pageId)
-   at Umbraco.Web.Cache.PageCacheRefresher.Refresh(Int32 id)
-   at Umbraco.Core.Sync.DatabaseServerMessenger.RefreshByIds(Guid uniqueIdentifier, String jsonIds)
-   at Umbraco.Core.Sync.DatabaseServerMessenger.NotifyRefreshers(IEnumerable`1 jsonArray)
-   at Umbraco.Core.Sync.DatabaseServerMessenger.ProcessDatabaseInstructions()
- 2016-11-10 20:31:08,170 [P13108/D2/T7] ERROR umbraco.DataLayer.SqlHelper`1[[System.Data.SqlServerCe.SqlCeParameter, System.Data.SqlServerCe, Version=4.0.0.1, Culture=neutral, PublicKeyToken=89845dcd8080cc91]] - Error executing query select xml from cmsContentXml where nodeID = 1130
-System.ArgumentException: The query didn't return a value.
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, P[] parameters)
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, IParameter[] parameters)
- 2016-11-10 20:31:08,171 [P13108/D2/T7] ERROR Umbraco.Core.Sync.DatabaseServerMessenger - DISTRIBUTED CACHE IS NOT UPDATED. Failed to execute instructions (653: "[{"RefreshType":3,"RefresherId":"55698352-dfc5-4dbe-96bd-a4a0f6f77145","GuidId":"00000000-0000-0000-0000-000000000000","IntId":0,"JsonIds":"[1130]","JsonPayload":null},{"RefreshType":3,"RefresherId":"27ab3022-3dfa-47b6-9119-5945bc88fd66","GuidId":"00000000-0000-0000-0000-000000000000","IntId":0,"JsonIds":"[1130]","JsonPayload":null}]"). Instruction is being skipped/ignored
-umbraco.DataLayer.SqlHelperException: Umbraco Exception (DataLayer): SQL helper exception in ExecuteXmlReader ---> System.ArgumentException: The query didn't return a value.
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, P[] parameters)
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, IParameter[] parameters)
-   --- End of inner exception stack trace ---
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, IParameter[] parameters)
-   at umbraco.cms.businesslogic.web.Document.importXml()
-   at umbraco.cms.businesslogic.web.Document.ToXml(XmlDocument xd, Boolean Deep)
-   at umbraco.content.PublishNodeDo(Document d, XmlDocument xmlContentCopy, Boolean updateSitemapProvider)
-   at umbraco.content.UpdateDocumentCache(Document d)
-   at umbraco.content.UpdateDocumentCache(Int32 pageId)
-   at Umbraco.Web.Cache.PageCacheRefresher.Refresh(Int32 id)
-   at Umbraco.Core.Sync.DatabaseServerMessenger.RefreshByIds(Guid uniqueIdentifier, String jsonIds)
-   at Umbraco.Core.Sync.DatabaseServerMessenger.NotifyRefreshers(IEnumerable`1 jsonArray)
-   at Umbraco.Core.Sync.DatabaseServerMessenger.ProcessDatabaseInstructions()
- 2016-11-10 20:31:08,286 [P13108/D2/T7] ERROR umbraco.DataLayer.SqlHelper`1[[System.Data.SqlServerCe.SqlCeParameter, System.Data.SqlServerCe, Version=4.0.0.1, Culture=neutral, PublicKeyToken=89845dcd8080cc91]] - Error executing query select xml from cmsContentXml where nodeID = 1181
-System.ArgumentException: The query didn't return a value.
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, P[] parameters)
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, IParameter[] parameters)
- 2016-11-10 20:31:08,288 [P13108/D2/T7] ERROR Umbraco.Core.Sync.DatabaseServerMessenger - DISTRIBUTED CACHE IS NOT UPDATED. Failed to execute instructions (654: "[{"RefreshType":3,"RefresherId":"55698352-dfc5-4dbe-96bd-a4a0f6f77145","GuidId":"00000000-0000-0000-0000-000000000000","IntId":0,"JsonIds":"[1181]","JsonPayload":null},{"RefreshType":3,"RefresherId":"27ab3022-3dfa-47b6-9119-5945bc88fd66","GuidId":"00000000-0000-0000-0000-000000000000","IntId":0,"JsonIds":"[1181]","JsonPayload":null}]"). Instruction is being skipped/ignored
-umbraco.DataLayer.SqlHelperException: Umbraco Exception (DataLayer): SQL helper exception in ExecuteXmlReader ---> System.ArgumentException: The query didn't return a value.
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, P[] parameters)
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, IParameter[] parameters)
-   --- End of inner exception stack trace ---
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, IParameter[] parameters)
-   at umbraco.cms.businesslogic.web.Document.importXml()
-   at umbraco.cms.businesslogic.web.Document.ToXml(XmlDocument xd, Boolean Deep)
-   at umbraco.content.PublishNodeDo(Document d, XmlDocument xmlContentCopy, Boolean updateSitemapProvider)
-   at umbraco.content.UpdateDocumentCache(Document d)
-   at umbraco.content.UpdateDocumentCache(Int32 pageId)
-   at Umbraco.Web.Cache.PageCacheRefresher.Refresh(Int32 id)
-   at Umbraco.Core.Sync.DatabaseServerMessenger.RefreshByIds(Guid uniqueIdentifier, String jsonIds)
-   at Umbraco.Core.Sync.DatabaseServerMessenger.NotifyRefreshers(IEnumerable`1 jsonArray)
-   at Umbraco.Core.Sync.DatabaseServerMessenger.ProcessDatabaseInstructions()
- 2016-11-10 20:31:08,413 [P13108/D2/T7] ERROR umbraco.DataLayer.SqlHelper`1[[System.Data.SqlServerCe.SqlCeParameter, System.Data.SqlServerCe, Version=4.0.0.1, Culture=neutral, PublicKeyToken=89845dcd8080cc91]] - Error executing query select xml from cmsContentXml where nodeID = 1176
-System.ArgumentException: The query didn't return a value.
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, P[] parameters)
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, IParameter[] parameters)
- 2016-11-10 20:31:08,413 [P13108/D2/T7] ERROR Umbraco.Core.Sync.DatabaseServerMessenger - DISTRIBUTED CACHE IS NOT UPDATED. Failed to execute instructions (655: "[{"RefreshType":3,"RefresherId":"55698352-dfc5-4dbe-96bd-a4a0f6f77145","GuidId":"00000000-0000-0000-0000-000000000000","IntId":0,"JsonIds":"[1176]","JsonPayload":null},{"RefreshType":3,"RefresherId":"27ab3022-3dfa-47b6-9119-5945bc88fd66","GuidId":"00000000-0000-0000-0000-000000000000","IntId":0,"JsonIds":"[1176]","JsonPayload":null}]"). Instruction is being skipped/ignored
-umbraco.DataLayer.SqlHelperException: Umbraco Exception (DataLayer): SQL helper exception in ExecuteXmlReader ---> System.ArgumentException: The query didn't return a value.
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, P[] parameters)
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, IParameter[] parameters)
-   --- End of inner exception stack trace ---
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, IParameter[] parameters)
-   at umbraco.cms.businesslogic.web.Document.importXml()
-   at umbraco.cms.businesslogic.web.Document.ToXml(XmlDocument xd, Boolean Deep)
-   at umbraco.content.PublishNodeDo(Document d, XmlDocument xmlContentCopy, Boolean updateSitemapProvider)
-   at umbraco.content.UpdateDocumentCache(Document d)
-   at umbraco.content.UpdateDocumentCache(Int32 pageId)
-   at Umbraco.Web.Cache.PageCacheRefresher.Refresh(Int32 id)
-   at Umbraco.Core.Sync.DatabaseServerMessenger.RefreshByIds(Guid uniqueIdentifier, String jsonIds)
-   at Umbraco.Core.Sync.DatabaseServerMessenger.NotifyRefreshers(IEnumerable`1 jsonArray)
-   at Umbraco.Core.Sync.DatabaseServerMessenger.ProcessDatabaseInstructions()
- 2016-11-10 20:31:08,524 [P13108/D2/T7] ERROR umbraco.DataLayer.SqlHelper`1[[System.Data.SqlServerCe.SqlCeParameter, System.Data.SqlServerCe, Version=4.0.0.1, Culture=neutral, PublicKeyToken=89845dcd8080cc91]] - Error executing query select xml from cmsContentXml where nodeID = 1186
-System.ArgumentException: The query didn't return a value.
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, P[] parameters)
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, IParameter[] parameters)
- 2016-11-10 20:31:08,525 [P13108/D2/T7] ERROR Umbraco.Core.Sync.DatabaseServerMessenger - DISTRIBUTED CACHE IS NOT UPDATED. Failed to execute instructions (656: "[{"RefreshType":3,"RefresherId":"55698352-dfc5-4dbe-96bd-a4a0f6f77145","GuidId":"00000000-0000-0000-0000-000000000000","IntId":0,"JsonIds":"[1186]","JsonPayload":null},{"RefreshType":3,"RefresherId":"27ab3022-3dfa-47b6-9119-5945bc88fd66","GuidId":"00000000-0000-0000-0000-000000000000","IntId":0,"JsonIds":"[1186]","JsonPayload":null}]"). Instruction is being skipped/ignored
-umbraco.DataLayer.SqlHelperException: Umbraco Exception (DataLayer): SQL helper exception in ExecuteXmlReader ---> System.ArgumentException: The query didn't return a value.
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, P[] parameters)
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, IParameter[] parameters)
-   --- End of inner exception stack trace ---
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, IParameter[] parameters)
-   at umbraco.cms.businesslogic.web.Document.importXml()
-   at umbraco.cms.businesslogic.web.Document.ToXml(XmlDocument xd, Boolean Deep)
-   at umbraco.content.PublishNodeDo(Document d, XmlDocument xmlContentCopy, Boolean updateSitemapProvider)
-   at umbraco.content.UpdateDocumentCache(Document d)
-   at umbraco.content.UpdateDocumentCache(Int32 pageId)
-   at Umbraco.Web.Cache.PageCacheRefresher.Refresh(Int32 id)
-   at Umbraco.Core.Sync.DatabaseServerMessenger.RefreshByIds(Guid uniqueIdentifier, String jsonIds)
-   at Umbraco.Core.Sync.DatabaseServerMessenger.NotifyRefreshers(IEnumerable`1 jsonArray)
-   at Umbraco.Core.Sync.DatabaseServerMessenger.ProcessDatabaseInstructions()
- 2016-11-10 20:31:08,634 [P13108/D2/T7] ERROR umbraco.DataLayer.SqlHelper`1[[System.Data.SqlServerCe.SqlCeParameter, System.Data.SqlServerCe, Version=4.0.0.1, Culture=neutral, PublicKeyToken=89845dcd8080cc91]] - Error executing query select xml from cmsContentXml where nodeID = 1180
-System.ArgumentException: The query didn't return a value.
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, P[] parameters)
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, IParameter[] parameters)
- 2016-11-10 20:31:08,634 [P13108/D2/T7] ERROR Umbraco.Core.Sync.DatabaseServerMessenger - DISTRIBUTED CACHE IS NOT UPDATED. Failed to execute instructions (657: "[{"RefreshType":3,"RefresherId":"55698352-dfc5-4dbe-96bd-a4a0f6f77145","GuidId":"00000000-0000-0000-0000-000000000000","IntId":0,"JsonIds":"[1180]","JsonPayload":null},{"RefreshType":3,"RefresherId":"27ab3022-3dfa-47b6-9119-5945bc88fd66","GuidId":"00000000-0000-0000-0000-000000000000","IntId":0,"JsonIds":"[1180]","JsonPayload":null}]"). Instruction is being skipped/ignored
-umbraco.DataLayer.SqlHelperException: Umbraco Exception (DataLayer): SQL helper exception in ExecuteXmlReader ---> System.ArgumentException: The query didn't return a value.
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, P[] parameters)
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, IParameter[] parameters)
-   --- End of inner exception stack trace ---
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, IParameter[] parameters)
-   at umbraco.cms.businesslogic.web.Document.importXml()
-   at umbraco.cms.businesslogic.web.Document.ToXml(XmlDocument xd, Boolean Deep)
-   at umbraco.content.PublishNodeDo(Document d, XmlDocument xmlContentCopy, Boolean updateSitemapProvider)
-   at umbraco.content.UpdateDocumentCache(Document d)
-   at umbraco.content.UpdateDocumentCache(Int32 pageId)
-   at Umbraco.Web.Cache.PageCacheRefresher.Refresh(Int32 id)
-   at Umbraco.Core.Sync.DatabaseServerMessenger.RefreshByIds(Guid uniqueIdentifier, String jsonIds)
-   at Umbraco.Core.Sync.DatabaseServerMessenger.NotifyRefreshers(IEnumerable`1 jsonArray)
-   at Umbraco.Core.Sync.DatabaseServerMessenger.ProcessDatabaseInstructions()
- 2016-11-10 20:31:08,753 [P13108/D2/T7] ERROR umbraco.DataLayer.SqlHelper`1[[System.Data.SqlServerCe.SqlCeParameter, System.Data.SqlServerCe, Version=4.0.0.1, Culture=neutral, PublicKeyToken=89845dcd8080cc91]] - Error executing query select xml from cmsContentXml where nodeID = 1167
-System.ArgumentException: The query didn't return a value.
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, P[] parameters)
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, IParameter[] parameters)
- 2016-11-10 20:31:08,754 [P13108/D2/T7] ERROR Umbraco.Core.Sync.DatabaseServerMessenger - DISTRIBUTED CACHE IS NOT UPDATED. Failed to execute instructions (658: "[{"RefreshType":3,"RefresherId":"55698352-dfc5-4dbe-96bd-a4a0f6f77145","GuidId":"00000000-0000-0000-0000-000000000000","IntId":0,"JsonIds":"[1167]","JsonPayload":null},{"RefreshType":3,"RefresherId":"27ab3022-3dfa-47b6-9119-5945bc88fd66","GuidId":"00000000-0000-0000-0000-000000000000","IntId":0,"JsonIds":"[1167]","JsonPayload":null}]"). Instruction is being skipped/ignored
-umbraco.DataLayer.SqlHelperException: Umbraco Exception (DataLayer): SQL helper exception in ExecuteXmlReader ---> System.ArgumentException: The query didn't return a value.
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, P[] parameters)
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, IParameter[] parameters)
-   --- End of inner exception stack trace ---
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, IParameter[] parameters)
-   at umbraco.cms.businesslogic.web.Document.importXml()
-   at umbraco.cms.businesslogic.web.Document.ToXml(XmlDocument xd, Boolean Deep)
-   at umbraco.content.PublishNodeDo(Document d, XmlDocument xmlContentCopy, Boolean updateSitemapProvider)
-   at umbraco.content.UpdateDocumentCache(Document d)
-   at umbraco.content.UpdateDocumentCache(Int32 pageId)
-   at Umbraco.Web.Cache.PageCacheRefresher.Refresh(Int32 id)
-   at Umbraco.Core.Sync.DatabaseServerMessenger.RefreshByIds(Guid uniqueIdentifier, String jsonIds)
-   at Umbraco.Core.Sync.DatabaseServerMessenger.NotifyRefreshers(IEnumerable`1 jsonArray)
-   at Umbraco.Core.Sync.DatabaseServerMessenger.ProcessDatabaseInstructions()
- 2016-11-10 20:31:08,889 [P13108/D2/T7] ERROR umbraco.DataLayer.SqlHelper`1[[System.Data.SqlServerCe.SqlCeParameter, System.Data.SqlServerCe, Version=4.0.0.1, Culture=neutral, PublicKeyToken=89845dcd8080cc91]] - Error executing query select xml from cmsContentXml where nodeID = 1177
-System.ArgumentException: The query didn't return a value.
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, P[] parameters)
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, IParameter[] parameters)
- 2016-11-10 20:31:08,890 [P13108/D2/T7] ERROR Umbraco.Core.Sync.DatabaseServerMessenger - DISTRIBUTED CACHE IS NOT UPDATED. Failed to execute instructions (659: "[{"RefreshType":3,"RefresherId":"55698352-dfc5-4dbe-96bd-a4a0f6f77145","GuidId":"00000000-0000-0000-0000-000000000000","IntId":0,"JsonIds":"[1177]","JsonPayload":null},{"RefreshType":3,"RefresherId":"27ab3022-3dfa-47b6-9119-5945bc88fd66","GuidId":"00000000-0000-0000-0000-000000000000","IntId":0,"JsonIds":"[1177]","JsonPayload":null}]"). Instruction is being skipped/ignored
-umbraco.DataLayer.SqlHelperException: Umbraco Exception (DataLayer): SQL helper exception in ExecuteXmlReader ---> System.ArgumentException: The query didn't return a value.
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, P[] parameters)
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, IParameter[] parameters)
-   --- End of inner exception stack trace ---
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, IParameter[] parameters)
-   at umbraco.cms.businesslogic.web.Document.importXml()
-   at umbraco.cms.businesslogic.web.Document.ToXml(XmlDocument xd, Boolean Deep)
-   at umbraco.content.PublishNodeDo(Document d, XmlDocument xmlContentCopy, Boolean updateSitemapProvider)
-   at umbraco.content.UpdateDocumentCache(Document d)
-   at umbraco.content.UpdateDocumentCache(Int32 pageId)
-   at Umbraco.Web.Cache.PageCacheRefresher.Refresh(Int32 id)
-   at Umbraco.Core.Sync.DatabaseServerMessenger.RefreshByIds(Guid uniqueIdentifier, String jsonIds)
-   at Umbraco.Core.Sync.DatabaseServerMessenger.NotifyRefreshers(IEnumerable`1 jsonArray)
-   at Umbraco.Core.Sync.DatabaseServerMessenger.ProcessDatabaseInstructions()
- 2016-11-10 20:31:09,008 [P13108/D2/T7] ERROR umbraco.DataLayer.SqlHelper`1[[System.Data.SqlServerCe.SqlCeParameter, System.Data.SqlServerCe, Version=4.0.0.1, Culture=neutral, PublicKeyToken=89845dcd8080cc91]] - Error executing query select xml from cmsContentXml where nodeID = 1184
-System.ArgumentException: The query didn't return a value.
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, P[] parameters)
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, IParameter[] parameters)
- 2016-11-10 20:31:09,009 [P13108/D2/T7] ERROR Umbraco.Core.Sync.DatabaseServerMessenger - DISTRIBUTED CACHE IS NOT UPDATED. Failed to execute instructions (660: "[{"RefreshType":3,"RefresherId":"55698352-dfc5-4dbe-96bd-a4a0f6f77145","GuidId":"00000000-0000-0000-0000-000000000000","IntId":0,"JsonIds":"[1184]","JsonPayload":null},{"RefreshType":3,"RefresherId":"27ab3022-3dfa-47b6-9119-5945bc88fd66","GuidId":"00000000-0000-0000-0000-000000000000","IntId":0,"JsonIds":"[1184]","JsonPayload":null}]"). Instruction is being skipped/ignored
-umbraco.DataLayer.SqlHelperException: Umbraco Exception (DataLayer): SQL helper exception in ExecuteXmlReader ---> System.ArgumentException: The query didn't return a value.
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, P[] parameters)
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, IParameter[] parameters)
-   --- End of inner exception stack trace ---
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, IParameter[] parameters)
-   at umbraco.cms.businesslogic.web.Document.importXml()
-   at umbraco.cms.businesslogic.web.Document.ToXml(XmlDocument xd, Boolean Deep)
-   at umbraco.content.PublishNodeDo(Document d, XmlDocument xmlContentCopy, Boolean updateSitemapProvider)
-   at umbraco.content.UpdateDocumentCache(Document d)
-   at umbraco.content.UpdateDocumentCache(Int32 pageId)
-   at Umbraco.Web.Cache.PageCacheRefresher.Refresh(Int32 id)
-   at Umbraco.Core.Sync.DatabaseServerMessenger.RefreshByIds(Guid uniqueIdentifier, String jsonIds)
-   at Umbraco.Core.Sync.DatabaseServerMessenger.NotifyRefreshers(IEnumerable`1 jsonArray)
-   at Umbraco.Core.Sync.DatabaseServerMessenger.ProcessDatabaseInstructions()
- 2016-11-10 20:31:09,110 [P13108/D2/T7] ERROR umbraco.DataLayer.SqlHelper`1[[System.Data.SqlServerCe.SqlCeParameter, System.Data.SqlServerCe, Version=4.0.0.1, Culture=neutral, PublicKeyToken=89845dcd8080cc91]] - Error executing query select xml from cmsContentXml where nodeID = 1164
-System.ArgumentException: The query didn't return a value.
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, P[] parameters)
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, IParameter[] parameters)
- 2016-11-10 20:31:09,111 [P13108/D2/T7] ERROR Umbraco.Core.Sync.DatabaseServerMessenger - DISTRIBUTED CACHE IS NOT UPDATED. Failed to execute instructions (661: "[{"RefreshType":3,"RefresherId":"55698352-dfc5-4dbe-96bd-a4a0f6f77145","GuidId":"00000000-0000-0000-0000-000000000000","IntId":0,"JsonIds":"[1164]","JsonPayload":null},{"RefreshType":3,"RefresherId":"27ab3022-3dfa-47b6-9119-5945bc88fd66","GuidId":"00000000-0000-0000-0000-000000000000","IntId":0,"JsonIds":"[1164]","JsonPayload":null}]"). Instruction is being skipped/ignored
-umbraco.DataLayer.SqlHelperException: Umbraco Exception (DataLayer): SQL helper exception in ExecuteXmlReader ---> System.ArgumentException: The query didn't return a value.
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, P[] parameters)
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, IParameter[] parameters)
-   --- End of inner exception stack trace ---
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, IParameter[] parameters)
-   at umbraco.cms.businesslogic.web.Document.importXml()
-   at umbraco.cms.businesslogic.web.Document.ToXml(XmlDocument xd, Boolean Deep)
-   at umbraco.content.PublishNodeDo(Document d, XmlDocument xmlContentCopy, Boolean updateSitemapProvider)
-   at umbraco.content.UpdateDocumentCache(Document d)
-   at umbraco.content.UpdateDocumentCache(Int32 pageId)
-   at Umbraco.Web.Cache.PageCacheRefresher.Refresh(Int32 id)
-   at Umbraco.Core.Sync.DatabaseServerMessenger.RefreshByIds(Guid uniqueIdentifier, String jsonIds)
-   at Umbraco.Core.Sync.DatabaseServerMessenger.NotifyRefreshers(IEnumerable`1 jsonArray)
-   at Umbraco.Core.Sync.DatabaseServerMessenger.ProcessDatabaseInstructions()
- 2016-11-10 20:31:09,223 [P13108/D2/T7] ERROR umbraco.DataLayer.SqlHelper`1[[System.Data.SqlServerCe.SqlCeParameter, System.Data.SqlServerCe, Version=4.0.0.1, Culture=neutral, PublicKeyToken=89845dcd8080cc91]] - Error executing query select xml from cmsContentXml where nodeID = 1164
-System.ArgumentException: The query didn't return a value.
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, P[] parameters)
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, IParameter[] parameters)
- 2016-11-10 20:31:09,224 [P13108/D2/T7] ERROR Umbraco.Core.Sync.DatabaseServerMessenger - DISTRIBUTED CACHE IS NOT UPDATED. Failed to execute instructions (662: "[{"RefreshType":3,"RefresherId":"55698352-dfc5-4dbe-96bd-a4a0f6f77145","GuidId":"00000000-0000-0000-0000-000000000000","IntId":0,"JsonIds":"[1164]","JsonPayload":null},{"RefreshType":3,"RefresherId":"27ab3022-3dfa-47b6-9119-5945bc88fd66","GuidId":"00000000-0000-0000-0000-000000000000","IntId":0,"JsonIds":"[1164]","JsonPayload":null}]"). Instruction is being skipped/ignored
-umbraco.DataLayer.SqlHelperException: Umbraco Exception (DataLayer): SQL helper exception in ExecuteXmlReader ---> System.ArgumentException: The query didn't return a value.
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, P[] parameters)
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, IParameter[] parameters)
-   --- End of inner exception stack trace ---
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, IParameter[] parameters)
-   at umbraco.cms.businesslogic.web.Document.importXml()
-   at umbraco.cms.businesslogic.web.Document.ToXml(XmlDocument xd, Boolean Deep)
-   at umbraco.content.PublishNodeDo(Document d, XmlDocument xmlContentCopy, Boolean updateSitemapProvider)
-   at umbraco.content.UpdateDocumentCache(Document d)
-   at umbraco.content.UpdateDocumentCache(Int32 pageId)
-   at Umbraco.Web.Cache.PageCacheRefresher.Refresh(Int32 id)
-   at Umbraco.Core.Sync.DatabaseServerMessenger.RefreshByIds(Guid uniqueIdentifier, String jsonIds)
-   at Umbraco.Core.Sync.DatabaseServerMessenger.NotifyRefreshers(IEnumerable`1 jsonArray)
-   at Umbraco.Core.Sync.DatabaseServerMessenger.ProcessDatabaseInstructions()
- 2016-11-10 20:31:09,341 [P13108/D2/T7] ERROR umbraco.DataLayer.SqlHelper`1[[System.Data.SqlServerCe.SqlCeParameter, System.Data.SqlServerCe, Version=4.0.0.1, Culture=neutral, PublicKeyToken=89845dcd8080cc91]] - Error executing query select xml from cmsContentXml where nodeID = 1176
-System.ArgumentException: The query didn't return a value.
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, P[] parameters)
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, IParameter[] parameters)
- 2016-11-10 20:31:09,341 [P13108/D2/T7] ERROR Umbraco.Core.Sync.DatabaseServerMessenger - DISTRIBUTED CACHE IS NOT UPDATED. Failed to execute instructions (663: "[{"RefreshType":3,"RefresherId":"55698352-dfc5-4dbe-96bd-a4a0f6f77145","GuidId":"00000000-0000-0000-0000-000000000000","IntId":0,"JsonIds":"[1176]","JsonPayload":null},{"RefreshType":3,"RefresherId":"27ab3022-3dfa-47b6-9119-5945bc88fd66","GuidId":"00000000-0000-0000-0000-000000000000","IntId":0,"JsonIds":"[1176]","JsonPayload":null}]"). Instruction is being skipped/ignored
-umbraco.DataLayer.SqlHelperException: Umbraco Exception (DataLayer): SQL helper exception in ExecuteXmlReader ---> System.ArgumentException: The query didn't return a value.
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, P[] parameters)
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, IParameter[] parameters)
-   --- End of inner exception stack trace ---
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, IParameter[] parameters)
-   at umbraco.cms.businesslogic.web.Document.importXml()
-   at umbraco.cms.businesslogic.web.Document.ToXml(XmlDocument xd, Boolean Deep)
-   at umbraco.content.PublishNodeDo(Document d, XmlDocument xmlContentCopy, Boolean updateSitemapProvider)
-   at umbraco.content.UpdateDocumentCache(Document d)
-   at umbraco.content.UpdateDocumentCache(Int32 pageId)
-   at Umbraco.Web.Cache.PageCacheRefresher.Refresh(Int32 id)
-   at Umbraco.Core.Sync.DatabaseServerMessenger.RefreshByIds(Guid uniqueIdentifier, String jsonIds)
-   at Umbraco.Core.Sync.DatabaseServerMessenger.NotifyRefreshers(IEnumerable`1 jsonArray)
-   at Umbraco.Core.Sync.DatabaseServerMessenger.ProcessDatabaseInstructions()
- 2016-11-10 20:31:09,484 [P13108/D2/T7] ERROR umbraco.DataLayer.SqlHelper`1[[System.Data.SqlServerCe.SqlCeParameter, System.Data.SqlServerCe, Version=4.0.0.1, Culture=neutral, PublicKeyToken=89845dcd8080cc91]] - Error executing query select xml from cmsContentXml where nodeID = 1186
-System.ArgumentException: The query didn't return a value.
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, P[] parameters)
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, IParameter[] parameters)
- 2016-11-10 20:31:09,485 [P13108/D2/T7] ERROR Umbraco.Core.Sync.DatabaseServerMessenger - DISTRIBUTED CACHE IS NOT UPDATED. Failed to execute instructions (664: "[{"RefreshType":3,"RefresherId":"55698352-dfc5-4dbe-96bd-a4a0f6f77145","GuidId":"00000000-0000-0000-0000-000000000000","IntId":0,"JsonIds":"[1186]","JsonPayload":null},{"RefreshType":3,"RefresherId":"27ab3022-3dfa-47b6-9119-5945bc88fd66","GuidId":"00000000-0000-0000-0000-000000000000","IntId":0,"JsonIds":"[1186]","JsonPayload":null}]"). Instruction is being skipped/ignored
-umbraco.DataLayer.SqlHelperException: Umbraco Exception (DataLayer): SQL helper exception in ExecuteXmlReader ---> System.ArgumentException: The query didn't return a value.
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, P[] parameters)
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, IParameter[] parameters)
-   --- End of inner exception stack trace ---
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, IParameter[] parameters)
-   at umbraco.cms.businesslogic.web.Document.importXml()
-   at umbraco.cms.businesslogic.web.Document.ToXml(XmlDocument xd, Boolean Deep)
-   at umbraco.content.PublishNodeDo(Document d, XmlDocument xmlContentCopy, Boolean updateSitemapProvider)
-   at umbraco.content.UpdateDocumentCache(Document d)
-   at umbraco.content.UpdateDocumentCache(Int32 pageId)
-   at Umbraco.Web.Cache.PageCacheRefresher.Refresh(Int32 id)
-   at Umbraco.Core.Sync.DatabaseServerMessenger.RefreshByIds(Guid uniqueIdentifier, String jsonIds)
-   at Umbraco.Core.Sync.DatabaseServerMessenger.NotifyRefreshers(IEnumerable`1 jsonArray)
-   at Umbraco.Core.Sync.DatabaseServerMessenger.ProcessDatabaseInstructions()
- 2016-11-10 20:31:09,600 [P13108/D2/T7] ERROR umbraco.DataLayer.SqlHelper`1[[System.Data.SqlServerCe.SqlCeParameter, System.Data.SqlServerCe, Version=4.0.0.1, Culture=neutral, PublicKeyToken=89845dcd8080cc91]] - Error executing query select xml from cmsContentXml where nodeID = 1187
-System.ArgumentException: The query didn't return a value.
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, P[] parameters)
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, IParameter[] parameters)
- 2016-11-10 20:31:09,601 [P13108/D2/T7] ERROR Umbraco.Core.Sync.DatabaseServerMessenger - DISTRIBUTED CACHE IS NOT UPDATED. Failed to execute instructions (665: "[{"RefreshType":3,"RefresherId":"55698352-dfc5-4dbe-96bd-a4a0f6f77145","GuidId":"00000000-0000-0000-0000-000000000000","IntId":0,"JsonIds":"[1187]","JsonPayload":null},{"RefreshType":3,"RefresherId":"27ab3022-3dfa-47b6-9119-5945bc88fd66","GuidId":"00000000-0000-0000-0000-000000000000","IntId":0,"JsonIds":"[1187]","JsonPayload":null}]"). Instruction is being skipped/ignored
-umbraco.DataLayer.SqlHelperException: Umbraco Exception (DataLayer): SQL helper exception in ExecuteXmlReader ---> System.ArgumentException: The query didn't return a value.
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, P[] parameters)
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, IParameter[] parameters)
-   --- End of inner exception stack trace ---
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, IParameter[] parameters)
-   at umbraco.cms.businesslogic.web.Document.importXml()
-   at umbraco.cms.businesslogic.web.Document.ToXml(XmlDocument xd, Boolean Deep)
-   at umbraco.content.PublishNodeDo(Document d, XmlDocument xmlContentCopy, Boolean updateSitemapProvider)
-   at umbraco.content.UpdateDocumentCache(Document d)
-   at umbraco.content.UpdateDocumentCache(Int32 pageId)
-   at Umbraco.Web.Cache.PageCacheRefresher.Refresh(Int32 id)
-   at Umbraco.Core.Sync.DatabaseServerMessenger.RefreshByIds(Guid uniqueIdentifier, String jsonIds)
-   at Umbraco.Core.Sync.DatabaseServerMessenger.NotifyRefreshers(IEnumerable`1 jsonArray)
-   at Umbraco.Core.Sync.DatabaseServerMessenger.ProcessDatabaseInstructions()
- 2016-11-10 20:31:09,872 [P13108/D2/T7] ERROR umbraco.DataLayer.SqlHelper`1[[System.Data.SqlServerCe.SqlCeParameter, System.Data.SqlServerCe, Version=4.0.0.1, Culture=neutral, PublicKeyToken=89845dcd8080cc91]] - Error executing query select xml from cmsContentXml where nodeID = 1182
-System.ArgumentException: The query didn't return a value.
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, P[] parameters)
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, IParameter[] parameters)
- 2016-11-10 20:31:09,876 [P13108/D2/T7] ERROR Umbraco.Core.Sync.DatabaseServerMessenger - DISTRIBUTED CACHE IS NOT UPDATED. Failed to execute instructions (667: "[{"RefreshType":3,"RefresherId":"55698352-dfc5-4dbe-96bd-a4a0f6f77145","GuidId":"00000000-0000-0000-0000-000000000000","IntId":0,"JsonIds":"[1182]","JsonPayload":null},{"RefreshType":3,"RefresherId":"27ab3022-3dfa-47b6-9119-5945bc88fd66","GuidId":"00000000-0000-0000-0000-000000000000","IntId":0,"JsonIds":"[1182]","JsonPayload":null}]"). Instruction is being skipped/ignored
-umbraco.DataLayer.SqlHelperException: Umbraco Exception (DataLayer): SQL helper exception in ExecuteXmlReader ---> System.ArgumentException: The query didn't return a value.
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, P[] parameters)
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, IParameter[] parameters)
-   --- End of inner exception stack trace ---
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, IParameter[] parameters)
-   at umbraco.cms.businesslogic.web.Document.importXml()
-   at umbraco.cms.businesslogic.web.Document.ToXml(XmlDocument xd, Boolean Deep)
-   at umbraco.content.PublishNodeDo(Document d, XmlDocument xmlContentCopy, Boolean updateSitemapProvider)
-   at umbraco.content.UpdateDocumentCache(Document d)
-   at umbraco.content.UpdateDocumentCache(Int32 pageId)
-   at Umbraco.Web.Cache.PageCacheRefresher.Refresh(Int32 id)
-   at Umbraco.Core.Sync.DatabaseServerMessenger.RefreshByIds(Guid uniqueIdentifier, String jsonIds)
-   at Umbraco.Core.Sync.DatabaseServerMessenger.NotifyRefreshers(IEnumerable`1 jsonArray)
-   at Umbraco.Core.Sync.DatabaseServerMessenger.ProcessDatabaseInstructions()
- 2016-11-10 20:31:10,021 [P13108/D2/T7] ERROR umbraco.DataLayer.SqlHelper`1[[System.Data.SqlServerCe.SqlCeParameter, System.Data.SqlServerCe, Version=4.0.0.1, Culture=neutral, PublicKeyToken=89845dcd8080cc91]] - Error executing query select xml from cmsContentXml where nodeID = 1180
-System.ArgumentException: The query didn't return a value.
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, P[] parameters)
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, IParameter[] parameters)
- 2016-11-10 20:31:10,022 [P13108/D2/T7] ERROR Umbraco.Core.Sync.DatabaseServerMessenger - DISTRIBUTED CACHE IS NOT UPDATED. Failed to execute instructions (668: "[{"RefreshType":3,"RefresherId":"55698352-dfc5-4dbe-96bd-a4a0f6f77145","GuidId":"00000000-0000-0000-0000-000000000000","IntId":0,"JsonIds":"[1180]","JsonPayload":null},{"RefreshType":3,"RefresherId":"27ab3022-3dfa-47b6-9119-5945bc88fd66","GuidId":"00000000-0000-0000-0000-000000000000","IntId":0,"JsonIds":"[1180]","JsonPayload":null}]"). Instruction is being skipped/ignored
-umbraco.DataLayer.SqlHelperException: Umbraco Exception (DataLayer): SQL helper exception in ExecuteXmlReader ---> System.ArgumentException: The query didn't return a value.
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, P[] parameters)
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, IParameter[] parameters)
-   --- End of inner exception stack trace ---
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, IParameter[] parameters)
-   at umbraco.cms.businesslogic.web.Document.importXml()
-   at umbraco.cms.businesslogic.web.Document.ToXml(XmlDocument xd, Boolean Deep)
-   at umbraco.content.PublishNodeDo(Document d, XmlDocument xmlContentCopy, Boolean updateSitemapProvider)
-   at umbraco.content.UpdateDocumentCache(Document d)
-   at umbraco.content.UpdateDocumentCache(Int32 pageId)
-   at Umbraco.Web.Cache.PageCacheRefresher.Refresh(Int32 id)
-   at Umbraco.Core.Sync.DatabaseServerMessenger.RefreshByIds(Guid uniqueIdentifier, String jsonIds)
-   at Umbraco.Core.Sync.DatabaseServerMessenger.NotifyRefreshers(IEnumerable`1 jsonArray)
-   at Umbraco.Core.Sync.DatabaseServerMessenger.ProcessDatabaseInstructions()
- 2016-11-10 20:31:10,185 [P13108/D2/T7] ERROR umbraco.DataLayer.SqlHelper`1[[System.Data.SqlServerCe.SqlCeParameter, System.Data.SqlServerCe, Version=4.0.0.1, Culture=neutral, PublicKeyToken=89845dcd8080cc91]] - Error executing query select xml from cmsContentXml where nodeID = 1164
-System.ArgumentException: The query didn't return a value.
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, P[] parameters)
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, IParameter[] parameters)
- 2016-11-10 20:31:10,186 [P13108/D2/T7] ERROR Umbraco.Core.Sync.DatabaseServerMessenger - DISTRIBUTED CACHE IS NOT UPDATED. Failed to execute instructions (670: "[{"RefreshType":3,"RefresherId":"55698352-dfc5-4dbe-96bd-a4a0f6f77145","GuidId":"00000000-0000-0000-0000-000000000000","IntId":0,"JsonIds":"[1164]","JsonPayload":null},{"RefreshType":3,"RefresherId":"27ab3022-3dfa-47b6-9119-5945bc88fd66","GuidId":"00000000-0000-0000-0000-000000000000","IntId":0,"JsonIds":"[1164]","JsonPayload":null}]"). Instruction is being skipped/ignored
-umbraco.DataLayer.SqlHelperException: Umbraco Exception (DataLayer): SQL helper exception in ExecuteXmlReader ---> System.ArgumentException: The query didn't return a value.
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, P[] parameters)
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, IParameter[] parameters)
-   --- End of inner exception stack trace ---
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, IParameter[] parameters)
-   at umbraco.cms.businesslogic.web.Document.importXml()
-   at umbraco.cms.businesslogic.web.Document.ToXml(XmlDocument xd, Boolean Deep)
-   at umbraco.content.PublishNodeDo(Document d, XmlDocument xmlContentCopy, Boolean updateSitemapProvider)
-   at umbraco.content.UpdateDocumentCache(Document d)
-   at umbraco.content.UpdateDocumentCache(Int32 pageId)
-   at Umbraco.Web.Cache.PageCacheRefresher.Refresh(Int32 id)
-   at Umbraco.Core.Sync.DatabaseServerMessenger.RefreshByIds(Guid uniqueIdentifier, String jsonIds)
-   at Umbraco.Core.Sync.DatabaseServerMessenger.NotifyRefreshers(IEnumerable`1 jsonArray)
-   at Umbraco.Core.Sync.DatabaseServerMessenger.ProcessDatabaseInstructions()
- 2016-11-10 20:31:14,197 [P13108/D2/T11] INFO  umbraco.content - Save Xml to file...
- 2016-11-10 20:31:14,223 [P13108/D2/T11] INFO  umbraco.content - Saved Xml to file.
- 2016-11-10 20:31:54,241 [P13108/D2/T6] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.Persistence.Mappers.BaseMapper
- 2016-11-10 20:31:54,258 [P13108/D2/T6] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.Persistence.Mappers.BaseMapper, found 0 (took 16ms)
- 2016-11-10 20:31:54,607 [P13108/D2/T7] INFO  Umbraco.Core.PluginManager - Starting resolution types of umbraco.cms.businesslogic.macro.IMacroEngine
- 2016-11-10 20:31:54,627 [P13108/D2/T7] INFO  Umbraco.Core.PluginManager - Completed resolution of types of umbraco.cms.businesslogic.macro.IMacroEngine, found 0 (took 20ms)
- 2016-11-10 20:32:10,247 [P13108/D2/T9] INFO  umbraco.BusinessLogic.Log - Log scrubbed.  Removed all items older than 2559-11-09 20:32:10
- 2016-11-10 20:32:25,760 [P13108/D2/T7] ERROR Umbraco.Core.UmbracoApplicationBase - An unhandled exception occurred
-Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot perform runtime binding on a null reference
-   at CallSite.Target(Closure , CallSite , Object )
-   at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)
-   at ASP._Page_Views_RazorJson_cshtml.Execute() in c:\queengallery\queengallery\Views\RazorJson.cshtml:line 57
-   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
-   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
-   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
-   at System.Web.Mvc.RazorView.RenderView(ViewContext viewContext, TextWriter writer, Object instance)
-   at System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
-   at Umbraco.Core.Profiling.ProfilingView.Render(ViewContext viewContext, TextWriter writer)
-   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
-   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)
-   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
-   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
-   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
-   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
-   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
-   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
-   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
-   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
-   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
-   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
-   at System.Web.Mvc.Controller.<BeginExecuteCore>b__1d(IAsyncResult asyncResult, ExecuteCoreState innerState)
-   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
-   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
-   at System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
-   at System.Web.Mvc.Controller.<BeginExecute>b__15(IAsyncResult asyncResult, Controller controller)
-   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
-   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
-   at System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
-   at System.Web.Mvc.Controller.System.Web.Mvc.Async.IAsyncController.EndExecute(IAsyncResult asyncResult)
-   at System.Web.Mvc.MvcHandler.<BeginProcessRequest>b__5(IAsyncResult asyncResult, ProcessRequestState innerState)
-   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
-   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
-   at System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
-   at System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.EndProcessRequest(IAsyncResult result)
-   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
-   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
- 2016-11-10 20:32:39,891 [P13108/D2/T8] ERROR Umbraco.Core.UmbracoApplicationBase - An unhandled exception occurred
-Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot perform runtime binding on a null reference
-   at CallSite.Target(Closure , CallSite , Object )
-   at ASP._Page_Views_RazorJson_cshtml.Execute() in c:\queengallery\queengallery\Views\RazorJson.cshtml:line 57
-   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
-   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
-   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
-   at System.Web.Mvc.RazorView.RenderView(ViewContext viewContext, TextWriter writer, Object instance)
-   at System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
-   at Umbraco.Core.Profiling.ProfilingView.Render(ViewContext viewContext, TextWriter writer)
-   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
-   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)
-   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
-   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
-   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
-   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
-   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
-   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
-   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
-   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
-   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
-   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
-   at System.Web.Mvc.Controller.<BeginExecuteCore>b__1d(IAsyncResult asyncResult, ExecuteCoreState innerState)
-   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
-   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
-   at System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
-   at System.Web.Mvc.Controller.<BeginExecute>b__15(IAsyncResult asyncResult, Controller controller)
-   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
-   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
-   at System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
-   at System.Web.Mvc.Controller.System.Web.Mvc.Async.IAsyncController.EndExecute(IAsyncResult asyncResult)
-   at System.Web.Mvc.MvcHandler.<BeginProcessRequest>b__5(IAsyncResult asyncResult, ProcessRequestState innerState)
-   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
-   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
-   at System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
-   at System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.EndProcessRequest(IAsyncResult result)
-   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
-   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
- 2016-11-10 20:40:07,354 [P13108/D2/T89] ERROR Umbraco.Core.UmbracoApplicationBase - An unhandled exception occurred
-Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot perform runtime binding on a null reference
-   at CallSite.Target(Closure , CallSite , Object )
-   at ASP._Page_Views_RazorJson_cshtml.Execute() in c:\queengallery\queengallery\Views\RazorJson.cshtml:line 57
-   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
-   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
-   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
-   at System.Web.Mvc.RazorView.RenderView(ViewContext viewContext, TextWriter writer, Object instance)
-   at System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
-   at Umbraco.Core.Profiling.ProfilingView.Render(ViewContext viewContext, TextWriter writer)
-   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
-   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)
-   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
-   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
-   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
-   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
-   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
-   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
-   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
-   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
-   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
-   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
-   at System.Web.Mvc.Controller.<BeginExecuteCore>b__1d(IAsyncResult asyncResult, ExecuteCoreState innerState)
-   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
-   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
-   at System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
-   at System.Web.Mvc.Controller.<BeginExecute>b__15(IAsyncResult asyncResult, Controller controller)
-   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
-   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
-   at System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
-   at System.Web.Mvc.Controller.System.Web.Mvc.Async.IAsyncController.EndExecute(IAsyncResult asyncResult)
-   at System.Web.Mvc.MvcHandler.<BeginProcessRequest>b__5(IAsyncResult asyncResult, ProcessRequestState innerState)
-   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
-   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
-   at System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
-   at System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.EndProcessRequest(IAsyncResult result)
-   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
-   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
- 2016-11-10 20:41:05,914 [P13108/D2/T95] ERROR Umbraco.Core.UmbracoApplicationBase - An unhandled exception occurred
-Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot perform runtime binding on a null reference
-   at CallSite.Target(Closure , CallSite , Object )
-   at ASP._Page_Views_RazorJson_cshtml.Execute() in c:\queengallery\queengallery\Views\RazorJson.cshtml:line 57
-   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
-   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
-   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
-   at System.Web.Mvc.RazorView.RenderView(ViewContext viewContext, TextWriter writer, Object instance)
-   at System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
-   at Umbraco.Core.Profiling.ProfilingView.Render(ViewContext viewContext, TextWriter writer)
-   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
-   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)
-   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
-   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
-   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
-   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
-   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
-   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
-   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
-   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
-   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
-   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
-   at System.Web.Mvc.Controller.<BeginExecuteCore>b__1d(IAsyncResult asyncResult, ExecuteCoreState innerState)
-   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
-   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
-   at System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
-   at System.Web.Mvc.Controller.<BeginExecute>b__15(IAsyncResult asyncResult, Controller controller)
-   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
-   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
-   at System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
-   at System.Web.Mvc.Controller.System.Web.Mvc.Async.IAsyncController.EndExecute(IAsyncResult asyncResult)
-   at System.Web.Mvc.MvcHandler.<BeginProcessRequest>b__5(IAsyncResult asyncResult, ProcessRequestState innerState)
-   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
-   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
-   at System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
-   at System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.EndProcessRequest(IAsyncResult result)
-   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
-   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+﻿ 2016-11-13 15:05:20,003 [P8348/D2/T1] INFO  Umbraco.Core.CoreBootManager - Umbraco 7.5.4 application starting on HOMEPC
+ 2016-11-13 15:05:20,027 [P8348/D2/T1] INFO  Umbraco.Core.PluginManager - Determining hash of code files on disk
+ 2016-11-13 15:05:20,041 [P8348/D2/T1] INFO  Umbraco.Core.PluginManager - Hash determined (took 14ms)
+ 2016-11-13 15:05:20,145 [P8348/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of umbraco.interfaces.IApplicationStartupHandler
+ 2016-11-13 15:05:20,224 [P8348/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 0 (took 79ms)
+ 2016-11-13 15:05:20,300 [P8348/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter
+ 2016-11-13 15:05:20,301 [P8348/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 1ms)
+ 2016-11-13 15:05:20,302 [P8348/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyValueConverter
+ 2016-11-13 15:05:20,304 [P8348/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyValueConverter, found 0 (took 1ms)
+ 2016-11-13 15:05:20,322 [P8348/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Web.Mvc.SurfaceController
+ 2016-11-13 15:05:20,324 [P8348/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 0 (took 1ms)
+ 2016-11-13 15:05:20,325 [P8348/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Web.WebApi.UmbracoApiController
+ 2016-11-13 15:05:20,333 [P8348/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Web.WebApi.UmbracoApiController, found 0 (took 8ms)
+ 2016-11-13 15:05:20,427 [P8348/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.Media.IThumbnailProvider
+ 2016-11-13 15:05:20,429 [P8348/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 0 (took 2ms)
+ 2016-11-13 15:05:20,430 [P8348/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.Media.IImageUrlProvider
+ 2016-11-13 15:05:20,431 [P8348/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 0 (took 1ms)
+ 2016-11-13 15:05:21,997 [P8348/D2/T1] INFO  Umbraco.Core.DatabaseContext - CanConnect = True
+ 2016-11-13 15:05:22,414 [P8348/D2/T1] INFO  Umbraco.Core.DatabaseContext - CanConnect = True
+ 2016-11-13 15:05:22,481 [P8348/D2/T1] INFO  Umbraco.Core.DatabaseContext - CanConnect = True
+ 2016-11-13 15:05:22,613 [P8348/D2/T1] INFO  Umbraco.Web.Cache.CacheRefresherEventHandler - Initializing Umbraco internal event handlers for cache refreshing
+ 2016-11-13 15:05:22,805 [P8348/D2/T1] INFO  Umbraco.Web.Search.ExamineEvents - Initializing Examine and binding to business logic events
+ 2016-11-13 15:05:22,805 [P8348/D2/T1] INFO  Umbraco.Web.Search.ExamineEvents - Adding examine event handlers for index providers: 3
+ 2016-11-13 15:05:22,825 [P8348/D2/T1] INFO  Umbraco.Core.CoreBootManager - Umbraco application startup complete (took 2919ms)
+ 2016-11-13 15:05:23,761 [P8348/D2/T10] INFO  Umbraco.Core.Sync.ApplicationUrlHelper - ApplicationUrl: http://localhost:17606/umbraco (UmbracoModule request)
+ 2016-11-13 15:05:24,339 [P8348/D2/T10] INFO  umbraco.content - Load Xml from file...
+ 2016-11-13 15:05:24,343 [P8348/D2/T10] INFO  umbraco.content - Loaded Xml from file.
+ 2016-11-13 15:05:25,198 [P8348/D2/T10] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.PropertyEditors.IParameterEditor
+ 2016-11-13 15:05:25,200 [P8348/D2/T10] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.PropertyEditors.IParameterEditor, found 0 (took 2ms)
+ 2016-11-13 15:06:24,437 [P8348/D2/T13] INFO  umbraco.BusinessLogic.Log - Log scrubbed.  Removed all items older than 2559-11-12 15:06:24
+ 2016-11-13 15:06:24,492 [P8348/D2/T13] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.Persistence.Mappers.BaseMapper
+ 2016-11-13 15:06:24,493 [P8348/D2/T13] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.Persistence.Mappers.BaseMapper, found 0 (took 1ms)
+ 2016-11-13 15:45:25,994 [P8348/D2/T370] WARN  Umbraco.Web.UmbracoModule - Status code is 404 yet TrySkipIisCustomErrors is false - IIS will take over.
+ 2016-11-13 15:45:32,625 [P8348/D2/T359] INFO  Umbraco.Core.PluginManager - Starting resolution types of umbraco.cms.businesslogic.macro.IMacroEngine
+ 2016-11-13 15:45:32,626 [P8348/D2/T359] INFO  Umbraco.Core.PluginManager - Completed resolution of types of umbraco.cms.businesslogic.macro.IMacroEngine, found 0 (took 1ms)
+ 2016-11-13 18:20:32,364 [P8348/D2/T909] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [KeepAlive] Terminating
+ 2016-11-13 18:20:32,364 [P8348/D2/T909] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [KeepAlive] Waiting for tasks to complete
+ 2016-11-13 18:20:32,365 [P8348/D2/T909] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [LogScrubber] Terminating
+ 2016-11-13 18:20:32,365 [P8348/D2/T909] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [LogScrubber] Waiting for tasks to complete
+ 2016-11-13 18:20:32,365 [P8348/D2/T909] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [Umbraco.Web.Scheduling.IBackgroundTask] Terminating
+ 2016-11-13 18:20:32,366 [P8348/D2/T909] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [Umbraco.Web.Scheduling.IBackgroundTask] Waiting for tasks to complete
+ 2016-11-13 18:20:32,368 [P8348/D2/T899] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [KeepAlive] Tasks completed, terminated
+ 2016-11-13 18:20:32,369 [P8348/D2/T912] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [LogScrubber] Tasks completed, terminated
+ 2016-11-13 18:20:32,369 [P8348/D2/T916] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [Umbraco.Web.Scheduling.IBackgroundTask] Tasks completed, terminated
+ 2016-11-13 18:20:32,606 [P8348/D2/T909] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledTasks] Terminating
+ 2016-11-13 18:20:32,606 [P8348/D2/T909] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledTasks] Waiting for tasks to complete
+ 2016-11-13 18:20:32,606 [P8348/D2/T909] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledPublishing] Terminating
+ 2016-11-13 18:20:32,606 [P8348/D2/T909] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledPublishing] Waiting for tasks to complete
+ 2016-11-13 18:20:32,606 [P8348/D2/T919] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledTasks] Tasks completed, terminated
+ 2016-11-13 18:20:32,606 [P8348/D2/T920] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledPublishing] Tasks completed, terminated
+ 2016-11-13 18:21:02,633 [P8348/D2/T909] INFO  Umbraco.Core.UmbracoApplicationBase - Application shutdown. Details: ConfigurationChange
+
+_shutDownMessage=Change in App_Offline.htm
+HostingEnvironment initiated shutdown
+Change in App_Offline.htm
+Change in App_Offline.htm
+Change in App_Offline.htm
+Change in App_Offline.htm
+Change in App_Offline.htm
+HostingEnvironment caused shutdown
+
+_shutDownStack=   at System.Environment.GetStackTrace(Exception e, Boolean needFileInfo)
+   at System.Environment.get_StackTrace()
+   at System.Web.Hosting.HostingEnvironment.InitiateShutdownInternal()
+   at System.Web.Hosting.HostingEnvironment.InitiateShutdownWithoutDemand()
+   at System.Web.HttpRuntime.ShutdownAppDomain(String stackTrace)
+   at System.Web.HttpRuntime.OnAppOfflineFileChange(Object sender, FileChangeEvent e)
+   at System.Web.DirectoryMonitor.FireNotifications()
+   at System.Web.Util.WorkItem.CallCallbackWithAssert(WorkItemCallback callback)
+   at System.Web.Util.WorkItem.OnQueueUserWorkItemCompletion(Object state)
+   at System.Threading.QueueUserWorkItemCallback.WaitCallback_Context(Object state)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   at System.Threading.QueueUserWorkItemCallback.System.Threading.IThreadPoolWorkItem.ExecuteWorkItem()
+   at System.Threading.ThreadPoolWorkQueue.Dispatch()
+   at System.Threading._ThreadPoolWaitCallback.PerformWaitCallback()
+ 2016-11-13 18:21:20,312 [P8348/D3/T917] INFO  Umbraco.Core.CoreBootManager - Umbraco 7.5.4 application starting on HOMEPC
+ 2016-11-13 18:21:20,337 [P8348/D3/T917] INFO  Umbraco.Core.PluginManager - Determining hash of code files on disk
+ 2016-11-13 18:21:20,360 [P8348/D3/T917] INFO  Umbraco.Core.PluginManager - Hash determined (took 23ms)
+ 2016-11-13 18:21:20,508 [P8348/D3/T917] INFO  Umbraco.Core.PluginManager - Starting resolution types of umbraco.interfaces.IApplicationStartupHandler
+ 2016-11-13 18:21:20,631 [P8348/D3/T917] INFO  Umbraco.Core.PluginManager - Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 0 (took 122ms)
+ 2016-11-13 18:21:20,775 [P8348/D3/T917] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter
+ 2016-11-13 18:21:20,777 [P8348/D3/T917] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 1ms)
+ 2016-11-13 18:21:20,778 [P8348/D3/T917] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyValueConverter
+ 2016-11-13 18:21:20,782 [P8348/D3/T917] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyValueConverter, found 0 (took 4ms)
+ 2016-11-13 18:21:20,797 [P8348/D3/T917] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Web.Mvc.SurfaceController
+ 2016-11-13 18:21:20,800 [P8348/D3/T917] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 0 (took 3ms)
+ 2016-11-13 18:21:20,801 [P8348/D3/T917] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Web.WebApi.UmbracoApiController
+ 2016-11-13 18:21:20,817 [P8348/D3/T917] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Web.WebApi.UmbracoApiController, found 0 (took 15ms)
+ 2016-11-13 18:21:20,964 [P8348/D3/T917] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.Media.IThumbnailProvider
+ 2016-11-13 18:21:20,967 [P8348/D3/T917] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 0 (took 3ms)
+ 2016-11-13 18:21:20,968 [P8348/D3/T917] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.Media.IImageUrlProvider
+ 2016-11-13 18:21:20,971 [P8348/D3/T917] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 0 (took 2ms)
+ 2016-11-13 18:21:23,733 [P8348/D3/T917] INFO  Umbraco.Core.DatabaseContext - CanConnect = True
+ 2016-11-13 18:21:24,540 [P8348/D3/T917] INFO  Umbraco.Core.DatabaseContext - CanConnect = True
+ 2016-11-13 18:21:24,675 [P8348/D3/T917] INFO  Umbraco.Core.DatabaseContext - CanConnect = True
+ 2016-11-13 18:21:24,907 [P8348/D3/T917] INFO  Umbraco.Web.Cache.CacheRefresherEventHandler - Initializing Umbraco internal event handlers for cache refreshing
+ 2016-11-13 18:21:25,275 [P8348/D3/T917] INFO  Umbraco.Web.Search.ExamineEvents - Initializing Examine and binding to business logic events
+ 2016-11-13 18:21:25,276 [P8348/D3/T917] INFO  Umbraco.Web.Search.ExamineEvents - Adding examine event handlers for index providers: 3
+ 2016-11-13 18:21:25,304 [P8348/D3/T917] INFO  Umbraco.Core.CoreBootManager - Umbraco application startup complete (took 5133ms)
+ 2016-11-13 18:21:26,960 [P8348/D3/T899] INFO  Umbraco.Core.Sync.ApplicationUrlHelper - ApplicationUrl: http://localhost:17606/umbraco (UmbracoModule request)
+ 2016-11-13 18:21:27,991 [P8348/D3/T899] INFO  umbraco.content - Load Xml from file...
+ 2016-11-13 18:21:27,996 [P8348/D3/T899] INFO  umbraco.content - Loaded Xml from file.
+ 2016-11-13 18:21:29,781 [P8348/D3/T899] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.PropertyEditors.IParameterEditor
+ 2016-11-13 18:21:29,784 [P8348/D3/T899] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.PropertyEditors.IParameterEditor, found 0 (took 3ms)
+ 2016-11-13 18:21:47,838 [P8348/D3/T899] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.Persistence.Mappers.BaseMapper
+ 2016-11-13 18:21:47,842 [P8348/D3/T899] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.Persistence.Mappers.BaseMapper, found 0 (took 3ms)
+ 2016-11-13 18:21:48,434 [P8348/D3/T899] INFO  Umbraco.Core.PluginManager - Starting resolution types of umbraco.cms.businesslogic.macro.IMacroEngine
+ 2016-11-13 18:21:48,438 [P8348/D3/T899] INFO  Umbraco.Core.PluginManager - Completed resolution of types of umbraco.cms.businesslogic.macro.IMacroEngine, found 0 (took 4ms)
+ 2016-11-13 18:22:28,296 [P8348/D3/T918] INFO  umbraco.BusinessLogic.Log - Log scrubbed.  Removed all items older than 2559-11-12 18:22:28
+ 2016-11-13 18:23:57,141 [P8348/D3/T907] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledPublishing] Terminating
+ 2016-11-13 18:23:57,141 [P8348/D3/T907] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledPublishing] Waiting for tasks to complete
+ 2016-11-13 18:23:57,143 [P8348/D3/T907] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [LogScrubber] Terminating
+ 2016-11-13 18:23:57,143 [P8348/D3/T907] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [LogScrubber] Waiting for tasks to complete
+ 2016-11-13 18:23:57,144 [P8348/D3/T907] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [KeepAlive] Terminating
+ 2016-11-13 18:23:57,144 [P8348/D3/T907] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [KeepAlive] Waiting for tasks to complete
+ 2016-11-13 18:23:57,144 [P8348/D3/T907] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledTasks] Terminating
+ 2016-11-13 18:23:57,144 [P8348/D3/T907] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledTasks] Waiting for tasks to complete
+ 2016-11-13 18:23:57,145 [P8348/D3/T14] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledPublishing] Tasks completed, terminated
+ 2016-11-13 18:23:57,145 [P8348/D3/T12] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledTasks] Tasks completed, terminated
+ 2016-11-13 18:23:57,146 [P8348/D3/T896] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [KeepAlive] Tasks completed, terminated
+ 2016-11-13 18:23:57,148 [P8348/D3/T918] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [LogScrubber] Tasks completed, terminated
+ 2016-11-13 18:23:57,328 [P8348/D3/T907] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [Umbraco.Web.Scheduling.IBackgroundTask] Terminating
+ 2016-11-13 18:23:57,328 [P8348/D3/T907] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [Umbraco.Web.Scheduling.IBackgroundTask] Waiting for tasks to complete
+ 2016-11-13 18:23:57,328 [P8348/D3/T899] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [Umbraco.Web.Scheduling.IBackgroundTask] Tasks completed, terminated
+ 2016-11-13 18:24:16,975 [P8348/D4/T1] INFO  Umbraco.Core.CoreBootManager - Umbraco 7.5.4 application starting on HOMEPC
+ 2016-11-13 18:24:17,052 [P8348/D4/T1] INFO  Umbraco.Core.PluginManager - Determining hash of code files on disk
+ 2016-11-13 18:24:17,101 [P8348/D4/T1] INFO  Umbraco.Core.PluginManager - Hash determined (took 48ms)
+ 2016-11-13 18:24:17,277 [P8348/D4/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of umbraco.interfaces.IApplicationStartupHandler
+ 2016-11-13 18:24:18,327 [P8348/D4/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 0 (took 1049ms)
+ 2016-11-13 18:24:18,371 [P8348/D4/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter
+ 2016-11-13 18:24:18,386 [P8348/D4/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 14ms)
+ 2016-11-13 18:24:18,387 [P8348/D4/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyValueConverter
+ 2016-11-13 18:24:18,407 [P8348/D4/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyValueConverter, found 0 (took 19ms)
+ 2016-11-13 18:24:18,445 [P8348/D4/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Web.Mvc.SurfaceController
+ 2016-11-13 18:24:18,462 [P8348/D4/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 0 (took 16ms)
+ 2016-11-13 18:24:18,464 [P8348/D4/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Web.WebApi.UmbracoApiController
+ 2016-11-13 18:24:18,482 [P8348/D4/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Web.WebApi.UmbracoApiController, found 0 (took 18ms)
+ 2016-11-13 18:24:18,582 [P8348/D4/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.Media.IThumbnailProvider
+ 2016-11-13 18:24:18,597 [P8348/D4/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 0 (took 14ms)
+ 2016-11-13 18:24:18,598 [P8348/D4/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.Media.IImageUrlProvider
+ 2016-11-13 18:24:18,613 [P8348/D4/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 0 (took 14ms)
+ 2016-11-13 18:24:21,604 [P8348/D4/T1] INFO  Umbraco.Core.DatabaseContext - CanConnect = True
+ 2016-11-13 18:24:22,202 [P8348/D4/T1] INFO  Umbraco.Core.DatabaseContext - CanConnect = True
+ 2016-11-13 18:24:22,209 [P8348/D4/T1] INFO  Umbraco.Core.DatabaseContext - CanConnect = True
+ 2016-11-13 18:24:22,268 [P8348/D4/T1] INFO  Umbraco.Web.Cache.CacheRefresherEventHandler - Initializing Umbraco internal event handlers for cache refreshing
+ 2016-11-13 18:24:22,449 [P8348/D4/T1] INFO  Umbraco.Web.Search.ExamineEvents - Initializing Examine and binding to business logic events
+ 2016-11-13 18:24:22,449 [P8348/D4/T1] INFO  Umbraco.Web.Search.ExamineEvents - Adding examine event handlers for index providers: 3
+ 2016-11-13 18:24:22,474 [P8348/D4/T1] INFO  Umbraco.Core.CoreBootManager - Umbraco application startup complete (took 5707ms)
+ 2016-11-13 18:24:22,800 [P8348/D4/T918] INFO  Umbraco.Core.Sync.ApplicationUrlHelper - ApplicationUrl: http://localhost:17606/umbraco (UmbracoModule request)
+ 2016-11-13 18:24:22,800 [P8348/D4/T10] INFO  Umbraco.Core.Sync.ApplicationUrlHelper - ApplicationUrl: http://localhost:17606/umbraco (UmbracoModule request)
+ 2016-11-13 18:24:22,800 [P8348/D4/T905] INFO  Umbraco.Core.Sync.ApplicationUrlHelper - ApplicationUrl: http://localhost:17606/umbraco (UmbracoModule request)
+ 2016-11-13 18:24:22,800 [P8348/D4/T441] INFO  Umbraco.Core.Sync.ApplicationUrlHelper - ApplicationUrl: http://localhost:17606/umbraco (UmbracoModule request)
+ 2016-11-13 18:24:22,800 [P8348/D4/T902] INFO  Umbraco.Core.Sync.ApplicationUrlHelper - ApplicationUrl: http://localhost:17606/umbraco (UmbracoModule request)
+ 2016-11-13 18:24:22,802 [P8348/D4/T913] INFO  Umbraco.Core.Sync.ApplicationUrlHelper - ApplicationUrl: http://localhost:17606/umbraco (UmbracoModule request)
+ 2016-11-13 18:24:22,802 [P8348/D4/T899] INFO  Umbraco.Core.Sync.ApplicationUrlHelper - ApplicationUrl: http://localhost:17606/umbraco (UmbracoModule request)
+ 2016-11-13 18:24:23,369 [P8348/D4/T905] INFO  umbraco.content - Load Xml from file...
+ 2016-11-13 18:24:23,375 [P8348/D4/T905] INFO  umbraco.content - Loaded Xml from file.
+ 2016-11-13 18:24:24,904 [P8348/D4/T10] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.PropertyEditors.IParameterEditor
+ 2016-11-13 18:24:24,963 [P8348/D4/T10] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.PropertyEditors.IParameterEditor, found 0 (took 58ms)
+ 2016-11-13 18:24:27,356 [P8348/D3/T911] INFO  Umbraco.Core.UmbracoApplicationBase - Application shutdown. Details: BinDirChangeOrDirectoryRename
+
+_shutDownMessage=Change Notification for critical directories.
+bin dir change or directory rename
+HostingEnvironment initiated shutdown
+Change Notification for critical directories.
+bin dir change or directory rename
+Change Notification for critical directories.
+bin dir change or directory rename
+Change Notification for critical directories.
+bin dir change or directory rename
+Change Notification for critical directories.
+bin dir change or directory rename
+Change Notification for critical directories.
+bin dir change or directory rename
+Change in C:\Users\momojojo\AppData\Local\Temp\Temporary ASP.NET Files\vs\bc422b9f\57585326\hash\hash.web
+Change in C:\Users\momojojo\AppData\Local\Temp\Temporary ASP.NET Files\vs\bc422b9f\57585326\hash\hash.web
+HostingEnvironment caused shutdown
+
+_shutDownStack=   at System.Environment.GetStackTrace(Exception e, Boolean needFileInfo)
+   at System.Environment.get_StackTrace()
+   at System.Web.Hosting.HostingEnvironment.InitiateShutdownInternal()
+   at System.Web.Hosting.HostingEnvironment.InitiateShutdownWithoutDemand()
+   at System.Web.HttpRuntime.ShutdownAppDomain(String stackTrace)
+   at System.Web.HttpRuntime.OnCriticalDirectoryChange(Object sender, FileChangeEvent e)
+   at System.Web.FileChangesMonitor.OnCriticaldirChange(Object sender, FileChangeEvent e)
+   at System.Web.DirectoryMonitor.FireNotifications()
+   at System.Web.Util.WorkItem.CallCallbackWithAssert(WorkItemCallback callback)
+   at System.Web.Util.WorkItem.OnQueueUserWorkItemCompletion(Object state)
+   at System.Threading.QueueUserWorkItemCallback.WaitCallback_Context(Object state)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   at System.Threading.QueueUserWorkItemCallback.System.Threading.IThreadPoolWorkItem.ExecuteWorkItem()
+   at System.Threading.ThreadPoolWorkQueue.Dispatch()
+   at System.Threading._ThreadPoolWaitCallback.PerformWaitCallback()
+ 2016-11-13 18:24:44,657 [P8348/D4/T899] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.Persistence.Mappers.BaseMapper
+ 2016-11-13 18:24:44,675 [P8348/D4/T899] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.Persistence.Mappers.BaseMapper, found 0 (took 17ms)
+ 2016-11-13 18:24:45,004 [P8348/D4/T10] INFO  Umbraco.Core.PluginManager - Starting resolution types of umbraco.cms.businesslogic.macro.IMacroEngine
+ 2016-11-13 18:24:45,012 [P8348/D4/T10] INFO  Umbraco.Core.PluginManager - Completed resolution of types of umbraco.cms.businesslogic.macro.IMacroEngine, found 0 (took 7ms)
+ 2016-11-13 18:25:23,544 [P8348/D4/T910] INFO  umbraco.BusinessLogic.Log - Log scrubbed.  Removed all items older than 2559-11-12 18:25:23
+ 2016-11-13 18:57:14,606 [P8348/D4/T10] WARN  Umbraco.Web.UmbracoModule - Status code is 404 yet TrySkipIisCustomErrors is false - IIS will take over.
+ 2016-11-13 20:48:58,720 [P8348/D4/T463] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledPublishing] Terminating
+ 2016-11-13 20:48:58,720 [P8348/D4/T463] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledPublishing] Waiting for tasks to complete
+ 2016-11-13 20:48:58,725 [P8348/D4/T461] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledPublishing] Tasks completed, terminated
+ 2016-11-13 20:48:58,728 [P8348/D4/T463] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [KeepAlive] Terminating
+ 2016-11-13 20:48:58,728 [P8348/D4/T463] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [KeepAlive] Waiting for tasks to complete
+ 2016-11-13 20:48:58,729 [P8348/D4/T463] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [Umbraco.Web.Scheduling.IBackgroundTask] Terminating
+ 2016-11-13 20:48:58,729 [P8348/D4/T463] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [Umbraco.Web.Scheduling.IBackgroundTask] Waiting for tasks to complete
+ 2016-11-13 20:48:58,729 [P8348/D4/T918] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [KeepAlive] Tasks completed, terminated
+ 2016-11-13 20:48:58,729 [P8348/D4/T618] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [Umbraco.Web.Scheduling.IBackgroundTask] Tasks completed, terminated
+ 2016-11-13 20:48:58,884 [P8348/D4/T463] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledTasks] Terminating
+ 2016-11-13 20:48:58,884 [P8348/D4/T463] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledTasks] Waiting for tasks to complete
+ 2016-11-13 20:48:58,884 [P8348/D4/T463] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [LogScrubber] Terminating
+ 2016-11-13 20:48:58,884 [P8348/D4/T463] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [LogScrubber] Waiting for tasks to complete
+ 2016-11-13 20:48:58,885 [P8348/D4/T484] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledTasks] Tasks completed, terminated
+ 2016-11-13 20:48:58,885 [P8348/D4/T436] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [LogScrubber] Tasks completed, terminated
+ 2016-11-13 20:49:09,122 [P8348/D5/T914] INFO  Umbraco.Core.CoreBootManager - Umbraco 7.5.4 application starting on HOMEPC
+ 2016-11-13 20:49:09,174 [P8348/D5/T914] INFO  Umbraco.Core.PluginManager - Determining hash of code files on disk
+ 2016-11-13 20:49:09,196 [P8348/D5/T914] INFO  Umbraco.Core.PluginManager - Hash determined (took 22ms)
+ 2016-11-13 20:49:09,370 [P8348/D5/T914] INFO  Umbraco.Core.PluginManager - Starting resolution types of umbraco.interfaces.IApplicationStartupHandler
+ 2016-11-13 20:49:09,521 [P8348/D5/T914] INFO  Umbraco.Core.PluginManager - Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 0 (took 151ms)
+ 2016-11-13 20:49:09,636 [P8348/D5/T914] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter
+ 2016-11-13 20:49:09,640 [P8348/D5/T914] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 3ms)
+ 2016-11-13 20:49:09,641 [P8348/D5/T914] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyValueConverter
+ 2016-11-13 20:49:09,645 [P8348/D5/T914] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyValueConverter, found 0 (took 4ms)
+ 2016-11-13 20:49:09,679 [P8348/D5/T914] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Web.Mvc.SurfaceController
+ 2016-11-13 20:49:09,684 [P8348/D5/T914] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 0 (took 4ms)
+ 2016-11-13 20:49:09,686 [P8348/D5/T914] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Web.WebApi.UmbracoApiController
+ 2016-11-13 20:49:09,706 [P8348/D5/T914] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Web.WebApi.UmbracoApiController, found 0 (took 19ms)
+ 2016-11-13 20:49:09,869 [P8348/D5/T914] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.Media.IThumbnailProvider
+ 2016-11-13 20:49:09,872 [P8348/D5/T914] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 0 (took 2ms)
+ 2016-11-13 20:49:09,873 [P8348/D5/T914] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.Media.IImageUrlProvider
+ 2016-11-13 20:49:09,875 [P8348/D5/T914] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 0 (took 2ms)
+ 2016-11-13 20:49:12,492 [P8348/D5/T914] INFO  Umbraco.Core.DatabaseContext - CanConnect = True
+ 2016-11-13 20:49:13,120 [P8348/D5/T914] INFO  Umbraco.Core.DatabaseContext - CanConnect = True
+ 2016-11-13 20:49:13,128 [P8348/D5/T914] INFO  Umbraco.Core.DatabaseContext - CanConnect = True
+ 2016-11-13 20:49:13,229 [P8348/D5/T914] INFO  Umbraco.Web.Cache.CacheRefresherEventHandler - Initializing Umbraco internal event handlers for cache refreshing
+ 2016-11-13 20:49:13,503 [P8348/D5/T914] INFO  Umbraco.Web.Search.ExamineEvents - Initializing Examine and binding to business logic events
+ 2016-11-13 20:49:13,503 [P8348/D5/T914] INFO  Umbraco.Web.Search.ExamineEvents - Adding examine event handlers for index providers: 3
+ 2016-11-13 20:49:13,538 [P8348/D5/T914] INFO  Umbraco.Core.CoreBootManager - Umbraco application startup complete (took 4603ms)
+ 2016-11-13 20:49:15,065 [P8348/D5/T518] INFO  Umbraco.Core.Sync.ApplicationUrlHelper - ApplicationUrl: http://localhost:17606/umbraco (UmbracoModule request)
+ 2016-11-13 20:49:16,069 [P8348/D5/T518] INFO  umbraco.content - Load Xml from file...
+ 2016-11-13 20:49:16,075 [P8348/D5/T518] INFO  umbraco.content - Loaded Xml from file.
+ 2016-11-13 20:49:17,434 [P8348/D5/T518] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.PropertyEditors.IParameterEditor
+ 2016-11-13 20:49:17,439 [P8348/D5/T518] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.PropertyEditors.IParameterEditor, found 0 (took 4ms)
+ 2016-11-13 20:49:28,974 [P8348/D4/T463] INFO  Umbraco.Core.UmbracoApplicationBase - Application shutdown. Details: MaxRecompilationsReached
+
+_shutDownMessage=Recompilation limit of 15 reached
+HostingEnvironment initiated shutdown
+HostingEnvironment caused shutdown
+
+_shutDownStack=   at System.Environment.GetStackTrace(Exception e, Boolean needFileInfo)
+   at System.Environment.get_StackTrace()
+   at System.Web.Hosting.HostingEnvironment.InitiateShutdownInternal()
+   at System.Web.Hosting.HostingEnvironment.InitiateShutdownWithoutDemand()
+   at System.Web.HttpRuntime.ShutdownAppDomain(String stackTrace)
+   at System.Web.Compilation.DiskBuildResultCache.ShutdownCallBack(Object state)
+   at System.Threading.QueueUserWorkItemCallback.WaitCallback_Context(Object state)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   at System.Threading.QueueUserWorkItemCallback.System.Threading.IThreadPoolWorkItem.ExecuteWorkItem()
+   at System.Threading.ThreadPoolWorkQueue.Dispatch()
+   at System.Threading._ThreadPoolWaitCallback.PerformWaitCallback()
+ 2016-11-13 20:49:34,116 [P8348/D5/T518] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.Persistence.Mappers.BaseMapper
+ 2016-11-13 20:49:34,122 [P8348/D5/T518] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.Persistence.Mappers.BaseMapper, found 0 (took 6ms)
+ 2016-11-13 20:49:34,789 [P8348/D5/T518] INFO  Umbraco.Core.PluginManager - Starting resolution types of umbraco.cms.businesslogic.macro.IMacroEngine
+ 2016-11-13 20:49:34,792 [P8348/D5/T518] INFO  Umbraco.Core.PluginManager - Completed resolution of types of umbraco.cms.businesslogic.macro.IMacroEngine, found 0 (took 3ms)
+ 2016-11-13 20:50:16,277 [P8348/D5/T858] INFO  umbraco.BusinessLogic.Log - Log scrubbed.  Removed all items older than 2559-11-12 20:50:16
+ 2016-11-13 20:57:25,599 [P8348/D5/T858] WARN  Umbraco.Web.UmbracoModule - Status code is 404 yet TrySkipIisCustomErrors is false - IIS will take over.
+ 2016-11-13 21:05:13,114 [P8348/D5/T6] WARN  Umbraco.Web.UmbracoModule - Status code is 404 yet TrySkipIisCustomErrors is false - IIS will take over.

@@ -22,14 +22,26 @@
     {{/Data}}
 </script>
 
+<script id="NoEventTemplate" type="x-tmpl-mustache">
+   
+    <div class="row">
+        <hr>
+        <div class="col-lg-12 text-center  ">
+           
+                <h4 class="service-heading">No exhibitions found</h4>
+                <h4 class="service-heading">  ไม่พบงานแสดงนิทรรศการในขณะนี้ </h4>
+            
+        </div>
+      
+    </div>
+</script>
+
 <script>
 
     $(document).ready(function () {
         menuType = 'OnView';
         initEvent();
-        //  Preload();
-        //Render List
-        //SetPagger2();
+
         RenderList();
     });
 
@@ -80,6 +92,7 @@
             SetList(msg[0]);
 
             SetPagger(msg[1].RecordCount);
+
             LoadCompelete();
         });
 
@@ -87,22 +100,36 @@
 
     /*Render Data*/
     function SetList(msg) {
-        var template = $('#ListTemplate').html();
-        Mustache.parse(template);   // optional, speeds up future uses
 
-        msg = ConvertDataByLanguage(msg);
+        if (msg.length > 0) {    /*Show Event By Navigation*/
+            var template = $('#ListTemplate').html();
+            Mustache.parse(template);   // optional, speeds up future uses
 
-        var rendered = Mustache.render(template, { Data: msg });
-        $('#divList').html('');
-        $('#divList').html(rendered);
+            msg = ConvertDataByLanguage(msg);
 
-        //Set Pagger
-        SetPagger(30);
+            var rendered = Mustache.render(template, { Data: msg });
+            $('#divList').html('');
+            $('#divList').html(rendered);
+        } else {
+            /*Display No data Display*/
+            var template = $('#NoEventTemplate').html();
+            var rendered = Mustache.render(template);
+            $('#divList').html('');
+            $('#divList').html(rendered);
+        }
 
     }
 
     //Set Pagger
     function SetPagger(RecordCount) {
+
+        if (RecordCount == 0) {
+            $('#ulpage').hide();
+            return;
+        }
+        else {
+            $('#ulpage').show();
+        }
         $('#ulpage').pagination({
             items: RecordCount,
             itemsOnPage: PageSize,
