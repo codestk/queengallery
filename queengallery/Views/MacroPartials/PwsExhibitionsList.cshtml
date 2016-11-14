@@ -8,7 +8,7 @@
 <script id="ListTemplate" type="x-tmpl-mustache">
     {{#Data}}
     <div class="row">
-        <div class="col-lg-3"><img src='{{logoUrl}}' class="img-thumbnail img-responsive img-center"> </div>
+        <div class="col-lg-3"><a href="#" class="EventModal"><img src='{{logoUrl}}' class="img-thumbnail img-responsive img-center"></a> </div>
         <div class="col-lg-9">
             <a href="post.Url"> <h3 class="NoPaddingNoMargin">{{name}} </h3>		</a>
             <div class="date">{{title}}</div>
@@ -65,7 +65,19 @@
             SetActiveLeftMenu(aTagObject);
         }
 
+        /*Modal Event*/
+
     };
+
+    function ModalEvent() {
+
+        $('.EventModal').on('click', function () {
+
+            $('.imagepreview').attr('src', $(this).find('img').attr('src'));
+            $('#imagemodal').modal('show');
+        });
+
+    }
 
     var PageIndex = '1';
     var PageSize = '10';
@@ -86,6 +98,8 @@
             SetPagger(msg[1].RecordCount);
 
             LoadCompelete();
+
+            ModalEvent();
         });
 
     }
@@ -160,6 +174,7 @@
             data[key]["introduction"] = data[key]["introduction" + preFixLang];
 
             var ImageUmbracoString = data[key]["logo"];
+
             data[key]["logoUrl"] = UmbracoImageUrl(ImageUmbracoString);
 
         }
@@ -183,7 +198,7 @@
                     </div>
                     <div class="row">
                         <div class="col-xs-12">
-                           
+
                             <ul id="ulpage" class="pagination  pull-right"></ul>
                         </div>
                     </div>
@@ -191,4 +206,20 @@
             </div>
         </div>
     </section>
+
+
+
+   
+
+</div>
+
+<div class="modal fade" id="imagemodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" style="z-index:1050">
+        <div class="modal-content">
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <img src="" class="imagepreview" style="width: 100%;">
+            </div>
+        </div>
+    </div>
 </div>

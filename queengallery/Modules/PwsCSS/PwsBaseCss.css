@@ -11,13 +11,28 @@
 
 body {
     padding-top: 50px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
-    color: #666;
+    color: #131516;
     /*color: #333333;*/
-    font-family: 'Kanit', sans-serif !important;
-    /*color: #373D3f;*/ 
-   text-rendering: optimizeLegibility;
-    
+    /*font-family: 'Kanit', sans-serif !important;*/
+    /*color: #373D3f;*/
+  
 }
+ 
+/*Navigation*/
+.navbar-inverse {
+    /*background-color: #222;
+    border-color: #080808;*/
+    background: rgba(40,40,40,.95);
+}
+.navbar-inverse .navbar-nav > li > a {
+   letter-spacing:1px;
+     /*font-family: 'Kanit', sans-serif !important;*/
+}
+a.list-group-item, button.list-group-item {
+     letter-spacing:2px;
+    /*font-family: 'Kanit', sans-serif !important;*/
+}
+
 
 .date {
     color: #111;
@@ -30,18 +45,21 @@ body {
 }
 
 .message {
-/*color: #b48608;   font-size: 30px; font-weight: 400;  line-height: 40px; margin: 0 0 12px; text-align: center;*/
- /*color: #3c6478;*/  
- color:#337ab7;
- 
- font-size: 28px; font-weight: 400;  line-height: 40px; margin: 0 0 12px;
-
-
-text-align:center;  
- 
-        
-      text-rendering: optimizeLegibility;
- }
+    /*color: #b48608;   font-size: 30px; font-weight: 400;  line-height: 40px; margin: 0 0 12px; text-align: center;*/
+    /*color: #3c6478;*/
+    color: #337ab7;
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 40px;
+    margin: 0 0 12px;
+    text-align: center;
+    text-rendering: optimizeLegibility;
+    font-family: "Some Custom Font", serif;
+    text-shadow: 0 0 1px transparent;
+    /* Or, if you need to apply a 0px hard shadow,
+         * you can use multiple text shadows */
+    
+}
 /* Header Image Background - Change the URL below to your image path (example: ../images/background.jpg) */
 
 .business-header1 {
@@ -86,7 +104,7 @@ text-align:center;
 
 /*----Main*/
 main {
-    margin-top: 12px;
+    margin-top: 14px;
 }
 
 /*====Footer*/
@@ -100,13 +118,11 @@ footer {
     /*background-color:#ffffff;*/
     text-decoration: dotted;
     background-color: #555 !important;
-
-    border-bottom-style:solid;
- 
-    /*border-bottom-color:#bca136;*/
-   border-bottom-color:#efd469;
-     /*border-bottom-color:#efd469;*/
- 
+    border-bottom-style: solid;
+     
+    /*border-bottom-color:#efd469;*/
+    border-bottom-color:#EED369;
+    /*border-bottom-color: #337ab7;*/
 }
 
     .MenuSelected a {
@@ -316,6 +332,6 @@ footer {
 
 /*Util*/
 .NoPaddingNoMargin {
-padding:0px !important;
-margin:0px  !important;
+    padding: 0px !important;
+    margin: 0px !important;
 }
