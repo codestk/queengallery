@@ -300,8 +300,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="HtmlPage1.html" />
-    <Content Include="HtmlPage2.html" />
     <Content Include="js\queengalleryEn.js" />
     <Content Include="js\queengalleryTh.js" />
     <Content Include="Modules\PreLoad\PwsPreLoad.js" />
@@ -310,7 +308,6 @@
     <Content Include="Modules\Pws\PWSCallService.js" />
     <Content Include="packages.config" />
     <Content Include="App_Plugins\ModelsBuilder\package.manifest" />
-    <Content Include="StyleSheet1.css" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\Partials\Grid\Editors\Textstring.cshtml" />
     <Content Include="Views\Partials\Grid\Editors\Rte.cshtml" />
