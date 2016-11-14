@@ -5,37 +5,29 @@
 <script src="/Modules/Pws/PWSCallService.js"></script>
 <script src="/Modules/mustache/mustache.js"></script>
 <script src="/Modules/UmbracoImage/UmbracoImage.js"></script>
-
 <script id="ListTemplate" type="x-tmpl-mustache">
     {{#Data}}
     <div class="row">
         <div class="col-lg-3"><img src='{{logoUrl}}' class="img-thumbnail img-responsive img-center"> </div>
         <div class="col-lg-9">
-
-            <a href="post.Url"><h3>{{name}}</h3>		</a>
+            <a href="post.Url"> <h3 class="NoPaddingNoMargin">{{name}} </h3>		</a>
             <div class="date">{{title}}</div>
             <p>{{introduction}}</p>
         </div>
     </div>
     <hr>
-
     {{/Data}}
 </script>
-
 <script id="NoEventTemplate" type="x-tmpl-mustache">
-   
+
     <div class="row">
         <hr>
-        <div class="col-lg-12 text-center  ">
-           
-                <h4 class="service-heading">No exhibitions found</h4>
-                <h4 class="service-heading">  ไม่พบงานแสดงนิทรรศการในขณะนี้ </h4>
-            
+        <div class="col-lg-12   ">
+            @*<div class="message"> ทดสอบภาษาไทย</div>*@
+            <div class="message">@Umbraco.Field("#EventNotFound") </div>
         </div>
-      
     </div>
 </script>
-
 <script>
 
     $(document).ready(function () {
@@ -175,7 +167,6 @@
         return data;
     }
 </script>
-
 <div role="content">
     <section class="light blogarchive equalizer">
         <div class="container">
@@ -192,9 +183,8 @@
                     </div>
                     <div class="row">
                         <div class="col-xs-12">
-                            <div id="pagination" class="text-center">  </div>
-
-                            <ul id="ulpage" class="pagination text-center"></ul>
+                           
+                            <ul id="ulpage" class="pagination  pull-right"></ul>
                         </div>
                     </div>
                 </div>
