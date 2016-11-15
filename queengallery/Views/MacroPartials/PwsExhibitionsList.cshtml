@@ -5,29 +5,7 @@
 <script src="/Modules/Pws/PWSCallService.js"></script>
 <script src="/Modules/mustache/mustache.js"></script>
 <script src="/Modules/UmbracoImage/UmbracoImage.js"></script>
-<script id="ListTemplate" type="x-tmpl-mustache">
-    {{#Data}}
-    <div class="row">
-        <div class="col-lg-3"><a href="#" class="EventModal"><img src='{{logoUrl}}' class="img-thumbnail img-responsive img-center"></a> </div>
-        <div class="col-lg-9">
-            <a href="post.Url"> <h3 class="NoPaddingNoMargin">{{name}} </h3>		</a>
-            <div class="date">{{title}}</div>
-            <p>{{introduction}}</p>
-        </div>
-    </div>
-    <hr>
-    {{/Data}}
-</script>
-<script id="NoEventTemplate" type="x-tmpl-mustache">
 
-    <div class="row">
-        <hr>
-        <div class="col-lg-12   ">
-            @*<div class="message"> ทดสอบภาษาไทย</div>*@
-            <div class="message">@Umbraco.Field("#EventNotFound") </div>
-        </div>
-    </div>
-</script>
 <script>
 
     $(document).ready(function () {
@@ -42,39 +20,61 @@
     //    blurElement("body", 0)
     //});
 
-    function SetActiveLeftMenu(aTag) {
-        $('.list-group a').removeClass('active');
+    function SetActiveLeftMenu(aTag, id) {
+        $('#' + id + ' .list-group a').removeClass('active');
         $(aTag).addClass('active');
     }
 
     function initEvent() {
 
-        //Left Menu Event
+        //Left Menu Event Main ======================================================
         $('#aOnView,#aPast,#aUpcoming').on('click', function (event) {
-
+            event.preventDefault();
             //Get Attibute A data-type
             menuType = $(this).attr('data-type');
-            aEvent(this);
-        });
 
-        function aEvent(aTagObject) {
-            SetActiveLeftMenu(this);
-            event.preventDefault();
+            SetActiveLeftMenu(this, 'Main');
+
             PageIndex = '1';
             RenderList();
-            SetActiveLeftMenu(aTagObject);
-        }
+        });
 
-        /*Modal Event*/
+        //Left SubMenu Event Main ===================================================
+        $('#aInformation,#aArtists,#aArtPieces').on('click', function (event) {
+            event.preventDefault();
+            //Get Attibute A data-type
+            menuType = $(this).attr('data-type');
+
+            SetActiveLeftMenu(this, 'SubMain');
+
+            //PageIndex = '1';
+            //RenderList();
+        });
 
     };
-
+    /*Event*/
     function ModalEvent() {
 
         $('.EventModal').on('click', function () {
 
             $('.imagepreview').attr('src', $(this).find('img').attr('src'));
             $('#imagemodal').modal('show');
+        });
+
+    }
+
+    function EventExhibition() {
+
+        $('.EventExhibition').on('click', function () {
+            $('#Main').hide();
+            $('#SubMain').show();
+
+            var template = $('#ExhibitionsDetailTemplate').html();
+            Mustache.parse(template);   // optional, speeds up future uses
+
+            var rendered = Mustache.render(template, { Data: msg });
+            $('#divList').html('');
+            $('#divList').html(rendered);
         });
 
     }
@@ -99,7 +99,12 @@
 
             LoadCompelete();
 
-            ModalEvent();
+            //Create Event in list
+            if (msg[0].length > 0) {
+                ModalEvent();
+
+                EventExhibition();
+            }
         });
 
     }
@@ -116,6 +121,7 @@
             var rendered = Mustache.render(template, { Data: msg });
             $('#divList').html('');
             $('#divList').html(rendered);
+
         } else {
             /*Display No data Display*/
             var template = $('#NoEventTemplate').html();
@@ -165,7 +171,7 @@
 
     /*Convert Data*/
     function ConvertDataByLanguage(data) {
-
+        var arrayPosition=0;
         for (var key in data) {
             //preFixLang
             //var preFixLang = 'En';
@@ -177,12 +183,15 @@
 
             data[key]["logoUrl"] = UmbracoImageUrl(ImageUmbracoString);
 
+            data[key]["id"] = arrayPosition;
+            arrayPosition = arrayPosition + 1;
         }
 
         return data;
     }
 </script>
-<div role="content">
+
+<div id="Main" role="content">
     <section class="light blogarchive equalizer">
         <div class="container">
             <div class="row">
@@ -206,13 +215,75 @@
             </div>
         </div>
     </section>
-
-
-
-   
-
 </div>
 
+<div id="SubMain" role="content" style="display:none">
+    <section class="light blogarchive equalizer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="list-group">
+                        <a href="#" id="aInformation" data-type="Information" class="list-group-item active">Information</a>
+                        <a href="#" id="aArtists" data-type="Artists" class="list-group-item">Artists</a>
+                        <a href="#" id="aArtPieces" data-type="ArtPieces" class="list-group-item">Art Pieces</a>
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <div id="divExhibition">
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+
+                            <ul id="ulpage" class="pagination  pull-right"></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!--Template-->
+<script id="ListTemplate" type="x-tmpl-mustache">
+    {{#Data}}
+    <div class="row">
+        <div class="col-lg-3"><a href="#" class="EventModal"><img src='{{logoUrl}}' class="img-thumbnail img-responsive img-center"></a> </div>
+        <div class="col-lg-9">
+            <a href="#" class="EventExhibition" data-arrayIndex="{{id}}"> <h3 class="NoPaddingNoMargin">{{name}} </h3>		</a>
+
+            <h5 class="text-muted"> {{from}}-{{to}} </h5>
+            <p>{{introduction}} </p>
+        </div>
+    </div>
+    <hr>
+    {{/Data}}
+</script>
+<script id="NoEventTemplate" type="x-tmpl-mustache">
+
+    <div class="row">
+        <hr>
+        <div class="col-lg-12   ">
+            @*<div class="message"> ทดสอบภาษาไทย</div>*@
+            <div class="message">@Umbraco.Field("#EventNotFound") </div>
+        </div>
+    </div>
+</script>
+
+<!--SubMain-->
+<script id="ExhibitionsDetailTemplate" type="x-tmpl-mustache">
+    {{#Data}}
+    <div class="row">
+        <hr>
+        <div class="col-lg-12   ">
+            @*<div class="message"> ทดสอบภาษาไทย</div>*@
+            <div class="message">@Umbraco.Field("#EventNotFound") </div>
+        </div>
+    </div>
+    {{/Data}}
+</script>
+
+<!-- /Template-->
+<!-- Modal -->
 <div class="modal fade" id="imagemodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg" style="z-index:1050">
         <div class="modal-content">

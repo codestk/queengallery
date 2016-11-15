@@ -19,8 +19,8 @@ using Umbraco.ModelsBuilder;
 using Umbraco.ModelsBuilder.Umbraco;
 
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "35de78f8751fce63")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "1051c273976063c3")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.11")]
 
 namespace Umbraco.Web.PublishedContentModels
 {
@@ -149,9 +149,17 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 	}
 
+	// Mixin content Type 1059 with alias "BlogPostRepository"
+	/// <summary>Blog Post Repository</summary>
+	public partial interface IBlogPostRepository : IPublishedContent
+	{
+		/// <summary>Hide in bottom navigation?</summary>
+		bool UmbracoNaviHide { get; }
+	}
+
 	/// <summary>Blog Post Repository</summary>
 	[PublishedContentModel("BlogPostRepository")]
-	public partial class BlogPostRepository : PublishedContentModel
+	public partial class BlogPostRepository : PublishedContentModel, IBlogPostRepository
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "BlogPostRepository";
@@ -180,8 +188,11 @@ namespace Umbraco.Web.PublishedContentModels
 		[ImplementPropertyType("umbracoNaviHide")]
 		public bool UmbracoNaviHide
 		{
-			get { return this.GetPropertyValue<bool>("umbracoNaviHide"); }
+			get { return GetUmbracoNaviHide(this); }
 		}
+
+		/// <summary>Static getter for Hide in bottom navigation?</summary>
+		public static bool GetUmbracoNaviHide(IBlogPostRepository that) { return that.GetPropertyValue<bool>("umbracoNaviHide"); }
 	}
 
 	/// <summary>Home</summary>
@@ -375,6 +386,139 @@ namespace Umbraco.Web.PublishedContentModels
 		public string SiteName
 		{
 			get { return this.GetPropertyValue<string>("siteName"); }
+		}
+	}
+
+	/// <summary>News</summary>
+	[PublishedContentModel("news")]
+	public partial class News : PublishedContentModel
+	{
+#pragma warning disable 0109 // new is redundant
+		public new const string ModelTypeAlias = "news";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+#pragma warning restore 0109
+
+		public News(IPublishedContent content)
+			: base(content)
+		{ }
+
+#pragma warning disable 0109 // new is redundant
+		public new static PublishedContentType GetModelContentType()
+		{
+			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
+		}
+#pragma warning restore 0109
+
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<News, TValue>> selector)
+		{
+			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// ImageEn
+		///</summary>
+		[ImplementPropertyType("imageEn")]
+		public Umbraco.Web.Models.ImageCropDataSet ImageEn
+		{
+			get { return this.GetPropertyValue<Umbraco.Web.Models.ImageCropDataSet>("imageEn"); }
+		}
+
+		///<summary>
+		/// ImageTh
+		///</summary>
+		[ImplementPropertyType("imageTh")]
+		public Umbraco.Web.Models.ImageCropDataSet ImageTh
+		{
+			get { return this.GetPropertyValue<Umbraco.Web.Models.ImageCropDataSet>("imageTh"); }
+		}
+
+		///<summary>
+		/// NewsDate
+		///</summary>
+		[ImplementPropertyType("newsDate")]
+		public DateTime NewsDate
+		{
+			get { return this.GetPropertyValue<DateTime>("newsDate"); }
+		}
+
+		///<summary>
+		/// NewsType
+		///</summary>
+		[ImplementPropertyType("newsType")]
+		public object NewsType
+		{
+			get { return this.GetPropertyValue("newsType"); }
+		}
+
+		///<summary>
+		/// PdfEn
+		///</summary>
+		[ImplementPropertyType("pdfEn")]
+		public object PdfEn
+		{
+			get { return this.GetPropertyValue("pdfEn"); }
+		}
+
+		///<summary>
+		/// PdfTh
+		///</summary>
+		[ImplementPropertyType("pdfTh")]
+		public object PdfTh
+		{
+			get { return this.GetPropertyValue("pdfTh"); }
+		}
+
+		///<summary>
+		/// TextEn
+		///</summary>
+		[ImplementPropertyType("textEn")]
+		public IHtmlString TextEn
+		{
+			get { return this.GetPropertyValue<IHtmlString>("textEn"); }
+		}
+
+		///<summary>
+		/// TextTh
+		///</summary>
+		[ImplementPropertyType("textTh")]
+		public IHtmlString TextTh
+		{
+			get { return this.GetPropertyValue<IHtmlString>("textTh"); }
+		}
+	}
+
+	/// <summary>News Post Repository</summary>
+	[PublishedContentModel("newsPostRepository")]
+	public partial class NewsPostRepository : PublishedContentModel, IBlogPostRepository
+	{
+#pragma warning disable 0109 // new is redundant
+		public new const string ModelTypeAlias = "newsPostRepository";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+#pragma warning restore 0109
+
+		public NewsPostRepository(IPublishedContent content)
+			: base(content)
+		{ }
+
+#pragma warning disable 0109 // new is redundant
+		public new static PublishedContentType GetModelContentType()
+		{
+			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
+		}
+#pragma warning restore 0109
+
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<NewsPostRepository, TValue>> selector)
+		{
+			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Hide in bottom navigation?
+		///</summary>
+		[ImplementPropertyType("umbracoNaviHide")]
+		public bool UmbracoNaviHide
+		{
+			get { return BlogPostRepository.GetUmbracoNaviHide(this); }
 		}
 	}
 
