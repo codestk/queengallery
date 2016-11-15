@@ -68,13 +68,17 @@
         $('.EventExhibition').on('click', function () {
             $('#Main').hide();
             $('#SubMain').show();
+       
+            //Get FormCurent Id
+            var msg = CurrentListData[0];
 
             var template = $('#ExhibitionsDetailTemplate').html();
             Mustache.parse(template);   // optional, speeds up future uses
-
+            
+            
             var rendered = Mustache.render(template, { Data: msg });
-            $('#divList').html('');
-            $('#divList').html(rendered);
+            $('#divExhibition').html('');
+            $('#divExhibition').html(rendered);
         });
 
     }
@@ -82,7 +86,7 @@
     var PageIndex = '1';
     var PageSize = '10';
     var menuType = '';
-
+    var CurrentListData;
     function RenderList() {
 
         //Render List
@@ -92,8 +96,8 @@
 
             //Reder Data ListTemplate
             //console.log(msg);
-
-            SetList(msg[0]);
+            CurrentListData = ConvertDataByLanguage(msg[0]);
+            SetList(CurrentListData);
 
             SetPagger(msg[1].RecordCount);
 
@@ -116,7 +120,9 @@
             var template = $('#ListTemplate').html();
             Mustache.parse(template);   // optional, speeds up future uses
 
-            msg = ConvertDataByLanguage(msg);
+            //msg = ConvertDataByLanguage(msg);
+
+
 
             var rendered = Mustache.render(template, { Data: msg });
             $('#divList').html('');
@@ -178,7 +184,8 @@
             data[key]["name"] = data[key]["name" + preFixLang];
             data[key]["title"] = data[key]["title" + preFixLang];
             data[key]["introduction"] = data[key]["introduction" + preFixLang];
-
+            data[key]["content"] = data[key]["content" + preFixLang];
+           
             var ImageUmbracoString = data[key]["logo"];
 
             data[key]["logoUrl"] = UmbracoImageUrl(ImageUmbracoString);
@@ -216,7 +223,6 @@
         </div>
     </section>
 </div>
-
 <div id="SubMain" role="content" style="display:none">
     <section class="light blogarchive equalizer">
         <div class="container">
@@ -242,6 +248,9 @@
         </div>
     </section>
 </div>
+
+
+
 
 <!--Template-->
 <script id="ListTemplate" type="x-tmpl-mustache">
@@ -272,17 +281,20 @@
 <!--SubMain-->
 <script id="ExhibitionsDetailTemplate" type="x-tmpl-mustache">
     {{#Data}}
-    <div class="row">
-        <hr>
-        <div class="col-lg-12   ">
-            @*<div class="message"> ทดสอบภาษาไทย</div>*@
-            <div class="message">@Umbraco.Field("#EventNotFound") </div>
-        </div>
-    </div>
+  
+        
+     
+       <img class="img-responsive img-thumbnail"  src="{{logoUrl}}"/> 
+        <span> {{{content}}}</span>
+      
+     
     {{/Data}}
 </script>
 
 <!-- /Template-->
+
+
+
 <!-- Modal -->
 <div class="modal fade" id="imagemodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg" style="z-index:1050">
