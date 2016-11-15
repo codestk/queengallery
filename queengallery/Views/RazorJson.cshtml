@@ -63,7 +63,7 @@ var serializer = new System.Web.Script.Serialization.JavaScriptSerializer();
     }
     else if (Type=="Past")
     {
-    condition ="from < Todate";
+    condition ="(from < Todate) && (!( (from <= Todate) || (to >= Todate)))";
     valuesFilter.Add("Todate", DateTime.Now) ;
     items =  Umbraco.Content(blogId).Children().Where(condition,valuesFilter).OrderBy(sort);
     }
