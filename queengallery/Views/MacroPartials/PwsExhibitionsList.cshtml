@@ -7,18 +7,15 @@
 <script src="/Modules/UmbracoImage/UmbracoImage.js"></script>
 
 <script>
-
+   
     $(document).ready(function () {
+        Preload();
         menuType = 'OnView';
         initEvent();
 
         RenderList();
     });
-
-    //$(window).load(function () {
-    //    //Animate loader off screen
-    //    blurElement("body", 0)
-    //});
+ 
 
     function SetActiveLeftMenu(aTag, id) {
         $('#' + id + ' .list-group a').removeClass('active');
@@ -47,8 +44,24 @@
 
             SetActiveLeftMenu(this, 'SubMain');
 
-            //PageIndex = '1';
-            //RenderList();
+            if (menuType == "Information") {
+                //Display Full Details
+                ShowExhibition();
+            }
+            else if (menuType == "Artists") {
+                //Show Artis
+                //process ID Artists from
+                //$("#ExhibitionsDetail").html('');
+
+                ShowArtists();
+
+            }
+            else if (menuType == "ArtPieces") {
+                //Show ArtPieces
+                alert('Test');
+
+            }
+
         });
 
     };
@@ -64,23 +77,86 @@
     }
 
     function EventExhibition() {
-
         $('.EventExhibition').on('click', function () {
             $('#Main').hide();
             $('#SubMain').show();
-       
-            //Get FormCurent Id
-            var msg = CurrentListData[0];
 
-            var template = $('#ExhibitionsDetailTemplate').html();
-            Mustache.parse(template);   // optional, speeds up future uses
-            
-            
-            var rendered = Mustache.render(template, { Data: msg });
-            $('#divExhibition').html('');
-            $('#divExhibition').html(rendered);
+            ShowExhibition();
+            //Get FormCurent Id
+            //var msg = CurrentListData[0];
+
+            //var template = $('#ExhibitionsDetailTemplate').html();
+            //Mustache.parse(template);   // optional, speeds up future uses
+
+            //var rendered = Mustache.render(template, { Data: msg });
+            //$('#divExhibition').html('');
+            //$('#divExhibition').html(rendered);
         });
 
+    }
+
+    function ShowExhibition() {
+        var msg = CurrentListData[0];
+
+        var template = $('#ExhibitionsDetailTemplate').html();
+        Mustache.parse(template);   // optional, speeds up future uses
+
+        var rendered = Mustache.render(template, { Data: msg });
+        $('#divRightContent').html('');
+        $('#divRightContent').html(rendered);
+    }
+    function ShowArtists() {
+        Preload();
+        var msg = CurrentListData[0];
+
+      
+        var url = 'ArtistService?id=99';
+      
+        CallServices(url, '', true, function (msg) {
+          
+            if (msg.length > 0) {    /*Show Event By Navigation*/
+                var template = $('#ArtistsTemplate').html();
+                Mustache.parse(template);   // optional, speeds up future uses
+
+                var data = msg[0];
+                //convert Data
+                var arrayPosition = 0;
+                for (var key in data) {
+                    //preFixLang
+                    //var preFixLang = 'En';
+                    data[key]["name"] = data[key]["name" + preFixLang];
+
+                    var ImageUmbracoString = data[key]["image"];
+                    if (ImageUmbracoString != undefined) {
+                        data[key]["imageCropUrl"] = UmbracoImageUrl(ImageUmbracoString);
+                    }
+                    data[key]["id"] = arrayPosition;
+                    arrayPosition = arrayPosition + 1;
+                }
+                //
+
+                var rendered = Mustache.render(template, { Data: data });
+                $('#divRightContent').html('');
+                $('#divRightContent').html(rendered);
+
+            } else {
+                /*Display No data Display*/
+                var template = $('#NoEventTemplate').html();
+                var rendered = Mustache.render(template);
+                $('#divRightContent').html('');
+                $('#divRightContent').html(rendered);
+            }
+          LoadCompelete();
+        });
+
+        //ArtistService
+
+        var template = $('#ArtistsTemplate').html();
+        Mustache.parse(template);   // optional, speeds up future uses
+
+        var rendered = Mustache.render(template, { Data: msg });
+        $('#divRightContent').html('');
+        $('#divRightContent').html(rendered);
     }
 
     var PageIndex = '1';
@@ -115,14 +191,11 @@
 
     /*Render Data*/
     function SetList(msg) {
-
         if (msg.length > 0) {    /*Show Event By Navigation*/
             var template = $('#ListTemplate').html();
             Mustache.parse(template);   // optional, speeds up future uses
 
             //msg = ConvertDataByLanguage(msg);
-
-
 
             var rendered = Mustache.render(template, { Data: msg });
             $('#divList').html('');
@@ -177,7 +250,7 @@
 
     /*Convert Data*/
     function ConvertDataByLanguage(data) {
-        var arrayPosition=0;
+        var arrayPosition = 0;
         for (var key in data) {
             //preFixLang
             //var preFixLang = 'En';
@@ -185,7 +258,7 @@
             data[key]["title"] = data[key]["title" + preFixLang];
             data[key]["introduction"] = data[key]["introduction" + preFixLang];
             data[key]["content"] = data[key]["content" + preFixLang];
-           
+
             var ImageUmbracoString = data[key]["logo"];
 
             data[key]["logoUrl"] = UmbracoImageUrl(ImageUmbracoString);
@@ -198,6 +271,7 @@
     }
 </script>
 
+<!--Layout-->
 <div id="Main" role="content">
     <section class="light blogarchive equalizer">
         <div class="container">
@@ -223,6 +297,7 @@
         </div>
     </section>
 </div>
+
 <div id="SubMain" role="content" style="display:none">
     <section class="light blogarchive equalizer">
         <div class="container">
@@ -235,7 +310,7 @@
                     </div>
                 </div>
                 <div class="col-md-9">
-                    <div id="divExhibition">
+                    <div id="divRightContent">
                     </div>
                     <div class="row">
                         <div class="col-xs-12">
@@ -248,10 +323,7 @@
         </div>
     </section>
 </div>
-
-
-
-
+<!--/Layout-->
 <!--Template-->
 <script id="ListTemplate" type="x-tmpl-mustache">
     {{#Data}}
@@ -267,6 +339,7 @@
     <hr>
     {{/Data}}
 </script>
+
 <script id="NoEventTemplate" type="x-tmpl-mustache">
 
     <div class="row">
@@ -281,20 +354,32 @@
 <!--SubMain-->
 <script id="ExhibitionsDetailTemplate" type="x-tmpl-mustache">
     {{#Data}}
-  
-        
-     
-       <img class="img-responsive img-thumbnail"  src="{{logoUrl}}"/> 
+    <div id="ExhibitionsDetail">
+        <img class="img-responsive img-thumbnail" src="{{logoUrl}}" />
         <span> {{{content}}}</span>
-      
-     
+    </div>
     {{/Data}}
 </script>
 
+<script id="ArtistsTemplate" type="x-tmpl-mustache">
+
+    {{#Data}}
+
+    <div class="col-lg-4">
+        <figure class="snip1554">
+            <img class="img-circle img-responsive img-thumbnail  img-center" src="{{imageCropUrl}}" alt="">
+
+            <figcaption>
+                <h4 class="text-muted  " style="background-color:brown"> {{name}}</h4>
+            </figcaption>
+            <a href="#"></a>
+        </figure>
+        @*<h3>{{{name}}}</h3>*@
+    </div>
+
+    {{/Data}}
+</script>
 <!-- /Template-->
-
-
-
 <!-- Modal -->
 <div class="modal fade" id="imagemodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg" style="z-index:1050">

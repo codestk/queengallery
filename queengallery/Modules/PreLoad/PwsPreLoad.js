@@ -1,7 +1,11 @@
-﻿//$(window).load(function () {
-//    // Animate loader off screen
-//    LoadCompelete();
-//});
+﻿
+ 
+
+$(window).load(function () {
+    // Animate loader off screen
+    LoadCompelete();
+});
+
 
 function Preload() {
    // blurElement("body", 1)

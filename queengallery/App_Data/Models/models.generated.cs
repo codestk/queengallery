@@ -19,8 +19,8 @@ using Umbraco.ModelsBuilder;
 using Umbraco.ModelsBuilder.Umbraco;
 
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "3fb8ee853ed26001")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "6331298417bca70")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.2")]
 
 namespace Umbraco.Web.PublishedContentModels
 {
@@ -867,6 +867,15 @@ namespace Umbraco.Web.PublishedContentModels
 		public string NameTh
 		{
 			get { return this.GetPropertyValue<string>("nameTh"); }
+		}
+
+		///<summary>
+		/// Portfolio
+		///</summary>
+		[ImplementPropertyType("portfolio")]
+		public object Portfolio
+		{
+			get { return this.GetPropertyValue("portfolio"); }
 		}
 	}
 
