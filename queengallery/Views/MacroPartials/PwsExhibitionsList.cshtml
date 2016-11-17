@@ -78,6 +78,9 @@
 
     function EventExhibition() {
         $('.EventExhibition').on('click', function () {
+
+            Preload();
+
             $('#Main').hide();
             $('#SubMain').show();
 
@@ -96,6 +99,7 @@
     }
 
     function ShowExhibition() {
+     
         var msg = CurrentListData[0];
 
         var template = $('#ExhibitionsDetailTemplate').html();
@@ -103,7 +107,13 @@
 
         var rendered = Mustache.render(template, { Data: msg });
         $('#divRightContent').html('');
-        $('#divRightContent').html(rendered);
+        $('#divRightContent').html(rendered).imagesLoaded().then(function () {
+            // do stuff after images are loaded here
+            LoadCompelete();
+        }).fail(function () {
+            // do stuff if any one of the images fails to load
+            LoadCompelete();
+        });
     }
     function ShowArtists() {
         Preload();
@@ -137,7 +147,10 @@
 
                 var rendered = Mustache.render(template, { Data: data });
                 $('#divRightContent').html('');
-                $('#divRightContent').html(rendered);
+                $('#divRightContent').html(rendered).imagesLoaded().then(function () {
+                    // do stuff after images are loaded here
+                    LoadCompelete();
+                });
 
             } else {
                 /*Display No data Display*/
@@ -146,7 +159,7 @@
                 $('#divRightContent').html('');
                 $('#divRightContent').html(rendered);
             }
-          LoadCompelete();
+        
         });
 
         //ArtistService
@@ -177,7 +190,7 @@
 
             SetPagger(msg[1].RecordCount);
 
-            LoadCompelete();
+         
 
             //Create Event in list
             if (msg[0].length > 0) {
@@ -199,14 +212,24 @@
 
             var rendered = Mustache.render(template, { Data: msg });
             $('#divList').html('');
-            $('#divList').html(rendered);
+            $('#divList').html(rendered).html(rendered).imagesLoaded().then(function () {
+                // do stuff after images are loaded here
+                LoadCompelete();
+            });
+             //.fail(function () {
+            //    // do stuff if any one of the images fails to load
+            //    LoadCompelete();
+            //});
 
         } else {
             /*Display No data Display*/
             var template = $('#NoEventTemplate').html();
             var rendered = Mustache.render(template);
             $('#divList').html('');
-            $('#divList').html(rendered);
+            $('#divList').html(rendered).imagesLoaded().then(function () {
+                // do stuff after images are loaded here
+                LoadCompelete();
+            }); 
         }
 
     }
