@@ -1,10 +1,28 @@
-﻿$(document).ready(function () {
-    Preload();
-    
+﻿
+
+$(document).ready(function () {
+    //Preload();
+    // Preload();
+ //  $(window).trigger('setup');
+   Preload();
 });
  
+ 
+ 
+ 
+$(window).bind('setup', function () {
+    // Preload();
+   
+    //blurElement("body", 1);
+});
+
+ 
+ 
 $(window).bind("load", function () {
+  
     LoadCompelete();
+
+   
 });
  
 $(document).ajaxStart(function () {
@@ -64,7 +82,7 @@ function LoadCompelete()
 
     //$(".fakeloader").remove();
     blurElement("body", 0);
-
+    $("#MainContent").show();
     $(".fakeloader").fadeOut();
 }
 

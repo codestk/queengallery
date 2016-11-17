@@ -7,15 +7,18 @@
 <script src="/Modules/UmbracoImage/UmbracoImage.js"></script>
 
 <script>
-   
+  
     $(document).ready(function () {
-        Preload();
+        //prevent loade complete
+        $(window).unbind("load");
+         
+    
+        //Preload();
         menuType = 'OnView';
         initEvent();
 
         RenderList();
     });
- 
 
     function SetActiveLeftMenu(aTag, id) {
         $('#' + id + ' .list-group a').removeClass('active');
@@ -99,7 +102,7 @@
     }
 
     function ShowExhibition() {
-     
+
         var msg = CurrentListData[0];
 
         var template = $('#ExhibitionsDetailTemplate').html();
@@ -115,15 +118,16 @@
             LoadCompelete();
         });
     }
+
+
     function ShowArtists() {
-        Preload();
+     
         var msg = CurrentListData[0];
 
-      
         var url = 'ArtistService?id=99';
-      
+
         CallServices(url, '', true, function (msg) {
-          
+
             if (msg.length > 0) {    /*Show Event By Navigation*/
                 var template = $('#ArtistsTemplate').html();
                 Mustache.parse(template);   // optional, speeds up future uses
@@ -149,6 +153,15 @@
                 $('#divRightContent').html('');
                 $('#divRightContent').html(rendered).imagesLoaded().then(function () {
                     // do stuff after images are loaded here
+
+                    //Fix matchHeight Higt
+                    $('#Artists').each(function () {
+                        $(this).children('.matchHeight').matchHeight({
+                            property: 'min-height'
+                        });
+                    });
+
+
                     LoadCompelete();
                 });
 
@@ -159,17 +172,17 @@
                 $('#divRightContent').html('');
                 $('#divRightContent').html(rendered);
             }
-        
+
         });
 
         //ArtistService
 
-        var template = $('#ArtistsTemplate').html();
-        Mustache.parse(template);   // optional, speeds up future uses
+        //var template = $('#ArtistsTemplate').html();
+        //Mustache.parse(template);   // optional, speeds up future uses
 
-        var rendered = Mustache.render(template, { Data: msg });
-        $('#divRightContent').html('');
-        $('#divRightContent').html(rendered);
+        //var rendered = Mustache.render(template, { Data: msg });
+        //$('#divRightContent').html('');
+        //$('#divRightContent').html(rendered);
     }
 
     var PageIndex = '1';
@@ -189,8 +202,6 @@
             SetList(CurrentListData);
 
             SetPagger(msg[1].RecordCount);
-
-         
 
             //Create Event in list
             if (msg[0].length > 0) {
@@ -216,7 +227,7 @@
                 // do stuff after images are loaded here
                 LoadCompelete();
             });
-             //.fail(function () {
+            //.fail(function () {
             //    // do stuff if any one of the images fails to load
             //    LoadCompelete();
             //});
@@ -229,7 +240,7 @@
             $('#divList').html(rendered).imagesLoaded().then(function () {
                 // do stuff after images are loaded here
                 LoadCompelete();
-            }); 
+            });
         }
 
     }
@@ -385,23 +396,49 @@
 </script>
 
 <script id="ArtistsTemplate" type="x-tmpl-mustache">
+    <div id="Artists">
+        {{#Data}}
 
-    {{#Data}}
+        <div class="col-md-4 matchHeight text-center">
+            <figure class="snip1554">
+                <img class="img-circle img-responsive  img-center" src="{{imageCropUrl}}" alt="">
 
-    <div class="col-lg-4">
-        <figure class="snip1554">
-            <img class="img-circle img-responsive img-thumbnail  img-center" src="{{imageCropUrl}}" alt="">
+                <figcaption>
+                 
+                </figcaption>
+                <a href="#"></a>
+               
+            </figure>
+            @*<h4 class="NoPaddingNoMargin text-muted"></h4>*@
+            <p>{{{name}}}</p>
+        </div>
 
-            <figcaption>
-                <h4 class="text-muted  " style="background-color:brown"> {{name}}</h4>
-            </figcaption>
-            <a href="#"></a>
-        </figure>
-        @*<h3>{{{name}}}</h3>*@
+        {{/Data}}
     </div>
-
-    {{/Data}}
 </script>
+
+<script id="ArtPiecesTemplate" type="x-tmpl-mustache">
+    <div id="ArtPieces">
+        {{#Data}}
+
+        <div class="col-md-4 matchHeight text-center">
+            <figure class="snip1554">
+                <img class="img-circle img-responsive  img-center" src="{{imageCropUrl}}" alt="">
+
+                <figcaption>
+
+                </figcaption>
+                <a href="#"></a>
+
+            </figure>
+            @*<h4 class="NoPaddingNoMargin text-muted"></h4>*@
+            <p>{{{name}}}</p>
+        </div>
+
+        {{/Data}}
+    </div>
+</script>
+
 <!-- /Template-->
 <!-- Modal -->
 <div class="modal fade" id="imagemodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
