@@ -61,8 +61,8 @@
             }
             else if (menuType == "ArtPieces") {
                 //Show ArtPieces
-                alert('Test');
-
+                
+                ShowArtPieces();
             }
 
         });
@@ -119,9 +119,7 @@
         });
     }
 
-
     function ShowArtists() {
-     
         var msg = CurrentListData[0];
 
         var url = 'ArtistService?id=99';
@@ -139,7 +137,8 @@
                     //preFixLang
                     //var preFixLang = 'En';
                     data[key]["name"] = data[key]["name" + preFixLang];
-
+                    data[key]["description"] = data[key]["description" + preFixLang];
+                    
                     var ImageUmbracoString = data[key]["image"];
                     if (ImageUmbracoString != undefined) {
                         data[key]["imageCropUrl"] = UmbracoImageUrl(ImageUmbracoString);
@@ -174,6 +173,67 @@
             }
 
         });
+    }
+
+
+    function ShowArtPieces() {
+     
+        var msg = CurrentListData[0];
+        var ListOfartist = msg.artist;
+        var url = 'ArtPiecesService?id=99';
+
+        CallServices(url, '', true, function (msg) {
+
+            if (msg.length > 0) {    /*Show Event By Navigation*/
+                var template = $('#ArtPiecesTemplate').html();
+                Mustache.parse(template);   // optional, speeds up future uses
+
+                var data = msg[0];
+                //convert Data
+                var arrayPosition = 0;
+                for (var key in data) {
+                    //preFixLang
+                    //var preFixLang = 'En';
+                    data[key]["name"] = data[key]["name" + preFixLang];
+
+                    var ImageUmbracoString = data[key]["image"];
+                    if (ImageUmbracoString != undefined) {
+                        data[key]["imageCropUrl"] = UmbracoImageUrl(ImageUmbracoString);
+                    }
+                    data[key]["id"] = arrayPosition;
+                    arrayPosition = arrayPosition + 1;
+                }
+                //
+
+                var rendered = Mustache.render(template, { Data: data });
+                $('#divRightContent').html('');
+                $('#divRightContent').html(rendered).imagesLoaded().then(function () {
+                    // do stuff after images are loaded here
+
+                    //Fix matchHeight Higt
+                    //$('#ArtPieces').each(function () {
+                    //    $(this).children('.matchHeight').matchHeight({
+                    //        //property: 'min-height'
+                    //        byRow: true,
+                    //        //property: 'height',
+                    //        target: null,
+                    //        remove: false
+                    //    });
+                    //});
+
+
+                    LoadCompelete();
+                });
+
+            } else {
+                /*Display No data Display*/
+                var template = $('#NoEventTemplate').html();
+                var rendered = Mustache.render(template);
+                $('#divRightContent').html('');
+                $('#divRightContent').html(rendered);
+            }
+
+        });
 
         //ArtistService
 
@@ -184,6 +244,9 @@
         //$('#divRightContent').html('');
         //$('#divRightContent').html(rendered);
     }
+
+    
+  
 
     var PageIndex = '1';
     var PageSize = '10';
@@ -308,16 +371,16 @@
 <!--Layout-->
 <div id="Main" role="content">
     <section class="light blogarchive equalizer">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3">
+        @*<div class="container">*@
+            @*<div class="row">*@
+                <div class="col-md-3" style="background-color:burlywood">
                     <div class="list-group">
                         <a href="#" id="aOnView" data-type="OnView" class="list-group-item active">On View</a>
                         <a href="#" id="aUpcoming" data-type="Upcoming" class="list-group-item">Upcoming</a>
                         <a href="#" id="aPast" data-type="Past" class="list-group-item">Past</a>
                     </div>
                 </div>
-                <div class="col-md-9">
+                <div class="col-md-9" style="background-color:yellow">
                     <div id="divList">
                     </div>
                     <div class="row">
@@ -327,23 +390,23 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
+            @*</div>*@
+        @*</div>*@
     </section>
 </div>
 
 <div id="SubMain" role="content" style="display:none">
     <section class="light blogarchive equalizer">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3">
+        @*<div class="container">*@
+            @*<div class="row">*@
+                <div class="col-md-3" style="background-color:burlywood">
                     <div class="list-group">
                         <a href="#" id="aInformation" data-type="Information" class="list-group-item active">Information</a>
                         <a href="#" id="aArtists" data-type="Artists" class="list-group-item">Artists</a>
                         <a href="#" id="aArtPieces" data-type="ArtPieces" class="list-group-item">Art Pieces</a>
                     </div>
                 </div>
-                <div class="col-md-9">
+                <div class="col-md-9" style="background-color:firebrick">
                     <div id="divRightContent">
                     </div>
                     <div class="row">
@@ -353,8 +416,8 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
+            @*</div>*@
+        @*</div>*@
     </section>
 </div>
 <!--/Layout-->
@@ -390,7 +453,7 @@
     {{#Data}}
     <div id="ExhibitionsDetail">
         <img class="img-responsive img-thumbnail" src="{{logoUrl}}" />
-        <span> {{{content}}}</span>
+        <p> {{{content}}}</p>
     </div>
     {{/Data}}
 </script>
@@ -399,7 +462,7 @@
     <div id="Artists">
         {{#Data}}
 
-        <div class="col-md-4 matchHeight text-center">
+        <div class="col-md-4 matchHeight text-center" style="padding:5px;">
             <figure class="snip1554">
                 <img class="img-circle img-responsive  img-center" src="{{imageCropUrl}}" alt="">
 
@@ -409,8 +472,10 @@
                 <a href="#"></a>
                
             </figure>
-            @*<h4 class="NoPaddingNoMargin text-muted"></h4>*@
-            <p>{{{name}}}</p>
+           <h4 class="NoPaddingNoMargin">{{{name}}}</h4>
+            <span>{{{description}}}</span>
+         
+            @*<h4>{{{name}}}</h4>*@
         </div>
 
         {{/Data}}
@@ -423,16 +488,16 @@
 
         <div class="col-md-4 matchHeight text-center">
             <figure class="snip1554">
-                <img class="img-circle img-responsive  img-center" src="{{imageCropUrl}}" alt="">
-
+                <img class="img-responsive  img-center" src="{{imageCropUrl}}" alt="">
+              
                 <figcaption>
 
                 </figcaption>
                 <a href="#"></a>
 
             </figure>
-            @*<h4 class="NoPaddingNoMargin text-muted"></h4>*@
-            <p>{{{name}}}</p>
+            <h4 class="NoPaddingNoMargin">{{{name}}}</h4>
+            @*<p>{{{name}}}</p>*@
         </div>
 
         {{/Data}}

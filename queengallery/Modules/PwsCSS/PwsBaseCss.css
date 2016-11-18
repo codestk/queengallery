@@ -12,7 +12,7 @@
 body {
     padding-top: 50px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
     /*color: #131516;*/
-      color:#141823;
+      /*color:#141823 !important;*/
      
     /*color: #333333;*/
     /*font-family: 'Kanit', sans-serif !important;*/
