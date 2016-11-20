@@ -8,706 +8,89 @@
 
 <script src="~/Modules/js-base64-master/base64.js"></script>
 
-<script>
-
-    $(document).ready(function () {
-        //prevent loade complete
-        $(window).unbind("load");
-
-        //Preload();
-        menuType = 'OnView';
-        initEvent();
-
-        RenderList();
-    });
-
-    function SetActiveLeftMenu(aTag, id) {
-        $('#' + id + ' .list-group a').removeClass('active');
-        $(aTag).addClass('active');
-    }
-
-    function initEvent() {
-
-        //Left Menu Event Main ======================================================
-        $('#aOnView,#aPast,#aUpcoming').on('click', function (event) {
-            event.preventDefault();
-            //Get Attibute A data-type
-            menuType = $(this).attr('data-type');
-
-            SetActiveLeftMenu(this, 'Main');
-
-            PageIndex = '1';
-            RenderList();
-        });
-
-        //Left SubMenu Event Main ===================================================
-        $('#aInformation,#aArtists,#aArtPieces').on('click', function (event) {
-            event.preventDefault();
-            //Get Attibute A data-type
-            menuType = $(this).attr('data-type');
-
-            SetActiveLeftMenu(this, 'SubMain');
-
-
-            function ShowExhibitioniCon()
-            {
-                $('#ExhibitioniCon').show();
-            };
-
-
-            if (menuType == "Information") {
-                //Display Full Details
-                ShowExhibition();
-                $('#ExhibitioniCon').hide();
-            }
-            else if (menuType == "Artists") {
-                //Show Artis
-                //process ID Artists from
-                //$("#ExhibitionsDetail").html('');
-
-                ShowArtists();
-                ShowExhibitioniCon();
-
-            }
-            else if (menuType == "ArtPieces") {
-                //Show ArtPieces
-
-                ShowArtPieces();
-                ShowExhibitioniCon();
-            }
-
-        });
-
-
-        $('#aBiography,#aPersonalArtPiece,#aPersonalExhibition').on('click', function (event) {
-            event.preventDefault();
-            //Get Attibute A data-type
-            menuType = $(this).attr('data-type');
-
-            SetActiveLeftMenu(this, 'SubMainDetail');
-
-            //
-            //
-            //$("#aBiography").data("jsonobject", jsonobject);
-            //$("#aPersonalArtPiece").data("atistid", 52);
-
-            if (menuType == "Biography") {
-                //Display Full Details
-                //ShowExhibition();
-                alert($("#aBiography").data("jsonobject"));
-                ShowBiography($("#aBiography"));
-            }
-            else if (menuType == "PersonalArtPiece") {
-                //Show Artis
-                //process ID Artists from
-                //$("#ExhibitionsDetail").html('');
-                alert($("#aPersonalArtPiece").data("atistid"));
-
-                //Show ArtPiece on user id
-               // $('#Biography').html('');
-
-                ShowArtPieces2();
-                   // ShowArtists();
-             
-            }//PersonalExhibition
-            else if (menuType == "PersonalExhibition")
-            {
-                //alert('r');
-                //ShowPersonalExhibitionList();
-                //$("#divRightContent_SubMainDetail").html('');
-               
-                $("#Main").show();
-           
-                $("#SubMain").hide();
-                $("#SubMainDetail").hide();
-            }
-   
-
-        });
- 
-    };
-    /*Event*/
-    function ModalEvent() {
-
-        $('.EventModal').on('click', function () {
-
-            $('.imagepreview').attr('src', $(this).find('img').attr('src'));
-            $('#imagemodal').modal('show');
-        });
-
-    }
-
-    function EventExhibition() {
-        $('.EventExhibition').on('click', function () {
-
-            Preload();
-
-            $('#Main').hide();
-            $('#SubMain').show();
-
-            ShowExhibition();
-            //Get FormCurent Id
-            //var msg = CurrentListData[0];
-
-            //var template = $('#ExhibitionsDetailTemplate').html();
-            //Mustache.parse(template);   // optional, speeds up future uses
-
-            //var rendered = Mustache.render(template, { Data: msg });
-            //$('#divExhibition').html('');
-            //$('#divExhibition').html(rendered);
-        });
-
-    }
-
-    function ShowExhibition() {
-
-        var msg = CurrentListData[0];
-
-        var template = $('#ExhibitionsDetailTemplate').html();
-        Mustache.parse(template);   // optional, speeds up future uses
-
-        var rendered = Mustache.render(template, { Data: msg });
-        $('#divRightContent').html('');
-        $('#divRightContent').html(rendered).imagesLoaded().then(function () {
-            // do stuff after images are loaded here
-            LoadCompelete();
-        }).fail(function () {
-            // do stuff if any one of the images fails to load
-            LoadCompelete();
-        });
-    }
-
-    function ShowPersonalExhibitionList() {
-
-        var msg = CurrentListData[0];
-
-        var template = $('#ExhibitionsDetailTemplate').html();
-        Mustache.parse(template);   // optional, speeds up future uses
-
-        var rendered = Mustache.render(template, { Data: msg });
-        $('#divRightContent').html('');
-        $('#divRightContent').html(rendered).imagesLoaded().then(function () {
-            // do stuff after images are loaded here
-            LoadCompelete();
-        }).fail(function () {
-            // do stuff if any one of the images fails to load
-            LoadCompelete();
-        });
-    }
-
-    function ShowArtists() {
-        var msg = CurrentListData[0];
-
-        var url = 'ArtistService?id=99';
-
-        CallServices(url, '', true, function (msg) {
-            console.log(msg);
-            if (msg.length > 0) {    /*Show Event By Navigation*/
-                var template = $('#ArtistsTemplate').html();
-                Mustache.parse(template);   // optional, speeds up future uses
-
-                var data = msg[0];
-                //convert Data
-                var arrayPosition = 0;
-
-                for (var key in data) {
-
-                    //preFixLang
-                    //var preFixLang = 'En';
-                    data[key]["name"] = data[key]["name" + preFixLang];
-                    data[key]["description"] = data[key]["description" + preFixLang];
-
-                    //data[key]["JsonObject"] = btoa(data[key]);
-                    //console.log("JsonObject");
-                    var JsonObject = Base64.encode(JSON.stringify(data[key]));
-
-                    //alert(a);
-                    data[key]["JsonObject"] = JsonObject;
-
-                    var ImageUmbracoString = data[key]["image"];
-                    if (ImageUmbracoString != undefined) {
-                        data[key]["imageCropUrl"] = UmbracoImageUrl(ImageUmbracoString);
-                    }
-                    data[key]["id"] = arrayPosition;
-                    arrayPosition = arrayPosition + 1;
-                }
-                //
-
-                var rendered = Mustache.render(template, { Data: data });
-                $('#divRightContent').html('');
-                $('#divRightContent').html(rendered).imagesLoaded().then(function () {
-                    // do stuff after images are loaded here
-
-                    //Fix matchHeight Higt
-                    $('#Artists').each(function () {
-                        $(this).children('.matchHeight').matchHeight({
-                            property: 'min-height'
-                        });
-                    });
-
-                    LoadCompelete();
-                });
-
-            } else {
-                /*Display No data Display*/
-                var template = $('#NoEventTemplate').html();
-                var rendered = Mustache.render(template);
-                $('#divRightContent').html('');
-                $('#divRightContent').html(rendered);
-            }
-
-        });
-    }
-
-    function ShowArtPieces() {
-
-        var msg = CurrentListData[0];
-        var ListOfartist = msg.artist;
-        var url = 'ArtPiecesService?id=99';
-
-        CallServices(url, '', true, function (msg) {
-
-            if (msg.length > 0) {    /*Show Event By Navigation*/
-                var template = $('#ArtPiecesTemplate').html();
-                Mustache.parse(template);   // optional, speeds up future uses
-
-                var data = msg[0];
-                //convert Data
-                var arrayPosition = 0;
-                for (var key in data) {
-                    //preFixLang
-                    //var preFixLang = 'En';
-                    data[key]["name"] = data[key]["name" + preFixLang];
-
-                    var ImageUmbracoString = data[key]["image"];
-                    if (ImageUmbracoString != undefined) {
-                        data[key]["imageCropUrl"] = UmbracoImageUrl(ImageUmbracoString);
-                    }
-                    data[key]["id"] = arrayPosition;
-                    arrayPosition = arrayPosition + 1;
-                }
-                //
-
-                var rendered = Mustache.render(template, { Data: data });
-                $('#divRightContent').html('');
-                $('#divRightContent').html(rendered).imagesLoaded().then(function () {
-                    // do stuff after images are loaded here
-
-                    //Fix matchHeight Higt
-                    //$('#ArtPieces').each(function () {
-                    //    $(this).children('.matchHeight').matchHeight({
-                    //        //property: 'min-height'
-                    //        byRow: true,
-                    //        //property: 'height',
-                    //        target: null,
-                    //        remove: false
-                    //    });
-                    //});
-
-                    LoadCompelete();
-                });
-
-            } else {
-                /*Display No data Display*/
-                var template = $('#NoEventTemplate').html();
-                var rendered = Mustache.render(template);
-                $('#divRightContent').html('');
-                $('#divRightContent').html(rendered);
-            }
-
-        });
-
-        //ArtistService
-
-        //var template = $('#ArtistsTemplate').html();
-        //Mustache.parse(template);   // optional, speeds up future uses
-
-        //var rendered = Mustache.render(template, { Data: msg });
-        //$('#divRightContent').html('');
-        //$('#divRightContent').html(rendered);
-    }
-
-
-    function ShowArtPieces2() {
-
-        var msg = CurrentListData[0];
-        var ListOfartist = msg.artist;
-        var url = 'ArtPiecesService?id=99';
-
-        CallServices(url, '', true, function (msg) {
-
-            if (msg.length > 0) {    /*Show Event By Navigation*/
-                var template = $('#ArtPiecesTemplate').html();
-                Mustache.parse(template);   // optional, speeds up future uses
-
-                var data = msg[0];
-                //convert Data
-                var arrayPosition = 0;
-                for (var key in data) {
-                    //preFixLang
-                    //var preFixLang = 'En';
-                    data[key]["name"] = data[key]["name" + preFixLang];
-
-                    var ImageUmbracoString = data[key]["image"];
-                    if (ImageUmbracoString != undefined) {
-                        data[key]["imageCropUrl"] = UmbracoImageUrl(ImageUmbracoString);
-                    }
-                    data[key]["id"] = arrayPosition;
-                    arrayPosition = arrayPosition + 1;
-                }
-                //
-
-                var rendered = Mustache.render(template, { Data: data });
-                $('#divRightContent_SubMainDetail').html('');
-                $('#divRightContent_SubMainDetail').html(rendered).imagesLoaded().then(function () {
-                    // do stuff after images are loaded here
-
-                    //Fix matchHeight Higt
-                    //$('#ArtPieces').each(function () {
-                    //    $(this).children('.matchHeight').matchHeight({
-                    //        //property: 'min-height'
-                    //        byRow: true,
-                    //        //property: 'height',
-                    //        target: null,
-                    //        remove: false
-                    //    });
-                    //});
-
-                    LoadCompelete();
-                });
-
-            } else {
-                /*Display No data Display*/
-                var template = $('#NoEventTemplate').html();
-                var rendered = Mustache.render(template);
-                $('#divRightContent_SubMainDetail').html('');
-                $('#divRightContent_SubMainDetail').html(rendered);
-            }
-
-        });
-
-        //ArtistService
-
-        //var template = $('#ArtistsTemplate').html();
-        //Mustache.parse(template);   // optional, speeds up future uses
-
-        //var rendered = Mustache.render(template, { Data: msg });
-        //$('#divRightContent').html('');
-        //$('#divRightContent').html(rendered);
-    }
-
-
-    /*Level2*/
-    function ShowBiography(aTag) {
-        // alert('333');
-       
-        $("#SubMain").hide();
-        $("#SubMainDetail").show();
-        //<a href="#" id="aBiography" data-type="Biography" class="list-group-item active">Biography</a>
-        //         <a href="#" id="aPersonalArtPiece" data-type="PersonalArtPiece" data-atistNodeID="" class="list-group-item">Art Piece</a>
-
-     
-
-        var jsonobject = $(aTag).data("jsonobject");
-
-        $("#aBiography").data("jsonobject", jsonobject);
-        $("#aPersonalArtPiece").data("atistid", 52);
-
-        //Set Json To left Menu
-        
-
-        var jsonstring = Base64.decode(jsonobject);
-
-        //var json = JSON.stringify(eval("(" + aaaaa + ")"));
-        var data = JSON.parse(jsonstring);
-      
-
-            //preFixLang
-            //var preFixLang = 'En';
-            data["name"] = data["name" + preFixLang];
-            data["description"] = data["description" + preFixLang];
-
-             //<p>{{name}}</p>
-             //<p>{{__Raw_biography}}</p>
-             //<p>{{description}} </p>
-            data["__Raw_biography"] = data["__Raw_biography" + preFixLang];
-            data["description"] = data["description" + preFixLang];
-        
-            var ImageUmbracoString = data["image"];
-            if (ImageUmbracoString != undefined) {
-                data["imageUrl"] = UmbracoImageUrl(ImageUmbracoString);
-            }
-
-    
-       
-        var template = $('#BiographyTemplate').html();
-        Mustache.parse(template);   // optional, speeds up future uses
-
-        var rendered = Mustache.render(template, { Data: data });
-        $('#divRightContent_SubMainDetail').html('');
-        $('#divRightContent_SubMainDetail').html(rendered).imagesLoaded().then(function () {
-            // do stuff after images are loaded here
-            //
-            //Fix matchHeight Higt
-            //$('#Artists').each(function () {
-            //    $(this).children('.matchHeight').matchHeight({
-            //        property: 'min-height'
-            //    });
-            //});
-
-            //LoadCompelete();
-        });
-        //call data artist by node
-
-   
-
-    }
-
- 
-
-
-    var PageIndex = '1';
-    var PageSize = '10';
-    var menuType = '';
-    var CurrentListData;
-
-    function RenderList() {
-
-        //Render List
-        var url = 'RazorJson?page=' + PageIndex + '&Type=' + menuType;
-        Preload();
-        CallServices(url, '', true, function (msg) {
-
-            //Reder Data ListTemplate
-            //console.log(msg);
-
-            CurrentListData = ConvertDataByLanguage(msg[0]);
-            SetList(CurrentListData);
-
-            SetPagger(msg[1].RecordCount);
-
-            //Create Event in list
-            if (msg[0].length > 0) {
-                ModalEvent();
-
-                EventExhibition();
-            }
-        });
-
-    }
-
-    /*Render Data*/
-    function SetList(msg) {
-        if (msg.length > 0) {    /*Show Event By Navigation*/
-            var template = $('#ListTemplate').html();
-            Mustache.parse(template);   // optional, speeds up future uses
-
-            //msg = ConvertDataByLanguage(msg);
-
-            var rendered = Mustache.render(template, { Data: msg });
-            $('#divList').html('');
-            $('#divList').html(rendered).html(rendered).imagesLoaded().then(function () {
-                // do stuff after images are loaded here
-                LoadCompelete();
-            });
-            //.fail(function () {
-            //    // do stuff if any one of the images fails to load
-            //    LoadCompelete();
-            //});
-
-        } else {
-            /*Display No data Display*/
-            var template = $('#NoEventTemplate').html();
-            var rendered = Mustache.render(template);
-            $('#divList').html('');
-            $('#divList').html(rendered).imagesLoaded().then(function () {
-                // do stuff after images are loaded here
-                LoadCompelete();
-            });
-        }
-
-    }
-
-    //Set Pagger
-    function SetPagger(RecordCount) {
-
-        if (RecordCount == 0) {
-            $('#ulpage').hide();
-            return;
-        }
-        else {
-            $('#ulpage').show();
-        }
-        $('#ulpage').pagination({
-            items: RecordCount,
-            itemsOnPage: PageSize,
-
-            //prevText: '<img class="iconDirection" src="Images/1457020750_arrow-left-01.svg" />',
-            //nextText: '<img class="iconDirection" src="Images/1457020740_arrow-right-01.svg" />',
-
-            prevText: lblPrev,
-            nextText: lblNext,
-            currentPage: PageIndex,//cssStyle: 'light-theme',
-            onPageClick: function (event) {
-
-                //Set Global Page
-                if (event < 10) {
-                    PageIndex = '0' + event;
-                }
-                else {
-                    PageIndex = event;
-                }
-                //-Set Global Page
-                RenderList();
-            }
-
-        });
-
-    }
-
-    /*Convert Data*/
-    function ConvertDataByLanguage(data) {
-        var arrayPosition = 0;
-        for (var key in data) {
-            //preFixLang
-            //var preFixLang = 'En';
-            data[key]["name"] = data[key]["name" + preFixLang];
-            data[key]["title"] = data[key]["title" + preFixLang];
-            data[key]["introduction"] = data[key]["introduction" + preFixLang];
-            data[key]["content"] = data[key]["content" + preFixLang];
-
-            var ImageUmbracoString = data[key]["logo"];
-
-            data[key]["logoUrl"] = UmbracoImageUrl(ImageUmbracoString);
-
-            data[key]["id"] = arrayPosition;
-            arrayPosition = arrayPosition + 1;
-        }
-
-        return data;
-    }
-</script>
+<script src="~/scripts/PwsExhibitions.js"></script>
 
 <!--Layout-->
-<div id="Main" role="content">
-    <section class="light blogarchive equalizer">
-        @*<div class="container">
-            *@
+ 
+
+    <section id="Main">
+
+        <div class="text-center">
+            <h1>OnView </h1>
+            <div id="divList" class="text-center ">
+            </div>
             @*<div class="row">
-                *@
-                <div class="col-md-3"  >
-                    <div class="list-group">
-                        <a href="#" id="aOnView" data-type="OnView" class="list-group-item active">On View</a>
-                        <a href="#" id="aUpcoming" data-type="Upcoming" class="list-group-item">Upcoming</a>
-                        <a href="#" id="aPast" data-type="Past" class="list-group-item">Past</a>
-                    </div>
-                </div>
-                <div class="col-md-9"  >
-                    <div id="divList">
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-12">
+                <div class="col-xs-12" style="">
 
-                            <ul id="ulpage" class="pagination  pull-right"></ul>
-                        </div>
-                    </div>
+                    <ul id="ulpage" class="pagination  pull-right"></ul>
                 </div>
-                @*
             </div>*@
-            @*
-        </div>*@
+        </div>
     </section>
-</div>
+ 
+ 
 
-<div id="SubMain" role="content" style="display:none">
+    <section id="SubMain" style="display:none">
 
-    <section class="light blogarchive equalizer">
-    
+        <div class="text-center">
 
-    
-               
-                <div class="col-md-3"  >
-           
-                    <div class="list-group">
-                        <a href="#" id="aInformation" data-type="Information" class="list-group-item active">Information</a>
-                        <a href="#" id="aArtists" data-type="Artists" class="list-group-item">Artists</a>
-                        <a href="#" id="aArtPieces" data-type="ArtPieces" class="list-group-item">Art Pieces</a>
-                    </div>
-                    <div id="ExhibitioniCon" class="list-group" style="display:none">
-                        <img src="/media/1983/banner.jpg" class="col-md-12 img-thumbnail img-responsive img-center">
-                        <h5 class=" text-center">38th Bualuang Paintings Exhibition 
-                        </h5>
-                        @*<span  class=" text-center"> 2016-10-17 - 2016-11-25  </span>*@
-                     
-
-                    </div>
-                </div>
-                <div class="col-md-9" >
-                  
-                 
-                    <div id="divRightContent" class="col-md-12">
-                
-                        </div>
-                    <div class="row">
-                        <div class="col-xs-12">
-
-                            <ul id="ulpage" class="pagination  pull-right"></ul>
-                        </div>
-                    </div>
-                </div>
-           
-      
+            <div id="divRightContent" class="col-md-12">
+            </div>
+        </div>
     </section>
-</div>
+ 
 
-<div id="SubMainDetail" role="content" style="display:none">
-    <section class="light blogarchive equalizer">
-        
-           
-                <div class="col-md-3" >
-                    <div class="list-group">
-                        <a href="#" id="aBiography" data-type="Biography"   class="list-group-item active">Biography</a>
-                        <a href="#" id="aPersonalArtPiece" data-type="PersonalArtPiece"    class="list-group-item">Art Piece</a>
-                        @*<a href="#" id="aPersonalExhibition" data-type="PersonalExhibition" class="list-group-item">Exhibition</a>*@
-                    </div>
+@*<div id="SubMainDetail" role="content" style="display:none">*@
+    <section id="SubMainDetail"  style="display:none">
 
-                    <div class="list-group">
-                        <img src="/media/1983/banner.jpg" class="img-thumbnail img-responsive img-center">
-                        <span class="NoPaddingNoMargin text-center">38th Bualuang Paintings Exhibition </span>
-                        <span class="text-muted text-center"> 2016-10-17 - 2016-11-25  </span>
+        <div class="col-md-3">
+            <div class="list-group">
+                <a href="#" id="aBiography" data-type="Biography" class="list-group-item active">Biography</a>
+                <a href="#" id="aPersonalArtPiece" data-type="PersonalArtPiece" class="list-group-item">Art Piece</a>
+                @*<a href="#" id="aPersonalExhibition" data-type="PersonalExhibition" class="list-group-item">Exhibition</a>*@
+            </div>
 
-                    </div>
+            <div class="list-group">
+                <img src="/media/1983/banner.jpg" class="img-thumbnail img-responsive img-center">
+                <span class="NoPaddingNoMargin text-center">38th Bualuang Paintings Exhibition </span>
+                <span class="text-muted text-center"> 2016-10-17 - 2016-11-25  </span>
+            </div>
+        </div>
+        <div class="col-md-9">
+
+            <div id="divRightContent_SubMainDetail">
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+
+                    <ul id="ulpage" class="pagination  pull-right"></ul>
                 </div>
-                <div class="col-md-9"  >
-           
-                    <div id="divRightContent_SubMainDetail">
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-12">
-
-                            <ul id="ulpage" class="pagination  pull-right"></ul>
-                        </div>
-                    </div>
-                </div>
-             
-        
+            </div>
+        </div>
     </section>
-</div>
+@*</div>*@
 
 <!--/Layout-->
 <!--Template-->
 <script id="ListTemplate" type="x-tmpl-mustache">
-    {{#Data}}
-    <div class="row">
-        <div class="col-lg-3"><a href="#" class="EventModal"><img src='{{logoUrl}}' class="img-thumbnail img-responsive img-center"></a> </div>
-        <div class="col-lg-9">
-            <a href="#" class="EventExhibition" data-arrayIndex="{{id}}"> <h3 class="NoPaddingNoMargin">{{name}} </h3>		</a>
 
-            <h5 class="text-muted"> {{from}}-{{to}} </h5>
-            <p>{{introduction}} </p>
-        </div>
+    {{#Data}}
+    <div class="col-lg-12">
+        <a href="#" class="EventModal">
+
+            <img src='{{logoUrl}}' class="img-thumbnail img-responsive img-center">
+        </a>
     </div>
-    <hr>
+    <div class="col-lg-12">
+        <a href="#" class="EventExhibition" data-arrayIndex="{{id}}"> <h2 class="">{{name}} </h2>	</a>
+        <div class="date">{{from}}-{{to}}</div>
+        <p>  </p>
+        <p>{{introduction}} </p>
+
+
+        <a class="button"> Read More</a>
+    </div>
+
     {{/Data}}
 </script>
 
@@ -727,7 +110,9 @@
     {{#Data}}
     <div id="ExhibitionsDetail">
         <img src="/media/1983/banner.jpg" class="img-thumbnail img-responsive img-center">
-        <p> {{{content}}}</p>
+        <h2 class="">{{name}} </h2>
+        <div class="date">{{from}}-{{to}}</div>
+        <p>{{{content}}}</p>
     </div>
     {{/Data}}
 </script>
@@ -781,7 +166,7 @@
         {{#Data}}
 
         <div class="col-md-12 matchHeight text-center">
-            <div   class="    text-center" data-artist__NodeId="{{__NodeId}}" data-JsonObject="{{JsonObject}}" style="padding:5px;">
+            <div class=" text-center" data-artist__NodeId="{{__NodeId}}" data-JsonObject="{{JsonObject}}" style="padding:5px;">
                 <figure class="snip1554" style="width:unset">
                     <img class="img-circle img-responsive  img-center" src="{{imageUrl}}" alt="">
 
@@ -794,11 +179,10 @@
 
                 @*<h4>{{{name}}}</h4>*@
             </div>
-          
         </div>
-    
+
         <p>{{{__Raw_biography}}}</p>
-     
+
         {{/Data}}
     </div>
 </script>

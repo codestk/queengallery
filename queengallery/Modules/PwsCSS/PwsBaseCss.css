@@ -10,7 +10,8 @@
 }*/
 
 body {
-    padding-top: 50px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+    /*padding-top: 50px;*/ 
+    /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
     /*color: #131516;*/
       /*color:#141823 !important;*/
      
@@ -21,13 +22,12 @@ body {
 
 /*Navigation*/
 .navbar-inverse {
-    /*background-color: #222;
-    border-color: #080808;*/
-    background: rgba(40,40,40,.95);
+     
+    /*background: rgba(40,40,40,.95);*/
 }
 
     .navbar-inverse .navbar-nav > li > a {
-        letter-spacing: 1px;
+        /*letter-spacing: 1px;*/
         /*font-family: 'Kanit', sans-serif !important;*/
     }
 
@@ -95,17 +95,18 @@ a.list-group-item, button.list-group-item {
 }
 
 .img-center {
-    margin: 0 auto;
+    margin: 0 auto !important;
 }
 
 /*----Main*/
 main {
-    margin-top: 14px;
+    /*margin-top: 14px;*/
 }
 
 /*====Footer*/
 footer {
     margin: 50px 0;
+
 }
 
 /*Menu*/

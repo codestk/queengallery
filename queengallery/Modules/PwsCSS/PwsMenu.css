@@ -1,9 +1,9 @@
 ﻿.PwsMenu {
-    font-family: 'Raleway', Arial, sans-serif;
+    /*font-family: 'Raleway', Arial, sans-serif;
     text-align: center;
     text-transform: uppercase;
     font-weight: 500;
-    letter-spacing: 1px;
+    letter-spacing: 1px;*/
 }
 
     .PwsMenu * {
@@ -14,22 +14,22 @@
     }
 
     .PwsMenu li {
-        display: inline-block;
+        /*display: inline-block;
         list-style: outside none none;
         margin: 0.5em 1.5em;
-        padding: 0;
+        padding: 0;*/
     }
 
     .PwsMenu a {
-        padding: 0.4em 0;
+        /*padding: 0.4em 0;
         color: rgba(255, 255, 255, 0.5);
         position: relative;
         text-decoration: none;
-        display: inline-block;
+        display: inline-block;*/
     }
 
         .PwsMenu a:before {
-            position: absolute;
+            /*position: absolute;
             content: '';
             -webkit-transition: all 0.35s ease;
             transition: all 0.35s ease;
@@ -39,7 +39,7 @@
             left: 0;
             right: 0;
             border-top: 3px solid #34495e;
-            border-bottom: 3px solid #34495e;
+            border-bottom: 3px solid #34495e;*/
         }
 
         .PwsMenu a:hover,
