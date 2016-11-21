@@ -1,0 +1,63 @@
+﻿@inherits Umbraco.Web.Macros.PartialViewMacroPage
+
+ 
+<script src="/Modules/paginate/jquery.simplePagination.js"></script>
+<link href="/Modules/paginate/simplePagination.css" rel="stylesheet" />
+<script src="/Modules/Pws/PWSCallService.js"></script>
+<script src="/Modules/mustache/mustache.js"></script>
+<script src="/Modules/UmbracoImage/UmbracoImage.js"></script>
+<script src="~/Modules/js-base64-master/base64.js"></script>
+<script src="~/scripts/PwsExhibitions.js"></script>
+
+
+
+<section id="Main">
+    <div class="text-center">
+        <h1>OnView </h1>
+        <div id="divList" class="text-center ">
+        </div>
+    
+    </div>
+</section>
+
+
+<script id="ListTemplate" type="x-tmpl-mustache">
+    {{#Data}}
+    <div class="col-lg-12">
+        <a href="#" class="EventModal">
+            <img src='{{logoUrl}}' class="img-thumbnail img-responsive img-center">
+        </a>
+    </div>
+    <div class="col-lg-12">
+        <a href="#" class="EventExhibition" data-arrayIndex="{{id}}"> <h2 class="">{{name}} </h2>	</a>
+        <div class="date">{{from}}-{{to}}</div>
+        <p>  </p>
+        <p>{{introduction}} </p>
+
+        <a class="button"> Read More</a>
+    </div>
+    {{/Data}}
+</script>
+<script id="ExhibitionsDetailTemplate" type="x-tmpl-mustache">
+    {{#Data}}
+    <div id="ExhibitionsDetail">
+        <img src="/media/1983/banner.jpg" class="img-thumbnail img-responsive img-center">
+        <h2 class="">{{name}} </h2>
+        <div class="date">{{from}}-{{to}}</div>
+        <p>{{{content}}}</p>
+    </div>
+    {{/Data}}
+</script>
+
+
+<!-- Modal -->
+<div class="modal fade" id="imagemodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" style="z-index:1050">
+        <div class="modal-content">
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <img src="" class="imagepreview" style="width: 100%;">
+            </div>
+        </div>
+    </div>
+</div>

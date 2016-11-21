@@ -1,0 +1,143 @@
+﻿@inherits Umbraco.Web.Macros.PartialViewMacroPage
+
+@*
+    Macro to display a gallery of images from media the media section.
+    Works with either a 'Single Media Picker' or a 'Multiple Media Picker' macro parameter (see below).
+
+    How it works:
+        - Confirm the macro parameter has been passed in with a value
+        - Loop through all the media Id's passed in (might be a single item, might be many)
+        - Display any individual images, as well as any folders of images
+
+    Macro Parameters To Create, for this macro to work:
+    Alias:mediaIds     Name:Select folders and/or images    Type: Multiple Media Picker
+                                                            Type: (note: you can use a Single Media Picker if that's more appropriate to your needs)
+*@
+
+@{ var mediaIds = Model.MacroParameters["mediaIds"]; }
+@if (mediaIds != null)
+{
+  
+    <ul class="thumbnails">
+        @foreach (var mediaId in mediaIds.ToString().Split(','))
+        {
+      
+            var media = Umbraco.Media(mediaId);
+   
+            @* a single image *@
+            if (media.DocumentTypeAlias == "artistFolder1")
+            { 
+      
+                @Render(media);
+            }
+
+            @* a folder with images under it *@
+            if (media.Children("artist").Any())
+            {
+                foreach (var image in media.Children("Image"))
+                {
+                    @Render(image);
+                }
+            }
+
+        }
+    </ul>
+}
+
+@helper Render(dynamic item)
+{
+    <li class="span2">
+        <a href="@item.image.src" class="thumbnail">
+            <img src="@item.image.src" alt="@item.Name" />
+        </a>
+    </li>
+}
+
+
+
+
+@*<div id="divRightContent" class="col-md-12">*@
+      <div class="text-center">
+          <h1>Art Pieces </h1>
+          <div id="ArtPieces">
+
+              <div class="col-md-4 matchHeight text-center">
+                  <figure class="snip1554">
+                      <img class="img-responsive  img-center" src="/media/1087/large-1.jpg" alt="">
+
+                      <figcaption>
+                      </figcaption>
+                      <a href="#"></a>
+                  </figure>
+                  <h4 class="NoPaddingNoMargin">Visite de la sphinge</h4>
+
+              </div>
+
+
+              <div class="col-md-4 matchHeight text-center">
+                  <figure class="snip1554">
+                      <img class="img-responsive  img-center" src="/media/1998/19-38-2t.jpg" alt="">
+
+                      <figcaption>
+                      </figcaption>
+                      <a href="#"></a>
+                  </figure>
+                  <h4 class="NoPaddingNoMargin">Art000999</h4>
+
+              </div>
+
+
+              <div class="col-md-4 matchHeight text-center">
+                  <figure class="snip1554">
+                      <img class="img-responsive  img-center" src="/media/1999/31-52-2c.jpg" alt="">
+
+                      <figcaption>
+                      </figcaption>
+                      <a href="#"></a>
+                  </figure>
+                  <h4 class="NoPaddingNoMargin">Art00011231</h4>
+
+              </div>
+
+
+              <div class="col-md-4 matchHeight text-center">
+                  <figure class="snip1554">
+                      <img class="img-responsive  img-center" src="/media/1991/32-53-1t-1.jpg" alt="">
+
+                      <figcaption>
+                      </figcaption>
+                      <a href="#"></a>
+                  </figure>
+                  <h4 class="NoPaddingNoMargin">Picture</h4>
+
+              </div>
+
+
+              <div class="col-md-4 matchHeight text-center">
+                  <figure class="snip1554">
+                      <img class="img-responsive  img-center" src="/media/1997/9-28-3t-1.jpg" alt="">
+
+                      <figcaption>
+                      </figcaption>
+                      <a href="#"></a>
+                  </figure>
+                  <h4 class="NoPaddingNoMargin">Art000999</h4>
+
+              </div>
+
+
+              <div class="col-md-4 matchHeight text-center">
+                  <figure class="snip1554">
+                      <img class="img-responsive  img-center" src="/media/1993/14-33-2t-4.jpg" alt="">
+
+                      <figcaption>
+                      </figcaption>
+                      <a href="#"></a>
+                  </figure>
+                  <h4 class="NoPaddingNoMargin">Art0001</h4>
+
+              </div>
+
+          </div>
+      </div>
+@*</div>*@
