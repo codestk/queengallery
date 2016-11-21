@@ -19,12 +19,16 @@
         @* For each child page under the home node *@
         @foreach (var childPage in home.Children.Where("Visible"))
         {   
-            @*if (childPage.Children.Any())
+          if (childPage.Children.Any())
             {                    
-                <li class="has-child @(childPage.IsAncestorOrSelf(CurrentPage) ? "MenuSelected" : null)">
+                <li class="dropdown has-child @(childPage.IsAncestorOrSelf(CurrentPage) ? "MenuSelected" : null)">
 					@if(childPage.DocumentTypeAlias == "LandingPage") 
 					{
-                    	<span>@childPage.Name</span>
+                    	@*<span>@childPage.Name</span>*@
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">@childPage.Name <span class="caret"></span></a>
+
+
+
 						@childPages(childPage.Children)
 					} else {
 						<a href="@childPage.Url">@childPage.Name</a>
@@ -36,11 +40,11 @@
                 <li class="@(childPage.IsAncestorOrSelf(CurrentPage) ? "selected" : null)">
                     <a href="@childPage.Url">@childPage.Name</a>
                 </li>
-            }*@        
+            }     
         
-        <li class="@(childPage.IsAncestorOrSelf(CurrentPage) ? " MenuSelected":null)">
+        @*<li class="@(childPage.IsAncestorOrSelf(CurrentPage) ? " MenuSelected":null)">
             <a href="@childPage.Url">@childPage.Name</a>
-        </li>
+        </li>*@
             
         }
     </ul>
@@ -55,20 +59,24 @@
         var naviLevel = pages.First().Level;
         
         @* Add in level for a CSS hook *@
-        <ul class="sublevel level-@(naviLevel)">
-            @foreach (var page in pages)
-            {
-                <li>
-                    <a href="@page.Url">@page.Name</a>
-                    
-                    @* if the current page has any children *@
-                    @if (page.Children.Any())
-                    {                        
-                        @* Call our helper to display the children *@
-                        @childPages(page.Children)
-                    }
-                </li>
-            }
-        </ul>
+        @*<ul class="sublevel level-@(naviLevel)">*@
+
+              <ul class=" dropdown-menu">
+                
+                  @foreach (var page in pages)
+                  {
+                  @*<li>*@
+<li class="@(page.IsAncestorOrSelf(CurrentPage) ? " selected":null)">
+    <a href="@page.Url">@page.Name</a>
+
+    @* if the current page has any children *@
+    @if (page.Children.Any())
+    {
+    @* Call our helper to display the children *@
+    @childPages(page.Children)
+    }
+</li>
+                  }
+              </ul>
     }
 }

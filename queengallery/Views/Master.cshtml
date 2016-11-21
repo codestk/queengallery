@@ -15,33 +15,31 @@
     <meta name="description" content="@CurrentPage.siteDescription">
 
     <title>@CurrentPage.Name | @CurrentPage._siteTitle</title>
-    <script src="/js/jquery.min.js"></script>
-   @*<script src="/js/bootstrap.min.js"></script> 
-    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">*@ 
 
-   <script src="~/Modules/bootstrap-3.3.7-dist/js/bootstrap.js"></script> 
-  
+    
+    <script src="/js/jquery.min.js"></script> 
+    @*
+    <script src="/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">*@
+
+    <script src="~/Modules/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+
     <link href="~/Modules/bootstrap-3.3.7-dist/css/bootstrap.css" rel="stylesheet" />
 
-
     <script src="/scripts/fanoe.js"></script>
-    @*<link rel="stylesheet" type="text/css" href="/css/fanoe.css">*@
-    
+    @*
+    <link rel="stylesheet" type="text/css" href="/css/fanoe.css">*@
+
     <!-- Fonts -->
     <link href="//fonts.googleapis.com/css?family=Merriweather:400,700,300,900" rel="stylesheet" type="text/css">
     <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">
     <!-- CSS -->
- 
-     
-    @*<link href="~/Modules/startbootstrap-business-frontpage-gh-pages/startbootstrap-business-frontpage-gh-pages/css/bootstrap.css" rel="stylesheet" />*@
-
-    
-   
-
+    @*
+    <link href="~/Modules/startbootstrap-business-frontpage-gh-pages/startbootstrap-business-frontpage-gh-pages/css/bootstrap.css" rel="stylesheet" />*@
 
     <!-- Custom fanoe  -->
-   <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
     <script src="~/Modules/jquery-match-height-master/dist/jquery.matchHeight-min.js"></script>
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -53,7 +51,7 @@
     <link href="/Modules/startbootstrap-business-frontpage-gh-pages/startbootstrap-business-frontpage-gh-pages/css/business-frontpage.css" rel="stylesheet" />*@
 
     <!--PwsMenu-->
-   <link href="~/Modules/PwsCSS/PwsMenu.css" rel="stylesheet" /> 
+    <link href="~/Modules/PwsCSS/PwsMenu.css" rel="stylesheet" />
     <!--PwsHover-->
     <link href="~/Modules/PwsCSS/PwsBaseCss.css" rel="stylesheet" />
 
@@ -69,7 +67,7 @@
     if (nodeLang == "th-th")
     {
     <script src="/js/queengalleryTh.js"></script>
-   
+
     //url = "/th";*@
     } else {
     <script src="/js/queengalleryEn.js"></script>
@@ -83,14 +81,11 @@
     </script>
 </head>
 
-<body >
-
-
- 
+<body>
 
     <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container" >
+        <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -102,7 +97,7 @@
                 <a class="navbar-brand" href="@home.Url">
                     <div>
                         @*<div class="brand" style="background-image:url('@(home.SiteLogo)?height=65&width=205&bgcolor=000')"></div>*@
-                        <img src="~/Modules/images/queengallery-logo.png"  style="margin-top:-13px;" />
+                        <img src="~/Modules/images/queengallery-logo.png" style="margin-top:-13px;" />
                     </div>
                 </a>
             </div>
@@ -116,19 +111,27 @@
                     <li>
                         <a href="#">About Us</a>
                     </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Exhibitions <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">On View</a></li>
+                            <li><a href="#">Upcoming</a></li>
+                            <li><a href="#">Past</a></li>
+                           
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">Separated link</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">One more separated link</a></li> 
+                        </ul>
+                    </li>
+
                     <li>
                         <a href="#">Visit Us</a>
                     </li>
-                    <li>
-                        <a href="#">News And Press Released</a>
-                    </li>
-                    <li>
-                        <a href="#">Sponsors</a>
-                    </li>
-                    <li>
-                        <a href="#">  Contact Us</a>
-                    </li>
-                </ul>*@
+         
+               
+             
+                </ul>*@ 
 
                 <!--  /Demo Menu Design   -->
                 @{ Html.RenderPartial("PwsMenuLevel1"); }
@@ -146,6 +149,11 @@
         </div>
         <!-- /.container -->
     </nav>
+
+   
+
+
+
     <!-- Image Background Page Header -->
     <!-- Note: The background image is set within the PwsBaseCss.css file. -->
 
@@ -255,7 +263,7 @@
     </header>
     <!-- Page Content -->
 
-    <main id="MainContent" style="display:none" >@RenderBody()</main>
+    <main id="MainContent" style="display:none">@RenderBody()</main>
 
     @*
     <!-- jQuery -->
@@ -383,47 +391,39 @@
     </div>
     <!-- /.container -->
     <!-- Footer-->
-   <div class="dark">
+    <div class="dark">
 
-
-   
-
-    <div class="container">
-        <!-- /.row -->
-        @*<hr>*@
-        <!-- Footer -->
-        <footer>
-            <div class="row">
-                <div class="col-lg-7">
-                    <strong>
-                        <span>The Queen's Gallery</span>
-                    </strong>
-                    <p>
-                        <span>101 Ratchadamnoen Klang Road, Borwonniwet, Phra Nakhon, Bangkok 10200 THAILAND</span><br>
-                        <span>Contact us via</span>
-                        <a href="mailto:info@queengallery.org">info@queengallery.org</a>
-                    </p>
-                </div>
-                <div class="col-lg-5">
-                    <div class="logoHover right">
-                        <img src="/media/1065/logo-bangkokbank.png">
-                        <img src="/media/1064/logo-microsoft.png">
-                        <img src="/media/1063/logo-ricoh.png">
-                    </div>
-                    @*<img src="/Images/logo_microsoft.png" width="90px"><img src="/Images/logo_ricoh.png" width="80px"><img src="/Images/logo_eight.png">*@
-                </div>
-            </div>
+        <div class="container">
             <!-- /.row -->
-        </footer>
+            @*<hr>*@
+            <!-- Footer -->
+            <footer>
+                <div class="row">
+                    <div class="col-lg-7">
+                        <strong>
+                            <span>The Queen's Gallery</span>
+                        </strong>
+                        <p>
+                            <span>101 Ratchadamnoen Klang Road, Borwonniwet, Phra Nakhon, Bangkok 10200 THAILAND</span><br>
+                            <span>Contact us via</span>
+                            <a href="mailto:info@queengallery.org">info@queengallery.org</a>
+                        </p>
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="logoHover right">
+                            <img src="/media/1065/logo-bangkokbank.png">
+                            <img src="/media/1064/logo-microsoft.png">
+                            <img src="/media/1063/logo-ricoh.png">
+                        </div>
+                        @*<img src="/Images/logo_microsoft.png" width="90px"><img src="/Images/logo_ricoh.png" width="80px"><img src="/Images/logo_eight.png">*@
+                    </div>
+                </div>
+                <!-- /.row -->
+            </footer>
+        </div>
     </div>
-       
-  
-       </div>
 
-           <!-- /.Preload -->
-           <div id="fakeLoader" class="fakeloader" style="z-index:10"></div>
-
-
-
+    <!-- /.Preload -->
+    <div id="fakeLoader" class="fakeloader" style="z-index:10"></div>
 </body>
 </html>
