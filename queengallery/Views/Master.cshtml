@@ -29,6 +29,7 @@
     <script src="/scripts/fanoe.js"></script>
     @*
     <link rel="stylesheet" type="text/css" href="/css/fanoe.css">*@
+    <link href="/css/fanoe_Custom.css" rel="stylesheet" />
 
     <!-- Fonts -->
     <link href="//fonts.googleapis.com/css?family=Merriweather:400,700,300,900" rel="stylesheet" type="text/css">
@@ -51,7 +52,7 @@
     <link href="/Modules/startbootstrap-business-frontpage-gh-pages/startbootstrap-business-frontpage-gh-pages/css/business-frontpage.css" rel="stylesheet" />*@
 
     <!--PwsMenu-->
-    <link href="~/Modules/PwsCSS/PwsMenu.css" rel="stylesheet" />
+    @*<link href="~/Modules/PwsCSS/PwsMenu.css" rel="stylesheet" />*@
     <!--PwsHover-->
     <link href="~/Modules/PwsCSS/PwsBaseCss.css" rel="stylesheet" />
 
@@ -95,10 +96,12 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" href="@home.Url">
-                    <div>
+                    @*<div>*@
                         @*<div class="brand" style="background-image:url('@(home.SiteLogo)?height=65&width=205&bgcolor=000')"></div>*@
-                        <img src="~/Modules/images/queengallery-logo.png" style="margin-top:-13px;" />
-                    </div>
+                        @*<img src="~/Modules/images/queengallery-logo.png" style="margin-top:-13px;" />*@
+
+                          <img src="~/Modules/images/queengallery-logo.png"  />
+                    @*</div>*@
                 </a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -263,7 +266,7 @@
     </header>
     <!-- Page Content -->
 
-    <main id="MainContent" style="display:none">@RenderBody()</main>
+    <main id="MainContent" style="display:none"> @RenderBody()</main>
 
     @*
     <!-- jQuery -->
@@ -391,11 +394,11 @@
     </div>
     <!-- /.container -->
     <!-- Footer-->
-    <div class="dark">
-
+   
+    @*<div class="footerWide">
         <div class="container">
             <!-- /.row -->
-            @*<hr>*@
+             
             <!-- Footer -->
             <footer>
                 <div class="row">
@@ -411,17 +414,52 @@
                     </div>
                     <div class="col-lg-5">
                         <div class="logoHover right">
-                            <img src="/media/1065/logo-bangkokbank.png">
+                            <img src="/media/2006/bbl_logo.png">
                             <img src="/media/1064/logo-microsoft.png">
-                            <img src="/media/1063/logo-ricoh.png">
+                      
                         </div>
-                        @*<img src="/Images/logo_microsoft.png" width="90px"><img src="/Images/logo_ricoh.png" width="80px"><img src="/Images/logo_eight.png">*@
+                    
                     </div>
                 </div>
                 <!-- /.row -->
             </footer>
+
+
+
         </div>
-    </div>
+    </div>*@
+
+    <footer class=" dark">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-7">
+                    <strong>
+                        <span>The Queen's Gallery</span>
+                    </strong>
+                    <p>
+                        <span>101 Ratchadamnoen Klang Road, Borwonniwet, Phra Nakhon, Bangkok 10200 THAILAND</span><br>
+                        <span>Contact us via</span>
+                        <a href="mailto:info@queengallery.org">info@queengallery.org</a>
+                    </p>
+                </div>
+                <div class="col-lg-5">
+                    <div class="logoHover right">
+                        @*<img src="/media/1065/logo-bangkokbank.png">*@ 
+                        <img src="/media/2010/bbl_logo_white.png">
+                       
+                        <img src="/media/1064/logo-microsoft.png">
+                        @*<img src="/media/1063/logo-ricoh.png">*@
+                    </div>
+                   
+                </div>
+
+               @*{ Html.RenderPartial("BottomNavigation"); }*@
+
+            </div>
+        </div>
+    </footer>
+
 
     <!-- /.Preload -->
     <div id="fakeLoader" class="fakeloader" style="z-index:10"></div>
