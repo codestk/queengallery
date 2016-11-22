@@ -19,12 +19,12 @@ using Umbraco.ModelsBuilder;
 using Umbraco.ModelsBuilder.Umbraco;
 
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "3fb8ee853ed26001")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "77d8def39226d648")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.4")]
 
 namespace Umbraco.Web.PublishedContentModels
 {
-	/// <summary>EXHIBITION</summary>
+	/// <summary>Blog Post</summary>
 	[PublishedContentModel("BlogPost")]
 	public partial class BlogPost : PublishedContentModel
 	{
@@ -59,12 +59,30 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// Content
+		///</summary>
+		[ImplementPropertyType("content")]
+		public Newtonsoft.Json.Linq.JToken Content
+		{
+			get { return this.GetPropertyValue<Newtonsoft.Json.Linq.JToken>("content"); }
+		}
+
+		///<summary>
 		/// ContentEn
 		///</summary>
 		[ImplementPropertyType("contentEn")]
 		public IHtmlString ContentEn
 		{
 			get { return this.GetPropertyValue<IHtmlString>("contentEn"); }
+		}
+
+		///<summary>
+		/// ContentGridEn
+		///</summary>
+		[ImplementPropertyType("contentGridEn")]
+		public Newtonsoft.Json.Linq.JToken ContentGridEn
+		{
+			get { return this.GetPropertyValue<Newtonsoft.Json.Linq.JToken>("contentGridEn"); }
 		}
 
 		///<summary>
@@ -487,16 +505,16 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 	}
 
-	/// <summary>News Post Repository</summary>
-	[PublishedContentModel("newsPostRepository")]
-	public partial class NewsPostRepository : PublishedContentModel, IBlogPostRepository
+	/// <summary>EXHIBITIONS Post Repository</summary>
+	[PublishedContentModel("eXHIBITIONSPostRepository")]
+	public partial class EXhibitionspostRepository : PublishedContentModel, IBlogPostRepository
 	{
 #pragma warning disable 0109 // new is redundant
-		public new const string ModelTypeAlias = "newsPostRepository";
+		public new const string ModelTypeAlias = "eXHIBITIONSPostRepository";
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 #pragma warning restore 0109
 
-		public NewsPostRepository(IPublishedContent content)
+		public EXhibitionspostRepository(IPublishedContent content)
 			: base(content)
 		{ }
 
@@ -507,7 +525,7 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 #pragma warning restore 0109
 
-		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<NewsPostRepository, TValue>> selector)
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<EXhibitionspostRepository, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 		}
@@ -519,6 +537,50 @@ namespace Umbraco.Web.PublishedContentModels
 		public bool UmbracoNaviHide
 		{
 			get { return BlogPostRepository.GetUmbracoNaviHide(this); }
+		}
+	}
+
+	/// <summary>EXHIBITIONS Post</summary>
+	[PublishedContentModel("eXHIBITIONSPost")]
+	public partial class EXhibitionspost : PublishedContentModel
+	{
+#pragma warning disable 0109 // new is redundant
+		public new const string ModelTypeAlias = "eXHIBITIONSPost";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+#pragma warning restore 0109
+
+		public EXhibitionspost(IPublishedContent content)
+			: base(content)
+		{ }
+
+#pragma warning disable 0109 // new is redundant
+		public new static PublishedContentType GetModelContentType()
+		{
+			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
+		}
+#pragma warning restore 0109
+
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<EXhibitionspost, TValue>> selector)
+		{
+			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// content
+		///</summary>
+		[ImplementPropertyType("content")]
+		public Newtonsoft.Json.Linq.JToken Content
+		{
+			get { return this.GetPropertyValue<Newtonsoft.Json.Linq.JToken>("content"); }
+		}
+
+		///<summary>
+		/// Introduction
+		///</summary>
+		[ImplementPropertyType("introduction")]
+		public string Introduction
+		{
+			get { return this.GetPropertyValue<string>("introduction"); }
 		}
 	}
 
