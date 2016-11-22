@@ -1,0 +1,39 @@
+﻿@*System.Threading.Thread.Sleep (10000);*@
+
+@functions {
+
+	public static  List<object>
+    ConvertToJsonObject(dynamic media)
+    {
+
+    /*Main Object*/
+    List<object>
+        Msg = new List<object>
+            ();
+
+            List<object>
+                jsonDataList = new List<object>
+                    ();
+                    foreach (var mediaItem in media)
+                    {
+                    var columns = new Dictionary<string, object>
+                        ();
+
+                        foreach (Umbraco.Core.Models.IPublishedProperty item in mediaItem.Properties)
+                        {
+                        string name = item.PropertyTypeAlias;
+
+                        object val = null;
+
+                        val = item.DataValue.ToString().Replace("\r\n", "");
+
+                        columns.Add(name, val);
+                        }
+
+                        jsonDataList.Add(columns);
+                        }
+                        Msg.Add(jsonDataList);
+                        return Msg;
+                        }
+
+                        }

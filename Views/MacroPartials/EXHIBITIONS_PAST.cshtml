@@ -1,0 +1,218 @@
+﻿@inherits Umbraco.Web.Macros.PartialViewMacroPage
+
+<script src="/Modules/paginate/jquery.simplePagination.js"></script>
+@*<link href="/Modules/paginate/simplePagination.css" rel="stylesheet" />*@
+<script src="/Modules/Pws/PWSCallService.js"></script>
+<script src="/Modules/mustache/mustache.js"></script>
+<script src="/Modules/UmbracoImage/UmbracoImage.js"></script>
+
+@*<script src="~/Modules/js-base64-master/base64.js"></script>*@
+
+<script>
+
+    $(document).ready(function () {
+        //prevent loade complete
+        $(window).unbind("load");
+
+        //Preload();
+        menuType = 'Past';
+        // initEvent();
+
+        RenderList();
+    });
+
+    /*==Render List and Page*/
+
+    var PageIndex = '1';
+    var PageSize = '10';
+    var menuType = '';
+    var CurrentListData;
+
+    function RenderList() {
+
+        //Render List
+        var url = 'RazorJson?page=' + PageIndex + '&Type=' + menuType;
+        Preload();
+        CallServices(url, '', true, function (msg) {
+
+            //Reder Data ListTemplate
+            //console.log(msg);
+
+            CurrentListData = ConvertDataByLanguage(msg[0]);
+            SetList(CurrentListData);
+
+            SetPagger(msg[1].RecordCount);
+
+            //Create Event in list
+            if (msg[0].length > 0) {
+                ModalEvent();
+
+                EventExhibition();
+            }
+        });
+
+    }
+
+    /*Render Data*/
+    function SetList(msg) {
+        if (msg.length > 0) {    /*Show Event By Navigation*/
+            var template = $('#ListTemplate').html();
+            Mustache.parse(template);   // optional, speeds up future uses
+
+            //msg = ConvertDataByLanguage(msg);
+
+            var rendered = Mustache.render(template, { Data: msg });
+            $('#divList').html('');
+            $('#divList').html(rendered).html(rendered).imagesLoaded().then(function () {
+                // do stuff after images are loaded here
+                LoadCompelete();
+            });
+            //.fail(function () {
+            //    // do stuff if any one of the images fails to load
+            //    LoadCompelete();
+            //});
+
+        } else {
+            /*Display No data Display*/
+            var template = $('#NoEventTemplate').html();
+            var rendered = Mustache.render(template);
+            $('#divList').html('');
+            $('#divList').html(rendered).imagesLoaded().then(function () {
+                // do stuff after images are loaded here
+                LoadCompelete();
+            });
+        }
+
+    }
+
+    //Set Pagger
+    function SetPagger(RecordCount) {
+
+        if (RecordCount == 0) {
+            $('#ulpage').hide();
+            return;
+        }
+        else {
+            $('#ulpage').show();
+        }
+        $('#ulpage').pagination({
+            items: RecordCount,
+            itemsOnPage: PageSize,
+
+            //prevText: '<img class="iconDirection" src="Images/1457020750_arrow-left-01.svg" />',
+            //nextText: '<img class="iconDirection" src="Images/1457020740_arrow-right-01.svg" />',
+
+            prevText: lblPrev,
+            nextText: lblNext,
+            currentPage: PageIndex,//cssStyle: 'light-theme',
+            onPageClick: function (event) {
+
+                //Set Global Page
+                if (event < 10) {
+                    PageIndex = '0' + event;
+                }
+                else {
+                    PageIndex = event;
+                }
+                //-Set Global Page
+                RenderList();
+            }
+
+        });
+
+    }
+
+    /*Convert Data*/
+    function ConvertDataByLanguage(data) {
+        var arrayPosition = 0;
+        for (var key in data) {
+            //preFixLang
+            //var preFixLang = 'En';
+            data[key]["name"] = data[key]["name" + preFixLang];
+            data[key]["title"] = data[key]["title" + preFixLang];
+            data[key]["introduction"] = data[key]["introduction" + preFixLang];
+            data[key]["content"] = data[key]["content" + preFixLang];
+
+            var ImageUmbracoString = data[key]["logo"];
+
+            data[key]["logoUrl"] = UmbracoImageUrl(ImageUmbracoString);
+
+            data[key]["id"] = arrayPosition;
+            arrayPosition = arrayPosition + 1;
+        }
+
+        return data;
+    }
+
+    /*Utility*/
+    /*Event*/
+    function ModalEvent() {
+
+        $('.EventModal').on('click', function () {
+
+            $('.imagepreview').attr('src', $(this).find('img').attr('src'));
+            $('#imagemodal').modal('show');
+        });
+
+    }
+    function EventExhibition() {
+        EventExhibition
+        $('.EventExhibition').on('click', function () {
+            $('#Main').hide();
+            $('#SubMain').show();
+
+        });
+
+    }
+</script>
+
+<section id="Main">
+    <h1 style="font-size:50px;text-align:center">EXHIBITIONS / PAST</h1>
+    @*<h1 class="color-black font-weight-300"><strong>EXHIBITIONS / PAST</strong></h1>*@
+    @*<h1 class="color-black font-weight-300 text-center">EXHIBITIONS / PAST</h1>*@
+    <div id="divList" class="">
+    </div>
+</section>
+
+ 
+
+
+<script id="ListTemplate" type="x-tmpl-mustache">
+    {{#Data}}
+    <div class="row">
+        <div class="col-md-3"><a href="#" class="EventModal"><img src='{{logoUrl}}' class="img-center"></a> </div>
+        <div class="col-md-9">
+            <a href="#"> </a>
+                <h2  class="EventExhibition"><span > {{name}} </span> </h2>
+           
+            <div class="date">{{from}}-{{to}}</div>
+
+            <p>{{introduction}} </p>
+            @*<a class="button EventExhibition" > Read More</a>*@
+            <a class="button " href="/en/exhibitions?id=888"> Read More</a>
+           
+        </div>
+    </div>
+    <hr>
+    {{/Data}}
+    <div class="col-xs-12">
+
+        <ul id="ulpage" class="pagination  pull-right"></ul>
+    </div>
+</script>
+
+ 
+ 
+
+
+<!-- Modal -->
+<div class="modal fade" id="imagemodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" style="z-index:1050">
+        <div class="modal-content">
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <img src="" class="imagepreview" style="width: 100%;">
+            </div>
+        </div>
+    </div>
+</div>

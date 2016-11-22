@@ -83,6 +83,7 @@ text-align:right;
   font-weight:normal;
 }
 
+/*Nav*/
 @media (max-width: 480px),  {
    .nav > li > a {
       
@@ -100,5 +101,22 @@ text-align:right;
     }
 
 }
+
+
+ 
+  .navbar-inverse {
+    
+     
+    -webkit-box-shadow:0 3px 3px 0 rgba(0,0,0,.33);
+       -moz-box-shadow:0 3px 3px 0 rgba(0,0,0,.33);
+            box-shadow: 0 3px 3px 0 rgba(0,0,0,.33);
+}
+
+
+
+/*Button*/
+ 
+
+ 
 
 /* EDITOR PROPERTIES - PLEASE DON'T DELETE THIS LINE TO AVOID DUPLICATE PROPERTIES */
