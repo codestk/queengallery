@@ -1,0 +1,8 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.EXhibitionspost>
+@using ContentModels = Umbraco.Web.PublishedContentModels;
+@{
+	Layout = "PreViewTemplate.cshtml";
+}
+
+
+@CurrentPage.GetGridHtml("content", "fanoe")
