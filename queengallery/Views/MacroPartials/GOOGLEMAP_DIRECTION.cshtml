@@ -1,0 +1,20 @@
+﻿@inherits Umbraco.Web.Macros.PartialViewMacroPage
+
+<script src="http://maps.googleapis.com/maps/api/js?v=3.4&sensor=false&language=th"></script>
+<style>
+    #map {
+        height: 500px;
+    }
+</style>
+<div id="map"> </div>
+<script>
+
+    $(document).ready(function () {
+        var map; function initMap() {
+            map = new google.maps.Map(document.getElementById('map'), {
+                center: { lat: -34.397, lng: 150.644 },
+                zoom: 8
+            });
+        }
+    });
+</script>

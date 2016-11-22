@@ -1,10 +1,7 @@
 /* Go crazy with your own styles here */
 /* EDITOR PROPERTIES - PLEASE DON'T DELETE THIS LINE TO AVOID DUPLICATE PROPERTIES */
 
-body {
-    padding-top: 95px;
-    ;
-}
+ 
 
 h1 {
     font-size: 3.125em;
@@ -17,6 +14,115 @@ h1 {
 .font-weight-300 {
     font-weight: 300;
 }
+
+/*@font-face {
+    font-family: 'AvantGardeThaiBold';
+    src: url('/fonts/AvantgardeThaiFont.eot');
+    src: url('/fonts/AvantgardeThaiFont.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/AvantgardeThaiFont.ttf') format('truetype'),
+         url('/fonts/AvantgardeThaiFont.woff') format('woff'),
+         url('/fonts/AvantgardeThaiFont.svg#AvantgardeThaiRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}*/
+
+body {
+    /*padding-top: 50px;*/ 
+    /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+    /*color: #131516;*/
+      /*color:#141823 !important;*/
+     
+    /*color: #333333;*/
+    /*font-family: 'Kanit', sans-serif !important;*/
+    /*color: #373D3f;*/
+     padding-top: 95px;
+    color:#3e3e3e;
+}
+
+/*Navigation*/
+.navbar-inverse {
+     
+    /*background: rgba(40,40,40,.95);*/
+}
+
+    .navbar-inverse .navbar-nav > li > a {
+        /*letter-spacing: 1px;*/
+        /*font-family: 'Kanit', sans-serif !important;*/
+    }
+
+/*.flag2 {
+position:absolute;
+
+}*/
+
+a.list-group-item, button.list-group-item {
+    letter-spacing: 2px;
+    /*font-family: 'Kanit', sans-serif !important;*/
+}
+
+.message {
+    /*color: #b48608;   font-size: 30px; font-weight: 400;  line-height: 40px; margin: 0 0 12px; text-align: center;*/
+    /*color: #3c6478;*/
+    color: #337ab7;
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 40px;
+    margin: 0 0 12px;
+    text-align: center;
+    text-rendering: optimizeLegibility;
+    font-family: "Some Custom Font", serif;
+    text-shadow: 0 0 1px transparent;
+    /* Or, if you need to apply a 0px hard shadow,
+         * you can use multiple text shadows */
+}
+/* Header Image Background - Change the URL below to your image path (example: ../images/background.jpg) */
+
+.business-header1 {
+    height: 400px;
+    /*background: url('http://placehold.it/1920x400') center center no-repeat scroll;*/
+    background: url('/media/1051/banner1.jpg') center center no-repeat scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+.business-header2 {
+    height: 400px;
+    /*background: url('http://placehold.it/1920x400') center center no-repeat scroll;*/
+    background: url('/media/1052/banner2.jpg') center center no-repeat scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+.business-header3 {
+    height: 400px;
+    /*background: url('http://placehold.it/1920x400') center center no-repeat scroll;*/
+    background: url('/media/1053/banner3.jpg') center center no-repeat scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+/* Customize the text color and shadow color and to optimize text legibility. */
+.tagline {
+    text-shadow: 0 0 10px #000;
+    color: #fff;
+}
+
+.img-center {
+    margin: 0 auto !important;
+}
+
+/*----Main*/
+main {
+    /*margin-top: 14px;*/
+}
+
+
 
 /*Footer*/
 .logoHover img {
@@ -56,6 +162,11 @@ h1 {
     padding-top: 37px;
     padding-bottom: 37px;
     min-height: 93px;
+}
+
+.navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus {
+    color: #fff;
+    background-color:rgba(40,40,40,.95);
 }
 
 .MenuSelected {

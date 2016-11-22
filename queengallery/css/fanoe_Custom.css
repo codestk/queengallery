@@ -228,7 +228,10 @@ html {
 }
 
     .light * {
-        color: #000;
+
+        /*Custom Pws*/
+        color:#3e3e3e;
+        /*color: #000;*/
     }
 
     .light a,
@@ -1336,7 +1339,9 @@ nav li > ul {
     }
 
 .dropdown-menu {
-    background-color: #333;
+    /*PWS */
+    /*background-color: #333;*/
+        background: rgba(40,40,40,.95);
 }
 
     .dropdown-menu > li > a {

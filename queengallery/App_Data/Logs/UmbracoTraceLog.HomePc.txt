@@ -1,1 +1,228 @@
 ﻿ 2016-11-23 00:07:21,673 [P19780/D7/T361] INFO  Umbraco.Core.Logging.OwinLogger - Event Id: 0, state: User logged will be logged out due to timeout: admin@bbl.co.th, IP Address: ::1
+ 2016-11-23 01:24:29,254 [P19780/D7/T348] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt succeeded for username admin@bbl.co.th from IP address ::1
+ 2016-11-23 01:24:29,254 [P19780/D7/T348] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: User: admin@bbl.co.th logged in from IP address ::1
+ 2016-11-23 01:24:29,335 [P19780/D7/T37] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Web.Trees.TreeController
+ 2016-11-23 01:24:29,335 [P19780/D7/T37] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Web.Trees.TreeController, found 0 (took 0ms)
+ 2016-11-23 01:24:47,683 [P19780/D7/T356] INFO  Umbraco.Core.PluginManager - Starting resolution types of umbraco.interfaces.ICacheRefresher
+ 2016-11-23 01:24:47,727 [P19780/D7/T356] INFO  Umbraco.Core.PluginManager - Completed resolution of types of umbraco.interfaces.ICacheRefresher, found 0 (took 43ms)
+ 2016-11-23 01:24:55,317 [P19780/D7/T37] ERROR umbraco.presentation.preview.PreviewContent - Couldn't delete preview set: 0_599c98d6-9e17-4e1b-b8cc-67fe80387f15.config - User 0
+System.IO.IOException: The process cannot access the file '0_599c98d6-9e17-4e1b-b8cc-67fe80387f15.config' because it is being used by another process.
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileInfo.Delete()
+   at umbraco.presentation.preview.PreviewContent.DeletePreviewFile(Int32 userId, FileInfo file)
+ 2016-11-23 01:29:19,857 [P19780/D7/T371] INFO  Umbraco.Core.Publishing.PublishingStrategy - Content 'Contact Us' with Id '1110' has been published.
+ 2016-11-23 01:29:23,966 [P19780/D7/T373] INFO  umbraco.content - Save Xml to file...
+ 2016-11-23 01:29:23,992 [P19780/D7/T373] INFO  umbraco.content - Saved Xml to file.
+ 2016-11-23 01:30:00,395 [P19780/D7/T355] INFO  Umbraco.Core.Publishing.PublishingStrategy - Content 'Contact Us' with Id '1110' has been published.
+ 2016-11-23 01:30:04,494 [P19780/D7/T333] INFO  umbraco.content - Save Xml to file...
+ 2016-11-23 01:30:04,521 [P19780/D7/T333] INFO  umbraco.content - Saved Xml to file.
+ 2016-11-23 01:33:55,562 [P19780/D7/T317] INFO  Umbraco.Core.Publishing.PublishingStrategy - Content 'Contact Us' with Id '1110' has been published.
+ 2016-11-23 01:33:59,725 [P19780/D7/T37] INFO  umbraco.content - Save Xml to file...
+ 2016-11-23 01:33:59,753 [P19780/D7/T37] INFO  umbraco.content - Saved Xml to file.
+ 2016-11-23 01:34:22,021 [P19780/D7/T348] INFO  Umbraco.Core.Publishing.PublishingStrategy - Content 'Contact Us' with Id '1110' has been published.
+ 2016-11-23 01:34:26,102 [P19780/D7/T352] INFO  umbraco.content - Save Xml to file...
+ 2016-11-23 01:34:26,131 [P19780/D7/T352] INFO  umbraco.content - Saved Xml to file.
+ 2016-11-23 01:36:58,178 [P19780/D7/T361] INFO  Umbraco.Core.Publishing.PublishingStrategy - Content 'Contact Us' with Id '1110' has been published.
+ 2016-11-23 01:37:02,192 [P19780/D7/T360] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Web.Trees.TreeController
+ 2016-11-23 01:37:02,192 [P19780/D7/T360] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Web.Trees.TreeController, found 0 (took 0ms)
+ 2016-11-23 01:37:02,280 [P19780/D7/T360] INFO  umbraco.content - Save Xml to file...
+ 2016-11-23 01:37:02,311 [P19780/D7/T360] INFO  umbraco.content - Saved Xml to file.
+ 2016-11-23 01:37:19,638 [P19780/D7/T366] INFO  Umbraco.Core.Publishing.PublishingStrategy - Content 'Contact Us' with Id '1110' has been published.
+ 2016-11-23 01:37:23,728 [P19780/D7/T363] INFO  umbraco.content - Save Xml to file...
+ 2016-11-23 01:37:23,759 [P19780/D7/T363] INFO  umbraco.content - Saved Xml to file.
+ 2016-11-23 01:38:20,800 [P19780/D7/T298] INFO  Umbraco.Core.Publishing.PublishingStrategy - Content 'Contact Us' with Id '1110' has been published.
+ 2016-11-23 01:38:24,898 [P19780/D7/T347] INFO  umbraco.content - Save Xml to file...
+ 2016-11-23 01:38:24,950 [P19780/D7/T347] INFO  umbraco.content - Saved Xml to file.
+ 2016-11-23 01:40:22,920 [P19780/D7/T351] INFO  Umbraco.Core.Publishing.PublishingStrategy - Content 'Contact Us' with Id '1110' has been published.
+ 2016-11-23 01:40:26,993 [P19780/D7/T355] INFO  umbraco.content - Save Xml to file...
+ 2016-11-23 01:40:27,023 [P19780/D7/T355] INFO  umbraco.content - Saved Xml to file.
+ 2016-11-23 01:40:52,917 [P19780/D7/T352] INFO  Umbraco.Core.Publishing.PublishingStrategy - Content 'Contact Us' with Id '1110' has been published.
+ 2016-11-23 01:40:57,023 [P19780/D7/T317] INFO  umbraco.content - Save Xml to file...
+ 2016-11-23 01:40:57,050 [P19780/D7/T317] INFO  umbraco.content - Saved Xml to file.
+ 2016-11-23 01:41:15,792 [P19780/D7/T352] INFO  Umbraco.Core.Publishing.PublishingStrategy - Content 'Contact Us' with Id '1110' has been published.
+ 2016-11-23 01:41:19,898 [P19780/D7/T317] INFO  umbraco.content - Save Xml to file...
+ 2016-11-23 01:41:19,928 [P19780/D7/T317] INFO  umbraco.content - Saved Xml to file.
+ 2016-11-23 01:45:38,208 [P19780/D7/T363] WARN  Umbraco.Web.UmbracoModule - Status code is 404 yet TrySkipIisCustomErrors is false - IIS will take over.
+ 2016-11-23 01:51:47,058 [P19780/D7/T364] INFO  Umbraco.Core.Publishing.PublishingStrategy - Content 'Contact Us' with Id '1110' has been published.
+ 2016-11-23 01:51:51,134 [P19780/D7/T364] INFO  umbraco.content - Save Xml to file...
+ 2016-11-23 01:51:51,162 [P19780/D7/T364] INFO  umbraco.content - Saved Xml to file.
+ 2016-11-23 01:53:28,331 [P19780/D7/T337] INFO  Umbraco.Core.Publishing.PublishingStrategy - Content '38th Bualuang Paintings Exhibition (1)' with Id '1322' has been published.
+ 2016-11-23 01:53:32,429 [P19780/D7/T104] INFO  umbraco.content - Save Xml to file...
+ 2016-11-23 01:53:32,454 [P19780/D7/T104] INFO  umbraco.content - Saved Xml to file.
+ 2016-11-23 01:54:42,868 [P19780/D7/T337] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Web.Trees.TreeController
+ 2016-11-23 01:54:42,868 [P19780/D7/T337] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Web.Trees.TreeController, found 0 (took 0ms)
+ 2016-11-23 02:06:13,465 [P19780/D7/T349] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [LogScrubber] Terminating
+ 2016-11-23 02:06:13,465 [P19780/D7/T349] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [LogScrubber] Waiting for tasks to complete
+ 2016-11-23 02:06:13,468 [P19780/D7/T349] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [Umbraco.Web.Scheduling.IBackgroundTask] Terminating
+ 2016-11-23 02:06:13,468 [P19780/D7/T349] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [Umbraco.Web.Scheduling.IBackgroundTask] Waiting for tasks to complete
+ 2016-11-23 02:06:13,469 [P19780/D7/T349] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledPublishing] Terminating
+ 2016-11-23 02:06:13,469 [P19780/D7/T349] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledPublishing] Waiting for tasks to complete
+ 2016-11-23 02:06:13,471 [P19780/D7/T325] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledPublishing] Tasks completed, terminated
+ 2016-11-23 02:06:13,471 [P19780/D7/T357] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [LogScrubber] Tasks completed, terminated
+ 2016-11-23 02:06:13,473 [P19780/D7/T372] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [Umbraco.Web.Scheduling.IBackgroundTask] Tasks completed, terminated
+ 2016-11-23 02:06:13,509 [P19780/D7/T349] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledTasks] Terminating
+ 2016-11-23 02:06:13,509 [P19780/D7/T349] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledTasks] Waiting for tasks to complete
+ 2016-11-23 02:06:13,509 [P19780/D7/T349] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [KeepAlive] Terminating
+ 2016-11-23 02:06:13,509 [P19780/D7/T349] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [KeepAlive] Waiting for tasks to complete
+ 2016-11-23 02:06:13,509 [P19780/D7/T350] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledTasks] Tasks completed, terminated
+ 2016-11-23 02:06:13,509 [P19780/D7/T325] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [KeepAlive] Tasks completed, terminated
+ 2016-11-23 02:06:20,787 [P19780/D8/T182] INFO  Umbraco.Core.CoreBootManager - Umbraco 7.5.4 application starting on HOMEPC
+ 2016-11-23 02:06:20,861 [P19780/D8/T182] INFO  Umbraco.Core.PluginManager - Determining hash of code files on disk
+ 2016-11-23 02:06:20,898 [P19780/D8/T182] INFO  Umbraco.Core.PluginManager - Hash determined (took 36ms)
+ 2016-11-23 02:06:21,107 [P19780/D8/T182] INFO  Umbraco.Core.PluginManager - Starting resolution types of umbraco.interfaces.IApplicationStartupHandler
+ 2016-11-23 02:06:21,251 [P19780/D8/T182] INFO  Umbraco.Core.PluginManager - Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 0 (took 143ms)
+ 2016-11-23 02:06:21,404 [P19780/D8/T182] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter
+ 2016-11-23 02:06:21,408 [P19780/D8/T182] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 4ms)
+ 2016-11-23 02:06:21,409 [P19780/D8/T182] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyValueConverter
+ 2016-11-23 02:06:21,416 [P19780/D8/T182] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyValueConverter, found 0 (took 6ms)
+ 2016-11-23 02:06:21,456 [P19780/D8/T182] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Web.Mvc.SurfaceController
+ 2016-11-23 02:06:21,459 [P19780/D8/T182] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 0 (took 3ms)
+ 2016-11-23 02:06:21,461 [P19780/D8/T182] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Web.WebApi.UmbracoApiController
+ 2016-11-23 02:06:21,480 [P19780/D8/T182] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Web.WebApi.UmbracoApiController, found 0 (took 19ms)
+ 2016-11-23 02:06:21,661 [P19780/D8/T182] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.Media.IThumbnailProvider
+ 2016-11-23 02:06:21,664 [P19780/D8/T182] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 0 (took 3ms)
+ 2016-11-23 02:06:21,666 [P19780/D8/T182] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.Media.IImageUrlProvider
+ 2016-11-23 02:06:21,668 [P19780/D8/T182] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 0 (took 2ms)
+ 2016-11-23 02:06:24,732 [P19780/D8/T182] INFO  Umbraco.Core.DatabaseContext - CanConnect = True
+ 2016-11-23 02:06:25,444 [P19780/D8/T182] INFO  Umbraco.Core.DatabaseContext - CanConnect = True
+ 2016-11-23 02:06:25,512 [P19780/D8/T182] INFO  Umbraco.Core.DatabaseContext - CanConnect = True
+ 2016-11-23 02:06:25,586 [P19780/D8/T182] INFO  Umbraco.Web.Cache.CacheRefresherEventHandler - Initializing Umbraco internal event handlers for cache refreshing
+ 2016-11-23 02:06:25,911 [P19780/D8/T182] INFO  Umbraco.Web.Search.ExamineEvents - Initializing Examine and binding to business logic events
+ 2016-11-23 02:06:25,912 [P19780/D8/T182] INFO  Umbraco.Web.Search.ExamineEvents - Adding examine event handlers for index providers: 3
+ 2016-11-23 02:06:25,943 [P19780/D8/T182] INFO  Umbraco.Core.CoreBootManager - Umbraco application startup complete (took 5461ms)
+ 2016-11-23 02:06:27,570 [P19780/D8/T119] INFO  Umbraco.Core.Sync.ApplicationUrlHelper - ApplicationUrl: http://localhost:17606/umbraco (UmbracoModule request)
+ 2016-11-23 02:06:28,738 [P19780/D8/T119] INFO  umbraco.content - Load Xml from file...
+ 2016-11-23 02:06:28,747 [P19780/D8/T119] INFO  umbraco.content - Loaded Xml from file.
+ 2016-11-23 02:06:30,044 [P19780/D8/T119] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.PropertyEditors.IParameterEditor
+ 2016-11-23 02:06:30,055 [P19780/D8/T119] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.PropertyEditors.IParameterEditor, found 0 (took 11ms)
+ 2016-11-23 02:06:43,600 [P19780/D7/T320] INFO  Umbraco.Core.UmbracoApplicationBase - Application shutdown. Details: MaxRecompilationsReached
+
+_shutDownMessage=Recompilation limit of 15 reached
+HostingEnvironment initiated shutdown
+HostingEnvironment caused shutdown
+
+_shutDownStack=   at System.Environment.GetStackTrace(Exception e, Boolean needFileInfo)
+   at System.Environment.get_StackTrace()
+   at System.Web.Hosting.HostingEnvironment.InitiateShutdownInternal()
+   at System.Web.Hosting.HostingEnvironment.InitiateShutdownWithoutDemand()
+   at System.Web.HttpRuntime.ShutdownAppDomain(String stackTrace)
+   at System.Web.Compilation.DiskBuildResultCache.ShutdownCallBack(Object state)
+   at System.Threading.QueueUserWorkItemCallback.WaitCallback_Context(Object state)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   at System.Threading.QueueUserWorkItemCallback.System.Threading.IThreadPoolWorkItem.ExecuteWorkItem()
+   at System.Threading.ThreadPoolWorkQueue.Dispatch()
+   at System.Threading._ThreadPoolWaitCallback.PerformWaitCallback()
+ 2016-11-23 02:06:47,929 [P19780/D8/T327] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.Persistence.Mappers.BaseMapper
+ 2016-11-23 02:06:47,932 [P19780/D8/T327] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.Persistence.Mappers.BaseMapper, found 0 (took 3ms)
+ 2016-11-23 02:06:48,497 [P19780/D8/T119] INFO  Umbraco.Core.PluginManager - Starting resolution types of umbraco.cms.businesslogic.macro.IMacroEngine
+ 2016-11-23 02:06:48,501 [P19780/D8/T119] INFO  Umbraco.Core.PluginManager - Completed resolution of types of umbraco.cms.businesslogic.macro.IMacroEngine, found 0 (took 4ms)
+ 2016-11-23 02:07:28,975 [P19780/D8/T357] INFO  umbraco.BusinessLogic.Log - Log scrubbed.  Removed all items older than 2559-11-22 02:07:28
+ 2016-11-23 02:13:34,772 [P19780/D8/T174] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Web.Trees.TreeController
+ 2016-11-23 02:13:34,776 [P19780/D8/T174] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Web.Trees.TreeController, found 0 (took 4ms)
+ 2016-11-23 02:13:34,782 [P19780/D8/T174] INFO  Umbraco.Core.PluginManager - Starting resolution types of umbraco.interfaces.ITree
+ 2016-11-23 02:13:34,786 [P19780/D8/T174] INFO  Umbraco.Core.PluginManager - Completed resolution of types of umbraco.interfaces.ITree, found 0 (took 3ms)
+ 2016-11-23 02:13:34,887 [P19780/D8/T174] INFO  Umbraco.Core.PluginManager - Starting resolution types of umbraco.interfaces.ITree
+ 2016-11-23 02:13:34,890 [P19780/D8/T174] INFO  Umbraco.Core.PluginManager - Completed resolution of types of umbraco.interfaces.ITree, found 0 (took 2ms)
+ 2016-11-23 02:13:34,913 [P19780/D8/T174] INFO  Umbraco.Core.PluginManager - Starting resolution types of umbraco.interfaces.IApplication
+ 2016-11-23 02:13:34,917 [P19780/D8/T174] INFO  Umbraco.Core.PluginManager - Completed resolution of types of umbraco.interfaces.IApplication, found 0 (took 3ms)
+ 2016-11-23 02:13:42,019 [P19780/D8/T315] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Web.HealthCheck.HealthCheck
+ 2016-11-23 02:13:42,184 [P19780/D8/T315] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Web.HealthCheck.HealthCheck, found 0 (took 165ms)
+ 2016-11-23 02:14:10,463 [P19780/D8/T27] INFO  Umbraco.Core.PluginManager - Starting resolution types of umbraco.interfaces.ICacheRefresher
+ 2016-11-23 02:14:10,468 [P19780/D8/T27] INFO  Umbraco.Core.PluginManager - Completed resolution of types of umbraco.interfaces.ICacheRefresher, found 0 (took 4ms)
+ 2016-11-23 02:15:03,509 [P19780/D8/T312] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.PropertyEditors.IParameterEditor
+ 2016-11-23 02:15:03,510 [P19780/D8/T312] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.PropertyEditors.IParameterEditor, found 0 (took 0ms)
+ 2016-11-23 02:15:46,731 [P19780/D8/T314] INFO  Umbraco.Core.Publishing.PublishingStrategy - Content 'Contact Us' with Id '1110' has been published.
+ 2016-11-23 02:15:51,078 [P19780/D8/T140] INFO  umbraco.content - Save Xml to file...
+ 2016-11-23 02:15:51,110 [P19780/D8/T140] INFO  umbraco.content - Saved Xml to file.
+ 2016-11-23 02:15:53,552 [P19780/D8/T324] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Web.Trees.TreeController
+ 2016-11-23 02:15:53,554 [P19780/D8/T324] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Web.Trees.TreeController, found 0 (took 2ms)
+ 2016-11-23 02:16:01,489 [P19780/D8/T314] WARN  umbraco.macro - <log4net.Error>Exception during StringFormat: Input string was not in a correct format. <format>Error loading partial view macro (View: ~/Views/MacroPartials/GOOGLEMAP_DIRECTION.cshtml). Exception: System.Web.HttpParseException (0x80004005): "49.3144135" is not valid at the start of a code block.  Only identifiers, keywords, comments, "(" and "{" are valid.
+
+   at System.Web.WebPages.Razor.RazorBuildProvider.EnsureGeneratedCode()
+   at System.Web.WebPages.Razor.RazorBuildProvider.get_CodeCompilerType()
+   at System.Web.Compilation.BuildProvider.GetCompilerTypeFromBuildProvider(BuildProvider buildProvider)
+   at System.Web.Compilation.BuildProvidersCompiler.ProcessBuildProviders()
+   at System.Web.Compilation.BuildProvidersCompiler.PerformBuild()
+   at System.Web.Compilation.BuildManager.CompileWebFile(VirtualPath virtualPath)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   at System.Web.Compilation.BuildManager.GetVirtualPathObjectFactory(VirtualPath virtualPath, HttpContext context, Boolean allowCrossApp, Boolean throwIfNotFound)
+   at System.Web.Compilation.BuildManager.GetCompiledType(VirtualPath virtualPath)
+   at System.Web.Compilation.BuildManager.GetCompiledType(String virtualPath)
+   at System.Web.Mvc.BuildManagerWrapper.System.Web.Mvc.IBuildManager.GetCompiledType(String virtualPath)
+   at System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
+   at Umbraco.Core.Profiling.ProfilingView.Render(ViewContext viewContext, TextWriter writer)
+   at Umbraco.Web.Mvc.ControllerExtensions.RenderViewResultAsString(ControllerBase controller, ViewResultBase viewResult)
+   at Umbraco.Web.Macros.PartialViewMacroEngine.Execute(MacroModel macro, IPublishedContent content)
+   at Umbraco.Web.Macros.PartialViewMacroEngine.Execute(MacroModel macro, INode node)
+   at umbraco.macro.LoadPartialViewMacro(MacroModel macro)
+   at umbraco.macro.renderMacro(Hashtable pageElements, Int32 pageId)</format><args>{}</args></log4net.Error>
+ 2016-11-23 02:16:01,498 [P19780/D8/T314] WARN  umbraco.macro - <log4net.Error>Exception during StringFormat: Input string was not in a correct format. <format>Error loading Partial View (file: ~/Views/MacroPartials/GOOGLEMAP_DIRECTION.cshtml). Exception: System.Web.HttpParseException (0x80004005): "49.3144135" is not valid at the start of a code block.  Only identifiers, keywords, comments, "(" and "{" are valid.
+
+   at System.Web.WebPages.Razor.RazorBuildProvider.EnsureGeneratedCode()
+   at System.Web.WebPages.Razor.RazorBuildProvider.get_CodeCompilerType()
+   at System.Web.Compilation.BuildProvider.GetCompilerTypeFromBuildProvider(BuildProvider buildProvider)
+   at System.Web.Compilation.BuildProvidersCompiler.ProcessBuildProviders()
+   at System.Web.Compilation.BuildProvidersCompiler.PerformBuild()
+   at System.Web.Compilation.BuildManager.CompileWebFile(VirtualPath virtualPath)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   at System.Web.Compilation.BuildManager.GetVirtualPathObjectFactory(VirtualPath virtualPath, HttpContext context, Boolean allowCrossApp, Boolean throwIfNotFound)
+   at System.Web.Compilation.BuildManager.GetCompiledType(VirtualPath virtualPath)
+   at System.Web.Compilation.BuildManager.GetCompiledType(String virtualPath)
+   at System.Web.Mvc.BuildManagerWrapper.System.Web.Mvc.IBuildManager.GetCompiledType(String virtualPath)
+   at System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
+   at Umbraco.Core.Profiling.ProfilingView.Render(ViewContext viewContext, TextWriter writer)
+   at Umbraco.Web.Mvc.ControllerExtensions.RenderViewResultAsString(ControllerBase controller, ViewResultBase viewResult)
+   at Umbraco.Web.Macros.PartialViewMacroEngine.Execute(MacroModel macro, IPublishedContent content)
+   at Umbraco.Web.Macros.PartialViewMacroEngine.Execute(MacroModel macro, INode node)
+   at umbraco.macro.LoadPartialViewMacro(MacroModel macro)
+   at umbraco.macro.renderMacro(Hashtable pageElements, Int32 pageId)</format><args>{}</args></log4net.Error>
+ 2016-11-23 02:17:06,151 [P19780/D8/T335] WARN  umbraco.macro - <log4net.Error>Exception during StringFormat: Input string was not in a correct format. <format>Error loading partial view macro (View: ~/Views/MacroPartials/GOOGLEMAP_DIRECTION.cshtml). Exception: System.Web.HttpParseException (0x80004005): "49.3144135" is not valid at the start of a code block.  Only identifiers, keywords, comments, "(" and "{" are valid.
+
+   at System.Web.WebPages.Razor.RazorBuildProvider.EnsureGeneratedCode()
+   at System.Web.WebPages.Razor.RazorBuildProvider.get_CodeCompilerType()
+   at System.Web.Compilation.BuildProvider.GetCompilerTypeFromBuildProvider(BuildProvider buildProvider)
+   at System.Web.Compilation.BuildProvidersCompiler.ProcessBuildProviders()
+   at System.Web.Compilation.BuildProvidersCompiler.PerformBuild()
+   at System.Web.Compilation.BuildManager.CompileWebFile(VirtualPath virtualPath)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   at System.Web.Compilation.BuildManager.GetVirtualPathObjectFactory(VirtualPath virtualPath, HttpContext context, Boolean allowCrossApp, Boolean throwIfNotFound)
+   at System.Web.Compilation.BuildManager.GetCompiledType(VirtualPath virtualPath)
+   at System.Web.Compilation.BuildManager.GetCompiledType(String virtualPath)
+   at System.Web.Mvc.BuildManagerWrapper.System.Web.Mvc.IBuildManager.GetCompiledType(String virtualPath)
+   at System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
+   at Umbraco.Core.Profiling.ProfilingView.Render(ViewContext viewContext, TextWriter writer)
+   at Umbraco.Web.Mvc.ControllerExtensions.RenderViewResultAsString(ControllerBase controller, ViewResultBase viewResult)
+   at Umbraco.Web.Macros.PartialViewMacroEngine.Execute(MacroModel macro, IPublishedContent content)
+   at Umbraco.Web.Macros.PartialViewMacroEngine.Execute(MacroModel macro, INode node)
+   at umbraco.macro.LoadPartialViewMacro(MacroModel macro)
+   at umbraco.macro.renderMacro(Hashtable pageElements, Int32 pageId)</format><args>{}</args></log4net.Error>
+ 2016-11-23 02:17:06,152 [P19780/D8/T335] WARN  umbraco.macro - <log4net.Error>Exception during StringFormat: Input string was not in a correct format. <format>Error loading Partial View (file: ~/Views/MacroPartials/GOOGLEMAP_DIRECTION.cshtml). Exception: System.Web.HttpParseException (0x80004005): "49.3144135" is not valid at the start of a code block.  Only identifiers, keywords, comments, "(" and "{" are valid.
+
+   at System.Web.WebPages.Razor.RazorBuildProvider.EnsureGeneratedCode()
+   at System.Web.WebPages.Razor.RazorBuildProvider.get_CodeCompilerType()
+   at System.Web.Compilation.BuildProvider.GetCompilerTypeFromBuildProvider(BuildProvider buildProvider)
+   at System.Web.Compilation.BuildProvidersCompiler.ProcessBuildProviders()
+   at System.Web.Compilation.BuildProvidersCompiler.PerformBuild()
+   at System.Web.Compilation.BuildManager.CompileWebFile(VirtualPath virtualPath)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   at System.Web.Compilation.BuildManager.GetVirtualPathObjectFactory(VirtualPath virtualPath, HttpContext context, Boolean allowCrossApp, Boolean throwIfNotFound)
+   at System.Web.Compilation.BuildManager.GetCompiledType(VirtualPath virtualPath)
+   at System.Web.Compilation.BuildManager.GetCompiledType(String virtualPath)
+   at System.Web.Mvc.BuildManagerWrapper.System.Web.Mvc.IBuildManager.GetCompiledType(String virtualPath)
+   at System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
+   at Umbraco.Core.Profiling.ProfilingView.Render(ViewContext viewContext, TextWriter writer)
+   at Umbraco.Web.Mvc.ControllerExtensions.RenderViewResultAsString(ControllerBase controller, ViewResultBase viewResult)
+   at Umbraco.Web.Macros.PartialViewMacroEngine.Execute(MacroModel macro, IPublishedContent content)
+   at Umbraco.Web.Macros.PartialViewMacroEngine.Execute(MacroModel macro, INode node)
+   at umbraco.macro.LoadPartialViewMacro(MacroModel macro)
+   at umbraco.macro.renderMacro(Hashtable pageElements, Int32 pageId)</format><args>{}</args></log4net.Error>
+ 2016-11-23 02:23:48,023 [P19780/D8/T19] INFO  Umbraco.Core.Publishing.PublishingStrategy - Content 'Contact Us' with Id '1110' has been published.
+ 2016-11-23 02:23:52,087 [P19780/D8/T322] INFO  umbraco.content - Save Xml to file...
+ 2016-11-23 02:23:52,111 [P19780/D8/T322] INFO  umbraco.content - Saved Xml to file.
+ 2016-11-23 02:28:06,817 [P19780/D8/T27] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Web.Trees.TreeController
+ 2016-11-23 02:28:06,817 [P19780/D8/T27] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Web.Trees.TreeController, found 0 (took 0ms)
