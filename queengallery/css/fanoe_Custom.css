@@ -235,8 +235,11 @@ html {
     .light a:visited {
         /*Custom PWS*/
         /*color: #f45376 !important;*/
-      /*color: #1496bb !important;*/
+        /*color: #1496bb !important;*/
         color: #107896 !important;
+        /*color: #1496BC !important;
+          color: #1395ba !important;*/
+      
     }
 
         .light a:hover,
@@ -267,8 +270,7 @@ html {
 
     .light code,
     .light pre {
-        background-color: #f8f8f8; 
-          
+        background-color: #f8f8f8;
     }
 
     .light + .triangle:before {
@@ -1332,45 +1334,33 @@ nav li > ul {
     .selected a {
         color: #fff !important;
     }
- 
 
+.dropdown-menu {
+    background-color: #333;
+}
 
- .dropdown-menu {
-     background-color:#333;
-
- }
-
- .dropdown-menu > li > a {
-    display: block;
-    padding: 3px 20px;
-
-
-     
-    clear: both;
-    font-weight: normal;
-    line-height: 1.42857143;
-    color: #333;
-    white-space: nowrap;
-
-
-    padding-top: 15px;
-    padding-bottom: 13px;
+    .dropdown-menu > li > a {
+        display: block;
+        padding: 3px 20px;
+        clear: both;
+        font-weight: normal;
+        line-height: 1.42857143;
+        color: #333;
+        white-space: nowrap;
+        padding-top: 15px;
+        padding-bottom: 13px;
         color: #9d9d9d;
-}
+    }
 
- .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
-    /*color: #262626;
+        .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
+            /*color: #262626;
     text-decoration: none;
     background-color: #f5f5f5;*/
-
-      /*color: #262626;
+            /*color: #262626;
     text-decoration: none;
     background-color: #f5f5f5;*/
-
-      color: #fff;
-    background-color: transparent;
-
-}
- 
+            color: #fff;
+            background-color: transparent;
+        }
 
 /* EDITOR PROPERTIES - PLEASE DON'T DELETE THIS LINE TO AVOID DUPLICATE PROPERTIES */

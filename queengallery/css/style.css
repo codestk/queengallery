@@ -2,23 +2,21 @@
 /* EDITOR PROPERTIES - PLEASE DON'T DELETE THIS LINE TO AVOID DUPLICATE PROPERTIES */
 
 body {
- padding-top:  95px;;
+    padding-top: 95px;
+    ;
 }
-
 
 h1 {
-font-size: 3.125em;
+    font-size: 3.125em;
 }
-
 
 .color-black {
     color: #333;
 }
+
 .font-weight-300 {
     font-weight: 300;
 }
-
-
 
 /*Footer*/
 .logoHover img {
@@ -35,32 +33,32 @@ font-size: 3.125em;
         opacity: 1;
     }
 
-
 .right {
-text-align:right;
+    text-align: right;
 }
 
 /*NAv*/
-    .navbar-brand {
-   
-    height: 93px; 
-   
+
+.navbar-inverse {
+    background: rgba(40,40,40,.95);
 }
-  .navbar-inverse .navbar-brand {
+
+.navbar-brand {
+    height: 93px;
+}
+
+.navbar-inverse .navbar-brand {
     color: #9d9d9d;
     padding-top: 23px;
 }
 
-.nav > li > a{
-    padding-top:37px;
-    padding-bottom:37px;
+.nav > li > a {
+    padding-top: 37px;
+    padding-bottom: 37px;
     min-height: 93px;
-    
 }
 
-
-
- .MenuSelected {
+.MenuSelected {
     /*text-decoration: underline;*/
     /*background-color:#ffffff;*/
     text-decoration: dotted;
@@ -73,50 +71,74 @@ text-align:right;
 
     .MenuSelected a {
         color: #fff !important;
-    } 
+    }
 
-
-    /*Text*/
+/*Text*/
 .date {
-   margin-bottom:10px;
-      font-size: 0.9em;
-  font-weight:normal;
+    margin-bottom: 10px;
+    font-size: 0.9em;
+    font-weight: normal;
 }
 
 /*Nav*/
-@media (max-width: 480px),  {
-   .nav > li > a {
-      
-     
+@media (max-width: 480px), {
+    .nav > li > a {
         border-bottom: solid 1px rgba(255,255,255,.1);
     }
 }
 
-@media (max-width: 767px)
-{
-     .nav > li > a {
-      
-     
+@media (max-width: 767px) {
+    .nav > li > a {
         border-bottom: solid 1px rgba(255,255,255,.1);
     }
-
 }
 
+.navbar-inverse {
+    -webkit-box-shadow: 0 3px 3px 0 rgba(0,0,0,.33);
+    -moz-box-shadow: 0 3px 3px 0 rgba(0,0,0,.33);
+    box-shadow: 0 3px 3px 0 rgba(0,0,0,.33);
+}
+
+ @media (max-width: 1194px) {
+    .navbar-header {
+        float: none;
+    }
+    .navbar-left,.navbar-right {
+        float: none !important;
+    }
+    .navbar-toggle {
+        display: block;
+    }
+    .navbar-collapse {
+        border-top: 1px solid transparent;
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+    }
+    .navbar-fixed-top {
+        /*top: 0;
+        border-width: 0 0 1px;*/
+    }
+    .navbar-collapse.collapse {
+        display: none!important;
+    }
+    .navbar-nav {
+        /*float: none!important;
+        margin-top: 7.5px;*/
+    }
+    .navbar-nav>li {
+        float: none;
+    }
+    .navbar-nav>li>a {
+        /*padding-top: 10px;
+        padding-bottom: 10px;*/
+    }
+    .collapse.in{
+        display:block !important;
+    }
 
  
-  .navbar-inverse {
-    
-     
-    -webkit-box-shadow:0 3px 3px 0 rgba(0,0,0,.33);
-       -moz-box-shadow:0 3px 3px 0 rgba(0,0,0,.33);
-            box-shadow: 0 3px 3px 0 rgba(0,0,0,.33);
+
 }
-
-
 
 /*Button*/
- 
-
- 
 
 /* EDITOR PROPERTIES - PLEASE DON'T DELETE THIS LINE TO AVOID DUPLICATE PROPERTIES */
