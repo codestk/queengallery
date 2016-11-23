@@ -8,7 +8,7 @@ using  Umbraco.Web;
 using  Umbraco.ModelsBuilder;
 using  Umbraco.ModelsBuilder.Umbraco;
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "74f9b8b4b8e7108a")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "7f73c20bf7960a")]
 [assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
 
 
@@ -40,7 +40,7 @@ using  Umbraco.ModelsBuilder.Umbraco;
 
 namespace Umbraco.Web.PublishedContentModels
 {
-	/// <summary>Blog Post</summary>
+	/// <summary>EXHIBITION</summary>
 	[PublishedContentModel("BlogPost")]
 	public partial class BlogPost : PublishedContentModel
 	{
