@@ -475,3 +475,17 @@ _shutDownStack=   at System.Environment.GetStackTrace(Exception e, Boolean needF
  2016-11-23 10:07:27,144 [P29376/D2/T197] INFO  umbraco.content - Saved Xml to file.
  2016-11-23 10:18:15,258 [P29376/D2/T230] INFO  Umbraco.Core.Logging.OwinLogger - Event Id: 0, state: User logged will be logged out due to timeout: admin@bbl.co.th, IP Address: ::1
  2016-11-23 10:18:21,266 [P29376/D2/T228] INFO  Umbraco.Core.Logging.OwinLogger - Event Id: 0, state: User logged will be logged out due to timeout: admin@bbl.co.th, IP Address: ::1
+ 2016-11-23 12:11:03,856 [P29376/D2/T112] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt succeeded for username admin@bbl.co.th from IP address ::1
+ 2016-11-23 12:11:03,856 [P29376/D2/T112] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: User: admin@bbl.co.th logged in from IP address ::1
+ 2016-11-23 12:11:11,569 [P29376/D2/T112] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Web.Trees.TreeController
+ 2016-11-23 12:11:11,569 [P29376/D2/T112] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Web.Trees.TreeController, found 0 (took 0ms)
+ 2016-11-23 12:13:09,930 [P29376/D2/T431] INFO  Umbraco.Core.Publishing.PublishingStrategy - Content 'Exhibitions' with Id '1269' has been published.
+ 2016-11-23 12:13:13,975 [P29376/D2/T197] INFO  umbraco.content - Save Xml to file...
+ 2016-11-23 12:13:14,003 [P29376/D2/T197] INFO  umbraco.content - Saved Xml to file.
+ 2016-11-23 12:15:24,225 [P29376/D2/T433] INFO  Umbraco.Core.Publishing.PublishingStrategy - Content 'Exhibitions' with Id '1269' has been published.
+ 2016-11-23 12:15:28,289 [P29376/D2/T197] INFO  umbraco.content - Save Xml to file...
+ 2016-11-23 12:15:28,303 [P29376/D2/T197] INFO  umbraco.content - Saved Xml to file.
+ 2016-11-23 12:16:15,361 [P29376/D2/T105] INFO  Umbraco.Core.Publishing.PublishingStrategy - Content 'Exhibitions' with Id '1269' has been published.
+ 2016-11-23 12:16:19,437 [P29376/D2/T197] INFO  umbraco.content - Save Xml to file...
+ 2016-11-23 12:16:19,478 [P29376/D2/T197] INFO  umbraco.content - Saved Xml to file.
+ 2016-11-23 12:30:36,253 [P29376/D2/T459] INFO  Umbraco.Core.Logging.OwinLogger - Event Id: 0, state: User logged will be logged out due to timeout: admin@bbl.co.th, IP Address: ::1
