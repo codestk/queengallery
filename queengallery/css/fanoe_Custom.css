@@ -228,12 +228,21 @@ html {
 }
 
     .light * {
-        color: #000;
+
+        /*Custom Pws*/
+        color:#3e3e3e;
+        /*color: #000;*/
     }
 
     .light a,
     .light a:visited {
-        color: #f45376 !important;
+        /*Custom PWS*/
+        /*color: #f45376 !important;*/
+        /*color: #1496bb !important;*/
+        color: #107896 !important;
+        /*color: #1496BC !important;
+          color: #1395ba !important;*/
+      
     }
 
         .light a:hover,
@@ -1318,55 +1327,45 @@ nav li > ul {
     /*text-decoration: underline;*/
     /*background-color:#ffffff;*/
     text-decoration: dotted;
-    background-color: #555 !important;
-    border-bottom-style: solid;
+    /*background-color: #555 !important;*/
+    /*border-bottom-style: solid;*/
     /*border-bottom-color:#efd469;*/
-    border-bottom-color: #EED369;
+    /*border-bottom-color: #EED369;*/
     /*border-bottom-color: #337ab7;*/
 }
 
     .selected a {
         color: #fff !important;
     }
- 
 
+.dropdown-menu {
+    /*PWS */
+    /*background-color: #333;*/
+        background: rgba(40,40,40,.95);
+}
 
- .dropdown-menu {
-     background-color:#333;
-
- }
-
- .dropdown-menu > li > a {
-    display: block;
-    padding: 3px 20px;
-
-
-     
-    clear: both;
-    font-weight: normal;
-    line-height: 1.42857143;
-    color: #333;
-    white-space: nowrap;
-
-
-    padding-top: 15px;
-    padding-bottom: 13px;
+    .dropdown-menu > li > a {
+        display: block;
+        padding: 3px 20px;
+        clear: both;
+        font-weight: normal;
+        line-height: 1.42857143;
+        color: #333;
+        white-space: nowrap;
+        padding-top: 15px;
+        padding-bottom: 13px;
         color: #9d9d9d;
-}
+    }
 
- .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
-    /*color: #262626;
+        .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
+            /*color: #262626;
     text-decoration: none;
     background-color: #f5f5f5;*/
-
-      /*color: #262626;
+            /*color: #262626;
     text-decoration: none;
     background-color: #f5f5f5;*/
-
-      color: #fff;
-    background-color: transparent;
-
-}
- 
+            color: #fff;
+            background-color: transparent;
+        }
 
 /* EDITOR PROPERTIES - PLEASE DON'T DELETE THIS LINE TO AVOID DUPLICATE PROPERTIES */

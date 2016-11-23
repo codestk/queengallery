@@ -1,0 +1,53 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    Layout = "Master.cshtml";
+}
+
+
+
+<div role="content">
+
+	<section class="light blogarchive equalizer">
+		<div class="container">
+
+			<div class="row">
+				@foreach(var post in CurrentPage.Children) 
+				{
+					
+
+
+
+
+ 
+                foreach (Umbraco.Core.Models.IPublishedProperty item in post.Properties)
+                {
+                    string name = item.PropertyTypeAlias;
+ 
+                    object val = null;
+ 
+                   @name
+                }
+
+ @post.abc
+     	<div> @post.Artist	</div>
+   
+ 
+
+					
+					
+					<div class="col-sm-6">
+						<div class="content equal">
+						
+							
+							    <a href="@post.Url"><h2>@post.Name</h2>		</a>
+								<div class="date">@post.CreateDate.ToLongDateString()</div>
+								<p>@Umbraco.Truncate(post.Introduction, 240, true)</p>
+							
+						</div>
+					</div>
+				}
+			</div>
+		</div>
+	</section>
+
+</div>

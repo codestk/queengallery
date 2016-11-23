@@ -180,16 +180,16 @@
 <script id="ListTemplate" type="x-tmpl-mustache">
     {{#Data}}
     <div class="row">
-        <div class="col-md-3"><a href="#" class="EventModal"><img src='{{logoUrl}}' class="img-center"></a> </div>
+        <div class="col-md-3"><a href="#" class="EventModal img-center col-xs-12"><img src='{{logoUrl}}' class="EventModal img-center  img-responsive"></a> </div>
         <div class="col-md-9">
-            <a href="#"> </a>
-                <h2  class="EventExhibition"><span > {{name}} </span> </h2>
+        
+                <h2  class=""><span > {{name}} </span> </h2>
            
             <div class="date">{{from}}-{{to}}</div>
 
             <p>{{introduction}} </p>
             @*<a class="button EventExhibition" > Read More</a>*@
-            <a class="button " href="/en/exhibitions?id=888"> Read More</a>
+            <a href="/en/exhibitions?id=888"> Read More</a>
            
         </div>
     </div>

@@ -1,0 +1,104 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+
+@{
+	Layout = "Services.cshtml";
+}
+
+@*
+var blogNode = Umbraco.Content(1122);
+var node = new umbraco.NodeFactory.Node(1122);
+var serializer = new System.Web.Script.Serialization.JavaScriptSerializer();
+var media = Umbraco.Media(1080).Children();
+*@
+
+@{
+
+var serializer = new System.Web.Script.Serialization.JavaScriptSerializer();
+
+	    var pageSize =10;
+        var page =1;int.TryParse(Request.QueryString["page"],out page);
+
+         var Type =Request.QueryString["Type"];
+
+        //var items =Umbraco.Media(1080).Where(x => x.IsDocumentType("BlogPost")).OrderByDescending(x => x.CreateDate);
+        //var items =Model.Content.Children().Where(x => x.IsDocumentType("BlogPost")).OrderByDescending(x => x.CreateDate);
+
+        //var items =  Umbraco.Media(1080).Children();
+        //var items =  Umbraco.Media(1080).Children();
+        //string nameLower=imageName.ToLower();
+        //string filter =$"imageName.ToLower() = \"{nameLower}.jpg\"";
+        //var items = Umbraco.Media(mediaID).Children().Where(filter);
+
+        @*var items = Umbraco.Media(1122).Children().OrderBy("CreateDate descending");*@
+
+ var valuesFilter = new Dictionary<string,object>
+    ();
+    @*values.Add("queryStartDate", DateTime.Parse(Request["queryStartDate"])) ;
+    values.Add("queryEndDate", DateTime.Parse(Request["queryEndDate"])) ;*@
+    @*valuesFilter.Add("queryStartDate", DateTime.Parse("11/11/2000")) ;
+    valuesFilter.Add("queryEndDate",DateTime.Parse("11/11/2018")) ;*@
+
+    string condition="from > queryStartDate && from < queryEndDate";
+    string sort="to descending";
+    int blogId=1122;
+    @*var items = (dynamic) null;*@
+
+    var items = (dynamic)null;
+    @*var items = Umbraco.Content(1122).Children().OrderBy("CreateDate descending");*@
+    @*var items = Umbraco.Content(1122).Children();*@
+    @*items = Umbraco.Content(1122).Children().OrderBy("CreateDate descending");*@
+
+    @*items = Umbraco.Content(blogId).Children().OrderBy(sort); All *@
+    if (Type=="OnView")
+    {
+    condition ="(from <= Todate) && (to >= Todate)";
+    valuesFilter.Add("Todate", DateTime.Now) ;
+    items =  Umbraco.Content(blogId).Children().Where(condition,valuesFilter).OrderBy(sort);
+    }else if (Type=="Upcoming")
+    {
+    @*All*@
+    condition ="from > Todate";
+    valuesFilter.Add("Todate", DateTime.Now) ;
+    items =  Umbraco.Content(blogId).Children().Where(condition,valuesFilter).OrderBy(sort);
+    }
+    else if (Type=="Past")
+    {
+    condition ="(from < Todate) && (!( (from <= Todate) && (to >= Todate)))";
+    valuesFilter.Add("Todate", DateTime.Now) ;
+    items =  Umbraco.Content(blogId).Children().Where(condition,valuesFilter).OrderBy(sort);
+    }
+
+    @*var items = Umbraco.Media(1122).Children().OrderBy("CreateDate descending");*@
+    @*var items = Umbraco.Content(1122).Children().OrderBy("CreateDate descending"); Work*@
+
+    var totalPages =(int)Math.Ceiling((double)items.Count()/(double)pageSize);
+
+    if(page > totalPages)
+    {
+    @*ถ้าเรียกมามากกว่า*@
+    page = totalPages;
+    }
+    else if(page < 1)
+    {
+    @*ถ้าเรียกมาน้อยกว่า*@
+    page =1;
+    }
+
+    var jsonDataList= JsonFn.ConvertToJsonObject(items.Skip((page -1)* pageSize).Take(pageSize));
+
+    jsonDataList.Add(new Dictionary<string, object>
+        {            {"RecordCount",items.Count()}
+
+        });
+
+        }
+
+        @* @Html.Raw(serializer.Serialize(items.Count())) *@
+
+        @*Html.Raw(serializer.Serialize(@JsonFn.ConvertToJsonObject(items.Skip((page -1)* pageSize).Take(pageSize))))*@
+
+        @*@Html.Raw(serializer.Serialize(node.Properties));*@
+
+        @*Json*@
+
+        @Html.Raw(serializer.Serialize(jsonDataList))
