@@ -1334,7 +1334,19 @@ nav li > ul {
     /*border-bottom-color: #337ab7;*/
 }
 
-    .selected a {
+  .navbar-nav > li  .selected a {
+        color: #fff !important;
+    } 
+  .navbar-inverse .navbar-nav > li  .selected > a {
+    /* letter-spacing: 1px; */
+    /* font-family: 'Kanit', sans-serif !important; */
+       color: #fff !important;
+}
+
+.navbar-inverse .navbar-nav > li.selected > a   {
+        color: #fff ;
+}
+     .dropdown-menu .selected  a{
         color: #fff !important;
     }
 
@@ -1357,6 +1369,7 @@ nav li > ul {
         color: #9d9d9d;
     }
 
+ 
         .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
             /*color: #262626;
     text-decoration: none;

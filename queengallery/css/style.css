@@ -169,20 +169,7 @@ main {
     background-color:rgba(40,40,40,.95);
 }
 
-.MenuSelected {
-    /*text-decoration: underline;*/
-    /*background-color:#ffffff;*/
-    text-decoration: dotted;
-    /*background-color: #555 !important;*/
-    border-bottom-style: solid;
-    /*border-bottom-color:#efd469;*/
-    border-bottom-color: #EED369;
-    /*border-bottom-color: #337ab7;*/
-}
-
-    .MenuSelected a {
-        color: #fff !important;
-    }
+ 
 
 /*Text*/
 .date {

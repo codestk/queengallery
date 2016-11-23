@@ -21,7 +21,7 @@
         {   
           if (childPage.Children.Any())
             {                    
-                <li class="dropdown has-child @(childPage.IsAncestorOrSelf(CurrentPage) ? "MenuSelected" : null)">
+                <li class="dropdown has-child @(childPage.IsAncestorOrSelf(CurrentPage) ? "selected" : null)">
 					@if(childPage.DocumentTypeAlias == "LandingPage") 
 					{
                     	@*<span>@childPage.Name</span>*@
@@ -42,7 +42,7 @@
                 </li>
             }     
         
-        @*<li class="@(childPage.IsAncestorOrSelf(CurrentPage) ? " MenuSelected":null)">
+        @*<li class="@(childPage.IsAncestorOrSelf(CurrentPage) ? " selected":null)">
             <a href="@childPage.Url">@childPage.Name</a>
         </li>*@
             
