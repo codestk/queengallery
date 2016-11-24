@@ -306,6 +306,8 @@
     <Content Include="Modules\PwsCSS\PwsBaseCss.css" />
     <Content Include="Modules\PwsCSS\PwsMenu.css" />
     <Content Include="Modules\Pws\PWSCallService.js" />
+    <Content Include="Modules\Slider\css\style.css" />
+    <Content Include="Modules\Slider\Slider.css" />
     <Content Include="packages.config" />
     <Content Include="App_Plugins\ModelsBuilder\package.manifest" />
     <Content Include="scripts\PwsExhibitions.js" />
@@ -336,6 +338,7 @@
     <Content Include="Config\BaseRestExtensions.config" />
     <Content Include="Config\applications.config" />
     <Content Include="Config\404handlers.config" />
+    <Content Include="Modules\Slider\scss\style.scss" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
