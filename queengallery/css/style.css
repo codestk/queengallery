@@ -1,8 +1,6 @@
 /* Go crazy with your own styles here */
 /* EDITOR PROPERTIES - PLEASE DON'T DELETE THIS LINE TO AVOID DUPLICATE PROPERTIES */
 
- 
-
 h1 {
     font-size: 3.125em;
 }
@@ -27,21 +25,19 @@ h1 {
 }*/
 
 body {
-    /*padding-top: 50px;*/ 
+    /*padding-top: 50px;*/
     /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
     /*color: #131516;*/
-      /*color:#141823 !important;*/
-     
+    /*color:#141823 !important;*/
     /*color: #333333;*/
     /*font-family: 'Kanit', sans-serif !important;*/
     /*color: #373D3f;*/
-     padding-top: 95px;
-    color:#3e3e3e;
+    padding-top: 144px;
+    color: #3e3e3e;
 }
 
 /*Navigation*/
 .navbar-inverse {
-     
     /*background: rgba(40,40,40,.95);*/
 }
 
@@ -52,7 +48,6 @@ body {
 
 /*.flag2 {
 position:absolute;
-
 }*/
 
 a.list-group-item, button.list-group-item {
@@ -122,8 +117,6 @@ main {
     /*margin-top: 14px;*/
 }
 
-
-
 /*Footer*/
 .logoHover img {
     /*width: 140px;*/
@@ -148,28 +141,28 @@ main {
 .navbar-inverse {
     background: rgba(40,40,40,.95);
 }
-
+ 
 .navbar-brand {
-    height: 93px;
+    /*height: 93px;*/
+    padding:0px;
 }
 
 .navbar-inverse .navbar-brand {
     color: #9d9d9d;
-    padding-top: 23px;
+    padding:4px;
+    /*padding-top: 23px;*/
 }
 
 .nav > li > a {
-    padding-top: 37px;
+    /*padding-top: 37px;
     padding-bottom: 37px;
-    min-height: 93px;
+    min-height: 93px;*/
 }
 
 .navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus {
     color: #fff;
-    background-color:rgba(40,40,40,.95);
+    background-color: rgba(40,40,40,.95);
 }
-
- 
 
 /*Text*/
 .date {
@@ -179,7 +172,7 @@ main {
 }
 
 /*Nav*/
-@media (max-width: 480px), {
+@media (max-width: 480px) {
     .nav > li > a {
         border-bottom: solid 1px rgba(255,255,255,.1);
     }
@@ -197,9 +190,43 @@ main {
     box-shadow: 0 3px 3px 0 rgba(0,0,0,.33);
 }
 
+
+
  
 
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width : 768px) {
+    body {
+    padding-top:101px;
+   
+    }
+ 
+
+
+}
+
+@media only screen and (max-width : 768px) {
+    body {
+    padding-top:76px;
+   
+    }
+ 
+}
+
+/*@media only screen and (min-width : 768px) {
+    body {
+    padding-top:90px;
+    }
+}
+
+@media only screen and (max-width : 768px) {
+    body {
+    padding-top:144px;
+    }
+}*/
+
+
+
+/*@media only screen and (min-width: 1200px) {
     .collapse {
         display: block;
     }
@@ -217,48 +244,9 @@ main {
      .navbar-header {
         display: block;
      }
-}
-
-
-/*@media (max-width: 1200px) {
-    .navbar-header {
-        float: none;
-    }
-    .navbar-toggle {
-        display: block;
-    }
-    .navbar-collapse {
-        border-top: 1px solid transparent;
-        box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
-    }
-    .navbar-collapse.collapse {
-        display: none!important;
-    }
-    .navbar-nav {
-        float: none!important;
-        margin: 7.5px -15px;
-    }
-    .navbar-nav>li {
-        float: none;
-    }
-    .navbar-nav>li>a {
-        padding-top: 10px;
-        padding-bottom: 10px;
-    }
-    .navbar-text {
-        float: none;
-        margin: 15px 0;
-    }
-    /* since 3.1.0 */
-    .navbar-collapse.collapse.in { 
-        display: block!important;
-    }
-    .collapsing {
-        overflow: hidden!important;
-    }
 }*/
 
-
+ 
 /*Button*/
 
 /* EDITOR PROPERTIES - PLEASE DON'T DELETE THIS LINE TO AVOID DUPLICATE PROPERTIES */
