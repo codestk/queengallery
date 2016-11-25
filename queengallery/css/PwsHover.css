@@ -1,4 +1,3 @@
-/*****************Hover********************************************/
 /* Personal Hover  10:18 1/11/2559*/
 .snip1554 {
     /*background-color: #045e78;*/
@@ -107,7 +106,7 @@
     color: #555;
     cursor: pointer;
     display: inline-block;
-    font-family: 'Raleway', Arial, sans-serif;
+    /*font-family: 'Raleway', Arial, sans-serif;*/
     font-size: 14px;
     font-weight: 500;
     height: 46px;
@@ -117,52 +116,50 @@
     outline: none;
     padding: 0 10px;
     position: relative;
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
     text-decoration: none !important; /*Fix Over Bootstap*/
     /* text-decoration: underline; */
 }
 
     .snip1564:before,
     .snip1564:after {
-        box-sizing: border-box;
-        -webkit-transition: all 0.3s;
-        transition: all 0.3s;
-        background-color: #ffffff;
-        border-radius: 50%;
-        top: -6px;
-        content: "";
-        height: 46px;
-        position: absolute;
-        width: 46px;
-        border: 6px solid #ddd;
-        -webkit-transform: rotate(45deg);
-        transform: rotate(45deg);
-        z-index: -1;
+        box-sizing: border-box  !important;
+        -webkit-transition: all 0.3s !important;
+        transition: all 0.3s  !important;
+        background-color: #ffffff  !important;
+        border-radius: 50%  !important;
+        top: -6px  !important;
+        content: ""  !important;
+        height: 46px  !important;
+        position: absolute  !important;
+        width: 46px  !important;
+        border: 6px solid #ddd  !important;
+        -webkit-transform: rotate(45deg)  !important;
+        transform: rotate(45deg)  !important;
+        z-index: -1  !important;
     }
 
     .snip1564:before {
-        right: -23px;
-        border-left-color: #029ebe;
-        border-bottom-color: #029ebe;
+        right: -23px  !important;
+        border-left-color: #029ebe  !important;
+        border-bottom-color: #029ebe  !important;
     }
 
     .snip1564:after {
         left: -23px;
-        border-right-color: #029ebe;
-        border-top-color: #029ebe;
+        border-right-color: #029ebe  !important;
+        border-top-color: #029ebe !important;
     }
 
     .snip1564:hover,
     .snip1564.hover {
-        background-color: #ffffff;
+        background-color: #ffffff !important;
     }
 
         .snip1564:hover:before,
         .snip1564.hover:before,
         .snip1564:hover:after,
         .snip1564.hover:after {
-            -webkit-transform: rotate(225deg);
-            transform: rotate(225deg);
+            -webkit-transform: rotate(225deg) !important;
+            transform: rotate(225deg) !important;
         }
-
- 
