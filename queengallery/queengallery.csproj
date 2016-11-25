@@ -307,7 +307,6 @@
     <Content Include="Modules\PwsCSS\PwsMenu.css" />
     <Content Include="Modules\Pws\PWSCallService.js" />
     <Content Include="Modules\Slider\css\style.css" />
-    <Content Include="Modules\Slider\Slider.css" />
     <Content Include="packages.config" />
     <Content Include="App_Plugins\ModelsBuilder\package.manifest" />
     <Content Include="scripts\PwsExhibitions.js" />
