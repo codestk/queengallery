@@ -997,7 +997,8 @@ blockquote {
         height: auto;
         margin: 0 !important;
         padding: 0 !important;
-        line-height: 0;
+        /*PWs*/
+        line-height: 130%;
     }
 
     .full .wide {
