@@ -75,7 +75,7 @@ video {
     outline: 0;
     border: 0;
     background: transparent;
-    vertical-align: baseline;
+    /*vertical-align: baseline;*/
     font-size: 100%;
 }
 
@@ -223,14 +223,72 @@ html {
         border-color: transparent transparent transparent #1c1c1e;
     }
 
+
+    .darklight {
+    /*Custom Pws*/
+    /*background: #fff;*/
+}
+
+    .darklight * {
+        /*Custom Pws*/
+        color: #3e3e3e;
+        /*color: #000;*/
+    }
+
+    .darklight a,
+    .darklight a:visited {
+        /*Custom PWS*/
+        /*color: #f45376 !important;*/
+        /*color: #1496bb !important;*/
+        color: #107896 !important;
+        /*color: #1496BC !important;
+          color: #1395ba !important;*/
+    }
+
+        .darklight a:hover,
+        .darklight a:visited:hover {
+            text-decoration: underline;
+        }
+
+        .darklight a.button {
+            border: 1px solid #000;
+            background: transparent;
+            color: #000;
+        }
+
+            .darklight a.button:hover {
+                background: #000;
+                color: #fff;
+            }
+
+            .darklight a.button.fill {
+                background: #000;
+                color: #fff;
+            }
+
+                .darklight a.button.fill:hover {
+                    background: rgba(0, 0, 0, 0.2);
+                    color: #000;
+                }
+
+    .darklight code,
+    .darklight pre {
+        background-color: #f8f8f8;
+    }
+
+    .darklight + .triangle:before {
+        border-color: transparent transparent transparent #fff;
+    }
+
+
 .light {
-    background: #fff;
+    /*Custom Pws*/
+    /*background: #fff;*/
 }
 
     .light * {
-
         /*Custom Pws*/
-        color:#3e3e3e;
+        color: #3e3e3e;
         /*color: #000;*/
     }
 
@@ -242,7 +300,6 @@ html {
         color: #107896 !important;
         /*color: #1496BC !important;
           color: #1395ba !important;*/
-      
     }
 
         .light a:hover,
@@ -281,7 +338,8 @@ html {
     }
 
 .yellow {
-    background: #FFCC01;
+    /*background: #FFCC01;*/
+    background: #F4C63D;
 }
 
     .yellow * {
@@ -290,7 +348,7 @@ html {
 
     .yellow a,
     .yellow a:visited {
-        color: #f42146;
+        color: #107896;
     }
 
         .yellow a.button {
@@ -758,7 +816,7 @@ nav li > ul > li > ul {
 	display: none;
 }*/
 
-.dark,
+.dark, .darklight,
 .light,
 .yellow,
 .blue,
@@ -772,7 +830,7 @@ nav li > ul > li > ul {
     color: #000;
 }
 
-    .dark .row,
+    .dark .row, .darklight .row,
     .light .row,
     .yellow .row,
     .blue .row,
@@ -781,6 +839,7 @@ nav li > ul > li > ul {
     }
 
         .dark .row div[class^="col-"],
+        .darklight .row div[class^="col-"],
         .light .row div[class^="col-"],
         .yellow .row div[class^="col-"],
         .blue .row div[class^="col-"],
@@ -788,95 +847,108 @@ nav li > ul > li > ul {
             margin-bottom: 50px;
         }
 
-    .dark p,
-    .light p,
-    .yellow p,
-    .blue p,
-    .purple p,
-    .dark a,
-    .light a,
-    .yellow a,
-    .blue a,
-    .purple a,
-    .dark blockquote,
-    .light blockquote,
-    .yellow blockquote,
-    .blue blockquote,
-    .purple blockquote,
-    .dark li,
-    .light li,
-    .yellow li,
-    .blue li,
-    .purple li {
-        font-family: "Merriweather", serif;
-    }
+        .dark p,
+        .darklight p,
+        .light p,
+        .yellow p,
+        .blue p,
+        .purple p,
+        .dark a,
+           .darklight a,
+        .light a,
+        .yellow a,
+        .blue a,
+        .purple a,
+        .dark blockquote,
+         .darklight blockquote,
+        .light blockquote,
+        .yellow blockquote,
+        .blue blockquote,
+        .purple blockquote,
+        .dark li,
+         .darklight li,
+        .light li,
 
-    .dark h1,
-    .light h1,
-    .yellow h1,
-    .blue h1,
-    .purple h1 {
-        margin-bottom: 10px;
-    }
-
-    .dark h2,
-    .light h2,
-    .yellow h2,
-    .blue h2,
-    .purple h2,
-    .dark h3,
-    .light h3,
-    .yellow h3,
-    .blue h3,
-    .purple h3 {
-        margin: 0 0 5px;
-    }
-
-    .dark p,
-    .light p,
-    .yellow p,
-    .blue p,
-    .purple p {
-        letter-spacing: 0.2px;
-        margin: 0 auto;
-    }
-
-        .dark p + *,
-        .light p + *,
-        .yellow p + *,
-        .blue p + *,
-        .purple p + * {
-            margin-top: 20px;
+        .yellow li,
+        .blue li,
+        .purple li {
+            font-family: "Merriweather", serif;
         }
 
-    .dark a,
-    .light a,
-    .yellow a,
-    .blue a,
-    .purple a {
-        position: relative;
-        display: inline-block;
-    }
+        .dark h1,
+        .light h1,
+        .darklight h1,
+        .yellow h1,
+        .blue h1,
+        .purple h1 {
+            margin-bottom: 10px;
+        }
 
-    .dark img,
-    .light img,
-    .yellow img,
-    .blue img,
-    .purple img {
-        padding: 20px 0;
-        max-width: 100%;
-        width: auto;
-        height: auto;
-        margin: 30px 0;
-    }
+        .dark h2,
+        .light h2,
+        .darklight h2,
+        .yellow h2,
+        .blue h2,
+        .purple h2,
+        .dark h3,
+        .light h3,
+        .darklight h3,
+        .yellow h3,
+        .blue h3,
+        .purple h3 {
+            margin: 0 0 5px;
+        }
 
-    .dark li,
-    .light li,
-    .yellow li,
-    .blue li,
-    .purple li {
-        padding: 2px 0 0;
-    }
+        .dark p,
+        .light p,
+        .darklight p,
+        .yellow p,
+        .blue p,
+        .purple p {
+            letter-spacing: 0.2px;
+            margin: 0 auto;
+        }
+
+            .dark p + *,
+            .darklight p + *,
+            .light p + *,
+            .yellow p + *,
+            .blue p + *,
+            .purple p + * {
+                margin-top: 20px;
+            }
+
+        .dark a,
+        .darklight a,
+        .light a,
+        .yellow a,
+        .blue a,
+        .purple a {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dark img,
+        .darklight img,
+        .light img,
+        .yellow img,
+        .blue img,
+        .purple img {
+            padding: 20px 0;
+            max-width: 100%;
+            width: auto;
+            height: auto;
+            margin: 30px 0;
+        }
+
+        .dark li,
+        .darklight li ,
+        .light li,
+        .yellow li,
+        .blue li,
+        .purple li {
+            padding: 2px 0 0;
+        }
 
 .blogarchive div[class^="col-"] {
     margin-bottom: 20px !important;
@@ -1062,14 +1134,17 @@ pre {
 
 @media (min-width: 768px) {
     .dark,
+    .darklight,
     .light,
     .yellow,
     .blue,
     .purple {
-        padding: 80px 0;
+        /*PWS*/
+        /*padding: 80px 0;*/
     }
 
         .dark img,
+        .darklight img,
         .light img,
         .yellow img,
         .blue img,
@@ -1106,6 +1181,10 @@ pre {
 
 @media (min-width: 992px) {
     .triangle + .dark:before {
+        border-color: transparent transparent transparent #1c1c1e;
+    }
+
+    .triangle + .darklight:before {
         border-color: transparent transparent transparent #1c1c1e;
     }
 
@@ -1187,6 +1266,7 @@ nav .has-child:hover > .sublevel {
 
     .dark .row div[class^="col-"],
     .light .row div[class^="col-"],
+    .darklight .row div[class^="col-"],
     .yellow .row div[class^="col-"],
     .blue .row div[class^="col-"],
     .purple .row div[class^="col-"] {
@@ -1215,6 +1295,7 @@ nav .has-child:hover > .sublevel {
         }
 
         .triangle + .light,
+        .triangle + .darklight,
         .triangle + .dark,
         .triangle + .blue,
         .triangle + .yellow,
@@ -1223,6 +1304,7 @@ nav .has-child:hover > .sublevel {
         }
 
             .triangle + .light:before,
+            .triangle + .darklight:before,
             .triangle + .dark:before,
             .triangle + .blue:before,
             .triangle + .yellow:before,
@@ -1335,26 +1417,28 @@ nav li > ul {
     /*border-bottom-color: #337ab7;*/
 }
 
-  .navbar-nav > li  .selected a {
-        color: #fff !important;
-    } 
-  .navbar-inverse .navbar-nav > li  .selected > a {
-    /* letter-spacing: 1px; */
-    /* font-family: 'Kanit', sans-serif !important; */
-       color: #fff !important;
+.navbar-nav > li .selected a {
+    color: #fff !important;
 }
 
-.navbar-inverse .navbar-nav > li.selected > a   {
-        color: #fff ;
+.navbar-inverse .navbar-nav > li .selected > a {
+    /* letter-spacing: 1px; */
+    /* font-family: 'Kanit', sans-serif !important; */
+    color: #fff !important;
 }
-     .dropdown-menu .selected  a{
-        color: #fff !important;
-    }
+
+.navbar-inverse .navbar-nav > li.selected > a {
+    color: #fff;
+}
+
+.dropdown-menu .selected a {
+    color: #fff !important;
+}
 
 .dropdown-menu {
     /*PWS */
     /*background-color: #333;*/
-        background: rgba(40,40,40,.95);
+    background: rgba(40,40,40,.95);
 }
 
     .dropdown-menu > li > a {
@@ -1370,7 +1454,6 @@ nav li > ul {
         color: #9d9d9d;
     }
 
- 
         .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
             /*color: #262626;
     text-decoration: none;
