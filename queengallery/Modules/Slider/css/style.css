@@ -4,11 +4,13 @@
   position: relative;
 
  
-  width: 100vw; 
- height:56vh;
+  /*width: 100vw; 
+ height:100vh;*/
   /*height: 100vh;*/
     /*height: 56vh;*/ 
   
+width: 100vw; 
+height:100vh;
     
 }
 .css-slider .css-slider-navigation {
