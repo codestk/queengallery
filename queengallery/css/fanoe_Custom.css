@@ -227,12 +227,17 @@ html {
     .darklight {
     /*Custom Pws*/
     /*background: #fff;*/
+      background:rgba(233,237,240,.5);
+       /*background:#F4F6F8;*/
+
+    
 }
 
     .darklight * {
         /*Custom Pws*/
         color: #3e3e3e;
         /*color: #000;*/
+       
     }
 
     .darklight a,
@@ -242,12 +247,14 @@ html {
         /*color: #1496bb !important;*/
         color: #107896 !important;
         /*color: #1496BC !important;
-          color: #1395ba !important;*/
+          color: #1395ba !important;*/  
+       
     }
 
         .darklight a:hover,
         .darklight a:visited:hover {
             text-decoration: underline;
+      
         }
 
         .darklight a.button {
@@ -257,7 +264,7 @@ html {
         }
 
             .darklight a.button:hover {
-                background: #000;
+                background:rgba(233,237,240,.5);
                 color: #fff;
             }
 

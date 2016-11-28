@@ -99,7 +99,13 @@
 
 /*Butom Hover*/
 .snip1564 {
-    background-color: #ffffff;
+    /*background-color: #ffffff;*/
+
+      /*background:rgba(233,237,240,.5);
+        background: #808080;*/
+    background:#F4F6F8; 
+     /*background:   inherit;*/
+  
     border: none;
     border-bottom: 6px solid #029ebe;
     border-top: 6px solid #029ebe;
@@ -137,15 +143,20 @@
         -webkit-transform: rotate(45deg)  !important;
         transform: rotate(45deg)  !important;
         z-index: -1  !important;
+
+     
     }
 
     .snip1564:before {
+    
+     
         right: -23px  !important;
         border-left-color: #029ebe  !important;
         border-bottom-color: #029ebe  !important;
     }
 
     .snip1564:after {
+      
         left: -23px;
         border-right-color: #029ebe  !important;
         border-top-color: #029ebe !important;
@@ -153,7 +164,8 @@
 
     .snip1564:hover,
     .snip1564.hover {
-        background-color: #ffffff !important;
+        /*background-color: #ffffff !important;*/
+       
     }
 
         .snip1564:hover:before,
