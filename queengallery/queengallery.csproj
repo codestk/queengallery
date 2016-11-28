@@ -303,7 +303,6 @@
     <Content Include="js\queengalleryEn.js" />
     <Content Include="js\queengalleryTh.js" />
     <Content Include="Modules\PreLoad\PwsPreLoad.js" />
-    <Content Include="Modules\pure-css-based-fullscreen-slider\com\css\StyleSheet1.css" />
     <Content Include="Modules\PwsCSS\PwsBaseCss.css" />
     <Content Include="Modules\PwsCSS\PwsMenu.css" />
     <Content Include="Modules\Pws\PWSCallService.js" />

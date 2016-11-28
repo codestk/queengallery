@@ -252,5 +252,9 @@ main {
 
  
 /*Button*/
-
+.linebar
+{
+    border-bottom-color: #e7e7e9;
+    border-bottom-width: 3px;
+}
 /* EDITOR PROPERTIES - PLEASE DON'T DELETE THIS LINE TO AVOID DUPLICATE PROPERTIES */
