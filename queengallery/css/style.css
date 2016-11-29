@@ -197,6 +197,8 @@ main {
       .selected .nav_list-link:after, .nav_list-link:active:after, .nav_list-link:hover:after, .nav_list-link:focus:after {
             width: 100%;
             background: #008f70;
+                /*background: #FDB215;*/
+           
             transition: width .2s ease-in .1s,background 0s ease-in .1s;
         }
 
@@ -239,7 +241,8 @@ main {
 }
 
 .navbar > .container .navbar-brand, .navbar > .container-fluid .navbar-brand {
-    margin-left: 0px;
+    /*margin-left: 0px;*/
+        margin-left: 9px;
 }
 /*@media only screen and (min-width : 768px) {
     body {
@@ -295,7 +298,8 @@ main {
     }
 
     .footerWide span {
-        color: #E2E2E2;
+        /*color: #E2E2E2;*/
+        color:#888;
         text-decoration: none;
     }
 
