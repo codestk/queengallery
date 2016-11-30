@@ -9,9 +9,24 @@
   /*height: 100vh;*/
     /*height: 56vh;*/ 
   
-width: 100vw; 
-height:100vh;
-    
+ 
+  height: 500px;
+  
+ 
+
+ 
+  max-width: 1920px;
+ 
+  top: 0;
+
+  z-index: 100;
+  padding: 8em 0px;
+  background-color: #120103;
+  background-position: 50% 50%;
+  background-size: cover;
+  -webkit-transition: left 0s .75s;
+  transition: left 0s .75s;
+ 
 }
 .css-slider .css-slider-navigation {
   z-index: 2;
@@ -69,6 +84,7 @@ height:100vh;
   width: 100%;
   height: 100%;
  
+  background-size:cover;
 
 }
 .css-slider input[type=radio]:nth-of-type(1):checked ~ .css-slider-wrapper .css-slider-inner .css-slider-item:nth-child(1) .css-slider-item-inner * {
@@ -191,7 +207,7 @@ height:100vh;
   -webkit-transition-delay: 1250ms;
   transition-delay: 1250ms;
   /*left: 0;*/
-  left: 81px;
+  left: 0px;
   top: 0;
   margin-right: 0;
   width: 100%;
@@ -316,7 +332,7 @@ height:100vh;
   -o-transition-delay: 1250ms;
   -webkit-transition-delay: 1250ms;
   transition-delay: 1250ms;
-  left: 161px;
+  left: 0px;
   top: 0;
   margin-right: 0;
   width: 100%;
@@ -1237,7 +1253,7 @@ height:100vh;
   transform: translateY(-50%);
 
 
-  line-height:130px;
+  /*line-height:130px;*/
 }
 .css-slider .css-slider-wrapper .css-slider-inner .css-slider-item .css-slider-item-inner * {
   position: relative;
@@ -1354,6 +1370,8 @@ height:100vh;
   font-family: "Open Sans";
   font-weight: 100;
   text-transform: uppercase;
+
+
 }
 
 .slide-subtitle {

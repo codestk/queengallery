@@ -253,7 +253,7 @@ main {
  
 /*Button*/
 .linebar
-{
+{    border-bottom-style: solid;
     border-bottom-color: #e7e7e9;
     border-bottom-width: 3px;
 }

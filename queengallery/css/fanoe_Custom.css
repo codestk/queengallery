@@ -227,6 +227,8 @@ html {
     .darklight {
     /*Custom Pws*/
     /*background: #fff;*/
+        background: #eee; 
+
 }
 
     .darklight * {
@@ -240,36 +242,36 @@ html {
         /*Custom PWS*/
         /*color: #f45376 !important;*/
         /*color: #1496bb !important;*/
-        color: #107896 !important;
+        /*color: #107896 !important;*/
         /*color: #1496BC !important;
           color: #1395ba !important;*/
     }
 
-        .darklight a:hover,
+        /*.darklight a:hover,
         .darklight a:visited:hover {
             text-decoration: underline;
-        }
+        }*/
 
-        .darklight a.button {
+        /*.darklight a.button {
             border: 1px solid #000;
             background: transparent;
             color: #000;
-        }
+        }*/
 
-            .darklight a.button:hover {
+            /*.darklight a.button:hover {
                 background: #000;
                 color: #fff;
-            }
+            }*/
 
-            .darklight a.button.fill {
+            /*.darklight a.button.fill {
                 background: #000;
                 color: #fff;
-            }
+            }*/
 
-                .darklight a.button.fill:hover {
+                /*.darklight a.button.fill:hover {
                     background: rgba(0, 0, 0, 0.2);
                     color: #000;
-                }
+                }*/
 
     .darklight code,
     .darklight pre {
@@ -1058,19 +1060,27 @@ blockquote {
     }
 
 .full {
+            width: 100%;
     margin: 0;
     padding: 0 !important;
     overflow: hidden;
 }
 
-    .full * {
-        max-width: 100%;
-        width: 100%;
+.full >.container{
+      max-width: 100%;
+        width: 100%; 
         height: auto;
         margin: 0 !important;
         padding: 0 !important;
+}
+    .full * {
+        /*max-width: 100%;
+        width: 100%; 
+        height: auto;
+        margin: 0 !important;
+        padding: 0 !important;*/
         /*PWs*/
-        line-height: 130%;
+        /*line-height: 130%;*/
     }
 
     .full .wide {
