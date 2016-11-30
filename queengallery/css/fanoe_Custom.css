@@ -223,12 +223,11 @@ html {
         border-color: transparent transparent transparent #1c1c1e;
     }
 
-
-    .darklight {
+.darklight {
     /*Custom Pws*/
     /*background: #fff;*/
-        background: #eee; 
-
+    background: rgba(233,237,240,.5);
+    /*background:#F4F6F8;*/
 }
 
     .darklight * {
@@ -242,36 +241,36 @@ html {
         /*Custom PWS*/
         /*color: #f45376 !important;*/
         /*color: #1496bb !important;*/
-        /*color: #107896 !important;*/
+        color: #107896 !important;
         /*color: #1496BC !important;
           color: #1395ba !important;*/
     }
 
-        /*.darklight a:hover,
+        .darklight a:hover,
         .darklight a:visited:hover {
             text-decoration: underline;
-        }*/
+        }
 
-        /*.darklight a.button {
+        .darklight a.button {
             border: 1px solid #000;
             background: transparent;
             color: #000;
-        }*/
+        }
 
-            /*.darklight a.button:hover {
+            .darklight a.button:hover {
+                background: rgba(233,237,240,.5);
+                color: #fff;
+            }
+
+            .darklight a.button.fill {
                 background: #000;
                 color: #fff;
-            }*/
+            }
 
-            /*.darklight a.button.fill {
-                background: #000;
-                color: #fff;
-            }*/
-
-                /*.darklight a.button.fill:hover {
+                .darklight a.button.fill:hover {
                     background: rgba(0, 0, 0, 0.2);
                     color: #000;
-                }*/
+                }
 
     .darklight code,
     .darklight pre {
@@ -281,6 +280,127 @@ html {
     .darklight + .triangle:before {
         border-color: transparent transparent transparent #fff;
     }
+ 
+     
+    .fullWithContentDark {
+    /*Custom Pws*/
+    /*background: #fff;*/
+    /*background: rgba(233,237,240,.5);*/
+    /*background:#F4F6F8;*/
+
+        background:#3e3e3e;
+}
+
+    .fullWithContentDark * {
+        /*Custom Pws*/
+        color: #fff;
+        /*color: #000;*/
+    }
+
+    .fullWithContentDark a,
+    .fullWithContentDark a:visited {
+        /*Custom PWS*/
+        /*color: #f45376 !important;*/
+        /*color: #1496bb !important;*/
+        color: #107896 !important;
+        /*color: #1496BC !important;
+          color: #1395ba !important;*/
+    }
+
+        .fullWithContentDark a:hover,
+        .fullWithContentDark a:visited:hover {
+            text-decoration: underline;
+        }
+
+        .fullWithContentDark a.button {
+            border: 1px solid #000;
+            background: transparent;
+            color: #000;
+        }
+
+            .fullWithContentDark a.button:hover {
+                background: rgba(233,237,240,.5);
+                color: #fff;
+            }
+
+            .fullWithContentDark a.button.fill {
+                background: #000;
+                color: #fff;
+            }
+
+                .fullWithContentDark a.button.fill:hover {
+                    background: rgba(0, 0, 0, 0.2);
+                    color: #000;
+                }
+
+    .fullWithContentDark code,
+    .fullWithContentDark pre {
+        background-color: #f8f8f8;
+    }
+
+    .fullWithContentDark + .triangle:before {
+        border-color: transparent transparent transparent #fff;
+    }
+
+
+    /*full*/
+    
+.fullWithContentLight {
+    /*Custom Pws*/
+    /*background: #fff;*/
+}
+
+    .fullWithContentLight * {
+        /*Custom Pws*/
+        color: #3e3e3e;
+        /*color: #000;*/
+    }
+
+    .fullWithContentLight a,
+    .fullWithContentLight a:visited {
+        /*Custom PWS*/
+        /*color: #f45376 !important;*/
+        /*color: #1496bb !important;*/
+        color: #107896 !important;
+        /*color: #1496BC !important;
+          color: #1395ba !important;*/
+    }
+
+        .fullWithContentLight a:hover,
+        .fullWithContentLight a:visited:hover {
+            text-decoration: underline;
+        }
+
+        .fullWithContentLight a.button {
+            border: 1px solid #000;
+            background: transparent;
+            color: #000;
+        }
+
+            .fullWithContentLight a.button:hover {
+                background: #000;
+                color: #fff;
+            }
+
+            .fullWithContentLight a.button.fill {
+                background: #000;
+                color: #fff;
+            }
+
+                .fullWithContentLight a.button.fill:hover {
+                    background: rgba(0, 0, 0, 0.2);
+                    color: #000;
+                }
+
+    .fullWithContentLight code,
+    .fullWithContentLight pre {
+        background-color: #f8f8f8;
+    }
+
+    .fullWithContentLight + .triangle:before {
+        border-color: transparent transparent transparent #fff;
+    }
+
 
 
 .light {
@@ -818,7 +938,7 @@ nav li > ul > li > ul {
 	display: none;
 }*/
 
-.dark, .darklight,
+.dark, .darklight,.fullWithContentLight,.fullWithContentDark,
 .light,
 .yellow,
 .blue,
@@ -832,7 +952,7 @@ nav li > ul > li > ul {
     color: #000;
 }
 
-    .dark .row, .darklight .row,
+    .dark .row, .darklight .row,.fullWithContentLight .row,.fullWithContentDark .row,
     .light .row,
     .yellow .row,
     .blue .row,
@@ -842,6 +962,9 @@ nav li > ul > li > ul {
 
         .dark .row div[class^="col-"],
         .darklight .row div[class^="col-"],
+          .fullWithContentLight .row div[class^="col-"],
+            .fullWithContentDark .row div[class^="col-"],
+         
         .light .row div[class^="col-"],
         .yellow .row div[class^="col-"],
         .blue .row div[class^="col-"],
@@ -849,108 +972,133 @@ nav li > ul > li > ul {
             margin-bottom: 50px;
         }
 
-        .dark p,
-        .darklight p,
-        .light p,
-        .yellow p,
-        .blue p,
-        .purple p,
-        .dark a,
-           .darklight a,
-        .light a,
-        .yellow a,
-        .blue a,
-        .purple a,
-        .dark blockquote,
-         .darklight blockquote,
-        .light blockquote,
-        .yellow blockquote,
-        .blue blockquote,
-        .purple blockquote,
-        .dark li,
-         .darklight li,
-        .light li,
+    .dark p,
+    .darklight p,
+     .fullWithContentLight p,
+         .fullWithContentDark p,
+     
+    .light p,
+    .yellow p,
+    .blue p,
+    .purple p,
+    .dark a,
+    .darklight a,
+      .fullWithContentLight a,
+        .fullWithContentDark a,
+    .light a,
+    .yellow a,
+    .blue a,
+    .purple a,
+    .dark blockquote,
+    .darklight blockquote,
+      .fullWithContentLight blockquote,
+       .fullWithContentDark blockquote,
+    .light blockquote,
+    .yellow blockquote,
+    .blue blockquote,
+    .purple blockquote,
+    .dark li,
+    .darklight li,
+      .fullWithContentLight li,
+       .fullWithContentDark li,
+    .light li,
+    .yellow li,
+    .blue li,
+    .purple li {
+        font-family: "Merriweather", serif;
+    }
 
-        .yellow li,
-        .blue li,
-        .purple li {
-            font-family: "Merriweather", serif;
+    .dark h1,
+    .light h1,
+    .darklight h1,
+      .fullWithContentLight h1,
+        .fullWithContentDark h1,
+    .yellow h1,
+    .blue h1,
+    .purple h1 {
+        margin-bottom: 10px;
+    }
+
+    .dark h2,
+    .light h2,
+    .darklight h2,
+     .fullWithContentLight h2,
+       .fullWithContentDark h2,
+    .yellow h2,
+    .blue h2,
+    .purple h2,
+    .dark h3,
+    .light h3,
+    .darklight h3,
+    .fullWithContentLight h3,
+      .fullWithContentDark h3,
+    .yellow h3,
+    .blue h3,
+    .purple h3 {
+        margin: 0 0 5px;
+    }
+
+    .dark p,
+    .light p,
+    .darklight p,
+     .fullWithContentLight p,
+        .fullWithContentDark p,
+    .yellow p,
+    .blue p,
+    .purple p {
+        letter-spacing: 0.2px;
+        margin: 0 auto;
+    }
+
+        .dark p + *,
+        .darklight p + *,
+          .fullWithContentLight p + *,
+             .fullWithContentDark p + *,
+        .light p + *,
+        .yellow p + *,
+        .blue p + *,
+        .purple p + * {
+            margin-top: 20px;
         }
 
-        .dark h1,
-        .light h1,
-        .darklight h1,
-        .yellow h1,
-        .blue h1,
-        .purple h1 {
-            margin-bottom: 10px;
-        }
+    .dark a,
+    .darklight a,
 
-        .dark h2,
-        .light h2,
-        .darklight h2,
-        .yellow h2,
-        .blue h2,
-        .purple h2,
-        .dark h3,
-        .light h3,
-        .darklight h3,
-        .yellow h3,
-        .blue h3,
-        .purple h3 {
-            margin: 0 0 5px;
-        }
+       .fullWithContentLight a,
+          .fullWithContentDark a,
+    .light a,
+    .yellow a,
+    .blue a,
+    .purple a {
+        position: relative;
+        display: inline-block;
+    }
 
-        .dark p,
-        .light p,
-        .darklight p,
-        .yellow p,
-        .blue p,
-        .purple p {
-            letter-spacing: 0.2px;
-            margin: 0 auto;
-        }
+    .dark img,
+    .darklight img,
+      .fullWithContentLight img,
+      .fullWithContentDark img,
+    .light img,
+    .yellow img,
+    .blue img,
+    .purple img {
+        padding: 20px 0;
+        max-width: 100%;
+        width: auto;
+        height: auto;
+        margin: 30px 0;
+    }
 
-            .dark p + *,
-            .darklight p + *,
-            .light p + *,
-            .yellow p + *,
-            .blue p + *,
-            .purple p + * {
-                margin-top: 20px;
-            }
-
-        .dark a,
-        .darklight a,
-        .light a,
-        .yellow a,
-        .blue a,
-        .purple a {
-            position: relative;
-            display: inline-block;
-        }
-
-        .dark img,
-        .darklight img,
-        .light img,
-        .yellow img,
-        .blue img,
-        .purple img {
-            padding: 20px 0;
-            max-width: 100%;
-            width: auto;
-            height: auto;
-            margin: 30px 0;
-        }
-
-        .dark li,
-        .darklight li ,
-        .light li,
-        .yellow li,
-        .blue li,
-        .purple li {
-            padding: 2px 0 0;
-        }
+    .dark li,
+    .darklight li,
+      .fullWithContentLight li,
+       .fullWithContentDark li,
+    .light li,
+    .yellow li,
+    .blue li,
+    .purple li {
+        padding: 2px 0 0;
+    }
 
 .blogarchive div[class^="col-"] {
     margin-bottom: 20px !important;
@@ -1060,32 +1208,41 @@ blockquote {
     }
 
 .full {
-            width: 100%;
     margin: 0;
     padding: 0 !important;
     overflow: hidden;
 }
 
-.full >.container{
-      max-width: 100%;
-        width: 100%; 
+    .full * {
+        max-width: 100%;
+        width: 100%;
         height: auto;
         margin: 0 !important;
         padding: 0 !important;
-}
-    .full * {
-        /*max-width: 100%;
-        width: 100%; 
-        height: auto;
-        margin: 0 !important;
-        padding: 0 !important;*/
         /*PWs*/
-        /*line-height: 130%;*/
+        line-height: 130%;
     }
 
     .full .wide {
         width: 100%;
         height: auto;
+    }
+
+
+    /*Pws full screen*/
+    .fullWithContentLight,.fullWithContentDark{
+          /*margin: 0;
+    padding: 0 !important;*/
+    overflow: hidden;
+    }
+   .fullWithContentLight .container, .fullWithContentDark .container {
+        max-width: 100%;
+        width: 100%;
+        height: auto;
+        margin: 0 !important;
+        padding: 0 !important; 
+        /*PWs*/
+        line-height: 130%;
     }
 
 .small {
@@ -1145,6 +1302,8 @@ pre {
 @media (min-width: 768px) {
     .dark,
     .darklight,
+    .fullWithContentLight,
+    .fullWithContentDark,
     .light,
     .yellow,
     .blue,
@@ -1155,6 +1314,8 @@ pre {
 
         .dark img,
         .darklight img,
+           .fullWithContentLight img,
+           .fullWithContentDark img,
         .light img,
         .yellow img,
         .blue img,
@@ -1197,6 +1358,14 @@ pre {
     .triangle + .darklight:before {
         border-color: transparent transparent transparent #1c1c1e;
     }
+
+     .triangle + .fullWithContentLight:before {
+        border-color: transparent transparent transparent #1c1c1e;
+    }
+       .triangle + .fullWithContentDark:before {
+        border-color: transparent transparent transparent #1c1c1e;
+    }
+  
 
     .triangle + .light:before {
         border-color: transparent transparent transparent #fff;
@@ -1277,6 +1446,9 @@ nav .has-child:hover > .sublevel {
     .dark .row div[class^="col-"],
     .light .row div[class^="col-"],
     .darklight .row div[class^="col-"],
+     .fullWithContentLight .row div[class^="col-"],
+      .fullWithContentDark .row div[class^="col-"],
+    
     .yellow .row div[class^="col-"],
     .blue .row div[class^="col-"],
     .purple .row div[class^="col-"] {
@@ -1306,6 +1478,8 @@ nav .has-child:hover > .sublevel {
 
         .triangle + .light,
         .triangle + .darklight,
+          .triangle + .fullWithContentLight,
+              .triangle + .fullWithContentDark,
         .triangle + .dark,
         .triangle + .blue,
         .triangle + .yellow,
@@ -1315,6 +1489,9 @@ nav .has-child:hover > .sublevel {
 
             .triangle + .light:before,
             .triangle + .darklight:before,
+              .triangle + .fullWithContentLight:before,
+                .triangle + .fullWithContentDark:before,
+           
             .triangle + .dark:before,
             .triangle + .blue:before,
             .triangle + .yellow:before,
