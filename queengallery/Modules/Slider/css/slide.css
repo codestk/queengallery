@@ -16,8 +16,9 @@ height:450px;
 .css-slider .css-slider-navigation {
   z-index: 2;
   position: absolute;
-  top: 20px;
-  left: 40%;
+  top: 90%;
+  /*left: 40%;*/
+  text-align:center;
   /*-moz-transform: translateX(-50%) translateY(-50%);
   -ms-transform: translateX(-50%) translateY(-50%);
   -webkit-transform: translateX(-50%) translateY(-50%);

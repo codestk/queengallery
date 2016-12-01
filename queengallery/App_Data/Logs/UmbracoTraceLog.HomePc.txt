@@ -160,3 +160,7 @@ _shutDownStack=   at System.Environment.GetStackTrace(Exception e, Boolean needF
  2016-12-01 19:18:11,236 [P2348/D3/T67] INFO  umbraco.content - Saved Xml to file.
  2016-12-01 19:18:32,044 [P2348/D3/T63] INFO  Umbraco.Core.PluginManager - Starting resolution types of umbraco.cms.businesslogic.macro.IMacroEngine
  2016-12-01 19:18:32,051 [P2348/D3/T63] INFO  Umbraco.Core.PluginManager - Completed resolution of types of umbraco.cms.businesslogic.macro.IMacroEngine, found 0 (took 7ms)
+ 2016-12-01 19:30:32,447 [P2348/D3/T58] INFO  Umbraco.Core.Publishing.PublishingStrategy - Content 'Visit Us' with Id '1106' has been published.
+ 2016-12-01 19:30:36,572 [P2348/D3/T71] INFO  umbraco.content - Save Xml to file...
+ 2016-12-01 19:30:36,594 [P2348/D3/T71] INFO  umbraco.content - Saved Xml to file.
+ 2016-12-01 19:50:06,076 [P2348/D3/T11] INFO  Umbraco.Core.Logging.OwinLogger - Event Id: 0, state: User logged will be logged out due to timeout: admin@bbl.co.th, IP Address: ::1
