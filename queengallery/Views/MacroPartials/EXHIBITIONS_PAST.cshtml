@@ -6,7 +6,8 @@
 <script src="/Modules/mustache/mustache.js"></script>
 <script src="/Modules/UmbracoImage/UmbracoImage.js"></script>
 
-@*<script src="~/Modules/js-base64-master/base64.js"></script>*@
+@*
+<script src="~/Modules/js-base64-master/base64.js"></script>*@
 
 <script>
 
@@ -170,27 +171,23 @@
     <h1 style="font-size:50px;text-align:center">EXHIBITIONS / PAST</h1>
     @*<h1 class="color-black font-weight-300"><strong>EXHIBITIONS / PAST</strong></h1>*@
     @*<h1 class="color-black font-weight-300 text-center">EXHIBITIONS / PAST</h1>*@
-    <div id="divList" class="">
+    <div id="divList" class="" style="margin-top:24px;">
     </div>
 </section>
-
- 
-
 
 <script id="ListTemplate" type="x-tmpl-mustache">
     {{#Data}}
     <div class="row">
         <div class="col-md-3"><a href="#" class="EventModal img-center col-xs-12"><img src='{{logoUrl}}' class="EventModal img-center  img-responsive"></a> </div>
         <div class="col-md-9">
-        
-                <h2  class=""><span > {{name}} </span> </h2>
-           
+
+            <h2 class=""><span> {{name}} </span> </h2>
+
             <div class="date">{{from}}-{{to}}</div>
 
             <p>{{introduction}} </p>
-            @*<a class="button EventExhibition" > Read More</a>*@
+            @*<a class="button EventExhibition"> Read More</a>*@
             <a href="/en/exhibitions?id=888"> Read More</a>
-           
         </div>
     </div>
     <hr>
@@ -200,10 +197,6 @@
         <ul id="ulpage" class="pagination  pull-right"></ul>
     </div>
 </script>
-
- 
- 
-
 
 <!-- Modal -->
 <div class="modal fade" id="imagemodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">

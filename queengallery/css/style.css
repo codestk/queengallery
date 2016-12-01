@@ -287,8 +287,19 @@ main {
     padding-top: 80px;
     padding-bottom: 80px;
     /*background-color:#363B3F;*/
-    background-color: #000;
-    color: #E2E2E2;
+    /*background-color: #000;*/
+   
+
+
+     background: #333;
+    color: #999;
+
+    /*background: #262626;
+    color: #777;*/
+
+    /*One*/
+       /*background-color:#222;
+    color: #E2E2E2;*/
 }
 
     .footerWide h3 {
