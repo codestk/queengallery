@@ -1,0 +1,30 @@
+﻿@inherits Umbraco.Web.Macros.PartialViewMacroPage
+
+@using queengallery.Models
+@* using (Html.BeginUmbracoForm<ExhibitionsLoaderController>("SubmitForm"))*@
+	
+	@{
+	var mediaId=Model.MacroParameters["MediaId"];
+	}
+	
+@using(Html.BeginUmbracoForm("Upload", "ExhibitionsLoader", FormMethod.Post, new {enctype = "multipart/form-data"}))  
+{  
+ 
+ 
+<div class="container">
+        <div class="row">
+			<div class="col-md-2 col-md-offset-2">  <label class="col-sm-2 control-label">File</label></div> 
+			<div class="col-md-8"><input type="file" name="UploadedFile"  class="form-control" /></div>
+		 </div>
+		   
+		<div class="row">
+		<div class="col-md-2 col-md-offset-2"></div>
+			<div class="col-md-8"><input type="submit"  name="Submit" value="Submit" class="btn btn-primary" />
+				 <input type="hidden"  name="mediaId" value="@mediaId" />  
+			 
+				</div> 
+        </div>
+				  
+				</div>
+   
+}  
