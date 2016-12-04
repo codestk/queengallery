@@ -4,6 +4,11 @@ using System.Web;
 using System.Web.Mvc;
 using Umbraco.Core.Models;
 using System.Data.SqlClient;
+using Umbraco.Core.Services;
+using System.Data;
+using Umbraco.Web;
+using umbraco.MacroEngines;
+
 namespace queengallery.Models
 {
     public class ExhibitionsLoaderController : Umbraco.Web.Mvc.SurfaceController
@@ -12,15 +17,157 @@ namespace queengallery.Models
         {
             if (Request != null)
             {
-                HttpPostedFileBase file = Request.Files["UploadedFile"];
+                 LoadExhibitionArtPieces();
+                //LoadMedia();
+            }
+
+            return RedirectToCurrentUmbracoPage();
+            //return View("Index");
+        }
+
+
+        public void LoadExhibitionArtPieces()
+        {
+
+            //HttpPostedFileBase file = Request.Files["UploadedFile"];
+            int MediaId = 3576;
+
+
+            string connecStionstring = "Data Source=192.168.96.135;Initial Catalog=QEEN;User ID=sa;Password=P@ssw0rd";
+            SqlConnection conn = new SqlConnection(connecStionstring);
+            conn.Open();
+            SqlCommand cmd = new SqlCommand(
+             "SELECT    *    FROM [QEEN].[dbo].[Exhibitions]", conn);
+
+
+            SqlDataReader rdr = null;
+            rdr = cmd.ExecuteReader();
+
+            while (rdr.Read())
+            {
+                var mediaService = Services.MediaService;
+
+                var mediaImage = mediaService.CreateMedia(rdr["nameEn"].ToString(), MediaId, "exhibitionsMedia");
+                mediaImage.SetValue("eXID", rdr["ID"]);
+                mediaImage.SetValue("nameTh", rdr["nameTh"]);
+                mediaImage.SetValue("nameEn", rdr["nameEn"]);
+
+                mediaImage.SetValue("descriptionTh", rdr["descriptionTh"]);
+                mediaImage.SetValue("descriptionEn", rdr["descriptionEn"]);
+
+
+                try
+                {
+
+
+                    ImportsExhibitionPicture(ref mediaImage, rdr["ID"].ToString());
+                }
+                catch (Exception ex)
+                {
+
+
+                }
+
+                string Exbit = rdr["ID"].ToString();
+
+             
+                string sql = "SELECT * FROM [QEEN].[dbo].[ExhibitionArtPieces] where [ExhibitionID]="+Exbit;
+
+
+                SqlConnection conn2 = new SqlConnection(connecStionstring);
+                SqlDataAdapter adapter = new SqlDataAdapter(sql, conn2);
+                DataSet ds = new DataSet();
+              
+                adapter.Fill(ds);
+
+                string condition = "";
+                Boolean isfirt = true;
+                foreach    (DataRow dr in ds.Tables[0].Rows)
+                {
+                    //  condition ="(from < Todate) && (!( (from <= Todate) && (to >= Todate)))";
+                    if (isfirt)
+                        condition += "(ArtPiecesIDXX =\"" + dr["ArtPieceID"] + "\")";
+                    else
+                        condition += "||(ArtPiecesIDXX =\"" + dr["ArtPieceID"] + "\")";
+
+
+                    isfirt = false;
+                }
+
+
+                //var items = Umbraco.Media(1366).Children().Where(condition).ToList(); ;
+
+                // DynamicMedia folder = new DynamicMedia(1366).AncestorOrSelf("artPiecesMedia");
+
+                //var items = Umbraco.Media(1366).AncestorOrSelf("artPiecesMedia");
+
+                //condition = "artPiecesID =\"1\"";
+                //var items = Umbraco.Media(1366).DescendantsOrSelf("artPiecesMedia").Where(condition).ToList(); ;
+                //var items = Umbraco.Media(1366).GetDescendantOrSelfMedia("artPiecesMedia").Children.Where(condition).ToList();
+
+                // var items = Umbraco.Media(1366).GetDescendantOrSelfMedia("artPiecesMedia");
+                // Int32  mediaIDa =Convert.ToUInt32( items.Id);
+                //loop Art Pice
+
+                // GetDescendantOrSelfMedia
+                //var items = Umbraco.Media(1366).Descendants("artPiecesMedia").Where(condition) ;
+                if (condition != "")
+                { 
+                var items = Umbraco.Media(1366).Descendants("artPiecesMedia").Where(condition).ToList();
+                string ArtistList = "";
+                bool isFirstAties = true;
+                foreach (Umbraco.Web.Models.DynamicPublishedContent item in items)
+                {
+
+                    //Int32 mediaIDa = item.GetPropertyValue<string>("Id");
+                    //string mediaIDa = item.Id;
+                    string mediaIDa = item.Id.ToString();
+
+                    if (isFirstAties)
+                    {
+                        ArtistList = mediaIDa;
+                    }
+                    else
+                    {
+                        ArtistList +="," +mediaIDa;
+                    }
+                    isFirstAties = false;
+                    //var mediaServicePice = Services.MediaService;
+                }
+                    mediaImage.SetValue("artists", ArtistList);
+                }
+
+              
+
+
+
+
+                mediaService.Save(mediaImage);
+            }
+
+            //artists
+
+            //Artists
+
+
+
+
+
+        }
+
+
+        public void LoadMedia()
+        { 
+
+                //HttpPostedFileBase file = Request.Files["UploadedFile"];
                 int MediaId = Convert.ToInt32(Request.Params["MediaId"]);
 
 
-                string      connecStionstring = "Data Source=NODE-PC;Initial Catalog=QEEN;User ID=sa;Password=P@ssw0rd";
+                string connecStionstring = "Data Source=192.168.96.135;Initial Catalog=QEEN;User ID=sa;Password=P@ssw0rd";
                 SqlConnection conn = new SqlConnection(connecStionstring);
                 conn.Open();
                 SqlCommand cmd = new SqlCommand(
-                 "SELECT [ID],[NameTh],[NameEn],[DateOfBirth],[DescriptionTh],[DescriptionEn] FROM  [Artists]", conn);
+                 "SELECT  [ID],[NameTh],[NameEn],[DateOfBirth],[DescriptionTh],[DescriptionEn] FROM  [Artists]", conn);
 
 
                 SqlDataReader rdr = null;
@@ -42,7 +189,7 @@ namespace queengallery.Models
 
                     var mediaService = Services.MediaService;
 
-                    var mediaImage = mediaService.CreateMedia(rdr["ID"].ToString(), MediaId, "ArtistsMedia");
+                    var mediaImage = mediaService.CreateMedia(rdr["nameEn"].ToString(), MediaId, "ArtistsMedia");
                     mediaImage.SetValue("artistsID", rdr["ID"]);
                     mediaImage.SetValue("nameTh", rdr["nameTh"]);
                     mediaImage.SetValue("nameEn", rdr["nameEn"]);
@@ -53,9 +200,9 @@ namespace queengallery.Models
                         DateTime dt = Convert.ToDateTime(rdr["dateOfBirth"]);
                         mediaImage.SetValue("dateOfBirth", dt);
                     }
-                
 
-                    
+
+
                     mediaImage.SetValue("descriptionTh", rdr["descriptionTh"]);
                     mediaImage.SetValue("descriptionEn", rdr["descriptionEn"]);
 
@@ -64,7 +211,7 @@ namespace queengallery.Models
                     try
                     {
 
-                      
+
                         ImportsArtisPicture(ref mediaImage, rdr["ID"].ToString());
                     }
                     catch (Exception ex)
@@ -73,77 +220,113 @@ namespace queengallery.Models
 
 
 
+
+
                     mediaService.Save(mediaImage);
+
+
+                    //Loop หา รูป
                 }
 
-                rdr = null;
+
                 conn.Close();
-                //if ((file != null) && (file.ContentLength > 0) && !string.IsNullOrEmpty(file.FileName))
-                //{
+                rdr.Close();
+
+                conn.Open();
+                cmd.CommandText = "SELECT * FROM ArtPieces";
+                rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    string ArtistID = rdr["ArtistID"].ToString();
+
+                    string condition = "artistsID =\"" + ArtistID + "\"";
+                    var items = Umbraco.Media(MediaId).Children().Where(condition).ToList(); ;
+
+                    // Int32  mediaIDa =Convert.ToUInt32( items.Id);
+                    //loop Art Pice
+
+                    foreach (var item in items)
+                    {
+
+                        //Int32 mediaIDa = item.GetPropertyValue<string>("Id");
+                        var mediaIDa = Convert.ToInt32(item.Id);
+                        var mediaServicePice = Services.MediaService;
+
+                        IMedia mediaPiceImage = mediaServicePice.CreateMedia(rdr["nameEn"].ToString(), mediaIDa, "artPiecesMedia");
+
+                        mediaPiceImage.SetValue("ArtPiecesIDXX", rdr["ID"]);
+                        mediaPiceImage.SetValue("nameTh", rdr["nameTh"]);
+                        mediaPiceImage.SetValue("nameEn", rdr["nameEn"]);
+                        mediaPiceImage.SetValue("materialTechniqueDescription", rdr["materialTechniqueDescription"]);
+
+                        mediaPiceImage.SetValue("dimension", rdr["dimension"]);
+                        mediaPiceImage.SetValue("descriptionTh", rdr["descriptionTh"]);
+                        mediaPiceImage.SetValue("descriptionEn", rdr["descriptionEn"]);
+                        mediaPiceImage.SetValue("artPieceTypeID", rdr["artPieceTypeID"]);
+                        mediaPiceImage.SetValue("artPieceType", "AAAA");
+
+                        //PropertyType metaRobots = content.ContentType.PropertyTypes.FirstOrDefault(x => x.Alias == "metaRobots");
+                        //int dataTypeDefinitionId = metaRobots.DataTypeDefinitionId;
+                        //IEnumerable<string> prevalues = ds.GetPreValuesByDataTypeId(dataTypeDefinitionId);
+
+                        var dataType = Services.DataTypeService.GetDataTypeDefinitionByName("ArtPieceTypes");
+
+                        var preValuesFromDataType = umbraco.library.GetPreValues(dataType.Id);
+                        mediaPiceImage.SetValue("artPieceType", rdr["ArtPieceType"]);
+
+                        //mediaPiceImage.getProperty("artPieceType").Value = "จิตรกรรม";
+
+                        //DataTypeService dts = new DataTypeService();
+
+                        // Get an instance of the status editor
+                        //var statusEditor = dts.GetAllDataTypeDefinitions().First(x => x.Name == "Status");
 
 
-                //    var reader = new StreamReader(file.InputStream, System.Text.Encoding.GetEncoding(874));
 
-                //    while (!reader.EndOfStream)
-                //    {
-                //        var line = reader.ReadLine();
-                //        var values = line.Split(',');
-
-                //        var mediaService = Services.MediaService;
-
-                //        var mediaImage = mediaService.CreateMedia(values[0], MediaId, "ArtistsMedia");
-
-                //        //var folder = uQuery.GetMediaByName(values[0]).FirstOrDefault();
-
-                //        //mediaService.Delete(mediaImage);
-                //        //string _fullFilePath = Server.MapPath($@"\App_Data\TEMP\FileUploads\artist\{values[14]}");
-
-                //        //FileStream fs = new FileStream(_fullFilePath,
-                //        //    FileMode.Open, FileAccess.Read, FileShare.Read);
-                //        //mediaImage.SetValue("umbracoFile", values[14], fs);
-                //        //mediaImage.SetValue("arts", values[14], fs);
-
-                //        //fs.Close();
-
-                //    //artistsID
-                //    //nameTh
-                //    //nameEn
-                //    //dateOfBirth
-                //    //descriptionTh
-                //    //descriptionEn
-                //    //image
+                        try
+                        {
 
 
-                //        mediaImage.SetValue("artistsID", values[0]);
-                //        mediaImage.SetValue("nameTh", values[1]);
-                //        mediaImage.SetValue("nameEn", values[2]);
-                //        mediaImage.SetValue("dateOfBirth", values[3]);
-                //        mediaImage.SetValue("descriptionTh", values[4]);
-                //        mediaImage.SetValue("descriptionEn", values[5]);
+                            ImportsGalerryPicture(ref mediaPiceImage, rdr["ID"].ToString());
+                        }
+                        catch (Exception ex)
+                        {
+                        }
+                        mediaServicePice.Save(mediaPiceImage);
 
-                //        //try
-                //        //{
-                //        //    ImportsGalerryPicture(ref mediaImage, string.Format("{0}.jpg", values[0]));
-                //        //}
-                //        //catch (Exception ex)
-                //        //{
-                //        //}
-                //        //try
-                //        //{
-                //        //    ImportsArtisPicture(ref mediaImage, values[14]);
-                //        //}
-                //        //catch (Exception ex)
-                //        //{
-                //        //}
+                    }
 
-                //        mediaService.Save(mediaImage);
-                //    }
-                //}
+
+                    //string     condition = "(from <= Todate) && (to >= Todate)";
+                    //    valuesFilter.Add("Todate", DateTime.Now);
+                    //    items = Umbraco.Content(blogId).Children().Where(condition, valuesFilter).OrderBy(sort);
+
+                }
+
+
+                rdr = null;
+
+                conn.Close();
+
+
             }
 
-            return RedirectToCurrentUmbracoPage();
-            //return View("Index");
+
+
+
+        public void ImportsExhibitionPicture(ref IMedia Media, string id)
+        {
+            string imageFilePath = Server.MapPath(string.Format(@"~\App_Data\TEMP\FileUploads\Exhibition\{0}\Banner.jpg", id));
+            string noImageFilePath = Server.MapPath(@"~\App_Data\TEMP\FileUploads\no-user-image.jpg");
+
+            //string imageFilePath = Server.MapPath($@"~\App_Data\TEMP\FileUploads\Gallery\{filename}");
+            //string noImageFilePath = Server.MapPath($@"~\App_Data\TEMP\FileUploads\no-user-image.jpg");
+
+            string DataTypeName = "image";
+            LoadImageStream(ref Media, "Picture.jpg", DataTypeName, imageFilePath, noImageFilePath, "no-user-image.jpg");
         }
+
+
 
         public void ImportsArtisPicture(ref IMedia Media, string id)
         {                                                    
@@ -157,22 +340,21 @@ namespace queengallery.Models
             LoadImageStream(ref Media, "Avatar.jpg", DataTypeName, imageFilePath, noImageFilePath, "no-user-image.jpg");
         }
 
-        public void ImportsGalerryPicture(ref IMedia Media, string filename)
+        public void ImportsGalerryPicture(ref IMedia Media, string id)
         {
-            //string imageFilePath = Server.MapPath($@"\App_Data\TEMP\FileUploads\Gallery\{filename}");
-            //string noImageFilePath = Server.MapPath($@"\App_Data\TEMP\FileUploads\noimage.jpg");
 
-            //string imageFilePath = Server.MapPath(string.Format(@"~\App_Data\TEMP\FileUploads\Gallery\{0}", filename));
-            //string noImageFilePath = Server.MapPath(@"~\App_Data\TEMP\FileUploads\no-user-image.jpg");
+            string imageFilePath = Server.MapPath(string.Format(@"~\App_Data\TEMP\FileUploads\ArtPiece\{0}\Large.jpg", id));
+            string noImageFilePath = Server.MapPath(@"~\App_Data\TEMP\FileUploads\no-user-image.jpg");
 
-            string imageFilePath = Server.MapPath(string.Format(@"~\App_Data\TEMP\FileUploads\Gallery\{0}", filename));
+            //string imageFilePath = Server.MapPath($@"~\App_Data\TEMP\FileUploads\Gallery\{filename}");
+            //string noImageFilePath = Server.MapPath($@"~\App_Data\TEMP\FileUploads\no-user-image.jpg");
 
-            string noImageFilePath = Server.MapPath(@"~\App_Data\TEMP\FileUploads\noimage.jpg");
-
-            string DataTypeName = "umbracoFile";
-
-            LoadImageStream(ref Media, filename, DataTypeName, imageFilePath, noImageFilePath, "noimage.jpg");
+            string DataTypeName = "image";
+            LoadImageStream(ref Media, "Picture.jpg", DataTypeName, imageFilePath, noImageFilePath, "no-user-image.jpg");
         }
+
+
+
 
         public void LoadImageStream(ref IMedia Media, string fileName, string DataTypeName, string imageFilePath, string noImageFilePath, string NoImage)
         {
