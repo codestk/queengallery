@@ -8,7 +8,7 @@ using  Umbraco.Web;
 using  Umbraco.ModelsBuilder;
 using  Umbraco.ModelsBuilder.Umbraco;
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "47550752fb264672")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "1c5030585dc4d7b2")]
 [assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
 
 
@@ -1489,6 +1489,15 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// BeginDate
+		///</summary>
+		[ImplementPropertyType("beginDate")]
+		public DateTime BeginDate
+		{
+			get { return this.GetPropertyValue<DateTime>("beginDate"); }
+		}
+
+		///<summary>
 		/// DescriptionEn
 		///</summary>
 		[ImplementPropertyType("descriptionEn")]
@@ -1504,6 +1513,15 @@ namespace Umbraco.Web.PublishedContentModels
 		public string DescriptionTh
 		{
 			get { return this.GetPropertyValue<string>("descriptionTh"); }
+		}
+
+		///<summary>
+		/// EndDate
+		///</summary>
+		[ImplementPropertyType("endDate")]
+		public DateTime EndDate
+		{
+			get { return this.GetPropertyValue<DateTime>("endDate"); }
 		}
 
 		///<summary>
