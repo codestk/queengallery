@@ -38,8 +38,9 @@
 
             //Reder Data ListTemplate
             //console.log(msg);
-
+            debugger
             CurrentListData = ConvertDataByLanguage(msg[0]);
+
             SetList(CurrentListData);
 
             SetPagger(msg[1].RecordCount);
@@ -181,7 +182,7 @@
     </div>
 </section>
 
-
+<!-- Template -->
 <script id="ListTemplate" type="x-tmpl-mustache">
     {{#Data}}
     <div class="col-lg-12">
@@ -213,7 +214,17 @@
     </div>
     {{/Data}}
 </script>
+<script id="NoEventTemplate" type="x-tmpl-mustache">
 
+    <div class="row">
+        <hr>
+        <div class="col-lg-12   ">
+            @*<div class="message"> ทดสอบภาษาไทย</div>*@
+            <div class="message">@Umbraco.Field("#EventNotFound") </div>
+        </div>
+    </div>
+</script>
+<!-- /Template -->
 
 <!-- Modal -->
 <div class="modal fade" id="imagemodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">

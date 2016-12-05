@@ -74,7 +74,7 @@
             //});
 
         } else {
-            /*Display No data Display*/
+            /*Display No data Display*/ 
             var template = $('#NoEventTemplate').html();
             var rendered = Mustache.render(template);
             $('#divList').html('');
@@ -175,6 +175,8 @@
     </div>
 </section>
 
+
+<!-- Template -->
 <script id="ListTemplate" type="x-tmpl-mustache">
     {{#Data}}
     <div class="row">
@@ -197,6 +199,18 @@
         <ul id="ulpage" class="pagination  pull-right"></ul>
     </div>
 </script>
+
+<script id="NoEventTemplate" type="x-tmpl-mustache">
+
+    <div class="row">
+        <hr>
+        <div class="col-lg-12   ">
+            @*<div class="message"> ทดสอบภาษาไทย</div>*@
+            <div class="message">@Umbraco.Field("#EventNotFound") </div>
+        </div>
+    </div>
+</script>
+<!-- /Template -->
 
 <!-- Modal -->
 <div class="modal fade" id="imagemodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
