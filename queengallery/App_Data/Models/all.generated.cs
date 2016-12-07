@@ -8,8 +8,8 @@ using  Umbraco.Web;
 using  Umbraco.ModelsBuilder;
 using  Umbraco.ModelsBuilder.Umbraco;
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "1c5030585dc4d7b2")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "3dfae95e598bd6cc")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.2")]
 
 
 // FILE: models.generated.cs
@@ -1480,12 +1480,21 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// Artists
+		/// Art Pieces 2
 		///</summary>
-		[ImplementPropertyType("artists")]
-		public string Artists
+		[ImplementPropertyType("artPieces1")]
+		public string ArtPieces1
 		{
-			get { return this.GetPropertyValue<string>("artists"); }
+			get { return this.GetPropertyValue<string>("artPieces1"); }
+		}
+
+		///<summary>
+		/// Art Pieces 2
+		///</summary>
+		[ImplementPropertyType("artPieces2")]
+		public string ArtPieces2
+		{
+			get { return this.GetPropertyValue<string>("artPieces2"); }
 		}
 
 		///<summary>

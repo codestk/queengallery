@@ -26,7 +26,7 @@ namespace queengallery.Models
             //HttpPostedFileBase file = Request.Files["UploadedFile"];
             int MediaId = 3576;
 
-            string connecStionstring = "Data Source=192.168.96.135;Initial Catalog=QEEN;User ID=sa;Password=P@ssw0rd";
+            string connecStionstring = "Data Source=192.168.96.137;Initial Catalog=QEEN;User ID=sa;Password=P@ssw0rd";
             SqlConnection conn = new SqlConnection(connecStionstring);
             conn.Open();
             SqlCommand cmd = new SqlCommand(
@@ -123,7 +123,10 @@ namespace queengallery.Models
                         isFirstAties = false;
                         //var mediaServicePice = Services.MediaService;
                     }
-                    mediaImage.SetValue("artists", ArtistList);
+
+                    //แทนชิน้งาน
+                    mediaImage.SetValue("artPieces1", ArtistList);
+                    mediaImage.SetValue("artPieces2", ArtistList);
                 }
 
                 mediaService.Save(mediaImage);
@@ -223,7 +226,7 @@ namespace queengallery.Models
                     mediaPiceImage.SetValue("descriptionTh", rdr["descriptionTh"]);
                     mediaPiceImage.SetValue("descriptionEn", rdr["descriptionEn"]);
                     mediaPiceImage.SetValue("artPieceTypeID", rdr["artPieceTypeID"]);
-                    mediaPiceImage.SetValue("artPieceType", "AAAA");
+                    //mediaPiceImage.SetValue("artPieceType", "AAAA");
 
                     //PropertyType metaRobots = content.ContentType.PropertyTypes.FirstOrDefault(x => x.Alias == "metaRobots");
                     //int dataTypeDefinitionId = metaRobots.DataTypeDefinitionId;
