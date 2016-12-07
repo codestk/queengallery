@@ -3322,3 +3322,5 @@ Newtonsoft.Json.JsonReaderException: Error parsing comment. Expected: *, got m. 
  2016-12-07 19:56:56,583 [P10284/D9/T178] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field max
  2016-12-07 19:57:22,476 [P10284/D9/T164] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Web.Trees.TreeController
  2016-12-07 19:57:22,476 [P10284/D9/T164] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Web.Trees.TreeController, found 0 (took 0ms)
+ 2016-12-07 20:15:00,535 [P10284/D9/T303] INFO  Umbraco.Core.Logging.OwinLogger - Event Id: 0, state: User logged will be logged out due to timeout: admin@bbl.co.th, IP Address: ::1
+ 2016-12-07 20:15:01,540 [P10284/D9/T309] INFO  Umbraco.Core.Logging.OwinLogger - Event Id: 0, state: User logged will be logged out due to timeout: admin@bbl.co.th, IP Address: ::1
