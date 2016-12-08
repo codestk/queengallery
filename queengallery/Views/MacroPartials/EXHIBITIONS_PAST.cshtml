@@ -9,6 +9,19 @@
 @*
 <script src="~/Modules/js-base64-master/base64.js"></script>*@
 
+
+<!--SimpleModal-->
+ 
+ <link href="~/Modules/animatedModal.js-master/demo/css/animate.min.css" rel="stylesheet" /> 
+@*<link href="~/Modules/animatedModal.js-master/demo/css/normalize.min.css" rel="stylesheet" />*@
+<script src="~/Modules/animatedModal.js-master/animatedModal.js"></script>
+ 
+ 
+
+<!--ReadMore-->
+<link href="~/Modules/ReadMore/ReadMore.css" rel="stylesheet" />
+<script src="~/Modules/ReadMore/ReadMore.js"></script>
+
 <script>
 
     $(document).ready(function () {
@@ -20,6 +33,9 @@
         // initEvent();
 
         RenderList();
+
+ 
+    
     });
 
     /*==Render List and Page*/
@@ -29,10 +45,15 @@
     var menuType = '';
     var CurrentListData;
 
-    function RenderList() {
+    function
+
+
+        RenderList() {
 
         //Render List
-        var url = 'RazorJson?page=' + PageIndex + '&Type=' + menuType;
+        //var url = 'RazorJson?page=' + PageIndex + '&Type=' + menuType;
+
+        var url = 'ExhibitionServices?page=' + PageIndex + '&Type=' + menuType;
         Preload();
         CallServices(url, '', true, function (msg) {
 
@@ -49,6 +70,8 @@
                 ModalEvent();
 
                 EventExhibition();
+
+                ReadMore.BindEvent();
             }
         });
 
@@ -74,7 +97,7 @@
             //});
 
         } else {
-            /*Display No data Display*/ 
+            /*Display No data Display*/
             var template = $('#NoEventTemplate').html();
             var rendered = Mustache.render(template);
             $('#divList').html('');
@@ -131,10 +154,10 @@
             //var preFixLang = 'En';
             data[key]["name"] = data[key]["name" + preFixLang];
             data[key]["title"] = data[key]["title" + preFixLang];
-            data[key]["introduction"] = data[key]["introduction" + preFixLang];
-            data[key]["content"] = data[key]["content" + preFixLang];
+            //data[key]["introduction"] = data[key]["introduction" + preFixLang];
+            data[key]["description"] = data[key]["description" + preFixLang];
 
-            var ImageUmbracoString = data[key]["logo"];
+            var ImageUmbracoString = data[key]["image"];
 
             data[key]["logoUrl"] = UmbracoImageUrl(ImageUmbracoString);
 
@@ -149,15 +172,54 @@
     /*Event*/
     function ModalEvent() {
 
+        //$('.EventModal').on('click', function () {
+
+        //    $('.imagepreview').attr('src', $(this).find('img').attr('src'));
+        //    $('#imagemodal').modal('show');
+        //});
+
+        //animatedIn: bounceIn
+        //animatedOut: bounceOut
         $('.EventModal').on('click', function () {
 
             $('.imagepreview').attr('src', $(this).find('img').attr('src'));
-            $('#imagemodal').modal('show');
+          
+        });
+       
+        $(".EventModal").animatedModal({
+            modalTarget: 'modal',
+            //animatedIn: 'rollIn',
+            //animatedOut: 'rollOut',
+
+            animatedIn: 'fadeInUp',
+            animatedOut: 'fadeOutDown',
+            //color: '#444444', 
+
+            color: 'rgba(93,104,107, 0.9)',
+            // Callbacks
+            beforeOpen: function () {
+               // $('.imagepreview').attr('src', $(this).find('img').attr('src'));
+              
+               
+                console.log("The animation was called");
+            },
+            afterOpen: function () {
+                console.log("The animation is completed");
+            },
+            beforeClose: function () {
+                console.log("The animation was called");
+            },
+            afterClose: function () {
+                console.log("The animation is completed");
+            }
         });
 
     }
+
+
+
     function EventExhibition() {
-        EventExhibition
+         
         $('.EventExhibition').on('click', function () {
             $('#Main').hide();
             $('#SubMain').show();
@@ -173,23 +235,54 @@
     @*<h1 class="color-black font-weight-300 text-center">EXHIBITIONS / PAST</h1>*@
     <div id="divList" class="" style="margin-top:24px;">
     </div>
+
+
+
+ 
+
+  
+    
+    <div id="modal">
+       
+                    <!--"THIS IS IMPORTANT! to close the modal, the class name has to match the name given on the ID-->
+                    @*<div id="btn-close-modal" class="close-modal">
+                        CLOSE MODAL
+                    </div>*@
+
+
+                    <div id="container" class="close-modal text-center">
+
+                        <img class="closebt" src="~/Modules/animatedModal.js-master/closebt.svg" />
+                    </div>
+
+                    @*modal-content*@
+                    <div class="text-center"> 
+                        <!--Your modal content goes here-->
+                        <img class="imagepreview" src="http://localhost:17606/media/9264/picture.jpg" />
+                    </div>
+
+                </div>
+
+
 </section>
 
-
-<!-- Template -->
+<!-- Template  EventModal-->
 <script id="ListTemplate" type="x-tmpl-mustache">
     {{#Data}}
     <div class="row">
-        <div class="col-md-3"><a href="#" class="EventModal img-center col-xs-12"><img src='{{logoUrl}}' class="EventModal img-center  img-responsive"></a> </div>
+        @*<div class="col-md-3"><a href="#modal"   class="EventModal   img-center col-xs-12"><img src='{{logoUrl}}'></a> </div>*@
+
+         <div class="col-md-3"><a href="#modal" class="EventModal img-center col-xs-12"><img src='{{logoUrl}}' class="EventModal img-center  img-responsive"></a> </div>
+
         <div class="col-md-9">
 
             <h2 class=""><span> {{name}} </span> </h2>
 
             <div class="date">{{from}}-{{to}}</div>
 
-            <p>{{introduction}} </p>
+            <p class="more">{{description}} </p>
             @*<a class="button EventExhibition"> Read More</a>*@
-            <a href="/en/exhibitions?id=888"> Read More</a>
+            @*<a href="/en/exhibitions?id=888"> Read More</a>*@
         </div>
     </div>
     <hr>
@@ -211,15 +304,4 @@
     </div>
 </script>
 <!-- /Template -->
-
-<!-- Modal -->
-<div class="modal fade" id="imagemodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg" style="z-index:1050">
-        <div class="modal-content">
-            <div class="modal-body">
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                <img src="" class="imagepreview" style="width: 100%;">
-            </div>
-        </div>
-    </div>
-</div>
+ 
