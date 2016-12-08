@@ -164,11 +164,9 @@ main {
     background-color: rgba(40,40,40,.95);
 }
 
-
 .DropDownselected {
-    font-weight:bold !important;
-    color:#fff !important;
-
+    font-weight: bold !important;
+    color: #fff !important;
 }
 
 .nav_list-link {
@@ -190,15 +188,14 @@ main {
         transition: width .2s ease-in 0s,background 0s ease-in .3s;
     }
 
-   .nav_list-link > .selected , .nav_list-link:active, .nav_list-link:hover, .nav_list-link:focus {
+    .nav_list-link > .selected, .nav_list-link:active, .nav_list-link:hover, .nav_list-link:focus {
         color: #008f70;
     }
 
-      .selected .nav_list-link:after, .nav_list-link:active:after, .nav_list-link:hover:after, .nav_list-link:focus:after {
+        .selected .nav_list-link:after, .nav_list-link:active:after, .nav_list-link:hover:after, .nav_list-link:focus:after {
             width: 100%;
             background: #008f70;
-                /*background: #FDB215;*/
-           
+            /*background: #FDB215;*/
             transition: width .2s ease-in .1s,background 0s ease-in .1s;
         }
 
@@ -242,7 +239,7 @@ main {
 
 .navbar > .container .navbar-brand, .navbar > .container-fluid .navbar-brand {
     /*margin-left: 0px;*/
-        margin-left: 9px;
+    margin-left: 9px;
 }
 /*@media only screen and (min-width : 768px) {
     body {
@@ -288,17 +285,12 @@ main {
     padding-bottom: 80px;
     /*background-color:#363B3F;*/
     /*background-color: #000;*/
-   
-
-
-     background: #333;
+    background: #333;
     color: #999;
-
     /*background: #262626;
     color: #777;*/
-
     /*One*/
-       /*background-color:#222;
+    /*background-color:#222;
     color: #E2E2E2;*/
 }
 
@@ -310,8 +302,38 @@ main {
 
     .footerWide span {
         /*color: #E2E2E2;*/
-        color:#888;
+        color: #888;
         text-decoration: none;
     }
 
+.readmore {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; /* IE 6+, FF 7+, Op 11+, Saf 1.3+, Chr 1+ */
+    -o-text-overflow: ellipsis; /* for Opera 9 & 10*/
+}
+
+ /*Customize Page a hover*/
+.pagination  a:hover
+{
+    text-decoration: none !important;
+
+}
+
+
+
+/*Modal*/
+ 
+.closebt {
+	-webkit-transition: all 0.2s;
+	-moz-transition: all 0.2s;
+	-ms-transition: all 0.2s;
+	-o-transition: all 0.2s;
+	transition: all 0.2s;
+	cursor:pointer;
+}
+
+.closebt:hover {
+	transform:rotate(90deg);
+}
 /* EDITOR PROPERTIES - PLEASE DON'T DELETE THIS LINE TO AVOID DUPLICATE PROPERTIES */
