@@ -336,4 +336,16 @@ main {
 .closebt:hover {
 	transform:rotate(90deg);
 }
+
+ .simplify:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1000%;
+    top: -80px;
+    -webkit-transform: skewY(-12deg);
+    /* transform: skewY(-12deg); */
+    background-color: #f6f9fc;
+    z-index: -1;
+}
 /* EDITOR PROPERTIES - PLEASE DON'T DELETE THIS LINE TO AVOID DUPLICATE PROPERTIES */

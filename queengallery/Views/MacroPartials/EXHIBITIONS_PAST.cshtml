@@ -22,6 +22,11 @@
 <link href="~/Modules/ReadMore/ReadMore.css" rel="stylesheet" />
 <script src="~/Modules/ReadMore/ReadMore.js"></script>
 
+
+<!--ScroolToTop-->
+<script src="~/Modules/ToTop/ToTop.js"></script>
+ 
+
 <script>
 
     $(document).ready(function () {
@@ -54,6 +59,7 @@
         //var url = 'RazorJson?page=' + PageIndex + '&Type=' + menuType;
 
         var url = 'ExhibitionServices?page=' + PageIndex + '&Type=' + menuType;
+		ToTop();
         Preload();
         CallServices(url, '', true, function (msg) {
 
@@ -72,6 +78,8 @@
                 EventExhibition();
 
                 ReadMore.BindEvent();
+
+				
             }
         });
 
@@ -227,6 +235,9 @@
         });
 
     }
+
+
+
 </script>
 
 <section id="Main">
