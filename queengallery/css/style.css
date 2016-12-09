@@ -313,27 +313,23 @@ main {
     -o-text-overflow: ellipsis; /* for Opera 9 & 10*/
 }
 
- /*Customize Page a hover*/
-.pagination  a:hover
-{
+/*Customize Page a hover*/
+.pagination a:hover {
     text-decoration: none !important;
-
 }
-
-
 
 /*Modal*/
- 
+
 .closebt {
-	-webkit-transition: all 0.2s;
-	-moz-transition: all 0.2s;
-	-ms-transition: all 0.2s;
-	-o-transition: all 0.2s;
-	transition: all 0.2s;
-	cursor:pointer;
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -ms-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    transition: all 0.2s;
+    cursor: pointer;
 }
 
-.closebt:hover {
-	transform:rotate(90deg);
-}
+    .closebt:hover {
+        transform: rotate(90deg);
+    }
 /* EDITOR PROPERTIES - PLEASE DON'T DELETE THIS LINE TO AVOID DUPLICATE PROPERTIES */
