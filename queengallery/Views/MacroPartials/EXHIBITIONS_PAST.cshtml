@@ -243,11 +243,11 @@
     <div id="modal">
 
         <!--"THIS IS IMPORTANT! to close the modal, the class name has to match the name given on the ID-->
-        @*<div id="btn-close-modal" class="close-modal">
+        @*<div id="btn-close-modal" class="close-modal ">
             CLOSE MODAL
         </div>*@
 
-        <div id="container" class="close-modal text-center">
+        <div id="btn-close-modal" class="close-modal text-center modalHead">
 
             <img class="closebt" src="~/Modules/animatedModal.js-master/closebt.svg" />
         </div>
@@ -270,8 +270,8 @@
 
         <div class="col-md-9">
 
-            <h2 class=""><span> {{name}} </span> </h2>
-
+          
+            <a class="LinkHead" href="/en/exhibitions/past/exhibition/">  {{name}}     </a> 
             <div class="date">{{from}}-{{to}}</div>
 
             <p class="more">{{description}} </p>

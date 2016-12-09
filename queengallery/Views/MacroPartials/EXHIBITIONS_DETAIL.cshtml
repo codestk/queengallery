@@ -6,7 +6,8 @@
 <script src="/Modules/mustache/mustache.js"></script>
 <script src="/Modules/UmbracoImage/UmbracoImage.js"></script>
 <script src="~/Modules/js-base64-master/base64.js"></script>
-@*<script src="~/scripts/PwsExhibitions.js"></script>*@
+@*
+<script src="~/scripts/PwsExhibitions.js"></script>*@
 <script>
 
     $(document).ready(function () {
@@ -14,7 +15,7 @@
         $(window).unbind("load");
 
         //Preload();
-        menuType = 'OnView';
+        menuType = 'Past';
         // initEvent();
 
         RenderList();
@@ -31,6 +32,9 @@
 
         //Render List
         var url = 'RazorJson?page=' + PageIndex + '&Type=' + menuType;
+
+        var url = 'ExhibitionService?id=5463';
+
         Preload();
         CallServices(url, '', true, function (msg) {
 
@@ -40,7 +44,7 @@
             CurrentListData = ConvertDataByLanguage(msg[0]);
             SetList(CurrentListData);
 
-            SetPagger(msg[1].RecordCount);
+            //SetPagger(msg[1].RecordCount);
 
             //Create Event in list
             if (msg[0].length > 0) {
@@ -85,59 +89,57 @@
     }
 
     //Set Pagger
-    function SetPagger(RecordCount) {
+    //function SetPagger(RecordCount) {
 
-        if (RecordCount == 0) {
-            $('#ulpage').hide();
-            return;
-        }
-        else {
-            $('#ulpage').show();
-        }
-        $('#ulpage').pagination({
-            items: RecordCount,
-            itemsOnPage: PageSize,
+    //    if (RecordCount == 0) {
+    //        $('#ulpage').hide();
+    //        return;
+    //    }
+    //    else {
+    //        $('#ulpage').show();
+    //    }
+    //    $('#ulpage').pagination({
+    //        items: RecordCount,
+    //        itemsOnPage: PageSize,
 
-            //prevText: '<img class="iconDirection" src="Images/1457020750_arrow-left-01.svg" />',
-            //nextText: '<img class="iconDirection" src="Images/1457020740_arrow-right-01.svg" />',
+    //        //prevText: '<img class="iconDirection" src="Images/1457020750_arrow-left-01.svg" />',
+    //        //nextText: '<img class="iconDirection" src="Images/1457020740_arrow-right-01.svg" />',
 
-            prevText: lblPrev,
-            nextText: lblNext,
-            currentPage: PageIndex,//cssStyle: 'light-theme',
-            onPageClick: function (event) {
+    //        prevText: lblPrev,
+    //        nextText: lblNext,
+    //        currentPage: PageIndex,//cssStyle: 'light-theme',
+    //        onPageClick: function (event) {
 
-                //Set Global Page
-                if (event < 10) {
-                    PageIndex = '0' + event;
-                }
-                else {
-                    PageIndex = event;
-                }
-                //-Set Global Page
-                RenderList();
-            }
+    //            //Set Global Page
+    //            if (event < 10) {
+    //                PageIndex = '0' + event;
+    //            }
+    //            else {
+    //                PageIndex = event;
+    //            }
+    //            //-Set Global Page
+    //            RenderList();
+    //        }
 
-        });
+    //    });
 
-    }
+    //}
 
     /*Convert Data*/
     function ConvertDataByLanguage(data) {
-        var arrayPosition = 0;
+
         for (var key in data) {
             //preFixLang
             //var preFixLang = 'En';
             data[key]["name"] = data[key]["name" + preFixLang];
             data[key]["title"] = data[key]["title" + preFixLang];
             data[key]["introduction"] = data[key]["introduction" + preFixLang];
-            data[key]["content"] = data[key]["content" + preFixLang];
+            data[key]["description"] = data[key]["description" + preFixLang];
 
-            var ImageUmbracoString = data[key]["logo"];
-
+            var ImageUmbracoString = data[key]["image"];
+            debugger
             data[key]["logoUrl"] = UmbracoImageUrl(ImageUmbracoString);
 
-            data[key]["id"] = arrayPosition;
-            arrayPosition = arrayPosition + 1;
         }
 
         return data;
@@ -163,7 +165,7 @@
         });
 
     }
-</script> 
+</script>
 <section id="Main">
     <div class="text-center">
         @*<h1>OnView </h1>*@
@@ -185,13 +187,14 @@
         <h2 class="">{{name}} </h2>
         <div class="date">{{from}}-{{to}}</div>
         <p>  </p>
-        <p>{{introduction}} </p>
+        <p>{{description}} </p>
 
-        <a class=""> Read More</a>
+     
     </div>
     {{/Data}}
 </script>
-@*<script id="ExhibitionsDetailTemplate" type="x-tmpl-mustache">
+@*
+<script id="ExhibitionsDetailTemplate" type="x-tmpl-mustache">
     {{#Data}}
     <div id="ExhibitionsDetail">
         <img src="/media/1983/banner.jpg" class="img-thumbnail img-responsive img-center">

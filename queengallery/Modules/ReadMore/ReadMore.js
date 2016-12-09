@@ -22,8 +22,8 @@
                 //var html = c + '<span class="moreellipses">' + _ellipsestext + '&nbsp;</span><span class="morecontent"><span>' + h + '</span>&nbsp;&nbsp <br><a href="" class="morelink">' + _moretext + '</a></span>';
 
  
+                //var html = c + '<span class="moreellipses">' + _ellipsestext + '&nbsp;</span><span class="morecontent"><span>' + h + '</span>&nbsp;&nbsp <a href="" class="morelink">' + _moretext + '</a></span>';
                 var html = c + '<span class="moreellipses">' + _ellipsestext + '&nbsp;</span><span class="morecontent"><span>' + h + '</span>&nbsp;&nbsp <a href="" class="morelink">' + _moretext + '</a></span>';
-           
                 $(this).html(html);
             }
         });

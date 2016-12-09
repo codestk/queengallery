@@ -34,6 +34,9 @@ body {
     /*color: #373D3f;*/
     padding-top: 144px;
     color: #3e3e3e;
+
+    font-family: 'Open Sans', sans-serif;
+
 }
 
 /*Navigation*/
@@ -321,17 +324,61 @@ main {
 
 }
 
+/*Custom*/
+.LinkHead {
+    font-size: 1.60rem;
+    font-weight: 900;
+    cursor:pointer;
+   
+    white-space:  normal !important;
+      /*position: relative;
+    
+    display: inline-block;
+    overflow: hidden;
+    text-decoration: none;
+    transition: color .2s ease-in 0s;*/
+}
+ 
 
+    /*.LinkHead:after {
+        width: .01%;
+        height: 1px;
+        margin: .2em 0 0 0;
+        display: block;
+        content: "";
+        background: transparent;
+        transition: width .2s ease-in 0s,background 0s ease-in .3s;
+    }
+
+    .LinkHead:active, .LinkHead:hover, .LinkHead:focus {
+        color: #008f70;
+    }
+
+     .LinkHead:hover:after {
+            width: 100%;
+            background: #008f70;
+          
+            transition: width .2s ease-in .1s,background 0s ease-in .1s;
+        }*/
+
+ 
 
 /*Modal*/
- 
-.closebt {
+
+.modalHead
+{
+    margin-top:40px;
+    margin-bottom:40px;
+
+}
+
+ .closebt {
 	-webkit-transition: all 0.2s;
 	-moz-transition: all 0.2s;
 	-ms-transition: all 0.2s;
 	-o-transition: all 0.2s;
 	transition: all 0.2s;
-	cursor:pointer;
+	cursor:pointer; 
 }
 
 .closebt:hover {

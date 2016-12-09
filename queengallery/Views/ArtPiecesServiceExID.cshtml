@@ -1,0 +1,50 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    Layout = "Services.cshtml";
+}
+
+@{
+
+    var serializer = new System.Web.Script.Serialization.JavaScriptSerializer();
+
+  
+    var id = 5463; int.TryParse(Request.QueryString["id"], out id);
+
+  id = 5463;
+   //var valuesFilter = new Dictionary<string, object>();
+
+    
+
+    string condition = "";
+ 
+    int blogId = 3576;
+
+    var item= (dynamic)null;
+ condition = "Id ="+id;
+
+    item= Umbraco.Media(blogId).Children().Where(condition);
+ var  artList=item.First().GetPropertyValue("artPieces2");
+  @* Html.Raw(item.First().GetPropertyValue("artPieces2")); *@
+	
+ string[] words = artList.Split(',');
+	int[] artIds = new int[artList.Length];
+	//int[] arr1 = new int[] { 4626,4628,4629,4817 };  
+ 
+		for (int i = 0;i<words.Length; i++)
+	{
+	 
+	artIds[i]=Convert.ToInt32(words[i]);
+	
+	}
+	
+		
+	 
+ var mediaItems = Umbraco.Media(artIds);
+var jsonDataList = JsonFn.ConvertToJsonObject(mediaItems );
+
+}
+@* @Html.Raw(serializer.Serialize(items.Count())) *@
+@*Html.Raw(serializer.Serialize(@JsonFn.ConvertToJsonObject(items.Skip((page -1)* pageSize).Take(pageSize))))*@
+@*@Html.Raw(serializer.Serialize(node.Properties));*@
+@*Json*@
+@Html.Raw(serializer.Serialize(jsonDataList))
