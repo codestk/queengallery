@@ -9,18 +9,19 @@
 @*
 <script src="~/Modules/js-base64-master/base64.js"></script>*@
 
-
 <!--SimpleModal-->
- 
- <link href="~/Modules/animatedModal.js-master/demo/css/animate.min.css" rel="stylesheet" /> 
+
+<link href="~/Modules/animatedModal.js-master/demo/css/animate.min.css" rel="stylesheet" />
 @*<link href="~/Modules/animatedModal.js-master/demo/css/normalize.min.css" rel="stylesheet" />*@
 <script src="~/Modules/animatedModal.js-master/animatedModal.js"></script>
- 
- 
 
 <!--ReadMore-->
 <link href="~/Modules/ReadMore/ReadMore.css" rel="stylesheet" />
 <script src="~/Modules/ReadMore/ReadMore.js"></script>
+
+<!--ScroolToTop-->
+<script src="~/Modules/ToTop/animatescroll/animatescroll.js"></script>
+<script src="~/Modules/ToTop/ToTop.js"></script>
 
 <script>
 
@@ -34,9 +35,11 @@
 
         RenderList();
 
- 
-    
-    });
+
+});
+
+
+
 
     /*==Render List and Page*/
 
@@ -47,13 +50,13 @@
 
     function
 
-
         RenderList() {
 
         //Render List
         //var url = 'RazorJson?page=' + PageIndex + '&Type=' + menuType;
 
         var url = 'ExhibitionServices?page=' + PageIndex + '&Type=' + menuType;
+        ToTop();
         Preload();
         CallServices(url, '', true, function (msg) {
 
@@ -72,6 +75,7 @@
                 EventExhibition();
 
                 ReadMore.BindEvent();
+
             }
         });
 
@@ -183,9 +187,9 @@
         $('.EventModal').on('click', function () {
 
             $('.imagepreview').attr('src', $(this).find('img').attr('src'));
-          
+
         });
-       
+
         $(".EventModal").animatedModal({
             modalTarget: 'modal',
             //animatedIn: 'rollIn',
@@ -193,41 +197,33 @@
 
             animatedIn: 'fadeInUp',
             animatedOut: 'fadeOutDown',
-            //1
-            //color: '#444444',  
-
-            //2
-            //color: 'rgba(93,104,107, 0.9)',
-
-            //3
-            //color: 'rgba(    8,48,69, 0.9)',
-            color: 'rgba(51,54,67,0.9)',
-          
+            //color: '#444444',
+             // color: '#4B4C4E',
             
+            //color: 'rgba(109,109,112,0.9)',
+             color: 'rgba( 77,75,76,0.9)',
+           
             // Callbacks
             beforeOpen: function () {
-               // $('.imagepreview').attr('src', $(this).find('img').attr('src'));
-              
-               
-                console.log("The animation was called");
+                // $('.imagepreview').attr('src', $(this).find('img').attr('src'));
+
+                //console.log("The animation was called");
             },
             afterOpen: function () {
-                console.log("The animation is completed");
+                //console.log("The animation is completed");
             },
             beforeClose: function () {
-                console.log("The animation was called");
+                //console.log("The animation was called");
             },
             afterClose: function () {
-                console.log("The animation is completed");
+                //console.log("The animation is completed");
             }
         });
 
     }
 
-
-
     function EventExhibition() {
-         
+
         $('.EventExhibition').on('click', function () {
             $('#Main').hide();
             $('#SubMain').show();
@@ -244,43 +240,33 @@
     <div id="divList" class="" style="margin-top:24px;">
     </div>
 
-
-
- 
-
-  
-    
     <div id="modal">
-       
-                    <!--"THIS IS IMPORTANT! to close the modal, the class name has to match the name given on the ID-->
-                    @*<div id="btn-close-modal" class="close-modal">
-                        CLOSE MODAL
-                    </div>*@
 
+        <!--"THIS IS IMPORTANT! to close the modal, the class name has to match the name given on the ID-->
+        @*<div id="btn-close-modal" class="close-modal">
+            CLOSE MODAL
+        </div>*@
 
-                    <div id="container" class="close-modal text-center">
+        <div id="container" class="close-modal text-center">
 
-                        <img class="closebt" src="~/Modules/animatedModal.js-master/closebt.svg" />
-                    </div>
+            <img class="closebt" src="~/Modules/animatedModal.js-master/closebt.svg" />
+        </div>
 
-                    @*modal-content*@
-                    <div class="text-center"> 
-                        <!--Your modal content goes here-->
-                        <img class="imagepreview" src="http://localhost:17606/media/9264/picture.jpg" />
-                    </div>
-
-                </div>
-
-
+        @*modal-content*@
+        <div class="text-center">
+            <!--Your modal content goes here-->
+            <img class="imagepreview" src="http://localhost:17606/media/9264/picture.jpg" />
+        </div>
+    </div>
 </section>
 
 <!-- Template  EventModal-->
 <script id="ListTemplate" type="x-tmpl-mustache">
     {{#Data}}
     <div class="row">
-        @*<div class="col-md-3"><a href="#modal"   class="EventModal   img-center col-xs-12"><img src='{{logoUrl}}'></a> </div>*@
+        @*<div class="col-md-3"><a href="#modal" class="EventModal   img-center col-xs-12"><img src='{{logoUrl}}'></a> </div>*@
 
-         <div class="col-md-3"><a href="#modal" class="EventModal img-center col-xs-12"><img src='{{logoUrl}}' class="EventModal img-center  img-responsive"></a> </div>
+        <div class="col-md-3"><a href="#modal" class="EventModal img-center col-xs-12"><img src='{{logoUrl}}' class="EventModal img-center  img-responsive"></a> </div>
 
         <div class="col-md-9">
 
@@ -312,4 +298,3 @@
     </div>
 </script>
 <!-- /Template -->
- 
