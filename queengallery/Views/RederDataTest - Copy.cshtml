@@ -1,0 +1,56 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+
+@{
+	Layout = "Services.cshtml";
+}
+
+@*
+var blogNode = Umbraco.Content(1122);
+var node = new umbraco.NodeFactory.Node(1122);
+var serializer = new System.Web.Script.Serialization.JavaScriptSerializer();
+var media = Umbraco.Media(1080).Children();
+*@
+
+@{
+
+var serializer = new System.Web.Script.Serialization.JavaScriptSerializer();
+
+	   
+        var id =0;int.TryParse(Request.QueryString["id"],out id);
+ 
+
+        //var items =Umbraco.Media(1080).Where(x => x.IsDocumentType("BlogPost")).OrderByDescending(x => x.CreateDate);
+        //var items =Model.Content.Children().Where(x => x.IsDocumentType("BlogPost")).OrderByDescending(x => x.CreateDate);
+
+        //var items =  Umbraco.Media(1080).Children();
+        //var items =  Umbraco.Media(1080).Children();
+        //string nameLower=imageName.ToLower();
+        //string filter =$"imageName.ToLower() = \"{nameLower}.jpg\"";
+        //var items = Umbraco.Media(mediaID).Children().Where(filter);
+
+       
+
+ 
+    string condition="id=1162";
+ 
+    @*var items = (dynamic) null;*@
+
+    
+    @*var items = Umbraco.Content(1122).Children().OrderBy("CreateDate descending");*@
+    @*var items = Umbraco.Content(1122).Children();*@
+    @*items = Umbraco.Content(1122).Children().OrderBy("CreateDate descending");*@
+
+    
+   //1162
+    var items = Umbraco.Media(3419).Children();
+    
+
+    var jsonDataList= JsonFn.ConvertToJsonObject(items);
+ var dataType = Services.DataTypeService.GetDataTypeDefinitionByName("ArtPieceTypes");
+ 
+
+        }
+
+  
+
+        @Html.Raw(serializer.Serialize(dataType))

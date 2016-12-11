@@ -34,7 +34,7 @@ id = 5463;
 @if (mediaIds != null)
 {
 
-<div class="text-center">
+<div class="col-lg-12 text-center">
     <h1>Art Pieces </h1>
     @foreach (var mediaId in mediaIds.ToString().Split(','))
     {
@@ -63,21 +63,30 @@ id = 5463;
 
 @helper Render(dynamic item)
 {
-    @*<li class="span2">
-    <a href="@item.image.src" class="thumbnail">
-        <img src="@item.image.src" alt="@item.Name" />
-    </a>
-</li>*@
 
-<div class="col-md-4  text-center matchHeight">
-    <figure class="snip1554 ">
-        <img class="img-responsive  img-center " src="@item.image.src" alt="">
+
+<div class="col-lg-4  text-center matchHeight">
+    @*<a href="/en/exhibitions/past/artpiece/">  <figure class="snip1554 ">
+      <img class="img-responsive  img-center " src="@item.image.src" alt="">
 
         <figcaption>
         </figcaption>
-        <a href="#"></a>
+      
     </figure>
-    <h4 class="NoPaddingNoMargin">@item.Name</h4>
+    <h4 class="NoPaddingNoMargin">@item.Name</h4></a>*@
+
+
+ <figure class="snip1360">
+  <img src="@item.image.src" alt="sample88" class="img-responsive  img-center"  />
+  <figcaption>
+    <h2>Man loses the lotto for the second time</h2>
+    <p>I'm looking for something that can deliver a 50-pound payload of snow on a small feminine target. Can you suggest something? Hello? </p><a href="#" class="read-more">Read More</a>
+  </figcaption>
+</figure>
+ 
+ 
+
+
 </div>
 
 }
@@ -158,7 +167,7 @@ id = 5463;
 <script>
     $(function () {
         $('.matchHeight').matchHeight({
-            byRow: true,remove: false
+            byRow: false,remove: false
         }  );
     });
 
