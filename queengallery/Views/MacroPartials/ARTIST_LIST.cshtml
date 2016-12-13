@@ -1,0 +1,104 @@
+﻿@inherits Umbraco.Web.Macros.PartialViewMacroPage
+
+@*
+    Macro to display a gallery of images from media the media section.
+    Works with either a 'Single Media Picker' or a 'Multiple Media Picker' macro parameter (see below).
+
+    How it works:
+        - Confirm the macro parameter has been passed in with a value
+        - Loop through all the media Id's passed in (might be a single item, might be many)
+        - Display any individual images, as well as any folders of images
+
+    Macro Parameters To Create, for this macro to work:
+    Alias:mediaIds     Name:Select folders and/or images    Type: Multiple Media Picker
+       var mediaIds = Model.MacroParameters["mediaIds"];                                                      Type: (note: you can use a Single Media Picker if that's more appropriate to your needs)
+*@
+<script src="~/Modules/jquery-match-height-master/dist/jquery.matchHeight-min.js"></script>
+
+@{
+var curNode = Umbraco.TypedContent(Model.Content.Id);
+			string nodeLang = curNode.GetCulture().ToString().ToLower();
+
+
+ var id = 5463; int.TryParse(Request.QueryString["id"], out id);
+
+id = 5463;
+
+    int blogId = 3576;
+      var item= (dynamic)null;
+ string condition = "Id ="+id.ToString();
+
+  item= Umbraco.Media(blogId).Children().Where(condition);
+ var   mediaIds=item.First().GetPropertyValue("artPieces2");
+
+}
+@if (mediaIds != null)
+{
+
+<div class="text-center">
+    <h1>Artists </h1>
+
+    @foreach (var mediaId in mediaIds.ToString().Split(','))
+    {
+
+    var media = Umbraco.Media(mediaId);
+    var  artTistMedia =Umbraco.Media(media.ParentId);
+    @* a single image *@
+    if (artTistMedia.DocumentTypeAlias == "ArtistsMedia")
+    {
+
+    @Render(artTistMedia,nodeLang);
+    }
+
+    @* a folder with images under it 
+    if (media.Children("artist").Any())
+    {
+    foreach (var image in media.Children("Image"))
+    {
+     Render(image);
+    }
+    }*@
+
+    }
+</div>
+}
+
+@helper Render(dynamic item,string nodeLang)
+{
+
+string  name="";
+string description="";
+		if (nodeLang == "th-th") { 
+				name = @item.nameTh;
+description=@item.descriptionTh;
+			} else {
+				name =@item.nameEn;
+description=@item.descriptionEn;
+			}
+
+<div class="col-lg-4  matchHeight">
+
+    <figure class="snip1554  ">
+        @*<img class="img-circle img-responsive img-center" src="/media/2005/yanawit.png" alt="">*@
+        @*<img class="img-circle img-responsive img-center" src="@item.image.src" alt="@item.nameEn" />*@
+
+        <img class="img-circle img-responsive img-center" src="@item.GetCropUrl("image", "avatar" )" alt="@name" />
+        <figcaption>
+            <h3></h3>
+        </figcaption>
+        <a href="/en/exhibitions/past/artist/">  @item.GetCropUrl(item, "avatar", true)</a>
+    </figure>
+
+    <h2>@name</h2>
+
+    <p class="">@description</p>
+</div>
+}
+
+<script>
+    $(function () {
+        $('.matchHeight').matchHeight({
+            byRow: true, remove: false
+        });
+    });
+</script> 

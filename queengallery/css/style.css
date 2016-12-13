@@ -34,9 +34,7 @@ body {
     /*color: #373D3f;*/
     padding-top: 144px;
     color: #3e3e3e;
-
     font-family: 'Open Sans', sans-serif;
-
 }
 
 /*Navigation*/
@@ -317,30 +315,26 @@ main {
     -o-text-overflow: ellipsis; /* for Opera 9 & 10*/
 }
 
- /*Customize Page a hover*/
-.pagination  a:hover
-{
+/*Customize Page a hover*/
+.pagination a:hover {
     text-decoration: none !important;
-
 }
 
 /*Custom*/
 .LinkHead {
     font-size: 1.60rem;
     font-weight: 900;
-    cursor:pointer;
-   
-    white-space:  normal !important;
-      /*position: relative;
-    
+    cursor: pointer;
+    white-space: normal !important;
+    /*position: relative;
+
     display: inline-block;
     overflow: hidden;
     text-decoration: none;
     transition: color .2s ease-in 0s;*/
 }
- 
 
-    /*.LinkHead:after {
+/*.LinkHead:after {
         width: .01%;
         height: 1px;
         margin: .2em 0 0 0;
@@ -357,43 +351,60 @@ main {
      .LinkHead:hover:after {
             width: 100%;
             background: #008f70;
-          
+
             transition: width .2s ease-in .1s,background 0s ease-in .1s;
         }*/
 
- 
-
 /*Modal*/
 
-.modalHead
-{
-    margin-top:40px;
-    margin-bottom:40px;
-
+.modalHead {
+    /*margin-top:40px;
+    margin-bottom:40px;*/
 }
 
- .closebt {
-	-webkit-transition: all 0.2s;
-	-moz-transition: all 0.2s;
-	-ms-transition: all 0.2s;
-	-o-transition: all 0.2s;
-	transition: all 0.2s;
-	cursor:pointer; 
+.closebt {
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -ms-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    transition: all 0.2s;
+    cursor: pointer;
 }
 
-.closebt:hover {
-	transform:rotate(90deg);
+    .closebt:hover {
+        transform: rotate(90deg);
+    }
+
+.transformSkewY {
+    position: relative;
 }
 
- .simplify:before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 1000%;
-    top: -80px;
-    -webkit-transform: skewY(-12deg);
-    /* transform: skewY(-12deg); */
-    background-color: #f6f9fc;
-    z-index: -1;
+    .transformSkewY:before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: -80px;
+        -webkit-transform: skewY(-12deg);
+        transform: skewY(-12deg);
+        background-color: #333;
+        z-index: -1;
+    }
+
+    .transformSkewY01 {
+    position: relative;
 }
+
+    .transformSkewY01:before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: -80px;
+        -webkit-transform: skewY(-12deg);
+        transform: skewY(-12deg);
+        background-color: #fff;
+        z-index: -1;
+    }
+
 /* EDITOR PROPERTIES - PLEASE DON'T DELETE THIS LINE TO AVOID DUPLICATE PROPERTIES */

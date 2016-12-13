@@ -15,9 +15,9 @@
 *@
 <script src="~/Modules/jquery-match-height-master/dist/jquery.matchHeight-min.js"></script>
 
-
-
 @{
+var curNode = Umbraco.TypedContent(Model.Content.Id);
+			string nodeLang = curNode.GetCulture().ToString().ToLower();
 
  var id = 5463; int.TryParse(Request.QueryString["id"], out id);
 
@@ -34,7 +34,7 @@ id = 5463;
 @if (mediaIds != null)
 {
 
-<div class="text-center">
+<div class="col-lg-12 text-center">
     <h1>Art Pieces </h1>
     @foreach (var mediaId in mediaIds.ToString().Split(','))
     {
@@ -45,121 +45,165 @@ id = 5463;
     if (media.DocumentTypeAlias == "artPiecesMedia")
     {
 
-    @Render(media);
+    @Render(media,nodeLang);
     }
 
-    @* a folder with images under it *@
-    if (media.Children("artist").Any())
-    {
-    foreach (var image in media.Children("Image"))
-    {
-    @Render(image);
-    }
-    }
+ 
 
     }
+ 
 </div>
 }
 
-@helper Render(dynamic item)
+@helper Render(dynamic item,string nodeLang)
 {
-    @*<li class="span2">
-    <a href="@item.image.src" class="thumbnail">
-        <img src="@item.image.src" alt="@item.Name" />
-    </a>
-</li>*@
+string  name="";
+string description="";
+		if (nodeLang == "th-th") {
+				name = @item.nameTh;
+description=@item.descriptionTh;
+			} else {
+				name =@item.nameEn;
+description=@item.descriptionEn;
+			}
+<div class="col-lg-4  text-center matchHeight">
+    @*<a href="/en/exhibitions/past/artpiece/">
+        <figure class="snip1554 ">
+            <img class="img-responsive  img-center " src="@item.image.src" alt="">
 
-<div class="col-md-4  text-center matchHeight">
-    <figure class="snip1554 ">
-        <img class="img-responsive  img-center " src="@item.image.src" alt="">
+            <figcaption>
+            </figcaption>
+        </figure>
+        <h4 class="NoPaddingNoMargin">@item.Name</h4>
+    </a>*@
 
+    <figure class="snip1360">
+        <img src="@item.image.src" alt="sample88" class="img-responsive  img-center" />
         <figcaption>
+            <h2>@name</h2>
+            <p>I'm looking for something that can deliver a 50-pound payload of snow on a small feminine target. Can you suggest something? Hello? </p><a href="#modal" class="read-more EventModal">Read More</a>
         </figcaption>
-        <a href="#"></a>
     </figure>
-    <h4 class="NoPaddingNoMargin">@item.Name</h4>
 </div>
 
 }
 
-      @*<div class="text-center">
-    <h1>Art Pieces </h1>
-    <div id="ArtPieces">
+<!--Modal-->
 
-        <div class="col-md-4 matchHeight text-center">
-            <figure class="snip1554">
-                <img class="img-responsive  img-center" src="/media/1087/large-1.jpg" alt="">
 
-                <figcaption>
-                </figcaption>
-                <a href="#"></a>
-            </figure>
-            <h4 class="NoPaddingNoMargin">Visite de la sphinge</h4>
-        </div>
+<div id="modal" class=" ">
+  
 
-        <div class="col-md-4 matchHeight text-center">
-            <figure class="snip1554">
-                <img class="img-responsive  img-center" src="/media/1998/19-38-2t.jpg" alt="">
+    
+    <!--"THIS IS IMPORTANT! to close the modal, the class name has to match the name given on the ID-->
+    @*<div id="btn-close-modal" class="close-modal ">
+        CLOSE MODAL
+    </div>*@
 
-                <figcaption>
-                </figcaption>
-                <a href="#"></a>
-            </figure>
-            <h4 class="NoPaddingNoMargin">Art000999</h4>
-        </div>
+    <div id="btn-close-modal" class="close-modal text-center modalHead">
 
-        <div class="col-md-4 matchHeight text-center">
-            <figure class="snip1554">
-                <img class="img-responsive  img-center" src="/media/1999/31-52-2c.jpg" alt="">
-
-                <figcaption>
-                </figcaption>
-                <a href="#"></a>
-            </figure>
-            <h4 class="NoPaddingNoMargin">Art00011231</h4>
-        </div>
-
-        <div class="col-md-4 matchHeight text-center">
-            <figure class="snip1554">
-                <img class="img-responsive  img-center" src="/media/1991/32-53-1t-1.jpg" alt="">
-
-                <figcaption>
-                </figcaption>
-                <a href="#"></a>
-            </figure>
-            <h4 class="NoPaddingNoMargin">Picture</h4>
-        </div>
-
-        <div class="col-md-4 matchHeight text-center">
-            <figure class="snip1554">
-                <img class="img-responsive  img-center" src="/media/1997/9-28-3t-1.jpg" alt="">
-
-                <figcaption>
-                </figcaption>
-                <a href="#"></a>
-            </figure>
-            <h4 class="NoPaddingNoMargin">Art000999</h4>
-        </div>
-
-        <div class="col-md-4  text-center">
-            <figure class="snip1554">
-                <img class="img-responsive   img-center" src="/media/1993/14-33-2t-4.jpg" alt="">
-
-                <figcaption>
-                </figcaption>
-                <a href="#"></a>
-            </figure>
-            <h4 class="NoPaddingNoMargin">Art0001</h4>
-        </div>
+        <img class="closebt" src="~/Modules/animatedModal.js-master/closebt.svg" />
     </div>
-</div>*@
+    <section class="transformSkewY">
+        @*modal-content*@
+        <div class="text-center  ">
+            <!--Your modal content goes here-->
+            <img class="imagepreview" src="http://localhost:17606/media/8456/picture.jpg" />
+            <h1>Name</h1>
+            <p> I'm looking for something that can deliver a 50-pound payload of snow on a small feminine target. Can you suggest something? Hello?</p>
+            <p> I'm looking for something that can deliver a 50-pound payload of snow on a small feminine target. Can you suggest something? Hello?</p>
+            <p> I'm looking for something that can deliver a 50-pound payload of snow on a small feminine target. Can you suggest something? Hello?</p>
+            <p> I'm looking for something that can deliver a 50-pound payload of snow on a small feminine target. Can you suggest something? Hello?</p>
+            <p> I'm looking for something that can deliver a 50-pound payload of snow on a small feminine target. Can you suggest something? Hello?</p>
+            <p> I'm looking for something that can deliver a 50-pound payload of snow on a small feminine target. Can you suggest something? Hello?</p>
+            <p> I'm looking for something that can deliver a 50-pound payload of snow on a small feminine target. Can you suggest something? Hello?</p>
+        </div>
+        </section>
+    <section class="transformSkewY01">
+        @*modal-content*@
+        <div class="text-center  ">
+            <!--Your modal content goes here-->
+            <img class="imagepreview" src="http://localhost:17606/media/8456/picture.jpg" />
+            <h1>Name</h1>
+            <p> I'm looking for something that can deliver a 50-pound payload of snow on a small feminine target. Can you suggest something? Hello?</p>
+            <p> I'm looking for something that can deliver a 50-pound payload of snow on a small feminine target. Can you suggest something? Hello?</p>
+            <p> I'm looking for something that can deliver a 50-pound payload of snow on a small feminine target. Can you suggest something? Hello?</p>
+            <p> I'm looking for something that can deliver a 50-pound payload of snow on a small feminine target. Can you suggest something? Hello?</p>
+            <p> I'm looking for something that can deliver a 50-pound payload of snow on a small feminine target. Can you suggest something? Hello?</p>
+            <p> I'm looking for something that can deliver a 50-pound payload of snow on a small feminine target. Can you suggest something? Hello?</p>
+            <p> I'm looking for something that can deliver a 50-pound payload of snow on a small feminine target. Can you suggest something? Hello?</p>
+        </div>
+    </section>
+</div>
+ 
+<!--SimpleModal-->
+
+<link href="~/Modules/animatedModal.js-master/demo/css/animate.min.css" rel="stylesheet" />
+    @*
+<link href="~/Modules/animatedModal.js-master/demo/css/normalize.min.css" rel="stylesheet" />*@
+<script src="~/Modules/animatedModal.js-master/animatedModal.js"></script>
 
 
 <script>
     $(function () {
-        $('.matchHeight').matchHeight({
-            byRow: true,remove: false
-        }  );
+        //$('.matchHeight').matchHeight({
+        //    byRow: false,remove: false
+        //}  );
     });
 
+    $(document).ready(function () {
+
+        $('.matchHeight').matchHeight({
+            byRow: false, remove: false
+        });
+        ModalEvent();
+
+    });
+    function ModalEvent() {
+
+        //$('.EventModal').on('click', function () {
+
+        //    $('.imagepreview').attr('src', $(this).find('img').attr('src'));
+        //    $('#imagemodal').modal('show');
+        //});
+
+        //animatedIn: bounceIn
+        //animatedOut: bounceOut
+        $('.EventModal').on('click', function () {
+
+            $('.imagepreview').attr('src', $(this).find('img').attr('src'));
+            console.log('ggg');
+        });
+
+        $(".EventModal").animatedModal({
+            modalTarget: 'modal',
+            animatedIn: 'rollIn',
+            animatedOut: 'rollOut',
+
+            //animatedIn: 'fadeInUp',
+            //animatedOut: 'fadeOutDown',
+            //color: '#444444',
+           
+
+            //color: 'rgba(109,109,112,0.9)',
+            //color: 'rgba( 77,75,76,0.5)',
+
+            // Callbacks
+            beforeOpen: function () {
+                // $('.imagepreview').attr('src', $(this).find('img').attr('src'));
+
+                //console.log("The animation was called");
+            },
+            afterOpen: function () {
+                //console.log("The animation is completed");
+            },
+            beforeClose: function () {
+                //console.log("The animation was called");
+            },
+            afterClose: function () {
+                //console.log("The animation is completed");
+            }
+        });
+
+    }
 </script>

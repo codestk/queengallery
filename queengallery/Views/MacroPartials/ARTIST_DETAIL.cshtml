@@ -1,0 +1,102 @@
+﻿@inherits Umbraco.Web.Macros.PartialViewMacroPage
+
+@*
+    Macro to display a gallery of images from media the media section.
+    Works with either a 'Single Media Picker' or a 'Multiple Media Picker' macro parameter (see below).
+
+    How it works:
+        - Confirm the macro parameter has been passed in with a value
+        - Loop through all the media Id's passed in (might be a single item, might be many)
+        - Display any individual images, as well as any folders of images
+
+    Macro Parameters To Create, for this macro to work:
+    Alias:mediaIds     Name:Select folders and/or images    Type: Multiple Media Picker
+       var mediaIds = Model.MacroParameters["mediaIds"];                                                      Type: (note: you can use a Single Media Picker if that's more appropriate to your needs)
+*@
+<script src="~/Modules/jquery-match-height-master/dist/jquery.matchHeight-min.js"></script>
+
+@{
+var curNode = Umbraco.TypedContent(Model.Content.Id);
+			string nodeLang = curNode.GetCulture().ToString().ToLower();
+
+
+ var id = 4377; int.TryParse(Request.QueryString["id"], out id);
+
+id = 4377;
+
+    int blogId = 1366;
+      var item= (dynamic)null;
+ string condition = "Id ="+id.ToString();
+
+  item= Umbraco.Media(blogId).Children("ArtistsMedia").Where(condition);
+ var   media=item.First() ;
+
+}
+
+
+
+@if (media != null)
+{
+
+<div class="col-lg-12 text-center">
+    <h1>Artists </h1>
+
+    
+   
+   
+    @* a single image *@
+   @if (media.DocumentTypeAlias == "ArtistsMedia")
+    {
+
+    @Render(media,nodeLang);
+    }
+
+   
+
+    
+</div>
+}
+
+@helper Render(dynamic item,string nodeLang)
+{
+
+string  name="";
+string description="";
+		if (nodeLang == "th-th") { 
+				name = @item.nameTh;
+description=@item.descriptionTh;
+			} else {
+				name =@item.nameEn;
+description=@item.descriptionEn;
+			}
+
+
+
+    <figure class="snip1554  ">
+        @*<img class="img-circle img-responsive img-center" src="/media/2005/yanawit.png" alt="">*@
+        @*<img class="img-circle img-responsive img-center" src="@item.image.src" alt="@item.nameEn" />*@
+
+        <img class="img-circle img-responsive img-center" src="@item.GetCropUrl("image", "avatar" )" alt="@name" />
+        <figcaption>
+            <h3></h3>
+        </figcaption>
+        
+    </figure>
+
+    <h2>@name</h2>
+
+    <p class="">@description</p>
+
+
+
+
+ 
+}
+
+<script>
+    $(function () {
+        $('.matchHeight').matchHeight({
+            byRow: true, remove: false
+        });
+    });
+</script> 

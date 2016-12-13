@@ -42,15 +42,15 @@ var serializer = new System.Web.Script.Serialization.JavaScriptSerializer();
 
     
    //1162
-    var items = Umbraco.Media(3419).Children();
+   // var items = Umbraco.Media(3419).Children();
     
-
-    var jsonDataList= JsonFn.ConvertToJsonObject(items);
- var dataType = Services.DataTypeService.GetDataTypeDefinitionByName("ArtPieceTypes");
+ var items = Umbraco.Media(4483) ;
+   var jsonDataList= JsonFn.ConvertToJsonObject(items);
+ //var dataType = Services.DataTypeService.GetDataTypeDefinitionByName("ArtPieceTypes");
  
 
         }
 
   
 
-        @Html.Raw(serializer.Serialize(dataType))
+        @Html.Raw(serializer.Serialize(jsonDataList))
