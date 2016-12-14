@@ -1,127 +1,26 @@
-﻿/*====================================
-=            masonry Page            =
-====================================*/
+﻿ /**, *:before, *:after {box-sizing:  border-box !important;}*/ 
 
-.masonry{
-  display: block;
--webkit-column-gap: 2.25rem;
--moz-column-gap: 2.25rem;
-column-gap: 12.25rem;
-}
+  *, *:before, *:after {box-sizing:  border-box !important;}
 
-/* 5 columns */
-.masonry.masonry-columns-5{
--webkit-column-count: 5;
--moz-column-count: 5;
-column-count: 5;
-}
-@media(max-width: 1170px){
-  .masonry.masonry-columns-5{
--webkit-column-count: 4;
--moz-column-count: 4;
-column-count: 4;
-}
+.row-marson {
+ -moz-column-width: 30em;
+ -webkit-column-width: 30em;
+  column-width :30em;
+ 
+  -moz-column-gap: 1em;
+ column-gap: 1em;
+ -webkit-column-gap:1em; 
+  
 }
 
-
-/*-4 columns------*/
-.masonry.masonry-columns-4{
--webkit-column-count: 4;
--moz-column-count: 4;
-column-count: 4;
+.item {
+ display: inline-block;
+ /*padding:  .25rem;*/
+ padding:1em;
+width:  100%;
 }
 
-/*-3 columns------*/
-.masonry.masonry-columns-3{
--webkit-column-count: 3;
--moz-column-count: 3;
-column-count: 3;
-}
-
-/*-2 columns------*/
-.masonry.masonry-columns-2{
--webkit-column-count: 2;
--moz-column-count: 2;
-column-count: 2;
-}
-
-/*-1 columns------*/
-.masonry.masonry-columns-1{
--webkit-column-count: 1;
--moz-column-count: 1;
-column-count: 1;
-}
-
-
-/*--------Responsive---------*/
-@media(max-width: 991px){
-  .masonry.masonry-columns-4, 
-  .masonry.masonry-columns-5{
--webkit-column-count: 3;
--moz-column-count: 3;
-column-count: 3;
-}
-}
-
-@media(max-width: 767px){
-  .masonry.masonry-columns-4, 
-  .masonry.masonry-columns-5,
-  .masonry.masonry-columns-3{
--webkit-column-count: 2;
--moz-column-count: 2;
-column-count: 2;
-}
-}
-
-@media(max-width: 540px){
-  .masonry.masonry-columns-4, 
-  .masonry.masonry-columns-5,
-  .masonry.masonry-columns-3,
-  .masonry.masonry-columns-2{
--webkit-column-count: 1;
--moz-column-count: 1;
-column-count: 1;
-}
-}
-
-.masonry .masonry-item{
-    display: inline-block !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    position: relative;
-    display: block;
-    padding: 3px;
-    background-color: #fff;
-    border: 1px solid #e5e5e5;
-    border-radius: .25rem;
-float: none !important;
-margin-right: 0 !important;
-margin-bottom: 0 !important;
-margin-bottom: 2.25rem !important;
-}
-
-.masonry .masonry-item {
-    display: inline-block;
-    margin-bottom: 20px;
-    width: 100%;
-    padding: 10px;
-    border: 1px solid transparent;
-    transition: all 0.4s ease-in-out; }
-    .masonry .masonry-item:hover {
-      border: 1px solid #f0f0f0; }
-    .masonry .masonry-item .post-title {
-      font-size: 20px; }
-    .masonry .masonry-item .post-info {
-      color: #999;
-      text-transform: uppercase; }
-    .masonry .masonry-item p {
-      color: #666; }
-    .masonry .masonry-item .read-more {
-      color: #27c2aa; }
-    .masonry .masonry-item .tag-comment {
-      border-top: 1px solid #f0f0f0;
-      margin-top: 10px;
-      padding: 5px 0;
-      color: #999; }
-
-/*=====  End of masonry Page  ======*/
+.well {
+ position:relative;
+ display: block;
+} 

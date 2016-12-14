@@ -34,9 +34,9 @@ id = 5463;
 @if (mediaIds != null)
 {
 
-<div class="col-lg-12 text-center ">
+<div class=" text-center ">
     <h1>Art Pieces </h1>
-    <div class="row">
+    <div class="row-marson">
         @foreach (var mediaId in mediaIds.ToString().Split(','))
         {
 
@@ -59,50 +59,66 @@ id = 5463;
 
     </div>
 </div>
-<section class="nb-demo">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="masonry masonry-columns-3">
 
-                    <div class="masonry-item">
-                        <img src="http://placehold.it/450x350" class="img-responsive center-block" alt="">
-                    </div>
 
-                    <div class="masonry-item">
-                        <img src="http://placehold.it/450x400" class="img-responsive center-block" alt="">
-                    </div>
 
-                    <div class="masonry-item">
-                        <img src="http://placehold.it/450x450" class="img-responsive center-block" alt="">
-                    </div>
-
-                    <div class="masonry-item">
-                        <img src="http://placehold.it/450x500" class="img-responsive center-block" alt="">
-                    </div>
-
-                    <div class="masonry-item">
-                        <img src="http://placehold.it/500x450" class="img-responsive center-block" alt="">
-                    </div>
-
-                    <div class="masonry-item">
-                        <img src="http://placehold.it/450x250" class="img-responsive center-block" alt="">
-                    </div>
-
-                    <div class="masonry-item">
-                        <img src="http://placehold.it/450x200" class="img-responsive center-block" alt="">
-                    </div>
-
-                    <div class="masonry-item">
-                        <img src="http://placehold.it/450x300" class="img-responsive center-block" alt="">
-                    </div>
-
-                </div>
+ 
+<div class="container">
+    <h1>Masonry CSS with Bootstrap</h1>
+    <div class="row-marson ">
+        <div class="item">
+            <div class="well">
+                1 blah blah blah
+            </div>
+        </div>
+        <div class="item">
+            <div class="well">
+                2 blah blah blah blah blah blah blah blah blah blah blah blahblah blah blah blah blah blah
+            </div>
+        </div>
+        <div class="item">
+            <div class="well">
+                3 blah blah blah blah blah blah blah blah h
+            </div>
+        </div>
+        <div class="item">
+            <div class="well">
+                blah blah blah blah
+            </div>
+        </div>
+        <div class="item">
+            <div class="well">
+                blah blah blah. The container inside the item must be position:relative
+            </div>
+        </div>
+        <div class="item">
+            <div class="well">
+                blah blah blah blah blah blah blah blah blah blah blah blahblah blah blah blah blah blah
+            </div>
+        </div>
+        <div class="item">
+            <div class="well">
+                blah blah blah blah blah blah blah blah h
+            </div>
+        </div>
+        <div class="item">
+            <div class="well">
+                blah blah blah blah
+            </div>
+        </div>
+        <div class="item">
+            <div class="well">
+                blah blah blah blah blah blah blah blah blah blah blah blah
+            </div>
+        </div>
+        <div class="item">
+            <div class="well">
+                blah blah blah. The container inside the item must be position:relative
             </div>
         </div>
     </div>
-</section>
- 
+</div>
+
 }
 
 @helper Render(dynamic item,string nodeLang)
@@ -116,10 +132,10 @@ description=@item.descriptionTh;
 				name =@item.nameEn;
 description=@item.descriptionEn;
 			}
-<div class="col-lg-4  text-center matchHeight">
+<div class="  text-center matchHeight000 item">
 
 
-    <figure class="snip1360 ">
+    <figure class="snip1360  well">
         <img src="@item.image.src" alt="@item.id" class="img-responsive  img-center" />
         <figcaption>
             <h2>@name</h2>
