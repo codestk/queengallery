@@ -374,11 +374,17 @@ main {
     .closebt:hover {
         transform: rotate(90deg);
     }
-
+    /*Skew Back Ground*/
 .transformSkewY {
     position: relative;
+       color:#fff;
 }
+    .transformSkewY p{
 
+        color: #DA611E;
+       
+
+    }
     .transformSkewY:before {
         content: "";
         position: absolute;
@@ -387,13 +393,20 @@ main {
         top: -80px;
         -webkit-transform: skewY(-12deg);
         transform: skewY(-12deg);
-        background-color: #333;
+        background-color: #083045;
         z-index: -1;
+
+     
     }
 
     .transformSkewY01 {
     position: relative;
+    color:aqua !important;
 }
+    .transformSkewY01 p{
+
+        color:orangered;
+    }
 
     .transformSkewY01:before {
         content: "";
@@ -403,7 +416,7 @@ main {
         top: -80px;
         -webkit-transform: skewY(-12deg);
         transform: skewY(-12deg);
-        background-color: #fff;
+        background-color: #ff6a00;
         z-index: -1;
     }
 
