@@ -409,11 +409,12 @@ html {
 .light {
     /*Custom Pws*/
     /*background: #fff;*/
+    color: #3e3e3e;
 }
 
     .light * {
         /*Custom Pws*/
-        color: #3e3e3e;
+        /*color: #3e3e3e;*/
         /*color: #000;*/
     }
 

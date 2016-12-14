@@ -35,11 +35,7 @@
 
         RenderList();
 
-
-});
-
-
-
+    });
 
     /*==Render List and Page*/
 
@@ -198,11 +194,11 @@
             animatedIn: 'fadeInUp',
             animatedOut: 'fadeOutDown',
             //color: '#444444',
-             // color: '#4B4C4E',
-            
+            // color: '#4B4C4E',
+
             //color: 'rgba(109,109,112,0.9)',
-             color: 'rgba( 77,75,76,0.9)',
-           
+            color: 'rgba( 77,75,76,0.9)',
+
             // Callbacks
             beforeOpen: function () {
                 // $('.imagepreview').attr('src', $(this).find('img').attr('src'));
@@ -264,14 +260,13 @@
 <script id="ListTemplate" type="x-tmpl-mustache">
     {{#Data}}
     <div class="row">
-        @*<div class="col-md-3"><a href="#modal" class="EventModal   img-center col-xs-12"><img src='{{logoUrl}}'></a> </div>*@
+        @*<div class="col-md-3"><a href="#modal" class="EventModal img-center col-xs-12"><img src='{{logoUrl}}'></a> </div>*@
 
         <div class="col-md-3"><a href="#modal" class="EventModal img-center col-xs-12"><img src='{{logoUrl}}' class="EventModal img-center  img-responsive"></a> </div>
 
         <div class="col-md-9">
 
-          
-            <a class="LinkHead" href="/en/exhibitions/past/exhibition/">  {{name}}     </a> 
+            <a class="LinkHead" href="/en/exhibitions/past/exhibition/">  {{name}}     </a>
             <div class="date">{{from}}-{{to}}</div>
 
             <p class="more">{{description}} </p>
