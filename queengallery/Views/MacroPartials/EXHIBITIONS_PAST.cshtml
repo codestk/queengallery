@@ -23,6 +23,12 @@
 <script src="~/Modules/ToTop/animatescroll/animatescroll.js"></script>
 <script src="~/Modules/ToTop/ToTop.js"></script>
 
+
+<!--Datejs-->
+
+<script src="~/Modules/Datejs-master/build/date.js"></script>
+<script src="~/Modules/Datejs-master/build/date-th-TH.js"></script>
+
 <script>
 
     $(document).ready(function () {
@@ -161,6 +167,13 @@
 
             data[key]["logoUrl"] = UmbracoImageUrl(ImageUmbracoString);
 
+
+            var dateFrom = new Date(data[key]["beginDate"]);
+            var from = Date.today().toString('d MMM yyyy'); // "April 12th, 2008"
+            var _from = dateFrom.toString('d MMM yyyy'); // "April 12th, 2008"
+            data[key]["from"] = from;
+            data[key]["to"] = _from;
+
             data[key]["id"] = arrayPosition;
             arrayPosition = arrayPosition + 1;
         }
@@ -267,7 +280,7 @@
         <div class="col-md-9">
 
             <a class="LinkHead" href="/en/exhibitions/past/exhibition/">  {{name}}     </a>
-            <div class="date">{{from}}-{{to}}</div>
+            <div class="date">{{from}} - {{to}}</div>
 
             <p class="more">{{description}} </p>
             @*<a class="button EventExhibition"> Read More</a>*@
