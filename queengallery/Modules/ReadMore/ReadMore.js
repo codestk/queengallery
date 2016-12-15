@@ -5,6 +5,7 @@
     lesstext: "Show less",
     showMore: true,
 
+
     BindEvent: function () {
         var _showChar = this.showChar;
         var _ellipsestext = this.ellipsestext;
