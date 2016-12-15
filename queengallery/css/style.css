@@ -374,6 +374,24 @@ main {
     .closebt:hover {
         transform: rotate(90deg);
     }
+
+
+.glass {
+         position: absolute;  
+    bottom: 0;
+    left: 0;
+    padding: 10px;
+    background-color: rgba(117,130,133,0.2);
+  
+    font-size: 0.8em;
+    /* text-transform: uppercase; */
+     
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    letter-spacing: 1px;
+    z-index:-1;
+}
     /*Skew Back Ground*/
 .transformSkewY {
     position: relative;
@@ -381,7 +399,7 @@ main {
 }
     .transformSkewY p{
 
-        color: #DA611E;
+        color:#F16C20;
        
 
     }
