@@ -1,0 +1,24 @@
+﻿/**, *:before, *:after {box-sizing:  border-box !important;}*/
+
+/**, *:before, *:after {box-sizing:  border-box !important;}*/
+
+.row-marson {
+    -moz-column-width: 20em;
+    -webkit-column-width: 20em;
+    column-width: 20em;
+    -moz-column-gap: 1em;
+    column-gap: 1em;
+    -webkit-column-gap: 1em;
+}
+
+.item {
+    display: inline-block;
+    /*padding:  .25rem;*/
+    padding: 1em;
+    width: 100%;
+}
+
+.well {
+    position: relative;
+    display: block;
+}

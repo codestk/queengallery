@@ -34,7 +34,7 @@ id = 5463;
 @if (mediaIds != null)
 {
 
-<div class=" text-center ">
+<div class="text-center ">
     <h1>Art Pieces </h1>
     <div class="row-marson">
         @foreach (var mediaId in mediaIds.ToString().Split(','))
@@ -139,7 +139,10 @@ description=@item.descriptionEn;
         <img src="@item.image.src" alt="@item.id" class="img-responsive  img-center" />
         <figcaption>
             <h2>@name</h2>
-            <p class="more">@description  </p><a href="#modal" class="read-more EventModal">Read More</a>
+            <p class="more">@description  </p><a href="#modal" class="read-more EventModal">Read More   
+            
+            <div class="glass"></div>
+            </a>
         </figcaption>
     </figure>
 </div>
@@ -202,7 +205,8 @@ description=@item.descriptionEn;
 
 
  
-<link href="~/StyleSheet1.css" rel="stylesheet" />
+<link href="~/css/masonry Custom.css" rel="stylesheet" />
+
 
 <script>
     $(function () {
@@ -219,13 +223,13 @@ description=@item.descriptionEn;
         ReadMore.BindEvent();
 
         //Afert ReadMore
-        $('.matchHeight').matchHeight({
-            byRow: true,
-            property: 'height',
-            //target: true,
-            remove: false,
-            //property: 'min-height'
-        });
+        //$('.matchHeight').matchHeight({
+        //    byRow: true,
+        //    property: 'height',
+        //    //target: true,
+        //    remove: false,
+        //    //property: 'min-height'
+        //});
 
 
         ModalEvent();
@@ -260,7 +264,7 @@ description=@item.descriptionEn;
             //color: '',
             //color: 'rgba(109,109,112,0.9)',
             //color: 'rgba(50,50,50,.9)',
-            color: 'rgba(144,155,158,.9)',
+            color: 'rgba(255,255,255,.9)',
 
             // Callbacks
             beforeOpen: function () {

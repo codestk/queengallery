@@ -1,9 +1,10 @@
 ﻿var ReadMore = {
     showChar: 250, // How many characters are shown by default
     ellipsestext: "...",
-    moretext: "Show more >",
+    moretext: "Show more",
     lesstext: "Show less",
     showMore: true,
+
     BindEvent: function () {
         var _showChar = this.showChar;
         var _ellipsestext = this.ellipsestext;

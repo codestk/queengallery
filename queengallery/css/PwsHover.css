@@ -1,17 +1,24 @@
 /* Personal Hover  10:18 1/11/2559*/
 .snip1554 {
-    /*background-color: #045e78;*/
-    color: #ffffff;
-    display: inline-block;
-    font-family: 'Poppins', sans-serif;
-    font-size: 16px;
-    margin: 8px;
-    /*max-width: 315px;
-            min-width: 230px;*/
+  
+
+
+
+       
+    /* color: #ffffff; */
+    display: inline-block;  
+    /* font-family: 'Poppins', sans-serif; */
+    /* font-size: 16px; */
+ 
     overflow: hidden;
-    position: relative;
-    text-align: left;
-    width: 100%;
+     position: relative;  
+    /* text-align: left; */
+    border-radius: 50%;
+    z-index: 11;
+    /*width: 100%;*/
+    margin-bottom:15px;
+    
+   
 }
 
     .snip1554 * {
@@ -19,6 +26,7 @@
         box-sizing: border-box;
         -webkit-transition: all 0.45s ease;
         transition: all 0.45s ease;
+        /*border-radius: 50%;*/
     }
 
     .snip1554:after {
@@ -39,19 +47,30 @@
 
     .snip1554 img {
         vertical-align: top;
-        max-width: 100%;
-        backface-visibility: hidden;
+        max-width: 100%; 
+        backface-visibility: hidden; 
+        background-color: inherit;
+        z-index: 3;
+        /*border-radius: 50%;*/
+      
     }
 
     .snip1554 figcaption {
-        position: absolute;
+        /*position: absolute;
         top: 0;
         bottom: 0;
         left: 0;
         right: 0;
-        z-index: 1;
+        z-index: -1;
         line-height: 1em;
-        opacity: 0;
+        opacity: 0;*/
+        top: 0;
+        bottom: 0;
+        left: auto;
+        right: auto;
+        z-index: -1;
+        background-color: red;
+        border-radius: 50%;
     }
 
     .snip1554 h3 {
@@ -256,5 +275,4 @@
         font-size: 0.9em;
         letter-spacing: 1px;
         opacity: 0.9;
-
     }
