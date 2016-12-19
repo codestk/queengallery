@@ -183,33 +183,31 @@ description=@item.descriptionEn;
                 var description = '';
                 var name = '';
                 var Type = '';
-                var data=msg
+                var data = msg
                 //Custom
                 function ConvertDataLangModal(data) {
-                     
+
                     for (var key in data) {
                         data[key]["description"] = data[key]["description" + preFixLang];
                         data[key]["name"] = data[key]["name" + preFixLang];
                         data[key]["Type"] = data[key]["Type" + preFixLang];
                     }
-                    debugger
+
                 }
 
-                  ConvertDataLangModal(data[0]);
-            
+                ConvertDataLangModal(data[0]);
+
                 head.html('');
                 subLv1.html('');
                 subLv2.html('');
                 content.html('');
-           debugger
+
                 //head.html(data[0]["name"]);
                 head.html(data[0][0]["name"]);
                 subLv1.html(data[0][0]["Type"]);
                 subLv2.html(data[0][0]["dimension"]);
                 content.html(data[0][0]["description"]);
 
-                 
-            
             });
 
         });
