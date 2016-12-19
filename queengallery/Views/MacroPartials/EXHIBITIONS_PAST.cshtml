@@ -17,17 +17,23 @@
 
 <!--ReadMore-->
 <link href="~/Modules/ReadMore/ReadMore.css" rel="stylesheet" />
+
 <script src="~/Modules/ReadMore/ReadMore.js"></script>
 
 <!--ScroolToTop-->
 <script src="~/Modules/ToTop/animatescroll/animatescroll.js"></script>
 <script src="~/Modules/ToTop/ToTop.js"></script>
 
-
 <!--Datejs-->
-
 <script src="~/Modules/Datejs-master/build/date.js"></script>
+@{
+var curNode = Umbraco.TypedContent(Model.Content.Id);
+var nodeLang = curNode.GetCulture().ToString().ToLower();
+}
+@if  (nodeLang == "th-th")
+{
 <script src="~/Modules/Datejs-master/build/date-th-TH.js"></script>
+}
 
 <script>
 
@@ -167,12 +173,17 @@
 
             data[key]["logoUrl"] = UmbracoImageUrl(ImageUmbracoString);
 
-
             var dateFrom = new Date(data[key]["beginDate"]);
-            var from = Date.today().toString('d MMM yyyy'); // "April 12th, 2008"
-            var _from = dateFrom.toString('d MMM yyyy'); // "April 12th, 2008"
+
+            var daetFormat = 'd MMM yyyy';
+            var from = dateFrom.toString(daetFormat); // "April 12th, 2008"
             data[key]["from"] = from;
-            data[key]["to"] = _from;
+
+            var dateTo = new Date(data[key]["endDate"]);
+
+            var to = dateTo.toString(daetFormat); // "April 12th, 2008"
+
+            data[key]["to"] = to;
 
             data[key]["id"] = arrayPosition;
             arrayPosition = arrayPosition + 1;

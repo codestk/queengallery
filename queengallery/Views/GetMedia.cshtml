@@ -1,0 +1,44 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+	Layout = "Services.cshtml";
+}
+
+
+@*
+var blogNode = Umbraco.Content(1122);
+var node = new umbraco.NodeFactory.Node(1122);
+var serializer = new System.Web.Script.Serialization.JavaScriptSerializer();
+var media = Umbraco.Media(1080).Children();
+*@
+
+@{
+
+var serializer = new System.Web.Script.Serialization.JavaScriptSerializer();
+
+	   
+   
+ 
+
+ var artList ="0,"+Request.QueryString["id"];
+ string[] words = artList.Split(',');
+	int[] artIds = new int[artList.Length];
+	//int[] arr1 = new int[] { 4626,4628,4629,4817 };  
+ 
+		for (int i = 0;i<words.Length; i++)
+	{
+	 
+	artIds[i]=Convert.ToInt32(words[i]);
+	
+	}
+	
+		
+	 
+ var mediaItems = Umbraco.Media(artIds);
+var jsonDataList = JsonFn.ConvertToJsonObject(mediaItems );
+ 
+
+        }
+
+  
+  
+       @Html.Raw(serializer.Serialize(jsonDataList))
