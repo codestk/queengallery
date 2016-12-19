@@ -14,7 +14,6 @@
        var mediaIds = Model.MacroParameters["mediaIds"];                                                      Type: (note: you can use a Single Media Picker if that's more appropriate to your needs)
 *@
 
-<script src="~/Modules/jquery-match-height-master/dist/jquery.matchHeight-min.js"></script>
 
 @{
 var curNode = Umbraco.TypedContent(Model.Content.Id);
@@ -101,14 +100,19 @@ description=@item.descriptionEn;
         @*modal-content*@
         <div class="text-center  ">
             <!--Your modal content goes here-->
-            <img src="http://localhost:17606/media/8456/picture.jpg" />
-            <h1 id="modal-head">Name</h1>
-            <p id="modal-subLv1">Dimensison</p>
-            <p id="modal-subLv2">ArtPieceType</p>
-            <p id="modal-content"> I'm looking for something that can deliver a 50-pound payload of snow on a small feminine target. Can you suggest something? Hello?</p>
+            <img id="modal-img" src="http://localhost:17606/media/8456/picture.jpg" />
+            <h1 id="modal-head">-</h1>
+            <h2 id="modal-subLv1">-</h2>
+            <h3 id="modal-subLv2">77-</h3>
+            <p id="modal-content" style="width:70%">-</p>
         </div>
     </section>
 </div>
+
+
+
+<script src="~/Modules/jquery-match-height-master/dist/jquery.matchHeight-min.js"></script>
+
 
 <!--SimpleModal-->
 
@@ -121,7 +125,13 @@ description=@item.descriptionEn;
 <link href="~/Modules/ReadMore/ReadMore.css" rel="stylesheet" />
 <script src="~/Modules/ReadMore/ReadMore.js"></script>
 
+
+<!--masonry-->
 <link href="~/css/masonry Custom.css" rel="stylesheet" />
+
+<!--Umbraco Component-->
+<script src="~/Modules/UmbracoImage/UmbracoImage.js"></script>
+
 
 <script>
 
@@ -160,8 +170,10 @@ description=@item.descriptionEn;
 
             var head = $('#modal-head');
             var subLv1 = $('#modal-subLv1');
-            var subLv2 = $('#modal-subLv2');
-            var content = $('#modal-subLv2');
+            var subLv2 = $('#modal-subLv2'); 
+            var content = $('#modal-content');
+            var img = $('#modal-img');
+          
             head.html('');
             subLv1.html('');
             subLv2.html('');
@@ -170,7 +182,7 @@ description=@item.descriptionEn;
             //CallData
             var mediaID = $(this).attr("data-artpiecesmedia");
 
-            $('.imagepreview').attr('src', $(this).find('img').attr('src'));
+            //$('.imagepreview').attr('src', $(this).find('img').attr('src'));
 
             //GetMedia?id=5066
             var url = 'GetMedia?id=' + mediaID;
@@ -190,24 +202,51 @@ description=@item.descriptionEn;
                     for (var key in data) {
                         data[key]["description"] = data[key]["description" + preFixLang];
                         data[key]["name"] = data[key]["name" + preFixLang];
-                        data[key]["Type"] = data[key]["Type" + preFixLang];
+                        data[key]["artPieceType"] = data[key]["artPieceType"];
+                        //data[key]["dimension"] = data[key]["dimension"];
+                        //data[key]["dimension"] = data[key]["dimension"];
                     }
+
 
                 }
 
                 ConvertDataLangModal(data[0]);
+                 
+                head.html('-');
+                subLv1.html('-');
+                subLv2.html('-');
+                content.html('-');
 
-                head.html('');
-                subLv1.html('');
-                subLv2.html('');
-                content.html('');
 
-                //head.html(data[0]["name"]);
-                head.html(data[0][0]["name"]);
-                subLv1.html(data[0][0]["Type"]);
-                subLv2.html(data[0][0]["dimension"]);
-                content.html(data[0][0]["description"]);
+                //console.log(data[key]["name"]);
+                //console.log(data[key]["artPieceType"]);
+               
+                if (data[0][0]["name"] != "")
+                {
+                    head.html(data[0][0]["name"]);
+                }
 
+                if (data[0][0]["artPieceType"] != "") {
+                    subLv1.html(data[0][0]["artPieceType"]);
+                }
+          
+                if (data[0][0]["dimension"] != "") {
+                    subLv2.html(data[0][0]["dimension"]);
+                }
+                if (data[0][0]["description"] != "") {
+                    content.html(data[0][0]["description"]);
+                }
+                
+              
+             
+
+                var ImageUmbracoString = data[0][0]["image"];
+                 
+               var imgUrl = UmbracoImageUrl(ImageUmbracoString);
+             
+               img.attr('src', imgUrl);
+               //$('.imagepreview').attr('src', $(this).find('img').attr('src'));
+               
             });
 
         });
