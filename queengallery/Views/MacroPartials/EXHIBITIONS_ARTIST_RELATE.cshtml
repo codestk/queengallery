@@ -37,14 +37,21 @@ var   mediaIds=item.First().GetPropertyValue("artPieces2");
 		}
  
 	var paramVals = new Dictionary<string, object> {{"splitTerm", new char[] {','}}, {"searchId", "1173"}};
-	string condion="";
-	var itemExhibitions= Umbraco.Media(3576).Children().Where("artPieces2 != null && artPieces2 != String.Empty &&  artPieces2.Split(splitTerm).Contains(searchId) ",paramVals);
+	 
+	@*var itemExhibitions= Umbraco.Media(3576).Children().Where("artPieces2 != null && artPieces2 != String.Empty &&  artPieces2.Split(splitTerm).Contains(searchId) ",paramVals);
 	foreach (var ex in itemExhibitions)
         {
 			
 			 @ex.id
 
-		}
+		}*@
+		var itemExhibitions= Umbraco.Media(3576).Children().Where("artPieces2 != null ");
+	@*foreach (var ex in itemExhibitions)
+        {
+			
+			 @ex.id
+
+		}*@
 	
  
 }
