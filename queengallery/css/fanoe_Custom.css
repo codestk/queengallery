@@ -1040,8 +1040,9 @@ nav li > ul > li > ul {
     .yellow h3,
     .blue h3,
     .purple h3 {
-        margin: 0 0 5px;
-    }
+        /*margin: 0 0 5px;*/
+      margin: 0 0 15px;
+    } 
 
     .dark p,
     .light p,

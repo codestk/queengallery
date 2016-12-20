@@ -386,6 +386,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Code\" />
+    <Folder Include="App_Data\" />
     <Folder Include="Modules\ToTop\" />
     <Folder Include="Umbraco\" />
   </ItemGroup>
