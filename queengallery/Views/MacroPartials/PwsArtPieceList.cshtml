@@ -71,6 +71,9 @@ description=@item.descriptionEn;
 
     <figure class="snip1360  well">
         <img src="@item.image.src" alt="@item.id" class="img-responsive  img-center" />
+        
+ 
+        
         <figcaption>
             <h2>@name</h2>
             <p class="more">@description  </p><a href="#modal" data-ArtPiecesMedia="@item.id" class="read-more EventModal">
@@ -101,9 +104,10 @@ description=@item.descriptionEn;
         <div class="text-center  ">
             <!--Your modal content goes here-->
             <img id="modal-img" src="http://localhost:17606/media/8456/picture.jpg" />
-            <h1 id="modal-head">-</h1>
+          
+              <h1 id="modal-head">-</h1>
             <h2 id="modal-subLv1">-</h2>
-            <h3 id="modal-subLv2">77-</h3>
+            <h3 id="modal-subLv2">-</h3>
             <p id="modal-content" style="width:70%">-</p>
         </div>
     </section>
@@ -132,6 +136,8 @@ description=@item.descriptionEn;
 <!--Umbraco Component-->
 <script src="~/Modules/UmbracoImage/UmbracoImage.js"></script>
 
+<!--Hover Image-->
+<link href="~/Modules/imagehover.css-master/css/imagehover.min.css" rel="stylesheet" />
 
 <script>
 
