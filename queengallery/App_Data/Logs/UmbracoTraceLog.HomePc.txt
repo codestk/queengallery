@@ -1,294 +1,63 @@
-﻿ 2016-12-20 19:07:59,286 [P6972/D2/T1] INFO  Umbraco.Core.CoreBootManager - Umbraco 7.5.4 application starting on HOMEPC
- 2016-12-20 19:07:59,299 [P6972/D2/T1] INFO  Umbraco.Core.PluginManager - Determining hash of code files on disk
- 2016-12-20 19:07:59,306 [P6972/D2/T1] INFO  Umbraco.Core.PluginManager - Hash determined (took 6ms)
- 2016-12-20 19:07:59,344 [P6972/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of umbraco.interfaces.IApplicationStartupHandler
- 2016-12-20 19:07:59,540 [P6972/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 0 (took 196ms)
- 2016-12-20 19:07:59,548 [P6972/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter
- 2016-12-20 19:07:59,552 [P6972/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 3ms)
- 2016-12-20 19:07:59,552 [P6972/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyValueConverter
- 2016-12-20 19:07:59,556 [P6972/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyValueConverter, found 0 (took 3ms)
- 2016-12-20 19:07:59,565 [P6972/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Web.Mvc.SurfaceController
- 2016-12-20 19:07:59,569 [P6972/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 0 (took 4ms)
- 2016-12-20 19:07:59,569 [P6972/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Web.WebApi.UmbracoApiController
- 2016-12-20 19:07:59,572 [P6972/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Web.WebApi.UmbracoApiController, found 0 (took 2ms)
- 2016-12-20 19:07:59,594 [P6972/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.Media.IThumbnailProvider
- 2016-12-20 19:07:59,596 [P6972/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 0 (took 2ms)
- 2016-12-20 19:07:59,597 [P6972/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.Media.IImageUrlProvider
- 2016-12-20 19:07:59,600 [P6972/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 0 (took 3ms)
- 2016-12-20 19:08:00,349 [P6972/D2/T1] INFO  Umbraco.Core.DatabaseContext - CanConnect = True
- 2016-12-20 19:08:00,555 [P6972/D2/T1] INFO  Umbraco.Core.DatabaseContext - CanConnect = True
- 2016-12-20 19:08:00,582 [P6972/D2/T1] INFO  Umbraco.Core.DatabaseContext - CanConnect = True
- 2016-12-20 19:08:00,644 [P6972/D2/T1] INFO  Umbraco.Web.Cache.CacheRefresherEventHandler - Initializing Umbraco internal event handlers for cache refreshing
- 2016-12-20 19:08:00,719 [P6972/D2/T1] INFO  Umbraco.Web.Search.ExamineEvents - Initializing Examine and binding to business logic events
- 2016-12-20 19:08:00,719 [P6972/D2/T1] INFO  Umbraco.Web.Search.ExamineEvents - Adding examine event handlers for index providers: 3
- 2016-12-20 19:08:00,727 [P6972/D2/T1] INFO  Umbraco.Core.CoreBootManager - Umbraco application startup complete (took 1492ms)
- 2016-12-20 19:08:00,822 [P6972/D2/T12] INFO  Umbraco.Core.Sync.ApplicationUrlHelper - ApplicationUrl: http://localhost:17606/umbraco (UmbracoModule request)
- 2016-12-20 19:08:00,942 [P6972/D2/T12] INFO  umbraco.content - Load Xml from file...
- 2016-12-20 19:08:00,945 [P6972/D2/T12] INFO  umbraco.content - Loaded Xml from file.
- 2016-12-20 19:08:01,386 [P6972/D2/T12] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.PropertyEditors.IParameterEditor
- 2016-12-20 19:08:01,394 [P6972/D2/T12] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.PropertyEditors.IParameterEditor, found 0 (took 7ms)
- 2016-12-20 19:08:23,015 [P6972/D2/T13] INFO  Umbraco.Core.PluginManager - Starting resolution types of umbraco.interfaces.ICacheRefresher
- 2016-12-20 19:08:23,022 [P6972/D2/T13] INFO  Umbraco.Core.PluginManager - Completed resolution of types of umbraco.interfaces.ICacheRefresher, found 0 (took 7ms)
- 2016-12-20 19:08:24,755 [P6972/D2/T13] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.Persistence.Mappers.BaseMapper
- 2016-12-20 19:08:24,760 [P6972/D2/T13] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.Persistence.Mappers.BaseMapper, found 0 (took 4ms)
- 2016-12-20 19:08:24,843 [P6972/D2/T13] INFO  Umbraco.Core.PluginManager - Starting resolution types of umbraco.cms.businesslogic.macro.IMacroEngine
- 2016-12-20 19:08:24,847 [P6972/D2/T13] INFO  Umbraco.Core.PluginManager - Completed resolution of types of umbraco.cms.businesslogic.macro.IMacroEngine, found 0 (took 4ms)
- 2016-12-20 19:08:25,831 [P6972/D2/T13] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.PropertyEditors.IParameterEditor
- 2016-12-20 19:08:25,831 [P6972/D2/T13] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.PropertyEditors.IParameterEditor, found 0 (took 0ms)
- 2016-12-20 19:08:27,374 [P6972/D2/T17] INFO  umbraco.content - Save Xml to file...
- 2016-12-20 19:08:27,384 [P6972/D2/T17] INFO  umbraco.content - Saved Xml to file.
- 2016-12-20 19:08:27,513 [P6972/D2/T13] WARN  umbraco.macro - Error loading partial view macro (View: ~/Views/MacroPartials/EXHIBITIONS_ARTIST_RELATE.cshtml). Exception: No applicable method 'Contains' exists in type 'Func`2' (at index 81)
- 2016-12-20 19:08:27,513 [P6972/D2/T13] WARN  umbraco.macro - Error loading Partial View (file: ~/Views/MacroPartials/EXHIBITIONS_ARTIST_RELATE.cshtml). Exception: No applicable method 'Contains' exists in type 'Func`2' (at index 81)
- 2016-12-20 19:08:55,502 [P6972/D2/T14] WARN  umbraco.macro - Error loading partial view macro (View: ~/Views/MacroPartials/EXHIBITIONS_ARTIST_RELATE.cshtml). Exception: No applicable method 'Contains' exists in type 'Func`2' (at index 81)
- 2016-12-20 19:08:55,502 [P6972/D2/T14] WARN  umbraco.macro - Error loading Partial View (file: ~/Views/MacroPartials/EXHIBITIONS_ARTIST_RELATE.cshtml). Exception: No applicable method 'Contains' exists in type 'Func`2' (at index 81)
- 2016-12-20 19:09:00,991 [P6972/D2/T16] INFO  umbraco.BusinessLogic.Log - Log scrubbed.  Removed all items older than 2559-12-19 19:09:00
- 2016-12-20 19:09:34,664 [P6972/D2/T12] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt succeeded for username admin@bbl.co.th from IP address ::1
- 2016-12-20 19:09:34,666 [P6972/D2/T12] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: User: admin@bbl.co.th logged in from IP address ::1
- 2016-12-20 19:09:34,752 [P6972/D2/T12] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Web.Trees.TreeController
- 2016-12-20 19:09:34,759 [P6972/D2/T12] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Web.Trees.TreeController, found 0 (took 7ms)
- 2016-12-20 19:09:34,990 [P6972/D2/T12] INFO  Umbraco.Core.PluginManager - Starting resolution types of umbraco.interfaces.IApplication
- 2016-12-20 19:09:34,997 [P6972/D2/T12] INFO  Umbraco.Core.PluginManager - Completed resolution of types of umbraco.interfaces.IApplication, found 0 (took 6ms)
- 2016-12-20 19:09:35,052 [P6972/D2/T12] INFO  Umbraco.Core.PluginManager - Starting resolution types of umbraco.interfaces.ITree
- 2016-12-20 19:09:35,060 [P6972/D2/T12] INFO  Umbraco.Core.PluginManager - Completed resolution of types of umbraco.interfaces.ITree, found 0 (took 7ms)
- 2016-12-20 19:09:35,071 [P6972/D2/T12] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Web.Trees.TreeController
- 2016-12-20 19:09:35,071 [P6972/D2/T12] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Web.Trees.TreeController, found 0 (took 0ms)
- 2016-12-20 19:09:35,073 [P6972/D2/T12] INFO  Umbraco.Core.PluginManager - Starting resolution types of umbraco.interfaces.ITree
- 2016-12-20 19:09:35,079 [P6972/D2/T12] INFO  Umbraco.Core.PluginManager - Completed resolution of types of umbraco.interfaces.ITree, found 0 (took 6ms)
- 2016-12-20 19:09:38,030 [P6972/D2/T12] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Web.HealthCheck.HealthCheck
- 2016-12-20 19:09:38,034 [P6972/D2/T12] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Web.HealthCheck.HealthCheck, found 0 (took 4ms)
- 2016-12-20 19:10:47,345 [P6972/D2/T36] WARN  umbraco.macro - Error loading partial view macro (View: ~/Views/MacroPartials/EXHIBITIONS_ARTIST_RELATE.cshtml). Exception: No applicable method 'Contains' exists in type 'Func`2' (at index 81)
- 2016-12-20 19:10:47,345 [P6972/D2/T36] WARN  umbraco.macro - Error loading Partial View (file: ~/Views/MacroPartials/EXHIBITIONS_ARTIST_RELATE.cshtml). Exception: No applicable method 'Contains' exists in type 'Func`2' (at index 81)
- 2016-12-20 19:11:39,261 [P6972/D2/T29] WARN  umbraco.macro - Error loading partial view macro (View: ~/Views/MacroPartials/EXHIBITIONS_ARTIST_RELATE.cshtml). Exception: No applicable method 'Contains' exists in type 'Func`2' (at index 81)
- 2016-12-20 19:11:39,261 [P6972/D2/T29] WARN  umbraco.macro - Error loading Partial View (file: ~/Views/MacroPartials/EXHIBITIONS_ARTIST_RELATE.cshtml). Exception: No applicable method 'Contains' exists in type 'Func`2' (at index 81)
- 2016-12-20 19:12:06,333 [P6972/D2/T29] WARN  umbraco.macro - Error loading partial view macro (View: ~/Views/MacroPartials/EXHIBITIONS_ARTIST_RELATE.cshtml). Exception: System.Web.HttpCompileException (0x80004005): c:\queengallery\queengallery\Views\MacroPartials\EXHIBITIONS_ARTIST_RELATE.cshtml(42): error CS0103: The name 'itemExhibitions' does not exist in the current context
-   at System.Web.Compilation.AssemblyBuilder.Compile()
-   at System.Web.Compilation.BuildProvidersCompiler.PerformBuild()
-   at System.Web.Compilation.BuildManager.CompileWebFile(VirtualPath virtualPath)
-   at System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
-   at System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
-   at System.Web.Compilation.BuildManager.GetVirtualPathObjectFactory(VirtualPath virtualPath, HttpContext context, Boolean allowCrossApp, Boolean throwIfNotFound)
-   at System.Web.Compilation.BuildManager.GetCompiledType(VirtualPath virtualPath)
-   at System.Web.Compilation.BuildManager.GetCompiledType(String virtualPath)
-   at System.Web.Mvc.BuildManagerWrapper.System.Web.Mvc.IBuildManager.GetCompiledType(String virtualPath)
-   at System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
-   at Umbraco.Core.Profiling.ProfilingView.Render(ViewContext viewContext, TextWriter writer)
-   at Umbraco.Web.Mvc.ControllerExtensions.RenderViewResultAsString(ControllerBase controller, ViewResultBase viewResult)
-   at Umbraco.Web.Macros.PartialViewMacroEngine.Execute(MacroModel macro, IPublishedContent content)
-   at Umbraco.Web.Macros.PartialViewMacroEngine.Execute(MacroModel macro, INode node)
-   at umbraco.macro.LoadPartialViewMacro(MacroModel macro)
-   at umbraco.macro.renderMacro(Hashtable pageElements, Int32 pageId)
- 2016-12-20 19:12:06,333 [P6972/D2/T29] WARN  umbraco.macro - Error loading Partial View (file: ~/Views/MacroPartials/EXHIBITIONS_ARTIST_RELATE.cshtml). Exception: System.Web.HttpCompileException (0x80004005): c:\queengallery\queengallery\Views\MacroPartials\EXHIBITIONS_ARTIST_RELATE.cshtml(42): error CS0103: The name 'itemExhibitions' does not exist in the current context
-   at System.Web.Compilation.AssemblyBuilder.Compile()
-   at System.Web.Compilation.BuildProvidersCompiler.PerformBuild()
-   at System.Web.Compilation.BuildManager.CompileWebFile(VirtualPath virtualPath)
-   at System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
-   at System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
-   at System.Web.Compilation.BuildManager.GetVirtualPathObjectFactory(VirtualPath virtualPath, HttpContext context, Boolean allowCrossApp, Boolean throwIfNotFound)
-   at System.Web.Compilation.BuildManager.GetCompiledType(VirtualPath virtualPath)
-   at System.Web.Compilation.BuildManager.GetCompiledType(String virtualPath)
-   at System.Web.Mvc.BuildManagerWrapper.System.Web.Mvc.IBuildManager.GetCompiledType(String virtualPath)
-   at System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
-   at Umbraco.Core.Profiling.ProfilingView.Render(ViewContext viewContext, TextWriter writer)
-   at Umbraco.Web.Mvc.ControllerExtensions.RenderViewResultAsString(ControllerBase controller, ViewResultBase viewResult)
-   at Umbraco.Web.Macros.PartialViewMacroEngine.Execute(MacroModel macro, IPublishedContent content)
-   at Umbraco.Web.Macros.PartialViewMacroEngine.Execute(MacroModel macro, INode node)
-   at umbraco.macro.LoadPartialViewMacro(MacroModel macro)
-   at umbraco.macro.renderMacro(Hashtable pageElements, Int32 pageId)
- 2016-12-20 19:18:18,608 [P6972/D2/T108] WARN  umbraco.macro - Error loading partial view macro (View: ~/Views/MacroPartials/EXHIBITIONS_ARTIST_RELATE.cshtml). Exception: No applicable method 'Contains' exists in type 'Func`2' (at index 81)
- 2016-12-20 19:18:18,608 [P6972/D2/T108] WARN  umbraco.macro - Error loading Partial View (file: ~/Views/MacroPartials/EXHIBITIONS_ARTIST_RELATE.cshtml). Exception: No applicable method 'Contains' exists in type 'Func`2' (at index 81)
- 2016-12-20 19:20:21,019 [P6972/D2/T90] WARN  umbraco.macro - Error loading partial view macro (View: ~/Views/MacroPartials/EXHIBITIONS_ARTIST_RELATE.cshtml). Exception: Syntax error (at index 19)
- 2016-12-20 19:20:21,019 [P6972/D2/T90] WARN  umbraco.macro - Error loading Partial View (file: ~/Views/MacroPartials/EXHIBITIONS_ARTIST_RELATE.cshtml). Exception: Syntax error (at index 19)
- 2016-12-20 19:20:30,014 [P6972/D2/T51] WARN  umbraco.macro - Error loading partial view macro (View: ~/Views/MacroPartials/EXHIBITIONS_ARTIST_RELATE.cshtml). Exception: Syntax error (at index 19)
- 2016-12-20 19:20:30,014 [P6972/D2/T51] WARN  umbraco.macro - Error loading Partial View (file: ~/Views/MacroPartials/EXHIBITIONS_ARTIST_RELATE.cshtml). Exception: Syntax error (at index 19)
- 2016-12-20 19:21:11,813 [P6972/D2/T97] WARN  umbraco.macro - Error loading partial view macro (View: ~/Views/MacroPartials/EXHIBITIONS_ARTIST_RELATE.cshtml). Exception: System.ArgumentException: Expression of type 'System.Func`2[Umbraco.Web.Models.DynamicPublishedContent,System.Object]' cannot be used for parameter of type 'System.Char[]' of method 'System.String[] Split(Char[])'
-   at System.Linq.Expressions.Expression.ValidateOneArgument(MethodBase method, ExpressionType nodeKind, Expression arg, ParameterInfo pi)
-   at System.Linq.Expressions.Expression.ValidateArgumentTypes(MethodBase method, ExpressionType nodeKind, ReadOnlyCollection`1& arguments)
-   at System.Linq.Expressions.Expression.Call(Expression instance, MethodInfo method, IEnumerable`1 arguments)
-   at Umbraco.Web.Dynamics.ExpressionParser`1.CallMethodOnDynamicNode(Expression instance, Expression[] args, LambdaExpression instanceAsString, ParameterExpression instanceExpression, MethodInfo method, Boolean isStatic)
-   at Umbraco.Web.Dynamics.ExpressionParser`1.ParseMemberAccess(Type type, Expression instance)
-   at Umbraco.Web.Dynamics.ExpressionParser`1.ParsePrimary()
-   at Umbraco.Web.Dynamics.ExpressionParser`1.ParseUnary()
-   at Umbraco.Web.Dynamics.ExpressionParser`1.ParseMultiplicative()
-   at Umbraco.Web.Dynamics.ExpressionParser`1.ParseAdditive()
-   at Umbraco.Web.Dynamics.ExpressionParser`1.ParseComparison()
-   at Umbraco.Web.Dynamics.ExpressionParser`1.ParseLogicalAnd()
-   at Umbraco.Web.Dynamics.ExpressionParser`1.ParseLogicalOr()
-   at Umbraco.Web.Dynamics.ExpressionParser`1.ParseExpression()
-   at Umbraco.Web.Dynamics.ExpressionParser`1.Parse(Type resultType)
-   at Umbraco.Web.Dynamics.DynamicExpression.ParseLambda[T](ParameterExpression[] parameters, Type resultType, String expression, Boolean convertDynamicNullToBooleanFalse, Object[] values)
-   at Umbraco.Web.Dynamics.DynamicExpression.ParseLambda[T](Type itType, Type resultType, String expression, Boolean convertDynamicNullToBooleanFalse, Object[] values)
-   at Umbraco.Web.Dynamics.DynamicQueryable.Where[T](IQueryable source, String predicate, Object[] values)
-   at Umbraco.Web.Dynamics.DynamicQueryable.Where[T](IQueryable`1 source, String predicate, Object[] values)
-   at Umbraco.Web.Models.DynamicPublishedContentList.Where[T](String predicate, Object[] values)
-   at Umbraco.Web.Models.DynamicPublishedContentList.TryInvokeMember(InvokeMemberBinder binder, Object[] args, Object& result)
-   at CallSite.Target(Closure , CallSite , Object , String )
-   at System.Dynamic.UpdateDelegates.UpdateAndExecute2[T0,T1,TRet](CallSite site, T0 arg0, T1 arg1)
-   at ASP._Page_Views_MacroPartials_EXHIBITIONS_ARTIST_RELATE_cshtml.Execute() in c:\queengallery\queengallery\Views\MacroPartials\EXHIBITIONS_ARTIST_RELATE.cshtml:line 48
-   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
-   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
-   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
-   at System.Web.Mvc.RazorView.RenderView(ViewContext viewContext, TextWriter writer, Object instance)
-   at System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
-   at Umbraco.Core.Profiling.ProfilingView.Render(ViewContext viewContext, TextWriter writer)
-   at Umbraco.Web.Mvc.ControllerExtensions.RenderViewResultAsString(ControllerBase controller, ViewResultBase viewResult)
-   at Umbraco.Web.Macros.PartialViewMacroEngine.Execute(MacroModel macro, IPublishedContent content)
-   at Umbraco.Web.Macros.PartialViewMacroEngine.Execute(MacroModel macro, INode node)
-   at umbraco.macro.LoadPartialViewMacro(MacroModel macro)
-   at umbraco.macro.renderMacro(Hashtable pageElements, Int32 pageId)
- 2016-12-20 19:21:11,813 [P6972/D2/T97] WARN  umbraco.macro - Error loading Partial View (file: ~/Views/MacroPartials/EXHIBITIONS_ARTIST_RELATE.cshtml). Exception: System.ArgumentException: Expression of type 'System.Func`2[Umbraco.Web.Models.DynamicPublishedContent,System.Object]' cannot be used for parameter of type 'System.Char[]' of method 'System.String[] Split(Char[])'
-   at System.Linq.Expressions.Expression.ValidateOneArgument(MethodBase method, ExpressionType nodeKind, Expression arg, ParameterInfo pi)
-   at System.Linq.Expressions.Expression.ValidateArgumentTypes(MethodBase method, ExpressionType nodeKind, ReadOnlyCollection`1& arguments)
-   at System.Linq.Expressions.Expression.Call(Expression instance, MethodInfo method, IEnumerable`1 arguments)
-   at Umbraco.Web.Dynamics.ExpressionParser`1.CallMethodOnDynamicNode(Expression instance, Expression[] args, LambdaExpression instanceAsString, ParameterExpression instanceExpression, MethodInfo method, Boolean isStatic)
-   at Umbraco.Web.Dynamics.ExpressionParser`1.ParseMemberAccess(Type type, Expression instance)
-   at Umbraco.Web.Dynamics.ExpressionParser`1.ParsePrimary()
-   at Umbraco.Web.Dynamics.ExpressionParser`1.ParseUnary()
-   at Umbraco.Web.Dynamics.ExpressionParser`1.ParseMultiplicative()
-   at Umbraco.Web.Dynamics.ExpressionParser`1.ParseAdditive()
-   at Umbraco.Web.Dynamics.ExpressionParser`1.ParseComparison()
-   at Umbraco.Web.Dynamics.ExpressionParser`1.ParseLogicalAnd()
-   at Umbraco.Web.Dynamics.ExpressionParser`1.ParseLogicalOr()
-   at Umbraco.Web.Dynamics.ExpressionParser`1.ParseExpression()
-   at Umbraco.Web.Dynamics.ExpressionParser`1.Parse(Type resultType)
-   at Umbraco.Web.Dynamics.DynamicExpression.ParseLambda[T](ParameterExpression[] parameters, Type resultType, String expression, Boolean convertDynamicNullToBooleanFalse, Object[] values)
-   at Umbraco.Web.Dynamics.DynamicExpression.ParseLambda[T](Type itType, Type resultType, String expression, Boolean convertDynamicNullToBooleanFalse, Object[] values)
-   at Umbraco.Web.Dynamics.DynamicQueryable.Where[T](IQueryable source, String predicate, Object[] values)
-   at Umbraco.Web.Dynamics.DynamicQueryable.Where[T](IQueryable`1 source, String predicate, Object[] values)
-   at Umbraco.Web.Models.DynamicPublishedContentList.Where[T](String predicate, Object[] values)
-   at Umbraco.Web.Models.DynamicPublishedContentList.TryInvokeMember(InvokeMemberBinder binder, Object[] args, Object& result)
-   at CallSite.Target(Closure , CallSite , Object , String )
-   at System.Dynamic.UpdateDelegates.UpdateAndExecute2[T0,T1,TRet](CallSite site, T0 arg0, T1 arg1)
-   at ASP._Page_Views_MacroPartials_EXHIBITIONS_ARTIST_RELATE_cshtml.Execute() in c:\queengallery\queengallery\Views\MacroPartials\EXHIBITIONS_ARTIST_RELATE.cshtml:line 48
-   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
-   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
-   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
-   at System.Web.Mvc.RazorView.RenderView(ViewContext viewContext, TextWriter writer, Object instance)
-   at System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
-   at Umbraco.Core.Profiling.ProfilingView.Render(ViewContext viewContext, TextWriter writer)
-   at Umbraco.Web.Mvc.ControllerExtensions.RenderViewResultAsString(ControllerBase controller, ViewResultBase viewResult)
-   at Umbraco.Web.Macros.PartialViewMacroEngine.Execute(MacroModel macro, IPublishedContent content)
-   at Umbraco.Web.Macros.PartialViewMacroEngine.Execute(MacroModel macro, INode node)
-   at umbraco.macro.LoadPartialViewMacro(MacroModel macro)
-   at umbraco.macro.renderMacro(Hashtable pageElements, Int32 pageId)
- 2016-12-20 19:21:22,656 [P6972/D2/T57] WARN  umbraco.macro - Error loading partial view macro (View: ~/Views/MacroPartials/EXHIBITIONS_ARTIST_RELATE.cshtml). Exception: No applicable method 'Split' exists in type 'String' (at index 64)
- 2016-12-20 19:21:22,656 [P6972/D2/T57] WARN  umbraco.macro - Error loading Partial View (file: ~/Views/MacroPartials/EXHIBITIONS_ARTIST_RELATE.cshtml). Exception: No applicable method 'Split' exists in type 'String' (at index 64)
- 2016-12-20 19:21:36,927 [P6972/D2/T57] WARN  umbraco.macro - Error loading partial view macro (View: ~/Views/MacroPartials/EXHIBITIONS_ARTIST_RELATE.cshtml). Exception: System.Web.HttpCompileException (0x80004005): c:\queengallery\queengallery\Views\MacroPartials\EXHIBITIONS_ARTIST_RELATE.cshtml(48): error CS1525: Invalid expression term '/'
-   at System.Web.Compilation.AssemblyBuilder.Compile()
-   at System.Web.Compilation.BuildProvidersCompiler.PerformBuild()
-   at System.Web.Compilation.BuildManager.CompileWebFile(VirtualPath virtualPath)
-   at System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
-   at System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
-   at System.Web.Compilation.BuildManager.GetVirtualPathObjectFactory(VirtualPath virtualPath, HttpContext context, Boolean allowCrossApp, Boolean throwIfNotFound)
-   at System.Web.Compilation.BuildManager.GetCompiledType(VirtualPath virtualPath)
-   at System.Web.Compilation.BuildManager.GetCompiledType(String virtualPath)
-   at System.Web.Mvc.BuildManagerWrapper.System.Web.Mvc.IBuildManager.GetCompiledType(String virtualPath)
-   at System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
-   at Umbraco.Core.Profiling.ProfilingView.Render(ViewContext viewContext, TextWriter writer)
-   at Umbraco.Web.Mvc.ControllerExtensions.RenderViewResultAsString(ControllerBase controller, ViewResultBase viewResult)
-   at Umbraco.Web.Macros.PartialViewMacroEngine.Execute(MacroModel macro, IPublishedContent content)
-   at Umbraco.Web.Macros.PartialViewMacroEngine.Execute(MacroModel macro, INode node)
-   at umbraco.macro.LoadPartialViewMacro(MacroModel macro)
-   at umbraco.macro.renderMacro(Hashtable pageElements, Int32 pageId)
- 2016-12-20 19:21:36,927 [P6972/D2/T57] WARN  umbraco.macro - Error loading Partial View (file: ~/Views/MacroPartials/EXHIBITIONS_ARTIST_RELATE.cshtml). Exception: System.Web.HttpCompileException (0x80004005): c:\queengallery\queengallery\Views\MacroPartials\EXHIBITIONS_ARTIST_RELATE.cshtml(48): error CS1525: Invalid expression term '/'
-   at System.Web.Compilation.AssemblyBuilder.Compile()
-   at System.Web.Compilation.BuildProvidersCompiler.PerformBuild()
-   at System.Web.Compilation.BuildManager.CompileWebFile(VirtualPath virtualPath)
-   at System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
-   at System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
-   at System.Web.Compilation.BuildManager.GetVirtualPathObjectFactory(VirtualPath virtualPath, HttpContext context, Boolean allowCrossApp, Boolean throwIfNotFound)
-   at System.Web.Compilation.BuildManager.GetCompiledType(VirtualPath virtualPath)
-   at System.Web.Compilation.BuildManager.GetCompiledType(String virtualPath)
-   at System.Web.Mvc.BuildManagerWrapper.System.Web.Mvc.IBuildManager.GetCompiledType(String virtualPath)
-   at System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
-   at Umbraco.Core.Profiling.ProfilingView.Render(ViewContext viewContext, TextWriter writer)
-   at Umbraco.Web.Mvc.ControllerExtensions.RenderViewResultAsString(ControllerBase controller, ViewResultBase viewResult)
-   at Umbraco.Web.Macros.PartialViewMacroEngine.Execute(MacroModel macro, IPublishedContent content)
-   at Umbraco.Web.Macros.PartialViewMacroEngine.Execute(MacroModel macro, INode node)
-   at umbraco.macro.LoadPartialViewMacro(MacroModel macro)
-   at umbraco.macro.renderMacro(Hashtable pageElements, Int32 pageId)
- 2016-12-20 19:21:50,727 [P6972/D2/T87] WARN  umbraco.macro - Error loading partial view macro (View: ~/Views/MacroPartials/EXHIBITIONS_ARTIST_RELATE.cshtml). Exception: No applicable method 'Contains' exists in type 'Func`2' (at index 81)
- 2016-12-20 19:21:50,727 [P6972/D2/T87] WARN  umbraco.macro - Error loading Partial View (file: ~/Views/MacroPartials/EXHIBITIONS_ARTIST_RELATE.cshtml). Exception: No applicable method 'Contains' exists in type 'Func`2' (at index 81)
- 2016-12-20 19:25:05,675 [P6972/D2/T37] WARN  umbraco.macro - Error loading partial view macro (View: ~/Views/MacroPartials/EXHIBITIONS_ARTIST_RELATE.cshtml). Exception: No applicable method 'Contains' exists in type 'Func`2' (at index 81)
- 2016-12-20 19:25:05,675 [P6972/D2/T37] WARN  umbraco.macro - Error loading Partial View (file: ~/Views/MacroPartials/EXHIBITIONS_ARTIST_RELATE.cshtml). Exception: No applicable method 'Contains' exists in type 'Func`2' (at index 81)
- 2016-12-20 19:26:58,922 [P6972/D2/T88] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field min
- 2016-12-20 19:26:58,922 [P6972/D2/T88] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field step
- 2016-12-20 19:26:58,922 [P6972/D2/T88] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field max
- 2016-12-20 19:27:21,428 [P6972/D2/T46] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Web.Trees.TreeController
- 2016-12-20 19:27:21,428 [P6972/D2/T46] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Web.Trees.TreeController, found 0 (took 0ms)
- 2016-12-20 19:27:21,725 [P6972/D2/T88] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field min
- 2016-12-20 19:27:21,725 [P6972/D2/T88] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field step
- 2016-12-20 19:27:21,725 [P6972/D2/T88] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field max
- 2016-12-20 19:27:26,810 [P6972/D2/T63] WARN  umbraco.macro - Error loading partial view macro (View: ~/Views/MacroPartials/EXHIBITIONS_ARTIST_RELATE.cshtml). Exception: No applicable method 'Contains' exists in type 'Func`2' (at index 81)
- 2016-12-20 19:27:26,810 [P6972/D2/T63] WARN  umbraco.macro - Error loading Partial View (file: ~/Views/MacroPartials/EXHIBITIONS_ARTIST_RELATE.cshtml). Exception: No applicable method 'Contains' exists in type 'Func`2' (at index 81)
- 2016-12-20 19:27:35,947 [P6972/D2/T63] WARN  umbraco.macro - Error loading partial view macro (View: ~/Views/MacroPartials/EXHIBITIONS_ARTIST_RELATE.cshtml). Exception: No applicable method 'Contains' exists in type 'Func`2' (at index 81)
- 2016-12-20 19:27:35,947 [P6972/D2/T63] WARN  umbraco.macro - Error loading Partial View (file: ~/Views/MacroPartials/EXHIBITIONS_ARTIST_RELATE.cshtml). Exception: No applicable method 'Contains' exists in type 'Func`2' (at index 81)
- 2016-12-20 19:27:38,412 [P6972/D2/T71] WARN  umbraco.macro - Error loading partial view macro (View: ~/Views/MacroPartials/EXHIBITIONS_ARTIST_RELATE.cshtml). Exception: No applicable method 'Contains' exists in type 'Func`2' (at index 81)
- 2016-12-20 19:27:38,412 [P6972/D2/T71] WARN  umbraco.macro - Error loading Partial View (file: ~/Views/MacroPartials/EXHIBITIONS_ARTIST_RELATE.cshtml). Exception: No applicable method 'Contains' exists in type 'Func`2' (at index 81)
- 2016-12-20 19:27:39,431 [P6972/D2/T71] WARN  umbraco.macro - Error loading partial view macro (View: ~/Views/MacroPartials/EXHIBITIONS_ARTIST_RELATE.cshtml). Exception: No applicable method 'Contains' exists in type 'Func`2' (at index 81)
- 2016-12-20 19:27:39,431 [P6972/D2/T71] WARN  umbraco.macro - Error loading Partial View (file: ~/Views/MacroPartials/EXHIBITIONS_ARTIST_RELATE.cshtml). Exception: No applicable method 'Contains' exists in type 'Func`2' (at index 81)
- 2016-12-20 19:34:57,344 [P6972/D2/T117] WARN  umbraco.macro - Error loading partial view macro (View: ~/Views/MacroPartials/EXHIBITIONS_ARTIST_RELATE.cshtml). Exception: No applicable method 'Contains' exists in type 'Func`2' (at index 81)
- 2016-12-20 19:34:57,344 [P6972/D2/T117] WARN  umbraco.macro - Error loading Partial View (file: ~/Views/MacroPartials/EXHIBITIONS_ARTIST_RELATE.cshtml). Exception: No applicable method 'Contains' exists in type 'Func`2' (at index 81)
- 2016-12-20 19:35:25,995 [P6972/D2/T100] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field min
- 2016-12-20 19:35:25,995 [P6972/D2/T100] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field step
- 2016-12-20 19:35:25,995 [P6972/D2/T100] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field max
- 2016-12-20 19:43:37,004 [P6972/D2/T151] WARN  umbraco.macro - Error loading partial view macro (View: ~/Views/MacroPartials/EXHIBITIONS_ARTIST_RELATE.cshtml). Exception: Identifier expected (at index 81)
- 2016-12-20 19:43:37,004 [P6972/D2/T151] WARN  umbraco.macro - Error loading Partial View (file: ~/Views/MacroPartials/EXHIBITIONS_ARTIST_RELATE.cshtml). Exception: Identifier expected (at index 81)
- 2016-12-20 19:43:59,842 [P6972/D2/T151] WARN  umbraco.macro - Error loading partial view macro (View: ~/Views/MacroPartials/EXHIBITIONS_ARTIST_RELATE.cshtml). Exception: No applicable method 'Contains' exists in type 'Func`2' (at index 92)
- 2016-12-20 19:43:59,842 [P6972/D2/T151] WARN  umbraco.macro - Error loading Partial View (file: ~/Views/MacroPartials/EXHIBITIONS_ARTIST_RELATE.cshtml). Exception: No applicable method 'Contains' exists in type 'Func`2' (at index 92)
- 2016-12-20 19:44:01,557 [P6972/D2/T151] WARN  umbraco.macro - Error loading partial view macro (View: ~/Views/MacroPartials/EXHIBITIONS_ARTIST_RELATE.cshtml). Exception: No applicable method 'Contains' exists in type 'Func`2' (at index 92)
- 2016-12-20 19:44:01,557 [P6972/D2/T151] WARN  umbraco.macro - Error loading Partial View (file: ~/Views/MacroPartials/EXHIBITIONS_ARTIST_RELATE.cshtml). Exception: No applicable method 'Contains' exists in type 'Func`2' (at index 92)
- 2016-12-20 19:44:28,919 [P6972/D2/T150] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [KeepAlive] Terminating
- 2016-12-20 19:44:28,919 [P6972/D2/T150] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [KeepAlive] Waiting for tasks to complete
- 2016-12-20 19:44:28,919 [P6972/D2/T150] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledTasks] Terminating
- 2016-12-20 19:44:28,919 [P6972/D2/T150] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledTasks] Waiting for tasks to complete
- 2016-12-20 19:44:28,920 [P6972/D2/T139] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledTasks] Tasks completed, terminated
- 2016-12-20 19:44:28,920 [P6972/D2/T151] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [KeepAlive] Tasks completed, terminated
- 2016-12-20 19:44:28,932 [P6972/D2/T150] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledPublishing] Terminating
- 2016-12-20 19:44:28,932 [P6972/D2/T150] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledPublishing] Waiting for tasks to complete
- 2016-12-20 19:44:28,932 [P6972/D2/T150] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [LogScrubber] Terminating
- 2016-12-20 19:44:28,932 [P6972/D2/T150] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [LogScrubber] Waiting for tasks to complete
- 2016-12-20 19:44:28,932 [P6972/D2/T150] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [Umbraco.Web.Scheduling.IBackgroundTask] Terminating
- 2016-12-20 19:44:28,932 [P6972/D2/T150] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [Umbraco.Web.Scheduling.IBackgroundTask] Waiting for tasks to complete
- 2016-12-20 19:44:28,932 [P6972/D2/T16] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [LogScrubber] Tasks completed, terminated
- 2016-12-20 19:44:28,932 [P6972/D2/T121] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledPublishing] Tasks completed, terminated
- 2016-12-20 19:44:28,932 [P6972/D2/T132] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [Umbraco.Web.Scheduling.IBackgroundTask] Tasks completed, terminated
- 2016-12-20 19:44:29,444 [P6972/D3/T101] INFO  Umbraco.Core.CoreBootManager - Umbraco 7.5.4 application starting on HOMEPC
- 2016-12-20 19:44:29,457 [P6972/D3/T101] INFO  Umbraco.Core.PluginManager - Determining hash of code files on disk
- 2016-12-20 19:44:29,463 [P6972/D3/T101] INFO  Umbraco.Core.PluginManager - Hash determined (took 6ms)
- 2016-12-20 19:44:29,501 [P6972/D3/T101] INFO  Umbraco.Core.PluginManager - Starting resolution types of umbraco.interfaces.IApplicationStartupHandler
- 2016-12-20 19:44:29,543 [P6972/D3/T101] INFO  Umbraco.Core.PluginManager - Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 0 (took 41ms)
- 2016-12-20 19:44:29,573 [P6972/D3/T101] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter
- 2016-12-20 19:44:29,574 [P6972/D3/T101] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 0ms)
- 2016-12-20 19:44:29,574 [P6972/D3/T101] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyValueConverter
- 2016-12-20 19:44:29,575 [P6972/D3/T101] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyValueConverter, found 0 (took 1ms)
- 2016-12-20 19:44:29,582 [P6972/D3/T101] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Web.Mvc.SurfaceController
- 2016-12-20 19:44:29,588 [P6972/D3/T101] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 0 (took 5ms)
- 2016-12-20 19:44:29,588 [P6972/D3/T101] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Web.WebApi.UmbracoApiController
- 2016-12-20 19:44:29,593 [P6972/D3/T101] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Web.WebApi.UmbracoApiController, found 0 (took 4ms)
- 2016-12-20 19:44:29,630 [P6972/D3/T101] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.Media.IThumbnailProvider
- 2016-12-20 19:44:29,631 [P6972/D3/T101] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 0 (took 0ms)
- 2016-12-20 19:44:29,631 [P6972/D3/T101] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.Media.IImageUrlProvider
- 2016-12-20 19:44:29,632 [P6972/D3/T101] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 0 (took 0ms)
- 2016-12-20 19:44:30,268 [P6972/D3/T101] INFO  Umbraco.Core.DatabaseContext - CanConnect = True
- 2016-12-20 19:44:30,439 [P6972/D3/T101] INFO  Umbraco.Core.DatabaseContext - CanConnect = True
- 2016-12-20 19:44:30,441 [P6972/D3/T101] INFO  Umbraco.Core.DatabaseContext - CanConnect = True
- 2016-12-20 19:44:30,467 [P6972/D3/T101] INFO  Umbraco.Web.Cache.CacheRefresherEventHandler - Initializing Umbraco internal event handlers for cache refreshing
- 2016-12-20 19:44:30,545 [P6972/D3/T101] INFO  Umbraco.Web.Search.ExamineEvents - Initializing Examine and binding to business logic events
- 2016-12-20 19:44:30,545 [P6972/D3/T101] INFO  Umbraco.Web.Search.ExamineEvents - Adding examine event handlers for index providers: 3
- 2016-12-20 19:44:30,554 [P6972/D3/T101] INFO  Umbraco.Core.CoreBootManager - Umbraco application startup complete (took 1158ms)
- 2016-12-20 19:44:30,966 [P6972/D3/T6] INFO  Umbraco.Core.Sync.ApplicationUrlHelper - ApplicationUrl: http://localhost:17606/umbraco (UmbracoModule request)
- 2016-12-20 19:44:31,431 [P6972/D3/T6] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Web.Trees.TreeController
- 2016-12-20 19:44:31,432 [P6972/D3/T6] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Web.Trees.TreeController, found 0 (took 1ms)
- 2016-12-20 19:44:31,434 [P6972/D3/T6] INFO  Umbraco.Core.PluginManager - Starting resolution types of umbraco.interfaces.ITree
- 2016-12-20 19:44:31,434 [P6972/D3/T6] INFO  Umbraco.Core.PluginManager - Completed resolution of types of umbraco.interfaces.ITree, found 0 (took 0ms)
- 2016-12-20 19:44:31,540 [P6972/D3/T6] INFO  Umbraco.Core.PluginManager - Starting resolution types of umbraco.interfaces.ITree
- 2016-12-20 19:44:31,541 [P6972/D3/T6] INFO  Umbraco.Core.PluginManager - Completed resolution of types of umbraco.interfaces.ITree, found 0 (took 0ms)
- 2016-12-20 19:44:31,561 [P6972/D3/T6] INFO  Umbraco.Core.PluginManager - Starting resolution types of umbraco.interfaces.IApplication
- 2016-12-20 19:44:31,562 [P6972/D3/T6] INFO  Umbraco.Core.PluginManager - Completed resolution of types of umbraco.interfaces.IApplication, found 0 (took 0ms)
- 2016-12-20 19:44:58,974 [P6972/D2/T137] INFO  Umbraco.Core.UmbracoApplicationBase - Application shutdown. Details: MaxRecompilationsReached
+﻿ 2016-12-21 18:45:31,911 [P14092/D2/T1] INFO  Umbraco.Core.CoreBootManager - Umbraco 7.5.4 application starting on HOMEPC
+ 2016-12-21 18:45:31,924 [P14092/D2/T1] INFO  Umbraco.Core.PluginManager - Determining hash of code files on disk
+ 2016-12-21 18:45:31,930 [P14092/D2/T1] INFO  Umbraco.Core.PluginManager - Hash determined (took 6ms)
+ 2016-12-21 18:45:31,980 [P14092/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of umbraco.interfaces.IApplicationStartupHandler
+ 2016-12-21 18:45:32,020 [P14092/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 0 (took 40ms)
+ 2016-12-21 18:45:32,059 [P14092/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter
+ 2016-12-21 18:45:32,059 [P14092/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 0ms)
+ 2016-12-21 18:45:32,059 [P14092/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyValueConverter
+ 2016-12-21 18:45:32,060 [P14092/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyValueConverter, found 0 (took 0ms)
+ 2016-12-21 18:45:32,068 [P14092/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Web.Mvc.SurfaceController
+ 2016-12-21 18:45:32,075 [P14092/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 0 (took 6ms)
+ 2016-12-21 18:45:32,075 [P14092/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Web.WebApi.UmbracoApiController
+ 2016-12-21 18:45:32,079 [P14092/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Web.WebApi.UmbracoApiController, found 0 (took 3ms)
+ 2016-12-21 18:45:32,128 [P14092/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.Media.IThumbnailProvider
+ 2016-12-21 18:45:32,128 [P14092/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 0 (took 0ms)
+ 2016-12-21 18:45:32,128 [P14092/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.Media.IImageUrlProvider
+ 2016-12-21 18:45:32,129 [P14092/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 0 (took 0ms)
+ 2016-12-21 18:45:32,859 [P14092/D2/T1] INFO  Umbraco.Core.DatabaseContext - CanConnect = True
+ 2016-12-21 18:45:33,075 [P14092/D2/T1] INFO  Umbraco.Core.DatabaseContext - CanConnect = True
+ 2016-12-21 18:45:33,099 [P14092/D2/T1] INFO  Umbraco.Core.DatabaseContext - CanConnect = True
+ 2016-12-21 18:45:33,179 [P14092/D2/T1] INFO  Umbraco.Web.Cache.CacheRefresherEventHandler - Initializing Umbraco internal event handlers for cache refreshing
+ 2016-12-21 18:45:33,282 [P14092/D2/T1] INFO  Umbraco.Web.Search.ExamineEvents - Initializing Examine and binding to business logic events
+ 2016-12-21 18:45:33,283 [P14092/D2/T1] INFO  Umbraco.Web.Search.ExamineEvents - Adding examine event handlers for index providers: 3
+ 2016-12-21 18:45:33,293 [P14092/D2/T1] INFO  Umbraco.Core.CoreBootManager - Umbraco application startup complete (took 1431ms)
+ 2016-12-21 18:45:33,831 [P14092/D2/T11] INFO  Umbraco.Core.Sync.ApplicationUrlHelper - ApplicationUrl: http://localhost:17606/umbraco (UmbracoModule request)
+ 2016-12-21 18:45:34,098 [P14092/D2/T11] INFO  umbraco.content - Load Xml from file...
+ 2016-12-21 18:45:34,102 [P14092/D2/T11] INFO  umbraco.content - Loaded Xml from file.
+ 2016-12-21 18:45:34,552 [P14092/D2/T11] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.PropertyEditors.IParameterEditor
+ 2016-12-21 18:45:34,553 [P14092/D2/T11] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.PropertyEditors.IParameterEditor, found 0 (took 0ms)
+ 2016-12-21 18:45:45,579 [P14092/D2/T11] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.Persistence.Mappers.BaseMapper
+ 2016-12-21 18:45:45,579 [P14092/D2/T11] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.Persistence.Mappers.BaseMapper, found 0 (took 0ms)
+ 2016-12-21 18:45:45,709 [P14092/D2/T11] INFO  Umbraco.Core.PluginManager - Starting resolution types of umbraco.cms.businesslogic.macro.IMacroEngine
+ 2016-12-21 18:45:45,710 [P14092/D2/T11] INFO  Umbraco.Core.PluginManager - Completed resolution of types of umbraco.cms.businesslogic.macro.IMacroEngine, found 0 (took 0ms)
+ 2016-12-21 18:45:46,756 [P14092/D2/T11] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.PropertyEditors.IParameterEditor
+ 2016-12-21 18:45:46,756 [P14092/D2/T11] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.PropertyEditors.IParameterEditor, found 0 (took 0ms)
+ 2016-12-21 18:46:34,179 [P14092/D2/T16] INFO  umbraco.BusinessLogic.Log - Log scrubbed.  Removed all items older than 2559-12-20 18:46:34
+ 2016-12-21 19:30:01,935 [P14092/D2/T299] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [LogScrubber] Terminating
+ 2016-12-21 19:30:01,935 [P14092/D2/T299] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [LogScrubber] Waiting for tasks to complete
+ 2016-12-21 19:30:01,936 [P14092/D2/T299] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledPublishing] Terminating
+ 2016-12-21 19:30:01,936 [P14092/D2/T299] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledPublishing] Waiting for tasks to complete
+ 2016-12-21 19:30:01,936 [P14092/D2/T299] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [KeepAlive] Terminating
+ 2016-12-21 19:30:01,936 [P14092/D2/T299] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [KeepAlive] Waiting for tasks to complete
+ 2016-12-21 19:30:01,936 [P14092/D2/T299] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledTasks] Terminating
+ 2016-12-21 19:30:01,936 [P14092/D2/T299] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledTasks] Waiting for tasks to complete
+ 2016-12-21 19:30:01,936 [P14092/D2/T299] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [Umbraco.Web.Scheduling.IBackgroundTask] Terminating
+ 2016-12-21 19:30:01,936 [P14092/D2/T299] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [Umbraco.Web.Scheduling.IBackgroundTask] Waiting for tasks to complete
+ 2016-12-21 19:30:01,936 [P14092/D2/T11] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [LogScrubber] Tasks completed, terminated
+ 2016-12-21 19:30:01,936 [P14092/D2/T293] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [Umbraco.Web.Scheduling.IBackgroundTask] Tasks completed, terminated
+ 2016-12-21 19:30:01,937 [P14092/D2/T259] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [KeepAlive] Tasks completed, terminated
+ 2016-12-21 19:30:01,937 [P14092/D2/T231] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledTasks] Tasks completed, terminated
+ 2016-12-21 19:30:01,937 [P14092/D2/T295] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledPublishing] Tasks completed, terminated
+ 2016-12-21 19:30:31,973 [P14092/D2/T259] INFO  Umbraco.Core.UmbracoApplicationBase - Application shutdown. Details: ConfigurationChange
 
-_shutDownMessage=Recompilation limit of 15 reached
+_shutDownMessage=Change in App_Offline.htm
 HostingEnvironment initiated shutdown
+Change in App_Offline.htm
+Change in App_Offline.htm
+CONFIG change
+CONFIG change
+CONFIG change
 HostingEnvironment caused shutdown
 
 _shutDownStack=   at System.Environment.GetStackTrace(Exception e, Boolean needFileInfo)
@@ -296,112 +65,49 @@ _shutDownStack=   at System.Environment.GetStackTrace(Exception e, Boolean needF
    at System.Web.Hosting.HostingEnvironment.InitiateShutdownInternal()
    at System.Web.Hosting.HostingEnvironment.InitiateShutdownWithoutDemand()
    at System.Web.HttpRuntime.ShutdownAppDomain(String stackTrace)
-   at System.Web.Compilation.DiskBuildResultCache.ShutdownCallBack(Object state)
+   at System.Web.HttpRuntime.OnAppOfflineFileChange(Object sender, FileChangeEvent e)
+   at System.Web.DirectoryMonitor.FireNotifications()
+   at System.Web.Util.WorkItem.CallCallbackWithAssert(WorkItemCallback callback)
+   at System.Web.Util.WorkItem.OnQueueUserWorkItemCompletion(Object state)
    at System.Threading.QueueUserWorkItemCallback.WaitCallback_Context(Object state)
    at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
    at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
    at System.Threading.QueueUserWorkItemCallback.System.Threading.IThreadPoolWorkItem.ExecuteWorkItem()
    at System.Threading.ThreadPoolWorkQueue.Dispatch()
    at System.Threading._ThreadPoolWaitCallback.PerformWaitCallback()
- 2016-12-20 19:45:16,199 [P6972/D3/T99] INFO  umbraco.content - Load Xml from file...
- 2016-12-20 19:45:16,201 [P6972/D3/T99] INFO  umbraco.content - Loaded Xml from file.
- 2016-12-20 19:45:16,574 [P6972/D3/T99] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.PropertyEditors.IParameterEditor
- 2016-12-20 19:45:16,575 [P6972/D3/T99] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.PropertyEditors.IParameterEditor, found 0 (took 0ms)
- 2016-12-20 19:45:20,559 [P6972/D3/T99] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.Persistence.Mappers.BaseMapper
- 2016-12-20 19:45:20,561 [P6972/D3/T99] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.Persistence.Mappers.BaseMapper, found 0 (took 1ms)
- 2016-12-20 19:45:20,703 [P6972/D3/T99] INFO  Umbraco.Core.PluginManager - Starting resolution types of umbraco.cms.businesslogic.macro.IMacroEngine
- 2016-12-20 19:45:20,704 [P6972/D3/T99] INFO  Umbraco.Core.PluginManager - Completed resolution of types of umbraco.cms.businesslogic.macro.IMacroEngine, found 0 (took 0ms)
- 2016-12-20 19:45:21,787 [P6972/D3/T99] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.PropertyEditors.IParameterEditor
- 2016-12-20 19:45:21,787 [P6972/D3/T99] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.PropertyEditors.IParameterEditor, found 0 (took 0ms)
- 2016-12-20 19:45:31,431 [P6972/D3/T141] INFO  umbraco.BusinessLogic.Log - Log scrubbed.  Removed all items older than 2559-12-19 19:45:31
- 2016-12-20 19:46:11,103 [P6972/D3/T121] WARN  umbraco.macro - Error loading partial view macro (View: ~/Views/MacroPartials/EXHIBITIONS_ARTIST_RELATE.cshtml). Exception: No applicable method 'Split' exists in type 'String' (at index 22)
- 2016-12-20 19:46:11,103 [P6972/D3/T121] WARN  umbraco.macro - Error loading Partial View (file: ~/Views/MacroPartials/EXHIBITIONS_ARTIST_RELATE.cshtml). Exception: No applicable method 'Split' exists in type 'String' (at index 22)
- 2016-12-20 19:46:28,781 [P6972/D3/T16] WARN  umbraco.macro - Error loading partial view macro (View: ~/Views/MacroPartials/EXHIBITIONS_ARTIST_RELATE.cshtml). Exception: No applicable method 'Split' exists in type 'String' (at index 22)
- 2016-12-20 19:46:28,781 [P6972/D3/T16] WARN  umbraco.macro - Error loading Partial View (file: ~/Views/MacroPartials/EXHIBITIONS_ARTIST_RELATE.cshtml). Exception: No applicable method 'Split' exists in type 'String' (at index 22)
- 2016-12-20 19:46:33,740 [P6972/D3/T16] WARN  umbraco.macro - Error loading partial view macro (View: ~/Views/MacroPartials/EXHIBITIONS_ARTIST_RELATE.cshtml). Exception: No applicable method 'Split' exists in type 'String' (at index 22)
- 2016-12-20 19:46:33,740 [P6972/D3/T16] WARN  umbraco.macro - Error loading Partial View (file: ~/Views/MacroPartials/EXHIBITIONS_ARTIST_RELATE.cshtml). Exception: No applicable method 'Split' exists in type 'String' (at index 22)
- 2016-12-20 19:46:51,804 [P6972/D3/T127] WARN  umbraco.macro - Error loading partial view macro (View: ~/Views/MacroPartials/EXHIBITIONS_ARTIST_RELATE.cshtml). Exception: '(' expected (at index 32)
- 2016-12-20 19:46:51,804 [P6972/D3/T127] WARN  umbraco.macro - Error loading Partial View (file: ~/Views/MacroPartials/EXHIBITIONS_ARTIST_RELATE.cshtml). Exception: '(' expected (at index 32)
- 2016-12-20 19:47:00,366 [P6972/D3/T137] WARN  umbraco.macro - Error loading partial view macro (View: ~/Views/MacroPartials/EXHIBITIONS_ARTIST_RELATE.cshtml). Exception: System.Web.HttpCompileException (0x80004005): c:\queengallery\queengallery\Views\MacroPartials\EXHIBITIONS_ARTIST_RELATE.cshtml(48): error CS1525: Invalid expression term '/'
-   at System.Web.Compilation.AssemblyBuilder.Compile()
-   at System.Web.Compilation.BuildProvidersCompiler.PerformBuild()
-   at System.Web.Compilation.BuildManager.CompileWebFile(VirtualPath virtualPath)
-   at System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
-   at System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
-   at System.Web.Compilation.BuildManager.GetVirtualPathObjectFactory(VirtualPath virtualPath, HttpContext context, Boolean allowCrossApp, Boolean throwIfNotFound)
-   at System.Web.Compilation.BuildManager.GetCompiledType(VirtualPath virtualPath)
-   at System.Web.Compilation.BuildManager.GetCompiledType(String virtualPath)
-   at System.Web.Mvc.BuildManagerWrapper.System.Web.Mvc.IBuildManager.GetCompiledType(String virtualPath)
-   at System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
-   at Umbraco.Core.Profiling.ProfilingView.Render(ViewContext viewContext, TextWriter writer)
-   at Umbraco.Web.Mvc.ControllerExtensions.RenderViewResultAsString(ControllerBase controller, ViewResultBase viewResult)
-   at Umbraco.Web.Macros.PartialViewMacroEngine.Execute(MacroModel macro, IPublishedContent content)
-   at Umbraco.Web.Macros.PartialViewMacroEngine.Execute(MacroModel macro, INode node)
-   at umbraco.macro.LoadPartialViewMacro(MacroModel macro)
-   at umbraco.macro.renderMacro(Hashtable pageElements, Int32 pageId)
- 2016-12-20 19:47:00,366 [P6972/D3/T137] WARN  umbraco.macro - Error loading Partial View (file: ~/Views/MacroPartials/EXHIBITIONS_ARTIST_RELATE.cshtml). Exception: System.Web.HttpCompileException (0x80004005): c:\queengallery\queengallery\Views\MacroPartials\EXHIBITIONS_ARTIST_RELATE.cshtml(48): error CS1525: Invalid expression term '/'
-   at System.Web.Compilation.AssemblyBuilder.Compile()
-   at System.Web.Compilation.BuildProvidersCompiler.PerformBuild()
-   at System.Web.Compilation.BuildManager.CompileWebFile(VirtualPath virtualPath)
-   at System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
-   at System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
-   at System.Web.Compilation.BuildManager.GetVirtualPathObjectFactory(VirtualPath virtualPath, HttpContext context, Boolean allowCrossApp, Boolean throwIfNotFound)
-   at System.Web.Compilation.BuildManager.GetCompiledType(VirtualPath virtualPath)
-   at System.Web.Compilation.BuildManager.GetCompiledType(String virtualPath)
-   at System.Web.Mvc.BuildManagerWrapper.System.Web.Mvc.IBuildManager.GetCompiledType(String virtualPath)
-   at System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
-   at Umbraco.Core.Profiling.ProfilingView.Render(ViewContext viewContext, TextWriter writer)
-   at Umbraco.Web.Mvc.ControllerExtensions.RenderViewResultAsString(ControllerBase controller, ViewResultBase viewResult)
-   at Umbraco.Web.Macros.PartialViewMacroEngine.Execute(MacroModel macro, IPublishedContent content)
-   at Umbraco.Web.Macros.PartialViewMacroEngine.Execute(MacroModel macro, INode node)
-   at umbraco.macro.LoadPartialViewMacro(MacroModel macro)
-   at umbraco.macro.renderMacro(Hashtable pageElements, Int32 pageId)
- 2016-12-20 19:47:21,263 [P6972/D3/T9] WARN  umbraco.macro - Error loading partial view macro (View: ~/Views/MacroPartials/EXHIBITIONS_ARTIST_RELATE.cshtml). Exception: System.Web.HttpCompileException (0x80004005): c:\queengallery\queengallery\Views\MacroPartials\EXHIBITIONS_ARTIST_RELATE.cshtml(48): error CS1525: Invalid expression term '/'
-   at System.Web.Compilation.AssemblyBuilder.Compile()
-   at System.Web.Compilation.BuildProvidersCompiler.PerformBuild()
-   at System.Web.Compilation.BuildManager.CompileWebFile(VirtualPath virtualPath)
-   at System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
-   at System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
-   at System.Web.Compilation.BuildManager.GetVirtualPathObjectFactory(VirtualPath virtualPath, HttpContext context, Boolean allowCrossApp, Boolean throwIfNotFound)
-   at System.Web.Compilation.BuildManager.GetCompiledType(VirtualPath virtualPath)
-   at System.Web.Compilation.BuildManager.GetCompiledType(String virtualPath)
-   at System.Web.Mvc.BuildManagerWrapper.System.Web.Mvc.IBuildManager.GetCompiledType(String virtualPath)
-   at System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
-   at Umbraco.Core.Profiling.ProfilingView.Render(ViewContext viewContext, TextWriter writer)
-   at Umbraco.Web.Mvc.ControllerExtensions.RenderViewResultAsString(ControllerBase controller, ViewResultBase viewResult)
-   at Umbraco.Web.Macros.PartialViewMacroEngine.Execute(MacroModel macro, IPublishedContent content)
-   at Umbraco.Web.Macros.PartialViewMacroEngine.Execute(MacroModel macro, INode node)
-   at umbraco.macro.LoadPartialViewMacro(MacroModel macro)
-   at umbraco.macro.renderMacro(Hashtable pageElements, Int32 pageId)
- 2016-12-20 19:47:21,263 [P6972/D3/T9] WARN  umbraco.macro - Error loading Partial View (file: ~/Views/MacroPartials/EXHIBITIONS_ARTIST_RELATE.cshtml). Exception: System.Web.HttpCompileException (0x80004005): c:\queengallery\queengallery\Views\MacroPartials\EXHIBITIONS_ARTIST_RELATE.cshtml(48): error CS1525: Invalid expression term '/'
-   at System.Web.Compilation.AssemblyBuilder.Compile()
-   at System.Web.Compilation.BuildProvidersCompiler.PerformBuild()
-   at System.Web.Compilation.BuildManager.CompileWebFile(VirtualPath virtualPath)
-   at System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
-   at System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
-   at System.Web.Compilation.BuildManager.GetVirtualPathObjectFactory(VirtualPath virtualPath, HttpContext context, Boolean allowCrossApp, Boolean throwIfNotFound)
-   at System.Web.Compilation.BuildManager.GetCompiledType(VirtualPath virtualPath)
-   at System.Web.Compilation.BuildManager.GetCompiledType(String virtualPath)
-   at System.Web.Mvc.BuildManagerWrapper.System.Web.Mvc.IBuildManager.GetCompiledType(String virtualPath)
-   at System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
-   at Umbraco.Core.Profiling.ProfilingView.Render(ViewContext viewContext, TextWriter writer)
-   at Umbraco.Web.Mvc.ControllerExtensions.RenderViewResultAsString(ControllerBase controller, ViewResultBase viewResult)
-   at Umbraco.Web.Macros.PartialViewMacroEngine.Execute(MacroModel macro, IPublishedContent content)
-   at Umbraco.Web.Macros.PartialViewMacroEngine.Execute(MacroModel macro, INode node)
-   at umbraco.macro.LoadPartialViewMacro(MacroModel macro)
-   at umbraco.macro.renderMacro(Hashtable pageElements, Int32 pageId)
- 2016-12-20 20:01:37,017 [P6972/D3/T179] WARN  umbraco.macro - Error loading partial view macro (View: ~/Views/MacroPartials/EXHIBITIONS_ARTIST_RELATE.cshtml). Exception: Character literal must contain exactly one character (at index 23)
- 2016-12-20 20:01:37,017 [P6972/D3/T179] WARN  umbraco.macro - Error loading Partial View (file: ~/Views/MacroPartials/EXHIBITIONS_ARTIST_RELATE.cshtml). Exception: Character literal must contain exactly one character (at index 23)
- 2016-12-20 20:21:07,126 [P6972/D3/T262] INFO  Umbraco.Core.Logging.OwinLogger - Event Id: 0, state: User logged will be logged out due to timeout: admin@bbl.co.th, IP Address: ::1
- 2016-12-20 20:21:07,526 [P6972/D3/T57] INFO  Umbraco.Core.Logging.OwinLogger - Event Id: 0, state: User logged will be logged out due to timeout: admin@bbl.co.th, IP Address: ::1
- 2016-12-20 20:21:09,122 [P6972/D3/T262] INFO  Umbraco.Core.Logging.OwinLogger - Event Id: 0, state: User logged will be logged out due to timeout: admin@bbl.co.th, IP Address: ::1
- 2016-12-20 20:26:38,325 [P6972/D3/T308] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt succeeded for username admin@bbl.co.th from IP address ::1
- 2016-12-20 20:26:38,326 [P6972/D3/T308] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: User: admin@bbl.co.th logged in from IP address ::1
- 2016-12-20 20:46:08,536 [P6972/D3/T399] INFO  Umbraco.Core.Logging.OwinLogger - Event Id: 0, state: User logged will be logged out due to timeout: admin@bbl.co.th, IP Address: ::1
- 2016-12-20 21:06:35,842 [P6972/D3/T245] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt succeeded for username admin@bbl.co.th from IP address ::1
- 2016-12-20 21:06:35,842 [P6972/D3/T245] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: User: admin@bbl.co.th logged in from IP address ::1
- 2016-12-20 21:07:11,662 [P6972/D3/T212] WARN  umbraco.macro - Error loading partial view macro (View: ~/Views/MacroPartials/EXHIBITIONS_ARTIST_RELATE.cshtml). Exception: Character literal must contain exactly one character (at index 22)
- 2016-12-20 21:07:11,662 [P6972/D3/T212] WARN  umbraco.macro - Error loading Partial View (file: ~/Views/MacroPartials/EXHIBITIONS_ARTIST_RELATE.cshtml). Exception: Character literal must contain exactly one character (at index 22)
- 2016-12-20 21:07:23,924 [P6972/D3/T204] WARN  umbraco.macro - Error loading partial view macro (View: ~/Views/MacroPartials/EXHIBITIONS_ARTIST_RELATE.cshtml). Exception: Character literal must contain exactly one character (at index 11)
- 2016-12-20 21:07:23,924 [P6972/D3/T204] WARN  umbraco.macro - Error loading Partial View (file: ~/Views/MacroPartials/EXHIBITIONS_ARTIST_RELATE.cshtml). Exception: Character literal must contain exactly one character (at index 11)
- 2016-12-20 21:26:06,292 [P6972/D3/T277] INFO  Umbraco.Core.Logging.OwinLogger - Event Id: 0, state: User logged will be logged out due to timeout: admin@bbl.co.th, IP Address: ::1
+ 2016-12-21 19:33:18,983 [P14092/D3/T272] INFO  Umbraco.Core.CoreBootManager - Umbraco 7.5.4 application starting on HOMEPC
+ 2016-12-21 19:33:19,000 [P14092/D3/T272] INFO  Umbraco.Core.PluginManager - Determining hash of code files on disk
+ 2016-12-21 19:33:19,007 [P14092/D3/T272] INFO  Umbraco.Core.PluginManager - Hash determined (took 7ms)
+ 2016-12-21 19:33:19,046 [P14092/D3/T272] INFO  Umbraco.Core.PluginManager - Starting resolution types of umbraco.interfaces.IApplicationStartupHandler
+ 2016-12-21 19:33:19,261 [P14092/D3/T272] INFO  Umbraco.Core.PluginManager - Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 0 (took 215ms)
+ 2016-12-21 19:33:19,273 [P14092/D3/T272] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter
+ 2016-12-21 19:33:19,276 [P14092/D3/T272] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 3ms)
+ 2016-12-21 19:33:19,277 [P14092/D3/T272] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyValueConverter
+ 2016-12-21 19:33:19,282 [P14092/D3/T272] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyValueConverter, found 0 (took 5ms)
+ 2016-12-21 19:33:19,292 [P14092/D3/T272] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Web.Mvc.SurfaceController
+ 2016-12-21 19:33:19,296 [P14092/D3/T272] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 0 (took 4ms)
+ 2016-12-21 19:33:19,297 [P14092/D3/T272] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Web.WebApi.UmbracoApiController
+ 2016-12-21 19:33:19,302 [P14092/D3/T272] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Web.WebApi.UmbracoApiController, found 0 (took 5ms)
+ 2016-12-21 19:33:19,326 [P14092/D3/T272] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.Media.IThumbnailProvider
+ 2016-12-21 19:33:19,330 [P14092/D3/T272] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 0 (took 4ms)
+ 2016-12-21 19:33:19,330 [P14092/D3/T272] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.Media.IImageUrlProvider
+ 2016-12-21 19:33:19,334 [P14092/D3/T272] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 0 (took 3ms)
+ 2016-12-21 19:33:20,083 [P14092/D3/T272] INFO  Umbraco.Core.DatabaseContext - CanConnect = True
+ 2016-12-21 19:33:20,293 [P14092/D3/T272] INFO  Umbraco.Core.DatabaseContext - CanConnect = True
+ 2016-12-21 19:33:20,320 [P14092/D3/T272] INFO  Umbraco.Core.DatabaseContext - CanConnect = True
+ 2016-12-21 19:33:20,390 [P14092/D3/T272] INFO  Umbraco.Web.Cache.CacheRefresherEventHandler - Initializing Umbraco internal event handlers for cache refreshing
+ 2016-12-21 19:33:20,471 [P14092/D3/T272] INFO  Umbraco.Web.Search.ExamineEvents - Initializing Examine and binding to business logic events
+ 2016-12-21 19:33:20,471 [P14092/D3/T272] INFO  Umbraco.Web.Search.ExamineEvents - Adding examine event handlers for index providers: 3
+ 2016-12-21 19:33:20,478 [P14092/D3/T272] INFO  Umbraco.Core.CoreBootManager - Umbraco application startup complete (took 1549ms)
+ 2016-12-21 19:33:20,579 [P14092/D3/T277] INFO  Umbraco.Core.Sync.ApplicationUrlHelper - ApplicationUrl: http://localhost:17606/umbraco (UmbracoModule request)
+ 2016-12-21 19:33:20,698 [P14092/D3/T277] INFO  umbraco.content - Load Xml from file...
+ 2016-12-21 19:33:20,700 [P14092/D3/T277] INFO  umbraco.content - Loaded Xml from file.
+ 2016-12-21 19:33:21,144 [P14092/D3/T277] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.PropertyEditors.IParameterEditor
+ 2016-12-21 19:33:21,157 [P14092/D3/T277] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.PropertyEditors.IParameterEditor, found 0 (took 12ms)
+ 2016-12-21 19:33:34,123 [P14092/D3/T277] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.Persistence.Mappers.BaseMapper
+ 2016-12-21 19:33:34,127 [P14092/D3/T277] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.Persistence.Mappers.BaseMapper, found 0 (took 4ms)
+ 2016-12-21 19:33:34,250 [P14092/D3/T277] INFO  Umbraco.Core.PluginManager - Starting resolution types of umbraco.cms.businesslogic.macro.IMacroEngine
+ 2016-12-21 19:33:34,255 [P14092/D3/T277] INFO  Umbraco.Core.PluginManager - Completed resolution of types of umbraco.cms.businesslogic.macro.IMacroEngine, found 0 (took 5ms)
+ 2016-12-21 19:33:35,368 [P14092/D3/T277] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.PropertyEditors.IParameterEditor
+ 2016-12-21 19:33:35,368 [P14092/D3/T277] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.PropertyEditors.IParameterEditor, found 0 (took 0ms)
+ 2016-12-21 19:34:20,772 [P14092/D3/T280] INFO  umbraco.BusinessLogic.Log - Log scrubbed.  Removed all items older than 2559-12-20 19:34:20
