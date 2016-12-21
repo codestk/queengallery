@@ -213,16 +213,17 @@ var nodeLang = curNode.GetCulture().ToString().ToLower();
 <script id="ListTemplate" type="x-tmpl-mustache">
     
         {{#Data}}
-    <div class="row SectionSepalate ">
+    <div class="sk  ">
         <div class="col-lg-12" style="margin-top:15px;">
 
 
-            <img src='{{logoUrl}}' class="img-responsive img-center">
+            <img src='{{logoUrl}}' class="img-responsive img-center  ">
 
         </div>
         <div class="col-lg-12">
-
-            <h2 class="">{{name}} </h2>
+        
+      
+     <h2>{{name}}</h2>
             <p class="date">{{from}} - {{to}}</p>
 
             <p class="more">{{description}} </p>
@@ -231,6 +232,7 @@ var nodeLang = curNode.GetCulture().ToString().ToLower();
 
         </div>
     </div>
+ 
         {{/Data}}
     
 </script>
