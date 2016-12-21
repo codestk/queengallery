@@ -16,10 +16,13 @@
 
 
 @{
+	
+	
+
 var artistID = 4378; int.TryParse(Request.QueryString["id"], out artistID);
 
 
-   artistID = 4378; //Aitist Folder
+   artistID = 4384; //Aitist Folder
 
  
 @*
@@ -29,23 +32,42 @@ var   mediaIds=item.First().GetPropertyValue("artPieces2");
  
  var   mediaIds=item.First().GetPropertyValue("artPieces2");*@
 	var itemsArtPices= Umbraco.Media(artistID).Children();
-	foreach (var item in itemsArtPices)
-        {
-			
-			 @item.id
-
-		}
- 
-	var paramVals = new Dictionary<string, object> {{"splitTerm", new char[] {','}}, {"searchId", "1173"}};
-	string condion="";
-	var itemExhibitions= Umbraco.Media(3576).Children().Where("artPieces2 != null && artPieces2 != String.Empty &&  artPieces2.Split(splitTerm).Contains(searchId) ",paramVals);
-	foreach (var ex in itemExhibitions)
-        {
-			
-			 @ex.id
-
-		}
 	
  
+ 
+		List<string> list = new List<string>();
+	  
+	foreach (var item in itemsArtPices)
+        {
+			 list.Add("artPieces2.ToString().Contains(\""+item.id+"\")");
+ 
+		}
+
+
+	var itemExhibitions= Umbraco.Media(3576).Children().Where(string.Join<string>(" || ", list));
+<h1> Exhibition </h1>
+ 	foreach (var ex in itemExhibitions)
+        {
+				<section class="SectionX">
+
+		 <div class="col-lg-4">
+
+		
+			
+    <img class=" img-responsive img-center  boxShadow" src="@ex.GetCropUrl("image", "wide")" alt="" />
+		 
+	 </div> 
+			 <div class="col-lg-8">
+				 <h2>@ex.name</h2>
+				 <p> 
+				 @ex.descriptionTh
+				 </p>
+				 <a class="button boxShadow">Read more</a>
+					 <a class="btn btn-primary waves-effect waves-light boxShadow" href='/en/exhibitions/past/exhibition/' >Read more</a>
+				 </div> 
+				 	</section>
+		}
+	
+   
 }
  

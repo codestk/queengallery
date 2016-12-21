@@ -1,0 +1,48 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+	Layout = "Services.cshtml";
+}
+
+
+@{
+	
+	var serializer = new System.Web.Script.Serialization.JavaScriptSerializer();
+var artistID = 4378; int.TryParse(Request.QueryString["id"], out artistID);
+
+
+   artistID = 4378; //Aitist Folder
+
+ 
+@*
+var item= Umbraco.Media(blogId).Children().Where(condition);
+var   mediaIds=item.First().GetPropertyValue("artPieces2");
+
+ 
+ var   mediaIds=item.First().GetPropertyValue("artPieces2");*@
+	var itemsArtPices= Umbraco.Media(artistID).Children();
+	
+ 
+ 
+		List<string> list = new List<string>();
+	  
+	foreach (var item in itemsArtPices)
+        {
+			 list.Add("artPieces2.ToString().Contains(\""+item.id+"\")");
+ 
+		}
+
+
+	var itemExhibitions= Umbraco.Media(3576).Children().Where(string.Join<string>(" || ", list));
+ var jsonDataList= JsonFn.ConvertToJsonObject(itemExhibitions);
+	foreach (var ex in itemExhibitions)
+        {
+		 
+	
+
+		<P>@ex.name</P>
+
+		}
+	
+    @Html.Raw(serializer.Serialize(jsonDataList))
+}
+ 
