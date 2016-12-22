@@ -416,7 +416,9 @@ html {
     .light a:visited {
         /*Custom PWS*/
        
-        color: #269 ;
+        /*color: #269 ;*/
+            color: #107896 ;
+       
         /*color: #0f5b78 ;
          color: #0d3d56 ;*/
        
