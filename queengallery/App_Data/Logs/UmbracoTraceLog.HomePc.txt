@@ -1039,3 +1039,4 @@ System.MissingMethodException: Method 'Umbraco.Web.Models.DynamicPublishedConten
    at Umbraco.Web.PropertyEditors.ImageCropperPropertyValueEditor.ConvertEditorToDb(ContentPropertyData editorValue, Object currentValue)
  2016-12-22 21:40:30,733 [P11936/D4/T448] INFO  Umbraco.Core.PluginManager - Starting resolution types of umbraco.interfaces.ICacheRefresher
  2016-12-22 21:40:30,734 [P11936/D4/T448] INFO  Umbraco.Core.PluginManager - Completed resolution of types of umbraco.interfaces.ICacheRefresher, found 0 (took 0ms)
+ 2016-12-22 21:58:04,930 [P11936/D4/T447] INFO  Umbraco.Core.Logging.OwinLogger - Event Id: 0, state: User logged will be logged out due to timeout: admin@bbl.co.th, IP Address: ::1

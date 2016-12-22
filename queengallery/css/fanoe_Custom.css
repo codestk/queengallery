@@ -403,7 +403,7 @@ html {
 .light {
     /*Custom Pws*/
     background: #ffffff; 
-    color: #000;
+    color: #131516;
 }
 
     .light * {
@@ -417,6 +417,9 @@ html {
         /*Custom PWS*/
        
         color: #269 ;
+        /*color: #0f5b78 ;
+         color: #0d3d56 ;*/
+       
          /*color: #2E3192 ;*/
        
     }
@@ -434,11 +437,13 @@ html {
 
             .light a.button:hover {
                 background: #239292;
+                   background: #43ABC8;
+                  
                 color: #fff;
             }
 
             .light a.button.fill {
-                background: #F2F2F2;
+                background: #239292;
                 color: #fff;
             }
 
