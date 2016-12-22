@@ -9,6 +9,13 @@
 <script src="~/Modules/js-base64-master/base64.js"></script>
 @*<script src="~/scripts/PwsExhibitions.js"></script>*@
 
+
+<!--ReadMore-->
+<link href="~/Modules/ReadMore/ReadMore.css" rel="stylesheet" />
+
+<script src="~/Modules/ReadMore/ReadMore.js"></script>
+
+
 <!--Datejs-->
 <script src="~/Modules/Datejs-master/build/date.js"></script>
 @{
@@ -65,6 +72,8 @@ var nodeLang = curNode.GetCulture().ToString().ToLower();
                 ModalEvent();
 
                 EventExhibition();
+                ReadMore.showMore = false;
+                ReadMore.BindEvent();
             }
         });
 
@@ -197,67 +206,71 @@ var nodeLang = curNode.GetCulture().ToString().ToLower();
 
 
 
+
+
+
 <section id="Main">
-    <div class="text-center">
+    <div class="text-center ">
          @*<h1>OnView </h1>*@ 
         <h1 class="color-black font-weight-300"><strong>OnView</strong></h1>
-        <div id="divList" class="text-center ">
        
-        
-         </div>
     
     </div>
 </section>
 
-<!-- Template -->
-<script id="ListTemplate" type="x-tmpl-mustache">
-    
+<section id="divList" class="text-center row ">
+
+
+</section>
+
+    <!-- Template -->
+    <script id="ListTemplate" type="x-tmpl-mustache">
+
         {{#Data}}
-    <div class="sk  ">
-        <div class="col-lg-12" style="margin-top:15px;">
+       
+            <div class="col-lg-12  " style="margin-top:15px;">
 
 
-            <img src='{{logoUrl}}' class="img-responsive img-center  ">
+                <img src='{{logoUrl}}' class="img-responsive img-center  ">
 
-        </div>
-        <div class="col-lg-12">
-        
-      
-     <h2>{{name}}</h2>
-            <p class="date">{{from}} - {{to}}</p>
+            </div>
+            <div class="col-lg-12">
 
-            <p class="more">{{description}} </p>
 
-            <a class="btn btn-primary waves-effect waves-light boxShadow" href='/en/exhibitions/past/exhibition/'>Read more</a>
+                <h2>{{name}}</h2>
+                <p class="date">{{from}} - {{to}}</p>
 
-        </div>
-    </div>
- 
+                <p class="more">{{description}} </p>
+
+                <a class="btn btn-primary waves-effect waves-light boxShadow" href='/en/exhibitions/past/exhibition/'>Read more</a>
+
+            </div>
+       
+
         {{/Data}}
-    
-</script>
- 
-<script id="NoEventTemplate" type="x-tmpl-mustache">
 
-    <div class="row">
-        <hr>
-        <div class="col-lg-12   ">
-            @*<div class="message"> ทดสอบภาษาไทย</div>*@
-            <div class="message">@Umbraco.Field("#EventNotFound") </div>
+    </script>
+
+    <script id="NoEventTemplate" type="x-tmpl-mustache">
+
+        <div class="row">
+            <hr>
+            <div class="col-lg-12   ">
+                @*<div class="message"> ทดสอบภาษาไทย</div>*@
+                <div class="message">@Umbraco.Field("#EventNotFound") </div>
+            </div>
         </div>
-    </div>
-</script>
-<!-- /Template -->
-
-<!-- Modal -->
-<div class="modal fade" id="imagemodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg" style="z-index:1050">
-        <div class="modal-content">
-            <div class="modal-body">
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                <img src="" class="imagepreview" style="width: 100%;">
+    </script>
+    <!-- /Template -->
+    <!-- Modal -->
+    <div class="modal fade" id="imagemodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" style="z-index:1050">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <img src="" class="imagepreview" style="width: 100%;">
+                </div>
             </div>
         </div>
     </div>
-</div>
 

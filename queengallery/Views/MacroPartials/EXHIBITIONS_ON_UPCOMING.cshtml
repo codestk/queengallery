@@ -1,19 +1,111 @@
 ﻿@inherits Umbraco.Web.Macros.PartialViewMacroPage
 
+@{
+    string condition = "";
+    string sort = "endDate descending";
+    int blogId = 3576;
+    var valuesFilter = new Dictionary<string, object>
+    ();
 
-<div class="col-md-12 column">
-    <div>
+    valuesFilter.Add("Todate", DateTime.Now);
+
+    condition = "(beginDate <= Todate) && (endDate >= Todate)";
+
+    var items = Umbraco.Media(blogId).Children().Where(condition, valuesFilter).OrderBy(sort);
+    }
+    <link href="~/Modules/horizontal-timeline/css/reset.css" rel="stylesheet" />
+    <link href="~/Modules/horizontal-timeline/css/style.css" rel="stylesheet" />
+    <script src="~/Modules/horizontal-timeline/js/modernizr.js"></script>
+    <script src="~/Modules/horizontal-timeline/js/main.js"></script>
+    <h1>ON VIEW</h1>
+
+    <section class="cd-horizontal-timeline">
+
+        <div class="timeline">
+            <div class="events-wrapper">
+                <div class="events">
+                    <ol>
+
+                        @{
+
+                        var currentDate = DateTime.Today;
+                        var dateNow = DateTime.Now.ToString("dd/MM/yyyy");
+
+                        bool isfirst=true;
+                        string select="selected";
 
 
-        <h2 dir="ltr"><span>Get it right from the beginning</span></h2>
-        <p dir="ltr"><span>While Umbraco is a simple tool, it’s important that you use it the right way. The Level 1 master class is designed to make sure that any Web Developer - also with no previous ASP.NET knowledge - can create advanced multi-lingual sites by the end of the course.</span></p>
-        <p>&nbsp;</p>
-        <h2 dir="ltr"><span>Become an expert</span></h2>
-        <p dir="ltr"><span>Once you know the basics, you can step up your game by attending the Level 2 master class. While the first masterclass is focused on implementing a site, this Masterclass will teach you how the .net APIs work and how to integrate and extend Umbraco. Whether that’s creating content programmatically or integrating a third party e-commerce engine or CRM.</span></p>
-        <p>&nbsp;</p>
-        <h2 dir="ltr"><span>Worth the investment</span></h2>
-        <p dir="ltr"><span>All attendees at the official Umbraco Masterclasses receive a certification which is the best way to make yourself noticed in the Umbraco ecosystem. So whether you’re looking to move up in the ranks of your company or are a free agent, you shouldn’t be doing Umbraco without becoming certified. The investment will come back many times, so make sure to <a href="http://umbraco.com/products/training/?utm_source=core&amp;utm_medium=starterkit&amp;utm_content=topic-link&amp;utm_campaign=fanoe" target="_blank" title="Masterclasses">keep an eye out for a Masterclass near you</a>.</span></p>
+                        foreach(dynamic item in items){
+                        if (isfirst)
+                        {
+                        select="selected"; 
+                       
+                        }else
+                        {
+                        select="";
+                        }
+
+                        isfirst=false;
+                       
+                        if  (item.GetPropertyValue<DateTime>("beginDate") < currentDate)
+                            {
+                            <li><a href="#0" class="@select" data-date='@item.GetPropertyValue("beginDate").ToString("dd/MM/yyyy")'>@item.GetPropertyValue("beginDate").ToString("dd MMM")</a></li>
+
+                            }
+                            else
+                            {
+                            @*<li><a href="#0" class="" data-date='@dateNow'>Now</a></li>*@
+
+                            }
 
 
-    </div>
-</div>
+
+                            }
+                            }
+
+
+
+                    </ol>
+                    <span class="filling-line" aria-hidden="true"></span>
+                </div> <!-- .events -->
+            </div> <!-- .events-wrapper -->
+
+            <ul class="cd-timeline-navigation">
+                <li><a href="#0" class="prev inactive">Prev</a></li>
+                <li><a href="#0" class="next">Next</a></li>
+            </ul> <!-- .cd-timeline-navigation -->
+        </div> <!-- .timeline -->
+        <div class="events-content">
+            <ol>
+                @{
+
+                bool isfirstRow=true;
+
+
+
+
+                foreach(dynamic item in items){
+                if (isfirstRow)
+                {
+                select="selected";
+                }else
+                {
+                select="";
+                }
+                isfirstRow=false;
+                <li class="@select" data-date="@item.GetPropertyValue("beginDate").ToString("dd/MM/yyyy")">
+
+                <p> <img class="img-center" src="@item.image" alt="@item.nameEn" /></p>
+
+                <h2>@item.GetPropertyValue("NameEn") </h2>
+                <em>@item.GetPropertyValue("beginDate").ToString("dd MMMM yyyy") - @item.GetPropertyValue("endDate").ToString("dd MMMM yyyy") </em>
+                <p>
+                    @item.GetPropertyValue("DescriptionEn")
+                </p>
+                </li>
+                }
+                }
+
+            </ol>
+        </div> <!-- .events-content -->
+    </section>
