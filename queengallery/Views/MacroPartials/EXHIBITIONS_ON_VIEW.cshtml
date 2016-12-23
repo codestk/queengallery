@@ -65,13 +65,11 @@ var nodeLang = curNode.GetCulture().ToString().ToLower();
 
             SetList(CurrentListData);
 
-            SetPagger(msg[1].RecordCount);
+          
 
             //Create Event in list
             if (msg[0].length > 0) {
-                ModalEvent();
-
-                EventExhibition();
+                
                 ReadMore.showMore = false;
                 ReadMore.BindEvent();
             }
@@ -112,41 +110,7 @@ var nodeLang = curNode.GetCulture().ToString().ToLower();
     }
 
     //Set Pagger
-    function SetPagger(RecordCount) {
-
-        if (RecordCount == 0) {
-            $('#ulpage').hide();
-            return;
-        }
-        else {
-            $('#ulpage').show();
-        }
-        $('#ulpage').pagination({
-            items: RecordCount,
-            itemsOnPage: PageSize,
-
-            //prevText: '<img class="iconDirection" src="Images/1457020750_arrow-left-01.svg" />',
-            //nextText: '<img class="iconDirection" src="Images/1457020740_arrow-right-01.svg" />',
-
-            prevText: lblPrev,
-            nextText: lblNext,
-            currentPage: PageIndex,//cssStyle: 'light-theme',
-            onPageClick: function (event) {
-
-                //Set Global Page
-                if (event < 10) {
-                    PageIndex = '0' + event;
-                }
-                else {
-                    PageIndex = event;
-                }
-                //-Set Global Page
-                RenderList();
-            }
-
-        });
-
-    }
+  
 
     /*Convert Data*/
     function ConvertDataByLanguage(data) {
@@ -182,26 +146,9 @@ var nodeLang = curNode.GetCulture().ToString().ToLower();
         return data;
     }
 
-    /*Utility*/
-    /*Event*/
-    function ModalEvent() {
-
-        $('.EventModal').on('click', function () {
-
-            $('.imagepreview').attr('src', $(this).find('img').attr('src'));
-            $('#imagemodal').modal('show');
-        });
-
-    }
-    function EventExhibition() {
-        EventExhibition
-        $('.EventExhibition').on('click', function () {
-            $('#Main').hide();
-            $('#SubMain').show();
-
-        });
-
-    }
+ 
+   
+  
 </script> 
 
 
@@ -212,44 +159,48 @@ var nodeLang = curNode.GetCulture().ToString().ToLower();
 <section id="Main">
     <div class="text-center ">
          @*<h1>OnView </h1>*@ 
-        <h1 class="color-black font-weight-300"><strong>OnView</strong></h1>
+        <h1 ><strong>OnView</strong></h1>
        
-    
+        <div id="divList" class="text-center row ">
+
+
+        </div>
     </div>
 </section>
 
-<section id="divList" class="text-center row ">
 
-
-</section>
 
     <!-- Template -->
     <script id="ListTemplate" type="x-tmpl-mustache">
 
         {{#Data}}
        
-            <div class="col-lg-12  " style="margin-top:15px;">
+            <div class="col-lg-12  DixBox"  >
 
-
+                <h2>{{name}}</h2>
                 <img src='{{logoUrl}}' class="img-responsive img-center  ">
 
             </div>
             <div class="col-lg-12">
 
 
-                <h2>{{name}}</h2>
+              
                 <p class="date">{{from}} - {{to}}</p>
 
                 <p class="more">{{description}} </p>
 
-                <a class="btn btn-primary waves-effect waves-light boxShadow" href='/en/exhibitions/past/exhibition/'>Read more</a>
-
+                @*<a class="btn btn-primary waves-effect waves-light boxShadow" href='/en/exhibitions/past/exhibition/'>Read more</a>*@
+                <a class="button  " href='/en/exhibitions/past/exhibition/'>Read more</a>
+                
             </div>
-       
+        <div class="col-lg-12">
+            <div class="seperator"> </div>
 
-        {{/Data}}
+        </div>
 
-    </script>
+            {{/Data}}
+
+</script>
 
     <script id="NoEventTemplate" type="x-tmpl-mustache">
 

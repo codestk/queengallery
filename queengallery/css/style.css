@@ -282,6 +282,19 @@ main {
 
 /*Footer*/
 .footerWide {
+
+ 
+    border-top-width:6px;
+     border-top-color:#264A82;
+      border-top-color:#EED369;
+        border-top-color:#B5C588;
+   
+   
+    
+         
+      
+    border-top-style: solid;
+
     padding-top: 80px;
     padding-bottom: 80px;
     /*background-color:#363B3F;*/
@@ -462,6 +475,7 @@ main {
 
  .btn{
      text-decoration:none !important;
+     
 
  }
 
@@ -507,7 +521,7 @@ main {
     -ms-flex-pack: center;
     justify-content: center;
     overflow: hidden;
-    padding: 40px 40px 40px 120px;
+    padding: 40px 40px 40px 40px;
     background-color: #fff;
     border-radius: 4px;
     box-shadow: 0 15px 35px rgba(50,50,93,.1), 0 5px 15px rgba(0,0,0,.07);
@@ -518,5 +532,9 @@ main {
 
  
  
-     
+     .seperator {
+    margin: 0 auto 60px;
+    border-bottom: 2px dotted #f2f2f2;
+    width: 40%;
+}
 /* EDITOR PROPERTIES - PLEASE DON'T DELETE THIS LINE TO AVOID DUPLICATE PROPERTIES */
