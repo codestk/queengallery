@@ -2,6 +2,7 @@
 @{
     Layout = null;
 	var home = @CurrentPage.Site();
+ 
 }
 
 <!DOCTYPE html>
@@ -76,14 +77,15 @@
     @{
     var curNode = Umbraco.TypedContent(Model.Content.Id);
     string nodeLang = curNode.GetCulture().ToString().ToLower();
+    var preFixLang="";
     if (nodeLang == "th-th")
     {
     <script src="/js/queengalleryTh.js"></script>
-
-    //url = "/th";*@
+    
+    preFixLang="Th";
     } else {
     <script src="/js/queengalleryEn.js"></script>
-    //url = "/en";
+    preFixLang="En";
     }
     }
 

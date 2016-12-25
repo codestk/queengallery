@@ -534,7 +534,13 @@ main {
  
      .seperator {
     margin: 0 auto 60px;
-    border-bottom: 2px dotted #f2f2f2;
+    border-bottom: 1px dotted #d4d4d4;
     width: 40%;
 }
+
+     a           {   text-decoration: none !important; }
+ 
+a{-webkit-transition: color .6s linear;}
+a:hover{-webkit-transition: color .1s linear;}
+
 /* EDITOR PROPERTIES - PLEASE DON'T DELETE THIS LINE TO AVOID DUPLICATE PROPERTIES */

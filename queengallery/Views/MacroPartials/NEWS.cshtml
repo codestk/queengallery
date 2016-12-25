@@ -1,0 +1,42 @@
+﻿@inherits Umbraco.Web.Macros.PartialViewMacroPage
+
+@{
+    string condition = "";
+    string sort = "nwewsDate descending ";
+    
+    var mediaId = Model.MacroParameters["mediaId"];   
+    var valuesFilter = new Dictionary<string, object>();
+
+    valuesFilter.Add("Todate", DateTime.Now);
+
+    condition = "beginDate > Todate";
+
+    var items = Umbraco.Media(mediaId).Children().OrderBy(sort).Take(20);
+
+    var lang=Umbraco.GetDictionaryValue("language");
+    }
+
+    <section id="Main">
+        <div class="">
+            <h1 class="text-center"><strong> @Umbraco.Field("#Head_News") </strong></h1>
+
+            @{
+
+            string nwewsDate="";
+            string name="";
+            string file="";
+
+            foreach(dynamic item in items){
+            if (item.DocumentTypeAlias == "newsMedia"){
+           
+            nwewsDate= @item.GetPropertyValue("nwewsDate").ToString("dd MMM yyyy");
+            file= @item.GetPropertyValue("file"+lang);
+            name= @item.GetPropertyValue("name"+lang);
+
+            <div class="col-lg-2 text-right"><p>@nwewsDate </p></div><div class="col-lg-10"> <a href="@file" target="_blank" class="" data-date=''>  @name  </a></div>
+            }
+            }
+
+            }
+        </div>
+    </section>

@@ -969,7 +969,8 @@ nav li > ul > li > ul {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
-    color: #000;
+    /*color: #000;*/
+    color:#0f0f0f
 }
 
     .dark .row, .darklight .row, .fullWithContentLight .row, .fullWithContentDark .row,

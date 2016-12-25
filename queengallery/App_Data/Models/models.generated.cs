@@ -19,8 +19,8 @@ using Umbraco.ModelsBuilder;
 using Umbraco.ModelsBuilder.Umbraco;
 
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "ce8a9abc4ee22818")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "ed5c3d109e0f4039")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.2")]
 
 namespace Umbraco.Web.PublishedContentModels
 {
@@ -1551,6 +1551,112 @@ namespace Umbraco.Web.PublishedContentModels
 		public string NameTh
 		{
 			get { return this.GetPropertyValue<string>("nameTh"); }
+		}
+	}
+
+	/// <summary>News Folder</summary>
+	[PublishedContentModel("artistFolder1")]
+	public partial class ArtistFolder1 : PublishedContentModel, IFolder
+	{
+#pragma warning disable 0109 // new is redundant
+		public new const string ModelTypeAlias = "artistFolder1";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Media;
+#pragma warning restore 0109
+
+		public ArtistFolder1(IPublishedContent content)
+			: base(content)
+		{ }
+
+#pragma warning disable 0109 // new is redundant
+		public new static PublishedContentType GetModelContentType()
+		{
+			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
+		}
+#pragma warning restore 0109
+
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<ArtistFolder1, TValue>> selector)
+		{
+			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Contents:
+		///</summary>
+		[ImplementPropertyType("contents")]
+		public object Contents
+		{
+			get { return Folder.GetContents(this); }
+		}
+	}
+
+	/// <summary>NewsMedia</summary>
+	[PublishedContentModel("newsMedia")]
+	public partial class NewsMedia : PublishedContentModel
+	{
+#pragma warning disable 0109 // new is redundant
+		public new const string ModelTypeAlias = "newsMedia";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Media;
+#pragma warning restore 0109
+
+		public NewsMedia(IPublishedContent content)
+			: base(content)
+		{ }
+
+#pragma warning disable 0109 // new is redundant
+		public new static PublishedContentType GetModelContentType()
+		{
+			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
+		}
+#pragma warning restore 0109
+
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<NewsMedia, TValue>> selector)
+		{
+			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// FileEn
+		///</summary>
+		[ImplementPropertyType("fileEn")]
+		public object FileEn
+		{
+			get { return this.GetPropertyValue("fileEn"); }
+		}
+
+		///<summary>
+		/// FileTh
+		///</summary>
+		[ImplementPropertyType("fileTh")]
+		public object FileTh
+		{
+			get { return this.GetPropertyValue("fileTh"); }
+		}
+
+		///<summary>
+		/// NameEn
+		///</summary>
+		[ImplementPropertyType("nameEn")]
+		public string NameEn
+		{
+			get { return this.GetPropertyValue<string>("nameEn"); }
+		}
+
+		///<summary>
+		/// NameTh
+		///</summary>
+		[ImplementPropertyType("nameTh")]
+		public string NameTh
+		{
+			get { return this.GetPropertyValue<string>("nameTh"); }
+		}
+
+		///<summary>
+		/// nwewsDate
+		///</summary>
+		[ImplementPropertyType("nwewsDate")]
+		public DateTime NwewsDate
+		{
+			get { return this.GetPropertyValue<DateTime>("nwewsDate"); }
 		}
 	}
 
