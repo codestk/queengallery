@@ -8,7 +8,7 @@ using  Umbraco.Web;
 using  Umbraco.ModelsBuilder;
 using  Umbraco.ModelsBuilder.Umbraco;
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "ed5c3d109e0f4039")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "a55dcbe359f0c408")]
 [assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
 
 
@@ -1673,6 +1673,121 @@ namespace Umbraco.Web.PublishedContentModels
 		public DateTime NwewsDate
 		{
 			get { return this.GetPropertyValue<DateTime>("nwewsDate"); }
+		}
+	}
+
+	/// <summary>Announcement Folder</summary>
+	[PublishedContentModel("announcement")]
+	public partial class Announcement : PublishedContentModel, IFolder
+	{
+#pragma warning disable 0109 // new is redundant
+		public new const string ModelTypeAlias = "announcement";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Media;
+#pragma warning restore 0109
+
+		public Announcement(IPublishedContent content)
+			: base(content)
+		{ }
+
+#pragma warning disable 0109 // new is redundant
+		public new static PublishedContentType GetModelContentType()
+		{
+			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
+		}
+#pragma warning restore 0109
+
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Announcement, TValue>> selector)
+		{
+			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Contents:
+		///</summary>
+		[ImplementPropertyType("contents")]
+		public object Contents
+		{
+			get { return Folder.GetContents(this); }
+		}
+	}
+
+	/// <summary>AnnouncementMedia</summary>
+	[PublishedContentModel("AnnouncementMedia")]
+	public partial class AnnouncementMedia : PublishedContentModel
+	{
+#pragma warning disable 0109 // new is redundant
+		public new const string ModelTypeAlias = "AnnouncementMedia";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Media;
+#pragma warning restore 0109
+
+		public AnnouncementMedia(IPublishedContent content)
+			: base(content)
+		{ }
+
+#pragma warning disable 0109 // new is redundant
+		public new static PublishedContentType GetModelContentType()
+		{
+			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
+		}
+#pragma warning restore 0109
+
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<AnnouncementMedia, TValue>> selector)
+		{
+			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// BeginDate
+		///</summary>
+		[ImplementPropertyType("beginDate")]
+		public DateTime BeginDate
+		{
+			get { return this.GetPropertyValue<DateTime>("beginDate"); }
+		}
+
+		///<summary>
+		/// DescriptionEn
+		///</summary>
+		[ImplementPropertyType("descriptionEn")]
+		public string DescriptionEn
+		{
+			get { return this.GetPropertyValue<string>("descriptionEn"); }
+		}
+
+		///<summary>
+		/// DescriptionTh
+		///</summary>
+		[ImplementPropertyType("descriptionTh")]
+		public string DescriptionTh
+		{
+			get { return this.GetPropertyValue<string>("descriptionTh"); }
+		}
+
+		///<summary>
+		/// Image
+		///</summary>
+		[ImplementPropertyType("image")]
+		public Umbraco.Web.Models.ImageCropDataSet Image
+		{
+			get { return this.GetPropertyValue<Umbraco.Web.Models.ImageCropDataSet>("image"); }
+		}
+
+		///<summary>
+		/// NameEn
+		///</summary>
+		[ImplementPropertyType("nameEn")]
+		public string NameEn
+		{
+			get { return this.GetPropertyValue<string>("nameEn"); }
+		}
+
+		///<summary>
+		/// NameTh
+		///</summary>
+		[ImplementPropertyType("nameTh")]
+		public string NameTh
+		{
+			get { return this.GetPropertyValue<string>("nameTh"); }
 		}
 	}
 
