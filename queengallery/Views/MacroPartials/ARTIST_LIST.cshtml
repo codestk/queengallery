@@ -22,10 +22,10 @@ var curNode = Umbraco.TypedContent(Model.Content.Id);
 
  var id = 5463; int.TryParse(Request.QueryString["id"], out id);
 
-id = 5463;
+ id = 5463;
 
-    int blogId = 3576;
-      var item= (dynamic)null;
+ int blogId = 3576;
+ var item= (dynamic)null;
  string condition = "Id ="+id.ToString();
 
   item= Umbraco.Media(blogId).Children().Where(condition);

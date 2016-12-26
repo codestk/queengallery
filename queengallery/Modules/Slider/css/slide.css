@@ -192,7 +192,7 @@ height:460px;
   -webkit-transition-delay: 1250ms;
   transition-delay: 1250ms;
   /*left: 0;*/
-  left: 81px;
+  left: 80px;
   top: 0;
   margin-right: 0;
   width: 100%;
@@ -317,7 +317,7 @@ height:460px;
   -o-transition-delay: 1250ms;
   -webkit-transition-delay: 1250ms;
   transition-delay: 1250ms;
-  left: 161px;
+  left: 160px; /* 81*2*/
   top: 0;
   margin-right: 0;
   width: 100%;
@@ -428,7 +428,8 @@ height:460px;
   transition-duration: -300ms;
 }
 .css-slider input[type=radio]:nth-of-type(4):checked ~ .css-slider-navigation .css-slider-navigation-item:nth-child(4) {
-  background: gray;
+  /*background: gray;*/
+    background: rgba(255,255,255,1);
 }
 .css-slider input[type=radio]:nth-of-type(4):checked ~ .css-slider-wrapper .css-slider-inner {
   -moz-transform: translateX(-300%);
@@ -441,7 +442,8 @@ height:460px;
   -o-transition-delay: 1250ms;
   -webkit-transition-delay: 1250ms;
   transition-delay: 1250ms;
-  left: 0;
+  /*left:0;  */
+  left: 240px; /*80 X 3*/
   top: 0;
   margin-right: 0;
   width: 100%;
@@ -552,7 +554,8 @@ height:460px;
   transition-duration: -300ms;
 }
 .css-slider input[type=radio]:nth-of-type(5):checked ~ .css-slider-navigation .css-slider-navigation-item:nth-child(5) {
-  background: gray;
+      background: rgba(255,255,255,1);
+  /*background: gray;*/
 }
 .css-slider input[type=radio]:nth-of-type(5):checked ~ .css-slider-wrapper .css-slider-inner {
   -moz-transform: translateX(-400%);
@@ -565,7 +568,9 @@ height:460px;
   -o-transition-delay: 1250ms;
   -webkit-transition-delay: 1250ms;
   transition-delay: 1250ms;
-  left: 0;
+  /*left: 0;*/
+
+   left: 320px ;/*81 X 4 - 4*/
   top: 0;
   margin-right: 0;
   width: 100%;
@@ -1206,8 +1211,10 @@ height:460px;
   color: white;
   /*left: 40px;*/
   /*Fix*/
-  left: 80px;
-  top: 40px;
+  /*left: 80px;*/
+  /* 40 X itmes = left*/
+  left:240px;
+   top: 40px; 
   margin-right: 80px;
   width: calc(100% - 2 * 40px);
   -moz-transition-delay: 0;
@@ -1354,7 +1361,10 @@ height:460px;
   font-size: 42px;
   font-family: "Open Sans";
   font-weight: 100;
-  text-transform: uppercase;
+  /*text-transform: uppercase;*/
+  white-space:normal;
+
+ 
 }
 
 .slide-subtitle {
