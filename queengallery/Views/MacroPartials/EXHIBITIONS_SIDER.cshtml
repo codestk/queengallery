@@ -134,10 +134,10 @@
                 /*Youtube*/
                 if (YoutubeShow.Equals("1"))
                 {
-                <div class="css-slider-item" style="text-shadow: 0 0 15px black;     ">
-                    <div class="video-background">
+                <div class="css-slider-item" style="text-shadow: 0 0 15px black;  height:450px;   ">
+                    <div class="video-background"  >
                         <div class="video-foreground">
-                            <iframe  id="ytplayer" src="https://www.youtube.com/embed/@YoutubeId?start=500controls=0&showinfo=0&rel=0&autoplay=1&loop=1&playlist=W0LHTWG-UmQ" volume="0" frameborder="0"  allowfullscreen></iframe>
+                            <iframe  id="ytplayer" src="https://www.youtube.com/embed/@YoutubeId?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&playlist=W0LHTWG-UmQ" frameborder="0"  allowfullscreen></iframe>
                         </div>
                     </div>
                    
@@ -205,52 +205,57 @@
     </div>
 
  
+    @{
+                                         if (YoutubeShow.Equals("1")==false) {
+                                         <script>
 
-<script>
 
-   
-    $(window).on("load", function () {
+        $(window).on("load", function () {
 
-        // Executes when complete page is fully loaded, including
-        // all frames, objects and images
-        var nIntervId;
-        var lb = $('.css-slider  input:radio[name="slider-navigation"]');
-      
-        var len = lb.length;
-        var i = 0;
+            // Executes when complete page is fully loaded, including
+            // all frames, objects and images
+            var nIntervId;
+            var lb = $('.css-slider  input:radio[name="slider-navigation"]');
 
-        debugger
+            var len = lb.length;
+            var i = 0;
 
-        function slideItem()
-        {
             debugger
-            if (i == len)
-                i = 0;
 
-          
-            lb[i].checked = true;
-            console.log(i);
-            i = i + 1;
-       
-        }
+            function slideItem() {
+                debugger
+                if (i == len)
+                    i = 0;
 
-        $('.css-slider-navigation>label').on( "click", function() {
-            clearInterval(nIntervId);
-            //Innit New Interval
-            nIntervId = setInterval(slideItem, 10000);
-        });
-        function changeSlide() {
-            if (len > 0)
-            {
-                nIntervId = setInterval(slideItem, 5000);
+
+                lb[i].checked = true;
+                console.log(i);
+                i = i + 1;
+
             }
-          
-        }
-        function stopchangeSlide() {
-            clearInterval(nIntervId);
-        }
+
+            $('.css-slider-navigation>label').on("click", function () {
+                clearInterval(nIntervId);
+                //Innit New Interval
+                nIntervId = setInterval(slideItem, 10000);
+            });
+            function changeSlide() {
+                if (len > 0) {
+                    nIntervId = setInterval(slideItem, 5000);
+                }
+
+            }
+            function stopchangeSlide() {
+                clearInterval(nIntervId);
+            }
 
 
-        changeSlide();
-    });
-</script>
+            changeSlide();
+        });
+    }
+
+                                         </script>
+
+    }
+    
+    }
