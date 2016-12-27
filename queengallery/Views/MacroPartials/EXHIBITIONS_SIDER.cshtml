@@ -14,22 +14,21 @@
    var showText =Model.MacroParameters["showText"];
  
 
-/*Youtube*/
-var YoutubeContent =Model.MacroParameters["YoutubeContent"];
-var YoutubeId  =Model.MacroParameters["YoutubeId"];
-var YoutubeHead  =Model.MacroParameters["YoutubeHead"];
-var YoutubeShow =Model.MacroParameters["YoutubeShow"];
+    /*Youtube*/
+    var YoutubeContent =Model.MacroParameters["YoutubeContent"];
+    var YoutubeId  =Model.MacroParameters["YoutubeId"];
+    var YoutubeHead  =Model.MacroParameters["YoutubeHead"];
+    var YoutubeShow =Model.MacroParameters["YoutubeShow"];
  
-     var items = (dynamic)null;
+    var items = (dynamic)null;
 
-    var valuesFilter = new Dictionary<string, object>
-    ();
+    var valuesFilter = new Dictionary<string, object>();
 
     valuesFilter.Add("Todate", DateTime.Now);
 
     condition = "(beginDate <= Todate) && (endDate >= Todate)";
 
-    if    (showAnnouncementOnly.Equals("1"))
+    if(showAnnouncementOnly.Equals("1"))
     {
     /*Show Announcement Only*/
     items = Umbraco.Media(AnnouncementId).Children().OrderBy(sort).Take(5);
@@ -220,7 +219,7 @@ var YoutubeShow =Model.MacroParameters["YoutubeShow"];
         var len = lb.length;
         var i = 0;
 
-
+        debugger
 
         function slideItem()
         {
@@ -229,14 +228,16 @@ var YoutubeShow =Model.MacroParameters["YoutubeShow"];
                 i = 0;
 
           
-            lb[i].attr('checked', true);
-
+            lb[i].checked = true;
+            console.log(i);
             i = i + 1;
        
         }
 
         $('.css-slider-navigation>label').on( "click", function() {
-           
+            clearInterval(nIntervId);
+            //Innit New Interval
+            nIntervId = setInterval(slideItem, 10000);
         });
         function changeSlide() {
             if (len > 0)
