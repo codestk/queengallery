@@ -19,7 +19,7 @@ using Umbraco.ModelsBuilder;
 using Umbraco.ModelsBuilder.Umbraco;
 
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "30f523e155415d3c")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "d56612837c99c830")]
 [assembly:System.Reflection.AssemblyVersion("0.0.0.2")]
 
 namespace Umbraco.Web.PublishedContentModels
@@ -1772,6 +1772,33 @@ namespace Umbraco.Web.PublishedContentModels
 		public string NameTh
 		{
 			get { return this.GetPropertyValue<string>("nameTh"); }
+		}
+
+		///<summary>
+		/// showYouTube
+		///</summary>
+		[ImplementPropertyType("showYouTube")]
+		public bool ShowYouTube
+		{
+			get { return this.GetPropertyValue<bool>("showYouTube"); }
+		}
+
+		///<summary>
+		/// umbracoNaviHide
+		///</summary>
+		[ImplementPropertyType("umbracoNaviHide")]
+		public bool UmbracoNaviHide
+		{
+			get { return this.GetPropertyValue<bool>("umbracoNaviHide"); }
+		}
+
+		///<summary>
+		/// youTubeUrl
+		///</summary>
+		[ImplementPropertyType("youTubeUrl")]
+		public string YouTubeUrl
+		{
+			get { return this.GetPropertyValue<string>("youTubeUrl"); }
 		}
 	}
 
