@@ -285,13 +285,19 @@ main {
 
  
     border-top-width:6px;
-     border-top-color:#264A82;
+     /*border-top-color:#264A82;
       border-top-color:#EED369;
-        border-top-color:#B5C588;
+        border-top-color:#B5C588;*/
    
    
-    
-         
+
+      border-top-color:#333E4B;  /*1*/
+          
+
+           
+             border-top-color:#B5C588;
+
+               border-top-color:#E4C45D;
       
     border-top-style: solid;
 
