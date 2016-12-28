@@ -12,7 +12,8 @@ var media = Umbraco.Media(1080).Children();
 *@
 
 @{
-
+var mediaIds="1,2,3,4,5";
+      string  aaa = string.Join(",", mediaIds.ToString().Split(',').OrderBy(x => System.Guid.NewGuid()).Take(3));
 var serializer = new System.Web.Script.Serialization.JavaScriptSerializer();
 
 	    var pageSize =10;

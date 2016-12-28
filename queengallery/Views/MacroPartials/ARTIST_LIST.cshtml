@@ -13,51 +13,66 @@
     Alias:mediaIds     Name:Select folders and/or images    Type: Multiple Media Picker
        var mediaIds = Model.MacroParameters["mediaIds"];                                                      Type: (note: you can use a Single Media Picker if that's more appropriate to your needs)
 *@
-<script src="~/Modules/jquery-match-height-master/dist/jquery.matchHeight-min.js"></script>
+
 
 @{
 var curNode = Umbraco.TypedContent(Model.Content.Id);
-			string nodeLang = curNode.GetCulture().ToString().ToLower();
+string nodeLang = curNode.GetCulture().ToString().ToLower();
 
+ var lang=Umbraco.GetDictionaryValue("language");
+ var ExhibitionFolder = Model.MacroParameters["ExhibitionFolder"];
+var TextHead = Model.MacroParameters["TextHead"];
 
- var id = 5463; int.TryParse(Request.QueryString["id"], out id);
+var Random = Model.MacroParameters["Random"];
 
- id = 5463;
+ int ItemCount = 100; int.TryParse(Model.MacroParameters["ItemCount"].ToString(), out ItemCount);
+if (ItemCount==0)
+{
+ ItemCount = 100;
+}
 
- int blogId = 3576;
+ int  exhibitionID = 0; int.TryParse(Request.QueryString["id"], out exhibitionID);
+
+if (exhibitionID==0)
+{
+ exhibitionID = 5463;
+}
+
  var item= (dynamic)null;
- string condition = "Id ="+id.ToString();
+ string condition = "Id ="+exhibitionID.ToString();
 
-  item= Umbraco.Media(blogId).Children().Where(condition);
+ /*Get Exhibition*/
+ item= Umbraco.Media(ExhibitionFolder).Children().Where(condition)  ;
  var   mediaIds=item.First().GetPropertyValue("artPieces2");
+
+  string Temp= mediaIds.ToString();
+  string  mediaReorder = "";
+    if    (Random.Equals("1"))
+   {
+  mediaReorder= string.Join(",", Temp.ToString().Split(',').OrderBy(x => System.Guid.NewGuid()).Take(ItemCount));
+   }else
+{
+  mediaReorder= string.Join(",", Temp.ToString().Split(',').Take(ItemCount));
+}
 
 }
 @if (mediaIds != null)
 {
+<h1>@TextHead</h1>
+<div class="row-marson text-center">
 
-<div class="text-center">
-    <h1>Artists </h1>
-
-    @foreach (var mediaId in mediaIds.ToString().Split(','))
+    @foreach (var mediaId in mediaReorder.ToString().Split(','))
     {
 
     var media = Umbraco.Media(mediaId);
     var  artTistMedia =Umbraco.Media(media.ParentId);
     @* a single image *@
+    <!-- Left and right controls -->
     if (artTistMedia.DocumentTypeAlias == "ArtistsMedia")
     {
 
     @Render(artTistMedia,nodeLang);
     }
-
-    @* a folder with images under it 
-    if (media.Children("artist").Any())
-    {
-    foreach (var image in media.Children("Image"))
-    {
-     Render(image);
-    }
-    }*@
 
     }
 </div>
@@ -68,7 +83,7 @@ var curNode = Umbraco.TypedContent(Model.Content.Id);
 
 string  name="";
 string description="";
-		if (nodeLang == "th-th") { 
+		if (nodeLang == "th-th") {
 				name = @item.nameTh;
 description=@item.descriptionTh;
 			} else {
@@ -76,13 +91,11 @@ description=@item.descriptionTh;
 description=@item.descriptionEn;
 			}
 
-<div class="col-lg-4  matchHeight">
+<div class="col-lg-4  matchHeight" style="margin-bottom:40px;">
 
     <figure class="snip1554  ">
-        @*<img class="img-circle img-responsive img-center" src="/media/2005/yanawit.png" alt="">*@
-        @*<img class="img-circle img-responsive img-center" src="@item.image.src" alt="@item.nameEn" />*@
 
-        <img class="img-circle img-responsive img-center" src="@item.GetCropUrl("image", "avatar" )" alt="@name" />
+        <img class="img-circle img-responsive img-center" src="@item.GetCropUrl("image", "avatar" )" onerror="this.src = '/media/9280/untitled-3.png?anchor=center&mode=crop&width=300&height=300&rnd=131258854960000000'" alt="@name" />
         <figcaption>
             <h3></h3>
         </figcaption>
@@ -91,14 +104,22 @@ description=@item.descriptionEn;
 
     <h2>@name</h2>
 
-    <p class="">@description</p>
+    <p class="more">@description</p>
 </div>
 }
 
+
+
+<script src="~/Modules/jquery-match-height-master/dist/jquery.matchHeight-min.js"></script>
+<link href="~/Modules/ReadMore/ReadMore.css" rel="stylesheet" />
+<script src="~/Modules/ReadMore/ReadMore.js"></script>
 <script>
     $(function () {
         $('.matchHeight').matchHeight({
             byRow: true, remove: false
         });
+
+        ReadMore.showMore = false;
+        ReadMore.BindEvent();
     });
 </script> 
