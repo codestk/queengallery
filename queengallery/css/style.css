@@ -291,7 +291,7 @@ main {
     /*border-top-color: #E4C45D;*/
      border-top-color:#B5C588;
 
-       border-top-color:#FAB23A;
+       border-top-color:#B5C588;
   
     border-top-style: solid;
     padding-top: 80px;
@@ -529,7 +529,7 @@ a {
 /*Video Background*/
 .video-background {
     background: #000;
-    position: fixed;
+    position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
@@ -615,5 +615,8 @@ a {
         display: none;
     }
 }
+
+
+ 
 
 /* EDITOR PROPERTIES - PLEASE DON'T DELETE THIS LINE TO AVOID DUPLICATE PROPERTIES */

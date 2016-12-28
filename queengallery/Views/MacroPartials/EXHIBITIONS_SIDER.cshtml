@@ -14,22 +14,21 @@
    var showText =Model.MacroParameters["showText"];
  
 
-/*Youtube*/
-var YoutubeContent =Model.MacroParameters["YoutubeContent"];
-var YoutubeId  =Model.MacroParameters["YoutubeId"];
-var YoutubeHead  =Model.MacroParameters["YoutubeHead"];
-var YoutubeShow =Model.MacroParameters["YoutubeShow"];
+    /*Youtube*/
+    var YoutubeContent =Model.MacroParameters["YoutubeContent"];
+    var YoutubeId  =Model.MacroParameters["YoutubeId"];
+    var YoutubeHead  =Model.MacroParameters["YoutubeHead"];
+    var YoutubeShow =Model.MacroParameters["YoutubeShow"];
  
-     var items = (dynamic)null;
+    var items = (dynamic)null;
 
-    var valuesFilter = new Dictionary<string, object>
-    ();
+    var valuesFilter = new Dictionary<string, object>();
 
     valuesFilter.Add("Todate", DateTime.Now);
 
     condition = "(beginDate <= Todate) && (endDate >= Todate)";
 
-    if    (showAnnouncementOnly.Equals("1"))
+    if(showAnnouncementOnly.Equals("1"))
     {
     /*Show Announcement Only*/
     items = Umbraco.Media(AnnouncementId).Children().OrderBy(sort).Take(5);
@@ -135,10 +134,10 @@ var YoutubeShow =Model.MacroParameters["YoutubeShow"];
                 /*Youtube*/
                 if (YoutubeShow.Equals("1"))
                 {
-                <div class="css-slider-item" style="text-shadow: 0 0 15px black;     ">
-                    <div class="video-background">
+                <div class="css-slider-item" style="text-shadow: 0 0 15px black;  height:450px;   ">
+                    <div class="video-background"  >
                         <div class="video-foreground">
-                            <iframe  id="ytplayer" src="https://www.youtube.com/embed/@YoutubeId?start=500controls=0&showinfo=0&rel=0&autoplay=1&loop=1&playlist=W0LHTWG-UmQ" volume="0" frameborder="0"  allowfullscreen></iframe>
+                            <iframe  id="ytplayer" src="https://www.youtube.com/embed/@YoutubeId?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&playlist=W0LHTWG-UmQ" frameborder="0"  allowfullscreen></iframe>
                         </div>
                     </div>
                    
@@ -206,50 +205,57 @@ var YoutubeShow =Model.MacroParameters["YoutubeShow"];
     </div>
 
  
-
-<script>
-
-   
-    $(window).on("load", function () {
-
-        // Executes when complete page is fully loaded, including
-        // all frames, objects and images
-        var nIntervId;
-        var lb = $('.css-slider  input:radio[name="slider-navigation"]');
-      
-        var len = lb.length;
-        var i = 0;
+    @{
+                                         if (YoutubeShow.Equals("1")==false) {
+                                         <script>
 
 
+        $(window).on("load", function () {
 
-        function slideItem()
-        {
+            // Executes when complete page is fully loaded, including
+            // all frames, objects and images
+            var nIntervId;
+            var lb = $('.css-slider  input:radio[name="slider-navigation"]');
+
+            var len = lb.length;
+            var i = 0;
+
             debugger
-            if (i == len)
-                i = 0;
 
-          
-            lb[i].attr('checked', true);
+            function slideItem() {
+                debugger
+                if (i == len)
+                    i = 0;
 
-            i = i + 1;
-       
-        }
 
-        $('.css-slider-navigation>label').on( "click", function() {
-           
-        });
-        function changeSlide() {
-            if (len > 0)
-            {
-                nIntervId = setInterval(slideItem, 5000);
+                lb[i].checked = true;
+                console.log(i);
+                i = i + 1;
+
             }
-          
-        }
-        function stopchangeSlide() {
-            clearInterval(nIntervId);
-        }
+
+            $('.css-slider-navigation>label').on("click", function () {
+                clearInterval(nIntervId);
+                //Innit New Interval
+                nIntervId = setInterval(slideItem, 10000);
+            });
+            function changeSlide() {
+                if (len > 0) {
+                    nIntervId = setInterval(slideItem, 5000);
+                }
+
+            }
+            function stopchangeSlide() {
+                clearInterval(nIntervId);
+            }
 
 
-        changeSlide();
-    });
-</script>
+            changeSlide();
+        });
+    }
+
+                                         </script>
+
+    }
+    
+    }
