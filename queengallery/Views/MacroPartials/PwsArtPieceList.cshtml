@@ -185,6 +185,9 @@ description=@item.descriptionEn;
             subLv2.html('');
             content.html('');
 
+
+
+
             //CallData
             var mediaID = $(this).attr("data-artpiecesmedia");
 
@@ -193,7 +196,7 @@ description=@item.descriptionEn;
             //GetMedia?id=5066
             var url = 'GetMedia?id=' + mediaID;
 
-            CallServices(url, '', false, function (msg) {
+            CallServices(url, '', true, function (msg) {
                 LoadCompelete();
                 //Reder Data ListTemplate
                 //console.log(msg);
