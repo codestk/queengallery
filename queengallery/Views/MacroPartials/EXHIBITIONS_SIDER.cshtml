@@ -12,17 +12,17 @@
    var AnnouncementId = Model.MacroParameters["Announcement"];
    var showAnnouncementOnly =Model.MacroParameters["showAnnouncementOnly"];
    var showText =Model.MacroParameters["showText"];
- 
 
     /*Youtube*/
-    var YoutubeContent =Model.MacroParameters["YoutubeContent"];
-    var YoutubeId  =Model.MacroParameters["YoutubeId"];
-    var YoutubeHead  =Model.MacroParameters["YoutubeHead"];
-    var YoutubeShow =Model.MacroParameters["YoutubeShow"];
- 
+    var YoutubeContent = Model.MacroParameters["YoutubeContent"];
+    var YoutubeId   = Model.MacroParameters["YoutubeId"];
+    var YoutubeHead = Model.MacroParameters["YoutubeHead"];
+    var YoutubeShow = Model.MacroParameters["YoutubeShow"];
+
     var items = (dynamic)null;
 
-    var valuesFilter = new Dictionary<string, object>();
+    var valuesFilter = new Dictionary<string, object>
+    ();
 
     valuesFilter.Add("Todate", DateTime.Now);
 
@@ -42,7 +42,7 @@
     {
     items = Umbraco.Media(AnnouncementId).Children().Where("Visible").OrderBy(sort).Take(1);
     }
-    }  /*End Auto*/
+    }/*End Auto*/
 
     }
 
@@ -53,15 +53,16 @@
     <div class="css-slider">
 
         @{
+
         int itemID=1;
-        if    (YoutubeShow.Equals("1")){
-        
+
+        if(YoutubeShow.Equals("1")){
         <input type="radio" name="slider-navigation" checked="checked" id="youtube" style="display:none" />
         }
         else{
-        
+
         /*Nomal*/
-     
+
         string checkedVal="";
         foreach(dynamic item in items)
         {
@@ -79,26 +80,18 @@
 
         itemID =itemID+1;
         }
-        
-        
+
         }
-       
-    
 
-
-      
- 
-
-        
         }  @*End*@
 
         <div class="css-slider-navigation">
 
             @{
 
-               if    (YoutubeShow.Equals("1"))
+            if(YoutubeShow.Equals("1"))
             {
-            <label class="css-slider-navigation-item" for="youtube"  style="display:none"></label>
+            <label class="css-slider-navigation-item" for="youtube" style="display:none"></label>
             }
             else
             {
@@ -109,12 +102,12 @@
             string slideID="slide"+itemID.ToString();
             if (items.Count() >1)
             {
-            <label class="css-slider-navigation-item" for="@slideID"></label>
+            <label class="css-slider-navigation-item" for="@slideID" data-id="@itemID"></label>
             }
 
             itemID =itemID+1;
             }
-            
+
             }
 
             }  @*End*@
@@ -124,44 +117,39 @@
         <div class="css-slider-wrapper">
             <div class="css-slider-inner " style="line-height:normal;">
 
-
-
- 
-
-                    @{
-
+                @{
 
                 /*Youtube*/
                 if (YoutubeShow.Equals("1"))
                 {
                 <div class="css-slider-item" style="text-shadow: 0 0 15px black;  height:450px;   ">
-                    <div class="video-background"  >
+                    <div class="video-background">
                         <div class="video-foreground">
-                            <iframe  id="ytplayer" src="https://www.youtube.com/embed/@YoutubeId?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&playlist=W0LHTWG-UmQ" frameborder="0"  allowfullscreen></iframe>
+                            <iframe id="ytplayer" src="https://www.youtube.com/embed/@YoutubeId?controls=0&showinfo=0&rel=0&html5=1&autoplay=1&loop=1&playlist=W0LHTWG-UmQ" frameborder="0" allowfullscreen></iframe>
                         </div>
                     </div>
-                   
+
                     <div id="vidtop-content">
                         <div class="vid-info">
                             <h1>@YoutubeHead</h1>
                             <p>&nbsp;</p>
-                           <p>@YoutubeContent</p>
+                            <p>@YoutubeContent</p>
                         </div>
                     </div>
                 </div>
-                
+
                 }
                 else
-                
+
                 {
                 /*Normal Case*/
                 foreach(dynamic item in items)
                 {
                 string imageUrl=item.image.src;
 
-                string Name =   item.GetPropertyValue("name" +lang);
+                string Name = item.GetPropertyValue("name" +lang);
                 @*string imageUrl=item.GetCropUrl("image", "banner");*@
-                <div class="css-slider-item" style="text-shadow: 0 0 15px black; background-image: url(@imageUrl);   ">
+                <div class="css-slider-item" style="text-shadow: 0 0 15px black; background-image: url(@imageUrl);">
                     <div class="css-slider-item-inner">
                         <div class="slide-title">
                             @{
@@ -171,45 +159,32 @@
                             @Name
                             }
 
-
                             }
-
                         </div>
                         <div class="slide-subtitle">
                             @{
 
-                            if    (showText.Equals("1"))
+                            if(showText.Equals("1"))
                             {
-                            <h2> How are you? </h2>
+                            <h2>  </h2>
                             }
 
-
                             }
-
                         </div>
                     </div>
                 </div>
 
-
-
-
                 }
                 }
 
-
-
-               
-                    }
-                </div>
+                }
+            </div>
         </div>
     </div>
 
- 
     @{
-                                         if (YoutubeShow.Equals("1")==false) {
-                                         <script>
-
-
+    if(YoutubeShow.Equals("1")==false) {
+    <script>
         $(window).on("load", function () {
 
             // Executes when complete page is fully loaded, including
@@ -220,24 +195,26 @@
             var len = lb.length;
             var i = 0;
 
-            debugger
-
             function slideItem() {
-                debugger
+
                 if (i == len)
                     i = 0;
 
-
                 lb[i].checked = true;
-                console.log(i);
+
                 i = i + 1;
 
             }
 
             $('.css-slider-navigation>label').on("click", function () {
+
+               
+                i = this.getAttribute('data-id');
+              
                 clearInterval(nIntervId);
                 //Innit New Interval
                 nIntervId = setInterval(slideItem, 10000);
+
             });
             function changeSlide() {
                 if (len > 0) {
@@ -249,13 +226,9 @@
                 clearInterval(nIntervId);
             }
 
-
             changeSlide();
         });
+    </script>
     }
 
-                                         </script>
-
-    }
-    
     }

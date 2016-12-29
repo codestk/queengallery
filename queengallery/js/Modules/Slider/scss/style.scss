@@ -1,0 +1,151 @@
+@import "compass/css3";
+ 
+
+$slider-movement-duration: 500ms;
+$step-wait: 250ms;
+$slide-animation-duration: 500ms;
+$animation-total-duration: $slider-movement-duration + $step-wait + $slide-animation-duration;
+
+.css-slider{
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  .css-slider-navigation{
+    z-index: 2;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    @include transform(translateX(-50%) translateY(-50%));
+    .css-slider-navigation-item{
+      cursor: pointer;
+      position: relative;
+      width: 10px;
+      height: 10px;
+      @include border-radius(50%);
+      background: black;
+      display: inline-block;
+      &:active,
+      &:hover,
+      &:focus{
+        background: gray;
+      }
+    }
+  }
+  @for $j from 1 to 10{
+    input[type=radio]:nth-of-type(#{$j}):checked{
+      ~ .css-slider-navigation{
+        .css-slider-navigation-item:nth-child(#{$j}){
+          background: gray;
+        }
+      }
+      ~ .css-slider-wrapper{
+        .css-slider-inner{
+          @include translateX(- 100% * ($j - 1));
+          .css-slider-item:nth-child(#{$j}){
+            @include transition-delay($animation-total-duration);
+            left: 0;
+            top: 0;
+            margin-right: 0;
+            width: 100%;
+            height: 100%;
+            .css-slider-item-inner{
+              *{
+                top: 0;
+                opacity: 1;
+                @for $k from 0 to 10{
+                  &:nth-child(#{$k}){
+                    @include transition-delay($animation-total-duration + (100ms * ($k - 1)));
+                    @include transition-duration(500ms - 100ms * ($k - 1));
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .css-slider-wrapper{
+    z-index: 1;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    .css-slider-inner{
+      position: relative;
+      white-space: nowrap;
+      height: 100%;
+      @include translateX(0);
+      @include transition(transform $slider-movement-duration ease);
+      @include transition-delay($slide-animation-duration + $step-wait);
+      font-size: 0;
+      .css-slider-item{
+        position: relative;
+        $space: 40px;
+        display: inline-block;
+        vertical-align: top;
+        font-size: initial;
+        color: white;
+        left: $space;
+        top: $space;
+        margin-right: 2 * $space;
+        width: calc(100% - 2 * #{$space});
+        @include transition-delay(0);
+        height: calc(100% - 2 * #{$space});
+        background-size: cover;
+        background-position: center;
+        @include transition(margin-right 500ms ease, top 500ms ease, left 500ms ease, width 500ms ease, height 500ms ease, transform 500ms ease, opacity 500ms ease);
+        @include transition-duration($slide-animation-duration);
+        .css-slider-item-inner{
+          position: absolute;
+          left: 0;
+          width: 100%;
+          text-align: center;
+          top: 50%;
+          @include translateY(-50%);
+          *{
+            position: relative;
+            top: -50px;
+            opacity: 0;
+            @include transition(opacity 500ms ease, top 500ms ease);
+            @for $k from 0 to 10{
+              &:nth-child(#{$k}){
+                @include transition-delay(100ms * ($k - 1));
+                @include transition-duration(500ms - 100ms * ($k - 1));
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.slide-title{
+  font-size: 42px;
+  font-family: "Open Sans";
+  font-weight: 100;
+  text-transform: uppercase;
+}
+.slide-subtitle{
+  font-size: 24px;
+  font-style: italic;
+}
+
+input[type=radio]{
+  display: none;
+}
+
+@include keyframes(fade){
+  0%{
+    opacity: 1;
+  }
+  50%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}

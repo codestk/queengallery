@@ -116,6 +116,7 @@ a.list-group-item, button.list-group-item {
 /*----Main*/
 main {
     /*margin-top: 14px;*/
+        margin-top: 4px;
 }
 
 /*Footer*/
