@@ -302,13 +302,13 @@
   <ItemGroup>
     <Content Include="js\queengalleryEn.js" />
     <Content Include="js\queengalleryTh.js" />
-    <Content Include="js\Modules\PreLoad\PwsPreLoad.js" />
-    <Content Include="js\Modules\PwsCSS\PwsBaseCss.css" />
-    <Content Include="js\Modules\PwsCSS\PwsMenu.css" />
-    <Content Include="js\Modules\Pws\PWSCallService.js" />
-    <Content Include="js\Modules\ReadMore\ReadMore.css" />
-    <Content Include="js\Modules\ReadMore\ReadMore.js" />
-    <Content Include="js\Modules\Slider\css\slide.css" />
+    <Content Include="Modules\PreLoad\PwsPreLoad.js" />
+    <Content Include="Modules\PwsCSS\PwsBaseCss.css" />
+    <Content Include="Modules\PwsCSS\PwsMenu.css" />
+    <Content Include="Modules\Pws\PWSCallService.js" />
+    <Content Include="Modules\ReadMore\ReadMore.css" />
+    <Content Include="Modules\ReadMore\ReadMore.js" />
+    <Content Include="Modules\Slider\css\slide.css" />
     <Content Include="packages.config" />
     <Content Include="App_Plugins\ModelsBuilder\package.manifest" />
     <Content Include="scripts\PwsExhibitions.js" />
@@ -339,7 +339,7 @@
     <Content Include="Config\BaseRestExtensions.config" />
     <Content Include="Config\applications.config" />
     <Content Include="Config\404handlers.config" />
-    <Content Include="js\Modules\Slider\scss\style.scss" />
+    <Content Include="Modules\Slider\scss\style.scss" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -387,7 +387,7 @@
   <ItemGroup>
     <Folder Include="App_Code\" />
     <Folder Include="App_Data\" />
-    <Folder Include="js\Modules\ToTop\" />
+    <Folder Include="Modules\ToTop\" />
     <Folder Include="Umbraco\" />
   </ItemGroup>
   <PropertyGroup>
