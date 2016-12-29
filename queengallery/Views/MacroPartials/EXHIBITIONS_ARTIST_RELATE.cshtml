@@ -18,9 +18,10 @@
 @{
 	
 	
-
+var Exhibition = Model.MacroParameters["Exhibition"];      
+var HeadText = Model.MacroParameters["HeadText"];      
 var artistID = 0; int.TryParse(Request.QueryString["artist"], out artistID);
-
+ 
 
   
 
@@ -45,16 +46,17 @@ var   mediaIds=item.First().GetPropertyValue("artPieces2");
 
 
 	var itemExhibitions= Umbraco.Media(3576).Children().Where(string.Join<string>(" || ", list));
-<h1> Exhibition </h1>
+<h1> @HeadText </h1>
+
  	foreach (var ex in itemExhibitions)
         {
-				<section class="SectionX">
+				 <div class="row"> 
 
 		 <div class="col-lg-4">
 
 		
 			
-    <img class=" img-responsive img-center  boxShadow" src="@ex.GetCropUrl("image", "wide")" alt="" />
+    <img class="img-responsive img-center  boxShadow" src="@ex.GetCropUrl("image", "wide")" alt="" />
 		 
 	 </div> 
 			 <div class="col-lg-8">
@@ -65,7 +67,7 @@ var   mediaIds=item.First().GetPropertyValue("artPieces2");
 				 <a class="button " href='/en/exhibitions/past/exhibition?exhibition=@ex.id'>Read more</a>
 			 
 				 </div> 
-				 	</section>
+				 	 </div> 
 		}
 	
    

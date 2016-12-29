@@ -12,7 +12,15 @@
    var AnnouncementId = Model.MacroParameters["Announcement"];
    var showAnnouncementOnly =Model.MacroParameters["showAnnouncementOnly"];
    var showText =Model.MacroParameters["showText"];
+   var TextColor =Model.MacroParameters["TextColor"];
+    
+  if (TextColor!=null)
+{
+TextColor= "color:"+@TextColor.ToString();
+}
+ 
 
+ 
     /*Youtube*/
     var YoutubeContent = Model.MacroParameters["YoutubeContent"];
     var YoutubeId   = Model.MacroParameters["YoutubeId"];
@@ -149,29 +157,33 @@
 
                 string Name = item.GetPropertyValue("name" +lang);
                 @*string imageUrl=item.GetCropUrl("image", "banner");*@
+
+               
                 <div class="css-slider-item" style="text-shadow: 0 0 15px black; background-image: url(@imageUrl);">
-                    <div class="css-slider-item-inner">
-                        <div class="slide-title">
-                            @{
+                    <a href="/en/exhibitions/past/exhibition?exhibition=@item.id" style="@TextColor">
+                        <div class="css-slider-item-inner">
+                            <div class="slide-title">
+                                @{
 
-                            if    (showText.Equals("1"))
-                            {
-                            @Name
-                            }
+                                if    (showText.Equals("1"))
+                                {
+                                @Name
+                                }
 
-                            }
+                                }
+                            </div>
+                            <div class="slide-subtitle">
+                                @{
+
+                                if(showText.Equals("1"))
+                                {
+                                <h2>  </h2>
+                                }
+
+                                }
+                            </div>
                         </div>
-                        <div class="slide-subtitle">
-                            @{
-
-                            if(showText.Equals("1"))
-                            {
-                            <h2>  </h2>
-                            }
-
-                            }
-                        </div>
-                    </div>
+                    </a>
                 </div>
 
                 }

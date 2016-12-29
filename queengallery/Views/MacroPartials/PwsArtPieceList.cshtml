@@ -20,15 +20,16 @@ var curNode = Umbraco.TypedContent(Model.Content.Id);
 
 string nodeLang = curNode.GetCulture().ToString().ToLower();
 
-var id = 5463; int.TryParse(Request.QueryString["id"], out id);
+var id = 0; int.TryParse(Request.QueryString["exhibition"], out id);
 
-id = 5463;
+  
+int exhibition = 0; int.TryParse(Model.MacroParameters["exhibition"].ToString(), out exhibition);
 
- int blogId = 3576;
+ 
 
  string condition = "Id ="+id.ToString();
 
-var item= Umbraco.Media(blogId).Children().Where(condition);
+var item= Umbraco.Media(exhibition).Children().Where(condition);
 	
 	var   mediaIds = (dynamic)null;
 	if (item.Count()>0)
@@ -108,7 +109,7 @@ description=@item.descriptionEn;
         @*modal-content*@
         <div class="text-center  ">
             <!--Your modal content goes here-->
-            <img id="modal-img" src="http://localhost:17606/media/8456/picture.jpg" />
+            <img id="modal-img"  />
           
               <h1 id="modal-head">-</h1>
             <h2 id="modal-subLv1">-</h2>
