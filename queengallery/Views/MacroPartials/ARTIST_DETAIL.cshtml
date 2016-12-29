@@ -17,18 +17,17 @@
 
 @{
 var curNode = Umbraco.TypedContent(Model.Content.Id);
-			string nodeLang = curNode.GetCulture().ToString().ToLower();
+string nodeLang = curNode.GetCulture().ToString().ToLower();
 
 
- var id = 4377; int.TryParse(Request.QueryString["id"], out id);
-
-id = 4377;
-
-    int blogId = 1366;
-      var item= (dynamic)null;
+ var id = 0; int.TryParse(Request.QueryString["artist"], out id);
+ int Artists = 0; int.TryParse(Model.MacroParameters["Artists"].ToString(), out Artists);
+  
+    
+ var item= (dynamic)null;
  string condition = "Id ="+id.ToString();
 
-  item= Umbraco.Media(blogId).Children("ArtistsMedia").Where(condition);
+ item= Umbraco.Media(Artists).Children("ArtistsMedia").Where(condition);
  var   media=item.First() ;
 
 }

@@ -19,10 +19,10 @@
 	
 	
 
-var artistID = 4378; int.TryParse(Request.QueryString["id"], out artistID);
+var artistID = 0; int.TryParse(Request.QueryString["artist"], out artistID);
 
 
-   artistID = 4384; //Aitist Folder
+  
 
  
 @*
@@ -59,15 +59,26 @@ var   mediaIds=item.First().GetPropertyValue("artPieces2");
 	 </div> 
 			 <div class="col-lg-8">
 				 <h2>@ex.name</h2>
-				 <p> 
+				 <p class="more"> 
 				 @ex.descriptionTh
 				 </p>
-				 <a class="button boxShadow">Read more</a>
-					 <a class="btn btn-primary waves-effect waves-light boxShadow" href='/en/exhibitions/past/exhibition/' >Read more</a>
+				 <a class="button " href='/en/exhibitions/past/exhibition?exhibition=@ex.id'>Read more</a>
+			 
 				 </div> 
 				 	</section>
 		}
 	
    
 }
+
+                                                                           <link href="~/Modules/ReadMore/ReadMore.css" rel="stylesheet" />
+                                                                           <script src="~/Modules/ReadMore/ReadMore.js"></script>
+                                                                           <script>
+    $(function () {
+      
+
+        ReadMore.showMore = false;
+        ReadMore.BindEvent();
+    });
+                                                                           </script> 
  

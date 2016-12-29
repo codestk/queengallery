@@ -29,7 +29,12 @@ id = 5463;
  string condition = "Id ="+id.ToString();
 
 var item= Umbraco.Media(blogId).Children().Where(condition);
-var   mediaIds=item.First().GetPropertyValue("artPieces2");
+	
+	var   mediaIds = (dynamic)null;
+	if (item.Count()>0)
+	{
+	  mediaIds=item.First().GetPropertyValue("artPieces2");
+	}
 
 }
 @if (mediaIds != null)

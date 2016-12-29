@@ -23,6 +23,8 @@ string nodeLang = curNode.GetCulture().ToString().ToLower();
  var ExhibitionFolder = Model.MacroParameters["ExhibitionFolder"];
 var TextHead = Model.MacroParameters["TextHead"];
 
+  
+
 var Random = Model.MacroParameters["Random"];
 
  int ItemCount = 100; int.TryParse(Model.MacroParameters["ItemCount"].ToString(), out ItemCount);
@@ -90,6 +92,13 @@ description=@item.descriptionTh;
 				name =@item.nameEn;
 description=@item.descriptionEn;
 			}
+var ShowDetail = Model.MacroParameters["ShowDetail"];
+var ShowMore = Model.MacroParameters["ShowMore"];
+string More="";
+if (ShowMore.Equals("1"))
+{
+More="more";
+}
 
 <div class="col-lg-4  matchHeight" style="margin-bottom:40px;">
 
@@ -99,12 +108,15 @@ description=@item.descriptionEn;
         <figcaption>
             <h3></h3>
         </figcaption>
-        <a href="/en/exhibitions/past/artist/">  @item.GetCropUrl(item, "avatar", true)</a>
+        <a href="/en/exhibitions/past/artist?artist=@item.id">  @item.GetCropUrl(item, "avatar", true)</a>
     </figure>
 
     <h2>@name</h2>
-
-    <p class="more">@description</p>
+    @if    (ShowDetail.Equals("1"))
+    {
+    <p class="@More">@description</p>
+    }
+  
 </div>
 }
 
