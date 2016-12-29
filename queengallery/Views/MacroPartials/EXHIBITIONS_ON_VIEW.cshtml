@@ -6,7 +6,7 @@
 <script src="/Modules/Pws/PWSCallService.js"></script>
 <script src="/Modules/mustache/mustache.js"></script>
 <script src="/Modules/UmbracoImage/UmbracoImage.js"></script>
-<script src="~/Modules/js-base64-master/base64.js"></script>
+@*<script src="~/Modules/js-base64-master/base64.js"></script>*@
 @*<script src="~/scripts/PwsExhibitions.js"></script>*@
 
 
@@ -114,7 +114,7 @@ var nodeLang = curNode.GetCulture().ToString().ToLower();
 
     /*Convert Data*/
     function ConvertDataByLanguage(data) {
-        var arrayPosition = 0;
+        //var arrayPosition = 0;
         for (var key in data) {
             //preFixLang
             //var preFixLang = 'En';
@@ -137,10 +137,10 @@ var nodeLang = curNode.GetCulture().ToString().ToLower();
             var to = dateTo.toString(daetFormat); // "April 12th, 2008"
 
             data[key]["to"] = to;
-
-
-            data[key]["id"] = arrayPosition;
-            arrayPosition = arrayPosition + 1;
+            data[key]["id"] = data[key]["__NodeId"];
+            
+            //data[key]["id"] = arrayPosition;
+            //arrayPosition = arrayPosition + 1;
         }
 
         return data;
@@ -190,7 +190,7 @@ var nodeLang = curNode.GetCulture().ToString().ToLower();
                 <p class="more">{{description}} </p>
 
                 @*<a class="btn btn-primary waves-effect waves-light boxShadow" href='/en/exhibitions/past/exhibition/'>Read more</a>*@
-                <a class="button  " href='/en/exhibitions/past/exhibition/'>Read more</a>
+                <a class="button  " href='/en/exhibitions/past/exhibition?exhibition={{id}}'>Read more</a>
                 
             </div>
         <div class="col-lg-12">

@@ -1,12 +1,31 @@
 ﻿@inherits Umbraco.Web.Macros.PartialViewMacroPage
 
-<script src="/Modules/paginate/jquery.simplePagination.js"></script>
-<link href="/Modules/paginate/simplePagination.css" rel="stylesheet" />
+
+@{
+
+ int exhibition = 0; int.TryParse(Request.QueryString["exhibition"].ToString(), out exhibition);
+ var item= (dynamic)null;
+  
+ 
+  var TextHead = Model.MacroParameters["TextHead"];       
+ item= Umbraco.Media(exhibition) ;
+}
+
 <script src="/Modules/Pws/PWSCallService.js"></script>
 <script src="/Modules/mustache/mustache.js"></script>
 <script src="/Modules/UmbracoImage/UmbracoImage.js"></script>
-<script src="~/Modules/js-base64-master/base64.js"></script>
- 
+
+ <!--Datejs-->
+<script src="~/Modules/Datejs-master/build/date.js"></script>
+@{
+var curNode = Umbraco.TypedContent(Model.Content.Id);
+var nodeLang = curNode.GetCulture().ToString().ToLower();
+}
+@if  (nodeLang == "th-th")
+{
+<script src="~/Modules/Datejs-master/build/date-th-TH.js"></script>
+}
+
 <script>
 
     $(document).ready(function () {
@@ -30,9 +49,9 @@
     function RenderList() {
 
         //Render List
-        var url = 'RazorJson?page=' + PageIndex + '&Type=' + menuType;
+        
 
-        var url = 'ExhibitionService?id=5463';
+        var url = 'ExhibitionService?id=@item.id';
 
         Preload();
         CallServices(url, '', true, function (msg) {
@@ -87,46 +106,11 @@
 
     }
 
-    //Set Pagger
-    //function SetPagger(RecordCount) {
-
-    //    if (RecordCount == 0) {
-    //        $('#ulpage').hide();
-    //        return;
-    //    }
-    //    else {
-    //        $('#ulpage').show();
-    //    }
-    //    $('#ulpage').pagination({
-    //        items: RecordCount,
-    //        itemsOnPage: PageSize,
-
-    //        //prevText: '<img class="iconDirection" src="Images/1457020750_arrow-left-01.svg" />',
-    //        //nextText: '<img class="iconDirection" src="Images/1457020740_arrow-right-01.svg" />',
-
-    //        prevText: lblPrev,
-    //        nextText: lblNext,
-    //        currentPage: PageIndex,//cssStyle: 'light-theme',
-    //        onPageClick: function (event) {
-
-    //            //Set Global Page
-    //            if (event < 10) {
-    //                PageIndex = '0' + event;
-    //            }
-    //            else {
-    //                PageIndex = event;
-    //            }
-    //            //-Set Global Page
-    //            RenderList();
-    //        }
-
-    //    });
-
-    //}
+   
 
     /*Convert Data*/
     function ConvertDataByLanguage(data) {
-
+        var arrayPosition = 0;
         for (var key in data) {
             //preFixLang
             //var preFixLang = 'En';
@@ -136,74 +120,81 @@
             data[key]["description"] = data[key]["description" + preFixLang];
 
             var ImageUmbracoString = data[key]["image"];
-            debugger
+
             data[key]["logoUrl"] = UmbracoImageUrl(ImageUmbracoString);
 
+            var daetFormat = 'd MMM yyyy';
+            var dateFrom = new Date(data[key]["beginDate"]);
+            var from = dateFrom.toString(daetFormat); // "April 12th, 2008"
+            data[key]["from"] = from;
+
+            var dateTo = new Date(data[key]["endDate"]);
+
+            var to = dateTo.toString(daetFormat); // "April 12th, 2008"
+
+            data[key]["to"] = to;
+
+
+            data[key]["id"] = arrayPosition;
+            arrayPosition = arrayPosition + 1;
         }
 
         return data;
     }
 
+
+     
+
     /*Utility*/
     /*Event*/
-    function ModalEvent() {
-
-        $('.EventModal').on('click', function () {
-
-            $('.imagepreview').attr('src', $(this).find('img').attr('src'));
-            $('#imagemodal').modal('show');
-        });
-
-    }
-    function EventExhibition() {
-        EventExhibition
-        $('.EventExhibition').on('click', function () {
-            $('#Main').hide();
-            $('#SubMain').show();
-
-        });
-
-    }
+    
 </script>
 <section id="Main">
     <div class="text-center">
-        @*<h1>OnView </h1>*@
-        <h1 class="color-black font-weight-300"><strong>OnView</strong></h1>
+        
+        <h1 class="color-black font-weight-300"><strong>@TextHead</strong></h1>
         <div id="divList" class="text-center ">
         </div>
     </div>
 </section>
-
+<!-- Template -->
 <script id="ListTemplate" type="x-tmpl-mustache">
+
     {{#Data}}
-    <div class="col-lg-12">
-        <a href="#" class="EventModal">
-            <img src='{{logoUrl}}' class="img-thumbnail img-responsive img-center">
-        </a>
+
+    <div class="col-lg-12  ">
+
+        <h2>{{name}}</h2>
+        <img src='{{logoUrl}}' class="img-responsive img-center  ">
+
     </div>
     <div class="col-lg-12">
-        @*<a href="#" class="EventExhibition" data-arrayIndex="{{id}}"> <h2 class="">{{name}} </h2>	</a>*@
-        <h2 class="">{{name}} </h2>
-        <div class="date">{{from}}-{{to}}</div>
-        <p>  </p>
-        <p>{{description}} </p>
+
+
+
+        <p class="date">{{from}} - {{to}}</p>
+
+        <p class="">{{description}} </p>
 
      
-    </div>
-    {{/Data}}
-</script>
-@*
-<script id="ExhibitionsDetailTemplate" type="x-tmpl-mustache">
-    {{#Data}}
-    <div id="ExhibitionsDetail">
-        <img src="/media/1983/banner.jpg" class="img-thumbnail img-responsive img-center">
-        <h2 class="">{{name}} </h2>
-        <div class="date">{{from}}-{{to}}</div>
-        <p>{{{content}}}</p>
-    </div>
-    {{/Data}}
-</script>*@
 
+    </div>
+  
+    {{/Data}}
+
+</script>
+
+<script id="NoEventTemplate" type="x-tmpl-mustache">
+
+    <div class="row">
+        <hr>
+        <div class="col-lg-12   ">
+
+            <div class="message">@Umbraco.Field("#EventNotFound") </div>
+        </div>
+    </div>
+</script>
+<!-- /Template -->
 <!-- Modal -->
 <div class="modal fade" id="imagemodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg" style="z-index:1050">
