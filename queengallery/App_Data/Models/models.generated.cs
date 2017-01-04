@@ -19,8 +19,8 @@ using Umbraco.ModelsBuilder;
 using Umbraco.ModelsBuilder.Umbraco;
 
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "d56612837c99c830")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "5b181dea78f5c702")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.2")]
 
 namespace Umbraco.Web.PublishedContentModels
 {
@@ -286,7 +286,7 @@ namespace Umbraco.Web.PublishedContentModels
 
 	/// <summary>Landing Page</summary>
 	[PublishedContentModel("LandingPage")]
-	public partial class LandingPage : PublishedContentModel
+	public partial class LandingPage : PublishedContentModel, IOpenGraph, ISEO
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "LandingPage";
@@ -326,11 +326,74 @@ namespace Umbraco.Web.PublishedContentModels
 		{
 			get { return this.GetPropertyValue<bool>("umbracoNaviHide"); }
 		}
+
+		///<summary>
+		/// Card Image
+		///</summary>
+		[ImplementPropertyType("cardImage")]
+		public object CardImage
+		{
+			get { return OpenGraph.GetCardImage(this); }
+		}
+
+		///<summary>
+		/// OG Description
+		///</summary>
+		[ImplementPropertyType("oGDescription")]
+		public string OGdescription
+		{
+			get { return OpenGraph.GetOGdescription(this); }
+		}
+
+		///<summary>
+		/// OG Image
+		///</summary>
+		[ImplementPropertyType("oGImage")]
+		public object OGimage
+		{
+			get { return OpenGraph.GetOGimage(this); }
+		}
+
+		///<summary>
+		/// OG Title
+		///</summary>
+		[ImplementPropertyType("oGTitle")]
+		public string OGtitle
+		{
+			get { return OpenGraph.GetOGtitle(this); }
+		}
+
+		///<summary>
+		/// META Desctiption
+		///</summary>
+		[ImplementPropertyType("mETADesctiption")]
+		public string MEtadesctiption
+		{
+			get { return SEO.GetMEtadesctiption(this); }
+		}
+
+		///<summary>
+		/// META Keyword
+		///</summary>
+		[ImplementPropertyType("mETAKeyword")]
+		public string MEtakeyword
+		{
+			get { return SEO.GetMEtakeyword(this); }
+		}
+
+		///<summary>
+		/// Page Title
+		///</summary>
+		[ImplementPropertyType("pageTitle")]
+		public string PageTitle
+		{
+			get { return SEO.GetPageTitle(this); }
+		}
 	}
 
 	/// <summary>Text Page</summary>
 	[PublishedContentModel("TextPage")]
-	public partial class TextPage : PublishedContentModel
+	public partial class TextPage : PublishedContentModel, INaviHide, IOpenGraph, ISEO
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "TextPage";
@@ -360,6 +423,78 @@ namespace Umbraco.Web.PublishedContentModels
 		public Newtonsoft.Json.Linq.JToken Content
 		{
 			get { return this.GetPropertyValue<Newtonsoft.Json.Linq.JToken>("content"); }
+		}
+
+		///<summary>
+		/// umbracoNaviHide
+		///</summary>
+		[ImplementPropertyType("umbracoNaviHide")]
+		public bool UmbracoNaviHide
+		{
+			get { return NaviHide.GetUmbracoNaviHide(this); }
+		}
+
+		///<summary>
+		/// Card Image
+		///</summary>
+		[ImplementPropertyType("cardImage")]
+		public object CardImage
+		{
+			get { return OpenGraph.GetCardImage(this); }
+		}
+
+		///<summary>
+		/// OG Description
+		///</summary>
+		[ImplementPropertyType("oGDescription")]
+		public string OGdescription
+		{
+			get { return OpenGraph.GetOGdescription(this); }
+		}
+
+		///<summary>
+		/// OG Image
+		///</summary>
+		[ImplementPropertyType("oGImage")]
+		public object OGimage
+		{
+			get { return OpenGraph.GetOGimage(this); }
+		}
+
+		///<summary>
+		/// OG Title
+		///</summary>
+		[ImplementPropertyType("oGTitle")]
+		public string OGtitle
+		{
+			get { return OpenGraph.GetOGtitle(this); }
+		}
+
+		///<summary>
+		/// META Desctiption
+		///</summary>
+		[ImplementPropertyType("mETADesctiption")]
+		public string MEtadesctiption
+		{
+			get { return SEO.GetMEtadesctiption(this); }
+		}
+
+		///<summary>
+		/// META Keyword
+		///</summary>
+		[ImplementPropertyType("mETAKeyword")]
+		public string MEtakeyword
+		{
+			get { return SEO.GetMEtakeyword(this); }
+		}
+
+		///<summary>
+		/// Page Title
+		///</summary>
+		[ImplementPropertyType("pageTitle")]
+		public string PageTitle
+		{
+			get { return SEO.GetPageTitle(this); }
 		}
 	}
 
@@ -769,6 +904,219 @@ namespace Umbraco.Web.PublishedContentModels
 		{
 			get { return this.GetPropertyValue<string>("nameTh"); }
 		}
+	}
+
+	// Mixin content Type 5711 with alias "openGraph"
+	/// <summary>OpenGraph</summary>
+	public partial interface IOpenGraph : IPublishedContent
+	{
+		/// <summary>Card Image</summary>
+		object CardImage { get; }
+
+		/// <summary>OG Description</summary>
+		string OGdescription { get; }
+
+		/// <summary>OG Image</summary>
+		object OGimage { get; }
+
+		/// <summary>OG Title</summary>
+		string OGtitle { get; }
+	}
+
+	/// <summary>OpenGraph</summary>
+	[PublishedContentModel("openGraph")]
+	public partial class OpenGraph : PublishedContentModel, IOpenGraph
+	{
+#pragma warning disable 0109 // new is redundant
+		public new const string ModelTypeAlias = "openGraph";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+#pragma warning restore 0109
+
+		public OpenGraph(IPublishedContent content)
+			: base(content)
+		{ }
+
+#pragma warning disable 0109 // new is redundant
+		public new static PublishedContentType GetModelContentType()
+		{
+			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
+		}
+#pragma warning restore 0109
+
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<OpenGraph, TValue>> selector)
+		{
+			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Card Image
+		///</summary>
+		[ImplementPropertyType("cardImage")]
+		public object CardImage
+		{
+			get { return GetCardImage(this); }
+		}
+
+		/// <summary>Static getter for Card Image</summary>
+		public static object GetCardImage(IOpenGraph that) { return that.GetPropertyValue("cardImage"); }
+
+		///<summary>
+		/// OG Description
+		///</summary>
+		[ImplementPropertyType("oGDescription")]
+		public string OGdescription
+		{
+			get { return GetOGdescription(this); }
+		}
+
+		/// <summary>Static getter for OG Description</summary>
+		public static string GetOGdescription(IOpenGraph that) { return that.GetPropertyValue<string>("oGDescription"); }
+
+		///<summary>
+		/// OG Image
+		///</summary>
+		[ImplementPropertyType("oGImage")]
+		public object OGimage
+		{
+			get { return GetOGimage(this); }
+		}
+
+		/// <summary>Static getter for OG Image</summary>
+		public static object GetOGimage(IOpenGraph that) { return that.GetPropertyValue("oGImage"); }
+
+		///<summary>
+		/// OG Title
+		///</summary>
+		[ImplementPropertyType("oGTitle")]
+		public string OGtitle
+		{
+			get { return GetOGtitle(this); }
+		}
+
+		/// <summary>Static getter for OG Title</summary>
+		public static string GetOGtitle(IOpenGraph that) { return that.GetPropertyValue<string>("oGTitle"); }
+	}
+
+	// Mixin content Type 5712 with alias "sEO"
+	/// <summary>SEO</summary>
+	public partial interface ISEO : IPublishedContent
+	{
+		/// <summary>META Desctiption</summary>
+		string MEtadesctiption { get; }
+
+		/// <summary>META Keyword</summary>
+		string MEtakeyword { get; }
+
+		/// <summary>Page Title</summary>
+		string PageTitle { get; }
+	}
+
+	/// <summary>SEO</summary>
+	[PublishedContentModel("sEO")]
+	public partial class SEO : PublishedContentModel, ISEO
+	{
+#pragma warning disable 0109 // new is redundant
+		public new const string ModelTypeAlias = "sEO";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+#pragma warning restore 0109
+
+		public SEO(IPublishedContent content)
+			: base(content)
+		{ }
+
+#pragma warning disable 0109 // new is redundant
+		public new static PublishedContentType GetModelContentType()
+		{
+			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
+		}
+#pragma warning restore 0109
+
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<SEO, TValue>> selector)
+		{
+			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// META Desctiption
+		///</summary>
+		[ImplementPropertyType("mETADesctiption")]
+		public string MEtadesctiption
+		{
+			get { return GetMEtadesctiption(this); }
+		}
+
+		/// <summary>Static getter for META Desctiption</summary>
+		public static string GetMEtadesctiption(ISEO that) { return that.GetPropertyValue<string>("mETADesctiption"); }
+
+		///<summary>
+		/// META Keyword
+		///</summary>
+		[ImplementPropertyType("mETAKeyword")]
+		public string MEtakeyword
+		{
+			get { return GetMEtakeyword(this); }
+		}
+
+		/// <summary>Static getter for META Keyword</summary>
+		public static string GetMEtakeyword(ISEO that) { return that.GetPropertyValue<string>("mETAKeyword"); }
+
+		///<summary>
+		/// Page Title
+		///</summary>
+		[ImplementPropertyType("pageTitle")]
+		public string PageTitle
+		{
+			get { return GetPageTitle(this); }
+		}
+
+		/// <summary>Static getter for Page Title</summary>
+		public static string GetPageTitle(ISEO that) { return that.GetPropertyValue<string>("pageTitle"); }
+	}
+
+	// Mixin content Type 5714 with alias "naviHide"
+	/// <summary>NaviHide</summary>
+	public partial interface INaviHide : IPublishedContent
+	{
+		/// <summary>umbracoNaviHide</summary>
+		bool UmbracoNaviHide { get; }
+	}
+
+	/// <summary>NaviHide</summary>
+	[PublishedContentModel("naviHide")]
+	public partial class NaviHide : PublishedContentModel, INaviHide
+	{
+#pragma warning disable 0109 // new is redundant
+		public new const string ModelTypeAlias = "naviHide";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+#pragma warning restore 0109
+
+		public NaviHide(IPublishedContent content)
+			: base(content)
+		{ }
+
+#pragma warning disable 0109 // new is redundant
+		public new static PublishedContentType GetModelContentType()
+		{
+			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
+		}
+#pragma warning restore 0109
+
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<NaviHide, TValue>> selector)
+		{
+			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// umbracoNaviHide
+		///</summary>
+		[ImplementPropertyType("umbracoNaviHide")]
+		public bool UmbracoNaviHide
+		{
+			get { return GetUmbracoNaviHide(this); }
+		}
+
+		/// <summary>Static getter for umbracoNaviHide</summary>
+		public static bool GetUmbracoNaviHide(INaviHide that) { return that.GetPropertyValue<bool>("umbracoNaviHide"); }
 	}
 
 	// Mixin content Type 1031 with alias "Folder"

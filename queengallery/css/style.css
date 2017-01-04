@@ -204,8 +204,8 @@ main {
 /*Text*/
 .date {
     margin-bottom: 10px;
-    font-size: 0.9em;
-    font-weight: normal;
+    font-size: 1em;
+    font-weight: bold;
 }
 
 /*Nav*/

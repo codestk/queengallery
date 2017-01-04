@@ -1,0 +1,23 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+
+	
+	@{
+    var root = Model.Content.AncestorOrSelf(1);
+    var rootChildern = root.Children.Where(x => x.IsVisible());
+ 
+                var curNode = Umbraco.TypedContent(Model.Content.Id);
+                string nodeLang = curNode.GetCulture().ToString().ToLower();
+                string relURL = Model.Content.Url;
+ 
+                if (nodeLang == "en-us") {
+                                relURL = relURL.Replace("en", "th");
+                                <button type="button" class="flag pull-right active">
+                                                <a href="@relURL">TH</a></button>
+                                <button type="button" class="flag pull-right disabled">EN</button>
+                } else {
+                                relURL = relURL.Replace("th", "en");
+                                <button type="button" class="flag pull-right disabled">TH</button>
+                                <button type="button" class="flag pull-right active">
+                                                <a href="@relURL">EN</a></button>
+                }
+}

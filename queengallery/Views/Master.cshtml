@@ -149,10 +149,13 @@
 
         <div class="container">
             <div class="navbar-right  text-right">
-                <a href="#">
+                @*<a href="#">
                     <img src="~/Modules/images/us_flag.png" />
                 </a>
-                <a href="#"><img src="~/Modules/images/th_flag.png" /></a>
+                <a href="#"><img src="~/Modules/images/th_flag.png" /></a>*@
+
+                @{ Html.RenderPartial("LanguageSwitch"); }
+
             </div>
 
             <!-- Brand and toggle get grouped for better mobile display -->

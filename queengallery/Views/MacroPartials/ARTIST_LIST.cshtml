@@ -64,10 +64,32 @@ if (exhibitionID==0)
     foreach (var mediaId in mediaIds.ToString().Split(','))
     {
     var media = Umbraco.Media(mediaId);
-    var artTistMedia =Umbraco.Media(media.ParentId);
-    artistList=artTistMedia.id.ToString()+",";
-    }
 
+    //Check  Nodata 
+    var mediaNode = Umbraco.TypedMedia(mediaId);
+                                      
+    if (mediaNode !=null)
+    {
+     
+    var artTistMedia =Umbraco.Media(media.ParentId);
+    artistList=artTistMedia.id.ToString()+","; 
+                                         }
+    else
+    {
+ <div id="DivDataNoFound" class="col-lg-12 text-center">@Umbraco.Field("#NoData")</div>
+                                     
+    
+   <script>
+        $(function () {
+            $("#DivDataNoFound").parent().parent().parent().parent().parent().hide();
+        });
+    </script> 
+
+                                       @media.Count()  ;;;;;;;;;;;;
+    return;
+    }
+    }
+     
 
 
     string  mediaArtistReorder = "";
@@ -129,7 +151,7 @@ if (exhibitionID==0)
     }
 
 
-    
+
     <div class="col-lg-4  matchHeight" style="margin-bottom:40px;">
 
         <figure class="snip1554">
