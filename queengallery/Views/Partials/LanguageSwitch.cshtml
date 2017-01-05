@@ -7,17 +7,34 @@
  
                 var curNode = Umbraco.TypedContent(Model.Content.Id);
                 string nodeLang = curNode.GetCulture().ToString().ToLower();
-                string relURL = Model.Content.Url;
- 
+                @*string relURL = Model.Content.Url;*@
+                string relURL=Request.Url.PathAndQuery;
+
                 if (nodeLang == "en-us") {
                                 relURL = relURL.Replace("en", "th");
-                                <button type="button" class="flag pull-right active">
+                                @*<button type="button" class="flag pull-right active">
                                                 <a href="@relURL">TH</a></button>
-                                <button type="button" class="flag pull-right disabled">EN</button>
+                                <button type="button" class="flag pull-right disabled">EN</button>*@
+
+<a href="#">
+    <img src="~/Modules/images/us_flag.png" width="13" height="9" style="cursor:no-drop" />
+</a>
+<a href="@relURL"><img src="~/Modules/images/th_flag.png"  style="opacity:.5;" /></a>
+
+
+
                 } else {
                                 relURL = relURL.Replace("th", "en");
-                                <button type="button" class="flag pull-right disabled">TH</button>
-                                <button type="button" class="flag pull-right active">
-                                                <a href="@relURL">EN</a></button>
+                                @*<button type="button" class="flag pull-right disabled">TH</button>
+                             
+                                                <a href="@relURL">EN</a>*@ 
+<a href="@relURL">
+    <img src="~/Modules/images/us_flag.png"  style="opacity:.5;" />
+</a>
+<a href="#"><img src="~/Modules/images/th_flag.png" width="13" height="9" style="cursor:no-drop"  /></a>
+
+
+
+
                 }
 }

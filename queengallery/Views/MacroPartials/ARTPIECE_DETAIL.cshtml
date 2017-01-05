@@ -16,10 +16,17 @@
 
 
 @{
+
+if (Request.QueryString["artist"]==null)
+{return;
+}
+
 var curNode = Umbraco.TypedContent(Model.Content.Id);
 
 string nodeLang = curNode.GetCulture().ToString().ToLower();
 
+  
+ 
 var id = 0; int.TryParse(Request.QueryString["artist"], out id);
 
  
@@ -35,7 +42,14 @@ var items= Umbraco.Media(id).Children() ;
 {
 
 <div class="text-center ">
-    <h1>Art Pieces </h1>
+   
+    @{if (TextHead !=null)
+    {
+    <h1>@TextHead </h1>
+    }
+    }
+
+
     <div class="row-marson">
         @foreach (var artPieces in items)
         {
@@ -102,7 +116,7 @@ description=@item.descriptionEn;
         @*modal-content*@
         <div class="text-center  ">
             <!--Your modal content goes here-->
-            <img id="modal-img" src="http://localhost:17606/media/8456/picture.jpg" />
+            <img id="modal-img" src=" " />
           
               <h1 id="modal-head">-</h1>
             <h2 id="modal-subLv1">-</h2>
@@ -172,7 +186,7 @@ description=@item.descriptionEn;
             //$('#modal-head').html('');
             //$('#modal-subLv1').html('');
             //$('#modal-subLv2').html('');
-
+            
             var head = $('#modal-head');
             var subLv1 = $('#modal-subLv1');
             var subLv2 = $('#modal-subLv2'); 
@@ -194,7 +208,7 @@ description=@item.descriptionEn;
 
             //GetMedia?id=5066
             var url = 'GetMedia?id=' + mediaID;
-
+   
             CallServices(url, '', true, function (msg) {
                 LoadCompelete();
                 //Reder Data ListTemplate

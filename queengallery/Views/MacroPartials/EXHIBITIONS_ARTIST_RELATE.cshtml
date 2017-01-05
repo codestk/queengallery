@@ -26,12 +26,6 @@ var artistID = 0; int.TryParse(Request.QueryString["artist"], out artistID);
   
 
  
-@*
-var item= Umbraco.Media(blogId).Children().Where(condition);
-var   mediaIds=item.First().GetPropertyValue("artPieces2");
-
- 
- var   mediaIds=item.First().GetPropertyValue("artPieces2");*@
 	var itemsArtPices= Umbraco.Media(artistID).Children();
 	
  
@@ -45,7 +39,7 @@ var   mediaIds=item.First().GetPropertyValue("artPieces2");
 		}
 
 
-	var itemExhibitions= Umbraco.Media(3576).Children().Where(string.Join<string>(" || ", list));
+	var itemExhibitions= Umbraco.Media(Exhibition).Children().Where(string.Join<string>(" || ", list));
 <h1> @HeadText </h1>
 
  	foreach (var ex in itemExhibitions)

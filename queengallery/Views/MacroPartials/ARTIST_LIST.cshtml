@@ -16,174 +16,194 @@
 
 
 @{
+ 
+
+
 var curNode = Umbraco.TypedContent(Model.Content.Id);
 string nodeLang = curNode.GetCulture().ToString().ToLower();
 
- var lang=Umbraco.GetDictionaryValue("language");
- var ExhibitionFolder = Model.MacroParameters["ExhibitionFolder"];
+var lang=Umbraco.GetDictionaryValue("language");
+var ExhibitionFolder = Model.MacroParameters["ExhibitionFolder"];
 var TextHead = Model.MacroParameters["TextHead"];
-
-  
-
+var ShowAuto = Model.MacroParameters["ShowAuto"];
+var Exhibition = Model.MacroParameters["Exhibition"];
 var Random = Model.MacroParameters["Random"];
 
- int ItemCount = 100; int.TryParse(Model.MacroParameters["ItemCount"].ToString(), out ItemCount);
+int ItemCount = 100; int.TryParse(Model.MacroParameters["ItemCount"].ToString(), out ItemCount);
 if (ItemCount==0)
 {
  ItemCount = 100;
 }
 
- int  exhibitionID = 0; int.TryParse(Request.QueryString["exhibition"], out exhibitionID);
-
-if (exhibitionID==0)
+int exhibitionID = 0; 
+  if (ShowAuto.Equals("1"))
 {
-/*Ex อันล่าสุด*/
     string sort = "beginDate";
- 
 
-    var valuesFilter = new Dictionary<string, object>();
+    var valuesFilter = new Dictionary<string, object>
+    ();
 
     valuesFilter.Add("Todate", DateTime.Now);
-   
-    var  exhibitionitems = Umbraco.Media( ExhibitionFolder).Children().Where( "(beginDate <= Todate) && (endDate >= Todate)", valuesFilter).OrderBy(sort).Take(1);
+
+    var  exhibitionitems = Umbraco.Media(ExhibitionFolder).Children().Where( "(beginDate <= Todate) && (endDate >= Todate)", valuesFilter).OrderBy(sort).Take(1);
 
     exhibitionID = exhibitionitems.First().id;
 
-                         
+    }else  if  (Request.QueryString["exhibition"]!=null)
+    {
+    int.TryParse(Request.QueryString["exhibition"], out exhibitionID);
     }
-
-    var item= (dynamic)null;
-    string condition = "Id ="+exhibitionID.ToString();
-
-    /*Get Exhibition*/
-    item= Umbraco.Media(ExhibitionFolder).Children().Where(condition)  ;
-    var   mediaIds=item.First().GetPropertyValue("artPieces2");
-
-    string artistList= mediaIds.ToString();
-    /*Find Arttist*/
-    foreach (var mediaId in mediaIds.ToString().Split(','))
+    else if (Exhibition !=null)
     {
-    var media = Umbraco.Media(mediaId);
-
-    //Check  Nodata 
-    var mediaNode = Umbraco.TypedMedia(mediaId);
-                                      
-    if (mediaNode !=null)
-    {
-     
-    var artTistMedia =Umbraco.Media(media.ParentId);
-    artistList=artTistMedia.id.ToString()+","; 
-                                         }
-    else
-    {
- <div id="DivDataNoFound" class="col-lg-12 text-center">@Umbraco.Field("#NoData")</div>
-                                     
     
-   <script>
-        $(function () {
-            $("#DivDataNoFound").parent().parent().parent().parent().parent().hide();
-        });
-    </script> 
+                  var ExhibitionMedia  =Umbraco.Media(Exhibition);
 
-                                       @media.Count()  ;;;;;;;;;;;;
-    return;
-    }
-    }
-     
-
-
-    string  mediaArtistReorder = "";
-    if    (Random.Equals("1"))
+   
+    if (ExhibitionMedia.DocumentTypeAlias=="exhibitionsMedia")
     {
-    mediaArtistReorder= string.Join(",", artistList.ToString().Split(',').Distinct().OrderBy(x => System.Guid.NewGuid()).Take(ItemCount));
+                                                            
+    int.TryParse(ExhibitionMedia.id.ToString(), out exhibitionID); 
+    }                                         
+    
     }else
     {
-    mediaArtistReorder= string.Join(",", artistList.ToString().Split(',').Distinct().Take(ItemCount));
+    exhibitionID=0;
     }
-
-
-
-    }
-
-
-
-
-    @if (mediaArtistReorder != "")
+  
+    if (exhibitionID==0)
     {
-    <h1>@TextHead</h1>
-    <div class="text-center">
+    return; /*Nodata*/
+    }
+ 
+        var item= (dynamic)null;
+        string condition = "Id ="+exhibitionID.ToString();
 
-        @foreach (var mediaId in mediaArtistReorder.ToString().Split(','))
+        /*Get Exhibition*/
+        item= Umbraco.Media(ExhibitionFolder).Children().Where(condition)  ;
+        var   mediaIds=item.First().GetPropertyValue("artPieces2");
+
+        string artistList= mediaIds.ToString();
+        /*Find Arttist*/
+        foreach (var mediaId in mediaIds.ToString().Split(','))
+        {
+        var media = Umbraco.Media(mediaId);
+
+        //Check Nodata
+        var mediaNode = Umbraco.TypedMedia(mediaId);
+
+        if (mediaNode !=null)
         {
 
-        var artTistMedia = Umbraco.Media(mediaId);
-        @*var  artTistMedia =Umbraco.Media(media.ParentId);*@
-        @* a single image *@
-        <!-- Left and right controls -->
-        if (artTistMedia.DocumentTypeAlias == "ArtistsMedia")
+        var artTistMedia =Umbraco.Media(media.ParentId);
+        artistList=artTistMedia.id.ToString()+",";
+        }
+        else
         {
+        <div id="DivDataNoFound" class="col-lg-12 text-center">@Umbraco.Field("#NoData")</div>
 
-        @Render(artTistMedia,nodeLang);
-        }
-
-        }
-    </div>
-    }
-
-    @helper Render(dynamic item,string nodeLang)
-    {
-
-    string  name="";
-    string description="";
-    if (nodeLang == "th-th") {
-    name = @item.nameTh;
-    description=@item.descriptionTh;
-    } else {
-    name =@item.nameEn;
-    description=@item.descriptionEn;
-    }
-    var ShowDetail = Model.MacroParameters["ShowDetail"];
-    var ShowMore = Model.MacroParameters["ShowMore"];
-    string More="";
-    if (ShowMore.Equals("1"))
-    {
-    More="more";
-    }
-
-
-
-    <div class="col-lg-4  matchHeight" style="margin-bottom:40px;">
-
-        <figure class="snip1554">
-
-            <img class="img-circle img-responsive img-center" src="@item.GetCropUrl(" image", "avatar" )" onerror="this.src = '/media/9280/untitled-3.png?anchor=center&mode=crop&width=300&height=300&rnd=131258854960000000'" alt="@name" />
-            <figcaption>
-                <h3></h3>
-            </figcaption>
-            <a href="/en/exhibitions/past/artist?artist=@item.id">  @item.GetCropUrl(item, "avatar", true)</a>
-        </figure>
-
-        <h2>@name</h2>
-        @if    (ShowDetail.Equals("1"))
-        {
-        <p class="@More">@description</p>
-        }
-
-    </div>
-    }
-
-
-
-    <script src="~/Modules/jquery-match-height-master/dist/jquery.matchHeight-min.js"></script>
-    <link href="~/Modules/ReadMore/ReadMore.css" rel="stylesheet" />
-    <script src="~/Modules/ReadMore/ReadMore.js"></script>
-    <script>
-        $(function () {
-            $('.matchHeight').matchHeight({
-                byRow: true, remove: false
+        <script>
+            $(function () {
+                $("#DivDataNoFound").parent().parent().parent().parent().parent().hide();
             });
+        </script>
 
-            ReadMore.showMore = false;
-            ReadMore.BindEvent();
-        });
-    </script>
+        return;
+        }
+        }
+
+
+        string  mediaArtistReorder = "";
+        if    (Random.Equals("1"))
+        {
+        mediaArtistReorder= string.Join(",", artistList.ToString().Split(',').Distinct().OrderBy(x => System.Guid.NewGuid()).Take(ItemCount));
+        }else
+        {
+        mediaArtistReorder= string.Join(",", artistList.ToString().Split(',').Distinct().Take(ItemCount));
+        }
+
+
+
+        }
+
+
+
+
+        @if (mediaArtistReorder != "")
+        {
+        <h1>@TextHead</h1>
+        <div class="text-center">
+
+            @foreach (var mediaId in mediaArtistReorder.ToString().Split(','))
+            {
+
+            var artTistMedia = Umbraco.Media(mediaId);
+            @*var  artTistMedia =Umbraco.Media(media.ParentId);*@
+            @* a single image *@
+            <!-- Left and right controls -->
+            if (artTistMedia.DocumentTypeAlias == "ArtistsMedia")
+            {
+
+            @Render(artTistMedia,nodeLang);
+            }
+
+            }
+        </div>
+        }
+
+        @helper Render(dynamic item,string nodeLang)
+        {
+
+        string  name="";
+        string description="";
+        if (nodeLang == "th-th") {
+        name = @item.nameTh;
+        description=@item.descriptionTh;
+        } else {
+        name =@item.nameEn;
+        description=@item.descriptionEn;
+        }
+        var ShowDetail = Model.MacroParameters["ShowDetail"];
+        var ShowMore = Model.MacroParameters["ShowMore"];
+        string More="";
+        if (ShowMore.Equals("1"))
+        {
+        More="more";
+        }
+
+
+
+        <div class="col-lg-4  matchHeight" style="margin-bottom:40px;">
+
+            <figure class="snip1554">
+
+                <img class="img-circle img-responsive img-center" src="@item.GetCropUrl(" image", "avatar" )" onerror="this.src = '/media/9280/untitled-3.png?anchor=center&mode=crop&width=300&height=300&rnd=131258854960000000'" alt="@name" />
+                <figcaption>
+                    <h3></h3>
+                </figcaption>
+                <a href="/en/exhibitions/past/artist?artist=@item.id">  @item.GetCropUrl(item, "avatar", true)</a>
+            </figure>
+
+            <h2>@name</h2>
+            @if    (ShowDetail.Equals("1"))
+            {
+            <p class="@More">@description</p>
+            }
+
+        </div>
+        }
+
+
+
+        <script src="~/Modules/jquery-match-height-master/dist/jquery.matchHeight-min.js"></script>
+        <link href="~/Modules/ReadMore/ReadMore.css" rel="stylesheet" />
+        <script src="~/Modules/ReadMore/ReadMore.js"></script>
+        <script>
+            $(function () {
+                $('.matchHeight').matchHeight({
+                    byRow: true, remove: false
+                });
+
+                ReadMore.showMore = false;
+                ReadMore.BindEvent();
+            });
+        </script>

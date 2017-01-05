@@ -16,6 +16,13 @@
 
 
 @{
+
+if (Request.QueryString["exhibition"]==null)
+{
+return;
+}
+
+
 var curNode = Umbraco.TypedContent(Model.Content.Id);
  
 var TextHead =   Model.MacroParameters["TextHead"];           
@@ -307,3 +314,4 @@ description=@item.descriptionEn;
 
     }
 </script>
+

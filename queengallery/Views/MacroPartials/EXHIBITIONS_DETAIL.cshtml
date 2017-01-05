@@ -3,6 +3,11 @@
 
 @{
 
+if (Request.QueryString["exhibition"]==null)
+{
+return;
+}
+
  int exhibition = 0; int.TryParse(Request.QueryString["exhibition"].ToString(), out exhibition);
  var item= (dynamic)null;
   
@@ -65,11 +70,11 @@ var nodeLang = curNode.GetCulture().ToString().ToLower();
             //SetPagger(msg[1].RecordCount);
 
             //Create Event in list
-            if (msg[0].length > 0) {
-                ModalEvent();
+            //if (msg[0].length > 0) {
+            //    ModalEvent();
 
                
-            }
+            //}
         });
 
     }
@@ -151,8 +156,11 @@ var nodeLang = curNode.GetCulture().ToString().ToLower();
 </script>
 <section id="Main">
     <div class="text-center">
-        
+        @{if (TextHead !=null)
+        {
         <h1 class="color-black font-weight-300"><strong>@TextHead</strong></h1>
+        }
+        }
         <div id="divList" class="text-center ">
         </div>
     </div>

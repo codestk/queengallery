@@ -13,146 +13,108 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="@CurrentPage.siteDescription">
+    @*<meta name="description" content="@CurrentPage.siteDescription">*@
+    <meta name="description" content="@CurrentPage.MetaDescription">
+    <meta name="keyword" content="@CurrentPage.MetaKeyword">
+    <link rel="icon" type="image/x-icon" href="/media/43696/favicon.ico" />
+   
+        @Html.Partial("SocialMetaTag")
 
-    <title>@CurrentPage.Name | @CurrentPage._siteTitle</title>
-
-    <script src="/js/jquery.min.js"></script>
-    @*
-    <script src="/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">*@
-
-    <script src="~/Modules/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
-
-    <link href="~/Modules/bootstrap-3.3.7-dist/css/bootstrap.css" rel="stylesheet" />
-
-    <script src="/scripts/fanoe.js"></script>
-    @*
-    <link rel="stylesheet" type="text/css" href="/css/fanoe.css">*@
-    <link href="/css/fanoe_Custom.css" rel="stylesheet" />
-
-    <!-- Fonts -->
-    <link href="//fonts.googleapis.com/css?family=Merriweather:400,700,300,900" rel="stylesheet" type="text/css">
-    <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet" type="text/css">
-    @*<link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">*@
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+        <title>
+            @if (@CurrentPage.Level == 2) {
+            @CurrentPage.siteTitle
+            } else {
+            @CurrentPage.pageTitle
+            }
 
 
-    
-    <!-- CSS -->
-    @*
-    <link href="~/Modules/startbootstrap-business-frontpage-gh-pages/startbootstrap-business-frontpage-gh-pages/css/bootstrap.css" rel="stylesheet" />*@
+        </title>
 
-     
+        @*<title>@CurrentPage.Name | @CurrentPage._siteTitle</title>*@
 
-    <!-- Custom fanoe  -->
-    <link rel="stylesheet" type="text/css" href="/css/style.css">
-    <script src="~/Modules/jquery-match-height-master/dist/jquery.matchHeight-min.js"></script>
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-    @*
-    <link href="/Modules/startbootstrap-business-frontpage-gh-pages/startbootstrap-business-frontpage-gh-pages/css/business-frontpage.css" rel="stylesheet" />*@
+        <script src="/js/jquery.min.js"></script>
+        @*
+        <script src="/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">*@
 
-    <!--PwsMenu-->
-    @*
-    <link href="~/Modules/PwsCSS/PwsMenu.css" rel="stylesheet" />*@
-    <!--PwsHover-->
-    <link href="~/css/PwsHover.css" rel="stylesheet" />
-    @*
-    <link href="~/Modules/PwsCSS/PwsBaseCss.css" rel="stylesheet" />*@
+        <script src="~/Modules/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
 
-    <link href="~/Modules/PreLoad/fakeLoader.js-master/fakeLoader.css" rel="stylesheet" />
-    <script src="~/Modules/PreLoad/fakeLoader.js-master/fakeLoader.js"></script>
+        <link href="~/Modules/bootstrap-3.3.7-dist/css/bootstrap.css" rel="stylesheet" />
 
-    <script src="/Modules/PreLoad/PwsPreLoad.js"></script>
+        <script src="/scripts/fanoe.js"></script>
+        @*
+        <link rel="stylesheet" type="text/css" href="/css/fanoe.css">*@
+        <link href="/css/fanoe_Custom.css" rel="stylesheet" />
 
-    <!--Call Data Json -->
-    <script src="~/Modules/Pws/PWSCallService.js"></script>
+        <!-- Fonts -->
+        <link href="//fonts.googleapis.com/css?family=Merriweather:400,700,300,900" rel="stylesheet" type="text/css">
+        <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet" type="text/css">
+        @*<link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">*@
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 
-    <!--innit Lang -->
-    @{
-    var curNode = Umbraco.TypedContent(Model.Content.Id);
-    string nodeLang = curNode.GetCulture().ToString().ToLower();
-    var preFixLang="";
-    if (nodeLang == "th-th")
-    {
-    <script src="/js/queengalleryTh.js"></script>
-    
-    preFixLang="Th";
-    } else {
-    <script src="/js/queengalleryEn.js"></script>
-    preFixLang="En";
-    }
-    }
+        <!-- CSS -->
+        @*
+        <link href="~/Modules/startbootstrap-business-frontpage-gh-pages/startbootstrap-business-frontpage-gh-pages/css/bootstrap.css" rel="stylesheet" />*@
 
-    <script>
-        //Preload();
-        //blurElement("body", 1);
-    </script>
+        <!-- Custom fanoe  -->
+        <link rel="stylesheet" type="text/css" href="/css/style.css">
+        <script src="~/Modules/jquery-match-height-master/dist/jquery.matchHeight-min.js"></script>
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+          <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+          <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+        @*
+        <link href="/Modules/startbootstrap-business-frontpage-gh-pages/startbootstrap-business-frontpage-gh-pages/css/business-frontpage.css" rel="stylesheet" />*@
+
+        <!--PwsMenu-->
+        @*
+        <link href="~/Modules/PwsCSS/PwsMenu.css" rel="stylesheet" />*@
+        <!--PwsHover-->
+        <link href="~/css/PwsHover.css" rel="stylesheet" />
+        @*
+        <link href="~/Modules/PwsCSS/PwsBaseCss.css" rel="stylesheet" />*@
+
+        <link href="~/Modules/PreLoad/fakeLoader.js-master/fakeLoader.css" rel="stylesheet" />
+        <script src="~/Modules/PreLoad/fakeLoader.js-master/fakeLoader.js"></script>
+
+        <script src="/Modules/PreLoad/PwsPreLoad.js"></script>
+
+        <!--Call Data Json -->
+        <script src="~/Modules/Pws/PWSCallService.js"></script>
+
+        <!--innit Lang -->
+        @{
+        var curNode = Umbraco.TypedContent(Model.Content.Id);
+        string nodeLang = curNode.GetCulture().ToString().ToLower();
+        var preFixLang="";
+        if (nodeLang == "th-th")
+        {
+        <script src="/js/queengalleryTh.js"></script>
+
+        preFixLang="Th";
+        } else {
+        <script src="/js/queengalleryEn.js"></script>
+        preFixLang="En";
+        }
+        }
+
+        <script>
+            //Preload();
+            //blurElement("body", 1);
+        </script>
 </head>
 
 <body>
  
-    @*<nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container-fluid">
-
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#">Brand</a>
-            </div>
-
-            <div class="collapse navbar-collapse " id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav ">
-                    <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-                    <li><a href="#">Link</a></li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">Action</a></li>
-                            <li><a href="#">Another action</a></li>
-                            <li><a href="#">Something else here</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="#">Separated link</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="#">One more separated link</a></li>
-                        </ul>
-                    </li>
-                </ul>
-
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#">Link</a></li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">Action</a></li>
-                            <li><a href="#">Another action</a></li>
-                            <li><a href="#">Something else here</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="#">Separated link</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>*@
+ 
     <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" style="display:block">
 
         <div class="container">
             <div class="navbar-right  text-right">
-                @*<a href="#">
-                    <img src="~/Modules/images/us_flag.png" />
-                </a>
-                <a href="#"><img src="~/Modules/images/th_flag.png" /></a>*@
+           
 
                 @{ Html.RenderPartial("LanguageSwitch"); }
 
@@ -167,15 +129,13 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="@home.Url">
-                        @*<div>
-                            *@
+                    <a class="navbar-brand" href="#" style="cursor:pointer">
+                      
                             @*<div class="brand" style="background-image:url('@(home.SiteLogo)?height=65&width=205&bgcolor=000')"></div>*@
                             @*<img src="~/Modules/images/queengallery-logo.png" style="margin-top:-13px;" />*@
 
                             <img src="~/Modules/images/queengallery-logo.png" />
-                            @*
-                        </div>*@
+                         
                     </a>
                 </div>
             </div>

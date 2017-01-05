@@ -16,10 +16,18 @@
 <script src="~/Modules/jquery-match-height-master/dist/jquery.matchHeight-min.js"></script>
 
 @{
+
+if (Request.QueryString["artist"]==null)
+{
+return;
+}
+
+
 var curNode = Umbraco.TypedContent(Model.Content.Id);
 string nodeLang = curNode.GetCulture().ToString().ToLower();
 
-
+var TextHead = Model.MacroParameters["TextHead"];     
+  
  var id = 0; int.TryParse(Request.QueryString["artist"], out id);
  int Artists = 0; int.TryParse(Model.MacroParameters["Artists"].ToString(), out Artists);
   
@@ -38,7 +46,12 @@ string nodeLang = curNode.GetCulture().ToString().ToLower();
 {
 
 <div class="col-lg-12 text-center">
-    <h1>Artists </h1>
+    
+    @{if (TextHead !=null)
+    {
+    <h1>@TextHead </h1>
+    }
+  }
 
     
    
@@ -72,10 +85,9 @@ description=@item.descriptionEn;
 
 
     <figure class="snip1554  ">
-        @*<img class="img-circle img-responsive img-center" src="/media/2005/yanawit.png" alt="">*@
-        @*<img class="img-circle img-responsive img-center" src="@item.image.src" alt="@item.nameEn" />*@
+      
 
-        <img class="img-circle img-responsive img-center" src="@item.GetCropUrl("image", "avatar" )" alt="@name" />
+        <img class="img-circle img-responsive img-center" src="@item.GetCropUrl("image", "avatar" )" alt="@name"  />
         <figcaption>
             <h3></h3>
         </figcaption>

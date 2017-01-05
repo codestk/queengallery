@@ -1,0 +1,80 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    var home = CurrentPage.AncestorOrSelf(1);
+ 
+    var ogType = "website";
+    if (CurrentPage.DocumentTypeAlias == "Article")
+    {
+        ogType = "article";
+    }
+ 
+    var metaTitle = CurrentPage.Name;
+    if (CurrentPage.HasValue("ogTitle"))
+    {
+        metaTitle = CurrentPage.ogTitle;
+    }
+ 
+    var descrip = home.oGDescription;
+    if (CurrentPage.HasValue("ogDescription"))
+    {
+        descrip = CurrentPage.ogDescription;
+    }
+ 
+    string ogImage = string.Empty;
+    if (CurrentPage.HasValue("ogImage"))
+    {
+        ogImage = String.Format("{0}://{1}{2}", @Request.Url.Scheme, @Request.Url.Host, @CurrentPage.ogImage);
+    }
+    else if (home.HasValue("ogImage"))
+    {
+        ogImage = String.Format("{0}://{1}{2}", @Request.Url.Scheme, @Request.Url.Host, @home.ogImage);
+    }
+ 
+    string cardImage = string.Empty;
+    if (CurrentPage.HasValue("cardImage"))
+    {
+        cardImage = String.Format("{0}://{1}{2}", @Request.Url.Scheme, @Request.Url.Host, @CurrentPage.cardImage);
+    }
+    else if (home.HasValue("cardImage"))
+    {
+        cardImage = String.Format("{0}://{1}{2}", @Request.Url.Scheme, @Request.Url.Host, @home.cardImage);
+    }
+ 
+    string handle = "";
+     if (home.HasValue("twitterHandle"))
+    {
+        handle = "@" + home.twitterHandle;
+    }
+ 
+    <!--Facebook Open Graph-->
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="@ogType" />
+    <meta property="og:title" content="@metaTitle" />
+    <meta property="og:description" content="@descrip" />
+    <meta property="og:url" content="@Request.Url" />
+    if (ogImage != "")
+    {
+        <meta property="og:image" content="@ogImage" />
+        if (cardImage != "")
+        {
+            <meta property="og:image" content="@cardImage" />
+        }
+        <meta property="og:image:type" content="image/jpg" />
+    }
+    <meta property="og:site_name" content="@Html.Raw(home.ogSiteName)" />
+ 
+     <!--Twitter Card Data-->
+    <meta name="twitter:card" content="summary_large_image" />
+     if(handle != "")
+     {
+           <meta name="twitter:site" content="@handle" />
+           <meta name="twitter:creator" content="@handle" />
+     }
+    <meta name="twitter:title" content="@metaTitle" />
+    <meta name="twitter:description" content="@descrip" />
+    if (cardImage != "")
+    {
+        <meta name="twitter:image:src" content="@cardImage" />
+    }
+    <meta name="twitter:domain" content="@Request.Url.Scheme://@Request.Url.Host" />
+}

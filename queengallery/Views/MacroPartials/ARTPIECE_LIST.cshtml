@@ -16,6 +16,13 @@
 
 
 @{
+
+if (Request.QueryString["artist"]==null)
+{
+return;
+}
+
+
 var curNode = Umbraco.TypedContent(Model.Content.Id);
 
 string nodeLang = curNode.GetCulture().ToString().ToLower();

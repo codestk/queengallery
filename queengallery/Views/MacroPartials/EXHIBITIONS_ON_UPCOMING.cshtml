@@ -1,22 +1,42 @@
 ﻿@inherits Umbraco.Web.Macros.PartialViewMacroPage
 
 @{
+
+
+if (Model.MacroParameters["Exhibition"]=="")
+{
+return;
+}
+
+  int exhibition = 0; int.TryParse(Model.MacroParameters["Exhibition"].ToString(), out exhibition);
+
     string condition = "";
     string sort = "beginDate ";
-    int blogId = 3576;
+    
     var valuesFilter = new Dictionary<string, object>();
 
     valuesFilter.Add("Todate", DateTime.Now);
 
     condition = "beginDate > Todate";
 
-    var items = Umbraco.Media(blogId).Children().Where(condition, valuesFilter).OrderBy(sort);
+    var items = Umbraco.Media(exhibition).Children().Where(condition, valuesFilter).OrderBy(sort);
+
+    var TextHead = Model.MacroParameters["TextHead"];
+
+
     }
   
 
                                          <section id="Main">
                                              <div class="">
-                                                 <h1 class="text-center"><strong>Upcoming</strong></h1>
+                                                 @*<h1 class="text-center"><strong>Upcoming</strong></h1>*@
+                                                 @{if (TextHead !=null)
+                                                 {
+                                                 <h1 class="text-center"><strong>@TextHead </strong></h1>
+                                                 }
+                                                 }
+
+
 
                             <section class="cd-horizontal-timeline">
 
@@ -32,7 +52,7 @@
 
                        
                        
-                         <li><a  id="aNow" href="#0" class="selected" data-date="@dateNow">Now</a></li> 
+                         <li><a  id="aNow" href="#0" class="selected" data-date="@dateNow">@Umbraco.Field("#Now")</a></li> 
                         foreach(dynamic item in items){
                        
 
@@ -60,7 +80,7 @@
 
                 condition = "(beginDate <= Todate) && (endDate >= Todate)";
 
-                var Nowitems = Umbraco.Media(blogId).Children().Where(condition, valuesFilter).OrderBy(sort);
+                var Nowitems = Umbraco.Media(exhibition).Children().Where(condition, valuesFilter).OrderBy(sort);
 
                 <li class="" data-date="@dateNow">
                

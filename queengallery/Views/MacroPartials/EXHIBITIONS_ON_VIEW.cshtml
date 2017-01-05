@@ -21,6 +21,18 @@
 @{
 var curNode = Umbraco.TypedContent(Model.Content.Id);
 var nodeLang = curNode.GetCulture().ToString().ToLower();
+
+
+
+var TextHead = Model.MacroParameters["TextHead"];
+
+
+
+
+
+
+
+
 }
 @if  (nodeLang == "th-th")
 {
@@ -139,8 +151,7 @@ var nodeLang = curNode.GetCulture().ToString().ToLower();
             data[key]["to"] = to;
             data[key]["id"] = data[key]["__NodeId"];
             
-            //data[key]["id"] = arrayPosition;
-            //arrayPosition = arrayPosition + 1;
+   
         }
 
         return data;
@@ -158,8 +169,14 @@ var nodeLang = curNode.GetCulture().ToString().ToLower();
 
 <section id="Main">
     <div class="text-center ">
-         @*<h1>OnView </h1>*@ 
-        <h1 ><strong>OnView</strong></h1>
+         @*<h1 ><strong>OnView</strong></h1>*@
+
+        @{if (TextHead !=null)
+        {
+        <h1><strong>@TextHead</strong></h1>
+      
+        }
+        }
        
         <div id="divList" class="text-center row ">
 
