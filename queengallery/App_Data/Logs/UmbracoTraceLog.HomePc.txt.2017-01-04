@@ -1,0 +1,307 @@
+﻿ 2017-01-04 19:06:00,263 [P15616/D2/T1] INFO  Umbraco.Core.CoreBootManager - Umbraco 7.5.4 application starting on HOMEPC
+ 2017-01-04 19:06:00,281 [P15616/D2/T1] INFO  Umbraco.Core.PluginManager - Determining hash of code files on disk
+ 2017-01-04 19:06:00,290 [P15616/D2/T1] INFO  Umbraco.Core.PluginManager - Hash determined (took 9ms)
+ 2017-01-04 19:06:00,344 [P15616/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of umbraco.interfaces.IApplicationStartupHandler
+ 2017-01-04 19:06:00,396 [P15616/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 0 (took 51ms)
+ 2017-01-04 19:06:00,438 [P15616/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter
+ 2017-01-04 19:06:00,439 [P15616/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 0ms)
+ 2017-01-04 19:06:00,439 [P15616/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyValueConverter
+ 2017-01-04 19:06:00,440 [P15616/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyValueConverter, found 0 (took 0ms)
+ 2017-01-04 19:06:00,449 [P15616/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Web.Mvc.SurfaceController
+ 2017-01-04 19:06:00,457 [P15616/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 0 (took 7ms)
+ 2017-01-04 19:06:00,458 [P15616/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Web.WebApi.UmbracoApiController
+ 2017-01-04 19:06:00,462 [P15616/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Web.WebApi.UmbracoApiController, found 0 (took 4ms)
+ 2017-01-04 19:06:00,515 [P15616/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.Media.IThumbnailProvider
+ 2017-01-04 19:06:00,516 [P15616/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 0 (took 0ms)
+ 2017-01-04 19:06:00,516 [P15616/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.Media.IImageUrlProvider
+ 2017-01-04 19:06:00,516 [P15616/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 0 (took 0ms)
+ 2017-01-04 19:06:01,365 [P15616/D2/T1] INFO  Umbraco.Core.DatabaseContext - CanConnect = True
+ 2017-01-04 19:06:01,611 [P15616/D2/T1] INFO  Umbraco.Core.DatabaseContext - CanConnect = True
+ 2017-01-04 19:06:01,636 [P15616/D2/T1] INFO  Umbraco.Core.DatabaseContext - CanConnect = True
+ 2017-01-04 19:06:01,672 [P15616/D2/T1] WARN  Umbraco.Core.Sync.DatabaseServerMessenger - No last synced Id found, this generally means this is a new server/install. The server will build its caches and indexes, and then adjust its last synced Id to the latest found in the database and maintain cache updates based on that Id.
+ 2017-01-04 19:06:01,704 [P15616/D2/T1] INFO  umbraco.content - Load Xml from file...
+ 2017-01-04 19:06:01,708 [P15616/D2/T1] INFO  umbraco.content - Loaded Xml from file.
+ 2017-01-04 19:06:01,721 [P15616/D2/T1] INFO  umbraco.content - Loading content from database...
+ 2017-01-04 19:06:02,659 [P15616/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.PropertyEditors.IParameterEditor
+ 2017-01-04 19:06:02,660 [P15616/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.PropertyEditors.IParameterEditor, found 0 (took 1ms)
+ 2017-01-04 19:06:03,811 [P15616/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.Persistence.Mappers.BaseMapper
+ 2017-01-04 19:06:03,812 [P15616/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.Persistence.Mappers.BaseMapper, found 0 (took 1ms)
+ 2017-01-04 19:06:04,870 [P15616/D2/T1] INFO  Umbraco.Web.Cache.CacheRefresherEventHandler - Initializing Umbraco internal event handlers for cache refreshing
+ 2017-01-04 19:06:04,880 [P15616/D2/T1] INFO  Umbraco.Web.Search.ExamineEvents - Initializing Examine and binding to business logic events
+ 2017-01-04 19:06:04,880 [P15616/D2/T1] INFO  Umbraco.Web.Search.ExamineEvents - Adding examine event handlers for index providers: 3
+ 2017-01-04 19:06:04,901 [P15616/D2/T1] INFO  Umbraco.Core.CoreBootManager - Umbraco application startup complete (took 4698ms)
+ 2017-01-04 19:06:05,500 [P15616/D2/T12] INFO  Umbraco.Core.Sync.ApplicationUrlHelper - ApplicationUrl: http://localhost:17606/umbraco (UmbracoModule request)
+ 2017-01-04 19:06:06,012 [P15616/D2/T12] WARN  Umbraco.Web.UmbracoModule - Status code is 404 yet TrySkipIisCustomErrors is false - IIS will take over.
+ 2017-01-04 19:06:06,149 [P15616/D2/T18] INFO  umbraco.content - Save Xml to file...
+ 2017-01-04 19:06:06,159 [P15616/D2/T18] INFO  umbraco.content - Saved Xml to file.
+ 2017-01-04 19:06:20,694 [P15616/D2/T9] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.PropertyEditors.IParameterEditor
+ 2017-01-04 19:06:20,694 [P15616/D2/T9] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.PropertyEditors.IParameterEditor, found 0 (took 0ms)
+ 2017-01-04 19:06:20,710 [P15616/D2/T9] INFO  Umbraco.Core.PluginManager - Starting resolution types of umbraco.cms.businesslogic.macro.IMacroEngine
+ 2017-01-04 19:06:20,711 [P15616/D2/T9] INFO  Umbraco.Core.PluginManager - Completed resolution of types of umbraco.cms.businesslogic.macro.IMacroEngine, found 0 (took 0ms)
+ 2017-01-04 19:06:22,310 [P15616/D2/T9] WARN  umbraco.macro - Error loading partial view macro (View: ~/Views/MacroPartials/ARTIST_DETAIL.cshtml). Exception: System.InvalidOperationException: Sequence contains no elements
+   at System.Linq.Enumerable.First[TSource](IEnumerable`1 source)
+   at lambda_method(Closure )
+   at System.Linq.EnumerableExecutor`1.Execute()
+   at System.Linq.EnumerableQuery`1.System.Linq.IQueryProvider.Execute[S](Expression expression)
+   at System.Linq.Queryable.First[TSource](IQueryable`1 source)
+   at Umbraco.Web.Models.DynamicPublishedContentList.First[T](String predicate, Object[] values)
+   at Umbraco.Web.Models.DynamicPublishedContentList.TryInvokeMember(InvokeMemberBinder binder, Object[] args, Object& result)
+   at CallSite.Target(Closure , CallSite , Object )
+   at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)
+   at ASP._Page_Views_MacroPartials_ARTIST_DETAIL_cshtml.Execute() in c:\queengallery\queengallery\Views\MacroPartials\ARTIST_DETAIL.cshtml:line 31
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at System.Web.Mvc.RazorView.RenderView(ViewContext viewContext, TextWriter writer, Object instance)
+   at System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
+   at Umbraco.Core.Profiling.ProfilingView.Render(ViewContext viewContext, TextWriter writer)
+   at Umbraco.Web.Mvc.ControllerExtensions.RenderViewResultAsString(ControllerBase controller, ViewResultBase viewResult)
+   at Umbraco.Web.Macros.PartialViewMacroEngine.Execute(MacroModel macro, IPublishedContent content)
+   at Umbraco.Web.Macros.PartialViewMacroEngine.Execute(MacroModel macro, INode node)
+   at umbraco.macro.LoadPartialViewMacro(MacroModel macro)
+   at umbraco.macro.renderMacro(Hashtable pageElements, Int32 pageId)
+ 2017-01-04 19:06:22,311 [P15616/D2/T9] WARN  umbraco.macro - Error loading Partial View (file: ~/Views/MacroPartials/ARTIST_DETAIL.cshtml). Exception: System.InvalidOperationException: Sequence contains no elements
+   at System.Linq.Enumerable.First[TSource](IEnumerable`1 source)
+   at lambda_method(Closure )
+   at System.Linq.EnumerableExecutor`1.Execute()
+   at System.Linq.EnumerableQuery`1.System.Linq.IQueryProvider.Execute[S](Expression expression)
+   at System.Linq.Queryable.First[TSource](IQueryable`1 source)
+   at Umbraco.Web.Models.DynamicPublishedContentList.First[T](String predicate, Object[] values)
+   at Umbraco.Web.Models.DynamicPublishedContentList.TryInvokeMember(InvokeMemberBinder binder, Object[] args, Object& result)
+   at CallSite.Target(Closure , CallSite , Object )
+   at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)
+   at ASP._Page_Views_MacroPartials_ARTIST_DETAIL_cshtml.Execute() in c:\queengallery\queengallery\Views\MacroPartials\ARTIST_DETAIL.cshtml:line 31
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at System.Web.Mvc.RazorView.RenderView(ViewContext viewContext, TextWriter writer, Object instance)
+   at System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
+   at Umbraco.Core.Profiling.ProfilingView.Render(ViewContext viewContext, TextWriter writer)
+   at Umbraco.Web.Mvc.ControllerExtensions.RenderViewResultAsString(ControllerBase controller, ViewResultBase viewResult)
+   at Umbraco.Web.Macros.PartialViewMacroEngine.Execute(MacroModel macro, IPublishedContent content)
+   at Umbraco.Web.Macros.PartialViewMacroEngine.Execute(MacroModel macro, INode node)
+   at umbraco.macro.LoadPartialViewMacro(MacroModel macro)
+   at umbraco.macro.renderMacro(Hashtable pageElements, Int32 pageId)
+ 2017-01-04 19:06:23,187 [P15616/D2/T18] ERROR Umbraco.Core.Dynamics.DynamicInstanceHelper - An error occurred finding and executing extension method "GetCropUrl" for type "Umbraco.Web.Models.DynamicPublishedContent". Types searched for extension methods were Umbraco.Web.Models.DynamicPublishedContent.
+System.MissingMethodException: Method 'Umbraco.Web.Models.DynamicPublishedContent.GetCropUrl' not found.
+   at Umbraco.Core.Dynamics.DynamicInstanceHelper.FindAndExecuteExtensionMethod[T](IRuntimeCacheProvider runtimeCache, T thisObject, Object[] args, String name, IEnumerable`1 findMethodsOnTypes)
+   at Umbraco.Core.Dynamics.DynamicInstanceHelper.TryInvokeMember[T](IRuntimeCacheProvider runtimeCache, T thisObject, InvokeMemberBinder binder, Object[] args, IEnumerable`1 findExtensionMethodsOnTypes)
+ 2017-01-04 19:06:23,187 [P15616/D2/T5] ERROR Umbraco.Core.Dynamics.DynamicInstanceHelper - An error occurred finding and executing extension method "GetCropUrl" for type "Umbraco.Web.Models.DynamicPublishedContent". Types searched for extension methods were Umbraco.Web.Models.DynamicPublishedContent.
+System.MissingMethodException: Method 'Umbraco.Web.Models.DynamicPublishedContent.GetCropUrl' not found.
+   at Umbraco.Core.Dynamics.DynamicInstanceHelper.FindAndExecuteExtensionMethod[T](IRuntimeCacheProvider runtimeCache, T thisObject, Object[] args, String name, IEnumerable`1 findMethodsOnTypes)
+   at Umbraco.Core.Dynamics.DynamicInstanceHelper.TryInvokeMember[T](IRuntimeCacheProvider runtimeCache, T thisObject, InvokeMemberBinder binder, Object[] args, IEnumerable`1 findExtensionMethodsOnTypes)
+ 2017-01-04 19:06:25,280 [P15616/D2/T9] WARN  umbraco.macro - Error loading partial view macro (View: ~/Views/MacroPartials/EXHIBITIONS_ARTIST_RELATE.cshtml). Exception: Expression expected (at index 0)
+ 2017-01-04 19:06:25,280 [P15616/D2/T9] WARN  umbraco.macro - Error loading Partial View (file: ~/Views/MacroPartials/EXHIBITIONS_ARTIST_RELATE.cshtml). Exception: Expression expected (at index 0)
+ 2017-01-04 19:06:35,906 [P15616/D2/T20] ERROR Umbraco.Core.Dynamics.DynamicInstanceHelper - An error occurred finding and executing extension method "GetCropUrl" for type "Umbraco.Web.Models.DynamicPublishedContent". Types searched for extension methods were Umbraco.Web.Models.DynamicPublishedContent.
+System.MissingMethodException: Method 'Umbraco.Web.Models.DynamicPublishedContent.GetCropUrl' not found.
+   at Umbraco.Core.Dynamics.DynamicInstanceHelper.FindAndExecuteExtensionMethod[T](IRuntimeCacheProvider runtimeCache, T thisObject, Object[] args, String name, IEnumerable`1 findMethodsOnTypes)
+   at Umbraco.Core.Dynamics.DynamicInstanceHelper.TryInvokeMember[T](IRuntimeCacheProvider runtimeCache, T thisObject, InvokeMemberBinder binder, Object[] args, IEnumerable`1 findExtensionMethodsOnTypes)
+ 2017-01-04 19:06:39,119 [P15616/D2/T19] ERROR Umbraco.Core.Dynamics.DynamicInstanceHelper - An error occurred finding and executing extension method "GetCropUrl" for type "Umbraco.Web.Models.DynamicPublishedContent". Types searched for extension methods were Umbraco.Web.Models.DynamicPublishedContent.
+System.MissingMethodException: Method 'Umbraco.Web.Models.DynamicPublishedContent.GetCropUrl' not found.
+   at Umbraco.Core.Dynamics.DynamicInstanceHelper.FindAndExecuteExtensionMethod[T](IRuntimeCacheProvider runtimeCache, T thisObject, Object[] args, String name, IEnumerable`1 findMethodsOnTypes)
+   at Umbraco.Core.Dynamics.DynamicInstanceHelper.TryInvokeMember[T](IRuntimeCacheProvider runtimeCache, T thisObject, InvokeMemberBinder binder, Object[] args, IEnumerable`1 findExtensionMethodsOnTypes)
+ 2017-01-04 19:07:05,988 [P15616/D2/T10] INFO  umbraco.BusinessLogic.Log - Log scrubbed.  Removed all items older than 2560-01-03 19:07:05
+ 2017-01-04 19:07:07,780 [P15616/D2/T11] ERROR Umbraco.Core.Dynamics.DynamicInstanceHelper - An error occurred finding and executing extension method "GetCropUrl" for type "Umbraco.Web.Models.DynamicPublishedContent". Types searched for extension methods were Umbraco.Web.Models.DynamicPublishedContent.
+System.MissingMethodException: Method 'Umbraco.Web.Models.DynamicPublishedContent.GetCropUrl' not found.
+   at Umbraco.Core.Dynamics.DynamicInstanceHelper.FindAndExecuteExtensionMethod[T](IRuntimeCacheProvider runtimeCache, T thisObject, Object[] args, String name, IEnumerable`1 findMethodsOnTypes)
+   at Umbraco.Core.Dynamics.DynamicInstanceHelper.TryInvokeMember[T](IRuntimeCacheProvider runtimeCache, T thisObject, InvokeMemberBinder binder, Object[] args, IEnumerable`1 findExtensionMethodsOnTypes)
+ 2017-01-04 19:07:27,755 [P15616/D2/T11] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt succeeded for username admin@bbl.co.th from IP address ::1
+ 2017-01-04 19:07:27,756 [P15616/D2/T11] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: User: admin@bbl.co.th logged in from IP address ::1
+ 2017-01-04 19:07:27,843 [P15616/D2/T13] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Web.Trees.TreeController
+ 2017-01-04 19:07:27,844 [P15616/D2/T13] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Web.Trees.TreeController, found 0 (took 0ms)
+ 2017-01-04 19:07:27,883 [P15616/D2/T18] INFO  Umbraco.Core.PluginManager - Starting resolution types of umbraco.interfaces.IApplication
+ 2017-01-04 19:07:27,885 [P15616/D2/T18] INFO  Umbraco.Core.PluginManager - Completed resolution of types of umbraco.interfaces.IApplication, found 0 (took 1ms)
+ 2017-01-04 19:07:27,910 [P15616/D2/T11] INFO  Umbraco.Core.PluginManager - Starting resolution types of umbraco.interfaces.ITree
+ 2017-01-04 19:07:27,912 [P15616/D2/T11] INFO  Umbraco.Core.PluginManager - Completed resolution of types of umbraco.interfaces.ITree, found 0 (took 1ms)
+ 2017-01-04 19:07:27,924 [P15616/D2/T11] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Web.Trees.TreeController
+ 2017-01-04 19:07:27,924 [P15616/D2/T11] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Web.Trees.TreeController, found 0 (took 0ms)
+ 2017-01-04 19:07:27,926 [P15616/D2/T11] INFO  Umbraco.Core.PluginManager - Starting resolution types of umbraco.interfaces.ITree
+ 2017-01-04 19:07:27,927 [P15616/D2/T11] INFO  Umbraco.Core.PluginManager - Completed resolution of types of umbraco.interfaces.ITree, found 0 (took 0ms)
+ 2017-01-04 19:07:38,707 [P15616/D2/T9] ERROR Umbraco.Core.Dynamics.DynamicInstanceHelper - An error occurred finding and executing extension method "GetCropUrl" for type "Umbraco.Web.Models.DynamicPublishedContent". Types searched for extension methods were Umbraco.Web.Models.DynamicPublishedContent.
+System.MissingMethodException: Method 'Umbraco.Web.Models.DynamicPublishedContent.GetCropUrl' not found.
+   at Umbraco.Core.Dynamics.DynamicInstanceHelper.FindAndExecuteExtensionMethod[T](IRuntimeCacheProvider runtimeCache, T thisObject, Object[] args, String name, IEnumerable`1 findMethodsOnTypes)
+   at Umbraco.Core.Dynamics.DynamicInstanceHelper.TryInvokeMember[T](IRuntimeCacheProvider runtimeCache, T thisObject, InvokeMemberBinder binder, Object[] args, IEnumerable`1 findExtensionMethodsOnTypes)
+ 2017-01-04 19:07:45,981 [P15616/D2/T9] WARN  umbraco.macro - Error loading partial view macro (View: ~/Views/MacroPartials/EXHIBITIONS_ON_VIEW.cshtml). Exception: System.InvalidOperationException: Cannot return the IPublishedContent because the UmbracoHelper was constructed with an UmbracoContext and the current request is not a front-end request.
+   at Umbraco.Web.UmbracoHelper.get_AssignedContentItem()
+   at Umbraco.Web.UmbracoHelper.Field(String fieldAlias, String altFieldAlias, String altText, String insertBefore, String insertAfter, Boolean recursive, Boolean convertLineBreaks, Boolean removeParagraphTags, RenderFieldCaseType casing, RenderFieldEncodingType encoding, Boolean formatAsDate, Boolean formatAsDateWithTime, String formatAsDateWithTimeSeparator)
+   at ASP._Page_Views_MacroPartials_EXHIBITIONS_ON_VIEW_cshtml.Execute() in c:\queengallery\queengallery\Views\MacroPartials\EXHIBITIONS_ON_VIEW.cshtml:line 211
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at System.Web.Mvc.RazorView.RenderView(ViewContext viewContext, TextWriter writer, Object instance)
+   at System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
+   at Umbraco.Core.Profiling.ProfilingView.Render(ViewContext viewContext, TextWriter writer)
+   at Umbraco.Web.Mvc.ControllerExtensions.RenderViewResultAsString(ControllerBase controller, ViewResultBase viewResult)
+   at Umbraco.Web.Macros.PartialViewMacroEngine.Execute(MacroModel macro, IPublishedContent content)
+   at Umbraco.Web.Macros.PartialViewMacroEngine.Execute(MacroModel macro, INode node)
+   at umbraco.macro.LoadPartialViewMacro(MacroModel macro)
+   at umbraco.macro.renderMacro(Hashtable pageElements, Int32 pageId)
+ 2017-01-04 19:07:45,981 [P15616/D2/T9] WARN  umbraco.macro - Error loading Partial View (file: ~/Views/MacroPartials/EXHIBITIONS_ON_VIEW.cshtml). Exception: System.InvalidOperationException: Cannot return the IPublishedContent because the UmbracoHelper was constructed with an UmbracoContext and the current request is not a front-end request.
+   at Umbraco.Web.UmbracoHelper.get_AssignedContentItem()
+   at Umbraco.Web.UmbracoHelper.Field(String fieldAlias, String altFieldAlias, String altText, String insertBefore, String insertAfter, Boolean recursive, Boolean convertLineBreaks, Boolean removeParagraphTags, RenderFieldCaseType casing, RenderFieldEncodingType encoding, Boolean formatAsDate, Boolean formatAsDateWithTime, String formatAsDateWithTimeSeparator)
+   at ASP._Page_Views_MacroPartials_EXHIBITIONS_ON_VIEW_cshtml.Execute() in c:\queengallery\queengallery\Views\MacroPartials\EXHIBITIONS_ON_VIEW.cshtml:line 211
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at System.Web.Mvc.RazorView.RenderView(ViewContext viewContext, TextWriter writer, Object instance)
+   at System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
+   at Umbraco.Core.Profiling.ProfilingView.Render(ViewContext viewContext, TextWriter writer)
+   at Umbraco.Web.Mvc.ControllerExtensions.RenderViewResultAsString(ControllerBase controller, ViewResultBase viewResult)
+   at Umbraco.Web.Macros.PartialViewMacroEngine.Execute(MacroModel macro, IPublishedContent content)
+   at Umbraco.Web.Macros.PartialViewMacroEngine.Execute(MacroModel macro, INode node)
+   at umbraco.macro.LoadPartialViewMacro(MacroModel macro)
+   at umbraco.macro.renderMacro(Hashtable pageElements, Int32 pageId)
+ 2017-01-04 19:07:52,190 [P15616/D2/T18] INFO  Umbraco.Core.Publishing.PublishingStrategy - Content 'On View' with Id '1266' has been published.
+ 2017-01-04 19:07:52,232 [P15616/D2/T18] INFO  Umbraco.Core.PluginManager - Starting resolution types of umbraco.interfaces.ICacheRefresher
+ 2017-01-04 19:07:52,233 [P15616/D2/T18] INFO  Umbraco.Core.PluginManager - Completed resolution of types of umbraco.interfaces.ICacheRefresher, found 0 (took 1ms)
+ 2017-01-04 19:07:52,596 [P15616/D2/T11] WARN  umbraco.macro - Error loading partial view macro (View: ~/Views/MacroPartials/EXHIBITIONS_ON_VIEW.cshtml). Exception: System.InvalidOperationException: Cannot return the IPublishedContent because the UmbracoHelper was constructed with an UmbracoContext and the current request is not a front-end request.
+   at Umbraco.Web.UmbracoHelper.get_AssignedContentItem()
+   at Umbraco.Web.UmbracoHelper.Field(String fieldAlias, String altFieldAlias, String altText, String insertBefore, String insertAfter, Boolean recursive, Boolean convertLineBreaks, Boolean removeParagraphTags, RenderFieldCaseType casing, RenderFieldEncodingType encoding, Boolean formatAsDate, Boolean formatAsDateWithTime, String formatAsDateWithTimeSeparator)
+   at ASP._Page_Views_MacroPartials_EXHIBITIONS_ON_VIEW_cshtml.Execute() in c:\queengallery\queengallery\Views\MacroPartials\EXHIBITIONS_ON_VIEW.cshtml:line 211
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at System.Web.Mvc.RazorView.RenderView(ViewContext viewContext, TextWriter writer, Object instance)
+   at System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
+   at Umbraco.Core.Profiling.ProfilingView.Render(ViewContext viewContext, TextWriter writer)
+   at Umbraco.Web.Mvc.ControllerExtensions.RenderViewResultAsString(ControllerBase controller, ViewResultBase viewResult)
+   at Umbraco.Web.Macros.PartialViewMacroEngine.Execute(MacroModel macro, IPublishedContent content)
+   at Umbraco.Web.Macros.PartialViewMacroEngine.Execute(MacroModel macro, INode node)
+   at umbraco.macro.LoadPartialViewMacro(MacroModel macro)
+   at umbraco.macro.renderMacro(Hashtable pageElements, Int32 pageId)
+ 2017-01-04 19:07:52,596 [P15616/D2/T11] WARN  umbraco.macro - Error loading Partial View (file: ~/Views/MacroPartials/EXHIBITIONS_ON_VIEW.cshtml). Exception: System.InvalidOperationException: Cannot return the IPublishedContent because the UmbracoHelper was constructed with an UmbracoContext and the current request is not a front-end request.
+   at Umbraco.Web.UmbracoHelper.get_AssignedContentItem()
+   at Umbraco.Web.UmbracoHelper.Field(String fieldAlias, String altFieldAlias, String altText, String insertBefore, String insertAfter, Boolean recursive, Boolean convertLineBreaks, Boolean removeParagraphTags, RenderFieldCaseType casing, RenderFieldEncodingType encoding, Boolean formatAsDate, Boolean formatAsDateWithTime, String formatAsDateWithTimeSeparator)
+   at ASP._Page_Views_MacroPartials_EXHIBITIONS_ON_VIEW_cshtml.Execute() in c:\queengallery\queengallery\Views\MacroPartials\EXHIBITIONS_ON_VIEW.cshtml:line 211
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at System.Web.Mvc.RazorView.RenderView(ViewContext viewContext, TextWriter writer, Object instance)
+   at System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
+   at Umbraco.Core.Profiling.ProfilingView.Render(ViewContext viewContext, TextWriter writer)
+   at Umbraco.Web.Mvc.ControllerExtensions.RenderViewResultAsString(ControllerBase controller, ViewResultBase viewResult)
+   at Umbraco.Web.Macros.PartialViewMacroEngine.Execute(MacroModel macro, IPublishedContent content)
+   at Umbraco.Web.Macros.PartialViewMacroEngine.Execute(MacroModel macro, INode node)
+   at umbraco.macro.LoadPartialViewMacro(MacroModel macro)
+   at umbraco.macro.renderMacro(Hashtable pageElements, Int32 pageId)
+ 2017-01-04 19:07:56,293 [P15616/D2/T13] INFO  umbraco.content - Save Xml to file...
+ 2017-01-04 19:07:56,297 [P15616/D2/T13] INFO  umbraco.content - Saved Xml to file.
+ 2017-01-04 19:08:00,454 [P15616/D2/T22] INFO  Umbraco.Core.Publishing.PublishingStrategy - Content 'Upcoming' with Id '1273' has been published.
+ 2017-01-04 19:08:03,129 [P15616/D2/T42] WARN  umbraco.macro - Error loading partial view macro (View: ~/Views/MacroPartials/EXHIBITIONS_PAST.cshtml). Exception: System.InvalidOperationException: Cannot return the IPublishedContent because the UmbracoHelper was constructed with an UmbracoContext and the current request is not a front-end request.
+   at Umbraco.Web.UmbracoHelper.get_AssignedContentItem()
+   at Umbraco.Web.UmbracoHelper.Field(String fieldAlias, String altFieldAlias, String altText, String insertBefore, String insertAfter, Boolean recursive, Boolean convertLineBreaks, Boolean removeParagraphTags, RenderFieldCaseType casing, RenderFieldEncodingType encoding, Boolean formatAsDate, Boolean formatAsDateWithTime, String formatAsDateWithTimeSeparator)
+   at ASP._Page_Views_MacroPartials_EXHIBITIONS_PAST_cshtml.Execute() in c:\queengallery\queengallery\Views\MacroPartials\EXHIBITIONS_PAST.cshtml:line 315
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at System.Web.Mvc.RazorView.RenderView(ViewContext viewContext, TextWriter writer, Object instance)
+   at System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
+   at Umbraco.Core.Profiling.ProfilingView.Render(ViewContext viewContext, TextWriter writer)
+   at Umbraco.Web.Mvc.ControllerExtensions.RenderViewResultAsString(ControllerBase controller, ViewResultBase viewResult)
+   at Umbraco.Web.Macros.PartialViewMacroEngine.Execute(MacroModel macro, IPublishedContent content)
+   at Umbraco.Web.Macros.PartialViewMacroEngine.Execute(MacroModel macro, INode node)
+   at umbraco.macro.LoadPartialViewMacro(MacroModel macro)
+   at umbraco.macro.renderMacro(Hashtable pageElements, Int32 pageId)
+ 2017-01-04 19:08:03,129 [P15616/D2/T42] WARN  umbraco.macro - Error loading Partial View (file: ~/Views/MacroPartials/EXHIBITIONS_PAST.cshtml). Exception: System.InvalidOperationException: Cannot return the IPublishedContent because the UmbracoHelper was constructed with an UmbracoContext and the current request is not a front-end request.
+   at Umbraco.Web.UmbracoHelper.get_AssignedContentItem()
+   at Umbraco.Web.UmbracoHelper.Field(String fieldAlias, String altFieldAlias, String altText, String insertBefore, String insertAfter, Boolean recursive, Boolean convertLineBreaks, Boolean removeParagraphTags, RenderFieldCaseType casing, RenderFieldEncodingType encoding, Boolean formatAsDate, Boolean formatAsDateWithTime, String formatAsDateWithTimeSeparator)
+   at ASP._Page_Views_MacroPartials_EXHIBITIONS_PAST_cshtml.Execute() in c:\queengallery\queengallery\Views\MacroPartials\EXHIBITIONS_PAST.cshtml:line 315
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at System.Web.Mvc.RazorView.RenderView(ViewContext viewContext, TextWriter writer, Object instance)
+   at System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
+   at Umbraco.Core.Profiling.ProfilingView.Render(ViewContext viewContext, TextWriter writer)
+   at Umbraco.Web.Mvc.ControllerExtensions.RenderViewResultAsString(ControllerBase controller, ViewResultBase viewResult)
+   at Umbraco.Web.Macros.PartialViewMacroEngine.Execute(MacroModel macro, IPublishedContent content)
+   at Umbraco.Web.Macros.PartialViewMacroEngine.Execute(MacroModel macro, INode node)
+   at umbraco.macro.LoadPartialViewMacro(MacroModel macro)
+   at umbraco.macro.renderMacro(Hashtable pageElements, Int32 pageId)
+ 2017-01-04 19:08:04,489 [P15616/D2/T28] INFO  umbraco.content - Save Xml to file...
+ 2017-01-04 19:08:04,494 [P15616/D2/T28] INFO  umbraco.content - Saved Xml to file.
+ 2017-01-04 19:08:08,144 [P15616/D2/T13] INFO  Umbraco.Core.Publishing.PublishingStrategy - Content 'Past' with Id '5643' has been published.
+ 2017-01-04 19:08:08,445 [P15616/D2/T31] WARN  umbraco.macro - Error loading partial view macro (View: ~/Views/MacroPartials/EXHIBITIONS_PAST.cshtml). Exception: System.InvalidOperationException: Cannot return the IPublishedContent because the UmbracoHelper was constructed with an UmbracoContext and the current request is not a front-end request.
+   at Umbraco.Web.UmbracoHelper.get_AssignedContentItem()
+   at Umbraco.Web.UmbracoHelper.Field(String fieldAlias, String altFieldAlias, String altText, String insertBefore, String insertAfter, Boolean recursive, Boolean convertLineBreaks, Boolean removeParagraphTags, RenderFieldCaseType casing, RenderFieldEncodingType encoding, Boolean formatAsDate, Boolean formatAsDateWithTime, String formatAsDateWithTimeSeparator)
+   at ASP._Page_Views_MacroPartials_EXHIBITIONS_PAST_cshtml.Execute() in c:\queengallery\queengallery\Views\MacroPartials\EXHIBITIONS_PAST.cshtml:line 315
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at System.Web.Mvc.RazorView.RenderView(ViewContext viewContext, TextWriter writer, Object instance)
+   at System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
+   at Umbraco.Core.Profiling.ProfilingView.Render(ViewContext viewContext, TextWriter writer)
+   at Umbraco.Web.Mvc.ControllerExtensions.RenderViewResultAsString(ControllerBase controller, ViewResultBase viewResult)
+   at Umbraco.Web.Macros.PartialViewMacroEngine.Execute(MacroModel macro, IPublishedContent content)
+   at Umbraco.Web.Macros.PartialViewMacroEngine.Execute(MacroModel macro, INode node)
+   at umbraco.macro.LoadPartialViewMacro(MacroModel macro)
+   at umbraco.macro.renderMacro(Hashtable pageElements, Int32 pageId)
+ 2017-01-04 19:08:08,445 [P15616/D2/T31] WARN  umbraco.macro - Error loading Partial View (file: ~/Views/MacroPartials/EXHIBITIONS_PAST.cshtml). Exception: System.InvalidOperationException: Cannot return the IPublishedContent because the UmbracoHelper was constructed with an UmbracoContext and the current request is not a front-end request.
+   at Umbraco.Web.UmbracoHelper.get_AssignedContentItem()
+   at Umbraco.Web.UmbracoHelper.Field(String fieldAlias, String altFieldAlias, String altText, String insertBefore, String insertAfter, Boolean recursive, Boolean convertLineBreaks, Boolean removeParagraphTags, RenderFieldCaseType casing, RenderFieldEncodingType encoding, Boolean formatAsDate, Boolean formatAsDateWithTime, String formatAsDateWithTimeSeparator)
+   at ASP._Page_Views_MacroPartials_EXHIBITIONS_PAST_cshtml.Execute() in c:\queengallery\queengallery\Views\MacroPartials\EXHIBITIONS_PAST.cshtml:line 315
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at System.Web.Mvc.RazorView.RenderView(ViewContext viewContext, TextWriter writer, Object instance)
+   at System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
+   at Umbraco.Core.Profiling.ProfilingView.Render(ViewContext viewContext, TextWriter writer)
+   at Umbraco.Web.Mvc.ControllerExtensions.RenderViewResultAsString(ControllerBase controller, ViewResultBase viewResult)
+   at Umbraco.Web.Macros.PartialViewMacroEngine.Execute(MacroModel macro, IPublishedContent content)
+   at Umbraco.Web.Macros.PartialViewMacroEngine.Execute(MacroModel macro, INode node)
+   at umbraco.macro.LoadPartialViewMacro(MacroModel macro)
+   at umbraco.macro.renderMacro(Hashtable pageElements, Int32 pageId)
+ 2017-01-04 19:08:10,873 [P15616/D2/T18] ERROR Umbraco.Core.Dynamics.DynamicInstanceHelper - An error occurred finding and executing extension method "GetCropUrl" for type "Umbraco.Web.Models.DynamicPublishedContent". Types searched for extension methods were Umbraco.Web.Models.DynamicPublishedContent.
+System.MissingMethodException: Method 'Umbraco.Web.Models.DynamicPublishedContent.GetCropUrl' not found.
+   at Umbraco.Core.Dynamics.DynamicInstanceHelper.FindAndExecuteExtensionMethod[T](IRuntimeCacheProvider runtimeCache, T thisObject, Object[] args, String name, IEnumerable`1 findMethodsOnTypes)
+   at Umbraco.Core.Dynamics.DynamicInstanceHelper.TryInvokeMember[T](IRuntimeCacheProvider runtimeCache, T thisObject, InvokeMemberBinder binder, Object[] args, IEnumerable`1 findExtensionMethodsOnTypes)
+ 2017-01-04 19:08:12,169 [P15616/D2/T36] INFO  umbraco.content - Save Xml to file...
+ 2017-01-04 19:08:12,173 [P15616/D2/T36] INFO  umbraco.content - Saved Xml to file.
+ 2017-01-04 19:08:19,613 [P15616/D2/T23] ERROR Umbraco.Core.Dynamics.DynamicInstanceHelper - An error occurred finding and executing extension method "GetCropUrl" for type "Umbraco.Web.Models.DynamicPublishedContent". Types searched for extension methods were Umbraco.Web.Models.DynamicPublishedContent.
+System.MissingMethodException: Method 'Umbraco.Web.Models.DynamicPublishedContent.GetCropUrl' not found.
+   at Umbraco.Core.Dynamics.DynamicInstanceHelper.FindAndExecuteExtensionMethod[T](IRuntimeCacheProvider runtimeCache, T thisObject, Object[] args, String name, IEnumerable`1 findMethodsOnTypes)
+   at Umbraco.Core.Dynamics.DynamicInstanceHelper.TryInvokeMember[T](IRuntimeCacheProvider runtimeCache, T thisObject, InvokeMemberBinder binder, Object[] args, IEnumerable`1 findExtensionMethodsOnTypes)
+ 2017-01-04 19:09:05,242 [P15616/D2/T54] ERROR Umbraco.Core.Dynamics.DynamicInstanceHelper - An error occurred finding and executing extension method "GetCropUrl" for type "Umbraco.Web.Models.DynamicPublishedContent". Types searched for extension methods were Umbraco.Web.Models.DynamicPublishedContent.
+System.MissingMethodException: Method 'Umbraco.Web.Models.DynamicPublishedContent.GetCropUrl' not found.
+   at Umbraco.Core.Dynamics.DynamicInstanceHelper.FindAndExecuteExtensionMethod[T](IRuntimeCacheProvider runtimeCache, T thisObject, Object[] args, String name, IEnumerable`1 findMethodsOnTypes)
+   at Umbraco.Core.Dynamics.DynamicInstanceHelper.TryInvokeMember[T](IRuntimeCacheProvider runtimeCache, T thisObject, InvokeMemberBinder binder, Object[] args, IEnumerable`1 findExtensionMethodsOnTypes)
+ 2017-01-04 19:26:59,395 [P15616/D2/T275] INFO  Umbraco.Core.Logging.OwinLogger - Event Id: 0, state: User logged will be logged out due to timeout: admin@bbl.co.th, IP Address: ::1
+ 2017-01-04 19:27:00,657 [P15616/D2/T264] INFO  Umbraco.Core.Logging.OwinLogger - Event Id: 0, state: User logged will be logged out due to timeout: admin@bbl.co.th, IP Address: ::1
+ 2017-01-04 19:27:00,931 [P15616/D2/T317] INFO  Umbraco.Core.Logging.OwinLogger - Event Id: 0, state: User logged will be logged out due to timeout: admin@bbl.co.th, IP Address: ::1
+ 2017-01-04 21:49:48,865 [P15616/D2/T218] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledTasks] Terminating
+ 2017-01-04 21:49:48,865 [P15616/D2/T218] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledTasks] Waiting for tasks to complete
+ 2017-01-04 21:49:48,867 [P15616/D2/T213] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledTasks] Tasks completed, terminated
+ 2017-01-04 21:49:48,872 [P15616/D2/T218] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [Umbraco.Web.Scheduling.IBackgroundTask] Terminating
+ 2017-01-04 21:49:48,873 [P15616/D2/T218] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [Umbraco.Web.Scheduling.IBackgroundTask] Waiting for tasks to complete
+ 2017-01-04 21:49:48,873 [P15616/D2/T218] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [LogScrubber] Terminating
+ 2017-01-04 21:49:48,873 [P15616/D2/T218] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [LogScrubber] Waiting for tasks to complete
+ 2017-01-04 21:49:48,873 [P15616/D2/T284] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [Umbraco.Web.Scheduling.IBackgroundTask] Tasks completed, terminated
+ 2017-01-04 21:49:48,873 [P15616/D2/T20] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [LogScrubber] Tasks completed, terminated
+ 2017-01-04 21:49:48,873 [P15616/D2/T218] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [KeepAlive] Terminating
+ 2017-01-04 21:49:48,873 [P15616/D2/T218] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [KeepAlive] Waiting for tasks to complete
+ 2017-01-04 21:49:48,873 [P15616/D2/T284] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [KeepAlive] Tasks completed, terminated
+ 2017-01-04 21:49:48,873 [P15616/D2/T218] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledPublishing] Terminating
+ 2017-01-04 21:49:48,873 [P15616/D2/T218] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledPublishing] Waiting for tasks to complete
+ 2017-01-04 21:49:48,873 [P15616/D2/T225] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledPublishing] Tasks completed, terminated
+ 2017-01-04 21:50:18,917 [P15616/D2/T207] INFO  Umbraco.Core.UmbracoApplicationBase - Application shutdown. Details: ConfigurationChange
+
+_shutDownMessage=Change in App_Offline.htm
+HostingEnvironment initiated shutdown
+Change in App_Offline.htm
+Change in App_Offline.htm
+HostingEnvironment caused shutdown
+
+_shutDownStack=   at System.Environment.GetStackTrace(Exception e, Boolean needFileInfo)
+   at System.Environment.get_StackTrace()
+   at System.Web.Hosting.HostingEnvironment.InitiateShutdownInternal()
+   at System.Web.Hosting.HostingEnvironment.InitiateShutdownWithoutDemand()
+   at System.Web.HttpRuntime.ShutdownAppDomain(String stackTrace)
+   at System.Web.HttpRuntime.OnAppOfflineFileChange(Object sender, FileChangeEvent e)
+   at System.Web.DirectoryMonitor.FireNotifications()
+   at System.Web.Util.WorkItem.CallCallbackWithAssert(WorkItemCallback callback)
+   at System.Web.Util.WorkItem.OnQueueUserWorkItemCompletion(Object state)
+   at System.Threading.QueueUserWorkItemCallback.WaitCallback_Context(Object state)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   at System.Threading.QueueUserWorkItemCallback.System.Threading.IThreadPoolWorkItem.ExecuteWorkItem()
+   at System.Threading.ThreadPoolWorkQueue.Dispatch()
+   at System.Threading._ThreadPoolWaitCallback.PerformWaitCallback()
