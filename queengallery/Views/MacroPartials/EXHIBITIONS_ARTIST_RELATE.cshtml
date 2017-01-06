@@ -14,67 +14,67 @@
        var mediaIds = Model.MacroParameters["mediaIds"];                                                      Type: (note: you can use a Single Media Picker if that's more appropriate to your needs)
 *@
 
-
 @{
-	
-	
-var Exhibition = Model.MacroParameters["Exhibition"];      
-var HeadText = Model.MacroParameters["HeadText"];      
+
+var Exhibition = Model.MacroParameters["Exhibition"];
+var HeadText = Model.MacroParameters["HeadText"];
 var artistID = 0; int.TryParse(Request.QueryString["artist"], out artistID);
- 
+var itemsArtPices= Umbraco.Media(artistID).Children();
 
-  
+var curNode = Umbraco.TypedContent(Model.Content.Id);
+string nodeLang = curNode.GetCulture().ToString().ToLower();
 
- 
-	var itemsArtPices= Umbraco.Media(artistID).Children();
-	
- 
- 
-		List<string> list = new List<string>();
-	  
-	foreach (var item in itemsArtPices)
+
+List<string>
+    list = new List<string>
+        ();
+
+        foreach (var item in itemsArtPices)
         {
-			 list.Add("artPieces2.ToString().Contains(\""+item.id+"\")");
- 
-		}
+        list.Add("artPieces2.ToString().Contains(\""+item.id+"\")");
+
+        }
+
+        var itemExhibitions= Umbraco.Media(Exhibition).Children().Where(string.Join<string>
+            (" || ", list));
+            <h1> @HeadText </h1>
+
+            foreach (var ex in itemExhibitions)
+            {
+
+       string  name="";
+       string description="";
+       if (nodeLang == "th-th") {
+       name = @ex.nameTh;
+       description=@ex.descriptionTh;
+       } else {
+       name =@ex.nameEn;
+       description=@ex.descriptionEn;
+       }
 
 
-	var itemExhibitions= Umbraco.Media(Exhibition).Children().Where(string.Join<string>(" || ", list));
-<h1> @HeadText </h1>
+            <div class="row">
+                <div class="col-lg-4">
+                    <img class="img-responsive img-center  boxShadow" src="@ex.GetCropUrl("image", "wide" )" alt="" />
+                </div>
+                <div class="col-lg-8">
+                    <h2>@name</h2>
+                    <p class="more">
+                        @description
+                    </p>
+                    <a class="button " href='/en/exhibitions/past/exhibition?exhibition=@ex.id'>@Umbraco.Field("#ReadMore")</a>
+                </div>
+            </div>
+            }
 
- 	foreach (var ex in itemExhibitions)
-        {
-				 <div class="row"> 
+            }
 
-		 <div class="col-lg-4">
+            <link href="~/Modules/ReadMore/ReadMore.css" rel="stylesheet" />
+            <script src="~/Modules/ReadMore/ReadMore.js"></script>
+            <script>
+                $(function () {
 
-		
-			
-    <img class="img-responsive img-center  boxShadow" src="@ex.GetCropUrl("image", "wide")" alt="" />
-		 
-	 </div> 
-			 <div class="col-lg-8">
-				 <h2>@ex.name</h2>
-				 <p class="more"> 
-				 @ex.descriptionTh
-				 </p>
-				 <a class="button " href='/en/exhibitions/past/exhibition?exhibition=@ex.id'>Read more</a>
-			 
-				 </div> 
-				 	 </div> 
-		}
-	
-   
-}
-
-                                                                           <link href="~/Modules/ReadMore/ReadMore.css" rel="stylesheet" />
-                                                                           <script src="~/Modules/ReadMore/ReadMore.js"></script>
-                                                                           <script>
-    $(function () {
-      
-
-        ReadMore.showMore = false;
-        ReadMore.BindEvent();
-    });
-                                                                           </script> 
- 
+                    ReadMore.showMore = false;
+                    ReadMore.BindEvent();
+                });
+            </script>

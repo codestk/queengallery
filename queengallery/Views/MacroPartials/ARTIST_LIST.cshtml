@@ -130,80 +130,82 @@ int exhibitionID = 0;
 
         @if (mediaArtistReorder != "")
         {
-        <h1>@TextHead</h1>
-        <div class="text-center">
+                                         <div class="text-center">
+                                             <h1>@TextHead</h1>
+                                             </div>
+                                             <div class="text-center">
 
-            @foreach (var mediaId in mediaArtistReorder.ToString().Split(','))
-            {
+                                                 @foreach (var mediaId in mediaArtistReorder.ToString().Split(','))
+                                                 {
 
-            var artTistMedia = Umbraco.Media(mediaId);
-            @*var  artTistMedia =Umbraco.Media(media.ParentId);*@
-            @* a single image *@
-            <!-- Left and right controls -->
-            if (artTistMedia.DocumentTypeAlias == "ArtistsMedia")
-            {
+                                                 var artTistMedia = Umbraco.Media(mediaId);
+                                                 @*var  artTistMedia =Umbraco.Media(media.ParentId);*@
+                                                 @* a single image *@
+                                                 <!-- Left and right controls -->
+                                                 if (artTistMedia.DocumentTypeAlias == "ArtistsMedia")
+                                                 {
 
-            @Render(artTistMedia,nodeLang);
-            }
+                                                 @Render(artTistMedia,nodeLang);
+                                                 }
 
-            }
-        </div>
-        }
+                                                 }
+                                             </div>
+                                             }
 
-        @helper Render(dynamic item,string nodeLang)
-        {
+                                             @helper Render(dynamic item,string nodeLang)
+                                             {
 
-        string  name="";
-        string description="";
-        if (nodeLang == "th-th") {
-        name = @item.nameTh;
-        description=@item.descriptionTh;
-        } else {
-        name =@item.nameEn;
-        description=@item.descriptionEn;
-        }
-        var ShowDetail = Model.MacroParameters["ShowDetail"];
-        var ShowMore = Model.MacroParameters["ShowMore"];
-        string More="";
-        if (ShowMore.Equals("1"))
-        {
-        More="more";
-        }
-
-
-
-        <div class="col-lg-4  matchHeight" style="margin-bottom:40px;">
-
-            <figure class="snip1554">
-
-                <img class="img-circle img-responsive img-center" src="@item.GetCropUrl(" image", "avatar" )" onerror="this.src = '/media/9280/untitled-3.png?anchor=center&mode=crop&width=300&height=300&rnd=131258854960000000'" alt="@name" />
-                <figcaption>
-                    <h3></h3>
-                </figcaption>
-                <a href="/en/exhibitions/past/artist?artist=@item.id">  @item.GetCropUrl(item, "avatar", true)</a>
-            </figure>
-
-            <h2>@name</h2>
-            @if    (ShowDetail.Equals("1"))
-            {
-            <p class="@More">@description</p>
-            }
-
-        </div>
-        }
+                                             string  name="";
+                                             string description="";
+                                             if (nodeLang == "th-th") {
+                                             name = @item.nameTh;
+                                             description=@item.descriptionTh;
+                                             } else {
+                                             name =@item.nameEn;
+                                             description=@item.descriptionEn;
+                                             }
+                                             var ShowDetail = Model.MacroParameters["ShowDetail"];
+                                             var ShowMore = Model.MacroParameters["ShowMore"];
+                                             string More="";
+                                             if (ShowMore.Equals("1"))
+                                             {
+                                             More="more";
+                                             }
 
 
 
-        <script src="~/Modules/jquery-match-height-master/dist/jquery.matchHeight-min.js"></script>
-        <link href="~/Modules/ReadMore/ReadMore.css" rel="stylesheet" />
-        <script src="~/Modules/ReadMore/ReadMore.js"></script>
-        <script>
-            $(function () {
-                $('.matchHeight').matchHeight({
-                    byRow: true, remove: false
-                });
+                                             <div class="col-lg-4  matchHeight" style="margin-bottom:40px;">
 
-                ReadMore.showMore = false;
-                ReadMore.BindEvent();
-            });
-        </script>
+                                                 <figure class="snip1554">
+
+                                                     <img class="img-circle img-responsive img-center" src="@item.GetCropUrl("image", "avatar" )" onerror="this.src = '/media/43697/avatar.png'" alt="@name" />
+                                                     <figcaption>
+                                                         <h3></h3>
+                                                     </figcaption>
+                                                     <a href="/@Umbraco.Field("#RootUrl")/exhibitions/past/artist?artist=@item.id">  @item.GetCropUrl(item, "avatar", true)</a>
+                                                 </figure>
+
+                                                 <h2>@name</h2>
+                                                 @if    (ShowDetail.Equals("1"))
+                                                 {
+                                                 <p class="@More">@description</p>
+                                                 }
+
+                                             </div>
+                                             }
+
+
+
+                                             <script src="~/Modules/jquery-match-height-master/dist/jquery.matchHeight-min.js"></script>
+                                             <link href="~/Modules/ReadMore/ReadMore.css" rel="stylesheet" />
+                                             <script src="~/Modules/ReadMore/ReadMore.js"></script>
+                                             <script>
+                                                 $(function () {
+                                                     $('.matchHeight').matchHeight({
+                                                         byRow: true, remove: false
+                                                     });
+
+                                                     ReadMore.showMore = false;
+                                                     ReadMore.BindEvent();
+                                                 });
+                                             </script>

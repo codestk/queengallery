@@ -8,6 +8,11 @@ if (Model.MacroParameters["Exhibition"]=="")
 return;
 }
 
+ var curNode = Umbraco.TypedContent(Model.Content.Id);
+ string nodeLang = curNode.GetCulture().ToString().ToLower();
+
+
+
   int exhibition = 0; int.TryParse(Model.MacroParameters["Exhibition"].ToString(), out exhibition);
 
     string condition = "";
@@ -82,35 +87,58 @@ return;
 
                 var Nowitems = Umbraco.Media(exhibition).Children().Where(condition, valuesFilter).OrderBy(sort);
 
+         
                 <li class="" data-date="@dateNow">
-               
-                 @foreach(dynamic Now in Nowitems){
-                <p> <img class="img-center" src="@Now.image" alt="@Now.nameEn" /></p>
-                <h2>@Now.GetPropertyValue("NameEn") </h2>
-                <em>@Now.GetPropertyValue("beginDate").ToString("dd MMMM yyyy") - @Now.GetPropertyValue("endDate").ToString("dd MMMM yyyy") </em>
-                <p  >
-                    @Now.GetPropertyValue("DescriptionEn")
-                </p>
-                    <p class="text-center"><a class="button  " href='/en/exhibitions/past/exhibition/'>Read more</a></p>
+                    @foreach(dynamic Now in Nowitems){
+
+                    string name="";
+                    string description="";
+                    if (nodeLang == "th-th") {
+                    name = @Now.nameTh;
+                    description=@Now.descriptionTh;
+                    } else {
+                    name =@Now.nameEn;
+                    description=@Now.descriptionEn;
+                    }
+
+                    <h2 class="text-center">@name </h2>
+                    <p> <img class="img-center" src="@Now.image" alt="@name" /></p>
+                   
+                    <em>@Now.GetPropertyValue("beginDate").ToString("dd MMMM yyyy") - @Now.GetPropertyValue("endDate").ToString("dd MMMM yyyy") </em>
+                    <p>
+                        @description
+                    </p>
+                    <p class="text-center"><a class="button  " href='/@Umbraco.Field("#RootUrl")/exhibitions/past/exhibition?exhibition=@Now.id'>@Umbraco.Field("#ReadMore")</a></p>
                     <div class="seperator"> </div>
-                     }
-                
-                  </li>
+                    }
+
+                </li>
               
 
                 foreach(dynamic item in items){
                
+
+                string name="";
+                string description="";
+                if (nodeLang == "th-th") {
+                name = @item.nameTh;
+                description=@item.descriptionTh;
+                } else {
+                name =@item.nameEn;
+                description=@item.descriptionEn;
+                }
+
               
                 <li class="" data-date="@item.GetPropertyValue("beginDate").ToString("dd/MM/yyyy")">
-                <h2>@item.GetPropertyValue("NameEn") </h2>
-                <p>  <img class="img-center" src="@item.image" alt="@item.nameEn" /> </p>
+                <h2 class="text-center">@name </h2>
+                <p>  <img class="img-center" src="@item.image" alt="@name" /> </p>
 
                
                 <em>@item.GetPropertyValue("beginDate").ToString("dd MMMM yyyy") - @item.GetPropertyValue("endDate").ToString("dd MMMM yyyy") </em>
                 <p>
-                    @item.GetPropertyValue("DescriptionEn")
+                    @description
                 </p>
-                <p class="text-center"><a class="button  " href='/en/exhibitions/past/exhibition/'>Read more</a></p>
+                <p class="text-center"><a class="button  " href='/@Umbraco.Field("#RootUrl")/exhibitions/past/exhibition?exhibition=@item.id'>@Umbraco.Field("#ReadMore")</a></p>
                 </li>
                 }
                 }

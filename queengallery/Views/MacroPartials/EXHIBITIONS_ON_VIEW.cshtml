@@ -207,7 +207,7 @@ var TextHead = Model.MacroParameters["TextHead"];
                 <p class="more">{{description}} </p>
 
                 @*<a class="btn btn-primary waves-effect waves-light boxShadow" href='/en/exhibitions/past/exhibition/'>Read more</a>*@
-                <a class="button  " href='/en/exhibitions/past/exhibition?exhibition={{id}}'>Read more</a>
+                <a class="button  " href='/@Umbraco.Field("#RootUrl")/exhibitions/past/exhibition?exhibition={{id}}'>@Umbraco.Field("#ReadMore")</a>
                 
             </div>
         <div class="col-lg-12">
