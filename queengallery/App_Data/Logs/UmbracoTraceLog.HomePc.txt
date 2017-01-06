@@ -11405,3 +11405,15 @@ System.MissingMethodException: Method 'Umbraco.Web.Models.DynamicPublishedConten
    at Umbraco.Core.Dynamics.DynamicInstanceHelper.TryInvokeMember[T](IRuntimeCacheProvider runtimeCache, T thisObject, InvokeMemberBinder binder, Object[] args, IEnumerable`1 findExtensionMethodsOnTypes)
  2017-01-06 23:56:17,115 [P6700/D31/T69] INFO  Umbraco.Core.Logging.OwinLogger - Event Id: 0, state: User logged will be logged out due to timeout: admin@bbl.co.th, IP Address: ::1
  2017-01-06 23:56:17,123 [P6700/D31/T93] INFO  Umbraco.Core.Logging.OwinLogger - Event Id: 0, state: User logged will be logged out due to timeout: admin@bbl.co.th, IP Address: ::1
+ 2017-01-06 23:57:44,299 [P6700/D31/T155] ERROR Umbraco.Core.Dynamics.DynamicInstanceHelper - An error occurred finding and executing extension method "GetCropUrl" for type "Umbraco.Web.Models.DynamicPublishedContent". Types searched for extension methods were Umbraco.Web.Models.DynamicPublishedContent.
+System.MissingMethodException: Method 'Umbraco.Web.Models.DynamicPublishedContent.GetCropUrl' not found.
+   at Umbraco.Core.Dynamics.DynamicInstanceHelper.FindAndExecuteExtensionMethod[T](IRuntimeCacheProvider runtimeCache, T thisObject, Object[] args, String name, IEnumerable`1 findMethodsOnTypes)
+   at Umbraco.Core.Dynamics.DynamicInstanceHelper.TryInvokeMember[T](IRuntimeCacheProvider runtimeCache, T thisObject, InvokeMemberBinder binder, Object[] args, IEnumerable`1 findExtensionMethodsOnTypes)
+ 2017-01-06 23:57:44,302 [P6700/D31/T155] ERROR Umbraco.Core.Dynamics.DynamicInstanceHelper - An error occurred finding and executing extension method "GetCropUrl" for type "Umbraco.Web.Models.DynamicPublishedContent". Types searched for extension methods were Umbraco.Web.Models.DynamicPublishedContent.
+System.MissingMethodException: Method 'Umbraco.Web.Models.DynamicPublishedContent.GetCropUrl' not found.
+   at Umbraco.Core.Dynamics.DynamicInstanceHelper.FindAndExecuteExtensionMethod[T](IRuntimeCacheProvider runtimeCache, T thisObject, Object[] args, String name, IEnumerable`1 findMethodsOnTypes)
+   at Umbraco.Core.Dynamics.DynamicInstanceHelper.TryInvokeMember[T](IRuntimeCacheProvider runtimeCache, T thisObject, InvokeMemberBinder binder, Object[] args, IEnumerable`1 findExtensionMethodsOnTypes)
+ 2017-01-06 23:57:44,305 [P6700/D31/T155] ERROR Umbraco.Core.Dynamics.DynamicInstanceHelper - An error occurred finding and executing extension method "GetCropUrl" for type "Umbraco.Web.Models.DynamicPublishedContent". Types searched for extension methods were Umbraco.Web.Models.DynamicPublishedContent.
+System.MissingMethodException: Method 'Umbraco.Web.Models.DynamicPublishedContent.GetCropUrl' not found.
+   at Umbraco.Core.Dynamics.DynamicInstanceHelper.FindAndExecuteExtensionMethod[T](IRuntimeCacheProvider runtimeCache, T thisObject, Object[] args, String name, IEnumerable`1 findMethodsOnTypes)
+   at Umbraco.Core.Dynamics.DynamicInstanceHelper.TryInvokeMember[T](IRuntimeCacheProvider runtimeCache, T thisObject, InvokeMemberBinder binder, Object[] args, IEnumerable`1 findExtensionMethodsOnTypes)
