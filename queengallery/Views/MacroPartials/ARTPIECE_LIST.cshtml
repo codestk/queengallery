@@ -60,7 +60,7 @@ var item= Umbraco.Media(exhibition).Children().Where(condition);
     <h1>@TextHead  </h1>
     }
     }
-    <div class="row-marson0000 col-lg-12">
+    <div class="ArtPiece row-marson0000 col-lg-12">
         @foreach (var mediaId in mediaIds.ToString().Split(','))
         {
 
@@ -106,7 +106,7 @@ arttistName=@arttist.nameTh;
 description=@item.descriptionEn;
 arttistName=@arttist.nameEn;
 			}
-<div class="text-center matchHeightArtPiece item00000 col-lg-4">
+<div class="text-center matchHeight item00000 col-lg-4">
 
     <figure class="snip1360  well">
         <img src="@item.image.src" alt="@item.id" class="img-responsive  img-center" />
@@ -190,7 +190,7 @@ arttistName=@arttist.nameEn;
         ReadMore.BindEvent();
 
         //Afert ReadMore
-        $('.matchHeightArtPiece').matchHeight({
+        $('.ArtPiece .matchHeight').matchHeight({
             byRow: true,
             property: 'height',
             //target: true,

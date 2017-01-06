@@ -47,6 +47,21 @@ int exhibitionID = 0;
 
     var  exhibitionitems = Umbraco.Media(ExhibitionFolder).Children().Where( "(beginDate <= Todate) && (endDate >= Todate)", valuesFilter).OrderBy(sort).Take(1);
 
+    if (exhibitionitems.Count()==0)
+    {
+
+          <div id="DivARTPIECE_LISTNotFound" class="col-lg-12 text-center">@Umbraco.Field("#NoData")</div>
+
+
+                                         <script>
+    $(document).ready(function () {
+        $("#DivARTPIECE_LISTNotFound").parent().parent().parent().parent().parent().hide();
+        });
+                                         </script>
+
+    return;
+    }
+
     exhibitionID = exhibitionitems.First().id;
 
     }else  if  (Request.QueryString["exhibition"]!=null)
