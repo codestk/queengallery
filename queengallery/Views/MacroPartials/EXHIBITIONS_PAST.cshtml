@@ -28,7 +28,7 @@
 <script src="~/Modules/Datejs-master/build/date.js"></script>
 @{
 
-var TextHead = Model.MacroParameters["TextHead"];   
+var ShowHead = Model.MacroParameters["ShowHead"];   
 var curNode = Umbraco.TypedContent(Model.Content.Id);
 var nodeLang = curNode.GetCulture().ToString().ToLower();
 }
@@ -258,10 +258,11 @@ var nodeLang = curNode.GetCulture().ToString().ToLower();
 
 <section id="Main">
    
-    @{if (TextHead !=null)
+    @{if (ShowHead.Equals("1"))
     {
 
-    <h1 style="font-size:50px;text-align:center">@TextHead</h1>
+    <h1 style="font-size:50px;text-align:center">@Umbraco.Field("#Past")
+</h1>
     }
     }
 

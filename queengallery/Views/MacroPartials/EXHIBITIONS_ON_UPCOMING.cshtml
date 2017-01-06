@@ -26,15 +26,16 @@ return;
 
     var items = Umbraco.Media(exhibition).Children().Where(condition, valuesFilter).OrderBy(sort);
 
-    var TextHead = Model.MacroParameters["TextHead"];
+    var ShowHead = Model.MacroParameters["ShowHead"];
 
 
     }
     @{
-
-                                         {if (TextHead !=null)
+                                          
+                                         {if (ShowHead.Equals("1"))
                                          {
-                                         <h1 class="text-center"><strong>@TextHead </strong></h1>
+                                         <h1 class="text-center"><strong>@Umbraco.Field("#UPCOMING")
+  </strong></h1>
                                          }
                                          }
 

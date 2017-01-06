@@ -24,7 +24,7 @@ string nodeLang = curNode.GetCulture().ToString().ToLower();
 
 var lang=Umbraco.GetDictionaryValue("language");
 var ExhibitionFolder = Model.MacroParameters["ExhibitionFolder"];
-var TextHead = Model.MacroParameters["TextHead"];
+var ShowHead = Model.MacroParameters["ShowHead"];
 var ShowAuto = Model.MacroParameters["ShowAuto"];
 var Exhibition = Model.MacroParameters["Exhibition"];
 var Random = Model.MacroParameters["Random"];
@@ -152,11 +152,14 @@ int exhibitionID = 0;
 
         @if (mediaArtistReorder != "")
         {
-                                         if (TextHead !=null)
+                                         if (ShowHead.Equals("1"))
                                          {
                                         /*Render Head*/
                                          <div class="text-center">
-                                             <h1>@TextHead</h1>
+                                             <h1>
+											  @Umbraco.Field("#Artists")
+
+											 </h1>
                                          </div>
                                          }
 

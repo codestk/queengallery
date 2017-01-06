@@ -24,7 +24,7 @@ var nodeLang = curNode.GetCulture().ToString().ToLower();
 
 
 
-var TextHead = Model.MacroParameters["TextHead"];
+var ShowHead = Model.MacroParameters["ShowHead"];
 
 
 
@@ -171,9 +171,9 @@ var TextHead = Model.MacroParameters["TextHead"];
     <div class="text-center ">
          @*<h1 ><strong>OnView</strong></h1>*@
 
-        @{if (TextHead !=null)
+        @{if (ShowHead.Equals("1"))
         {
-        <h1><strong>@TextHead</strong></h1>
+        <h1><strong>@Umbraco.Field("#ONVIEW")</strong></h1>
       
         }
         }
