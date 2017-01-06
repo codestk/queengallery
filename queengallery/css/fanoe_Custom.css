@@ -223,23 +223,24 @@ html {
         border-color: transparent transparent transparent #1c1c1e;
     }
 
-.darklight {
+.green {
     /*Custom Pws*/
     /*background: #fff;*/
     background: rgba(233,237,240,.5);
     background: rgba( 246,249,252,.9);
     background: rgba(245,245,245,.5);
-  
+       background: #5ACDA2;
+    
 }
 
-    .darklight * {
+    .green * {
         /*Custom Pws*/
         color: #3e3e3e;
         /*color: #000;*/
     }
 
-    .darklight a,
-    .darklight a:visited {
+    .green a,
+    .green a:visited {
         /*Custom PWS*/
         /*color: #f45376 !important;*/
         /*color: #1496bb !important;*/
@@ -248,38 +249,38 @@ html {
           color: #1395ba !important;*/
     }
 
-        .darklight a:hover,
-        .darklight a:visited:hover {
+        .green a:hover,
+        .green a:visited:hover {
             text-decoration: underline;
         }
 
-        .darklight a.button {
+        .green a.button {
             border: 1px solid #000;
             background: transparent;
             color: #000;
         }
 
-            .darklight a.button:hover {
+            .green a.button:hover {
                 background: rgba(233,237,240,.5);
                 color: #fff;
             }
 
-            .darklight a.button.fill {
+            .green a.button.fill {
                 background: #000;
                 color: #fff;
             }
 
-                .darklight a.button.fill:hover {
+                .green a.button.fill:hover {
                     background: rgba(0, 0, 0, 0.2);
                     color: #000;
                 }
 
-    .darklight code,
-    .darklight pre {
+    .green code,
+    .green pre {
         background-color: #f8f8f8;
     }
 
-    .darklight + .triangle:before {
+    .green + .triangle:before {
         border-color: transparent transparent transparent #fff;
     }
 
@@ -402,7 +403,7 @@ html {
 
 .light {
     /*Custom Pws*/
-    /*background: #ffffff;*/ 
+    /*background: #ffffff;*/
     color: #131516;
 }
 
@@ -415,15 +416,11 @@ html {
     .light a,
     .light a:visited {
         /*Custom PWS*/
-       
         /*color: #269 ;*/
-            color: #107896 ;
-       
+        color: #107896;
         /*color: #0f5b78 ;
          color: #0d3d56 ;*/
-       
-         /*color: #2E3192 ;*/
-       
+        /*color: #2E3192 ;*/
     }
 
         .light a:hover,
@@ -439,8 +436,7 @@ html {
 
             .light a.button:hover {
                 background: #239292;
-                   background: #43ABC8;
-                  
+                background: #43ABC8;
                 color: #fff;
             }
 
@@ -465,11 +461,11 @@ html {
 
 .yellow {
     /*background: #FFCC01;*/
-    background: #F4C63D;
+    background: #FBC628;
 }
 
     .yellow * {
-        color: #000;
+        color: #fff;
     }
 
     .yellow a,
@@ -504,15 +500,7 @@ html {
 
 .blue {
     /*background: #51c1f5;*/
-    background-color: #254250;
-    background-image: -webkit-linear-gradient(top left,#041722,#173f56,#417685);
-    background-image: linear-gradient(to bottom right,#041722,#173f56,#417685);
-    /* box-shadow: inset 0 1px 0 rgba(0,0,0,.1); */
-    /* color: #bcd4d8; */
-    text-shadow: 0 1px 2px #192d38;
-    margin: 0 -10px;
-    -webkit-font-smoothing: antialiased;
-    font-weight: 500;
+    background-color: #3BB2DA;
 }
 
     .blue * {
@@ -958,7 +946,7 @@ nav li > ul > li > ul {
 	display: none;
 }*/
 
-.dark, .darklight, .fullWithContentLight, .fullWithContentDark,
+.dark, .green, .fullWithContentLight, .fullWithContentDark,
 .light,
 .yellow,
 .blue,
@@ -970,10 +958,10 @@ nav li > ul > li > ul {
     background-repeat: no-repeat;
     background-position: center center;
     /*color: #000;*/
-    color:#0f0f0f
+    color: #0f0f0f;
 }
 
-    .dark .row, .darklight .row, .fullWithContentLight .row, .fullWithContentDark .row,
+    .dark .row, .green .row, .fullWithContentLight .row, .fullWithContentDark .row,
     .light .row,
     .yellow .row,
     .blue .row,
@@ -982,7 +970,7 @@ nav li > ul > li > ul {
     }
 
         .dark .row div[class^="col-"],
-        .darklight .row div[class^="col-"],
+        .green .row div[class^="col-"],
         .fullWithContentLight .row div[class^="col-"],
         .fullWithContentDark .row div[class^="col-"],
         .light .row div[class^="col-"],
@@ -993,7 +981,7 @@ nav li > ul > li > ul {
         }
 
     .dark p,
-    .darklight p,
+    .green p,
     .fullWithContentLight p,
     .fullWithContentDark p,
     .light p,
@@ -1001,7 +989,7 @@ nav li > ul > li > ul {
     .blue p,
     .purple p,
     .dark a,
-    .darklight a,
+    .green a,
     .fullWithContentLight a,
     .fullWithContentDark a,
     .light a,
@@ -1009,7 +997,7 @@ nav li > ul > li > ul {
     .blue a,
     .purple a,
     .dark blockquote,
-    .darklight blockquote,
+    .green blockquote,
     .fullWithContentLight blockquote,
     .fullWithContentDark blockquote,
     .light blockquote,
@@ -1017,7 +1005,7 @@ nav li > ul > li > ul {
     .blue blockquote,
     .purple blockquote,
     .dark li,
-    .darklight li,
+    .green li,
     .fullWithContentLight li,
     .fullWithContentDark li,
     .light li,
@@ -1029,7 +1017,7 @@ nav li > ul > li > ul {
 
     .dark h1,
     .light h1,
-    .darklight h1,
+    .green h1,
     .fullWithContentLight h1,
     .fullWithContentDark h1,
     .yellow h1,
@@ -1041,7 +1029,7 @@ nav li > ul > li > ul {
 
     .dark h2,
     .light h2,
-    .darklight h2,
+    .green h2,
     .fullWithContentLight h2,
     .fullWithContentDark h2,
     .yellow h2,
@@ -1049,7 +1037,7 @@ nav li > ul > li > ul {
     .purple h2,
     .dark h3,
     .light h3,
-    .darklight h3,
+    .green h3,
     .fullWithContentLight h3,
     .fullWithContentDark h3,
     .yellow h3,
@@ -1061,7 +1049,7 @@ nav li > ul > li > ul {
 
     .dark p,
     .light p,
-    .darklight p,
+    .green p,
     .fullWithContentLight p,
     .fullWithContentDark p,
     .yellow p,
@@ -1072,7 +1060,7 @@ nav li > ul > li > ul {
     }
 
         .dark p + *,
-        .darklight p + *,
+        .green p + *,
         .fullWithContentLight p + *,
         .fullWithContentDark p + *,
         .light p + *,
@@ -1083,7 +1071,7 @@ nav li > ul > li > ul {
         }
 
     .dark a,
-    .darklight a,
+    .green a,
     .fullWithContentLight a,
     .fullWithContentDark a,
     .light a,
@@ -1095,7 +1083,7 @@ nav li > ul > li > ul {
     }
 
     .dark img,
-    .darklight img,
+    .green img,
     .fullWithContentLight img,
     .fullWithContentDark img,
     .light img,
@@ -1110,7 +1098,7 @@ nav li > ul > li > ul {
     }
 
     .dark li,
-    .darklight li,
+    .green li,
     .fullWithContentLight li,
     .fullWithContentDark li,
     .light li,
@@ -1321,7 +1309,7 @@ pre {
 
 @media (min-width: 768px) {
     .dark,
-    .darklight,
+    .green,
     .fullWithContentLight,
     .fullWithContentDark,
     .light,
@@ -1333,7 +1321,7 @@ pre {
     }
 
         .dark img,
-        .darklight img,
+        .green img,
         .fullWithContentLight img,
         .fullWithContentDark img,
         .light img,
@@ -1375,7 +1363,7 @@ pre {
         border-color: transparent transparent transparent #1c1c1e;
     }
 
-    .triangle + .darklight:before {
+    .triangle + .green:before {
         border-color: transparent transparent transparent #1c1c1e;
     }
 
@@ -1465,7 +1453,7 @@ nav .has-child:hover > .sublevel {
 
     .dark .row div[class^="col-"],
     .light .row div[class^="col-"],
-    .darklight .row div[class^="col-"],
+    .green .row div[class^="col-"],
     .fullWithContentLight .row div[class^="col-"],
     .fullWithContentDark .row div[class^="col-"],
     .yellow .row div[class^="col-"],
@@ -1496,7 +1484,7 @@ nav .has-child:hover > .sublevel {
         }
 
         .triangle + .light,
-        .triangle + .darklight,
+        .triangle + .green,
         .triangle + .fullWithContentLight,
         .triangle + .fullWithContentDark,
         .triangle + .dark,
@@ -1507,7 +1495,7 @@ nav .has-child:hover > .sublevel {
         }
 
             .triangle + .light:before,
-            .triangle + .darklight:before,
+            .triangle + .green:before,
             .triangle + .fullWithContentLight:before,
             .triangle + .fullWithContentDark:before,
             .triangle + .dark:before,

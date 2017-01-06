@@ -146,7 +146,7 @@ int exhibitionID = 0;
                                          }
 
                                         
-                                             <div class="text-center">
+                                             <div class="Artist text-center">
 
                                                  @foreach (var mediaId in mediaArtistReorder.ToString().Split(','))
                                                  {
@@ -216,8 +216,11 @@ int exhibitionID = 0;
                                              <script src="~/Modules/ReadMore/ReadMore.js"></script>
                                              <script>
                                                  $(function () {
+                                                     ReadMore.showMore = false;
+                                                     ReadMore.BindEvent();
+
                                                      //Afert ReadMore
-                                                     $('.matchHeight').matchHeight({
+                                                     $('.Artist .matchHeight').matchHeight({
                                                          byRow: true,
                                                          property: 'height',
                                                          //target: true,
@@ -225,7 +228,6 @@ int exhibitionID = 0;
                                                          //property: 'min-height'
                                                      });
 
-                                                     ReadMore.showMore = false;
-                                                     ReadMore.BindEvent();
+                                                   
                                                  });
                                              </script>
