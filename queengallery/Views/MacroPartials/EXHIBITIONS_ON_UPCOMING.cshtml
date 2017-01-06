@@ -30,142 +30,166 @@ return;
 
 
     }
-  
+    @{
+
+                                         {if (TextHead !=null)
+                                         {
+                                         <h1 class="text-center"><strong>@TextHead </strong></h1>
+                                         }
+                                         }
+
+
+                                         if (items.Count()!=0)
+                                         {
 
                                          <section id="Main">
                                              <div class="">
-                                                 @*<h1 class="text-center"><strong>Upcoming</strong></h1>*@
-                                                 @{if (TextHead !=null)
-                                                 {
-                                                 <h1 class="text-center"><strong>@TextHead </strong></h1>
-                                                 }
-                                                 }
+
+                                              
+
+
+                                                 <section class="cd-horizontal-timeline">
+
+                                                     <div class="timeline">
+                                                         <div class="events-wrapper">
+                                                             <div class="events">
+                                                                 <ol>
+
+                                                                     @{
+
+                                                                     var currentDate = DateTime.Today;
+                                                                     var dateNow = DateTime.Now.ToString("dd/MM/yyyy");
 
 
 
-                            <section class="cd-horizontal-timeline">
-
-        <div class="timeline">
-            <div class="events-wrapper">
-                <div class="events">
-                    <ol>
-
-                        @{
-
-                        var currentDate = DateTime.Today;
-                        var dateNow = DateTime.Now.ToString("dd/MM/yyyy");
-
-                       
-                       
-                         <li><a  id="aNow" href="#0" class="selected" data-date="@dateNow">@Umbraco.Field("#Now")</a></li> 
-                        foreach(dynamic item in items){
-                       
-
-                            <li><a href="#0" class="" data-date='@item.GetPropertyValue("beginDate").ToString("dd/MM/yyyy")'>@item.GetPropertyValue("beginDate").ToString("dd MMM")</a></li>
+                                                                     <li><a id="aNow" href="#0" class="selected" data-date="@dateNow">@Umbraco.Field("#Now")</a></li>
+                                                                     foreach(dynamic item in items){
 
 
-                            }
-                            }
-                      
+                                                                     <li><a href="#0" class="" data-date='@item.GetPropertyValue("beginDate").ToString("dd/MM/yyyy")'>@item.GetPropertyValue("beginDate").ToString("dd MMM")</a></li>
 
 
-                    </ol>
-                    <span class="filling-line" aria-hidden="true"></span>
-                </div> <!-- .events -->
-            </div> <!-- .events-wrapper -->
+                                                                     }
+                                                                     }
 
-            <ul class="cd-timeline-navigation">
-                <li><a id="prev" href="#0" class="prev inactive">Prev</a></li>
-                <li><a href="#0" class="next">Next</a></li>
-            </ul> <!-- .cd-timeline-navigation -->
-        </div> <!-- .timeline -->
-        <div class="events-content">
-            <ol>
-                @{
 
-                condition = "(beginDate <= Todate) && (endDate >= Todate)";
 
-                var Nowitems = Umbraco.Media(exhibition).Children().Where(condition, valuesFilter).OrderBy(sort);
+                                                                 </ol>
+                                                                 <span class="filling-line" aria-hidden="true"></span>
+                                                             </div> <!-- .events -->
+                                                         </div> <!-- .events-wrapper -->
 
-         
-                <li class="" data-date="@dateNow">
-                    @foreach(dynamic Now in Nowitems){
+                                                         <ul class="cd-timeline-navigation">
+                                                             <li><a id="prev" href="#0" class="prev inactive">Prev</a></li>
+                                                             <li><a href="#0" class="next">Next</a></li>
+                                                         </ul> <!-- .cd-timeline-navigation -->
+                                                     </div> <!-- .timeline -->
+                                                     <div class="events-content">
+                                                         <ol>
+                                                             @{
 
-                    string name="";
-                    string description="";
-                    if (nodeLang == "th-th") {
-                    name = @Now.nameTh;
-                    description=@Now.descriptionTh;
-                    } else {
-                    name =@Now.nameEn;
-                    description=@Now.descriptionEn;
-                    }
+                                                             condition = "(beginDate <= Todate) && (endDate >= Todate)";
 
-                    <h2 class="text-center">@name </h2>
-                    <p> <img class="img-center" src="@Now.image" alt="@name" /></p>
-                   
-                    <em>@Now.GetPropertyValue("beginDate").ToString("dd MMMM yyyy") - @Now.GetPropertyValue("endDate").ToString("dd MMMM yyyy") </em>
-                    <p>
-                        @description
-                    </p>
-                    <p class="text-center"><a class="button  " href='/@Umbraco.Field("#RootUrl")/exhibitions/past/exhibition?exhibition=@Now.id'>@Umbraco.Field("#ReadMore")</a></p>
-                    <div class="seperator"> </div>
-                    }
+                                                             var Nowitems = Umbraco.Media(exhibition).Children().Where(condition, valuesFilter).OrderBy(sort);
 
-                </li>
-              
 
-                foreach(dynamic item in items){
-               
+                                                             <li class="" data-date="@dateNow">
+                                                                 @foreach(dynamic Now in Nowitems){
 
-                string name="";
-                string description="";
-                if (nodeLang == "th-th") {
-                name = @item.nameTh;
-                description=@item.descriptionTh;
-                } else {
-                name =@item.nameEn;
-                description=@item.descriptionEn;
-                }
+                                                                 string name="";
+                                                                 string description="";
+                                                                 if (nodeLang == "th-th") {
+                                                                 name = @Now.nameTh;
+                                                                 description=@Now.descriptionTh;
+                                                                 } else {
+                                                                 name =@Now.nameEn;
+                                                                 description=@Now.descriptionEn;
+                                                                 }
 
-              
-                <li class="" data-date="@item.GetPropertyValue("beginDate").ToString("dd/MM/yyyy")">
-                <h2 class="text-center">@name </h2>
-                <p>  <img class="img-center" src="@item.image" alt="@name" /> </p>
+                                                                 <h2 class="text-center">@name </h2>
+                                                                 <p> <img class="img-center" src="@Now.image" alt="@name" /></p>
 
-               
-                <em>@item.GetPropertyValue("beginDate").ToString("dd MMMM yyyy") - @item.GetPropertyValue("endDate").ToString("dd MMMM yyyy") </em>
-                <p>
-                    @description
-                </p>
-                <p class="text-center"><a class="button  " href='/@Umbraco.Field("#RootUrl")/exhibitions/past/exhibition?exhibition=@item.id'>@Umbraco.Field("#ReadMore")</a></p>
-                </li>
-                }
-                }
-            </ol>
-        </div> <!-- .events-content -->
-    </section>
+                                                                 <em>@Now.GetPropertyValue("beginDate").ToString("dd MMMM yyyy") - @Now.GetPropertyValue("endDate").ToString("dd MMMM yyyy") </em>
+                                                                 <p>
+                                                                     @description
+                                                                 </p>
+                                                                 <p class="text-center"><a class="button  " href='/@Umbraco.Field("#RootUrl")/exhibitions/past/exhibition?exhibition=@Now.id'>@Umbraco.Field("#ReadMore")</a></p>
+                                                                 <div class="seperator"> </div>
+                                                                 }
+
+                                                             </li>
+
+
+                                                             foreach(dynamic item in items){
+
+
+                                                             string name="";
+                                                             string description="";
+                                                             if (nodeLang == "th-th") {
+                                                             name = @item.nameTh;
+                                                             description=@item.descriptionTh;
+                                                             } else {
+                                                             name =@item.nameEn;
+                                                             description=@item.descriptionEn;
+                                                             }
+
+
+                                                             <li class="" data-date="@item.GetPropertyValue(" beginDate").ToString("dd/MM/yyyy")">
+                                                             <h2 class="text-center">@name </h2>
+                                                             <p>  <img class="img-center" src="@item.image" alt="@name" /> </p>
+
+
+                                                             <em>@item.GetPropertyValue("beginDate").ToString("dd MMMM yyyy") - @item.GetPropertyValue("endDate").ToString("dd MMMM yyyy") </em>
+                                                             <p>
+                                                                 @description
+                                                             </p>
+                                                             <p class="text-center"><a class="button  " href='/@Umbraco.Field("#RootUrl")/exhibitions/past/exhibition?exhibition=@item.id'>@Umbraco.Field("#ReadMore")</a></p>
+                                                             </li>
+                                                             }
+                                                             }
+                                                         </ol>
+                                                     </div> <!-- .events-content -->
+                                                 </section>
                                              </div>
                                          </section>
-     
-   
-<link href="~/Modules/horizontal-timeline/css/reset.css" rel="stylesheet" />
-<link href="~/Modules/horizontal-timeline/css/style.css" rel="stylesheet" />
-                                        
-<script src="~/Modules/horizontal-timeline/js/modernizr.js"></script> 
-<script src="~/Modules/horizontal-timeline/js/jquery.mobile.custom.min.js"></script> 
-<script src="~/Modules/horizontal-timeline/js/main.js"></script>
-   
+
+
+                                         <link href="~/Modules/horizontal-timeline/css/reset.css" rel="stylesheet" />
+                                         <link href="~/Modules/horizontal-timeline/css/style.css" rel="stylesheet" />
+
+                                         <script src="~/Modules/horizontal-timeline/js/modernizr.js"></script>
+                                         <script src="~/Modules/horizontal-timeline/js/jquery.mobile.custom.min.js"></script>
+                                         <script src="~/Modules/horizontal-timeline/js/main.js"></script>
+
                                          <link href="~/Modules/ReadMore/ReadMore.css" rel="stylesheet" />
                                          <script src="~/Modules/ReadMore/ReadMore.js"></script>
-     <script>
+                                         <script>
          ReadMore.showMore = false;
          ReadMore.BindEvent();
         window.onload = function () {
             $('#aNow').click();
             $('#prev').click();
-      
-        };
-     
 
-    </script>
+        };
+
+
+                                         </script>
+
+
+                                         }else
+    {
+                                         <div class="row">
+                                             <hr>
+                                             <div class="col-lg-12   ">
+                                                 @*<div class="message"> ทดสอบภาษาไทย</div>*@
+                                                 <div class="message">@Umbraco.Field("#EventNotFound") </div>
+                                             </div>
+                                         </div>
+    }
+    
+    }
+                                   
+
+  
+
+       
