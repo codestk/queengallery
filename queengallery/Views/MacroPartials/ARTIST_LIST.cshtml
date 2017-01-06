@@ -56,7 +56,7 @@ int exhibitionID = 0;
     else if (Exhibition !=null)
     {
     
-                  var ExhibitionMedia  =Umbraco.Media(Exhibition);
+    var ExhibitionMedia  =Umbraco.Media(Exhibition);
 
    
     if (ExhibitionMedia.DocumentTypeAlias=="exhibitionsMedia")
@@ -80,13 +80,15 @@ int exhibitionID = 0;
 
         /*Get Exhibition*/
         item= Umbraco.Media(ExhibitionFolder).Children().Where(condition)  ;
-        var   mediaIds=item.First().GetPropertyValue("artPieces2");
+        var mediaIds=item.First().GetPropertyValue("artPieces2");
 
-        string artistList= mediaIds.ToString();
+        string artistList= "";
         /*Find Arttist*/
         foreach (var mediaId in mediaIds.ToString().Split(','))
         {
-        var media = Umbraco.Media(mediaId);
+
+    
+        var media = Umbraco.Media(mediaId).ParentId;
 
         //Check Nodata
         var mediaNode = Umbraco.TypedMedia(mediaId);
@@ -94,8 +96,12 @@ int exhibitionID = 0;
         if (mediaNode !=null)
         {
 
-        var artTistMedia =Umbraco.Media(media.ParentId);
-        artistList=artTistMedia.id.ToString()+",";
+        var artTistMedia =Umbraco.Media(media);
+         @*<div>@artTistMedia.DocumentTypeAlias @artTistMedia.id   GOGOGOGO </div>*@
+       artistList+="," +artTistMedia.id.ToString()+",";
+
+        @*artistList="," +media.ToString()+","; *@
+                                        
         }
         else
         {
@@ -112,38 +118,48 @@ int exhibitionID = 0;
         }
 
 
+    <div> @artistList   pure</div>
+
         string  mediaArtistReorder = "";
-        if    (Random.Equals("1"))
+	
+	     string[] artistListArray= artistList.Split(new string[] {","}, StringSplitOptions.RemoveEmptyEntries);
+        if (Random.Equals("1"))
         {
-        mediaArtistReorder= string.Join(",", artistList.ToString().Split(',').Distinct().OrderBy(x => System.Guid.NewGuid()).Take(ItemCount));
+        mediaArtistReorder= string.Join(",", artistListArray.Distinct().OrderBy(x => System.Guid.NewGuid()).Take(ItemCount));
         }else
         {
-        mediaArtistReorder= string.Join(",", artistList.ToString().Split(',').Distinct().Take(ItemCount));
+        mediaArtistReorder= string.Join(",", artistListArray.Distinct().Take(ItemCount));
+        }
+
         }
 
 
-
-        }
-
-
-
+    <div>@mediaArtistReorder  Reorder </div>
 
         @if (mediaArtistReorder != "")
         {
+                                         if (TextHead !=null)
+                                         {
+                                        /*Render Head*/
                                          <div class="text-center">
                                              <h1>@TextHead</h1>
-                                             </div>
+                                         </div>
+                                         }
+
+                                        
                                              <div class="text-center">
 
                                                  @foreach (var mediaId in mediaArtistReorder.ToString().Split(','))
                                                  {
 
                                                  var artTistMedia = Umbraco.Media(mediaId);
+
+                                                 <div>@artTistMedia.DocumentTypeAlias</div>
                                                  @*var  artTistMedia =Umbraco.Media(media.ParentId);*@
                                                  @* a single image *@
                                                  <!-- Left and right controls -->
                                                  if (artTistMedia.DocumentTypeAlias == "ArtistsMedia")
-                                                 {
+                                                 { 
 
                                                  @Render(artTistMedia,nodeLang);
                                                  }
@@ -201,8 +217,13 @@ int exhibitionID = 0;
                                              <script src="~/Modules/ReadMore/ReadMore.js"></script>
                                              <script>
                                                  $(function () {
+                                                     //Afert ReadMore
                                                      $('.matchHeight').matchHeight({
-                                                         byRow: true, remove: false
+                                                         byRow: true,
+                                                         property: 'height',
+                                                         //target: true,
+                                                         remove: false,
+                                                         //property: 'min-height'
                                                      });
 
                                                      ReadMore.showMore = false;

@@ -25,15 +25,11 @@ var curNode = Umbraco.TypedContent(Model.Content.Id);
 
 string nodeLang = curNode.GetCulture().ToString().ToLower();
 
-  
- 
 var id = 0; int.TryParse(Request.QueryString["artist"], out id);
 
- 
-
- /*int Artists = 0; int.TryParse(Model.MacroParameters["Artists"].ToString(), out Artists);  */    
+/*int Artists = 0; int.TryParse(Model.MacroParameters["Artists"].ToString(), out Artists);*/    
 var TextHead=Model.MacroParameters["TextHead"];
- string condition = "Id ="+id.ToString();
+string condition = "Id ="+id.ToString();
 
 var items= Umbraco.Media(id).Children() ;
  
@@ -50,12 +46,9 @@ var items= Umbraco.Media(id).Children() ;
     }
 
 
-    <div class="row-marson">
+    <div class="row-marson0000">
         @foreach (var artPieces in items)
         {
-
- 
-
         @* a single image *@
         if (artPieces.DocumentTypeAlias == "artPiecesMedia")
         {
@@ -80,7 +73,7 @@ description=@item.descriptionTh;
 				name =@item.nameEn;
 description=@item.descriptionEn;
 			}
-<div class="text-center matchHeight item">
+<div class="text-center matchHeight item000 col-lg-4">
 
     <figure class="snip1360  well">
         <img src="@item.image.src" alt="@item.id" class="img-responsive  img-center" />
@@ -160,13 +153,13 @@ description=@item.descriptionEn;
         ReadMore.BindEvent();
 
         //Afert ReadMore
-        //$('.matchHeight').matchHeight({
-        //    byRow: true,
-        //    property: 'height',
-        //    //target: true,
-        //    remove: false,
-        //    //property: 'min-height'
-        //});
+        $('.matchHeight').matchHeight({
+            byRow: true,
+            property: 'height',
+            //target: true,
+            remove: false,
+            //property: 'min-height'
+        });
 
         ModalEvent();
 
@@ -225,8 +218,7 @@ description=@item.descriptionEn;
                         data[key]["description"] = data[key]["description" + preFixLang];
                         data[key]["name"] = data[key]["name" + preFixLang];
                         data[key]["artPieceType"] = data[key]["artPieceType"];
-                        //data[key]["dimension"] = data[key]["dimension"];
-                        //data[key]["dimension"] = data[key]["dimension"];
+                      
                     }
 
 
@@ -240,8 +232,7 @@ description=@item.descriptionEn;
                 content.html('-');
 
 
-                //console.log(data[key]["name"]);
-                //console.log(data[key]["artPieceType"]);
+             
                
                 if (data[0][0]["name"] != "")
                 {

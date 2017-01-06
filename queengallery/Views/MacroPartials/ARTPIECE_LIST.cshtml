@@ -17,7 +17,7 @@
 
 @{
 
-if (Request.QueryString["artist"]==null)
+if (Request.QueryString["exhibition"]==null)
 {
 return;
 }
@@ -25,34 +25,42 @@ return;
 
 var curNode = Umbraco.TypedContent(Model.Content.Id);
 
+var TextHead =   Model.MacroParameters["TextHead"];
+
 string nodeLang = curNode.GetCulture().ToString().ToLower();
 
-var id = 0; int.TryParse(Request.QueryString["artist"], out id);
+var id = 0; int.TryParse(Request.QueryString["exhibition"], out id);
 
- 
 
- int Exhibition = 0; int.TryParse(Model.MacroParameters["Exhibition"].ToString(), out Exhibition);      
+int exhibition = 0; int.TryParse(Model.MacroParameters["Exhibition"].ToString(), out exhibition);
+
 
  string condition = "Id ="+id.ToString();
 
-var item= Umbraco.Media(Exhibition).Children().Where(condition);
- 
-var mediaIds = (dynamic)null;
-	
+var item= Umbraco.Media(exhibition).Children().Where(condition);
+
+	var   mediaIds = (dynamic)null;
 	if (item.Count()>0)
 	{
-	mediaIds=item.First().GetPropertyValue("artPieces2");
-	
+	  mediaIds=item.First().GetPropertyValue("artPieces2");
 	}
-	
-	
+
 }
-@if (mediaIds != null)
+
+
+
+@if (mediaIds != "")
 {
 
-<div class="text-center ">
-    <h1>Art Pieces </h1>
-    <div class="row-marson">
+<div class="text-center">
+
+    @{
+    if (TextHead!="")
+    {
+    <h1>@TextHead  </h1>
+    }
+    }
+    <div class="row-marson0000 col-lg-12">
         @foreach (var mediaId in mediaIds.ToString().Split(','))
         {
 
@@ -69,30 +77,50 @@ var mediaIds = (dynamic)null;
     </div>
 </div>
 
+}else
+{
+<div id="DivArtPiceNotFound" class="col-lg-12 text-center">@Umbraco.Field("#NoData")</div>
+
+
+<script>
+    $(document).ready(function () {
+        $("#DivArtPiceNotFound").parent().parent().parent().parent().parent().hide();
+        });
+</script>
+    return;
 }
 
 @helper Render(dynamic item,string nodeLang)
 {
+
+  var arttist = Umbraco.Media(item.id).Parent;
 string  name="";
 string description="";
+string arttistName="";
 		if (nodeLang == "th-th") {
 				name = @item.nameTh;
 description=@item.descriptionTh;
+arttistName=@arttist.nameTh;
 			} else {
 				name =@item.nameEn;
 description=@item.descriptionEn;
+arttistName=@arttist.nameEn;
 			}
-<div class="text-center matchHeight000 item">
+<div class="text-center matchHeightArtPiece item00000 col-lg-4">
 
     <figure class="snip1360  well">
         <img src="@item.image.src" alt="@item.id" class="img-responsive  img-center" />
-        
- 
-        
+
         <figcaption>
-            <h2>@name</h2>
-            <p class="more">@description  </p><a href="#modal" data-ArtPiecesMedia="@item.id" class="read-more EventModal">
-                                                  @Umbraco.Field("#ReadMore")
+          
+               
+
+            <h2>@name   </h2>  
+           <a  style="position:relative ;     background-color:transparent;  text-align:right "  href="/@Umbraco.Field("#RootUrl")/exhibitions/past/artist?artist=@arttist.id"   > <strong>   @arttistName </strong></a>  
+           @*<p>@item.ArtPieceType</p>*@
+             <p class="more">@description  </p>
+            <a href="#modal" data-ArtPiecesMedia="@item.id" class="read-more EventModal">
+                @Umbraco.Field("#ReadMore")
 
                 <div class="glass"></div>
             </a>
@@ -118,9 +146,9 @@ description=@item.descriptionEn;
         @*modal-content*@
         <div class="text-center  ">
             <!--Your modal content goes here-->
-            <img id="modal-img" src="http://localhost:17606/media/8456/picture.jpg" />
-          
-              <h1 id="modal-head">-</h1>
+            <img id="modal-img" />
+
+            <h1 id="modal-head">-</h1>
             <h2 id="modal-subLv1">-</h2>
             <h3 id="modal-subLv2">-</h3>
             <p id="modal-content" style="width:70%">-</p>
@@ -162,24 +190,19 @@ description=@item.descriptionEn;
         ReadMore.BindEvent();
 
         //Afert ReadMore
-        //$('.matchHeight').matchHeight({
-        //    byRow: true,
-        //    property: 'height',
-        //    //target: true,
-        //    remove: false,
-        //    //property: 'min-height'
-        //});
+        $('.matchHeightArtPiece').matchHeight({
+            byRow: true,
+            property: 'height',
+            //target: true,
+            remove: false,
+            //property: 'min-height'
+        });
 
         ModalEvent();
 
     });
     function ModalEvent() {
 
-        //$('.EventModal').on('click', function () {
-
-        //    $('.imagepreview').attr('src', $(this).find('img').attr('src'));
-        //    $('#imagemodal').modal('show');
-        //});
 
         //animatedIn: bounceIn
         //animatedOut: bounceOut
@@ -191,10 +214,10 @@ description=@item.descriptionEn;
 
             var head = $('#modal-head');
             var subLv1 = $('#modal-subLv1');
-            var subLv2 = $('#modal-subLv2'); 
+            var subLv2 = $('#modal-subLv2');
             var content = $('#modal-content');
             var img = $('#modal-img');
-          
+
             head.html('');
             subLv1.html('');
             subLv2.html('');
@@ -222,20 +245,21 @@ description=@item.descriptionEn;
                 var data = msg
                 //Custom
                 function ConvertDataLangModal(data) {
-
+                     
                     for (var key in data) {
                         data[key]["description"] = data[key]["description" + preFixLang];
                         data[key]["name"] = data[key]["name" + preFixLang];
                         data[key]["artPieceType"] = data[key]["artPieceType"];
-                        //data[key]["dimension"] = data[key]["dimension"];
-                        //data[key]["dimension"] = data[key]["dimension"];
+
+                     
+ 
                     }
 
 
                 }
 
                 ConvertDataLangModal(data[0]);
-                 
+
                 head.html('-');
                 subLv1.html('-');
                 subLv2.html('-');
@@ -244,7 +268,7 @@ description=@item.descriptionEn;
 
                 //console.log(data[key]["name"]);
                 //console.log(data[key]["artPieceType"]);
-               
+
                 if (data[0][0]["name"] != "")
                 {
                     head.html(data[0][0]["name"]);
@@ -253,24 +277,24 @@ description=@item.descriptionEn;
                 if (data[0][0]["artPieceType"] != "") {
                     subLv1.html(data[0][0]["artPieceType"]);
                 }
-          
+
                 if (data[0][0]["dimension"] != "") {
                     subLv2.html(data[0][0]["dimension"]);
                 }
                 if (data[0][0]["description"] != "") {
                     content.html(data[0][0]["description"]);
                 }
-                
-              
-             
+
+
+
 
                 var ImageUmbracoString = data[0][0]["image"];
-                 
+
                var imgUrl = UmbracoImageUrl(ImageUmbracoString);
-             
+
                img.attr('src', imgUrl);
                //$('.imagepreview').attr('src', $(this).find('img').attr('src'));
-               
+
             });
 
         });
@@ -280,13 +304,7 @@ description=@item.descriptionEn;
             animatedIn: 'rollIn',
             animatedOut: 'rollOut',
 
-            //animatedIn: 'fadeInUp',
-            //animatedOut: 'fadeOutDown',
-            //color: '#444444',
 
-            //color: '',
-            //color: 'rgba(109,109,112,0.9)',
-            //color: 'rgba(50,50,50,.9)',
             color: 'rgba(33,33,33,.9)',
 
             // Callbacks
@@ -308,3 +326,4 @@ description=@item.descriptionEn;
 
     }
 </script>
+
