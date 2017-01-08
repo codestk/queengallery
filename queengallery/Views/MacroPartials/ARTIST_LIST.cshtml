@@ -45,7 +45,7 @@ int exhibitionID = 0;
 
     valuesFilter.Add("Todate", DateTime.Now);
 
-    var  exhibitionitems = Umbraco.Media(ExhibitionFolder).Children().Where( "(beginDate <= Todate) && (endDate >= Todate)", valuesFilter).OrderBy(sort).Take(1);
+    var  exhibitionitems = Umbraco.Media(ExhibitionFolder).Children().Where( "Visible &&(beginDate <= Todate) && (endDate >= Todate)", valuesFilter).OrderBy(sort).Take(1);
 
     if (exhibitionitems.Count()==0)
     {
@@ -112,10 +112,10 @@ int exhibitionID = 0;
         {
 
         var artTistMedia =Umbraco.Media(media);
-         @*<div>@artTistMedia.DocumentTypeAlias @artTistMedia.id   GOGOGOGO </div>*@
+
        artistList+="," +artTistMedia.id.ToString()+",";
 
-        @*artistList="," +media.ToString()+","; *@
+     
                                         
         }
         else

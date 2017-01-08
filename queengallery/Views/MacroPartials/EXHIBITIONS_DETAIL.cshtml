@@ -12,7 +12,7 @@ return;
  var item= (dynamic)null;
   
  
-  var TextHead = Model.MacroParameters["TextHead"];       
+  var ShowHead = Model.MacroParameters["ShowHead"];       
  item= Umbraco.Media(exhibition) ;
 }
 
@@ -156,9 +156,9 @@ var nodeLang = curNode.GetCulture().ToString().ToLower();
 </script>
 <section id="Main">
     <div class="text-center">
-        @{if (TextHead !=null)
+        @{if (ShowHead.Equals("1"))
         {
-        <h1 class="color-black font-weight-300"><strong>@TextHead</strong></h1>
+        <h1 class="color-black font-weight-300"><strong>@Umbraco.Field("#EXHIBITION")</strong></h1>
         }
         }
         <div id="divList" class="text-center ">

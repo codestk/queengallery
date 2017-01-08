@@ -8,16 +8,32 @@
    /*Exhibitions*/
    /*Announcement*/
    var lang=Umbraco.GetDictionaryValue("language");
-   var ExhibitionsId = Model.MacroParameters["Exhibitions"];
+   var ExhibitionsFolder = Model.MacroParameters["Exhibitions"];
+   var ExhibitionsId = Model.MacroParameters["ExhibitionId"];
    var AnnouncementId = Model.MacroParameters["Announcement"];
    var showAnnouncementOnly =Model.MacroParameters["showAnnouncementOnly"];
    var showText =Model.MacroParameters["showText"];
    var TextColor =Model.MacroParameters["TextColor"];
+    var Imageheight= Model.MacroParameters["Imageheight"].ToString();
     
-  if (TextColor!=null)
+var ImageCropType= Model.MacroParameters["ImageCropType"];
+string height="450px;";
+  if (TextColor!="")
+   {
+   TextColor= "color:"+@TextColor.ToString();
+   }
+
+
+ 
+if (Imageheight != "null")
 {
-TextColor= "color:"+@TextColor.ToString();
+
+
+height =Imageheight+"px";
+
+ 
 }
+ 
  
 
  
@@ -34,18 +50,30 @@ TextColor= "color:"+@TextColor.ToString();
 
     valuesFilter.Add("Todate", DateTime.Now);
 
-    condition = "(beginDate <= Todate) && (endDate >= Todate)";
+    condition = "Visible && (beginDate <= Todate) && (endDate >= Todate)";
 
+    /*Show Announcement Only*/
     if(showAnnouncementOnly.Equals("1"))
     {
-    /*Show Announcement Only*/
+   
     items = Umbraco.Media(AnnouncementId).Children().OrderBy(sort).Take(5);
     }
-    else
+    else if(ExhibitionsId !="")
+    {  var ex = Umbraco.Media(ExhibitionsFolder).Children().Where("id=="+ExhibitionsId.ToString());
+          
+   if (ex.Count()>0)
+                                         {items=ex;}
+      
+                                     
+    }
+     
+     /*Auto*/
+    if  (items==null)
     {
-    /*Auto*/
-    items = Umbraco.Media(ExhibitionsId).Children().Where(condition,valuesFilter).OrderBy(sort).Take(5);
+  
+    items = Umbraco.Media(ExhibitionsFolder).Children().Where(condition,valuesFilter).OrderBy(sort).Take(5);
 
+    /*Swap Anouce*/
     if(items.Count()==0)
     {
     items = Umbraco.Media(AnnouncementId).Children().Where("Visible").OrderBy(sort).Take(1);
@@ -58,7 +86,7 @@ TextColor= "color:"+@TextColor.ToString();
 
     <link href="~/Modules/Slider/css/slide.css" rel="stylesheet" />
 
-    <div class="css-slider">
+    <div class="css-slider" style="height:@height">
 
         @{
 
@@ -130,7 +158,7 @@ TextColor= "color:"+@TextColor.ToString();
                 /*Youtube*/
                 if (YoutubeShow.Equals("1"))
                 {
-                <div class="css-slider-item" style="text-shadow: 0 0 15px black;  height:450px;   ">
+                <div class="css-slider-item" style="text-shadow: 0 0 15px black;  height:@height;   ">
                     <div class="video-background">
                         <div class="video-foreground">
                             <iframe id="ytplayer" src="https://www.youtube.com/embed/@YoutubeId?controls=0&showinfo=0&rel=0&html5=1&autoplay=1&loop=1&playlist=W0LHTWG-UmQ" frameborder="0" allowfullscreen></iframe>
@@ -153,39 +181,52 @@ TextColor= "color:"+@TextColor.ToString();
                 /*Normal Case*/
                 foreach(dynamic item in items)
                 {
-                string imageUrl=item.image.src;
-
-                string Name = item.GetPropertyValue("name" +lang);
-                @*string imageUrl=item.GetCropUrl("image", "banner");*@
-
                
-                <div class="css-slider-item" style="text-shadow: 0 0 15px black; background-image: url(@imageUrl);">
-                    <a href="/en/exhibitions/past/exhibition?exhibition=@item.id" style="@TextColor">
-                        <div class="css-slider-item-inner">
-                            <div class="slide-title">
-                                @{
+                string Name = item.GetPropertyValue("name" +lang);
+                string imageUrl="";
+                if (ImageCropType=="")
+                {
+                  imageUrl=item.image.src;
+                }
+                else
+                {
+                  imageUrl=item.GetCropUrl("image", ImageCropType);
+               
+                }
 
-                                if    (showText.Equals("1"))
-                                {
-                                @Name
-                                }
+                @*string imageUrl=item.image.src;*@
 
-                                }
+                @*
+                string imageUrl=item.GetCropUrl("image", "banner");*@
+
+              
+                    <div class="css-slider-item" style="text-shadow: 0 0 15px black; background-image: url(@imageUrl);">
+                        <a href="/en/exhibitions/past/exhibition?exhibition=@item.id"  >
+                            <div class="css-slider-item-inner" style="height:@height;width:100%;" >
+                                <div class="slide-title" style="top:40%;@TextColor"> 
+                                    @{
+
+                                    if    (showText.Equals("1"))
+                                    {
+                                    @Name
+                                    }
+
+                                    }
+                                </div>
+                                <div class="slide-subtitle">
+                                    @{
+
+                                    if(showText.Equals("1"))
+                                    {
+                                    <h2>  </h2>
+                                    }
+
+                                    }
+                                </div>
                             </div>
-                            <div class="slide-subtitle">
-                                @{
-
-                                if(showText.Equals("1"))
-                                {
-                                <h2>  </h2>
-                                }
-
-                                }
-                            </div>
-                        </div>
-                    </a>
+                        </a>
                 </div>
-
+              
                 }
                 }
 
@@ -224,7 +265,7 @@ TextColor= "color:"+@TextColor.ToString();
                 i = this.getAttribute('data-id');
               
                 clearInterval(nIntervId);
-                //Innit New Interval
+                //Innit New Interval plus delay
                 nIntervId = setInterval(slideItem, 10000);
 
             });

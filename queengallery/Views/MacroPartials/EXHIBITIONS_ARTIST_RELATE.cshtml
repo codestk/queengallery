@@ -17,7 +17,7 @@
 @{
 
 var Exhibition = Model.MacroParameters["Exhibition"];
-var HeadText = Model.MacroParameters["HeadText"];
+var ShowHead = Model.MacroParameters["ShowHead"];
 var artistID = 0; int.TryParse(Request.QueryString["artist"], out artistID);
 var itemsArtPices= Umbraco.Media(artistID).Children();
 
@@ -37,7 +37,8 @@ List<string>
 
         var itemExhibitions= Umbraco.Media(Exhibition).Children().Where(string.Join<string>
             (" || ", list));
-            <h1> @HeadText </h1>
+            <h1> @Umbraco.Field("#EXHIBITIONS")
+ </h1>
 
             foreach (var ex in itemExhibitions)
             {

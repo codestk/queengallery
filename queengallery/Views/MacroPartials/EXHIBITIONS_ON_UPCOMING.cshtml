@@ -22,7 +22,7 @@ return;
 
     valuesFilter.Add("Todate", DateTime.Now);
 
-    condition = "beginDate > Todate";
+    condition = "Visible && (beginDate > Todate)";
 
     var items = Umbraco.Media(exhibition).Children().Where(condition, valuesFilter).OrderBy(sort);
 
@@ -89,7 +89,7 @@ return;
                                                          <ol>
                                                              @{
 
-                                                             condition = "(beginDate <= Todate) && (endDate >= Todate)";
+                                                             condition = "Visible &&  (beginDate <= Todate) && (endDate >= Todate)";
 
                                                              var Nowitems = Umbraco.Media(exhibition).Children().Where(condition, valuesFilter).OrderBy(sort);
 
@@ -135,7 +135,7 @@ return;
                                                              }
 
 
-                                                             <li class="" data-date="@item.GetPropertyValue(" beginDate").ToString("dd/MM/yyyy")">
+                                                             <li class="" data-date="@item.GetPropertyValue("beginDate").ToString("dd/MM/yyyy")">
                                                              <h2 class="text-center">@name </h2>
                                                              <p>  <img class="img-center" src="@item.image" alt="@name" /> </p>
 
@@ -182,7 +182,7 @@ return;
                                          <div class="row">
                                              <hr>
                                              <div class="col-lg-12   ">
-                                                 @*<div class="message"> ทดสอบภาษาไทย</div>*@
+                                                
                                                  <div class="message">@Umbraco.Field("#EventNotFound") </div>
                                              </div>
                                          </div>

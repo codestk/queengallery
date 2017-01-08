@@ -26,7 +26,7 @@ namespace queengallery.Models
             //HttpPostedFileBase file = Request.Files["UploadedFile"];
             int MediaId = 3576;
 
-            string connecStionstring = "Data Source=192.168.96.137;Initial Catalog=QEEN;User ID=sa;Password=P@ssw0rd";
+            string connecStionstring = "Data Source=192.168.96.136;Initial Catalog=QEEN;User ID=sa;Password=P@ssw0rd";
             SqlConnection conn = new SqlConnection(connecStionstring);
             conn.Open();
             SqlCommand cmd = new SqlCommand(
@@ -125,7 +125,7 @@ namespace queengallery.Models
                     }
 
                     //แทนชิน้งาน
-                    mediaImage.SetValue("artPieces1", ArtistList);
+                    //mediaImage.SetValue("artPieces1", ArtistList);
                     mediaImage.SetValue("artPieces2", ArtistList);
                 }
 
@@ -142,7 +142,7 @@ namespace queengallery.Models
             //HttpPostedFileBase file = Request.Files["UploadedFile"];
             int MediaId = Convert.ToInt32(Request.Params["MediaId"]);
 
-            string connecStionstring = "Data Source=192.168.96.135;Initial Catalog=QEEN;User ID=sa;Password=P@ssw0rd";
+            string connecStionstring = "Data Source=192.168.96.137;Initial Catalog=QEEN;User ID=sa;Password=P@ssw0rd";
             SqlConnection conn = new SqlConnection(connecStionstring);
             conn.Open();
             SqlCommand cmd = new SqlCommand(

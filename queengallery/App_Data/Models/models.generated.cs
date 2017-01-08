@@ -19,7 +19,7 @@ using Umbraco.ModelsBuilder;
 using Umbraco.ModelsBuilder.Umbraco;
 
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "621a1ad81f870821")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "3f1f44862c3e4824")]
 [assembly:System.Reflection.AssemblyVersion("0.0.0.2")]
 
 namespace Umbraco.Web.PublishedContentModels
@@ -1814,15 +1814,6 @@ namespace Umbraco.Web.PublishedContentModels
 		///<summary>
 		/// Art Pieces 2
 		///</summary>
-		[ImplementPropertyType("artPieces1")]
-		public string ArtPieces1
-		{
-			get { return this.GetPropertyValue<string>("artPieces1"); }
-		}
-
-		///<summary>
-		/// Art Pieces 2
-		///</summary>
 		[ImplementPropertyType("artPieces2")]
 		public string ArtPieces2
 		{
@@ -1899,6 +1890,15 @@ namespace Umbraco.Web.PublishedContentModels
 		public string NameTh
 		{
 			get { return this.GetPropertyValue<string>("nameTh"); }
+		}
+
+		///<summary>
+		/// Hide
+		///</summary>
+		[ImplementPropertyType("umbracoNaviHide")]
+		public bool UmbracoNaviHide
+		{
+			get { return this.GetPropertyValue<bool>("umbracoNaviHide"); }
 		}
 	}
 

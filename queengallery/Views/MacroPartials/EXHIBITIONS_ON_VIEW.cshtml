@@ -21,17 +21,7 @@
 @{
 var curNode = Umbraco.TypedContent(Model.Content.Id);
 var nodeLang = curNode.GetCulture().ToString().ToLower();
-
-
-
 var ShowHead = Model.MacroParameters["ShowHead"];
-
-
-
-
-
-
-
 
 }
 @if  (nodeLang == "th-th")
@@ -59,8 +49,6 @@ var ShowHead = Model.MacroParameters["ShowHead"];
     });
 
     /*==Render List and Page*/
-
-  
 
     function RenderList() {
 

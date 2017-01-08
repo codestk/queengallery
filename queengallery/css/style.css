@@ -284,15 +284,13 @@ main {
 /*Footer*/
 .footerWide {
     border-top-width: 2px;
-    /*border-top-color:#264A82;
-      border-top-color:#EED369;
-        border-top-color:#B5C588;*/
-    border-top-color: #333E4B; /*1*/
-    /*border-top-color: #E78E26;*/
-    /*border-top-color: #E4C45D;*/
-     border-top-color:#B5C588;
+ 
 
-       border-top-color:#B5C588;
+       border-top-color:#B5C588; 
+            border-top-color:#FECE3E;
+                border-top-color:#FDC100;
+                  border-top-color:#FCBE07;
+             
   
     border-top-style: solid;
     padding-top: 80px;

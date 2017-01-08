@@ -26,7 +26,7 @@ return;
 var curNode = Umbraco.TypedContent(Model.Content.Id);
 string nodeLang = curNode.GetCulture().ToString().ToLower();
 
-var TextHead = Model.MacroParameters["TextHead"];     
+var ShowHead = Model.MacroParameters["ShowHead"];     
   
  var id = 0; int.TryParse(Request.QueryString["artist"], out id);
  int Artists = 0; int.TryParse(Model.MacroParameters["Artists"].ToString(), out Artists);
@@ -47,9 +47,10 @@ var TextHead = Model.MacroParameters["TextHead"];
 
 <div class="col-lg-12 text-center">
     
-    @{if (TextHead !=null)
+    @{if (ShowHead.Equals("1") !=null)
     {
-    <h1>@TextHead </h1>
+    <h1>@Umbraco.Field("#BIOGRAPHY")
+ </h1>
     }
   }
 
