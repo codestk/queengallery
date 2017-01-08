@@ -10863,3 +10863,4 @@ System.MissingMethodException: Method 'Umbraco.Web.Models.DynamicPublishedConten
  2017-01-08 20:08:03,573 [P18288/D18/T90] INFO  umbraco.content - Saved Xml to file.
  2017-01-08 20:24:41,161 [P18288/D18/T60] INFO  Umbraco.Core.Logging.OwinLogger - Event Id: 0, state: User logged will be logged out due to timeout: admin@bbl.co.th, IP Address: ::1
  2017-01-08 20:24:42,160 [P18288/D18/T60] INFO  Umbraco.Core.Logging.OwinLogger - Event Id: 0, state: User logged will be logged out due to timeout: admin@bbl.co.th, IP Address: ::1
+ 2017-01-08 21:19:55,084 [P18288/D18/T215] INFO  umbraco.BusinessLogic.Log - Log scrubbed.  Removed all items older than 2560-01-07 21:19:55
