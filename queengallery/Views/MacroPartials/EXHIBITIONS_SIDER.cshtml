@@ -3,8 +3,10 @@
 @{
     string condition = "";
     /*ใหม่กว่าขึ้นมาก่อน*/
-    string sort = "BeginDate descending ";
+    @*string sort = "BeginDate descending ";*@
+   string sort = "endDate  ";
 
+    
    /*Exhibitions*/
    /*Announcement*/
    var lang=Umbraco.GetDictionaryValue("language");
@@ -15,28 +17,30 @@
    var showText =Model.MacroParameters["showText"];
    var TextColor =Model.MacroParameters["TextColor"];
     var Imageheight= Model.MacroParameters["Imageheight"].ToString();
-    
+   var FixSize= Model.MacroParameters["FixSize"].ToString();    
+
+
 var ImageCropType= Model.MacroParameters["ImageCropType"];
 string height="450px;";
+
+string backgroundPosition="";
+
   if (TextColor!="")
    {
    TextColor= "color:"+@TextColor.ToString();
    }
 
-
+  if(FixSize.Equals("1"))
+  {
+  backgroundPosition="background-position: center;";
+  }
  
 if (Imageheight != "null")
 {
-
-
 height =Imageheight+"px";
-
- 
 }
  
- 
 
- 
     /*Youtube*/
     var YoutubeContent = Model.MacroParameters["YoutubeContent"];
     var YoutubeId   = Model.MacroParameters["YoutubeId"];
@@ -122,7 +126,6 @@ height =Imageheight+"px";
         }  @*End*@
 
         <div class="css-slider-navigation">
-
             @{
 
             if(YoutubeShow.Equals("1"))
@@ -200,10 +203,10 @@ height =Imageheight+"px";
                 string imageUrl=item.GetCropUrl("image", "banner");*@
 
               
-                    <div class="css-slider-item" style="text-shadow: 0 0 15px black; background-image: url(@imageUrl);">
-                        <a href="/en/exhibitions/past/exhibition?exhibition=@item.id"  >
-                            <div class="css-slider-item-inner" style="height:@height;width:100%;" >
-                                <div class="slide-title" style="top:40%;@TextColor"> 
+                    <div class="css-slider-item pointer" style="text-shadow: 0 0 15px black; background-image: url(@imageUrl);@backgroundPosition;" onclick="javascript:redirect('@item.id');"  >
+                     
+                            <div class="css-slider-item-inner" style=" width:100%;" >
+                                <div class="slide-title" style=" @TextColor"> 
                                     @{
 
                                     if    (showText.Equals("1"))
@@ -224,7 +227,7 @@ height =Imageheight+"px";
                                     }
                                 </div>
                             </div>
-                        </a>
+                      
                 </div>
               
                 }
@@ -285,3 +288,18 @@ height =Imageheight+"px";
     }
 
     }
+
+
+    <script>
+        function redirect(id)
+        {
+            var url='';
+            var lang = '@Umbraco.Field("#RootUrl")';
+            url= '/'+lang+'/exhibitions/past/exhibition?exhibition='+id;
+            debugger
+            window.location.replace(url);
+        
+  
+        }
+
+    </script>

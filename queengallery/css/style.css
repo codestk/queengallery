@@ -73,36 +73,36 @@ a.list-group-item, button.list-group-item {
 }
 /* Header Image Background - Change the URL below to your image path (example: ../images/background.jpg) */
 
-.business-header1 {
+/*.business-header1 {
     height: 400px;
-    /*background: url('http://placehold.it/1920x400') center center no-repeat scroll;*/
+   
     background: url('/media/1051/banner1.jpg') center center no-repeat scroll;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
-}
+}*/
 
-.business-header2 {
+/*.business-header2 {
     height: 400px;
-    /*background: url('http://placehold.it/1920x400') center center no-repeat scroll;*/
+    
     background: url('/media/1052/banner2.jpg') center center no-repeat scroll;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
-}
+}*/
 
-.business-header3 {
+/*.business-header3 {
     height: 400px;
-    /*background: url('http://placehold.it/1920x400') center center no-repeat scroll;*/
+   
     background: url('/media/1053/banner3.jpg') center center no-repeat scroll;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
-}
-
+}*/
+.pointer         {  cursor: pointer; cursor: hand;  }
 /* Customize the text color and shadow color and to optimize text legibility. */
 .tagline {
     text-shadow: 0 0 10px #000;

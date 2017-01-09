@@ -26,7 +26,7 @@
     {
         condition = "  Visible && (beginDate <= Todate) && (endDate >= Todate)";
 
-        items = Umbraco.Media(blogId).Children().Where(condition, valuesFilter).OrderBy("beginDate");
+        items = Umbraco.Media(blogId).Children().Where(condition, valuesFilter).OrderBy("endDate");
 
     }
     else if (Type == "Upcoming")
