@@ -1223,7 +1223,9 @@ height:460px;
   transition-delay: 0;
   height: calc(100% - 2 * 40px);
   background-size: cover;
-  background-position: center;
+
+  /*Image Not full Screen*/
+  /*background-position: center;*/
   -moz-transition: margin-right 500ms ease, top 500ms ease, left 500ms ease, width 500ms ease, height 500ms ease, -moz-transform 500ms ease, opacity 500ms ease;
   -o-transition: margin-right 500ms ease, top 500ms ease, left 500ms ease, width 500ms ease, height 500ms ease, -o-transform 500ms ease, opacity 500ms ease;
   -webkit-transition: margin-right 500ms ease, top 500ms ease, left 500ms ease, width 500ms ease, height 500ms ease, -webkit-transform 500ms ease, opacity 500ms ease;

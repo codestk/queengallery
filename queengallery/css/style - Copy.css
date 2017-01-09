@@ -1,0 +1,623 @@
+/* Go crazy with your own styles here */
+/* EDITOR PROPERTIES - PLEASE DON'T DELETE THIS LINE TO AVOID DUPLICATE PROPERTIES */
+
+h1 {
+    font-size: 3.125em;
+}
+
+.color-black {
+    color: #333;
+}
+
+.font-weight-300 {
+    font-weight: 300;
+}
+
+/*@font-face {
+    font-family: 'AvantGardeThaiBold';
+    src: url('/fonts/AvantgardeThaiFont.eot');
+    src: url('/fonts/AvantgardeThaiFont.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/AvantgardeThaiFont.ttf') format('truetype'),
+         url('/fonts/AvantgardeThaiFont.woff') format('woff'),
+         url('/fonts/AvantgardeThaiFont.svg#AvantgardeThaiRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}*/
+
+body {
+    /*padding-top: 50px;*/
+    /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+    /*color: #131516;*/
+    /*color:#141823 !important;*/
+    /*color: #333333;*/
+    /*font-family: 'Kanit', sans-serif !important;*/
+    /*color: #373D3f;*/
+    padding-top: 144px;
+    color: #3e3e3e;
+    font-family: 'Open Sans', sans-serif;
+}
+
+/*Navigation*/
+.navbar-inverse {
+    /*background: rgba(40,40,40,.95);*/
+}
+
+    .navbar-inverse .navbar-nav > li > a {
+        /*letter-spacing: 1px;*/
+        /*font-family: 'Kanit', sans-serif !important;*/
+    }
+
+/*.flag2 {
+position:absolute;
+}*/
+
+a.list-group-item, button.list-group-item {
+    letter-spacing: 2px;
+    /*font-family: 'Kanit', sans-serif !important;*/
+}
+
+.message {
+    /*color: #b48608;   font-size: 30px; font-weight: 400;  line-height: 40px; margin: 0 0 12px; text-align: center;*/
+    /*color: #3c6478;*/
+    color: #337ab7;
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 40px;
+    margin: 0 0 12px;
+    text-align: center;
+    text-rendering: optimizeLegibility;
+    font-family: "Some Custom Font", serif;
+    text-shadow: 0 0 1px transparent;
+    /* Or, if you need to apply a 0px hard shadow,
+         * you can use multiple text shadows */
+}
+/* Header Image Background - Change the URL below to your image path (example: ../images/background.jpg) */
+
+.business-header1 {
+    height: 400px;
+    /*background: url('http://placehold.it/1920x400') center center no-repeat scroll;*/
+    background: url('/media/1051/banner1.jpg') center center no-repeat scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+.business-header2 {
+    height: 400px;
+    /*background: url('http://placehold.it/1920x400') center center no-repeat scroll;*/
+    background: url('/media/1052/banner2.jpg') center center no-repeat scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+.business-header3 {
+    height: 400px;
+    /*background: url('http://placehold.it/1920x400') center center no-repeat scroll;*/
+    background: url('/media/1053/banner3.jpg') center center no-repeat scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+/* Customize the text color and shadow color and to optimize text legibility. */
+.tagline {
+    text-shadow: 0 0 10px #000;
+    color: #fff;
+}
+
+.img-center {
+    margin: 0 auto !important;
+}
+
+/*----Main*/
+main {
+    /*margin-top: 14px;*/
+        margin-top: 4px;
+}
+
+/*Footer*/
+.logoHover img {
+    width: 108px;
+    margin: 4px;
+    opacity: .4;
+    transition: opacity .3s ease-out;
+    -moz-transition: opacity .3s ease-out;
+    -webkit-transition: opacity .3s ease-out;
+    -o-transition: opacity .3s ease-out;
+}
+
+    .logoHover img:hover {
+        opacity: 1;
+    }
+
+.right {
+    text-align: right;
+}
+
+/*NAv*/
+
+.navbar-inverse {
+    background: rgba(40,40,40,.95);
+}
+
+.navbar-brand {
+    /*height: 93px;*/
+    padding: 0px;
+}
+
+.navbar-inverse .navbar-brand {
+    color: #9d9d9d;
+    padding: 4px;
+    /*padding-top: 23px;*/
+}
+
+.nav > li > a {
+    /*padding-top: 37px;
+    padding-bottom: 37px;
+    min-height: 93px;*/
+}
+
+.navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus {
+    color: #fff;
+    background-color: rgba(40,40,40,.95);
+}
+
+.DropDownselected {
+    font-weight: bold !important;
+    color: #fff !important;
+}
+
+.nav_list-link {
+    position: relative;
+    padding: .8em 1.2em .5em 1.2em;
+    display: inline-block;
+    overflow: hidden;
+    text-decoration: none;
+    transition: color .2s ease-in 0s;
+}
+
+    .nav_list-link:after {
+        width: .01%;
+        height: 1px;
+        margin: .2em 0 0 0;
+        display: block;
+        content: "";
+        background: transparent;
+        transition: width .2s ease-in 0s,background 0s ease-in .3s;
+    }
+
+    .nav_list-link > .selected, .nav_list-link:active, .nav_list-link:hover, .nav_list-link:focus {
+        color: #008f70;
+    }
+
+        .selected .nav_list-link:after, .nav_list-link:active:after, .nav_list-link:hover:after, .nav_list-link:focus:after {
+            width: 100%;
+            background: #008f70;
+            /*background: #FDB215;*/
+            transition: width .2s ease-in .1s,background 0s ease-in .1s;
+        }
+
+/*Text*/
+.date {
+    margin-bottom: 10px;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+/*Nav*/
+@media (max-width: 480px) {
+    .nav > li > a {
+        border-bottom: solid 1px rgba(255,255,255,.1);
+    }
+}
+
+@media (max-width: 767px) {
+    .nav > li > a {
+        border-bottom: solid 1px rgba(255,255,255,.1);
+    }
+}
+
+.navbar-inverse {
+    -webkit-box-shadow: 0 3px 3px 0 rgba(0,0,0,.33);
+    -moz-box-shadow: 0 3px 3px 0 rgba(0,0,0,.33);
+    box-shadow: 0 3px 3px 0 rgba(0,0,0,.33);
+}
+
+@media only screen and (min-width : 768px) {
+    body {
+        padding-top: 101px;
+    }
+}
+
+@media only screen and (max-width : 768px) {
+    body {
+        padding-top: 76px;
+    }
+}
+
+.navbar > .container .navbar-brand, .navbar > .container-fluid .navbar-brand {
+    /*margin-left: 0px;*/
+    margin-left: 9px;
+}
+/*@media only screen and (min-width : 768px) {
+    body {
+    padding-top:90px;
+    }
+}
+
+@media only screen and (max-width : 768px) {
+    body {
+    padding-top:144px;
+    }
+}*/
+
+/*@media only screen and (min-width: 1200px) {
+    .collapse {
+        display: block;
+    }
+
+    .navbar-header {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+     .collapse {
+        display: none;
+     }
+
+     .navbar-header {
+        display: block;
+     }
+}*/
+
+/*Button*/
+.linebar {
+    border-bottom-color: #e7e7e9;
+    border-bottom-width: 3px;
+}
+
+/*Footer*/
+.footerWide {
+    border-top-width: 2px;
+    /*border-top-color:#264A82;
+      border-top-color:#EED369;
+        border-top-color:#B5C588;*/
+    border-top-color: #333E4B; /*1*/
+    /*border-top-color: #E78E26;*/
+    /*border-top-color: #E4C45D;*/
+     border-top-color:#B5C588;
+
+       border-top-color:#B5C588;
+  
+    border-top-style: solid;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    /*background-color:#363B3F;*/
+    /*background-color: #000;*/
+    /*background: #333;*/
+    background: #242729;
+    color: #999;
+    /*background: #262626;
+    color: #777;*/
+    /*One*/
+    /*background-color:#222;
+    color: #E2E2E2;*/
+}
+
+    .footerWide h3 {
+        font-size: 20px;
+        padding-bottom: 15px;
+        color: #fff;
+    }
+
+    .footerWide span {
+        /*color: #E2E2E2;*/
+        color: #888;
+        text-decoration: none;
+    }
+
+.readmore {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; /* IE 6+, FF 7+, Op 11+, Saf 1.3+, Chr 1+ */
+    -o-text-overflow: ellipsis; /* for Opera 9 & 10*/
+}
+
+/*Customize Page a hover*/
+.pagination a:hover {
+    text-decoration: none !important;
+}
+
+/*Custom*/
+.LinkHead {
+    font-size: 1.60rem;
+    font-weight: 900;
+    cursor: pointer;
+    white-space: normal !important;
+    /*position: relative;
+
+    display: inline-block;
+    overflow: hidden;
+    text-decoration: none;
+    transition: color .2s ease-in 0s;*/
+}
+
+/*.LinkHead:after {
+        width: .01%;
+        height: 1px;
+        margin: .2em 0 0 0;
+        display: block;
+        content: "";
+        background: transparent;
+        transition: width .2s ease-in 0s,background 0s ease-in .3s;
+    }
+
+    .LinkHead:active, .LinkHead:hover, .LinkHead:focus {
+        color: #008f70;
+    }
+
+     .LinkHead:hover:after {
+            width: 100%;
+            background: #008f70;
+
+            transition: width .2s ease-in .1s,background 0s ease-in .1s;
+        }*/
+
+/*Modal*/
+
+.modalHead {
+    /*margin-top:40px;
+    margin-bottom:40px;*/
+}
+
+.closebt {
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -ms-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    transition: all 0.2s;
+    cursor: pointer;
+}
+
+    .closebt:hover {
+        transform: rotate(90deg);
+    }
+
+.glass {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 10px;
+    background-color: rgba(117,130,133,0.2);
+    font-size: 0.8em;
+    /* text-transform: uppercase; */
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    letter-spacing: 1px;
+    z-index: -1;
+}
+/*Skew Back Ground*/
+.transformSkewY {
+    position: relative;
+    color: #fff;
+}
+
+    .transformSkewY p {
+        color: #F16C20;
+    }
+
+    .transformSkewY:before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: -80px;
+        -webkit-transform: skewY(-12deg);
+        transform: skewY(-12deg);
+        background-color: #083045;
+        z-index: -1;
+    }
+
+.transformSkewY01 {
+    position: relative;
+    color: aqua !important;
+}
+
+    .transformSkewY01 p {
+        color: orangered;
+    }
+
+    .transformSkewY01:before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: -80px;
+        -webkit-transform: skewY(-12deg);
+        transform: skewY(-12deg);
+        background-color: #ff6a00;
+        z-index: -1;
+    }
+
+.boxShadow {
+    box-shadow: 0 5px 11px 0 rgba(0,0,0,.18), 0 4px 15px 0 rgba(0,0,0,.15);
+}
+
+.SectionX {
+    background-color: #254250;
+    background-image: -webkit-linear-gradient(top left,#041722,#173f56,#417685);
+    /* background-image: linear-gradient(to bottom right,#041722,#173f56,#417685); */
+    /* box-shadow: inset 0 1px 0 rgba(0,0,0,.1); */
+    /* color: #bcd4d8; */
+    text-shadow: 0 1px 2px #192d38;
+    margin: 0 -10px;
+    -webkit-font-smoothing: antialiased;
+    font-weight: 500;
+}
+
+.btn {
+    text-decoration: none !important;
+}
+
+.SectionSepalate {
+    /*display:block;
+   border:dotted;
+   border-width:1px;
+   border-bottom-color:red;
+   background-color:rebeccapurple;*/
+    border-bottom: 1px solid rgba(0,0,0,.07);
+    margin-top: 25px !important;
+    z-index: 100;
+    background-color: #fff;
+    margin: 0px;
+    padding: 0px;
+}
+
+.SectionSepalate1 {
+    padding-top: 90px !important;
+    margin-left: -10px;
+    margin-right: -10px;
+    background: #605ea1;
+    background-image: -webkit-radial-gradient(circle farthest-corner at right bottom,#ac9cd5 0,#8e7ec2 28%,#6561af 57%,#1a2565 100%);
+    background-image: radial-gradient(circle farthest-corner at right bottom,#ac9cd5 0,#8e7ec2 28%,#6561af 57%,#1a2565 100%);
+}
+
+.DixBox {
+    -ms-flex: 1 1 100%;
+    flex: 1 1 100%;
+    margin: 15px;
+    z-index: 501;
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-pack: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 40px 40px 40px 40px;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 15px 35px rgba(50,50,93,.1), 0 5px 15px rgba(0,0,0,.07);
+    transition-property: color,background-color,box-shadow,transform;
+    transition-duration: .15s;
+}
+
+.seperator {
+    margin: 0 auto 60px;
+    border-bottom: 1px dotted #d4d4d4;
+    width: 40%;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+a {
+    -webkit-transition: color .6s linear;
+}
+
+    a:hover {
+        -webkit-transition: color .1s linear;
+    }
+
+/*Video Background*/
+.video-background {
+    background: #000;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -99;
+}
+
+    .video-foreground,
+    .video-background iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+    }
+
+#vidtop-content {
+    top: 20px;
+    color: #fff ;
+    white-space:normal !important;
+}
+
+.vid-info {
+    position: absolute;
+    top: 15px;
+    right: 0;
+    width: 33%;
+    background: rgba(0,0,0,0.3);
+    color: #fff !important;
+    padding: 1rem !important;
+    /*font-family: Avenir, Helvetica, sans-serif;*/
+}
+
+    .vid-info h1 {
+        font-size: 2rem;
+        font-weight: 700;
+        margin-top: 0;
+        line-height: 1.2;
+    }
+    .vid-info p {
+         color: #fff !important;
+    }
+
+    .vid-info a {
+        display: block;
+        color: #fff;
+        text-decoration: none;
+        background: rgba(0,0,0,0.5);
+        transition: .6s background;
+        border-bottom: none;
+        margin: 1rem auto;
+        text-align: center;
+    }
+
+@media (min-aspect-ratio: 16/9) {
+    .video-foreground {
+        height: 300%;
+        top: -100%;
+    }
+}
+
+@media (max-aspect-ratio: 16/9) {
+    .video-foreground {
+        width: 300%;
+        left: -100%;
+    }
+}
+
+@media all and (max-width: 600px) {
+    .vid-info {
+        width: 50%;
+        padding: .5rem;
+    }
+
+        .vid-info h1 {
+            margin-bottom: .2rem;
+        }
+}
+
+@media all and (max-width: 500px) {
+    .vid-info .acronym {
+        display: none;
+    }
+}
+
+
+ 
+
+/* EDITOR PROPERTIES - PLEASE DON'T DELETE THIS LINE TO AVOID DUPLICATE PROPERTIES */

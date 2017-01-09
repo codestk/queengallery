@@ -24,7 +24,7 @@
 
     if (Type == "OnView")
     {
-        condition = "(beginDate <= Todate) && (endDate >= Todate)";
+        condition = "  Visible && (beginDate <= Todate) && (endDate >= Todate)";
 
         items = Umbraco.Media(blogId).Children().Where(condition, valuesFilter).OrderBy("beginDate");
 
@@ -32,7 +32,7 @@
     else if (Type == "Upcoming")
     {
     @*All*@
-    condition = "beginDate > Todate";
+    condition = "Visible && (beginDate > Todate)";
 
     items = Umbraco.Media(blogId).Children().Where(condition, valuesFilter).OrderBy(sort);
     }
@@ -43,7 +43,7 @@
 
     //items =  Umbraco.Content(blogId).Children().Where(condition,valuesFilter).OrderBy(sort);
 
-    condition = "(beginDate < Todate) && (!( (beginDate <= Todate) && (endDate >= Todate)))";
+    condition = "Visible && (beginDate < Todate) && (!( (beginDate <= Todate) && (endDate >= Todate)))";
 
     items = Umbraco.Media(blogId).Children().Where(condition, valuesFilter).OrderBy(sort);
 }

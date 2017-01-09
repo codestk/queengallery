@@ -25,7 +25,7 @@ return;
 
 var curNode = Umbraco.TypedContent(Model.Content.Id);
 
-var TextHead =   Model.MacroParameters["TextHead"];
+var ShowHead =   Model.MacroParameters["ShowHead"];
 
 string nodeLang = curNode.GetCulture().ToString().ToLower();
 
@@ -48,19 +48,20 @@ var item= Umbraco.Media(exhibition).Children().Where(condition);
 }
 
 
-
+ 
 @if (mediaIds != "")
 {
 
 <div class="text-center">
 
     @{
-    if (TextHead!="")
+    if (ShowHead.Equals("1"))
+
     {
-    <h1>@TextHead  </h1>
+    <h1>  @Umbraco.Field("#ArtPieces")</h1>
     }
     }
-    <div class="row-marson0000 col-lg-12">
+    <div class="ArtPiece row-marson0000 col-lg-12">
         @foreach (var mediaId in mediaIds.ToString().Split(','))
         {
 
@@ -92,7 +93,7 @@ var item= Umbraco.Media(exhibition).Children().Where(condition);
 
 @helper Render(dynamic item,string nodeLang)
 {
-
+string imageurl="";
   var arttist = Umbraco.Media(item.id).Parent;
 string  name="";
 string description="";
@@ -106,10 +107,14 @@ arttistName=@arttist.nameTh;
 description=@item.descriptionEn;
 arttistName=@arttist.nameEn;
 			}
-<div class="text-center matchHeightArtPiece item00000 col-lg-4">
 
+
+ 
+<div class="text-center matchHeight item00000 col-lg-4">
+
+  
     <figure class="snip1360  well">
-        <img src="@item.image.src" alt="@item.id" class="img-responsive  img-center" />
+        <img src="@item.image" alt="@item.id" class="img-responsive  img-center" />
 
         <figcaption>
           
@@ -126,7 +131,9 @@ arttistName=@arttist.nameEn;
             </a>
         </figcaption>
     </figure>
-</div>
+
+
+</div> 
 
 }
 
@@ -148,10 +155,10 @@ arttistName=@arttist.nameEn;
             <!--Your modal content goes here-->
             <img id="modal-img" />
 
-            <h1 id="modal-head">-</h1>
-            <h2 id="modal-subLv1">-</h2>
-            <h3 id="modal-subLv2">-</h3>
-            <p id="modal-content" style="width:70%">-</p>
+            <h1 id="modal-head"></h1>
+            <h2 id="modal-subLv1"></h2>
+            <h3 id="modal-subLv2"></h3>
+            <p id="modal-content" style="width:70%"></p>
         </div>
     </section>
 </div>
@@ -190,7 +197,7 @@ arttistName=@arttist.nameEn;
         ReadMore.BindEvent();
 
         //Afert ReadMore
-        $('.matchHeightArtPiece').matchHeight({
+        $('.ArtPiece .matchHeight').matchHeight({
             byRow: true,
             property: 'height',
             //target: true,

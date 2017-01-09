@@ -24,7 +24,7 @@ string nodeLang = curNode.GetCulture().ToString().ToLower();
 
 var lang=Umbraco.GetDictionaryValue("language");
 var ExhibitionFolder = Model.MacroParameters["ExhibitionFolder"];
-var TextHead = Model.MacroParameters["TextHead"];
+var ShowHead = Model.MacroParameters["ShowHead"];
 var ShowAuto = Model.MacroParameters["ShowAuto"];
 var Exhibition = Model.MacroParameters["Exhibition"];
 var Random = Model.MacroParameters["Random"];
@@ -45,7 +45,22 @@ int exhibitionID = 0;
 
     valuesFilter.Add("Todate", DateTime.Now);
 
-    var  exhibitionitems = Umbraco.Media(ExhibitionFolder).Children().Where( "(beginDate <= Todate) && (endDate >= Todate)", valuesFilter).OrderBy(sort).Take(1);
+    var  exhibitionitems = Umbraco.Media(ExhibitionFolder).Children().Where( "Visible &&(beginDate <= Todate) && (endDate >= Todate)", valuesFilter).OrderBy(sort).Take(1);
+
+    if (exhibitionitems.Count()==0)
+    {
+
+          <div id="DivARTPIECE_LISTNotFound" class="col-lg-12 text-center">@Umbraco.Field("#NoData")</div>
+
+
+                                         <script>
+    $(document).ready(function () {
+        $("#DivARTPIECE_LISTNotFound").parent().parent().parent().parent().parent().hide();
+        });
+                                         </script>
+
+    return;
+    }
 
     exhibitionID = exhibitionitems.First().id;
 
@@ -97,10 +112,10 @@ int exhibitionID = 0;
         {
 
         var artTistMedia =Umbraco.Media(media);
-         @*<div>@artTistMedia.DocumentTypeAlias @artTistMedia.id   GOGOGOGO </div>*@
+
        artistList+="," +artTistMedia.id.ToString()+",";
 
-        @*artistList="," +media.ToString()+","; *@
+     
                                         
         }
         else
@@ -118,7 +133,7 @@ int exhibitionID = 0;
         }
 
 
-    <div> @artistList   pure</div>
+   
 
         string  mediaArtistReorder = "";
 	
@@ -133,28 +148,30 @@ int exhibitionID = 0;
 
         }
 
-
-    <div>@mediaArtistReorder  Reorder </div>
+     
 
         @if (mediaArtistReorder != "")
         {
-                                         if (TextHead !=null)
+                                         if (ShowHead.Equals("1"))
                                          {
                                         /*Render Head*/
                                          <div class="text-center">
-                                             <h1>@TextHead</h1>
+                                             <h1>
+											  @Umbraco.Field("#Artists")
+
+											 </h1>
                                          </div>
                                          }
 
                                         
-                                             <div class="text-center">
+                                             <div class="Artist text-center">
 
                                                  @foreach (var mediaId in mediaArtistReorder.ToString().Split(','))
                                                  {
 
                                                  var artTistMedia = Umbraco.Media(mediaId);
 
-                                                 <div>@artTistMedia.DocumentTypeAlias</div>
+                                               
                                                  @*var  artTistMedia =Umbraco.Media(media.ParentId);*@
                                                  @* a single image *@
                                                  <!-- Left and right controls -->
@@ -217,8 +234,11 @@ int exhibitionID = 0;
                                              <script src="~/Modules/ReadMore/ReadMore.js"></script>
                                              <script>
                                                  $(function () {
+                                                     ReadMore.showMore = false;
+                                                     ReadMore.BindEvent();
+
                                                      //Afert ReadMore
-                                                     $('.matchHeight').matchHeight({
+                                                     $('.Artist .matchHeight').matchHeight({
                                                          byRow: true,
                                                          property: 'height',
                                                          //target: true,
@@ -226,7 +246,6 @@ int exhibitionID = 0;
                                                          //property: 'min-height'
                                                      });
 
-                                                     ReadMore.showMore = false;
-                                                     ReadMore.BindEvent();
+                                                   
                                                  });
                                              </script>
