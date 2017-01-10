@@ -1,8 +1,9 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 @{
+   
     Layout = null;
 	var home = @CurrentPage.Site();
- 
+
 }
 
 <!DOCTYPE html>
@@ -17,10 +18,10 @@
     <meta name="description" content="@CurrentPage.MetaDescription">
     <meta name="keyword" content="@CurrentPage.MetaKeyword">
    
-   
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <link href="~/Modules/Effect/animate.min.css" rel="stylesheet" />
+        
         @Html.Partial("SocialMetaTag")
 
         <title>
@@ -29,8 +30,6 @@
             } else {
             @CurrentPage.pageTitle
             }
-
-
         </title>
 
         @*<title>@CurrentPage.Name | @CurrentPage._siteTitle</title>*@
@@ -82,8 +81,8 @@
         @*
         <link href="~/Modules/PwsCSS/PwsBaseCss.css" rel="stylesheet" />*@
 
-        <link href="~/Modules/PreLoad/fakeLoader.js-master/fakeLoader.css" rel="stylesheet" />
-        <script src="~/Modules/PreLoad/fakeLoader.js-master/fakeLoader.js"></script>
+        <link href="~/Modules/PreLoad/Loader.js-master/Loader.css" rel="stylesheet" />
+        <script src="~/Modules/PreLoad/Loader.js-master/Loader.js"></script>
 
         <script src="/Modules/PreLoad/PwsPreLoad.js"></script>
 
@@ -135,7 +134,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#" style="cursor:pointer">
+                    <a class="navbar-brand" href="/@Umbraco.Field("#RootUrl")/whats-on/" style="cursor:pointer">
                       
                             @*<div class="brand" style="background-image:url('@(home.SiteLogo)?height=65&width=205&bgcolor=000')"></div>*@
                             @*<img src="~/Modules/images/queengallery-logo.png" style="margin-top:-13px;" />*@
@@ -513,7 +512,7 @@
 
 
     <!-- /.Preload -->
-    <div id="fakeLoader" class="fakeloader" style="z-index:10"></div>
+    <div id="Loader" class="loader" style="z-index:10"></div>
 
 
     <script src="~/Modules/Effect/transition.js"></script>

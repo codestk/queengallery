@@ -102,9 +102,27 @@ a.list-group-item, button.list-group-item {
     background-size: cover;
     -o-background-size: cover;
 }*/
+.readAble {
+    vertical-align:middle;
+ font-weight:bolder;
+    font-size:50px;
+    color:#fff;
+      width: 100px;
+    height: 100px;
+    background: red;
+    -webkit-transition: width 3s !important; /* Safari */
+   
+    transition: width 3s  !important; 
+    
+}
+
+    .readAble:hover  {          width: 100px;
+    width: 300px;
+    }
+
 .pointer {
     cursor: pointer;
-    cursor: hand;
+    /*cursor: hand;*/
 }
 /* Customize the text color and shadow color and to optimize text legibility. */
 .tagline {
@@ -293,15 +311,10 @@ main {
     /*border-top-color:#FCBE07;*/
     /*Green*/
     border-top-color: #8CBD3F;
-
-     /*gold*/
+    /*gold*/
     /*border-top-color: #E7CA71;*/
-
-       /*Test*/
+    /*Test*/
     /*border-top-color: #F28F20;*/
-    
-     
-     
     border-top-style: solid;
     padding-top: 80px;
     padding-bottom: 80px;

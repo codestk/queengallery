@@ -15,10 +15,11 @@
    var AnnouncementId = Model.MacroParameters["Announcement"];
    var showAnnouncementOnly =Model.MacroParameters["showAnnouncementOnly"];
    var showText =Model.MacroParameters["showText"];
+   var showDate= Model.MacroParameters["showDate"].ToString();   
    var TextColor =Model.MacroParameters["TextColor"];
-    var Imageheight= Model.MacroParameters["Imageheight"].ToString();
+   var Imageheight= Model.MacroParameters["Imageheight"].ToString();
    var FixSize= Model.MacroParameters["FixSize"].ToString();    
-
+ 
 
 var ImageCropType= Model.MacroParameters["ImageCropType"];
 string height="450px;";
@@ -211,17 +212,22 @@ height =Imageheight+"px";
 
                                     if    (showText.Equals("1"))
                                     {
-                                    @Name
+                                    @Name  
+                                    
                                     }
 
                                     }
                                 </div>
-                                <div class="slide-subtitle">
+                                <div class="slide-subtitle" style=""  >
                                     @{
 
-                                    if(showText.Equals("1"))
+                                    if(showDate.Equals("1"))
                                     {
-                                    <h2>  </h2>
+                                    <p class="readAble">
+                                        
+                                        @item.endDate.ToString()
+
+                                    </p>
                                     }
 
                                     }

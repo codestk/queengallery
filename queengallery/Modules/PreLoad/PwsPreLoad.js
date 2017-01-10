@@ -60,21 +60,17 @@ $.fn.imagesLoaded = function () {
 function Preload() {
    // blurElement("body", 1)
   
-    //$(".fakeloader").fakeLoader({
-    //    timeToHide: 12000,
-    //    //bgColor: "#2ecc71",
-    //    spinner: "spinner1"
-    //});
-
+ 
     //blurElement("body", 1)
-    $(".fakeloader").fakeLoader({
+    $(".loader").fakeLoader({
         //timeToHide: 1200,
         bgColor: "#888",
-        spinner: "spinner1",
-        filter:" alpha(opacity=60)"
+        spinner: "spinner4",
+        filter: " alpha(opacity=60)",
+        //imagePath:"yourPath/customizedImage.gif" //If you want can you insert your custom image  ,
     });
 
-    $(".fakeloader").fadeIn();
+    $(".loader").fadeIn();
 }
 
 function LoadCompelete()
@@ -83,7 +79,7 @@ function LoadCompelete()
     //$(".fakeloader").remove();
     blurElement("body", 0);
     $("#MainContent").show();
-    $(".fakeloader").fadeOut();
+    $(".loader").fadeOut();
 }
 
 //set the css3 blur to an element
