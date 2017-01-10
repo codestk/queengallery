@@ -14,14 +14,12 @@
        var mediaIds = Model.MacroParameters["mediaIds"];                                                      Type: (note: you can use a Single Media Picker if that's more appropriate to your needs)
 *@
 
-
 @{
 
 if (Request.QueryString["exhibition"]==null)
 {
 return;
 }
-
 
 var curNode = Umbraco.TypedContent(Model.Content.Id);
 
@@ -31,9 +29,7 @@ string nodeLang = curNode.GetCulture().ToString().ToLower();
 
 var id = 0; int.TryParse(Request.QueryString["exhibition"], out id);
 
-
 int exhibition = 0; int.TryParse(Model.MacroParameters["Exhibition"].ToString(), out exhibition);
-
 
  string condition = "Id ="+id.ToString();
 
@@ -47,8 +43,6 @@ var item= Umbraco.Media(exhibition).Children().Where(condition);
 
 }
 
-
- 
 @if (mediaIds != "")
 {
 
@@ -82,11 +76,10 @@ var item= Umbraco.Media(exhibition).Children().Where(condition);
 {
 <div id="DivArtPiceNotFound" class="col-lg-12 text-center">@Umbraco.Field("#NoData")</div>
 
-
 <script>
     $(document).ready(function () {
         $("#DivArtPiceNotFound").parent().parent().parent().parent().parent().hide();
-        });
+    });
 </script>
     return;
 }
@@ -108,65 +101,46 @@ description=@item.descriptionEn;
 arttistName=@arttist.nameEn;
 			}
 
-
- 
 <div class="text-center matchHeight item00000 col-lg-4">
-
-  
     <figure class="snip1360  well">
         <img src="@item.image" alt="@item.id" class="img-responsive  img-center" />
-
         <figcaption>
-          
-               
-
-            <h2>@name   </h2>  
-           <a  style="position:relative ;     background-color:transparent;  text-align:right "  href="/@Umbraco.Field("#RootUrl")/exhibitions/past/artist?artist=@arttist.id"   > <strong>   @arttistName </strong></a>  
-           @*<p>@item.ArtPieceType</p>*@
-             <p class="more">@description  </p>
+            <h2>@name</h2>
+            <a style="position:relative;background-color:transparent;text-align:right " href="/@Umbraco.Field(" #RootUrl")/exhibitions/past/artist?artist=@arttist.id"><strong>@arttistName</strong></a>
+            <p class="more">@description  </p>
             <a href="#modal" data-ArtPiecesMedia="@item.id" class="read-more EventModal">
                 @Umbraco.Field("#ReadMore")
-
                 <div class="glass"></div>
             </a>
         </figcaption>
     </figure>
-
-
-</div> 
+</div>
 
 }
 
 <!--Modal-->
 
 <div id="modal" class="">
-
-    <!--"THIS IS IMPORTANT! to close the modal, the class name has to match the name given on the ID-->
-    @*<div id="btn-close-modal" class="close-modal ">
-        CLOSE MODAL
-    </div>*@
-
-    <div id="btn-close-modal" class="close-modal text-center modalHead">
-        <img class="closebt" src="~/Modules/animatedModal.js-master/closebt.svg" />
-    </div>
-    <section class="transformSkewY">
-        @*modal-content*@
-        <div class="text-center  ">
-            <!--Your modal content goes here-->
-            <img id="modal-img" />
-
-            <h1 id="modal-head"></h1>
-            <h2 id="modal-subLv1"></h2>
-            <h3 id="modal-subLv2"></h3>
-            <p id="modal-content" style="width:70%"></p>
+    <div id="modalContent">
+        <!--"THIS IS IMPORTANT! to close the modal, the class name has to match the name given on the ID-->
+        <div id="btn-close-modal" class="close-modal text-center modalHead" s>
+            <img class="closebt " src="~/Modules/animatedModal.js-master/closebt.svg" />
         </div>
-    </section>
+        <section class="transformSkewY">
+            @*modal-content*@
+            <div class="text-center  ">
+                <!--Your modal content goes here-->
+                <img id="modal-img" class="img-center img-responsive " style="width:70%" />
+                <h1 id="modal-head"></h1>
+                <h2 id="modal-subLv1"></h2>
+                <h3 id="modal-subLv2"></h3>
+                <p id="modal-content" style="width:70%"></p>
+            </div>
+        </section>
+    </div>
 </div>
 
-
-
 <script src="~/Modules/jquery-match-height-master/dist/jquery.matchHeight-min.js"></script>
-
 
 <!--SimpleModal-->
 
@@ -178,7 +152,6 @@ arttistName=@arttist.nameEn;
 <!--ReadMore-->
 <link href="~/Modules/ReadMore/ReadMore.css" rel="stylesheet" />
 <script src="~/Modules/ReadMore/ReadMore.js"></script>
-
 
 <!--masonry-->
 <link href="~/css/masonry Custom.css" rel="stylesheet" />
@@ -210,14 +183,37 @@ arttistName=@arttist.nameEn;
     });
     function ModalEvent() {
 
+        $("#tempModal").animatedModal({
+            modalTarget: 'modal',
+            animatedIn: 'rollIn',
+            animatedOut: 'rollOut',
+
+            color: 'rgba(33,33,33,.9)',
+
+            // Callbacks
+            beforeOpen: function () {
+
+                //console.log("The animation was called");
+
+                //$('.imagepreview').attr('src', $(this).find('img').attr('src'));
+
+            },
+            afterOpen: function () {
+                //console.log("The animation is completed");
+            },
+            beforeClose: function () {
+                //console.log("The animation was called");
+            },
+            afterClose: function () {
+                //console.log("The animation is completed");
+                //var img = $('#modal-img');
+
+            }
+        });
 
         //animatedIn: bounceIn
         //animatedOut: bounceOut
         $('.EventModal').on('click', function () {
-
-            //$('#modal-head').html('');
-            //$('#modal-subLv1').html('');
-            //$('#modal-subLv2').html('');
 
             var head = $('#modal-head');
             var subLv1 = $('#modal-subLv1');
@@ -229,9 +225,6 @@ arttistName=@arttist.nameEn;
             subLv1.html('');
             subLv2.html('');
             content.html('');
-
-
-
 
             //CallData
             var mediaID = $(this).attr("data-artpiecesmedia");
@@ -252,32 +245,27 @@ arttistName=@arttist.nameEn;
                 var data = msg
                 //Custom
                 function ConvertDataLangModal(data) {
-                     
+
                     for (var key in data) {
                         data[key]["description"] = data[key]["description" + preFixLang];
                         data[key]["name"] = data[key]["name" + preFixLang];
                         data[key]["artPieceType"] = data[key]["artPieceType"];
 
-                     
- 
                     }
-
 
                 }
 
                 ConvertDataLangModal(data[0]);
 
-                head.html('-');
-                subLv1.html('-');
-                subLv2.html('-');
-                content.html('-');
-
+                head.html('');
+                subLv1.html('');
+                subLv2.html('');
+                content.html('');
 
                 //console.log(data[key]["name"]);
                 //console.log(data[key]["artPieceType"]);
 
-                if (data[0][0]["name"] != "")
-                {
+                if (data[0][0]["name"] != "") {
                     head.html(data[0][0]["name"]);
                 }
 
@@ -292,45 +280,23 @@ arttistName=@arttist.nameEn;
                     content.html(data[0][0]["description"]);
                 }
 
-
-
-
                 var ImageUmbracoString = data[0][0]["image"];
 
-               var imgUrl = UmbracoImageUrl(ImageUmbracoString);
+                var imgUrl = UmbracoImageUrl(ImageUmbracoString);
 
-               img.attr('src', imgUrl);
-               //$('.imagepreview').attr('src', $(this).find('img').attr('src'));
+                img.attr('src', imgUrl);
+                //$('.imagepreview').attr('src', $(this).find('img').attr('src'));
 
+                $("#tempModal").click();
             });
 
-        });
-
-        $(".EventModal").animatedModal({
-            modalTarget: 'modal',
-            animatedIn: 'rollIn',
-            animatedOut: 'rollOut',
-
-
-            color: 'rgba(33,33,33,.9)',
-
-            // Callbacks
-            beforeOpen: function () {
-                // $('.imagepreview').attr('src', $(this).find('img').attr('src'));
-
-                //console.log("The animation was called");
-            },
-            afterOpen: function () {
-                //console.log("The animation is completed");
-            },
-            beforeClose: function () {
-                //console.log("The animation was called");
-            },
-            afterClose: function () {
-                //console.log("The animation is completed");
-            }
         });
 
     }
 </script>
 
+
+<a id="tempModal" href="#modal"  style="display:none">
+
+  
+</a>

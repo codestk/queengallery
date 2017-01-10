@@ -75,7 +75,7 @@ a.list-group-item, button.list-group-item {
 
 /*.business-header1 {
     height: 400px;
-   
+
     background: url('/media/1051/banner1.jpg') center center no-repeat scroll;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -85,7 +85,7 @@ a.list-group-item, button.list-group-item {
 
 /*.business-header2 {
     height: 400px;
-    
+
     background: url('/media/1052/banner2.jpg') center center no-repeat scroll;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -95,14 +95,17 @@ a.list-group-item, button.list-group-item {
 
 /*.business-header3 {
     height: 400px;
-   
+
     background: url('/media/1053/banner3.jpg') center center no-repeat scroll;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
 }*/
-.pointer         {  cursor: pointer; cursor: hand;  }
+.pointer {
+    cursor: pointer;
+    cursor: hand;
+}
 /* Customize the text color and shadow color and to optimize text legibility. */
 .tagline {
     text-shadow: 0 0 10px #000;
@@ -116,7 +119,7 @@ a.list-group-item, button.list-group-item {
 /*----Main*/
 main {
     /*margin-top: 14px;*/
-        margin-top: 4px;
+    margin-top: 4px;
 }
 
 /*Footer*/
@@ -284,14 +287,21 @@ main {
 /*Footer*/
 .footerWide {
     border-top-width: 2px;
- 
+    /*border-top-color:#B5C588;*/
+    /*border-top-color:#FECE3E;*/
+    /*border-top-color: #8CBD3F;*/
+    /*border-top-color:#FCBE07;*/
+    /*Green*/
+    border-top-color: #8CBD3F;
 
-       border-top-color:#B5C588; 
-            border-top-color:#FECE3E;
-                border-top-color:#FDC100;
-                  border-top-color:#FCBE07;
-             
-  
+     /*gold*/
+    /*border-top-color: #E7CA71;*/
+
+       /*Test*/
+    /*border-top-color: #F28F20;*/
+    
+     
+     
     border-top-style: solid;
     padding-top: 80px;
     padding-bottom: 80px;
@@ -548,8 +558,8 @@ a {
 
 #vidtop-content {
     top: 20px;
-    color: #fff ;
-    white-space:normal !important;
+    color: #fff;
+    white-space: normal !important;
 }
 
 .vid-info {
@@ -569,8 +579,9 @@ a {
         margin-top: 0;
         line-height: 1.2;
     }
+
     .vid-info p {
-         color: #fff !important;
+        color: #fff !important;
     }
 
     .vid-info a {
@@ -614,8 +625,5 @@ a {
         display: none;
     }
 }
-
-
- 
 
 /* EDITOR PROPERTIES - PLEASE DON'T DELETE THIS LINE TO AVOID DUPLICATE PROPERTIES */

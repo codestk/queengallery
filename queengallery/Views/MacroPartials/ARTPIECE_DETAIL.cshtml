@@ -96,27 +96,23 @@ description=@item.descriptionEn;
 <!--Modal-->
 
 <div id="modal" class="">
-
-    <!--"THIS IS IMPORTANT! to close the modal, the class name has to match the name given on the ID-->
-    @*<div id="btn-close-modal" class="close-modal ">
-        CLOSE MODAL
-    </div>*@
-
-    <div id="btn-close-modal" class="close-modal text-center modalHead">
-        <img class="closebt" src="~/Modules/animatedModal.js-master/closebt.svg" />
-    </div>
-    <section class="transformSkewY">
-        @*modal-content*@
-        <div class="text-center  ">
-            <!--Your modal content goes here-->
-            <img id="modal-img" src=" " />
-          
-              <h1 id="modal-head">-</h1>
-            <h2 id="modal-subLv1">-</h2>
-            <h3 id="modal-subLv2">-</h3>
-            <p id="modal-content" style="width:70%">-</p>
+    <div id="modalContent">
+        <!--"THIS IS IMPORTANT! to close the modal, the class name has to match the name given on the ID-->
+        <div id="btn-close-modal" class="close-modal text-center modalHead" s>
+            <img class="closebt " src="~/Modules/animatedModal.js-master/closebt.svg" />
         </div>
-    </section>
+        <section class="transformSkewY">
+            @*modal-content*@
+            <div class="text-center  ">
+                <!--Your modal content goes here-->
+                <img id="modal-img" class="img-center img-responsive " style="width:70%" />
+                <h1 id="modal-head"></h1>
+                <h2 id="modal-subLv1"></h2>
+                <h3 id="modal-subLv2"></h3>
+                <p id="modal-content" style="width:70%"></p>
+            </div>
+        </section>
+    </div>
 </div>
 
 
@@ -166,33 +162,48 @@ description=@item.descriptionEn;
     });
     function ModalEvent() {
 
-        //$('.EventModal').on('click', function () {
+        $("#tempModal").animatedModal({
+            modalTarget: 'modal',
+            animatedIn: 'rollIn',
+            animatedOut: 'rollOut',
 
-        //    $('.imagepreview').attr('src', $(this).find('img').attr('src'));
-        //    $('#imagemodal').modal('show');
-        //});
+            color: 'rgba(33,33,33,.9)',
+
+            // Callbacks
+            beforeOpen: function () {
+
+                //console.log("The animation was called");
+
+                //$('.imagepreview').attr('src', $(this).find('img').attr('src'));
+
+            },
+            afterOpen: function () {
+                //console.log("The animation is completed");
+            },
+            beforeClose: function () {
+                //console.log("The animation was called");
+            },
+            afterClose: function () {
+                //console.log("The animation is completed");
+                //var img = $('#modal-img');
+
+            }
+        });
 
         //animatedIn: bounceIn
         //animatedOut: bounceOut
         $('.EventModal').on('click', function () {
 
-            //$('#modal-head').html('');
-            //$('#modal-subLv1').html('');
-            //$('#modal-subLv2').html('');
-            
             var head = $('#modal-head');
             var subLv1 = $('#modal-subLv1');
-            var subLv2 = $('#modal-subLv2'); 
+            var subLv2 = $('#modal-subLv2');
             var content = $('#modal-content');
             var img = $('#modal-img');
-          
+
             head.html('');
             subLv1.html('');
             subLv2.html('');
             content.html('');
-
-
-
 
             //CallData
             var mediaID = $(this).attr("data-artpiecesmedia");
@@ -201,7 +212,7 @@ description=@item.descriptionEn;
 
             //GetMedia?id=5066
             var url = 'GetMedia?id=' + mediaID;
-   
+
             CallServices(url, '', true, function (msg) {
                 LoadCompelete();
                 //Reder Data ListTemplate
@@ -218,82 +229,53 @@ description=@item.descriptionEn;
                         data[key]["description"] = data[key]["description" + preFixLang];
                         data[key]["name"] = data[key]["name" + preFixLang];
                         data[key]["artPieceType"] = data[key]["artPieceType"];
-                      
-                    }
 
+                    }
 
                 }
 
                 ConvertDataLangModal(data[0]);
-                 
-                head.html('-');
-                subLv1.html('-');
-                subLv2.html('-');
-                content.html('-');
 
+                head.html('');
+                subLv1.html('');
+                subLv2.html('');
+                content.html('');
 
-             
-               
-                if (data[0][0]["name"] != "")
-                {
+                //console.log(data[key]["name"]);
+                //console.log(data[key]["artPieceType"]);
+
+                if (data[0][0]["name"] != "") {
                     head.html(data[0][0]["name"]);
                 }
 
                 if (data[0][0]["artPieceType"] != "") {
                     subLv1.html(data[0][0]["artPieceType"]);
                 }
-          
+
                 if (data[0][0]["dimension"] != "") {
                     subLv2.html(data[0][0]["dimension"]);
                 }
                 if (data[0][0]["description"] != "") {
                     content.html(data[0][0]["description"]);
                 }
-                
-              
-             
 
                 var ImageUmbracoString = data[0][0]["image"];
-                 
-               var imgUrl = UmbracoImageUrl(ImageUmbracoString);
-             
-               img.attr('src', imgUrl);
-               //$('.imagepreview').attr('src', $(this).find('img').attr('src'));
-               
+
+                var imgUrl = UmbracoImageUrl(ImageUmbracoString);
+
+                img.attr('src', imgUrl);
+                //$('.imagepreview').attr('src', $(this).find('img').attr('src'));
+
+                $("#tempModal").click();
             });
 
         });
 
-        $(".EventModal").animatedModal({
-            modalTarget: 'modal',
-            animatedIn: 'rollIn',
-            animatedOut: 'rollOut',
-
-            //animatedIn: 'fadeInUp',
-            //animatedOut: 'fadeOutDown',
-            //color: '#444444',
-
-            //color: '',
-            //color: 'rgba(109,109,112,0.9)',
-            //color: 'rgba(50,50,50,.9)',
-            color: 'rgba(33,33,33,.9)',
-
-            // Callbacks
-            beforeOpen: function () {
-                // $('.imagepreview').attr('src', $(this).find('img').attr('src'));
-
-                //console.log("The animation was called");
-            },
-            afterOpen: function () {
-                //console.log("The animation is completed");
-            },
-            beforeClose: function () {
-                //console.log("The animation was called");
-            },
-            afterClose: function () {
-                //console.log("The animation is completed");
-            }
-        });
-
     }
 </script>
+
+
+<a id="tempModal" href="#modal" style="display:none">
+
+
+</a>
