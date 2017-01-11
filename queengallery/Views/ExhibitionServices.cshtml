@@ -45,7 +45,7 @@
 
     condition = "Visible && (beginDate < Todate) && (!( (beginDate <= Todate) && (endDate >= Todate)))";
 
-    items = Umbraco.Media(blogId).Children().Where(condition, valuesFilter).OrderBy(sort);
+    items = Umbraco.Media(blogId).Children().Where(condition, valuesFilter).OrderBy("beginDate  ");
 }
 
 var totalPages = (int)Math.Ceiling((double)items.Count() / (double)pageSize);
