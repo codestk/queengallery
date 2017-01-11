@@ -69,7 +69,7 @@ height =Imageheight+"px";
     if(showAnnouncementOnly.Equals("1"))
     {
    
-    items = Umbraco.Media(AnnouncementId).Children().OrderBy(sort).Take(5);
+    items = Umbraco.Media(AnnouncementId).Children().Where("Visible && (beginDate <= Todate)",valuesFilter).OrderBy("beginDate").Take(5);
     }
     else if(ExhibitionsId !="")
     {  var ex = Umbraco.Media(ExhibitionsFolder).Children().Where("id=="+ExhibitionsId.ToString());
@@ -205,16 +205,20 @@ height =Imageheight+"px";
                   imageUrl=item.GetCropUrl("image", ImageCropType);
                
                 }
+                
+                string Redirect= "";
+                string pointer="";
+                if (item.DocumentTypeAlias=="exhibitionsMedia")
+                {
+                Redirect ="javascript: redirect('"+@item.id+"');";
+                pointer="pointer";
+                }
+        
 
-                @*string imageUrl=item.image.src;*@
-
-                @*
-                string imageUrl=item.GetCropUrl("image", "banner");*@
-
-              
-                    <div class="css-slider-item pointer" style="text-shadow: 0 0 15px black; background-image: url(@imageUrl);@backgroundPosition;" onclick="javascript:redirect('@item.id');"  >
-                     
-                            <div class="css-slider-item-inner" style=" width:100%;" >
+               
+                    <div class="css-slider-item @pointer"      style="text-shadow: 0 0 15px black; background-image: url(@imageUrl);@backgroundPosition;" onclick="@Redirect"  >
+                      
+                            <div class="css-slider-item-inner" style="width:100%;" >
                                 <div class="slide-title @bannerBackground " style=" @TextColor"> 
                                     @{
 
@@ -232,7 +236,7 @@ height =Imageheight+"px";
                                     if(showDate.Equals("1"))
                                     {
                                  
-                                    <div class="readAble">
+                                    <div class="BannerDate">
                                         
                                         @*@item.endDate.ToString("d")*@
                                         <div>   @String.Format("{0:d MMM}", item.endDate)  </div>
@@ -256,11 +260,15 @@ height =Imageheight+"px";
     @{
     if(YoutubeShow.Equals("1")==false) {
     <script>
+      
+
+
         $(window).on("load", function () {
 
             // Executes when complete page is fully loaded, including
             // all frames, objects and images
             var nIntervId;
+            var delayTime = 15000;
             var lb = $('.css-slider  input:radio[name="slider-navigation"]');
 
             var len = lb.length;
@@ -279,26 +287,37 @@ height =Imageheight+"px";
 
             $('.css-slider-navigation>label').on("click", function () {
 
-               
+
                 i = this.getAttribute('data-id');
-              
-                clearInterval(nIntervId);
+
+                stopchangeSlide();
+                //clearInterval(nIntervId);
                 //Innit New Interval plus delay
-                nIntervId = setInterval(slideItem, 10000);
+                nIntervId = setInterval(slideItem, delayTime);
 
             });
             function changeSlide() {
                 if (len > 0) {
-                    nIntervId = setInterval(slideItem, 5000);
+                    nIntervId = setInterval(slideItem, delayTime);
                 }
 
             }
+
             function stopchangeSlide() {
                 clearInterval(nIntervId);
             }
 
+
+    
+          
             changeSlide();
+
         });
+
+
+
+    
+
     </script>
     }
 
@@ -311,10 +330,11 @@ height =Imageheight+"px";
             var url='';
             var lang = '@Umbraco.Field("#RootUrl")';
             url= '/'+lang+'/exhibitions/past/exhibition?exhibition='+id;
-            debugger
+             
             window.location.replace(url);
         
   
         }
+
 
     </script>

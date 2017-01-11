@@ -19,8 +19,8 @@ using Umbraco.ModelsBuilder;
 using Umbraco.ModelsBuilder.Umbraco;
 
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "805f2a072d34b259")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.3")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "61c773e655deb59e")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.4")]
 
 namespace Umbraco.Web.PublishedContentModels
 {
@@ -2096,6 +2096,15 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// Hide
+		///</summary>
+		[ImplementPropertyType("hide")]
+		public bool Hide
+		{
+			get { return this.GetPropertyValue<bool>("hide"); }
+		}
+
+		///<summary>
 		/// Image
 		///</summary>
 		[ImplementPropertyType("image")]
@@ -2129,15 +2138,6 @@ namespace Umbraco.Web.PublishedContentModels
 		public bool ShowYouTube
 		{
 			get { return this.GetPropertyValue<bool>("showYouTube"); }
-		}
-
-		///<summary>
-		/// umbracoNaviHide
-		///</summary>
-		[ImplementPropertyType("umbracoNaviHide")]
-		public bool UmbracoNaviHide
-		{
-			get { return this.GetPropertyValue<bool>("umbracoNaviHide"); }
 		}
 
 		///<summary>

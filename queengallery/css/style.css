@@ -533,11 +533,8 @@ a {
     }
 
 
-    .slide-title{}
-
-        .slide-title:hover {
-        }
-    .readAble {
+    
+    .BannerDate {
    
  font-weight:bolder;
    
@@ -554,7 +551,7 @@ a {
 
 }
 
-    .readAble div{
+    .BannerDate div{
         display:block;
    text-align: center;
 vertical-align: middle;
