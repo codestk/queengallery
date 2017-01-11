@@ -102,23 +102,7 @@ a.list-group-item, button.list-group-item {
     background-size: cover;
     -o-background-size: cover;
 }*/
-.readAble {
-    vertical-align:middle;
- font-weight:bolder;
-    font-size:50px;
-    color:#fff;
-      width: 100px;
-    height: 100px;
-    background: red;
-    -webkit-transition: width 3s !important; /* Safari */
-   
-    transition: width 3s  !important; 
-    
-}
 
-    .readAble:hover  {          width: 100px;
-    width: 300px;
-    }
 
 .pointer {
     cursor: pointer;
@@ -547,6 +531,50 @@ a {
     a:hover {
         -webkit-transition: color .1s linear;
     }
+
+
+    .slide-title{}
+
+        .slide-title:hover {
+        }
+    .readAble {
+   
+ font-weight:bolder;
+   
+    color:#fff;
+     
+    max-width:160px;
+      max-height:200px;
+    background: red;
+    /*-webkit-transition: width 3s !important; 
+   
+    transition: width 3s  !important;*/ 
+  
+    overflow:hidden;
+
+}
+
+    .readAble div{
+        display:block;
+   text-align: center;
+vertical-align: middle;
+line-height: 90px;     
+
+ font-size:40px;
+    background-color: rgba(0,0,0,0.5);
+
+padding: 0.5em;
+
+    }
+
+    .readAble:hover  {       
+    
+    }
+
+    .bannerBackground {
+      background-color:rgba(0,0,0,0.3);
+}
+
 
 /*Video Background*/
 .video-background {

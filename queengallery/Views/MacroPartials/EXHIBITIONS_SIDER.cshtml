@@ -17,19 +17,27 @@
    var showText =Model.MacroParameters["showText"];
    var showDate= Model.MacroParameters["showDate"].ToString();   
    var TextColor =Model.MacroParameters["TextColor"];
+   var TextBackground =Model.MacroParameters["TextBackground"];
    var Imageheight= Model.MacroParameters["Imageheight"].ToString();
    var FixSize= Model.MacroParameters["FixSize"].ToString();    
  
 
+
 var ImageCropType= Model.MacroParameters["ImageCropType"];
 string height="450px;";
-
+string bannerBackground="";
 string backgroundPosition="";
 
   if (TextColor!="")
    {
    TextColor= "color:"+@TextColor.ToString();
    }
+
+
+  if(TextBackground.Equals("1"))
+  {
+  bannerBackground="bannerBackground";
+  }
 
   if(FixSize.Equals("1"))
   {
@@ -207,13 +215,13 @@ height =Imageheight+"px";
                     <div class="css-slider-item pointer" style="text-shadow: 0 0 15px black; background-image: url(@imageUrl);@backgroundPosition;" onclick="javascript:redirect('@item.id');"  >
                      
                             <div class="css-slider-item-inner" style=" width:100%;" >
-                                <div class="slide-title" style=" @TextColor"> 
+                                <div class="slide-title @bannerBackground " style=" @TextColor"> 
                                     @{
 
                                     if    (showText.Equals("1"))
                                     {
-                                    @Name  
-                                    
+                                     @Name   
+                                 
                                     }
 
                                     }
@@ -223,11 +231,12 @@ height =Imageheight+"px";
 
                                     if(showDate.Equals("1"))
                                     {
-                                    <p class="readAble">
+                                 
+                                    <div class="readAble">
                                         
-                                        @item.endDate.ToString()
-
-                                    </p>
+                                        @*@item.endDate.ToString("d")*@
+                                        <div>   @String.Format("{0:d MMM}", item.endDate)  </div>
+                                    </div>
                                     }
 
                                     }
