@@ -110,7 +110,7 @@ return;
                                                                  <h2 class="text-center">@name </h2>
                                                                  <p class="text-center"> <img class="img-center" src="@Now.image" alt="@name" /></p>
 
-                                                                 <em>@Now.GetPropertyValue("beginDate").ToString("dd MMMM yyyy") - @Now.GetPropertyValue("endDate").ToString("dd MMMM yyyy") </em>
+                                                                 <em class="text-center date">@Now.GetPropertyValue("beginDate").ToString("dd MMMM yyyy") - @Now.GetPropertyValue("endDate").ToString("dd MMMM yyyy") </em>
                                                                  <p>
                                                                      @description
                                                                  </p>
@@ -140,7 +140,7 @@ return;
                                                              <p>  <img class="img-center" src="@item.image" alt="@name" /> </p>
 
 
-                                                             <em>@item.GetPropertyValue("beginDate").ToString("dd MMMM yyyy") - @item.GetPropertyValue("endDate").ToString("dd MMMM yyyy") </em>
+                                                             <em class="text-center date">@item.GetPropertyValue("beginDate").ToString("dd MMMM yyyy") - @item.GetPropertyValue("endDate").ToString("dd MMMM yyyy") </em>
                                                              <p>
                                                                  @description
                                                              </p>
