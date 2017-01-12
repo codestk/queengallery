@@ -214,3 +214,102 @@ System.MissingMethodException: Method 'Umbraco.Web.Models.DynamicPublishedConten
 System.MissingMethodException: Method 'Umbraco.Web.Models.DynamicPublishedContent.GetCropUrl' not found.
    at Umbraco.Core.Dynamics.DynamicInstanceHelper.FindAndExecuteExtensionMethod[T](IRuntimeCacheProvider runtimeCache, T thisObject, Object[] args, String name, IEnumerable`1 findMethodsOnTypes)
    at Umbraco.Core.Dynamics.DynamicInstanceHelper.TryInvokeMember[T](IRuntimeCacheProvider runtimeCache, T thisObject, InvokeMemberBinder binder, Object[] args, IEnumerable`1 findExtensionMethodsOnTypes)
+ 2017-01-12 09:46:18,135 [P2644/D2/T24] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [Umbraco.Web.Scheduling.IBackgroundTask] Terminating
+ 2017-01-12 09:46:18,135 [P2644/D2/T24] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [Umbraco.Web.Scheduling.IBackgroundTask] Waiting for tasks to complete
+ 2017-01-12 09:46:18,136 [P2644/D2/T24] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledTasks] Terminating
+ 2017-01-12 09:46:18,136 [P2644/D2/T24] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledTasks] Waiting for tasks to complete
+ 2017-01-12 09:46:18,140 [P2644/D2/T14] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [Umbraco.Web.Scheduling.IBackgroundTask] Tasks completed, terminated
+ 2017-01-12 09:46:18,140 [P2644/D2/T17] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledTasks] Tasks completed, terminated
+ 2017-01-12 09:46:18,254 [P2644/D2/T24] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [LogScrubber] Terminating
+ 2017-01-12 09:46:18,255 [P2644/D2/T24] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [LogScrubber] Waiting for tasks to complete
+ 2017-01-12 09:46:18,255 [P2644/D2/T24] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledPublishing] Terminating
+ 2017-01-12 09:46:18,255 [P2644/D2/T24] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledPublishing] Waiting for tasks to complete
+ 2017-01-12 09:46:18,255 [P2644/D2/T24] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [KeepAlive] Terminating
+ 2017-01-12 09:46:18,255 [P2644/D2/T24] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [KeepAlive] Waiting for tasks to complete
+ 2017-01-12 09:46:18,255 [P2644/D2/T5] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [LogScrubber] Tasks completed, terminated
+ 2017-01-12 09:46:18,256 [P2644/D2/T13] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledPublishing] Tasks completed, terminated
+ 2017-01-12 09:46:18,256 [P2644/D2/T18] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [KeepAlive] Tasks completed, terminated
+ 2017-01-12 09:46:23,775 [P2644/D3/T39] INFO  Umbraco.Core.CoreBootManager - Umbraco 7.5.4 application starting on HC-LAB
+ 2017-01-12 09:46:23,802 [P2644/D3/T39] INFO  Umbraco.Core.PluginManager - Determining hash of code files on disk
+ 2017-01-12 09:46:23,811 [P2644/D3/T39] INFO  Umbraco.Core.PluginManager - Hash determined (took 9ms)
+ 2017-01-12 09:46:23,893 [P2644/D3/T39] INFO  Umbraco.Core.PluginManager - Starting resolution types of umbraco.interfaces.IApplicationStartupHandler
+ 2017-01-12 09:46:23,980 [P2644/D3/T39] INFO  Umbraco.Core.PluginManager - Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 0 (took 87ms)
+ 2017-01-12 09:46:24,051 [P2644/D3/T39] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter
+ 2017-01-12 09:46:24,053 [P2644/D3/T39] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 2ms)
+ 2017-01-12 09:46:24,053 [P2644/D3/T39] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyValueConverter
+ 2017-01-12 09:46:24,056 [P2644/D3/T39] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyValueConverter, found 0 (took 3ms)
+ 2017-01-12 09:46:24,074 [P2644/D3/T39] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Web.Mvc.SurfaceController
+ 2017-01-12 09:46:24,088 [P2644/D3/T39] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 0 (took 13ms)
+ 2017-01-12 09:46:24,089 [P2644/D3/T39] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Web.WebApi.UmbracoApiController
+ 2017-01-12 09:46:24,096 [P2644/D3/T39] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Web.WebApi.UmbracoApiController, found 0 (took 7ms)
+ 2017-01-12 09:46:24,186 [P2644/D3/T39] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.Media.IThumbnailProvider
+ 2017-01-12 09:46:24,189 [P2644/D3/T39] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 0 (took 3ms)
+ 2017-01-12 09:46:24,190 [P2644/D3/T39] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.Media.IImageUrlProvider
+ 2017-01-12 09:46:24,191 [P2644/D3/T39] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 0 (took 0ms)
+ 2017-01-12 09:46:25,578 [P2644/D3/T39] INFO  Umbraco.Core.DatabaseContext - CanConnect = True
+ 2017-01-12 09:46:25,887 [P2644/D3/T39] INFO  Umbraco.Core.DatabaseContext - CanConnect = True
+ 2017-01-12 09:46:25,910 [P2644/D3/T39] INFO  Umbraco.Core.DatabaseContext - CanConnect = True
+ 2017-01-12 09:46:25,943 [P2644/D3/T39] INFO  Umbraco.Web.Cache.CacheRefresherEventHandler - Initializing Umbraco internal event handlers for cache refreshing
+ 2017-01-12 09:46:26,095 [P2644/D3/T39] INFO  Umbraco.Web.Search.ExamineEvents - Initializing Examine and binding to business logic events
+ 2017-01-12 09:46:26,095 [P2644/D3/T39] INFO  Umbraco.Web.Search.ExamineEvents - Adding examine event handlers for index providers: 3
+ 2017-01-12 09:46:26,113 [P2644/D3/T39] INFO  Umbraco.Core.CoreBootManager - Umbraco application startup complete (took 2459ms)
+ 2017-01-12 09:46:27,053 [P2644/D3/T30] INFO  Umbraco.Core.Sync.ApplicationUrlHelper - ApplicationUrl: http://localhost:17606/umbraco (UmbracoModule request)
+ 2017-01-12 09:46:27,669 [P2644/D3/T30] INFO  umbraco.content - Load Xml from file...
+ 2017-01-12 09:46:27,679 [P2644/D3/T30] INFO  umbraco.content - Loaded Xml from file.
+ 2017-01-12 09:46:28,657 [P2644/D3/T30] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.PropertyEditors.IParameterEditor
+ 2017-01-12 09:46:28,660 [P2644/D3/T30] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.PropertyEditors.IParameterEditor, found 0 (took 3ms)
+ 2017-01-12 09:46:39,091 [P2644/D3/T30] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.Persistence.Mappers.BaseMapper
+ 2017-01-12 09:46:39,093 [P2644/D3/T30] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.Persistence.Mappers.BaseMapper, found 0 (took 1ms)
+ 2017-01-12 09:46:39,299 [P2644/D3/T30] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.PropertyEditors.IParameterEditor
+ 2017-01-12 09:46:39,299 [P2644/D3/T30] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.PropertyEditors.IParameterEditor, found 0 (took 0ms)
+ 2017-01-12 09:46:39,335 [P2644/D3/T30] INFO  Umbraco.Core.PluginManager - Starting resolution types of umbraco.cms.businesslogic.macro.IMacroEngine
+ 2017-01-12 09:46:39,338 [P2644/D3/T30] INFO  Umbraco.Core.PluginManager - Completed resolution of types of umbraco.cms.businesslogic.macro.IMacroEngine, found 0 (took 2ms)
+ 2017-01-12 09:46:46,704 [P2644/D3/T25] ERROR Umbraco.Core.Dynamics.DynamicInstanceHelper - An error occurred finding and executing extension method "GetCropUrl" for type "Umbraco.Web.Models.DynamicPublishedContent". Types searched for extension methods were Umbraco.Web.Models.DynamicPublishedContent.
+System.MissingMethodException: Method 'Umbraco.Web.Models.DynamicPublishedContent.GetCropUrl' not found.
+   at Umbraco.Core.Dynamics.DynamicInstanceHelper.FindAndExecuteExtensionMethod[T](IRuntimeCacheProvider runtimeCache, T thisObject, Object[] args, String name, IEnumerable`1 findMethodsOnTypes)
+   at Umbraco.Core.Dynamics.DynamicInstanceHelper.TryInvokeMember[T](IRuntimeCacheProvider runtimeCache, T thisObject, InvokeMemberBinder binder, Object[] args, IEnumerable`1 findExtensionMethodsOnTypes)
+ 2017-01-12 09:46:46,704 [P2644/D3/T30] ERROR Umbraco.Core.Dynamics.DynamicInstanceHelper - An error occurred finding and executing extension method "GetCropUrl" for type "Umbraco.Web.Models.DynamicPublishedContent". Types searched for extension methods were Umbraco.Web.Models.DynamicPublishedContent.
+System.MissingMethodException: Method 'Umbraco.Web.Models.DynamicPublishedContent.GetCropUrl' not found.
+   at Umbraco.Core.Dynamics.DynamicInstanceHelper.FindAndExecuteExtensionMethod[T](IRuntimeCacheProvider runtimeCache, T thisObject, Object[] args, String name, IEnumerable`1 findMethodsOnTypes)
+   at Umbraco.Core.Dynamics.DynamicInstanceHelper.TryInvokeMember[T](IRuntimeCacheProvider runtimeCache, T thisObject, InvokeMemberBinder binder, Object[] args, IEnumerable`1 findExtensionMethodsOnTypes)
+ 2017-01-12 09:46:46,718 [P2644/D3/T25] ERROR Umbraco.Core.Dynamics.DynamicInstanceHelper - An error occurred finding and executing extension method "GetCropUrl" for type "Umbraco.Web.Models.DynamicPublishedContent". Types searched for extension methods were Umbraco.Web.Models.DynamicPublishedContent.
+System.MissingMethodException: Method 'Umbraco.Web.Models.DynamicPublishedContent.GetCropUrl' not found.
+   at Umbraco.Core.Dynamics.DynamicInstanceHelper.FindAndExecuteExtensionMethod[T](IRuntimeCacheProvider runtimeCache, T thisObject, Object[] args, String name, IEnumerable`1 findMethodsOnTypes)
+   at Umbraco.Core.Dynamics.DynamicInstanceHelper.TryInvokeMember[T](IRuntimeCacheProvider runtimeCache, T thisObject, InvokeMemberBinder binder, Object[] args, IEnumerable`1 findExtensionMethodsOnTypes)
+ 2017-01-12 09:46:46,721 [P2644/D3/T30] ERROR Umbraco.Core.Dynamics.DynamicInstanceHelper - An error occurred finding and executing extension method "GetCropUrl" for type "Umbraco.Web.Models.DynamicPublishedContent". Types searched for extension methods were Umbraco.Web.Models.DynamicPublishedContent.
+System.MissingMethodException: Method 'Umbraco.Web.Models.DynamicPublishedContent.GetCropUrl' not found.
+   at Umbraco.Core.Dynamics.DynamicInstanceHelper.FindAndExecuteExtensionMethod[T](IRuntimeCacheProvider runtimeCache, T thisObject, Object[] args, String name, IEnumerable`1 findMethodsOnTypes)
+   at Umbraco.Core.Dynamics.DynamicInstanceHelper.TryInvokeMember[T](IRuntimeCacheProvider runtimeCache, T thisObject, InvokeMemberBinder binder, Object[] args, IEnumerable`1 findExtensionMethodsOnTypes)
+ 2017-01-12 09:46:46,723 [P2644/D3/T25] ERROR Umbraco.Core.Dynamics.DynamicInstanceHelper - An error occurred finding and executing extension method "GetCropUrl" for type "Umbraco.Web.Models.DynamicPublishedContent". Types searched for extension methods were Umbraco.Web.Models.DynamicPublishedContent.
+System.MissingMethodException: Method 'Umbraco.Web.Models.DynamicPublishedContent.GetCropUrl' not found.
+   at Umbraco.Core.Dynamics.DynamicInstanceHelper.FindAndExecuteExtensionMethod[T](IRuntimeCacheProvider runtimeCache, T thisObject, Object[] args, String name, IEnumerable`1 findMethodsOnTypes)
+   at Umbraco.Core.Dynamics.DynamicInstanceHelper.TryInvokeMember[T](IRuntimeCacheProvider runtimeCache, T thisObject, InvokeMemberBinder binder, Object[] args, IEnumerable`1 findExtensionMethodsOnTypes)
+ 2017-01-12 09:46:46,728 [P2644/D3/T30] ERROR Umbraco.Core.Dynamics.DynamicInstanceHelper - An error occurred finding and executing extension method "GetCropUrl" for type "Umbraco.Web.Models.DynamicPublishedContent". Types searched for extension methods were Umbraco.Web.Models.DynamicPublishedContent.
+System.MissingMethodException: Method 'Umbraco.Web.Models.DynamicPublishedContent.GetCropUrl' not found.
+   at Umbraco.Core.Dynamics.DynamicInstanceHelper.FindAndExecuteExtensionMethod[T](IRuntimeCacheProvider runtimeCache, T thisObject, Object[] args, String name, IEnumerable`1 findMethodsOnTypes)
+   at Umbraco.Core.Dynamics.DynamicInstanceHelper.TryInvokeMember[T](IRuntimeCacheProvider runtimeCache, T thisObject, InvokeMemberBinder binder, Object[] args, IEnumerable`1 findExtensionMethodsOnTypes)
+ 2017-01-12 09:46:48,300 [P2644/D2/T32] INFO  Umbraco.Core.UmbracoApplicationBase - Application shutdown. Details: ConfigurationChange
+
+_shutDownMessage=Change in App_Offline.htm
+HostingEnvironment initiated shutdown
+Change in App_Offline.htm
+Change in App_Offline.htm
+Change in App_Offline.htm
+HostingEnvironment caused shutdown
+
+_shutDownStack=   at System.Environment.GetStackTrace(Exception e, Boolean needFileInfo)
+   at System.Environment.get_StackTrace()
+   at System.Web.Hosting.HostingEnvironment.InitiateShutdownInternal()
+   at System.Web.Hosting.HostingEnvironment.InitiateShutdownWithoutDemand()
+   at System.Web.HttpRuntime.ShutdownAppDomain(String stackTrace)
+   at System.Web.HttpRuntime.OnAppOfflineFileChange(Object sender, FileChangeEvent e)
+   at System.Web.DirectoryMonitor.FireNotifications()
+   at System.Web.Util.WorkItem.CallCallbackWithAssert(WorkItemCallback callback)
+   at System.Web.Util.WorkItem.OnQueueUserWorkItemCompletion(Object state)
+   at System.Threading.QueueUserWorkItemCallback.WaitCallback_Context(Object state)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   at System.Threading.QueueUserWorkItemCallback.System.Threading.IThreadPoolWorkItem.ExecuteWorkItem()
+   at System.Threading.ThreadPoolWorkQueue.Dispatch()
+   at System.Threading._ThreadPoolWaitCallback.PerformWaitCallback()
+ 2017-01-12 09:47:27,866 [P2644/D3/T5] INFO  umbraco.BusinessLogic.Log - Log scrubbed.  Removed all items older than 2017-01-11 09:47:27
