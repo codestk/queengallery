@@ -89,7 +89,7 @@ height =Imageheight+"px";
     /*Swap Anouce*/
     if(items.Count()==0)
     {
-    items = Umbraco.Media(AnnouncementId).Children().Where("Visible").OrderBy(sort).Take(1);
+    items = Umbraco.Media(AnnouncementId).Children().Where("Visible").OrderBy("beginDate").Take(1);
     }
     }/*End Auto*/
 
