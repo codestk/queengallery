@@ -1,0 +1,110 @@
+﻿ 2017-01-19 21:34:14,713 [P7772/D2/T1] INFO  Umbraco.Core.CoreBootManager - Umbraco 7.5.4 application starting on HOMEPC
+ 2017-01-19 21:34:14,728 [P7772/D2/T1] INFO  Umbraco.Core.PluginManager - Determining hash of code files on disk
+ 2017-01-19 21:34:14,736 [P7772/D2/T1] INFO  Umbraco.Core.PluginManager - Hash determined (took 8ms)
+ 2017-01-19 21:34:14,791 [P7772/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of umbraco.interfaces.IApplicationStartupHandler
+ 2017-01-19 21:34:14,833 [P7772/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 0 (took 42ms)
+ 2017-01-19 21:34:14,874 [P7772/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter
+ 2017-01-19 21:34:14,874 [P7772/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 0ms)
+ 2017-01-19 21:34:14,875 [P7772/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyValueConverter
+ 2017-01-19 21:34:14,876 [P7772/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyValueConverter, found 0 (took 1ms)
+ 2017-01-19 21:34:14,884 [P7772/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Web.Mvc.SurfaceController
+ 2017-01-19 21:34:14,892 [P7772/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 0 (took 7ms)
+ 2017-01-19 21:34:14,893 [P7772/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Web.WebApi.UmbracoApiController
+ 2017-01-19 21:34:14,897 [P7772/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Web.WebApi.UmbracoApiController, found 0 (took 4ms)
+ 2017-01-19 21:34:14,997 [P7772/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.Media.IThumbnailProvider
+ 2017-01-19 21:34:14,998 [P7772/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 0 (took 0ms)
+ 2017-01-19 21:34:14,998 [P7772/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.Media.IImageUrlProvider
+ 2017-01-19 21:34:14,999 [P7772/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 0 (took 0ms)
+ 2017-01-19 21:34:15,763 [P7772/D2/T1] INFO  Umbraco.Core.DatabaseContext - CanConnect = True
+ 2017-01-19 21:34:15,997 [P7772/D2/T1] INFO  Umbraco.Core.DatabaseContext - CanConnect = True
+ 2017-01-19 21:34:16,026 [P7772/D2/T1] INFO  Umbraco.Core.DatabaseContext - CanConnect = True
+ 2017-01-19 21:34:16,122 [P7772/D2/T1] INFO  Umbraco.Web.Cache.CacheRefresherEventHandler - Initializing Umbraco internal event handlers for cache refreshing
+ 2017-01-19 21:34:16,228 [P7772/D2/T1] INFO  Umbraco.Web.Search.ExamineEvents - Initializing Examine and binding to business logic events
+ 2017-01-19 21:34:16,228 [P7772/D2/T1] INFO  Umbraco.Web.Search.ExamineEvents - Adding examine event handlers for index providers: 3
+ 2017-01-19 21:34:16,244 [P7772/D2/T1] INFO  Umbraco.Core.CoreBootManager - Umbraco application startup complete (took 1581ms)
+ 2017-01-19 21:34:16,790 [P7772/D2/T11] INFO  Umbraco.Core.Sync.ApplicationUrlHelper - ApplicationUrl: http://localhost:17606/umbraco (UmbracoModule request)
+ 2017-01-19 21:34:17,068 [P7772/D2/T11] INFO  umbraco.content - Load Xml from file...
+ 2017-01-19 21:34:17,071 [P7772/D2/T11] INFO  umbraco.content - Loaded Xml from file.
+ 2017-01-19 21:34:17,599 [P7772/D2/T11] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.PropertyEditors.IParameterEditor
+ 2017-01-19 21:34:17,600 [P7772/D2/T11] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.PropertyEditors.IParameterEditor, found 0 (took 1ms)
+ 2017-01-19 21:35:17,155 [P7772/D2/T17] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.Persistence.Mappers.BaseMapper
+ 2017-01-19 21:35:17,157 [P7772/D2/T17] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.Persistence.Mappers.BaseMapper, found 0 (took 1ms)
+ 2017-01-19 21:35:17,158 [P7772/D2/T15] INFO  umbraco.BusinessLogic.Log - Log scrubbed.  Removed all items older than 2560-01-18 21:35:17
+ 2017-01-19 21:36:02,355 [P7772/D2/T14] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.PropertyEditors.IParameterEditor
+ 2017-01-19 21:36:02,356 [P7772/D2/T14] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.PropertyEditors.IParameterEditor, found 0 (took 0ms)
+ 2017-01-19 21:36:02,370 [P7772/D2/T14] INFO  Umbraco.Core.PluginManager - Starting resolution types of umbraco.cms.businesslogic.macro.IMacroEngine
+ 2017-01-19 21:36:02,371 [P7772/D2/T14] INFO  Umbraco.Core.PluginManager - Completed resolution of types of umbraco.cms.businesslogic.macro.IMacroEngine, found 0 (took 1ms)
+ 2017-01-19 21:36:04,131 [P7772/D2/T14] WARN  umbraco.macro - Error loading partial view macro (View: ~/Views/MacroPartials/ARTIST_LIST.cshtml). Exception: System.InvalidOperationException: Sequence contains no elements
+   at System.Linq.Enumerable.First[TSource](IEnumerable`1 source)
+   at lambda_method(Closure )
+   at System.Linq.EnumerableExecutor`1.Execute()
+   at System.Linq.EnumerableQuery`1.System.Linq.IQueryProvider.Execute[S](Expression expression)
+   at System.Linq.Queryable.First[TSource](IQueryable`1 source)
+   at Umbraco.Web.Models.DynamicPublishedContentList.First[T](String predicate, Object[] values)
+   at Umbraco.Web.Models.DynamicPublishedContentList.TryInvokeMember(InvokeMemberBinder binder, Object[] args, Object& result)
+   at CallSite.Target(Closure , CallSite , Object )
+   at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)
+   at ASP._Page_Views_MacroPartials_ARTIST_LIST_cshtml.Execute() in c:\queengallery\queengallery\Views\MacroPartials\ARTIST_LIST.cshtml:line 98
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at System.Web.Mvc.RazorView.RenderView(ViewContext viewContext, TextWriter writer, Object instance)
+   at System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
+   at Umbraco.Core.Profiling.ProfilingView.Render(ViewContext viewContext, TextWriter writer)
+   at Umbraco.Web.Mvc.ControllerExtensions.RenderViewResultAsString(ControllerBase controller, ViewResultBase viewResult)
+   at Umbraco.Web.Macros.PartialViewMacroEngine.Execute(MacroModel macro, IPublishedContent content)
+   at Umbraco.Web.Macros.PartialViewMacroEngine.Execute(MacroModel macro, INode node)
+   at umbraco.macro.LoadPartialViewMacro(MacroModel macro)
+   at umbraco.macro.renderMacro(Hashtable pageElements, Int32 pageId)
+ 2017-01-19 21:36:04,132 [P7772/D2/T14] WARN  umbraco.macro - Error loading Partial View (file: ~/Views/MacroPartials/ARTIST_LIST.cshtml). Exception: System.InvalidOperationException: Sequence contains no elements
+   at System.Linq.Enumerable.First[TSource](IEnumerable`1 source)
+   at lambda_method(Closure )
+   at System.Linq.EnumerableExecutor`1.Execute()
+   at System.Linq.EnumerableQuery`1.System.Linq.IQueryProvider.Execute[S](Expression expression)
+   at System.Linq.Queryable.First[TSource](IQueryable`1 source)
+   at Umbraco.Web.Models.DynamicPublishedContentList.First[T](String predicate, Object[] values)
+   at Umbraco.Web.Models.DynamicPublishedContentList.TryInvokeMember(InvokeMemberBinder binder, Object[] args, Object& result)
+   at CallSite.Target(Closure , CallSite , Object )
+   at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)
+   at ASP._Page_Views_MacroPartials_ARTIST_LIST_cshtml.Execute() in c:\queengallery\queengallery\Views\MacroPartials\ARTIST_LIST.cshtml:line 98
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at System.Web.Mvc.RazorView.RenderView(ViewContext viewContext, TextWriter writer, Object instance)
+   at System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
+   at Umbraco.Core.Profiling.ProfilingView.Render(ViewContext viewContext, TextWriter writer)
+   at Umbraco.Web.Mvc.ControllerExtensions.RenderViewResultAsString(ControllerBase controller, ViewResultBase viewResult)
+   at Umbraco.Web.Macros.PartialViewMacroEngine.Execute(MacroModel macro, IPublishedContent content)
+   at Umbraco.Web.Macros.PartialViewMacroEngine.Execute(MacroModel macro, INode node)
+   at umbraco.macro.LoadPartialViewMacro(MacroModel macro)
+   at umbraco.macro.renderMacro(Hashtable pageElements, Int32 pageId)
+ 2017-01-19 21:36:04,964 [P7772/D2/T14] WARN  umbraco.macro - Error loading partial view macro (View: ~/Views/MacroPartials/ARTPIECE_LIST.cshtml). Exception: Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot perform runtime binding on a null reference
+   at CallSite.Target(Closure , CallSite , Object )
+   at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)
+   at ASP._Page_Views_MacroPartials_ARTPIECE_LIST_cshtml.Execute() in c:\queengallery\queengallery\Views\MacroPartials\ARTPIECE_LIST.cshtml:line 59
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at System.Web.Mvc.RazorView.RenderView(ViewContext viewContext, TextWriter writer, Object instance)
+   at System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
+   at Umbraco.Core.Profiling.ProfilingView.Render(ViewContext viewContext, TextWriter writer)
+   at Umbraco.Web.Mvc.ControllerExtensions.RenderViewResultAsString(ControllerBase controller, ViewResultBase viewResult)
+   at Umbraco.Web.Macros.PartialViewMacroEngine.Execute(MacroModel macro, IPublishedContent content)
+   at Umbraco.Web.Macros.PartialViewMacroEngine.Execute(MacroModel macro, INode node)
+   at umbraco.macro.LoadPartialViewMacro(MacroModel macro)
+   at umbraco.macro.renderMacro(Hashtable pageElements, Int32 pageId)
+ 2017-01-19 21:36:04,964 [P7772/D2/T14] WARN  umbraco.macro - Error loading Partial View (file: ~/Views/MacroPartials/ARTPIECE_LIST.cshtml). Exception: Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot perform runtime binding on a null reference
+   at CallSite.Target(Closure , CallSite , Object )
+   at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)
+   at ASP._Page_Views_MacroPartials_ARTPIECE_LIST_cshtml.Execute() in c:\queengallery\queengallery\Views\MacroPartials\ARTPIECE_LIST.cshtml:line 59
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at System.Web.Mvc.RazorView.RenderView(ViewContext viewContext, TextWriter writer, Object instance)
+   at System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
+   at Umbraco.Core.Profiling.ProfilingView.Render(ViewContext viewContext, TextWriter writer)
+   at Umbraco.Web.Mvc.ControllerExtensions.RenderViewResultAsString(ControllerBase controller, ViewResultBase viewResult)
+   at Umbraco.Web.Macros.PartialViewMacroEngine.Execute(MacroModel macro, IPublishedContent content)
+   at Umbraco.Web.Macros.PartialViewMacroEngine.Execute(MacroModel macro, INode node)
+   at umbraco.macro.LoadPartialViewMacro(MacroModel macro)
+   at umbraco.macro.renderMacro(Hashtable pageElements, Int32 pageId)
