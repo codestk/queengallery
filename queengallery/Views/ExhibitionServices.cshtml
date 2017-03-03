@@ -23,7 +23,7 @@
     string condition = "";
     string sort = "beginDate descending";
     int blogId = 3576;
-
+    int limit=30;
     var items = (dynamic)null;
 
     if (Type == "OnView")
@@ -58,17 +58,15 @@
     //condition += " && (descriptionTh.ToLower().Contains(\""+kword+"\") || nameTh.ToLower().Contains(\""+kword+"\"))";
 
     //#For หาจาก ศิลปิน ====================================================================================
-    var  artisList=Umbraco.Media(1366).Children().Where("NameEn.ToLower().Contains(\""+kword+"\")");
+    var artisList=Umbraco.Media(1366).Children().Where("NameEn.ToLower().Contains(\""+kword+"\")").Take(limit);
 
-    List<string>
-        listFilterEx = new List<string>
-            ();
+    List<string> listFilterEx = new List<string>();
             foreach (var item in artisList)
             {
             //@item.id
 
             //Art Pieces ชิ้นงาน
-            var ArtPiecesList=Umbraco.Media(item.id).Children();
+            var ArtPiecesList=Umbraco.Media(item.id).Children().Take(limit);;
             foreach (var    i in    ArtPiecesList)
             {
             // ชิ้นงานดพื่อหา Ex
@@ -76,7 +74,7 @@
             listFilterEx.Add("artPieces2.ToString().Contains(\""+i.id+"\")");
             }
 
-            }
+            }//end loop
 
             //For หาจาก ชิ้นงาน ==================
             var itemsartPiecesMedia = Umbraco.Media(1366).Descendants("artPiecesMedia").Where("NameEn.ToLower().Contains(\""+kword+"\")");
