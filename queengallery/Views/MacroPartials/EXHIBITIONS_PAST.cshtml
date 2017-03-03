@@ -52,7 +52,7 @@
 
  
  .dropdown-menu {
-     background-color: #ffffff;  
+     /*background-color: #ffffff;*/  
      
 }
 
@@ -138,40 +138,45 @@ var nodeLang = curNode.GetCulture().ToString().ToLower();
     //reder year
     function SetYearFilter(msg)
     {
-        var dateDisticnt = [];
-        //fruits.push(msg[0][0].beginDate);
-        //fruits.push(msg[0][0].endDate);
-        for (var key in msg[0]) {
-            //preFixLang
-            //var preFixLang = 'En';
-            dateDisticnt.push(Date.parse(msg[0][key]["beginDate"]).getFullYear());
-            dateDisticnt.push(Date.parse(msg[0][key]["endDate"]).getFullYear());
-        }
 
-        function onlyUnique(value, index, self) {
-            return self.indexOf(value) === index;
-        }
+       
+        //var dateDisticnt = [];
+        ////fruits.push(msg[0][0].beginDate);
+        ////fruits.push(msg[0][0].endDate);
+        //for (var key in msg[0]) {
+        //    //preFixLang
+        //    //var preFixLang = 'En';
+        //    dateDisticnt.push(Date.parse(msg[0][key]["beginDate"]).getFullYear());
+        //    dateDisticnt.push(Date.parse(msg[0][key]["endDate"]).getFullYear());
+        //}
 
-        // usage example:
+        //function onlyUnique(value, index, self) {
+        //    return self.indexOf(value) === index;
+        //}
 
-        var unique = dateDisticnt.filter(onlyUnique); // returns ['a', 1, 2, '1']
+        //// usage example:
 
-
-        function sortNumber(a, b) {
-            return a - b;
-        }
+        //var unique = dateDisticnt.filter(onlyUnique); // returns ['a', 1, 2, '1']
 
 
-        unique.sort(sortNumber);
+        //function sortNumber(a, b) {
+        //    return a - b;
+        //}
+
+
+        //unique.sort(sortNumber);
 
          
         //alert(unique);
         //<div id="yearFilter" class="btn-group">
         //<a href="#" class="btn btn-default">2010</a>
+
+        var year = msg[1].year;
+        var yearSplit = year.split(",");
         $('#yearFilter').html('');
-        for (var i in unique) {
+        for (var i in yearSplit) {
             //alert(unique[i]);
-            $('#yearFilter').append('<a href="#" class="btn btn-default">'+ unique[i]+'</a>');
+            $('#yearFilter').append('<a href="#" class="btn btn-default">' + yearSplit[i] + '</a>');
         }
 
 
@@ -401,20 +406,9 @@ var nodeLang = curNode.GetCulture().ToString().ToLower();
         </div>
 
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-12 text-center">
                 <div id="yearFilter" class="btn-group">
-                    <a href="#" class="btn btn-default">2010</a>
-                    <a href="#" class="btn btn-default">2011</a>
-                    <a href="#" class="btn btn-default">2012</a>
-                    <a href="#" class="btn btn-default">2013</a>
-                    <a href="#" class="btn btn-default">2014</a>
-                    <a href="#" class="btn btn-default">2015</a>
-                    <a href="#" class="btn btn-default">2016</a>
-                    <a href="#" class="btn btn-default">2017</a>
-                    <a href="#" class="btn btn-default">2018</a>
-                    <a href="#" class="btn btn-default">2019</a>
-                    <a href="#" class="btn btn-default">2020</a>
-                    <a href="#" class="btn btn-default">2021</a>
+                   
      
                 </div>
             </div>

@@ -19,7 +19,7 @@
     valuesFilter.Add("Todate", DateTime.Now);
     valuesFilter.Add("year",year);
     string condition = "";
-    string sort = "endDate descending";
+    string sort = "beginDate descending";
     int blogId = 3576;
 
     var items = (dynamic)null;
@@ -53,6 +53,9 @@
     condition += " and ((beginDate.Year=year) or (endDate.Year=year))";
     }
 
+
+                                @*condition += " && (descriptionEn.Contains(\"รัตนจงกรมเจดีย์\") || nameEn.Contains(\"รัตนจงกรมเจดีย์\"))";*@
+                                         condition += " && (descriptionTh.Contains(\"เอเซีย พลัส\") || nameTh.Contains(\"เอเซีย พลัส\"))";
     items = Umbraco.Media(blogId).Children().Where(condition, valuesFilter).OrderBy(sort);
     List<int> list = new List<int>();
             
