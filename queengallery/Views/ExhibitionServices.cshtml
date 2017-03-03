@@ -9,13 +9,15 @@
 
     var pageSize = 10;
     var page = 1; int.TryParse(Request.QueryString["page"], out page);
-
+    var year = 0; int.TryParse(Request.QueryString["year"], out year);
+    string yearSet="";
     var Type = Request.QueryString["Type"];
 
-    var valuesFilter = new Dictionary<string, object>();
+    var valuesFilter = new Dictionary<string, object>
+    ();
 
     valuesFilter.Add("Todate", DateTime.Now);
-
+    valuesFilter.Add("year",year);
     string condition = "";
     string sort = "endDate descending";
     int blogId = 3576;
@@ -24,9 +26,9 @@
 
     if (Type == "OnView")
     {
-        condition = "  Visible && (beginDate <= Todate) && (endDate >= Todate)";
+    condition = "  Visible && (beginDate <= Todate) && (endDate >= Todate)";
 
-        items = Umbraco.Media(blogId).Children().Where(condition, valuesFilter).OrderBy("endDate");
+    items = Umbraco.Media(blogId).Children().Where(condition, valuesFilter).OrderBy("endDate");
 
     }
     else if (Type == "Upcoming")
@@ -45,32 +47,55 @@
 
     condition = "Visible && (beginDate < Todate) && (!( (beginDate <= Todate) && (endDate >= Todate)))";
 
-    items = Umbraco.Media(blogId).Children().Where(condition, valuesFilter).OrderBy("endDate ");
-}
 
-var totalPages = (int)Math.Ceiling((double)items.Count() / (double)pageSize);
+    if  (year >0)
+    {
+    condition += " and ((beginDate.Year=year) or (endDate.Year=year))";
+    }
 
-if (page > totalPages)
-{
-    @*ถ้าเรียกมามากกว่า*@
-    page = totalPages;
-}
-else if (page < 1)
-{
-    @*ถ้าเรียกมาน้อยกว่า*@
-    page = 1;
-}
+    items = Umbraco.Media(blogId).Children().Where(condition, valuesFilter).OrderBy(sort);
+    List<int> list = new List<int>();
+            
+            
+            foreach (var item in items)
+            {
+            @* a single image *@
 
-var jsonDataList = JsonFn.ConvertToJsonObject(items.Skip((page - 1) * pageSize).Take(pageSize));
 
-jsonDataList.Add(new Dictionary<string, object>
-        {            {"RecordCount",items.Count()}
+            int a= item.beginDate.Year;
+            int b=item.endDate.Year;
+                                 list.Add(a);
+                                 list.Add(b);
+            }
+                               
+                                 var noDupes = list.Distinct().ToList();
+                                   noDupes.Sort();
+                                 yearSet=   String.Join(", ", noDupes.ToArray());  
+            }
 
-        });
+            var totalPages = (int)Math.Ceiling((double)items.Count() / (double)pageSize);
 
-}
-@* @Html.Raw(serializer.Serialize(items.Count())) *@
-@*Html.Raw(serializer.Serialize(@JsonFn.ConvertToJsonObject(items.Skip((page -1)* pageSize).Take(pageSize))))*@
-@*@Html.Raw(serializer.Serialize(node.Properties));*@
-@*Json*@
-@Html.Raw(serializer.Serialize(jsonDataList))
+            if (page > totalPages)
+            {
+            @*ถ้าเรียกมามากกว่า*@
+            page = totalPages;
+            }
+            else if (page < 1)
+            {
+            @*ถ้าเรียกมาน้อยกว่า*@
+            page = 1;
+            }
+
+            var jsonDataList = JsonFn.ConvertToJsonObject(items.Skip((page - 1) * pageSize).Take(pageSize));
+
+            jsonDataList.Add(new Dictionary<string, object>
+                {            {"RecordCount",items.Count()},  {"year",yearSet}
+
+                });
+
+                }
+                @* @Html.Raw(serializer.Serialize(items.Count())) *@
+                @*Html.Raw(serializer.Serialize(@JsonFn.ConvertToJsonObject(items.Skip((page -1)* pageSize).Take(pageSize))))*@
+                @*@Html.Raw(serializer.Serialize(node.Properties));*@
+                @*Json*@
+                @Html.Raw(serializer.Serialize(jsonDataList))

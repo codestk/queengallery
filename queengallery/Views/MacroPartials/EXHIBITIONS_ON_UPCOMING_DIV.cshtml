@@ -1,0 +1,100 @@
+﻿@inherits Umbraco.Web.Macros.PartialViewMacroPage
+
+@{
+
+
+if (Model.MacroParameters["Exhibition"]=="")
+{
+return;
+}
+
+ var curNode = Umbraco.TypedContent(Model.Content.Id);
+ string nodeLang = curNode.GetCulture().ToString().ToLower();
+
+
+
+  int exhibition = 0; int.TryParse(Model.MacroParameters["Exhibition"].ToString(), out exhibition);
+
+    string condition = "";
+    string sort = "beginDate ";
+    
+    var valuesFilter = new Dictionary<string, object>();
+
+    valuesFilter.Add("Todate", DateTime.Now);
+
+    condition = "Visible && (beginDate > Todate)";
+
+    var items = Umbraco.Media(exhibition).Children().Where(condition, valuesFilter).OrderBy(sort);
+
+    var ShowHead = Model.MacroParameters["ShowHead"];
+
+
+    }
+    @{
+                                          
+                                         {
+											 if (ShowHead.Equals("1"))
+                                         {
+                                         <h1 class="text-center"><strong>@Umbraco.Field("#UPCOMING")
+  </strong></h1>
+                                         }
+                                         }
+
+
+                                         if (items.Count()!=0)
+                                         {
+
+                                         <section id="Main" class="row " style="">
+                        
+            @foreach (var item in items)
+            {
+				
+				    string name="";
+                                                             string description="";
+                                                             if (nodeLang == "th-th") {
+                                                             name = @item.nameTh;
+                                                             description=@item.descriptionTh;
+                                                             } else {
+                                                             name =@item.nameEn;
+                                                             description=@item.descriptionEn;
+                                                             }
+				
+		 
+                                             <div class="col-md-4" style="margin-bottom:2em;">
+                                              
+                                                     <img class="img-center" src="@item.GetCropUrl("image", "banner" );" alt="@name" title="@name" />
+
+
+
+                                                 <a href='/@Umbraco.Field("#RootUrl")/exhibitions/past/exhibition?exhibition=@item.id' title="@name" style="display:block" >
+                                                  <div   style="overflow:hidden;word-wrap:normal;overflow:hidden;word-wrap:normal"> @name  </div>    
+                                                 </a>
+
+                                                    
+
+                                                     <div class="text-left  " style="font-weight:100;font-size:smaller">@item.GetPropertyValue("beginDate").ToString("dd MMMM yyyy") - @item.GetPropertyValue("endDate").ToString("dd MMMM yyyy") </div>
+
+                                               
+                                             </div>
+            }
+     
+											 
+</section>
+
+                                         }else
+    {
+                                         <div class="row">
+                                             <hr>
+                                             <div class="col-lg-12   ">
+                                                
+                                                 <div class="message">@Umbraco.Field("#EventNotFound") </div>
+                                             </div>
+                                         </div>
+    }
+    
+    }
+                                   
+
+  
+
+       
