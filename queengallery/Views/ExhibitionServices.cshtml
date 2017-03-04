@@ -10,8 +10,10 @@
     var pageSize = 10;
     var page = 1; int.TryParse(Request.QueryString["page"], out page);
     var year = 0; int.TryParse(Request.QueryString["year"], out year);
+    var lang =  Request.QueryString["lang"] ;
     var kword =  Request.QueryString["word"];
-    kword =" Jehabdulloh Jehsorhoh".ToLower();  //test
+    //kword =" Jehabdulloh ".ToLower();  //test
+    kword = kword.ToLower();
     string yearSet="";
     var Type = Request.QueryString["Type"];
 
@@ -23,7 +25,7 @@
     string condition = "";
     string sort = "beginDate descending";
     int blogId = 3576;
-    int limit=30;
+    int limit=20;
     var items = (dynamic)null;
 
     if (Type == "OnView")
@@ -58,16 +60,20 @@
     //condition += " && (descriptionTh.ToLower().Contains(\""+kword+"\") || nameTh.ToLower().Contains(\""+kword+"\"))";
 
     //#For หาจาก ศิลปิน ====================================================================================
+    if (kword.Trim() !="")
+    {
     var artisList=Umbraco.Media(1366).Children().Where("NameEn.ToLower().Contains(\""+kword+"\")").Take(limit);
 
-    List<string> listFilterEx = new List<string>();
+    List<string>
+        listFilterEx = new List<string>
+            ();
             foreach (var item in artisList)
             {
             //@item.id
 
             //Art Pieces ชิ้นงาน
             var ArtPiecesList=Umbraco.Media(item.id).Children().Take(limit);;
-            foreach (var    i in    ArtPiecesList)
+            foreach (var i in ArtPiecesList)
             {
             // ชิ้นงานดพื่อหา Ex
             //@i.id
@@ -78,7 +84,7 @@
 
             //For หาจาก ชิ้นงาน ==================
             var itemsartPiecesMedia = Umbraco.Media(1366).Descendants("artPiecesMedia").Where("NameEn.ToLower().Contains(\""+kword+"\")");
-            foreach (var    i in    itemsartPiecesMedia)
+            foreach (var i in itemsartPiecesMedia)
             {
             // ชิ้นงานดพื่อหา Ex
             //@i.id
@@ -86,16 +92,14 @@
             }
 
             //หา Ex จากชิ้นงานด้วย
-    if (listFilterEx.Count> 0)
-    {
+            if (listFilterEx.Count> 0)
+            {
             condition +=  " || ("   +string.Join<string>
                 (" || ", listFilterEx) + ")";}
                 //#For หาจาก ศิลปิน ====================================================================================
 
                 //#For หาจาก ชิ้นงาน ====================================================================================
-   @*@condition
-    
-   return;*@
+    }
                 items = Umbraco.Media(blogId).Children().Where(condition, valuesFilter).OrderBy(sort);
 
                 //หา Year
@@ -115,7 +119,7 @@
 
                         var noDupes = list.Distinct().ToList();
                         noDupes.Sort();
-                        yearSet=   String.Join(", ", noDupes.ToArray());
+                        yearSet=   String.Join(",", noDupes.ToArray());
                         }
 
                         var totalPages = (int)Math.Ceiling((double)items.Count() / (double)pageSize);

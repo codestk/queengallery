@@ -56,6 +56,12 @@
      
 }
 
+ .btn-group > .btn:first-child {
+    margin-left: 0;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+
 </style>
 
 <script src="~/Modules/ReadMore/ReadMore.js"></script>
@@ -89,6 +95,20 @@ var nodeLang = curNode.GetCulture().ToString().ToLower();
 
         RenderList();
 
+
+
+        $('#btnSearch').click(function() {
+       
+         
+            word = $('#txtSearch').val();
+         
+            PageIndex = 1;
+            year = '0';
+            RenderList();
+            //var url = 'ExhibitionServices?page=' + PageIndex + '&Type=' + menuType + '&lang=' + preFixLang + '&year=' + year + '&word=' + word;
+        });
+       
+
     });
 
     /*==Render List and Page*/
@@ -97,13 +117,15 @@ var nodeLang = curNode.GetCulture().ToString().ToLower();
     var PageSize = '10';
     var menuType = '';
     var CurrentListData;
-    var year='0';
+    var year = '0';
+    var word = '';
+    
     function RenderList() {
 
         //Render List
         //var url = 'RazorJson?page=' + PageIndex + '&Type=' + menuType;
 
-        var url = 'ExhibitionServices?page=' + PageIndex + '&Type=' + menuType + '&year=' + year;
+        var url = 'ExhibitionServices?page=' + PageIndex + '&Type=' + menuType +'&lang=' + preFixLang+ '&year=' + year+'&word='+word;
         ToTop();
         Preload();
         CallServices(url, '', true, function (msg) {
@@ -111,9 +133,10 @@ var nodeLang = curNode.GetCulture().ToString().ToLower();
             //Reder Data ListTemplate
             //console.log(msg);
             //render year filter
-
-            SetYearFilter(msg);
-          
+            alert(year);
+            if (year == 0) {
+                SetYearFilter(msg);
+            }
             CurrentListData = ConvertDataByLanguage(msg[0]);
             SetList(CurrentListData);
 
@@ -125,7 +148,6 @@ var nodeLang = curNode.GetCulture().ToString().ToLower();
                 ModalEvent();
 
                 EventExhibition();
-
 
                 ReadMore.BindEvent();
 
@@ -171,15 +193,35 @@ var nodeLang = curNode.GetCulture().ToString().ToLower();
         //<div id="yearFilter" class="btn-group">
         //<a href="#" class="btn btn-default">2010</a>
 
-        var year = msg[1].year;
-        var yearSplit = year.split(",");
+        var yearlist = msg[1].year;
         $('#yearFilter').html('');
+         
+        if (yearlist == '')
+            return;
+
+        var yearSplit = yearlist.split(",");
+    
+
+      
         for (var i in yearSplit) {
             //alert(unique[i]);
-            $('#yearFilter').append('<a href="#" class="btn btn-default">' + yearSplit[i] + '</a>');
+            
+            $('#yearFilter').append('<a href="#"   data-yearfilter="' + yearSplit[i] + '" class="btn btn-default yearFilterEvent">' + yearSplit[i] + '</a>');
+
+            //Set Event
+
+           
         }
 
+        $('.yearFilterEvent').click(function () {
+          
+            year = $(this).data("yearfilter");
+            $(this).addClass("active");
+           
+              PageIndex = 1;
+              RenderList();
 
+        });
      
     }
 
@@ -368,12 +410,12 @@ var nodeLang = curNode.GetCulture().ToString().ToLower();
             <div class="col-md-3"></div>
             <div class="col-md-6 ">
                 <div class="input-group" id="adv-search">
-                    <input type="text" class="form-control" placeholder="Search for snippets" />
+                    <input id="txtSearch" type="text" class="form-control" placeholder="Search for snippets" />
                     <div class="input-group-btn">
                         <div class="btn-group" role="group">
                             <div class="dropdown dropdown-lg">
-                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class="caret"></span></button>
-                                <div class="dropdown-menu dropdown-menu-right" role="menu">
+                                @*<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class="caret"></span></button>*@
+                                @*<div class="dropdown-menu dropdown-menu-right" role="menu">
                                     <form class="form-horizontal" role="form">
                                         <div class="form-group">
                                             <label for="filter">Filter by</label>
@@ -395,9 +437,9 @@ var nodeLang = curNode.GetCulture().ToString().ToLower();
                                         </div>
                                         <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
                                     </form>
-                                </div>
+                                </div>*@
                             </div>
-                            <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+                            <button id="btnSearch" type="button" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
                         </div>
                     </div>
                 </div>
@@ -407,10 +449,12 @@ var nodeLang = curNode.GetCulture().ToString().ToLower();
 
         <div class="row">
             <div class="col-md-12 text-center">
-                <div id="yearFilter" class="btn-group">
+                <div id="yearFilter" class="btn-group" role="group" >
                    
      
                 </div>
+
+ 
             </div>
         </div></div>
    
@@ -429,7 +473,15 @@ var nodeLang = curNode.GetCulture().ToString().ToLower();
     <div class="row">
         @*<div class="col-md-3"><a href="#modal" class="EventModal img-center col-xs-12"><img src='{{logoUrl}}'></a> </div>*@
 
-        <div class="col-md-3"><a href="#modal" class="EventModal img-center col-xs-12"><img src='{{logoUrl}}' class="EventModal img-center  img-responsive"></a> </div>
+        <div class="col-md-3"><a href="#modal" class="EventModal img-center col-xs-12">
+            
+                                  {{#logoUrl}}
+                               
+                              
+            <img src='{{logoUrl}}' class="EventModal img-center  img-responsive">
+                                  {{/logoUrl}}
+            
+            </a> </div>
 
         <div class="col-md-9">
 
@@ -437,8 +489,7 @@ var nodeLang = curNode.GetCulture().ToString().ToLower();
             <div class="date">{{from}} - {{to}}</div>
 
             <p class="more">{{description}} </p>
-            @*<a class="button EventExhibition"> Read More</a>*@
-            @*<a href="/en/exhibitions?id=888"> Read More</a>*@
+          
         </div>
     </div>
     <hr>
@@ -454,7 +505,7 @@ var nodeLang = curNode.GetCulture().ToString().ToLower();
     <div class="row">
         <hr>
         <div class="col-lg-12   ">
-            @*<div class="message"> ทดสอบภาษาไทย</div>*@
+          
             <div class="message">@Umbraco.Field("#EventNotFound") </div>
         </div>
     </div>
