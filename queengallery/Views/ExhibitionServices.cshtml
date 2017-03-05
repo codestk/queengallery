@@ -28,6 +28,12 @@
     int limit=20;
     var items = (dynamic)null;
 
+
+    var  descriptionCol= "description"+lang;
+   
+
+
+
     if (Type == "OnView")
     {
     condition = "  Visible && (beginDate <= Todate) && (endDate >= Todate)";
@@ -56,13 +62,15 @@
     condition += " and ((beginDate.Year=year) or (endDate.Year=year))";
     }
 
-    condition += " && (descriptionEn.ToLower().Contains(\""+kword+"\") || nameEn.ToLower().Contains(\""+kword+"\"))";
-    //condition += " && (descriptionTh.ToLower().Contains(\""+kword+"\") || nameTh.ToLower().Contains(\""+kword+"\"))";
+
+                                   
+    condition += " && ("+descriptionCol+".ToLower().Contains(\""+kword+"\") || name"+lang+".ToLower().Contains(\""+kword+"\"))";
+    
 
     //#For หาจาก ศิลปิน ====================================================================================
     if (kword.Trim() !="")
     {
-    var artisList=Umbraco.Media(1366).Children().Where("NameEn.ToLower().Contains(\""+kword+"\")").Take(limit);
+    var artisList=Umbraco.Media(1366).Children().Where("Name"+lang+".ToLower().Contains(\""+kword+"\")").Take(limit);
 
     List<string>
         listFilterEx = new List<string>
@@ -83,7 +91,7 @@
             }//end loop
 
             //For หาจาก ชิ้นงาน ==================
-            var itemsartPiecesMedia = Umbraco.Media(1366).Descendants("artPiecesMedia").Where("NameEn.ToLower().Contains(\""+kword+"\")");
+            var itemsartPiecesMedia = Umbraco.Media(1366).Descendants("artPiecesMedia").Where("Name"+lang+".ToLower().Contains(\""+kword+"\")");
             foreach (var i in itemsartPiecesMedia)
             {
             // ชิ้นงานดพื่อหา Ex

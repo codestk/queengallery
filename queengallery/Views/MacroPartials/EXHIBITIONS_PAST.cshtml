@@ -133,7 +133,7 @@ var nodeLang = curNode.GetCulture().ToString().ToLower();
             //Reder Data ListTemplate
             //console.log(msg);
             //render year filter
-            alert(year);
+        
             if (year == 0) {
                 SetYearFilter(msg);
             }
@@ -215,9 +215,17 @@ var nodeLang = curNode.GetCulture().ToString().ToLower();
 
         $('.yearFilterEvent').click(function () {
           
+
+            var itemActive = $(this).hasClass("active");
+            if (itemActive) {
+                return;
+            }
+
+
             year = $(this).data("yearfilter");
+            $('.yearFilterEvent').removeClass("active");
             $(this).addClass("active");
-           
+            yearFilter
               PageIndex = 1;
               RenderList();
 
