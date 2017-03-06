@@ -1,8 +1,8 @@
 ﻿var ReadMore = {
     showChar: 250, // How many characters are shown by default
     ellipsestext: "...",
-    moretext: "Show more",
-    lesstext: "Show less",
+    moretext: ">>",
+    lesstext: "<<",
     showMore: true,
 
 

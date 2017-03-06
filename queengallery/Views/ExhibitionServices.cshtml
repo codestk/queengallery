@@ -13,8 +13,15 @@
     var lang =  Request.QueryString["lang"] ;
     var kword =  Request.QueryString["word"];
     //kword =" Jehabdulloh ".ToLower();  //test
+   
+    if (kword !=null)
+{
     kword = kword.ToLower();
-    string yearSet="";
+} else
+{
+kword="";
+}
+   string yearSet="";
     var Type = Request.QueryString["Type"];
 
     var valuesFilter = new Dictionary<string, object>
@@ -28,11 +35,7 @@
     int limit=20;
     var items = (dynamic)null;
 
-
     var  descriptionCol= "description"+lang;
-   
-
-
 
     if (Type == "OnView")
     {
@@ -62,15 +65,25 @@
     condition += " and ((beginDate.Year=year) or (endDate.Year=year))";
     }
 
-
-                                   
-    condition += " && ("+descriptionCol+".ToLower().Contains(\""+kword+"\") || name"+lang+".ToLower().Contains(\""+kword+"\"))";
-    
+    //condition += " && ("+descriptionCol+".ToLower().Contains(\""+kword+"\") || name"+lang+".ToLower().Contains(\""+kword+"\"))";
 
     //#For หาจาก ศิลปิน ====================================================================================
     if (kword.Trim() !="")
     {
-    var artisList=Umbraco.Media(1366).Children().Where("Name"+lang+".ToLower().Contains(\""+kword+"\")").Take(limit);
+
+    string c1 =genWhereCondition(kword,descriptionCol,lang);
+
+    //condition += " && ("+descriptionCol+".ToLower().Contains(\""+kword+"\") || name"+lang+".ToLower().Contains(\""+kword+"\"))";
+    condition +=c1;
+
+    string  ConditionArtist=genWhereConditionArtist(kword);
+    //var artisList=Umbraco.Media(1366).Children().Where("Name"+lang+".ToLower().Contains(\""+kword+"\")").Take(limit);
+    //หาจากชื่อ ศิลปิน
+
+    //@ConditionArtist
+    //return;
+
+    var artisList=Umbraco.Media(1366).Children().Where(ConditionArtist).Take(limit);
 
     List<string>
         listFilterEx = new List<string>
@@ -78,7 +91,6 @@
             foreach (var item in artisList)
             {
             //@item.id
-
             //Art Pieces ชิ้นงาน
             var ArtPiecesList=Umbraco.Media(item.id).Children().Take(limit);;
             foreach (var i in ArtPiecesList)
@@ -107,7 +119,11 @@
                 //#For หาจาก ศิลปิน ====================================================================================
 
                 //#For หาจาก ชิ้นงาน ====================================================================================
-    }
+                }
+
+                @*@condition
+                return;*@
+
                 items = Umbraco.Media(blogId).Children().Where(condition, valuesFilter).OrderBy(sort);
 
                 //หา Year
@@ -146,13 +162,108 @@
                         var jsonDataList = JsonFn.ConvertToJsonObject(items.Skip((page - 1) * pageSize).Take(pageSize));
 
                         jsonDataList.Add(new Dictionary<string, object>
-                            {            {"RecordCount",items.Count()},  {"year",yearSet}
+    {            {"RecordCount",items.Count()},  {"year",yearSet}
 
-                            });
+    });
 
-                            }
-                            @* @Html.Raw(serializer.Serialize(items.Count())) *@
-                            @*Html.Raw(serializer.Serialize(@JsonFn.ConvertToJsonObject(items.Skip((page -1)* pageSize).Take(pageSize))))*@
-                            @*@Html.Raw(serializer.Serialize(node.Properties));*@
-                            @*Json*@
-                            @Html.Raw(serializer.Serialize(jsonDataList))
+    }
+    @* @Html.Raw(serializer.Serialize(items.Count())) *@
+    @*Html.Raw(serializer.Serialize(@JsonFn.ConvertToJsonObject(items.Skip((page -1)* pageSize).Take(pageSize))))*@
+    @*@Html.Raw(serializer.Serialize(node.Properties));*@
+    @*Json*@
+
+
+    @Html.Raw(serializer.Serialize(jsonDataList))
+
+
+
+
+
+
+    @functions {
+
+    public static string genWhereCondition(string words,string  column,string lang)
+    {
+    string kwords = words.Trim();
+
+    string[] wordArray= kwords.Split(' ');
+
+    string command = "";
+    string[] CondiotnSet;
+
+    List<string>
+        strList = new List<string>
+            ();
+
+             //foreach (var key in wordArray)
+           // {
+          
+           // string filrteEn =  "descriptionEn.ToLower().Contains(\"" + key.ToString() + "\") || nameEn.ToLower().Contains(\"" + key.ToString() +"\")";
+
+           // strList.Add(filrteEn);
+       
+           // string filrteTh =  "descriptionTh.ToLower().Contains(\"" + key.ToString() + "\") || nameTh.ToLower().Contains(\"" + key.ToString() +"\")";
+           // strList.Add(filrteTh);
+          //  } 
+
+                         
+                              //En
+                              string filrteEn =  "descriptionEn.ToLower().Contains(\"" + words.ToString() + "\") || nameEn.ToLower().Contains(\"" + words.ToString() +"\")";
+                              strList.Add(filrteEn);
+                              //Th
+                              string filrteTh =  "descriptionTh.ToLower().Contains(\"" + words.ToString() + "\") || nameTh.ToLower().Contains(\"" + words.ToString() +"\")";
+                              strList.Add(filrteTh);
+                           
+
+
+
+
+            command = "&& (" +String.Join("||",strList )+  ")";
+
+            return command;
+            }
+
+
+            }
+            @functions {
+
+            public static string genWhereConditionArtist(string words)
+            {
+            string kwords = words.Trim();
+
+            string[] wordArray= kwords.Split(' ');
+
+            string command = "";
+            string[] CondiotnSet;
+
+            List<string>
+                strListEn = new List<string>();
+
+    List<string>
+        strListTh = new List<string>
+            ();
+            // "Name"+lang+".ToLower().Contains(\""+kword+"\")").Take(limit);
+            foreach (var key in wordArray)
+            {
+            //En
+            string filrteEn =  "NameEn.ToLower().Contains(\""+key.ToString()+"\")" ;
+
+                                strListEn.Add(filrteEn);
+            //Th
+            string filrteTh =   "NameTh.ToLower().Contains(\""+key.ToString()+"\")";
+                                strListTh.Add(filrteTh);
+            }
+            //En
+            // string filrteEn =  "NameEn.ToLower().Contains(\""+words.ToString()+"\")" ;
+
+            // strList.Add(filrteEn);
+            //Th
+            // string filrteTh =   "NameTh.ToLower().Contains(\""+words.ToString()+"\")";
+            // strList.Add(filrteTh);
+            command = "((" +String.Join("&&",strListEn )+  ") || (" +String.Join("&&",strListTh)+ "))";
+
+            return command;
+            }
+
+
+            }
